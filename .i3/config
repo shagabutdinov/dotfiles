@@ -176,6 +176,7 @@ new_window 1pixel
 bindsym $mod+comma exec amixer -q sset Master 3%-
 bindsym $mod+period exec amixer -q sset Master 3%+
 bindsym $mod+slash exec usound-toggle
+bindsym $mod+Shift+grave exec ususpend
 bindsym $mod+g exec thunar
 bindsym $mod+backslash exec subl3
 bindsym $mod+o exec firefox
