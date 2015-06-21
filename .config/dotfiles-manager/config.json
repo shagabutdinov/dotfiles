@@ -30,6 +30,14 @@
     // root
     {"type": "file", "path": "/etc/pacman.conf"},
 
+    // pacman keys
+    {
+      "type": "package-pacman-key",
+      "keys": [
+        "962DDE58"
+      ]
+    }, 
+
     // pacman packages
     {
       "type": "package-pacman",
