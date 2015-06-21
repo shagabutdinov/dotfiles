@@ -9,11 +9,9 @@
   },
 
   "synchronize": [
-    {
-      "type": "storage-git",
-      "name": "main",
-      "on_command": "pull"
-    },
+    {"type": "storage-git", "name": "main", "on": "pull"},
+    {"type": "file", "path": "~/.config/dotfiles-manager/config.json"},
+    {"type": "reload", "on": "pull"},
 
     // folders
     {"type": "file", "path": "~/bin"},
@@ -21,7 +19,6 @@
     {"type": "file", "path": "~/.i3"},
 
     // files
-    {"type": "file", "path": "~/.config/dotfiles-manager/config.json"},
     {"type": "file", "path": "~/.Xresources"},
     {"type": "file", "path": "~/.gitconfig"},
     {"type": "file", "path": "~/.gtkrc-2.0"},
@@ -42,22 +39,23 @@
         "dunst",
         "xf86-input-synaptics",
         "xorg-xset",
-        "terminus-font",
         "xorg-xmodmap",
+        "xorg-xrandr",
+        "terminus-font",
 
         "git",
 
         "firefox",
         "chromium"
       ],
-      "on_command": "pull"
+      "on": "pull"
     },
 
     // install yaourt if necessary
     {
       "type": "ruby-script",
       "script": "'::DotfilesManager::PackageYaourt.install'",
-      "on_command": "pull"
+      "on": "pull"
     },
 
     // yaourt packages
@@ -66,13 +64,13 @@
       "packages": [
         "oh-my-zsh-git"
       ],
-      "on_command": "pull"
+      "on": "pull"
     },
 
     {
       "type": "storage-git",
       "name": "main",
-      "on_command": "push"
+      "on": "push"
     }
   ]
 
