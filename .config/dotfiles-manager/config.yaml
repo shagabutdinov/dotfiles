@@ -1,0 +1,76 @@
+
+default_storage: main
+storages:
+  main:
+    type: github
+    url: git://github.com/shagabutdinov/dotfiles
+
+synchronize:
+
+  - {type: storage-git, name: main, for: [pull]}
+
+  # folders
+  - {type: file, path: ~/bin}
+  - {type: file, path: ~/.config/dunst}
+  - {type: file, path: ~/.i3}
+
+  # files
+  - {type: file, path: ~/.config/dotfiles-manager/config.yaml}
+  - {type: file, path: ~/.Xresources}
+  - {type: file, path: ~/.gitconfig}
+  - {type: file, path: ~/.gtkrc-2.0}
+  - {type: file, path: ~/.gtkrc-2.0.mine}
+  - {type: file, path: ~/.xinitrc}
+  - {type: file, path: ~/.vimperatorrc}
+  - {type: file, path: ~/.zshrc}
+
+  # root
+  - {type: file, path: /etc/pacman.conf}
+
+  # pacman packages
+  - type: pacman-package
+    packages: [
+      infinality-bundle
+      thunar
+      dunst
+      xf86-input-synaptics
+      xorg-xset
+      terminus-font
+      xorg-xmodmap
+
+      firefox
+      chromium
+    ]
+
+
+  # install yaourt
+  - type: command
+    command: >
+      command -v yaourt >/dev/null 2>&1 || {
+        dir = `pwd`
+        mkdir /tmp/yaourt-build
+        cd /tmp/yaourt-build
+
+        wget https://aur.archlinux.org/packages/pa/package-query/package-query.tar.gz
+        tar -xf package-query.tar.gz
+        cd package-query
+        makepkg
+        sudo pacman -U *.xz
+
+        wget https://aur.archlinux.org/packages/pa/package-query/yaourt.tar.gz
+        tar -xf yaourt.tar.gz
+        cd package-query
+        makepkg
+        sudo pacman -U *.xz
+
+        rm -rf ~/.tmp-yaourt-build
+        cd $dir
+      }
+
+
+  - type: yaourt-package
+    packages: [
+      oh-my-zsh-git
+    ]
+
+  - {type: storage-git, name: main, for: [push]}
