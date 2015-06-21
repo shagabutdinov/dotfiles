@@ -1,15 +1,19 @@
 {
   "default_storage": "main",
+
   "storages": {
-    "main":  {
+    "main": {
       "type": "github",
       "url": "git://github.com/shagabutdinov/dotfiles"
     }
   },
 
   "synchronize": [
-
-    {"type": "storage-git", "name": "main", "on": ["pull"]},
+    {
+      "type": "storage-git",
+      "name": "main",
+      "on_command": "pull"
+    },
 
     // folders
     {"type": "file", "path": "~/bin"},
@@ -26,13 +30,12 @@
     {"type": "file", "path": "~/.vimperatorrc"},
     {"type": "file", "path": "~/.zshrc"},
 
-
     // root
     {"type": "file", "path": "/etc/pacman.conf"},
 
     // pacman packages
     {
-      "type": "pacman-package",
+      "type": "package-pacman",
       "packages": [
         "infinality-bundle",
         "thunar",
@@ -42,45 +45,35 @@
         "terminus-font",
         "xorg-xmodmap",
 
+        "git",
+
         "firefox",
         "chromium"
-      ]
+      ],
+      "on_command": "pull"
     },
 
-    // install yaourt
+    // install yaourt if necessary
     {
-      // "type": "command",
-      // "command": "
-      //   command -v yaourt >/dev/null 2>&1 || {
-      //     dir = `pwd`
-      //     mkdir /tmp/yaourt-build
-      //     cd /tmp/yaourt-build
-
-      //     wget https://aur.archlinux.org/packages/pa/package-query/package-query.tar.gz
-      //     tar -xf package-query.tar.gz
-      //     cd package-query
-      //     makepkg
-      //     sudo pacman -U *.xz
-
-      //     wget https://aur.archlinux.org/packages/pa/package-query/yaourt.tar.gz
-      //     tar -xf yaourt.tar.gz
-      //     cd package-query
-      //     makepkg
-      //     sudo pacman -U *.xz
-
-      //     rm -rf ~/.tmp-yaourt-build
-      //     cd $dir
-      //   }
-      // "
+      "type": "ruby-script",
+      "script": "'::DotfilesManager::PackageYaourt.install'",
+      "on_command": "pull"
     },
 
+    // yaourt packages
     {
-      "type": "yaourt-package",
+      "type": "package-yaourt",
       "packages": [
         "oh-my-zsh-git"
-      ]
+      ],
+      "on_command": "pull"
     },
 
-    {"type": "storage-git", "name": "main", "on": ["push"]}
+    {
+      "type": "storage-git",
+      "name": "main",
+      "on_command": "push"
+    }
   ]
+
 }
