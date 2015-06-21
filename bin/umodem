@@ -1,2 +1,0 @@
-sudo netctl stop-all
-sudo wvdial tim

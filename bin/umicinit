@@ -1,4 +1,0 @@
-arecord -d 1 test-mic.wav
-arecord -d 1 test-mic.wav
-rm test-mic.wav
-

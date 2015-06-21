@@ -1,1 +1,0 @@
-sudo netctl stop-all; sudo netctl start newerwinter 
