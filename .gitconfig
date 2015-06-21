@@ -1,0 +1,7 @@
+[user]
+	email = leonid@shagabutidnov.com
+	name = Leonid Shagabutdinov
+[push]
+	default = simple
+[core]
+	editor = vim

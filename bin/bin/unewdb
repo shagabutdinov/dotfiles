@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+mysql = "mysql -u root -p'59qvxt156whD'"
+
+db = ARGV[0] || ( raise "Db name not passed" )
+user = db[0...16]
+password = ARGV[1] || ( raise "Password not passed" )
+
+system( "echo CREATE DATABASE \\`#{db}\\` | #{mysql}" )
+system( "echo CREATE USER \\'#{user}\\'@\\'localhost\\' IDENTIFIED BY \\'#{password}\\' | #{mysql}" )
+system( "echo GRANT ALL ON \\`#{db}\\`.* TO \\'#{user}\\'@\\'localhost\\' | #{mysql}" )
+
+puts "Complete: #{db} / #{user} / #{password}"

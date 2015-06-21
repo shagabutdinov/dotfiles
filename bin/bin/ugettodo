@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+text = `$(xclip -o)`.strip()
+
+data = {
+  "issue":  {
+    "priority_id": 2,
+    "project_id": 46,
+    "assigned_to_id": 46,
+    "subject" => text.split("\n")[0],
+    "text" => text,
+  }
+}
+
+require 'json'
+
+puts(JSON.generate(data))

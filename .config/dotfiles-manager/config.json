@@ -1,0 +1,27 @@
+{
+  "default_storage": "main",
+  "storages": {
+    "main":  {
+      "type": "github",
+      "url": "git://github.com/shagabutdinov/dotfiles"
+    }
+  },
+
+  "synchronize": [
+
+    // {"type": "storage-git", "name": "main", "on": ["pull"]},
+
+    {"type": "file", "path": "~/bin"},
+    {"type": "file", "path": "~/.config/dunst"},
+    {"type": "file", "path": "~/.config/dotfiles-manager/config.json"},
+    {"type": "file", "path": "~/.i3"},
+
+    {"type": "file", "path": "~/.Xresources"},
+    {"type": "file", "path": "~/.gitconfig"},
+    {"type": "file", "path": "~/.gtkrc-2.0"},
+    {"type": "file", "path": "~/.gtkrc-2.0.mine"},
+    {"type": "file", "path": "~/.xinitrc"},
+
+    {"type": "storage-git", "name": "main", "on": ["push"]}
+  ]
+}

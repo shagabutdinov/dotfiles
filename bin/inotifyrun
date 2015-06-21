@@ -1,0 +1,11 @@
+#!/bin/bash
+
+length=$(($#-1))
+array=${@:1:$length}
+last_arg="${!#}"
+
+while inotifywait $array; do
+  sleep 0.1
+  echo -e "\e[45;37m変更 $last_arg\e[0m"
+	eval $last_arg
+done

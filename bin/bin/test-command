@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+p ARGV
+
+if ARGV[0] == 'a'
+  p 'a is passed'
+elsif ARGV[1] == 'b'
+  p 'b is passed'
+end

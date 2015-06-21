@@ -1,0 +1,2 @@
+cd /home/leo/.wine/drive_c/BCS_Work/QUIK; 
+LANG=ru_RU.UTF-8 LC_ALL=ru_RU.UTF-8 wine /home/leo/.wine/drive_c/BCS_Work/QUIK/info.exe;

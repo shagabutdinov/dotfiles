@@ -1,0 +1,6 @@
+xrandr --newmode "2560x1440@40" 201.00  2560 2720 2984 3408  1440 1443 1448 1476 -hsync +vsync
+xrandr --addmode HDMI1 "2560x1440@40"      
+xrandr --output LVDS1 --off --output HDMI1 --mode "2560x1440@40"
+
+# cvt -r 2560 1440
+source ~/bin/ubackground

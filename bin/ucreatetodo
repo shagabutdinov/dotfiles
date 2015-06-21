@@ -1,0 +1,34 @@
+#!/usr/bin/env ruby
+
+text = `xclip -o`.strip()
+
+data = {
+  "issue":  {
+    "priority_id": 2,
+    "project_id": 46,
+    "assigned_to_id": 4,
+    "subject" => text.split("\n")[0],
+    "description" => text,
+  }
+}
+
+require 'json'
+data = JSON.generate(data)
+
+require 'shellwords'
+
+result =
+    `curl \
+        --silent \
+        --header "X-Redmine-API-Key: \`cat ~/.secret/redmine-api-key\`" \
+        --header "Content-Type: application/json" \
+        --request POST \
+        --data #{Shellwords.escape(data)}\
+        "http://rm.idfly.ru/issues.json" 2>&1`
+
+id_match = result.match(/"id":(\d+)/)
+if !id_match.nil?()
+  `notify-send "Issue ##{id_match[1]} successfully created"`
+else
+  `notify-send "Failed to create issue: #{Shellwords.escape(result)}"`
+end

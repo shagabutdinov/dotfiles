@@ -1,0 +1,19 @@
+#!/bin/bash
+
+xset r rate 200 50
+
+# setxkbmap -layout us,ru -option "grp:shift_caps_toggle,grp_led:scroll"
+setxkbmap -layout us,ru -option grp:caps_toggle,grp_led:caps
+# setxkbmap -option caps:none
+
+xmodmap -e "keycode 107 = Insert"
+xmodmap -e "keycode 218 = Insert"
+xmodmap -e "keycode 118 = Print"
+# xmodmap -e 'remove Lock = Pause'
+
+xset +fp /usr/share/fonts/local
+xset fp rehash
+
+xrdb -merge /home/leo/.Xresources
+
+# xmodmap -e 'keycode 66 = Pause'

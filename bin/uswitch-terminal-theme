@@ -1,0 +1,48 @@
+#!/usr/bin/env ruby
+
+THEME_PATH = File.expand_path('~/.config/.Xresources-themes/themes')
+
+if ARGV[0] == '--list' || ARGV[0] == '-l'
+  puts Dir.entries(THEME_PATH)[2..-1]
+  exit(0)
+end
+
+theme = ARGV[0]
+if theme == '--random' || theme == '-r'
+  themes = Dir.entries(THEME_PATH)[2..-1]
+  theme = themes[Random.rand(themes.length)]
+end
+
+`
+cat "#{THEME_PATH}/#{theme}" |
+  sed "s/\*background/URxvt*background/" |
+  sed "s/\*foreground/URxvt*foreground/" |
+  sed "s/\*color/URxvt*color/" > ~/.Xresources
+
+cat ~/.config/.Xresources.base >> ~/.Xresources
+`
+
+contents = File.read(File.expand_path('~/.Xresources'))
+
+if !contents.include?('URxvt*background')
+  contents += "
+URxvt*background: #{contents.match(/\*color0\s*:\s*(\S+)/)[1]}
+URxvt*foregound: #{contents.match(/\*color15\s*:\s*(\S+)/)[1]}
+"
+end
+
+if !contents.include?('URxvt*cursorColor')
+  contents += "
+URxvt*cursorColor: #{contents.match(/\*color14\s*:\s*(\S+)/)[1]}
+"
+end
+
+File.write(File.expand_path('~/.Xresources'),  contents)
+
+`xrdb -merge ~/.Xresources`
+
+puts "Theme switched to \"#{theme}\""
+
+`urxvt`
+
+exit(0)

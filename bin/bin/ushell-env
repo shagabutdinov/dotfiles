@@ -1,0 +1,52 @@
+export PATH=$PATH:/home/leo/.composer/vendor/bin:/usr/lib/jvm/java-8-openjdk/bin/:/home/leo/.gem/ruby/2.2.0/bin
+export BROWSER=firefox
+export APPLICATION_ENV=development
+
+export PROMPT="%{$bg[blue]%}%{$fg[white]%}%2~ 冬%{$reset_color%} "
+export GOPATH=~/src/go
+
+export TERM='rxvt-unicode'
+export COLORTERM='rxvt-unicode-256color'
+
+autoload -U select-word-style
+select-word-style bash
+
+bindkey "\e\e[D" backward-word
+bindkey "\e\e[C" forward-word
+
+autoload -U promptinit
+promptinit
+
+alias sc="sudo systemctl"
+alias scs="sudo systemctl start"
+alias scr="sudo systemctl restart"
+alias sct="sudo systemctl stop"
+alias subl="subl3 -n -w"
+alias yaourt="yaourt --noconfirm"
+alias shaitan="sudo systemctl"
+alias uo="nohup xdg-open"
+o() {
+  nohup xdg-open "$@" &
+  disown
+}
+alias ut="urxvt -cd $(pwd) &"
+alias mv=/bin/mv
+alias ms="mysql -u root"
+alias pwgen="pwgen 12"
+alias nc="sudo netctl"
+alias pm="sudo pacman"
+alias pms="sudo pacman -S"
+alias pmr="sudo pacman -R"
+alias pmro="sudo pacman -Rns \$(pacman -Qtdq)"
+alias pmq="pacman -Ql"
+alias steam="wine '/home/leo/.wine/drive_c/Program Files (x86)/Steam/Steam.exe' -no-dwrite"
+alias pql="pacman -Ql"
+alias s="subl3"
+alias x="xsel -ib"
+alias l="ls -lh"
+
+export GREP_OPTIONS=''
+export NODE_PATH="~/.node:/usr/lib/node_modules"
+export WINEARCH='win32'
+
+alias grep="grep --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn --color=auto"

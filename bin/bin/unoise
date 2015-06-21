@@ -1,0 +1,2 @@
+chromium --app=http://mynoise.net/clone.php?url=%2FNoiseMachines%2FoceanNoiseGenerator.php%3Fc%3D1%26l%3D87796900252828270000 &
+chromium --app=http://mynoise.net/clone.php?url=%2FNoiseMachines%2FjungleNoiseGenerator.php%3Fc%3D1%26l%3D24242424242424242424 &

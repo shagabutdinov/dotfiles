@@ -1,0 +1,1 @@
+sudo su -c "ualarm-time > /sys/class/rtc/rtc0/wakealarm"

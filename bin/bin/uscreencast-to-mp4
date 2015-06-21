@@ -1,0 +1,8 @@
+#!/bin/bash 
+
+if [[ $# -lt 2 || "$1" == "-h" ]]; then
+    echo usage: "$0 <input.avi> <output.mp4>"
+    exit 1
+fi
+
+ffmpeg -i $1 -acodec libfaac -b:a 128k -vcodec mpeg4 -b:v 1200k -flags +aic+mv4 $2

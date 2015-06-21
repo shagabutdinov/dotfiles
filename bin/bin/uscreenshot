@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+date = `date --rfc-3339=seconds`.strip().gsub(/[^\w:-]/, '_')
+p date
+`import -window root -display :0.0 -screen "screen_#{date}.png"`

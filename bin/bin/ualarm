@@ -1,0 +1,8 @@
+# mpc clear
+# mpc volume 100
+# mpc add "alarm/02. Enya - Caribbean Blue.mp3"
+
+amixer set Master 200 unmute
+mpg123 ~/music/alarm/caribbean-blue.mp3
+# mpc play
+

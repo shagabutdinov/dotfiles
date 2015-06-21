@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require_relative '_vpn'
+
+run("systemctl start xl2tpd.service");
+run("systemctl start openswan.service")
+sleep(0.25)
+
+run("ipsec auto --up idfly")
+run("bash -c \"echo 'c idfly' > /var/run/xl2tpd/l2tp-control\"")
+sleep(1)
+
+save_default_gateway_addr()
+
+run("ip route delete default via #{get_default_gateway_addr()}")
+run("ip route add #{get_vpn_addr()} via #{get_default_gateway_addr()}")
+run("ip route add default via #{get_ppp_addr()}")

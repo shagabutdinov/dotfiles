@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+medias = ARGV.clone()
+
+if ARGV[0] == '--duration' || ARGV[0] == '-d'
+  medias.shift()
+  duration = medias.shift()
+else
+  duration = '180'
+end
+
+medias.each() { |media|
+  `_usplitmedia #{media} #{duration}`
+}
