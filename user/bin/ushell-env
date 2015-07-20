@@ -52,8 +52,8 @@ alias ic="redmine-issue complete"
 alias ip="redmine-issue pause"
 alias id="redmine-issue description"
 
-alias bds="balmora dotfiles-submit"
-alias bdu="balmora dotfiles-update"
+alias dfs="balmora dotfiles-submit"
+alias dfu="balmora dotfiles-update"
 
 export GREP_OPTIONS=''
 export NODE_PATH="~/.node:/usr/lib/node_modules"
