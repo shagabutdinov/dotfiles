@@ -141,10 +141,10 @@ mode "resize" {
         bindsym i resize shrink height 25 px or 25 ppt
         bindsym l resize grow width 25 px or 25 ppt
 
-        bindsym Shift+j resize shrink width 2 px
-        bindsym Shift+k resize grow height 2 px
-        bindsym Shift+i resize shrink height 2 px
-        bindsym Shift+l resize grow width 2 px
+        bindsym Shift+j resize shrink width 1 px
+        bindsym Shift+k resize grow height 1 px
+        bindsym Shift+i resize shrink height 1 px
+        bindsym Shift+l resize grow width 1 px
 
         # same bindings, but for the arrow keys
         # bindsym Left resize shrink width 2 px or 2 ppt
@@ -172,6 +172,7 @@ bindsym $mod+r mode "resize"
 
 hide_edge_borders both
 new_window 1pixel
+for_window [class="^.*"] border pixel 1
 
 bindsym $mod+comma exec amixer -q sset Master 3%-
 bindsym $mod+period exec amixer -q sset Master 3%+
@@ -181,5 +182,11 @@ bindsym $mod+g exec thunar
 bindsym $mod+backslash exec subl3
 bindsym $mod+o exec firefox
 bindsym $mod+Shift+o exec google-chrome
+bindsym $mod+p exec file-roller ~/projects/personal/keys.secret/passwords.zip
+bindsym $mod+Shift+p exec leafpad ~/projects/personal/development.txt
 
-bindcode $mod+22 exec ucreatetodo # backspace
+
+bindcode $mod+shift+22 exec ucreatetodo # backspace
+bindcode $mod+ctrl+22 exec uscreenshot # backspace
+bindsym $mod+shift+comma exec xbacklight -dec 10
+bindsym $mod+shift+period exec xbacklight -inc 10
