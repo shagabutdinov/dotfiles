@@ -52,6 +52,9 @@ alias ic="redmine-issue complete"
 alias ip="redmine-issue pause"
 alias id="redmine-issue description"
 
+alias ds="balmora dotfiles-submit"
+alias du="balmora dotfiles-update"
+
 export GREP_OPTIONS=''
 export NODE_PATH="~/.node:/usr/lib/node_modules"
 export WINEARCH='win32'
