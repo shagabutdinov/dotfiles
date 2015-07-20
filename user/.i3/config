@@ -181,7 +181,7 @@ bindsym $mod+Shift+grave exec ususpend
 bindsym $mod+g exec thunar
 bindsym $mod+backslash exec subl3
 bindsym $mod+o exec firefox
-bindsym $mod+Shift+o exec google-chrome
+bindsym $mod+Shift+o exec chromium
 bindsym $mod+p exec file-roller ~/projects/personal/keys.secret/passwords.zip
 bindsym $mod+Shift+p exec leafpad ~/projects/personal/development.txt
 

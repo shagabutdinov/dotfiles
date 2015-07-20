@@ -46,6 +46,12 @@ alias x="xsel -ib"
 alias l="ls --color -hl --group-directories-first"
 alias ls="ls --color -h --group-directories-first"
 
+alias il="redmine-issue list"
+alias is="redmine-issue start"
+alias ic="redmine-issue complete"
+alias ip="redmine-issue pause"
+alias id="redmine-issue description"
+
 export GREP_OPTIONS=''
 export NODE_PATH="~/.node:/usr/lib/node_modules"
 export WINEARCH='win32'
