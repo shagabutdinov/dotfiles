@@ -21,7 +21,7 @@ noremap ia :redmineOpenAllIssues<CR>
 noremap ic :redmineSetIssueStatus 5<CR> | :redmineSaveIssue<CR>
 noremap ir :redmineReplyIssue 5<CR>
 noremap is :redmineSaveIssue<CR>
-noremap ip :redmineSetProject 42<CR> | :redmineSetAssignee 17<CR> | :js window.setTimeout(function() { content.document.querySelector('#issue_estimated_hours') })<CR>
+noremap it :js content.location.href = content.location.href.replace(/\/projects\/(.*?)\/.*/, '/projects/$1/time_entries/report?utf8=✓&criteria[]=user&f[]=spent_on&op[spent_on]=>t-&v[spent_on][]=14&f[]=&c[]=project&c[]=spent_on&c[]=user&c[]=activity&c[]=issue&c[]=comments&c[]=hours&columns=day&criteria[]=')<CR>
 
 noremap xR :source .vimperatorrc<CR>
 noremap E :js toggle_bottombar('on')<CR> | :open http://rm.idfly.ru/projects/
@@ -29,6 +29,8 @@ noremap e :js toggle_bottombar('on')<CR> | :open http://rm.idfly.ru/issues/
 noremap xt :open http://rm.idfly.ru/projects/todo-shagabutdinov-idfly-ru/issues?utf8=✓&set_filter=1&f[]=status_id&op[status_id]=o&f[]=tracker_id&op[tracker_id]==&v[tracker_id][]=5&f[]=assigned_to_id&op[assigned_to_id]==&v[assigned_to_id][]=me&f[]=&c[]=tracker&c[]=status&c[]=priority&c[]=subject&c[]=assigned_to&c[]=due_date&group_by=<CR>
 noremap il /На проверку<CR><CR>
 noremap iq /Текущий отчёт<CR><CR>
+noremap <A-q> :tabprevious<CR>
+noremap <A-w> :tabnext<CR>
 
 silent qmark y http://youtube.com/
 

@@ -28,7 +28,7 @@ ssh $1@$2 "
   wget --no-check-certificate http://install.ohmyz.sh -O - | sh;
   echo 'export LANG=\"en_US.UTF-8\"' >> ~/.zshrc
   echo 'export PATH=\"\$PATH:~/bin\"' >> ~/.zshrc
-  echo 'export TERM=rxvt-unicode-256color' >> ~/.zshrc
+  echo 'export TERM=rxvt-unicode' >> ~/.zshrc
   echo 'plugins=(git history-substring-search)' >> ~/.zshrc
   echo 'export PROMPT=\"%{\$bg[magenta]%}%{\$fg[white]%}\`whoami\`@\`hostname\`%{\$reset_color%} %2~: \"' >> ~/.zshrc
 "
