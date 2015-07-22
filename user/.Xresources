@@ -49,14 +49,9 @@ URxvt.perl-ext-common:      default,url-select,keyboard-select,matcher,clipboard
 
 URxvt.url-select.launcher:  chromium
 URxvt.url-select.underline: true
-
 URxvt.keysym.M-q:           perl:url-select:select_next
 URxvt.keysym.M-e:           perl:keyboard-select:activate
 URxvt.keysym.M-s:           perl:keyboard-select:search
-
-URxvt.keysym.Shift-Control-C: perl:clipboard:copy
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-
 URxvt.clipboard.autocopy:   true
 
 URxvt.url-launcher: /usr/bin/chromium
