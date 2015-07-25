@@ -10,8 +10,9 @@ run("ipsec auto --up idfly")
 run("bash -c \"echo 'c idfly' > /var/run/xl2tpd/l2tp-control\"")
 sleep(1)
 
+addr = get_ppp_addr()
 save_default_gateway_addr()
 
 run("ip route delete default via #{get_default_gateway_addr()}")
 run("ip route add #{get_vpn_addr()} via #{get_default_gateway_addr()}")
-run("ip route add default via #{get_ppp_addr()}")
+run("ip route add default via #{addr}")
