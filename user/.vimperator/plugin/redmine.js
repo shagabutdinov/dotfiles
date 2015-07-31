@@ -225,3 +225,9 @@ commands.addUserCommand(['redmineOpenAllIssues'], 'open all redmine issues ' +
 
 commands.addUserCommand(['redmineSetProject'], 'set issue project',
     redmineSetProject, {}, true);
+
+commands.addUserCommand(['redmineFocusComment'], 'set issue project',
+    redmineFocusComment, {}, true);
+
+commands.addUserCommand(['redmineReturnIssue'], 'set issue project',
+    redmineReturnIssue, {}, true);
