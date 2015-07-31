@@ -75,7 +75,7 @@ function redmineSetAssignee(userId) {
 
   var element =
     content.document.
-    querySelector('#issue_assigned_to_id  option[value="' + userId + '"]');
+    querySelector('#issue_assigned_to_id option[value="' + userId + '"]');
 
   if(element) {
     element.setAttribute('selected', 'selected');
@@ -207,6 +207,9 @@ function redmineOpenAllIssues() {
 
 commands.addUserCommand(['redmineSetIssueStatus'], 'set redmine issue status',
   redmineSetIssueStatus, {}, true);
+
+commands.addUserCommand(['redmineSetAssignee'], 'set redmine assignee',
+  redmineSetAssignee, {}, true);
 
 commands.addUserCommand(['redmineReplyIssue'], 'reply to redmine issue',
   redmineReplyIssue, {}, true);

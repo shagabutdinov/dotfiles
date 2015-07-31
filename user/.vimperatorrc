@@ -7,7 +7,7 @@ set editor=subl3
 " vim: set ft=vimperator:
 
 set focuscontent
-map q :tabonly<CR>
+map Q :tabonly<CR>
 colorscheme darkness
 highlight Hint font-size:12px; color:white; background-color:black; padding:2px; text-transform:uppercase; border-radius:5px; border:1px solid white;
 
@@ -18,10 +18,13 @@ noremap <C-e> <C-u>
 
 noremap I :js toggle_bottombar('on')<CR><Insert>
 noremap ia :redmineOpenAllIssues<CR>
-noremap ic :redmineSetIssueStatus 5<CR> | :redmineSaveIssue<CR>
+noremap ic :redmineSetIssueStatus 5<CR> | :redmineSetAssignee 4<CR> | :redmineSaveIssue<CR>
+noremap ij :redmineSetIssueStatus 6<CR> | :redmineSetAssignee 4<CR> | :redmineSaveIssue<CR>
+noremap ie :redmineSetIssueStatus 3<CR> | :redmineReturnIssue<CR> | :redmineShowComment<CR> | :redmineFocusComment<CR>
+noremap it :redmineShowComment<CR> | :redmineFocusComment<CR>
 noremap ir :redmineReplyIssue 5<CR>
 noremap is :redmineSaveIssue<CR>
-noremap it :js content.location.href = content.location.href.replace(/\/projects\/(.*?)\/.*/, '/projects/$1/time_entries/report?utf8=✓&criteria[]=user&f[]=spent_on&op[spent_on]=>t-&v[spent_on][]=14&f[]=&c[]=project&c[]=spent_on&c[]=user&c[]=activity&c[]=issue&c[]=comments&c[]=hours&columns=day&criteria[]=')<CR>
+noremap iR :js content.location.href = content.location.href.replace(/\/projects\/(.*?)\/.*/, '/projects/$1/time_entries/report?utf8=✓&criteria[]=user&f[]=spent_on&op[spent_on]=>t-&v[spent_on][]=14&f[]=&c[]=project&c[]=spent_on&c[]=user&c[]=activity&c[]=issue&c[]=comments&c[]=hours&columns=day&criteria[]=')<CR>
 
 noremap xR :source .vimperatorrc<CR>
 noremap E :js toggle_bottombar('on')<CR> | :open http://rm.idfly.ru/projects/
@@ -39,12 +42,13 @@ noremap xc :silent execute "!chromium \"" + content.location.href + "\" &"<CR>
 set hto=300
 
 "javascript to hide statusbar
-noremap <silent> <F8> :js toggle_bottombar()<CR>
+noremap <silent> q :js toggle_bottombar()<CR>
 noremap : :js toggle_bottombar('on')<CR>:
 noremap o :js toggle_bottombar('on')<CR>o
 noremap O :js toggle_bottombar('on')<CR>O
 noremap t :js toggle_bottombar('on')<CR>t
 noremap T :js toggle_bottombar('on')<CR>t
+noremap y :js toggle_bottombar('on')<CR>y
 noremap / :js toggle_bottombar('on')<CR>/
 cnoremap <CR> <CR>:js toggle_bottombar('off')<CR>
 cnoremap <Esc> <Esc>:js toggle_bottombar('off')<CR>
