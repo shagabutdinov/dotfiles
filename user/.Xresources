@@ -31,6 +31,7 @@ URxvt*color7:                  #eee8d5
 URxvt*color15:                 #fdf6e3
 
 URxvt*background:              #000000
+URxvt.background:              #000000
 URxvt*foreground:              #c0c0c0
 URxvt*fading:                  0
 URxvt*fadeColor:               #000000
