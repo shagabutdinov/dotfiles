@@ -188,5 +188,5 @@ bindsym $mod+Shift+p exec leafpad ~/projects/personal/development.txt
 
 bindcode $mod+shift+22 exec ucreatetodo # backspace
 bindcode $mod+ctrl+22 exec uscreenshot # backspace
-bindsym $mod+shift+comma exec xbacklight -dec 10
-bindsym $mod+shift+period exec xbacklight -inc 10
+bindsym $mod+shift+comma exec xbacklight -dec 5
+bindsym $mod+shift+period exec xbacklight -inc 5
