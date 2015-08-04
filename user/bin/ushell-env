@@ -52,7 +52,7 @@ alias ric="redmine-issue complete"
 alias rip="redmine-issue pause"
 alias rid="redmine-issue description"
 
-alias dfs="balmora dotfiles-submit"
+alias dfp="balmora dotfiles-submit"
 alias dfu="balmora dotfiles-update"
 
 export GREP_OPTIONS=''
