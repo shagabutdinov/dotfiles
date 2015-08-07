@@ -61,3 +61,4 @@ export WINEARCH='win32'
 
 alias grep="grep --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn --color=auto"
 alias tree="tree --dirsfirst"
+alias ps="ps -xau"
