@@ -30,8 +30,9 @@ noremap xR :source .vimperatorrc<CR>
 noremap E :js toggle_bottombar('on')<CR> | :open http://rm.idfly.ru/projects/
 noremap e :js toggle_bottombar('on')<CR> | :open http://rm.idfly.ru/issues/
 noremap xt :open http://rm.idfly.ru/projects/todo-shagabutdinov-idfly-ru/issues?utf8=✓&set_filter=1&f[]=status_id&op[status_id]=o&f[]=tracker_id&op[tracker_id]==&v[tracker_id][]=5&f[]=assigned_to_id&op[assigned_to_id]==&v[assigned_to_id][]=me&f[]=&c[]=tracker&c[]=status&c[]=priority&c[]=subject&c[]=assigned_to&c[]=due_date&group_by=<CR>
+noremap im :open http://rm.idfly.ru/issues?query_id=2<CR>
 noremap il /На проверку<CR><CR>
-noremap iq /Текущий отчёт<CR><CR>
+noremap iq /В работе<CR><CR>
 noremap <A-q> :tabprevious<CR>
 noremap <A-w> :tabnext<CR>
 
