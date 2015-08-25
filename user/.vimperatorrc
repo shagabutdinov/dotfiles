@@ -15,6 +15,9 @@ highlight Hint font-size:12px; color:white; background-color:black; padding:2px;
 inoremap <ESC> <ESC> | :js content.document.querySelector(':focus') && window.setTimeout(function() { content.document.querySelector(':selected').blur() })<CR>
 
 noremap <C-e> <C-u>
+noremap gb <C-o>
+noremap gs gf
+noremap gf <C-i>
 
 noremap I :js toggle_bottombar('on')<CR><Insert>
 noremap ia :redmineOpenAllIssues<CR>
