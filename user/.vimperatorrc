@@ -15,6 +15,9 @@ highlight Hint font-size:12px; color:white; background-color:black; padding:2px;
 inoremap <ESC> <ESC> | :js content.document.querySelector(':focus') && window.setTimeout(function() { content.document.querySelector(':selected').blur() })<CR>
 
 noremap <C-e> <C-u>
+noremap gb <C-o>
+noremap gs gf
+noremap gf <C-i>
 
 noremap I :js toggle_bottombar('on')<CR><Insert>
 noremap ia :redmineOpenAllIssues<CR>
@@ -31,7 +34,7 @@ noremap E :js toggle_bottombar('on')<CR> | :open http://rm.idfly.ru/projects/
 noremap e :js toggle_bottombar('on')<CR> | :open http://rm.idfly.ru/issues/
 noremap xt :open http://rm.idfly.ru/projects/todo-shagabutdinov-idfly-ru/issues?utf8=✓&set_filter=1&f[]=status_id&op[status_id]=o&f[]=tracker_id&op[tracker_id]==&v[tracker_id][]=5&f[]=assigned_to_id&op[assigned_to_id]==&v[assigned_to_id][]=me&f[]=&c[]=tracker&c[]=status&c[]=priority&c[]=subject&c[]=assigned_to&c[]=due_date&group_by=<CR>
 noremap il /На проверку<CR><CR>
-noremap iq /Текущие<CR><CR>
+noremap iq /В работе<CR><CR>
 noremap <A-q> :tabprevious<CR>
 noremap <A-w> :tabnext<CR>
 
