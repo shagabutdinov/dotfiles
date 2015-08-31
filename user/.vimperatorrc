@@ -36,8 +36,12 @@ noremap xt :open http://rm.idfly.ru/projects/todo-shagabutdinov-idfly-ru/issues?
 noremap im :open http://rm.idfly.ru/issues?query_id=2<CR>
 noremap il /На проверку<CR><CR>
 noremap iq /В работе<CR><CR>
+
 noremap <A-q> :tabprevious<CR>
 noremap <A-w> :tabnext<CR>
+
+inoremap <A-q> <ESC><ESC><ESC>:tabprevious<CR>
+inoremap <A-w> <ESC><ESC><ESC>:tabnext<CR>
 
 "silent qmark y http://youtube.com/
 
