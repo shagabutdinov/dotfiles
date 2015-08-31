@@ -63,6 +63,6 @@ alias grep="grep --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclu
 alias tree="tree --dirsfirst"
 alias ps="ps -xau"
 alias d="docker"
-alias docker="docker"
 alias wic="nmcli -p con up id"
 alias wid="nmcli -p con down id"
+alias cal="cal -3m"

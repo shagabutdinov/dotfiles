@@ -20,7 +20,7 @@ require 'shellwords'
 result =
     `curl \
         --silent \
-        --header "X-Redmine-API-Key: \`cat ~/.secret/redmine-api-key\`" \
+        --header "X-Redmine-API-Key: \`cat ~/projects/keys/redmine.key\`" \
         --header "Content-Type: application/json" \
         --request POST \
         --data #{Shellwords.escape(data)}\
