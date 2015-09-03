@@ -66,3 +66,5 @@ alias d="docker"
 alias wic="nmcli -p con up id"
 alias wid="nmcli -p con down id"
 alias cal="cal -3m"
+
+umask 002 
