@@ -68,4 +68,6 @@ alias wid="nmcli -p con down id"
 alias cal="cal -3m"
 alias uwhatsapp="chromium --app=https://web.whatsapp.com"
 
+alias goapp="/opt/google-appengine-go/goapp"
+
 umask 002 
