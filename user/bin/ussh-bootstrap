@@ -20,8 +20,6 @@ ssh $1@$2 "
     # install zsh
     yum -y install zsh wget git vim ruby;
 	mkdir ~/bin;
-	echo '`cat ~/bin/unewdb`' > ~/bin/unewdb;
-	chmod u+x ~/bin/unewdb;
   fi
 
   export ZSH=~/.oh-my-zsh
