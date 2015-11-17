@@ -69,5 +69,7 @@ alias cal="cal -3m"
 alias uwhatsapp="chromium --app=https://web.whatsapp.com"
 
 alias goapp="/opt/google-appengine-go/goapp"
+alias b="bundle exec"
+alias bi="bundle install"
 
-umask 002 
+umask 002
