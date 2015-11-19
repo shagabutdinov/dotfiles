@@ -72,4 +72,7 @@ alias goapp="/opt/google-appengine-go/goapp"
 alias b="bundle exec"
 alias bi="bundle install"
 
+alias r="rails"
+alias rg="rails generate"
+
 umask 002
