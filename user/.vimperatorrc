@@ -6,7 +6,7 @@ set gui=none
 set editor=subl3
 " vim: set ft=vimperator:
 
-set focuscontent
+"set focuscontent
 map Q :tabonly<CR>
 colorscheme darkness
 highlight Hint font-size:12px; color:white; background-color:black; padding:2px; text-transform:uppercase; border-radius:5px; border:1px solid white;

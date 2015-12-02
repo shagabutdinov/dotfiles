@@ -17,6 +17,18 @@ bindkey "\e\e[C" forward-word
 autoload -U promptinit
 promptinit
 
+zle -N prepend-sudo prepend_sudo
+function prepend_sudo() {
+        if [ "$BUFFER" ]; then
+                BUFFER="sudo "$BUFFER
+        else
+                BUFFER="sudo "$(fc -ln -1)
+        fi
+        CURSOR=$(($CURSOR+5))
+}
+
+bindkey "^T" prepend-sudo
+
 alias sc="sudo systemctl"
 alias scs="sudo systemctl start"
 alias scr="sudo systemctl restart"
@@ -62,9 +74,6 @@ export WINEARCH='win32'
 alias grep="grep --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn --color=auto"
 alias tree="tree --dirsfirst"
 alias ps="ps -xau"
-alias d="docker"
-alias wic="nmcli -p con up id"
-alias wid="nmcli -p con down id"
 alias cal="cal -3m"
 alias uwhatsapp="chromium --app=https://web.whatsapp.com"
 
@@ -74,5 +83,19 @@ alias bi="bundle install"
 
 alias r="rails"
 alias rg="rails generate"
+
+alias wd="nmcli -p dev wifi list"
+alias wc="nmcli -p dev wifi connect"
+alias wl="nmcli -p con show"
+alias ws="nmcli -p con show --active"
+alias wu="nmcli -p con up id"
+
+alias d="docker"
+alias de="docker exec -i -t"
+alias dp="docker ps"
+alias dl="docker logs"
+
+alias G="| grep"
+
 
 umask 002
