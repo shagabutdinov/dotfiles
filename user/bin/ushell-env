@@ -92,10 +92,12 @@ alias wu="nmcli -p con up id"
 
 alias d="docker"
 alias de="docker exec -i -t"
-alias dp="docker ps"
+alias dp='docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
 alias dl="docker logs"
+alias dc="docker-compose -f"
+alias dr="d run -i -t"
 
-alias G="| grep"
-
+alias -g G="| grep"
+alias uskypeweb="chromium -app=https://web.skype.com/en/"
 
 umask 002
