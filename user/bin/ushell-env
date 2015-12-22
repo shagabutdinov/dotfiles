@@ -93,11 +93,18 @@ alias wu="nmcli -p con up id"
 alias d="docker"
 alias de="docker exec -i -t"
 alias dp='docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
+alias dr="docker run -i -t"
 alias dl="docker logs"
-alias dc="docker-compose -f"
-alias dr="d run -i -t"
+alias dlf="docker logs --follow"
+alias da="docker attach --no-stdin"
 
+alias c="docker-compose -f"
+alias cl="docker-compose -f config/local/development.yml"
+alias ct="docker-compose -f config/local/test.yml"
+
+alias -g B="bundle exec"
 alias -g G="| grep"
+
 alias uskypeweb="chromium -app=https://web.skype.com/en/"
 
 umask 002

@@ -1,16 +1,15 @@
 #!/usr/bin/env ruby
 
+require 'securerandom'
+
 text = `xclip -o`.strip()
 
-data = {
-  "issue":  {
-    "priority_id": 2,
-    "project_id": 46,
-    "assigned_to_id": 4,
-    "subject" => text.split("\n")[0],
-    "description" => text,
-  }
-}
+data = [{
+  "type": "item_add",
+  "temp_id": SecureRandom.uuid,
+  "uuid": SecureRandom.uuid,
+  "args": {"content": text}
+}]
 
 require 'json'
 data = JSON.generate(data)
@@ -20,15 +19,13 @@ require 'shellwords'
 result =
     `curl \
         --silent \
-        --header "X-Redmine-API-Key: \`cat ~/projects/keys/redmine.key\`" \
-        --header "Content-Type: application/json" \
-        --request POST \
-        --data #{Shellwords.escape(data)}\
-        "http://rm.idfly.ru/issues.json" 2>&1`
+        -d token=fc651a6c216c2a6c8099cd92dbfbda24a23c411b \
+        -d commands=#{Shellwords.escape(data)} \
+        "https://todoist.com/API/v6/sync" 2>&1`
 
-id_match = result.match(/"id":(\d+)/)
-if !id_match.nil?()
-  `notify-send "Issue ##{id_match[1]} successfully created"`
+success = result.match(/ok/)
+if success.nil?()
+  `notify-send "Failed to create task: #{Shellwords.escape(result)}"`
 else
-  `notify-send "Failed to create issue: #{Shellwords.escape(result)}"`
+  `notify-send "Task successfully created"`
 end
