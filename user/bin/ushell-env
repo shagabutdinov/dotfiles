@@ -102,6 +102,12 @@ alias c="docker-compose -f"
 alias cl="docker-compose -f config/local/development.yml"
 alias ct="docker-compose -f config/local/test.yml"
 
+alias gpf="git push --force"
+alias ge="git rebase"
+alias gei="git rebase --interactive"
+alias gec="git rebase --continue"
+alias gea="git rebase --abort"
+
 alias -g B="bundle exec"
 alias -g G="| grep"
 

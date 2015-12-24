@@ -20,6 +20,12 @@ echo "Number of chunks: $chunks"
 # For each chunk
 # Below for loop will not work..
 # for i in {1..$chunks}
-for (( c=1; c<=$chunks; c++ ))
-  do ffmpeg -i "$filename" -ss $[ ($c-1)*$chunk_duration ].0 -t $chunk_duration.0 -vcodec copy -acodec copy -strict -2 "${filename%.*}_$c.${filename##*.}"
+for (( c=1; c<=$chunks; c++ )) do
+  number=$c
+  if [ "${#number}" == '1' ]; then
+    number="0$c"
+    echo 1
+  fi
+
+  ffmpeg -i "$filename" -ss $[ ($c-1)*$chunk_duration ].0 -t $chunk_duration.0 -vcodec copy -acodec copy -strict -2 "${filename%.*}_$number.${filename##*.}"
 done
