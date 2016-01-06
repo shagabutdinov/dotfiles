@@ -16,10 +16,12 @@ data = JSON.generate(data)
 
 require 'shellwords'
 
+token = File.read(File.expand_path('~/.todoist')).strip
+
 result =
     `curl \
         --silent \
-        -d token=fc651a6c216c2a6c8099cd92dbfbda24a23c411b \
+        -d token=#{token} \
         -d commands=#{Shellwords.escape(data)} \
         "https://todoist.com/API/v6/sync" 2>&1`
 

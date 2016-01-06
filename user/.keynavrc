@@ -1,0 +1,37 @@
+clear
+
+super+grave start,grid 4x3
+
+Alt_L+j move-left,warp
+Alt_L+i move-up,warp
+Alt_L+l move-right,warp
+Alt_L+k move-down,warp
+
+u cell-select 1,warp
+j cell-select 2,warp
+m cell-select 3,warp
+
+i cell-select 4,warp
+k cell-select 5,warp
+comma cell-select 6,warp
+
+o cell-select 7,warp
+l cell-select 8,warp
+period cell-select 9,warp
+
+p cell-select 10,warp
+semicolon cell-select 11,warp
+slash cell-select 12,warp
+
+space click 1
+ctrl+space click 3
+
+shift+space drag 1
+shift+ctrl+space drag 3
+
+q history-back
+
+Tab grid 1x1,cursorzoom 12 12,warp
+
+Escape end
+Enter end

@@ -99,9 +99,12 @@ alias dlf="docker logs --follow"
 alias da="docker attach --no-stdin"
 
 alias c="docker-compose -f"
-alias cl="docker-compose -f config/local/development.yml"
+alias cm="docker-compose -f config/local/main.yml"
+alias ca="docker-compose -f config/local/admin.yml"
 alias ct="docker-compose -f config/local/test.yml"
 
+alias gs="git commit -a && git push"
+alias gsa="git commit -a --amend && git push --force"
 alias gpf="git push --force"
 alias ge="git rebase"
 alias gei="git rebase --interactive"
