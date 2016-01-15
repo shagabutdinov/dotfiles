@@ -72,3 +72,5 @@ autoload -U compinit
 compinit
 
 source ~/bin/ushell-env
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
