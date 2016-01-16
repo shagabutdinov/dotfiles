@@ -1,0 +1,526 @@
+<snippets>
+
+  <!-- input -->
+
+	<snippet>
+		<content><![CDATA[
+<div $1>
+	${0:$selection}
+</div>
+]]></content>
+		<commands>
+			[
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>d</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<context><![CDATA[
+			[
+				{"key": "selection_empty", "operator": "equal", "operand": false},
+				"or",
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
+			]
+		]]></context>
+		<description>elements: div with selection</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<div $1>$0</div>
+]]></content>
+		<tabTrigger>d</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<context><![CDATA[
+			[
+				{"key": "selection_empty", "operator": "equal", "operand": true},
+			]
+		]]></context>
+		<description>elements: div without selection</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<input $1>
+]]></content>
+		<tabTrigger>in</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<description>elements: input</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+type="$1" $0
+]]></content>
+		<trigger>t</trigger>
+		<scope>meta.tag(?!.*?string)</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "<input\\s*t$"},
+			]
+		]]></context>
+		<description>elements: input type</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+button
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>b</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*b$"},
+			]
+		]]></context>
+		<description>elements: input type button</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+checkbox
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>c</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*c$"},
+			]
+		]]></context>
+		<description>elements: input type checkbox</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+color
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>C</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*C$"},
+			]
+		]]></context>
+		<description>elements: input type color</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+date
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>d</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*d$"},
+			]
+		]]></context>
+		<description>elements: input type date</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+datetime
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>D</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*D$"},
+			]
+		]]></context>
+		<description>elements: input type datetime</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+datetime
+-local]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>l</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*l$"},
+			]
+		]]></context>
+		<description>elements: input type datetime</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+email
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>e</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*e$"},
+			]
+		]]></context>
+		<description>elements: input type email</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+file
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>f</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*f$"},
+			]
+		]]></context>
+		<description>elements: input type file</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+hidden
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>h</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*h$"},
+			]
+		]]></context>
+		<description>elements: input type hidden</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+image
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>i</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*i$"},
+			]
+		]]></context>
+		<description>elements: input type image</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+month
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>m</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*m$"},
+			]
+		]]></context>
+		<description>elements: input type month</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+number
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>n</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*n$"},
+			]
+		]]></context>
+		<description>elements: input type number</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+password
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>p</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*p$"},
+			]
+		]]></context>
+		<description>elements: input type password</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+radio
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>r</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*r$"},
+			]
+		]]></context>
+		<description>elements: input type radio</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+range
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>RA</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*A$"},
+			]
+		]]></context>
+		<description>elements: input type range</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+reset
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>RE</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*E$"},
+			]
+		]]></context>
+		<description>elements: input type reset</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+search
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>S</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*S$"},
+			]
+		]]></context>
+		<description>elements: input type search</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+submit
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>s</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*s$"},
+			]
+		]]></context>
+		<description>elements: input type submit</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+tel
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>T</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*T$"},
+			]
+		]]></context>
+		<description>elements: input type tel</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+text
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>t</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*t$"},
+			]
+		]]></context>
+		<description>elements: input type text</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+time
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>i</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*i$"},
+			]
+		]]></context>
+		<description>elements: input type time</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+url
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>u</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*u$"},
+			]
+		]]></context>
+		<description>elements: input type url</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+week
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "next_field"},
+			]
+		</commands>
+		<trigger>w</trigger>
+		<scope>meta\.tag\.inline.*string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type=\"\\s*w$"},
+			]
+		]]></context>
+		<description>elements: input type week</description>
+	</snippet>
+
+</snippets>

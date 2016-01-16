@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+' +
+	$0
+]]></content>
+	<commands>
+		[
+			"RUN",
+			{"command": "move", "args": {"by": "characters", "forward": true}},
+		]
+	</commands>
+	<tabTrigger>'</tabTrigger>
+	<scope>source.js</scope>
+	<description>quote plus</description>
+</snippet>

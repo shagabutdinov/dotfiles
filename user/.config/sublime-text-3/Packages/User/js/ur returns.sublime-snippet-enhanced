@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+returns($1)
+]]></content>
+	<tabTrigger>ur</tabTrigger>
+	<scope>source.js</scope>
+	<description>returns</description>
+</snippet>

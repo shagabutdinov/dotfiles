@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+=== true
+]]></content>
+	<tabTrigger>et</tabTrigger>
+	<scope>source.js</scope>
+	<description>equal true</description>
+</snippet>

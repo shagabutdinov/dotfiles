@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+throw new $1("$2")
+]]></content>
+	<tabTrigger>th</tabTrigger>
+	<scope>source.java</scope>
+	<description>throw new exception</description>
+</snippet>

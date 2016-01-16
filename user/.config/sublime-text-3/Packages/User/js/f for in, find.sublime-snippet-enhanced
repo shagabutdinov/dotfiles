@@ -1,0 +1,68 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+for(var $1Index in $2) {
+	var $3 = $2[$1Index];
+	${0:$TM_SELECTED_TEXT}
+}
+]]>
+		</content>
+		<tabTrigger>f</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "selection_empty", "operator": "equal", "operand": true},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*f$"},
+				{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "(\\.|\\))\\s*f$"},
+			]
+		</context>
+		<description>for in</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+false
+]]>
+		</content>
+		<tabTrigger>f</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "selection_empty", "operator": "equal", "operand": true},
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "^\\s*f$"},
+				{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "(\\.|\\))\\s*f$"},
+			]
+		</context>
+		<description>for in</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+find(${1:$selection__or__last_assigned_variable})
+]]>
+		</content>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {
+		  			"file": "Packages/User/macro/add_semicolon_and_ensure_dot_before_and_select_token.sublime-macro",
+		  		}
+		  	},
+
+		  	"RUN",
+		  ]
+		]]></commands>
+		<tabTrigger>f</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "selection_empty", "operator": "equal", "operand": true},
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "(\\.|\\))\\s*f$"},
+			]
+		</context>
+		<description>for in</description>
+	</snippet>
+
+</snippets>

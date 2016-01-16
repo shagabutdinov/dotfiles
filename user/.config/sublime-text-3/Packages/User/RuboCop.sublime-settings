@@ -1,0 +1,4 @@
+{
+  "check_for_rvm": false,
+  "rubocop_command": "bundle exec rubocop",
+}

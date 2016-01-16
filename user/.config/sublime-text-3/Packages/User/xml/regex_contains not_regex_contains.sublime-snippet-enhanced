@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+not_regex_contains
+]]></content>
+	<tabTrigger>regex_contains</tabTrigger>
+	<scope>text.xml</scope>
+	<description>not_regex_contains</description>
+</snippet>

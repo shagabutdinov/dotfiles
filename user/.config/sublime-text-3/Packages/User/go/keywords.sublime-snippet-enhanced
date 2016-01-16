@@ -1,0 +1,262 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+package main
+]]></content>
+		<trigger>p</trigger>
+		<scope>source.go(?!=.*string)</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^p$"},
+				{"key": "nesting", "operator": "equal", "operand": null},
+			]
+		]]></context>
+		<description>package main</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+import (
+	"$0"
+)
+]]></content>
+		<commands>
+			[
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				{"command": "replace_text_by_regexp", "args": {"regexp": "\\s*", "replacement": ""}},
+				"RUN",
+			]
+		</commands>
+		<trigger>i</trigger>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^i$"},
+				{"key": "nesting", "operator": "equal", "operand": null},
+			]
+		]]></context>
+		<scope>source.go(?!=.*string)</scope>
+		<description>import</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+const (
+	${0:$selection}
+)
+]]></content>
+		<commands>
+			[
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				{"command": "replace_text_by_regexp", "args": {"regexp": "\\s*", "replacement": ""}},
+				"RUN",
+			]
+		</commands>
+		<trigger>c</trigger>
+		<scope>source.go(?!=.*string)</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^c$"},
+				{"key": "nesting", "operator": "equal", "operand": null},
+			]
+		]]></context>
+		<description>const</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+iota
+]]></content>
+		<trigger>i</trigger>
+		<scope>source.go(?!=.*string)</scope>
+		<context><![CDATA[
+			[
+				{"key": "called_method", "operator": "equal", "operand": "const"},
+			]
+		]]></context>
+		<description>const</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+var (
+	${0:$selection}
+)
+]]></content>
+		<commands>
+			[
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				{"command": "replace_text_by_regexp", "args": {"regexp": "\\s*", "replacement": ""}},
+				"RUN",
+			]
+		</commands>
+		<trigger>v</trigger>
+		<scope>source.go(?!=.*string)</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^v$"},
+				{"key": "nesting", "operator": "equal", "operand": null},
+			]
+		]]></context>
+		<description>var</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+var ${1:varname} ${2:vartype}
+]]></content>
+		<tabTrigger>v</tabTrigger>
+		<scope>source.go</scope>
+		<description>var</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+false
+]]></content>
+		<tabTrigger>f</tabTrigger>
+		<scope>source.go(?!=.*string)</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w\\[\\{\\(,=:]\\s*f$"},
+			]
+		]]></context>
+		<order>5</order>
+		<description>false</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+true
+]]></content>
+		<tabTrigger>t</tabTrigger>
+		<scope>source.go(?!=.*string)</scope>
+		<description>false</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+nil
+]]></content>
+		<tabTrigger>n</tabTrigger>
+		<scope>source.go(?!=.*string)</scope>
+		<description>nil</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+return err
+]]></content>
+		<tabTrigger>re</tabTrigger>
+		<scope>source.go</scope>
+		<description>return err</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+return false
+]]></content>
+		<tabTrigger>rf</tabTrigger>
+		<scope>source.go</scope>
+		<description>return false</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+return nil
+]]></content>
+		<tabTrigger>rn</tabTrigger>
+		<scope>source.go</scope>
+		<description>return nil</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+return $0
+]]></content>
+		<tabTrigger>r</tabTrigger>
+		<scope>source.go</scope>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+return result
+]]></content>
+		<tabTrigger>rr</tabTrigger>
+		<scope>source.go</scope>
+		<description>return result</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+return true
+]]></content>
+		<tabTrigger>rt</tabTrigger>
+		<scope>source.go</scope>
+		<description>return true</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+return nil, err
+]]></content>
+		<tabTrigger>rw</tabTrigger>
+		<scope>source.go</scope>
+		<description>return nil err</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+len(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "select_current_token_tail",
+					"context": [
+						{"key": "following_text_end", "operator": "regex_contains", "operand": "^[\\w'\"(\\[]"},
+					]
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>l</tabTrigger>
+		<scope>source.go</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\S\\s*l$"},
+			]
+		]]></context>
+		<order>5</order>
+		<description>return nil err</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+${trigger1} := append(${1:${trigger1}}, $0)
+]]></content>
+		<tabTriggerRegexp>(\w+)\s*:=\s*a</tabTriggerRegexp>
+		<scope>source.go</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "=\\s*a$"},
+			]
+		]]></context>
+		<description>return nil err</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+${trigger1} = append(${1:${trigger1}}, $0)
+]]></content>
+		<tabTriggerRegexp>(\w+)\s*=\s*a</tabTriggerRegexp>
+		<scope>source.go</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "=\\s*a$"},
+			]
+		]]></context>
+		<description>return nil err</description>
+	</snippet>
+
+</snippets>

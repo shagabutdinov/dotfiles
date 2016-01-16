@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+IdFly.Js.Callback.resolve($1)
+]]></content>
+	<tabTrigger>cr</tabTrigger>
+	<scope>source.js</scope>
+	<description>idfly js callback resolve</description>
+</snippet>

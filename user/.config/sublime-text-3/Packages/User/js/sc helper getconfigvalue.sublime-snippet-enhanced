@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+$1: helper.getConfigValue('${2:$1}'),
+]]></content>
+	<tabTrigger>sc</tabTrigger>
+	<scope>source.js</scope>
+	<description>helper getconfigvalue</description>
+</snippet>

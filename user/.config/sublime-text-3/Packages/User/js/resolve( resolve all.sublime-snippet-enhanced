@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+resolveAll(${1:$selection__or__last_assigned_variable})
+]]></content>
+	<commands><![CDATA[
+	  [
+		  {
+		  	"command": "run_macro_file_with_context",
+		  	"args": {
+		  		"file": "Packages/User/macro/add_semicolon_and_ensure_dot_before_and_select_token.sublime-macro",
+		  	}
+		  },
+
+	  	"RUN",
+	  ]
+	]]></commands>
+	<tabTrigger>ra</tabTrigger>
+	<scope>source.js</scope>
+	<description>remove</description>
+</snippet>

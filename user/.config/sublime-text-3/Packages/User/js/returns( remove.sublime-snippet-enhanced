@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+remove(${1:$selection__or__last_assigned_variable})
+]]></content>
+	<commands><![CDATA[
+	  [
+	  	{
+	  		"command": "right_delete",
+	  	},
+
+	  	{
+	  		"command": "run_macro_file_with_context",
+	  		"args": {
+	  			"file": "Packages/User/macro/add_semicolon_and_ensure_dot_before_and_select_token.sublime-macro",
+	  		}
+	  	},
+
+	  	"RUN",
+	  ]
+	]]></commands>
+	<tabTrigger>returns(</tabTrigger>
+	<scope>source.js</scope>
+	<context>
+		[
+			{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "IdFly\\.Js\\.Callback\\.r$"},
+		]
+	</context>
+	<description>remove</description>
+</snippet>

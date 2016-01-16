@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+import sublime
+import sublime_plugin
+]]></content>
+	<tabTrigger>is</tabTrigger>
+	<scope>source.python</scope>
+	<description>import sublime packages</description>
+</snippet>

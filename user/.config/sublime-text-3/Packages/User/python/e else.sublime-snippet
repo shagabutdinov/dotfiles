@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+else:
+	$0
+]]></content>
+	<tabTrigger>e</tabTrigger>
+	<scope>source.python</scope>
+	<context>
+		[
+			{"key": "selection_empty", "operator": "equal", "operand": true},
+			{"key": "preceding_text_b", "operator": "regex_contains", "operand": "^\\s*e?$"},
+		]
+	</context>
+	<description>else</description>
+</snippet>

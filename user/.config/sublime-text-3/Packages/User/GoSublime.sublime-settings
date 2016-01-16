@@ -1,0 +1,8 @@
+{
+  "env": {
+    "GOPATH": "/home/leo/src/go",
+  },
+  "fmt_cmd": [
+    "goimports"
+  ]
+}

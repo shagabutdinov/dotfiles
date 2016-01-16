@@ -1,0 +1,67 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+${1:LEFT} JOIN `$2`$3 ON `${4:$2}`.`${5:id}` = `$6`.`${7:id}`
+]]></content>
+		<tabTrigger>j</tabTrigger>
+		<trigger>j</trigger>
+		<scope>source.sql</scope>
+		<context><![CDATA[
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*SELECT"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		]]></context>
+		<description>left join</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+WHERE $0
+]]></content>
+		<tabTrigger>w</tabTrigger>
+		<trigger>w</trigger>
+		<scope>source.sql</scope>
+		<context><![CDATA[
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*SELECT"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		]]></context>
+		<description>where</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+LIMIT $0
+]]></content>
+		<tabTrigger>l</tabTrigger>
+		<trigger>l</trigger>
+		<scope>source.sql</scope>
+		<context><![CDATA[
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*SELECT"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		]]></context>
+		<description>limit</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+OFFSET $0
+]]></content>
+		<tabTrigger>o</tabTrigger>
+		<trigger>o</trigger>
+		<scope>source.sql</scope>
+		<context><![CDATA[
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*SELECT"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		]]></context>
+		<description>limit</description>
+	</snippet>
+
+</snippets>

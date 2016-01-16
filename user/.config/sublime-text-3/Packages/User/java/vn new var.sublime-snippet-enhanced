@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+${1:type} ${2:${1/^([A-Z])(.*)$/\l$1$2/ig}} = new ${1:type}();
+]]></content>
+	<tabTrigger>vn</tabTrigger>
+	<scope>source.java</scope>
+	<description>handler handler new handler</description>
+</snippet>

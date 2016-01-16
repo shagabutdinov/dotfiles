@@ -1,0 +1,77 @@
+<snippets>
+
+  <snippet>
+    <content><![CDATA[
+sinon.stub()
+]]></content>
+    <tabTrigger>ss</tabTrigger>
+    <scope>source.coffee</scope>
+    <description>test: sinon.stub</description>
+  </snippet>
+
+  <snippet>
+    <content><![CDATA[
+sinon.spy($1)
+]]></content>
+    <tabTrigger>sy</tabTrigger>
+    <scope>source.coffee</scope>
+    <description>test: sinon.spy</description>
+  </snippet>
+
+  <snippet>
+    <content><![CDATA[
+callCount
+]]></content>
+    <tabTrigger>cc</tabTrigger>
+    <scope>source.coffee</scope>
+    <context><![CDATA[
+    	[
+    		{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.cc$"},
+    	]
+    ]]></context>
+    <description>test: callCount</description>
+  </snippet>
+
+  <snippet>
+    <content><![CDATA[
+getCall($1)
+]]></content>
+    <tabTrigger>gc</tabTrigger>
+    <scope>source.coffee</scope>
+    <context><![CDATA[
+    	[
+    		{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.gc$"},
+    	]
+    ]]></context>
+    <description>test: getCall</description>
+  </snippet>
+
+  <snippet>
+    <content><![CDATA[
+args
+]]></content>
+    <tabTrigger>a</tabTrigger>
+    <scope>source.coffee</scope>
+    <context><![CDATA[
+    	[
+    		{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.a$"},
+    	]
+    ]]></context>
+    <description>test: args</description>
+  </snippet>
+
+  <snippet>
+    <content><![CDATA[
+returns($1)
+]]></content>
+    <tabTrigger>r</tabTrigger>
+    <scope>source.coffee</scope>
+    <context><![CDATA[
+    	[
+    		{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.r$"},
+    	]
+    ]]></context>
+    <description>test: returns</description>
+  </snippet>
+
+</snippets>

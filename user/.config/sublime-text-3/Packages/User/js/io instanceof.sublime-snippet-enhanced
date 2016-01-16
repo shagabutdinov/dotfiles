@@ -1,0 +1,13 @@
+<snippet>
+		<content><![CDATA[
+instanceof $0
+]]></content>
+		<tabTrigger>io</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "\\.io$"},
+			]
+		</context>
+		<description></description>
+</snippet>

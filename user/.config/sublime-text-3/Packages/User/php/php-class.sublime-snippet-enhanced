@@ -1,0 +1,315 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+class ${1:$class}${2: extends $3}
+{
+	${0:$selection}
+}
+]]></content>
+		<tabTrigger>C</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "filename", "operator": "not_regex_contains", "operand": "/controllers/"},
+				{"key": "filename", "operator": "not_regex_contains", "operand": "/models/"},
+			]
+		</context>
+		<description>class</description>
+		<eval><![CDATA[
+			{
+				'class': __import__('User').snippets.get_class_name(view.file_name()) or '',
+			}
+		]]></eval>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+public static function $1($2)
+{
+	$0
+}
+]]></content>
+		<commands><![CDATA[
+			[
+				{"command": "insert", "args": {"characters": "\t"}, "context": [{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^$"}]},
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>f</tabTrigger>
+		<trigger>f</trigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*f$"},
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+			]
+		</context>
+		<description>yii action</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+public function $1($2)
+{
+	$0
+}
+]]></content>
+		<commands><![CDATA[
+			[
+				{"command": "insert", "args": {"characters": "\t"}, "context": [{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^$"}]},
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>d</tabTrigger>
+		<trigger>d</trigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*d$"},
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+			]
+		</context>
+		<description>yii action</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+public function $1($2)
+{
+	$0
+}
+]]></content>
+		<commands><![CDATA[
+			[
+				{"command": "insert", "args": {"characters": "\t"}, "context": [{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^$"}]},
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>m</tabTrigger>
+		<trigger>m</trigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*m$"},
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+			]
+		</context>
+		<description>yii action</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+static
+]]></content>
+		<commands>
+			[
+				"RUN",
+
+				{"command": "ensure_space_after"},
+				{"command": "move", "args": {"by": "characters", "forward": true}},
+			]
+		</commands>
+		<tabTrigger>s</tabTrigger>
+		<trigger>s</trigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "(^|public|protected|private)\\s*s$"},
+			]
+		</context>
+		<description>static</description>
+	</snippet>
+
+	<snippet>
+			<content><![CDATA[
+public
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "ensure_space_after"},
+				{"command": "move", "args": {"by": "characters", "forward": true}},
+			]
+		</commands>
+		<tabTrigger>p</tabTrigger>
+		<trigger>p</trigger>
+		<scope>source.php</scope>
+		<context>
+				[
+					{"key": "in_class_definition", "operator": "equal", "operand": true},
+					{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*p$"},
+				]
+		</context>
+		<description>public</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+protected
+]]></content>
+		<commands>
+			[
+				"RUN",
+
+				{"command": "ensure_space_after"},
+				{"command": "move", "args": {"by": "characters", "forward": true}},
+			]
+		</commands>
+		<tabTrigger>o</tabTrigger>
+		<trigger>o</trigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*o$"},
+			]
+		</context>
+		<description>protected</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+private
+]]></content>
+		<commands>
+			[
+				"RUN",
+
+				{"command": "ensure_space_after"},
+				{"command": "move", "args": {"by": "characters", "forward": true}
+				},
+			]
+		</commands>
+		<tabTrigger>i</tabTrigger>
+		<trigger>i</trigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*i$"},
+			]
+		</context>
+		<description>private</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+function $1($2)
+{
+	$0
+}
+]]></content>
+		<commands><![CDATA[
+			[
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>f</tabTrigger>
+		<trigger>f</trigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "^\\s*f$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "(public|protected|private|static)\\s*f$"},
+			]
+		</context>
+		<description>function</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+function($1) {
+	${0:$selection}
+}
+]]></content>
+		<tabTrigger>fn</tabTrigger>
+		<scope>source.php</scope>
+		<description>anonymous function</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+public function __construct($1)
+{
+	${0:$selection}
+}
+]]></content>
+		<tabTrigger>c</tabTrigger>
+		<trigger>c</trigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*c$"},
+			]
+		</context>
+		<description>public function __construct</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+(\$$trigger1
+]]></content>
+		<triggerRegexp>\((\w)$</triggerRegexp>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "in_method_definition", "operator": "equal", "operand": true},
+			]
+		]]></context>
+		<description>auto dollar in function aurguments</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+null
+]]></content>
+		<trigger>n</trigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "=\\s*n$"},
+				{"key": "in_method_definition", "operator": "equal", "operand": true},
+				{"key": "nesting", "operator": "regex_contains", "operand": "[\\[\\(]"},
+			]
+		]]></context>
+		<description>auto null in function aurguments</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+, \$
+]]></content>
+		<trigger>,</trigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "in_method_definition", "operator": "equal", "operand": true},
+			]
+		]]></context>
+		<description>auto dollar in function definition</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+, \$
+]]></content>
+		<trigger>, </trigger>
+		<tabTrigger>, </tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "in_method_definition", "operator": "equal", "operand": true},
+			]
+		]]></context>
+		<description>auto dollar in function definition</description>
+	</snippet>
+
+</snippets>

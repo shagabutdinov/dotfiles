@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+"command": "run_macro_file",
+"args": {
+	"file": "res://Packages/Expression/macro/$0.sublime-macro"
+},
+]]></content>
+	<tabTrigger>m</tabTrigger>
+	<scope>source.json</scope>
+	<description>args macro file</description>
+</snippet>

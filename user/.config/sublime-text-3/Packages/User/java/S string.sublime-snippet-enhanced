@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+String $0
+]]></content>
+	<tabTrigger>S</tabTrigger>
+	<scope>source.java</scope>
+	<description>string</description>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+if ${1:$last_assigned_variable} != None$2:
+	${0:$selection}
+]]></content>
+	<tabTrigger>ine</tabTrigger>
+	<scope>source.python</scope>
+	<description>if selection != None</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+addClass(${0:$selection})
+]]></content>
+	<tabTrigger>ac</tabTrigger>
+	<scope>source.js</scope>
+	<description>addClass</description>
+</snippet>

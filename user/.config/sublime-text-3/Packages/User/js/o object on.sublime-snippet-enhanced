@@ -1,0 +1,37 @@
+<snippets>
+	<snippet>
+		<content><![CDATA[
+object
+]]></content>
+		<tabTrigger>o</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*o$"},
+			]
+		</context>
+		<description>object</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+on('${1:click}', $2)
+]]></content>
+		<tabTrigger>o</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.\\s*o$"},
+			]
+		</context>
+		<commands>
+			[
+				{
+					"command": "add_semicolon_to_statement",
+				},
+				"RUN",
+			]
+		</commands>
+		<description>on handler</description>
+	</snippet>
+</snippets>

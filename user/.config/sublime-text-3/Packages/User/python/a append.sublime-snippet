@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+append(${1:$selection})
+]]></content>
+	<tabTrigger>a</tabTrigger>
+	<scope>source.python</scope>
+	<description>append</description>
+</snippet>

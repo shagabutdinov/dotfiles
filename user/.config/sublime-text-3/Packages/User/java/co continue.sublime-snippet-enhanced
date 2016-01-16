@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+continue;
+]]></content>
+	<tabTrigger>co</tabTrigger>
+	<scope>source.java</scope>
+	<description>continue</description>
+</snippet>

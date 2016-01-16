@@ -1,0 +1,8 @@
+<snippet>
+		<content><![CDATA[
+typeof $0
+]]></content>
+		<tabTrigger>tf</tabTrigger>
+		<scope>source.js</scope>
+		<description></description>
+</snippet>

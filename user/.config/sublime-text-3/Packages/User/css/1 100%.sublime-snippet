@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+100%
+]]></content>
+	<tabTrigger>1</tabTrigger>
+	<scope>source.css</scope>
+	<description>100%</description>
+</snippet>

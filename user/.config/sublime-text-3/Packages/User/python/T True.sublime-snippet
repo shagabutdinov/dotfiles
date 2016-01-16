@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+True
+]]></content>
+	<tabTrigger>T</tabTrigger>
+	<scope>source.python</scope>
+	<description>True</description>
+</snippet>

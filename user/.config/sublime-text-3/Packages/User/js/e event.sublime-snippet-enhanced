@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+function(event
+]]></content>
+	<tabTrigger>function(</tabTrigger>
+	<scope>source.js</scope>
+	<context><![CDATA[
+		[
+			{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "on\\('click',\\s*function\\($"},
+		]
+	]]></context>
+	<description>event</description>
+</snippet>

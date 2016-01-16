@@ -1,0 +1,242 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+validates :$1, $0
+]]></content>
+		<tabTrigger>v</tabTrigger>
+		<scope>source.ruby</scope>
+		<context>
+			[
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+			]
+		</context>
+		<description>rails models: validates</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+presence: true
+]]></content>
+		<commands>
+			[
+				{"command": "ensure_space_before"},
+				"RUN",
+			]
+		</commands>
+		<trigger>p</trigger>
+		<scope>source\.ruby\s*$</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": ",\\s*p"},
+				{"key": "statement", "operator": "regex_contains", "operand": "^validates"},
+			]
+		</context>
+		<description>rails models: validates presence</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+inclusion: { in: [$0] }
+]]></content>
+		<commands>
+			[
+				{"command": "ensure_space_before"},
+				"RUN",
+			]
+		</commands>
+		<trigger>in</trigger>
+		<scope>source\.ruby\s*$</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": ",\\s*i"},
+				{"key": "statement", "operator": "regex_contains", "operand": "^validates"},
+			]
+		</context>
+		<description>rails models: validates inclusion</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+has_one :$1
+]]></content>
+		<commands>
+			[
+				{"command": "ensure_space_before"},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ho</tabTrigger>
+		<scope>source\.ruby\s*$</scope>
+		<context>
+			[
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+			]
+		</context>
+		<description>rails models: has one</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+has_many :$1
+]]></content>
+		<commands>
+			[
+				{"command": "ensure_space_before"},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>hm</tabTrigger>
+		<scope>source\.ruby\s*$</scope>
+		<context>
+			[
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+			]
+		</context>
+		<description>rails models: has many</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+where($1)
+]]></content>
+		<tabTrigger>w</tabTrigger>
+		<scope>source\.ruby\s*$</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.w$"},
+			]
+		</context>
+		<description>rails models: where</description>
+	</snippet>
+
+	<!-- callbacks -->
+
+	<snippet>
+		<content><![CDATA[
+after_initialize
+]]></content>
+		<tabTrigger>ai</tabTrigger>
+		<scope>source\.ruby\s*$</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*ai$"},
+			]
+		</context>
+		<description>rails models: after_initialize</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+			before_destroy
+]]></content>
+		<tabTrigger>bd</tabTrigger>
+		<scope>source\.ruby\s*$</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*bd$"},
+			]
+		</context>
+		<description>rails models: before_destroy</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+before_validation
+]]></content>
+		<tabTrigger>bv</tabTrigger>
+		<scope>source\.ruby\s*$</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*bv$"},
+			]
+		</context>
+		<description>rails models: before_validation</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+after_validation
+]]></content>
+		<tabTrigger>av</tabTrigger>
+		<scope>source\.ruby\s*$</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*av$"},
+			]
+		</context>
+		<description>rails models: after_validation</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+before_save
+]]></content>
+		<tabTrigger>bs</tabTrigger>
+		<scope>source\.ruby\s*$</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*bs$"},
+			]
+		</context>
+		<description>rails models: before_save</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+before_create
+]]></content>
+		<tabTrigger>bc</tabTrigger>
+		<scope>source\.ruby\s*$</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*bc$"},
+			]
+		</context>
+		<description>rails models: before_create</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+after_create
+]]></content>
+		<tabTrigger>ac</tabTrigger>
+		<scope>source\.ruby\s*$</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*ac$"},
+			]
+		</context>
+		<description>rails models: after_create</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+after_save
+]]></content>
+		<tabTrigger>as</tabTrigger>
+		<scope>source\.ruby\s*$</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*as$"},
+			]
+		</context>
+		<description>rails models: after_save</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+after_commit
+]]></content>
+		<tabTrigger>aco</tabTrigger>
+		<scope>source\.ruby\s*$</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*aco$"},
+			]
+		</context>
+		<description>rails models: after_commit</description>
+	</snippet>
+
+
+</snippets>

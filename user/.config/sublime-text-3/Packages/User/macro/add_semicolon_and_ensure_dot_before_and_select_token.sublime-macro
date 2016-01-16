@@ -1,0 +1,55 @@
+[
+  {
+    "command": "add_semicolon_to_statement",
+  },
+
+  {
+    "command": "insert",
+    "args": {
+      "characters": ";",
+    },
+    "context": [
+      {"key": "line", "operator": "regex_contains", "operand": "^\\s*$"},
+    ],
+  },
+
+  {
+    "command": "move",
+    "args": {
+      "by": "characters",
+      "forward": false,
+    },
+    "context": [
+      {"key": "preceding_text_begin", "operator": "regex_contains", "operand": ";$"},
+    ],
+  },
+
+  {
+    "command": "insert",
+    "args": {
+      "characters": ".",
+    },
+    "context": [
+      {"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w'\"()]$"},
+    ]
+  },
+
+  {
+    "command": "select_current_token_tail",
+    "context": [
+      {"key": "following_text_end", "operator": "regex_contains", "operand": "^[\\w'\"({\\[]"},
+    ]
+  },
+
+  {
+    "command": "toggle_wrap",
+    "args": {
+      "source": [["(", ")"]],
+      "target": ["", ""]
+    },
+    "context": [
+      {"key": "selection", "operator": "regex_contains", "operand": "^\\([\\S\\s]*\\)$"},
+    ]
+  },
+
+]

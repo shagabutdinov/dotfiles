@@ -1,0 +1,257 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+SET FOREIGN_KEY_CHECKS = 0;
+]]></content>
+		<tabTrigger>sf</tabTrigger>
+		<scope>source.sql(?!.*(string|entity))</scope>
+		<context><![CDATA[
+			[
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		]]></context>
+		<description>Disable foreign keys checks</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+SHOW TABLES;
+]]></content>
+		<commands><![CDATA[
+			[
+				"RUN",
+				{"command": "run_mysql_query", "args": {"append": true}},
+			]
+		]]></commands>
+		<tabTrigger>st</tabTrigger>
+		<trigger>st</trigger>
+		<scope>source.sql(?!.*(string|entity))</scope>
+		<context><![CDATA[
+			[
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+				{"key": "mysql_query_preceding", "operator": "regex_contains", "operand": "^\\s*\\w{1,3}\\s*$"},
+			]
+		]]></context>
+		<description>show tables</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+SHOW CREATE TABLE `$1`\G
+]]></content>
+		<tabTrigger>sc</tabTrigger>
+		<trigger>sc</trigger>
+		<scope>source.sql(?!.*(string|entity))</scope>
+		<context><![CDATA[
+			[
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+				{"key": "mysql_query_preceding", "operator": "regex_contains", "operand": "^\\s*\\w{1,3}\\s*$"},
+			]
+		]]></context>
+		<description>show create table</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+CREATE DATABASE `$1`;
+]]></content>
+		<tabTrigger>cd</tabTrigger>
+		<trigger>cd</trigger>
+		<scope>source.sql(?!.*(string|entity))</scope>
+		<context><![CDATA[
+			[
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+				{"key": "mysql_query_preceding", "operator": "regex_contains", "operand": "^\\s*\\w{1,3}\\s*$"},
+			]
+		]]></context>
+		<description>create database</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+DROP DATABASE `$1`;
+]]></content>
+		<tabTrigger>dd</tabTrigger>
+		<trigger>dd</trigger>
+		<scope>source.sql(?!.*(string|entity))</scope>
+		<context><![CDATA[
+			[
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+				{"key": "mysql_query_preceding", "operator": "regex_contains", "operand": "^\\s*\\w{1,3}\\s*$"},
+			]
+		]]></context>
+		<description>create database</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+RENAME TABLE `$1` TO `${2:$1}`;
+]]></content>
+		<tabTrigger>r</tabTrigger>
+		<trigger>r</trigger>
+		<scope>source.sql(?!.*(string|entity))</scope>
+		<context>
+			[
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*r$"},
+				{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "[`,]\\s*r$"},
+				{"key": "mysql_query_preceding", "operator": "regex_contains", "operand": "^\\s*\\w{1,3}\\s*$"},
+			]
+		</context>
+		<description>create database</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+CREATE TABLE `$1` (
+	$0
+) COMMENT '$2'\G
+]]></content>
+		<tabTrigger>c</tabTrigger>
+		<trigger>c</trigger>
+		<scope>source.sql(?!.*(string|entity))</scope>
+		<context>
+			[
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*c$"},
+				{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "[`,]\\s*c$"},
+				{"key": "mysql_query_preceding", "operator": "regex_contains", "operand": "^\\s*\\w{1,3}\\s*$"},
+			]
+		</context>
+		<description>create database</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+ALTER TABLE `$1`
+	$0;
+]]></content>
+		<tabTrigger>a</tabTrigger>
+		<trigger>a</trigger>
+		<scope>source.sql(?!.*(string|entity))</scope>
+		<context>
+			[
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+				{"key": "preceding_512_chars_begin", "operator": "not_regex_contains", "operand": "((ALTER|CREATE) TABLE `\\w+`|,)\\s*a$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*a$"},
+				{"key": "mysql_query_preceding", "operator": "regex_contains", "operand": "^\\s*\\w{1,3}\\s*$"},
+			]
+		</context>
+		<description>alter table</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+DROP TABLE `${1:$selection__or__last_assigned_variable}`;
+]]></content>
+		<tabTrigger>dt</tabTrigger>
+		<trigger>dt</trigger>
+		<scope>source.sql(?!.*(string|entity))</scope>
+		<context><![CDATA[
+			[
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*dt$"},
+				{"key": "mysql_query_preceding", "operator": "regex_contains", "operand": "^\\s*\\w{1,3}\\s*$"},
+			]
+		]]></context>
+		<description>drop table</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+SELECT
+	${3:*}
+FROM `$1`$2;$0
+]]></content>
+		<tabTrigger>s</tabTrigger>
+		<trigger>se</trigger>
+		<scope>source.sql(?!.*(string|entity))</scope>
+		<context>
+			[
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*s$"},
+				{"key": "mysql_query", "operator": "not_regex_contains", "operand": "^\\s*SELECT"},
+				{"key": "mysql_query_preceding", "operator": "regex_contains", "operand": "^\\s*\\w{1,3}\\s*$"},
+			]
+		</context>
+		<description>select</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+SELECT
+	${3:*}
+FROM `$1`$2
+]]></content>
+		<tabTrigger>s</tabTrigger>
+		<trigger>se</trigger>
+		<scope>source.sql(?!.*(string|entity))</scope>
+		<context>
+			[
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*s$"},
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*SELECT"},
+				{"key": "mysql_query_preceding", "operator": "regex_contains", "operand": "^\\s*\\w{1,3}\\s*$"},
+			]
+		</context>
+		<description>select</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+INSERT INTO
+	`$1`
+${2:SET}
+	$0;
+]]></content>
+		<tabTrigger>i</tabTrigger>
+		<trigger>i</trigger>
+		<scope>source.sql(?!.*(string|entity))</scope>
+		<context>
+			[
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "(^|;)\\s*i$"},
+				{"key": "mysql_query_preceding", "operator": "regex_contains", "operand": "^\\s*\\w{1,3}\\s*$"},
+			]
+		</context>
+		<description>update</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+UPDATE
+	`$1`
+${2:SET}
+	$0;
+]]></content>
+		<tabTrigger>u</tabTrigger>
+		<trigger>u</trigger>
+		<scope>source.sql(?!.*(string|entity))</scope>
+		<context><![CDATA[
+			[
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+				{"key": "mysql_query_preceding", "operator": "regex_contains", "operand": "^\\s*\\w{1,3}\\s*$"},
+			]
+		]]></context>
+		<description>update</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+DELETE FROM `$1`;
+]]></content>
+		<tabTrigger>df</tabTrigger>
+		<trigger>df</trigger>
+		<scope>source.sql(?!.*(string|entity))</scope>
+		<context>
+			[
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "(\n|^)\\s*df$"},
+				{"key": "mysql_query_preceding", "operator": "regex_contains", "operand": "^\\s*\\w{1,3}\\s*$"},
+			]
+		</context>
+		<description>delete from</description>
+	</snippet>
+
+</snippets>

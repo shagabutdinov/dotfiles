@@ -1,0 +1,28 @@
+<snippets>
+	<snippet>
+		<content><![CDATA[
+callback
+]]></content>
+		<tabTrigger>k</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.k$"},
+			]
+		</context>
+		<description>callback</description>
+	</snippet>
+	<snippet>
+		<content><![CDATA[
+getKernel()
+]]></content>
+		<tabTrigger>k</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.k$"},
+			]
+		</context>
+		<description>callback</description>
+	</snippet>
+</snippets>

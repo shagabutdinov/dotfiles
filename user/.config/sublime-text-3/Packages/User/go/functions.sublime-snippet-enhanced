@@ -1,0 +1,57 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+strings
+]]></content>
+		<tabTrigger>s</tabTrigger>
+		<scope>source.go</scope>
+		<description>strconv itoa</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+strconv
+]]></content>
+		<tabTrigger>strings</tabTrigger>
+		<scope>source.go</scope>
+		<description>strings</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+strconv.Itoa(${1:$last_assigned_variable})
+]]></content>
+		<trigger>strconv.i</trigger>
+		<scope>source.go</scope>
+		<description>strconv itoa</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+fmt.
+]]></content>
+		<tabTrigger>m</tabTrigger>
+		<scope>source.go</scope>
+		<description>fmt</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+fmt.Errorf(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<trigger>fmt.e</trigger>
+		<scope>source.go</scope>
+		<description>fmt errorf</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+fmt.Errorf("$1"$2)
+]]></content>
+		<tabTrigger>fe</tabTrigger>
+		<scope>source.go</scope>
+		<description>fmt errorf</description>
+	</snippet>
+
+</snippets>

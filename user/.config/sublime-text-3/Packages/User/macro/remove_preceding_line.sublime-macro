@@ -1,0 +1,28 @@
+[
+  {
+    "command": "set_named_mark",
+    "args": {
+      "name": "tmp",
+    }
+  },
+  {
+    "command": "move",
+    "args": {
+      "by": "lines",
+      "forward": false,
+    },
+  },
+  {
+    "command": "run_macro_file",
+    "args": {
+      "file": "res://Packages/Default/Delete Line.sublime-macro",
+    },
+  },
+  {
+    "command": "goto_named_mark",
+    "args": {
+      "name": "tmp",
+      "unset": true,
+    }
+  },
+]

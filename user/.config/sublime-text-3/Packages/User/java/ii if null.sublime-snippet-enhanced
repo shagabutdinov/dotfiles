@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+if($1 == null) {
+	${0:$selection}
+}
+]]></content>
+	<tabTrigger>ii</tabTrigger>
+	<scope>source.java</scope>
+	<description>if null</description>
+</snippet>

@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+"command": "run_commands",
+"args": {
+  "commands": [
+    {
+      "command": "ensure_spaces_around",
+    },
+    {
+    	${0:$selection}
+    },
+  ],
+},
+]]></content>
+	<tabTrigger>rc</tabTrigger>
+	<scope>source.json</scope>
+	<description>run_commands</description>
+</snippet>

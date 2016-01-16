@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+last-child
+]]></content>
+	<tabTrigger>l</tabTrigger>
+	<scope>source.css</scope>
+	<description></description>
+</snippet>

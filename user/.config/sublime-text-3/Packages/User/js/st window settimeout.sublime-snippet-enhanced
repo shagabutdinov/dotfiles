@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+window.setTimeout(${1:$selection}, $2)
+]]></content>
+	<commands><![CDATA[
+	  [
+	  	{
+	  		"command": "run_macro_file_with_context",
+	  		"args": {
+	  			"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro",
+	  		}
+	  	},
+	  	"RUN",
+	  ]
+	]]></commands>
+	<tabTrigger>ws</tabTrigger>
+	<scope>source.js</scope>
+	<description>window settimeout</description>
+</snippet>

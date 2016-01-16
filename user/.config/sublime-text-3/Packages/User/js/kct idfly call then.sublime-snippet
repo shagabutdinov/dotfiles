@@ -1,0 +1,10 @@
+<snippet>
+		<content><![CDATA[
+\$idfly.
+	call($1).
+	then($2);
+]]></content>
+		<tabTrigger>kct</tabTrigger>
+		<scope>source.js</scope>
+		<description>core $idfly</description>
+</snippet>

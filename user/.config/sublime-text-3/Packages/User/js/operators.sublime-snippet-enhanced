@@ -1,0 +1,123 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+return null
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "add_semicolon_to_statement"},
+			]
+		</commands>
+		<tabTrigger>rn</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*rt$"},
+			]
+		]]></context>
+		<description>operators: return null</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+return true
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "add_semicolon_to_statement"},
+			]
+		</commands>
+		<tabTrigger>rt</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*rt$"},
+			]
+		]]></context>
+		<description>operators: return true</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+return false
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "add_semicolon_to_statement"},
+			]
+		</commands>
+		<tabTrigger>rf</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*rf$"},
+			]
+		]]></context>
+		<description>operators: return false</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+continue
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "add_semicolon_to_statement"},
+			]
+		</commands>
+		<tabTrigger>c</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "selection_empty", "operator": "equal", "operand": true},
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "\\s*c$"},
+			]
+		</context>
+		<description>operators: continue</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+if(${1:$last_assigned_variable}) {
+	${0:$selection}
+}
+]]></content>
+		<tabTrigger>i</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*i$"},
+			]
+		</context>
+		<description>operators: if</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+if(${1:$last_assigned_variable}) {
+	${0:$selection}
+}
+]]></content>
+		<commands>
+			[
+				{"command": "move_to", "args": {"extend": true, "to": "eol"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>i</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*i$"},
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S$"},
+			]
+		</context>
+		<description>operators: if</description>
+	</snippet>
+
+</snippets>

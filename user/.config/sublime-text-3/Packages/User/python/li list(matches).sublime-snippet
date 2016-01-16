@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+list(${0:$selection})
+]]></content>
+	<tabTrigger>li</tabTrigger>
+	<scope>source.python</scope>
+	<description>list(matches)</description>
+</snippet>

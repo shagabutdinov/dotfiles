@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+== ${1:0}
+]]></content>
+	<tabTrigger>iz</tabTrigger>
+	<scope>source.python</scope>
+	<description>== 0</description>
+</snippet>

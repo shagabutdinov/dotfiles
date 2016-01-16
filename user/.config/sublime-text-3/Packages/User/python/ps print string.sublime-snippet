@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+print('"', ${1:$selection}, '"')
+]]></content>
+	<tabTrigger>ps</tabTrigger>
+	<scope>source.python</scope>
+	<description>print string</description>
+</snippet>

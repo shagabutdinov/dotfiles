@@ -1,0 +1,24 @@
+<snippet>
+	<content><![CDATA[
+getService(${1:$selection__or__last_assigned_variable})
+]]></content>
+	<commands><![CDATA[
+		[
+			{
+				"command": "run_macro_file_with_context",
+				"args": {
+					"file": "Packages/User/macro/add_semicolon_and_ensure_dot_before_and_select_token.sublime-macro",
+				}
+			},
+			"RUN",
+		]
+	]]></commands>
+	<context>
+		[
+			{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "$"},
+		]
+	</context>
+	<tabTrigger>gs</tabTrigger>
+	<scope>source.js</scope>
+	<description>getservice</description>
+</snippet>

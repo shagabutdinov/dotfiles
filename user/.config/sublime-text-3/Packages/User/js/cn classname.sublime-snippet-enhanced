@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+className
+]]></content>
+	<tabTrigger>cn</tabTrigger>
+	<scope>source.js</scope>
+	<context>
+		[
+			{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.cn$"},
+		]
+	</context>
+	<description>classname</description>
+</snippet>

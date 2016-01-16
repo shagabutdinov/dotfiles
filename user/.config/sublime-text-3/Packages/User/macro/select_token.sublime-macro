@@ -1,0 +1,21 @@
+[
+
+  {
+    "command": "select_current_token_tail",
+    "context": [
+      {"key": "following_text_end", "operator": "regex_contains", "operand": "^[\\w'\"({\\[$]"},
+    ]
+  },
+
+  {
+    "command": "toggle_wrap",
+    "args": {
+      "source": [["(", ")"]],
+      "target": ["", ""]
+    },
+    "context": [
+      {"key": "selection", "operator": "regex_contains", "operand": "^\\([\\S\\s]*\\)$"},
+    ]
+  },
+
+]

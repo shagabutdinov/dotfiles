@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+[name="$1"]
+]]></content>
+	<tabTrigger>n</tabTrigger>
+	<scope>source.js.*string</scope>
+	<context><![CDATA[
+		[
+			{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\('n$"},
+		]
+	]]></context>
+	<description>jquery name query</description>
+</snippet>

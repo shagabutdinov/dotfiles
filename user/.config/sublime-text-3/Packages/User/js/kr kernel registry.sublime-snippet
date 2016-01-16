@@ -1,0 +1,8 @@
+<snippet>
+		<content><![CDATA[
+\$idfly.registry.
+]]></content>
+		<tabTrigger>kr</tabTrigger>
+		<scope>source.js</scope>
+		<description></description>
+</snippet>

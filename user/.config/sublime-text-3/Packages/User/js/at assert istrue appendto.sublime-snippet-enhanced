@@ -1,0 +1,53 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+assert.isTrue(${0:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {
+						"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro",
+					}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>at</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "[\\.)]\\s*at$"},
+			]
+		</context>
+		<description>assert istrue</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+appendTo(${0:$selection})
+]]></content>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {
+		  			"file": "Packages/User/macro/add_semicolon_and_ensure_dot_before_and_select_token.sublime-macro",
+		  		}
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<tabTrigger>at</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "[\\.)]\\s*at$"},
+			]
+		</context>
+		<description>test throws</description>
+	</snippet>
+
+</snippets>

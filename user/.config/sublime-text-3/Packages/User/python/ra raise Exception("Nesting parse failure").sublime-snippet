@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+raise ${0:$selection__or__last_assigned_variable}
+]]></content>
+	<tabTrigger>ra</tabTrigger>
+	<scope>source.python</scope>
+	<description>raise Exception("message")</description>
+</snippet>

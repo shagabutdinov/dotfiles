@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+try:
+	${0:$selection}
+except $1:
+	$2
+]]></content>
+	<tabTrigger>tr</tabTrigger>
+	<scope>source.python</scope>
+	<description>try except</description>
+</snippet>

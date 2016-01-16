@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+RouterHttpSimple:
+	${1:package}/${2:method}:
+		route: /${3:page}
+		handler: ${1:package}Controller.${2:method}
+]]></content>
+	<tabTrigger>rhs</tabTrigger>
+	<scope>source.yaml</scope>
+</snippet>

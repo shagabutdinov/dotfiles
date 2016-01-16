@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+preventDefault()
+]]></content>
+	<tabTrigger>pd</tabTrigger>
+	<scope>source.js</scope>
+	<description>prevendDefault</description>
+</snippet>

@@ -1,0 +1,24 @@
+[
+  {
+    "command": "goto_expression",
+    "args": {
+      "expression": "\n()\\S*",
+      "range": [1024, 1],
+      "options": {
+        "backward": true,
+        "start": "1"
+      }
+    }
+  },
+
+  {
+    "command": "goto_expression",
+    "args": {
+      "expression": "\n",
+      "range": [1, 1024],
+      "expand": true,
+      "options": {
+      }
+    }
+  }
+]

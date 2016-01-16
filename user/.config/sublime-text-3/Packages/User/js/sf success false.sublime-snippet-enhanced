@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+success = false;
+]]></content>
+	<tabTrigger>sf</tabTrigger>
+	<scope>source.js</scope>
+	<description>success false</description>
+</snippet>

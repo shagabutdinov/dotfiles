@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+<order>${1:1}</order>
+]]></content>
+	<tabTrigger>o</tabTrigger>
+	<scope>text.xml</scope>
+	<description>order</description>
+</snippet>

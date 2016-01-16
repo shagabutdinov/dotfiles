@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+len(${1:$selection}) - 1
+]]></content>
+	<tabTrigger>lm</tabTrigger>
+	<scope>source.python</scope>
+	<description>len - 1</description>
+</snippet>

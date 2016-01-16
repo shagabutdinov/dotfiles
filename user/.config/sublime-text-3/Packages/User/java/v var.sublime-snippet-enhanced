@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+${1:type} ${2:${1/^([A-Z])(.*)$/\l$1$2/ig}};
+]]></content>
+	<tabTrigger>v</tabTrigger>
+	<scope>source.java</scope>
+	<description>var</description>
+</snippet>

@@ -1,0 +1,66 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+<% ${1:$last_assigned_variable}.each do |$2| %>
+	${0:$selection}
+<% end %>
+]]></content>
+		<tabTrigger>e</tabTrigger>
+		<scope>text.html.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*e$"},
+			]
+		]]></context>
+		<description>each</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<% if ${1:$last_assigned_variable} %>
+	${0:$selection}
+<% end %>
+]]></content>
+		<tabTrigger>i</tabTrigger>
+		<scope>text.html.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*i$"},
+			]
+		]]></context>
+		<description>if</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<% else %>
+	$0
+]]></content>
+		<commands>
+			[
+				{"command": "left_delete"},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>el</tabTrigger>
+		<scope>text.html.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*el$"},
+			]
+		]]></context>
+		<description>if</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<%= ${0:$selection__or__last_assigned_variable} %>
+]]></content>
+		<tabTrigger>p</tabTrigger>
+		<scope>text.html.ruby</scope>
+		<description>puts</description>
+		<order>1</order>
+	</snippet>
+
+</snippets>

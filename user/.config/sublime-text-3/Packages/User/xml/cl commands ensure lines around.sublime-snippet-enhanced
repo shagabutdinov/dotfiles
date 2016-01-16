@@ -1,0 +1,18 @@
+<snippet>
+	<content>
+&lt;commands&gt;&lt;![CDATA[
+	[
+		{
+			"command": "ensure_lines_around",
+			"args": {
+				"ignore_after": [],
+			},
+		},
+		"RUN",
+	]
+]]&gt;&lt;/commands&gt;
+</content>
+	<tabTrigger>cl</tabTrigger>
+	<scope>text.xml</scope>
+	<description>commands ensure lines around</description>
+</snippet>

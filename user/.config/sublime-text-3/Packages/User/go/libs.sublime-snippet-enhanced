@@ -1,0 +1,12 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+	math.IsNaN(${1:$selection__or__last_assigned_variable})
+	]]></content>
+		<tabTrigger>ia</tabTrigger>
+		<scope>source.go</scope>
+		<description>math isnan</description>
+	</snippet>
+
+</snippets>

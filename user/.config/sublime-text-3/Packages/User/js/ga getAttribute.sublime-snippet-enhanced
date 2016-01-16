@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+getAttribute(${1:$selection__or__last_assigned_variable})
+]]></content>
+	<tabTrigger>ga</tabTrigger>
+	<scope>source.js</scope>
+	<description>getAttribute</description>
+</snippet>

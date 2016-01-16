@@ -1,0 +1,30 @@
+<snippets>
+	<snippet>
+		<content><![CDATA[
+get($1);
+]]></content>
+		<tabTrigger>g</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.g$"},
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "^\\s*$"},
+			]
+		</context>
+		<description>get</description>
+	</snippet>
+	<snippet>
+		<content><![CDATA[
+get($1)
+]]></content>
+		<tabTrigger>g</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.g$"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^\\s*$"},
+			]
+		</context>
+		<description>get</description>
+	</snippet>
+</snippets>

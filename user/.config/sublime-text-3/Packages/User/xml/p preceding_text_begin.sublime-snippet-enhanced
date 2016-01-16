@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+preceding_text_begin
+]]></content>
+	<tabTrigger>p</tabTrigger>
+	<scope>text.xml</scope>
+	<description>preceding_text_begin</description>
+</snippet>

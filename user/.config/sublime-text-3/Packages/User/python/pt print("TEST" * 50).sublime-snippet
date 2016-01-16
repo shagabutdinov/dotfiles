@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+print("TEST" * 20)
+]]></content>
+	<tabTrigger>pt</tabTrigger>
+	<scope>source.python</scope>
+	<description>print("TEST" * 50)</description>
+</snippet>

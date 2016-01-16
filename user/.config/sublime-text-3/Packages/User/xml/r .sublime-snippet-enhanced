@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+regex_contains
+]]></content>
+	<tabTrigger>r</tabTrigger>
+	<scope>text.xml</scope>
+	<description></description>
+</snippet>

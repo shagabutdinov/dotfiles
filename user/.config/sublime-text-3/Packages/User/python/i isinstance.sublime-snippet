@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+isinstance(${1:$selection}, $2)
+]]></content>
+	<tabTrigger>i</tabTrigger>
+	<scope>source.python</scope>
+	<context>
+		[
+			{"key": "selection_empty", "operator": "equal", "operand": true},
+			{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\S.*i$"},
+		]
+	</context>
+	<description>isinstance</description>
+</snippet>

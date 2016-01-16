@@ -1,0 +1,39 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+JSON.parse(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>jp</tabTrigger>
+		<scope>source.js</scope>
+		<description>json: parse</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+JSON.stringify(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>js</tabTrigger>
+		<scope>source.js</scope>
+		<description>json: stringify</description>
+	</snippet>
+
+</snippets>

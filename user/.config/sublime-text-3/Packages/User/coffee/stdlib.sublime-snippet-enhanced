@@ -1,0 +1,63 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+JSON.parse(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<tabTrigger>jp</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>stdlib: json parse</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+JSON.stringify(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<tabTrigger>js</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>stdlib: json stringify</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+console.log(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<tabTrigger>l</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*l$"},
+			]
+		]]></context>
+		<description>stdlib: console.log</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+length
+]]></content>
+		<tabTrigger>l</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.l$"},
+			]
+		]]></context>
+		<description>stdlib: .length</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+indexOf($1)
+]]></content>
+		<tabTrigger>io</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.io$"},
+			]
+		]]></context>
+		<description>stdlib: .indexOf</description>
+	</snippet>
+
+</snippets>

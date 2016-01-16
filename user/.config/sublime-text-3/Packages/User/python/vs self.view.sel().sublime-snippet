@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+self.view.sel()
+]]></content>
+	<tabTrigger>vs</tabTrigger>
+	<scope>source.python</scope>
+	<description>self.view.sel()</description>
+</snippet>

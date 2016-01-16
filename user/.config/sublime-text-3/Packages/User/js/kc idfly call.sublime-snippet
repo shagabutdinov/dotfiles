@@ -1,0 +1,8 @@
+<snippet>
+		<content><![CDATA[
+\$idfly.call($1);
+]]></content>
+		<tabTrigger>kc</tabTrigger>
+		<scope>source.js</scope>
+		<description>core $idfly</description>
+</snippet>

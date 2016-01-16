@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+re.search($1, ${2:$selection})
+]]></content>
+	<tabTrigger>rs</tabTrigger>
+	<scope>source.python</scope>
+	<commands>
+		[
+			{
+				"command": "create_keyword",
+				"args": {"keyword_type": "python.import", "keyword": "re"},
+			},
+			"RUN",
+		]
+	</commands>
+	<description>re.search</description>
+</snippet>

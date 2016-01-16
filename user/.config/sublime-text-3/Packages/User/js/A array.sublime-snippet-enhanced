@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+Array
+]]></content>
+	<tabTrigger>A</tabTrigger>
+	<scope>source.js</scope>
+	<context>
+		[
+			{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "instanceof\\s*A$"},
+		]
+	</context>
+	<description>array</description>
+</snippet>

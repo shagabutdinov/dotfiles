@@ -1,0 +1,39 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+class="$0"
+]]></content>
+		<tabTrigger>c</tabTrigger>
+		<scope>meta.tag</scope>
+		<description>properties: class</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+value="$0"
+]]></content>
+		<tabTrigger>v</tabTrigger>
+		<scope>meta.tag</scope>
+		<description>properties: value</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+style="$0"
+]]></content>
+		<tabTrigger>s</tabTrigger>
+		<scope>meta.tag</scope>
+		<description>properties: style</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+enctype="multipart/form-data"
+]]></content>
+		<tabTrigger>en</tabTrigger>
+		<scope>meta.tag</scope>
+		<description>properties: enctype</description>
+	</snippet>
+
+</snippets>

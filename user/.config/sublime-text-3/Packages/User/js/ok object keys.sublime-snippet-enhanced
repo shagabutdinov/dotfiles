@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+Object.keys(${1:$last_assigned_variable})
+]]></content>
+	<tabTrigger>ok</tabTrigger>
+	<scope>source.js</scope>
+	<description>object keys</description>
+</snippet>

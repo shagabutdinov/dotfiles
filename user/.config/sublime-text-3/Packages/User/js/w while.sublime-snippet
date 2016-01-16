@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[while($1) {
+	${0:$TM_SELECTED_TEXT}
+};]]></content>
+	<tabTrigger>w</tabTrigger>
+	<scope>source.js</scope>
+	<description></description>
+</snippet>

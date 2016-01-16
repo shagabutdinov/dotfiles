@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+assert.instanceOf(${1:expected}, ${2:actual});
+]]></content>
+  <tabTrigger>ai</tabTrigger>
+  <scope>source.js</scope>
+  <description>test strictEqual</description>
+</snippet>

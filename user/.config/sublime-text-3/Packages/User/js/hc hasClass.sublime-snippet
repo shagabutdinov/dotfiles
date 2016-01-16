@@ -1,0 +1,8 @@
+<snippet>
+		<content><![CDATA[
+hasClass('$0')
+]]></content>
+		<tabTrigger>hs</tabTrigger>
+		<scope>source.js</scope>
+		<description>this</description>
+</snippet>

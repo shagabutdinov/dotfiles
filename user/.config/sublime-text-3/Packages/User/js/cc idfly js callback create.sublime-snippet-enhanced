@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+callCount
+]]></content>
+	<tabTrigger>cc</tabTrigger>
+	<scope>source.js</scope>
+	<description>idfly js callback create</description>
+</snippet>

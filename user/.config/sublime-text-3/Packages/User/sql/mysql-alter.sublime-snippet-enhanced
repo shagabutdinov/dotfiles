@@ -1,0 +1,269 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+ADD `$1` $0
+]]></content>
+		<trigger>a</trigger>
+		<tabTrigger>a</tabTrigger>
+		<scope>source.sql(?!.*(string|meta))</scope>
+		<context>
+			[
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "((ALTER|CREATE) TABLE `\\w+`|,)\\s*a$"},
+			]
+		</context>
+		<description>add</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+CHANGE `$1` `${2:$1}` $0
+]]></content>
+		<trigger>c</trigger>
+		<tabTrigger>c</tabTrigger>
+		<scope>source.sql(?!.*(string|meta))</scope>
+		<context>
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "(TABLE\\s*`\\w+`\\s*|[,])\\s*c$"},
+			]
+		</context>
+		<description>change</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+DROP `$1`
+]]></content>
+		<trigger>d</trigger>
+		<tabTrigger>d</tabTrigger>
+		<scope>source.sql(?!.*(string|meta))</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*d$"},
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(ALTER\\s*TABLE)"},
+			]
+		</context>
+		<description>drop</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+AUTO_INCREMENT
+]]></content>
+		<tabTrigger>ai</tabTrigger>
+		<scope>source.sql(?!.*(string|meta))</scope>
+		<description>auto_increment</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+PRIMARY KEY (`${1:id}`$2)
+]]></content>
+		<trigger>p</trigger>
+		<tabTrigger>p</tabTrigger>
+		<scope>source.sql(?!.*(string|meta))</scope>
+		<description>primary key id</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+DROP PRIMARY KEY
+]]></content>
+		<tabTrigger>dp</tabTrigger>
+		<scope>source.sql(?!.*(string|meta))</scope>
+		<description>drop primary key</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+DEFAULT $0
+]]></content>
+		<tabTrigger>d</tabTrigger>
+		<trigger>d</trigger>
+		<scope>source.sql(?!.*(string|meta))</scope>
+		<context>
+			[
+				{"key": "preceding_512_chars_begin", "operator": "not_regex_contains", "operand": "ALTER TABLE `\\w+`\\s*d$"},
+				{"key": "preceding_512_chars_begin", "operator": "not_regex_contains", "operand": "DROP(?!.*;).*?,\\s*d$"},
+				{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "(\n|^)\\s*d$"},
+			]
+		</context>
+		<description>default value</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+AFTER `$1`
+]]></content>
+		<trigger>a</trigger>
+		<tabTrigger>a</tabTrigger>
+		<scope>source.sql(?!.*(string|meta))</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "^\\s*a$"},
+			]
+		</context>
+		<description>after</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+COMMENT '$1'
+]]></content>
+		<trigger>c</trigger>
+		<tabTrigger>c</tabTrigger>
+		<scope>source.sql(?!.*(string|meta))</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "(DELETE|^)\\s*c$"},
+			]
+		</context>
+		<description>comment</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+INDEX (`$1`),
+]]></content>
+		<tabTrigger>x</tabTrigger>
+		<trigger>x</trigger>
+		<scope>source.sql(?!.*(string|meta))</scope>
+		<context>
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": ",\\s*i$"},
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|DELETE|UPDATE)"},
+			]
+		</context>
+		<description>update</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+INDEX (`$1`),
+]]></content>
+		<tabTrigger>x</tabTrigger>
+		<trigger>x</trigger>
+		<scope>source.sql(?!.*(string|meta))</scope>
+		<context>
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": ",\\s*i$"},
+				{"key": "mysql_query", "operator": "not_regex_contains", "operand": "^\\s*SELECT"},
+			]
+		</context>
+		<description>update</description>
+	</snippet>
+
+	<!-- default columns -->
+
+	<snippet>
+		<content><![CDATA[
+`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+PRIMARY KEY(`id`)
+]]></content>
+		<tabTrigger>id</tabTrigger>
+		<scope>source.sql(?!.*(string|meta))</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*(ADD\\s*)?id$"},
+			]
+		</context>
+		<description>id column</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+`name` VARCHAR(${1:128}) NOT NULL
+]]></content>
+		<tabTrigger>n</tabTrigger>
+		<scope>source.sql(?!.*(string|meta))</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*n$"},
+			]
+		</context>
+		<description>name column</description>
+	</snippet>
+
+
+	<!-- foreign keys -->
+
+	<snippet>
+		<content><![CDATA[
+FOREIGN KEY (`$1`)
+	REFERENCES `${2:${1/(.*)_id/$1/}}` (`${3:id}`)
+	ON UPDATE RESTRICT ON DELETE ${5:RESTRICT}
+]]></content>
+		<tabTrigger>f</tabTrigger>
+		<trigger>f</trigger>
+		<scope>source.sql(?!.*(string|meta))</scope>
+		<context>
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*CREATE\\s*TABLE"},
+			]
+		</context>
+		<description>foreign key</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+ADD FOREIGN KEY (`$1`)
+	REFERENCES `${2:${1/(.*)_id/$1/}}` (`${3:id}`)
+	ON UPDATE RESTRICT ON DELETE ${5:RESTRICT}
+]]></content>
+		<tabTrigger>f</tabTrigger>
+		<trigger>f</trigger>
+		<scope>source.sql(?!.*(string|meta))</scope>
+		<context>
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*ALTER\\s*TABLE"},
+			]
+		</context>
+		<description>add foreign key</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+DROP FOREIGN KEY `$1`
+]]></content>
+		<tabTrigger>df</tabTrigger>
+		<trigger>df</trigger>
+		<scope>source.sql(?!.*(string|meta))</scope>
+		<context>
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*ALTER\\s*TABLE"},
+			]
+		</context>
+		<description>drop foreign key</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+CASCADE
+]]></content>
+		<tabTrigger>c</tabTrigger>
+		<trigger>c</trigger>
+		<scope>source.sql(?!.*(string|meta))</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "DELETE\\s*c$"},
+			]
+		</context>
+		<description>cascade</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+SET NULL
+]]></content>
+		<tabTrigger>s</tabTrigger>
+		<trigger>s</trigger>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "DELETE\\s*c$"},
+			]
+		</context>
+		<scope>source.sql(?!.*(string|meta))</scope>
+		<description>set null</description>
+	</snippet>
+
+</snippets>

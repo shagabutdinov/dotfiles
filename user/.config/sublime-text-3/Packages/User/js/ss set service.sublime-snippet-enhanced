@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+$1: helper.getService('js.${2:$1}'),
+]]></content>
+	<tabTrigger>ss</tabTrigger>
+	<scope>source.js</scope>
+	<context>
+		[
+			{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*ss$"},
+			{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "(?&lt;!\\)\\s)(\\{|,)\\s*ss$"},
+		]
+	</context>
+	<description>helper getservice</description>
+</snippet>

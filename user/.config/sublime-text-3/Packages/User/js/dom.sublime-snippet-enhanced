@@ -1,0 +1,72 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+className
+]]></content>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<tabTrigger>cn</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.cn$"},
+			]
+		]]></context>
+		<description>dom: className</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+addEventListener($0)
+]]></content>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<tabTrigger>ael</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ael$"},
+			]
+		]]></context>
+		<description>dom: addEventListener()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+removeEventListener($0)
+]]></content>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<tabTrigger>rel</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.rel$"},
+			]
+		]]></context>
+		<description>dom: removeEventListener()</description>
+	</snippet>
+
+</snippets>

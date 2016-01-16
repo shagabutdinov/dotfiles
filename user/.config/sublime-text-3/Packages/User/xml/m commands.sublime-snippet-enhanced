@@ -1,0 +1,15 @@
+<snippet>
+	<content>
+&lt;commands&gt;&lt;![CDATA[
+	[
+		{
+			"command": "add_semicolon_to_statement",
+		},
+		"RUN",
+	]
+]]&gt;&lt;/commands&gt;
+</content>
+	<tabTrigger>m</tabTrigger>
+	<scope>text.xml</scope>
+	<description>commands</description>
+</snippet>

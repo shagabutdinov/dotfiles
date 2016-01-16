@@ -1,0 +1,40 @@
+<snippets>
+	<snippet>
+		<content><![CDATA[
+assert.throws(${2:$selection}, ${1:$exception})
+]]></content>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {
+		  			"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro",
+		  		}
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<eval><![CDATA[
+			{
+				'exception':
+					".".join([x for x in [
+						__import__('Expression').expression.find_text(
+							view,
+							0,
+							r'IdFly.Js.Class.create\(\'(.*?)([A-Z][a-z]*)Test\'',
+							{"nesting": True}
+						),
+						"Error"
+					] if x is not None])
+			 }
+		]]></eval>
+		<tabTrigger>ar</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "\\.at$"},
+			]
+		</context>
+		<description>test throws</description>
+	</snippet>
+</snippets>

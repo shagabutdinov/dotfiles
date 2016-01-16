@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+from $1 import ${0:$selection}
+]]></content>
+	<tabTrigger>fi</tabTrigger>
+	<scope>source.python</scope>
+	<description>from $1 import $2</description>
+</snippet>

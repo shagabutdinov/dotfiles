@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+for(${1:type} ${2:${1/^([A-Z])(.*)$/\l$1$2/ig}}: ${3:$last_assigned_variable}) {
+	${0:$selection}
+}
+]]></content>
+	<tabTrigger>f</tabTrigger>
+	<scope>source.java</scope>
+	<description>for</description>
+</snippet>

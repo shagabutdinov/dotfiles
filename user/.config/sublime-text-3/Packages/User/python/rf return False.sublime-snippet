@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+return False
+]]></content>
+	<tabTrigger>rf</tabTrigger>
+	<scope>source.python</scope>
+	<description>return False</description>
+</snippet>

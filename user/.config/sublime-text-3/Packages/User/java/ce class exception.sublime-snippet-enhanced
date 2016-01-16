@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+public class $1 extends Exception {
+  public $1(String message) {
+    super(message);
+  }
+  public $1(String message, Throwable cause) {
+    super(message, cause);
+  }
+}
+]]></content>
+	<tabTrigger>ce</tabTrigger>
+	<scope>source.java</scope>
+	<description>class exception</description>
+</snippet>

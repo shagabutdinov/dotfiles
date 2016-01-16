@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+global ${0:$selection}
+]]></content>
+	<tabTrigger>g</tabTrigger>
+	<scope>source.python</scope>
+	<description>global</description>
+</snippet>

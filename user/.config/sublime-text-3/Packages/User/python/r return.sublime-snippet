@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+return ${0:$selection__or__last_assigned_variable}
+]]></content>
+	<tabTrigger>r</tabTrigger>
+	<scope>source.python</scope>
+	<context>
+		[
+			{"key": "selection_empty", "operator": "equal", "operand": true},
+			{"key": "preceding_text_b", "operator": "regex_contains", "operand": "^\\s*r?$"},
+		]
+	</context>
+	<description>return value</description>
+</snippet>

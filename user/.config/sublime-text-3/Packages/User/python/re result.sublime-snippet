@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+result
+]]></content>
+	<tabTrigger>re</tabTrigger>
+	<scope>source.python</scope>
+	<description>result</description>
+</snippet>

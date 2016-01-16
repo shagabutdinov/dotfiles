@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+last_assigned_variable
+]]></content>
+	<tabTrigger>ll</tabTrigger>
+	<scope>text.xml</scope>
+	<description>last_assigned_variable</description>
+</snippet>

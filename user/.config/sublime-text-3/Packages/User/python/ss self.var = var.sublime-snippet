@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+self.${1:$selection} = ${2:${1:$selection}}
+]]></content>
+	<tabTrigger>ss</tabTrigger>
+	<scope>source.python</scope>
+	<description>self.var = var</description>
+</snippet>

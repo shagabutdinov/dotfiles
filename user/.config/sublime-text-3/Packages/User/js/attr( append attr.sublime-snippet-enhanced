@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+append(
+]]></content>
+	<tabTrigger>attr(</tabTrigger>
+	<scope>source.js</scope>
+	<commands>
+		[
+			"RUN",
+			{
+				"command": "add_semicolon_to_statement",
+			}
+		]
+	</commands>
+	<description>attr</description>
+</snippet>

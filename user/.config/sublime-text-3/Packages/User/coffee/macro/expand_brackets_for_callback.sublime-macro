@@ -1,0 +1,17 @@
+[
+  {
+    "command": "run_commands",
+    "args": {
+      "commands": [
+        {"command": "insert_snippet_enhanced", "args": {"contents": "\n $0\n"}},
+        {"command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"}},
+        {"command": "move", "args": {"by": "lines", "forward": false}},
+        {"command": "move_to", "args": {"extend": false, "to": "eol"}},
+      ]
+    },
+    "context": [
+      {"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\(\\s*$"},
+      {"key": "following_text_end", "operator": "regex_contains", "operand": "^\\s*\\)"},
+    ]
+  },
+]

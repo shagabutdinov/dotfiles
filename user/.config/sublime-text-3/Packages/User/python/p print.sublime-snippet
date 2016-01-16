@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+print(${1:$selection__or__last_assigned_variable})
+]]></content>
+	<commands><![CDATA[
+	  [
+	  	{
+	  		"command": "run_macro_file_with_context",
+	  		"args": {
+	  			"file": "Packages/User/macro/select_token.sublime-macro",
+	  		}
+	  	},
+	  	"RUN",
+	  ]
+	]]></commands>
+	<tabTrigger>p</tabTrigger>
+	<scope>source.python</scope>
+</snippet>

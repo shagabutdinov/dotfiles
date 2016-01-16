@@ -1,0 +1,1714 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+each(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ue</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: each</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+map(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>um</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: map</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+collect(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uc</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: collect</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+reduce(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ur</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: reduce</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+find(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uf</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: find</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+filter(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ufi</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: filter</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+select(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>us</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: filter</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+where(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uw</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: where</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+findWhere(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ufw</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: findWhere</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+reject(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ure</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: reject</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+every(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uev</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: every</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+some(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uso</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: some</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+contains(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uco</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: contains</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+invoke(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uin</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: invoke</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+pluck(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>upl</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: pluck</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+max(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uma</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: max</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+min(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>umi</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: min</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+sortBy(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uso</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: sortBy</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+groupBy(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ugr</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: groupBy</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+indexBy(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uin</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: indexBy</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+countBy(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ucb</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: countBy</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+shuffle(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ush</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: shuffle</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+sample(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>usa</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: sample</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+toArray(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uta</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: toArray</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+size(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>usi</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: size</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+partition(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>upa</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: partition</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+first(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ufi</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: first</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+initial(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uin</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: initial</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+last(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ula</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: last</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+rest(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ures</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: rest</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+compact(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uco</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: compact</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+flatten(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ufl</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: flatten</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+without(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uwi</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: without</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+union(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uun</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: union</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+intersection(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uin</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: intersection</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+difference(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>udi</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: difference</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+uniq(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uun</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: uniq</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+zip(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uzi</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: zip</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+unzip(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uun</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: unzip</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+object(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uo</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: object</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+indexOf(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uin</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: indexOf</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+lastIndexOf(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uli</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: lastIndexOf</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+sortedIndex(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uso</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: sortedIndex</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+findIndex(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ufi</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: findIndex</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+findLastIndex(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ufi</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: findLastIndex</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+range(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ura</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: range</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+keys(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uke</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: keys</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+allKeys(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ual</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: allKeys</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+values(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uva</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: values</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+mapObject(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uma</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: mapObject</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+pairs(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>upa</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: pairs</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+invert(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uin</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: invert</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+create(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ucr</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: create</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+functions(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ufu</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: functions</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+findKey(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ufi</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: findKey</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+extend(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ux</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: extend</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+extendOwn(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uxo</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: extendOwn</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+pick(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>upi</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: pick</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+omit(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uom</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: omit</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+defaults(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ude</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: defaults</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+clone(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ucl</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: clone</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+tap(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uta</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: tap</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+has(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uha</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: has</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+matcher(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uma</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: matcher</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+property(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>upr</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: property</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+propertyOf(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>upr</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: propertyOf</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+isEqual(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uis</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: isEqual</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+isMatch(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uis</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: isMatch</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+isEmpty(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uis</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: isEmpty</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+isElement(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uis</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: isElement</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+isArray(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uis</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: isArray</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+isObject(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uis</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: isObject</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+isArguments(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uis</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: isArguments</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+isFunction(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uis</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: isFunction</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+isString(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uis</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: isString</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+isNumber(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uis</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: isNumber</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+isFinite(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uis</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: isFinite</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+isBoolean(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uis</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: isBoolean</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+isDate(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uis</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: isDate</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+isRegExp(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uis</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: isRegExp</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+isNaN(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uis</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: isNaN</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+isNull(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uis</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: isNull</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+isUndefined(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uis</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: isUndefined</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+noConflict(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uno</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: noConflict</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+identity(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uid</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: identity</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+times(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uti</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: times</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+random(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ura</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: random</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+mixin(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>umi</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: mixin</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+iteratee(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uit</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: iteratee</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+uniqueId(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uun</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: uniqueId</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+escape(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ues</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: escape</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+unescape(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uun</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: unescape</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+result(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ure</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: result</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+now(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uno</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: now</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+template(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ute</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: template</description>
+	</snippet>
+
+
+</snippets>

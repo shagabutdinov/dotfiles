@@ -1,0 +1,123 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+\$scope
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>self</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "function\\(.*?\\$scope"},
+			]
+		]]></context>
+		<description>angular: $scope</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$scope.$1 = function($2) {
+	${0:$selection}
+}
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>d</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "function\\(.*?\\$scope"},
+			]
+		]]></context>
+		<description>angular: define method on scope</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$http.
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>h</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "function\\(.*?\\$scope"},
+			]
+		]]></context>
+		<description>angular: define method on scope</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+get($1)
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<trigger>g</trigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\$http\\.\\s*g$"},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "function\\(.*?\\$scope"},
+			]
+		]]></context>
+		<description>angular: $http.get</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+post($1)
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<trigger>p</trigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\$http\\.\\s*p$"},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "function\\(.*?\\$scope"},
+			]
+		]]></context>
+		<description>angular: $http.post</description>
+	</snippet>
+
+</snippets>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+following_128_chars_end
+]]></content>
+	<tabTrigger>following_text_end</tabTrigger>
+	<scope>text.xml</scope>
+	<description>following_128_chars_end</description>
+</snippet>

@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+if(${1:$last_assigned_variable}) {
+	${0:$selection}
+}
+]]></content>
+	<tabTrigger>i</tabTrigger>
+	<scope>source.java</scope>
+	<description>if</description>
+</snippet>

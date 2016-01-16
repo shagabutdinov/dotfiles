@@ -1,0 +1,18 @@
+{
+	"folders":
+	[
+		{
+			"path": "/home/leo/src/instore.idfly.ru",
+      "folder_exclude_patterns": [
+        "backend",
+        "backend/log",
+        "backend_v2/log",
+        "backend_v2/coverage",
+        "backend_v2/vendor",
+        "frontend_v2/node_modules",
+        "frontend_v2/build",
+        "mysql",
+      ],
+		}
+	]
+}

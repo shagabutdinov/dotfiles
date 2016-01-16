@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+elif $1:
+	${0:$selection}
+]]></content>
+	<tabTrigger>ei</tabTrigger>
+	<scope>source.python</scope>
+	<description>elif</description>
+</snippet>

@@ -1,0 +1,90 @@
+<snippets>
+
+	<snippet>
+		<content>&lt;![CDATA[${0:$selection}]]&gt;</content>
+		<commands><![CDATA[
+			[
+
+				{
+					"command": "expand_selection",
+					"args": {
+						"to": "tag",
+					},
+				},
+
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>c</tabTrigger>
+		<scope>text.xml</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": ">\\s*c$"},
+				{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "</scope>\\s*c$"},
+				{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "</content>\\s*c$"},
+			]
+		]]></context>
+		<description>CDATA</description>
+	</snippet>
+
+	<snippet>
+		<content>
+&lt;context&gt;&lt;![CDATA[
+	[
+		{"key": "${1:preceding_text_begin}", "operator": "${2:regex_contains}", "operand": "$0\$"},
+	]
+]]&gt;&lt;/context>
+</content>
+		<tabTrigger>c</tabTrigger>
+		<scope>text.xml</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": ">\\s*c$"},
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "</scope>\\s*c$"},
+			]
+		]]></context>
+		<description>context</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<commands>
+	[
+		{
+		  "command": "$1",
+		  "args": {
+        $2
+		  }
+		},
+
+		"RUN",
+	]
+</commands>
+]]></content>
+		<tabTrigger>c</tabTrigger>
+		<scope>text.xml</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": ">\\s*c$"},
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "</content>\\s*c$"},
+			]
+		]]></context>
+		<description>commands</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+{"key": "${1:preceding_text_begin}", "operator": "${2:regex_contains}", "operand": "$0\$"},
+]]></content>
+		<tabTrigger>c</tabTrigger>
+		<scope>text.xml</scope>
+		<context>
+			[
+				{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": ">\\s*c$"},
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "(\\},|\\[)\\s*c$"},
+			]
+		</context>
+		<description>context element</description>
+	</snippet>
+
+</snippets>

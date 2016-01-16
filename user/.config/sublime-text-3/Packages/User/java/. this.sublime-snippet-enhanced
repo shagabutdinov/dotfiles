@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+this.
+]]></content>
+	<tabTrigger>.</tabTrigger>
+	<scope>source.java</scope>
+	<description>this</description>
+</snippet>

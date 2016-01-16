@@ -1,0 +1,22 @@
+[
+  // {
+  //   "command": "goto_expression",
+  //   "args": {
+  //     "expression": "\\S",
+  //     "range": [1, 1024],
+  //   }
+  // },
+
+  {
+    "command": "goto_indentation",
+    "args": {
+      "type": "lesser_or_equal",
+      "change": true,
+      "use_empty_line": true,
+      "before": 1,
+      "before_if_lesser": true,
+      "expand": true,
+      "alignment": "right"
+    },
+  }
+]

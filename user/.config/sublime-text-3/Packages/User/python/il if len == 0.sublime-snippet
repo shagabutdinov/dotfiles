@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+if len(${1:$selection}) == 0$2:
+	$0
+]]></content>
+	<tabTrigger>il</tabTrigger>
+	<scope>source.python</scope>
+	<description>if len(selection) == 0:</description>
+</snippet>

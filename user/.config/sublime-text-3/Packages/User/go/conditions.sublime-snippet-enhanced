@@ -1,0 +1,79 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+if ${1:$last_assigned_variable} {
+	${0:$selection}
+}
+]]></content>
+		<tabTrigger>i</tabTrigger>
+		<scope>source.go(?!.*(string|comment))</scope>
+		<description>if equal nil</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+if ${1:$last_assigned_variable} == nil {
+	${0:$selection}
+}
+]]></content>
+		<tabTrigger>ii</tabTrigger>
+		<scope>source.go(?!.*(string|comment))</scope>
+		<description>if equal nil</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+if !${1:$last_assigned_variable} {
+	${0:$selection}
+}
+]]></content>
+		<tabTrigger>in</tabTrigger>
+		<scope>source.go(?!.*(string|comment))</scope>
+		<description>if equal nil</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+if ${1:$last_assigned_variable} != nil {
+	${0:$selection}
+}
+]]></content>
+		<tabTrigger>ini</tabTrigger>
+		<scope>source.go(?!.*(string|comment))</scope>
+		<description>if equal nil</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+else if ${1:$last_assigned_variable} {
+	${0:$selection}
+}
+]]></content>
+		<trigger>i</trigger>
+		<scope>source.go(?!.*(string|comment))</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\}\\s*i$"},
+			]
+		]]></context>
+		<description>else if</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+else {
+	${0:$selection}
+}
+]]></content>
+		<trigger>e</trigger>
+		<scope>source.go(?!.*(string|comment))</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\}\\s*e$"},
+			]
+		]]></context>
+		<description>else</description>
+	</snippet>
+
+</snippets>

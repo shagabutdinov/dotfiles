@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+reversed($1)
+]]></content>
+	<tabTrigger>r</tabTrigger>
+	<scope>source.python</scope>
+	<context>
+		[
+			{"key": "selection_empty", "operator": "equal", "operand": true},
+			{"key": "preceding_text_b", "operator": "regex_contains", "operand": "\\S.*r$"},
+		]
+	</context>
+	<description>reversed</description>
+</snippet>

@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[
+(function() {
+  "use strict";
+
+  IdFly.Js.Class.create('IdFly.Js.$1UnitTest', {
+
+    __parent: 'IdFly.Js.TestHelper',
+
+    setUp: function() {
+      this._object = new IdFly.Js.$1();
+    },
+
+    $0
+
+  });
+})();
+]]></content>
+	<tabTrigger>Ct</tabTrigger>
+	<scope>source.js</scope>
+	<description>class test</description>
+</snippet>

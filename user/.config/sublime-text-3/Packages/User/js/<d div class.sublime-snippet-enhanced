@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+<div class="$1"></div>
+]]></content>
+	<tabTrigger>d</tabTrigger>
+	<scope>source.js(?=.*string)</scope>
+	<description>div class</description>
+</snippet>

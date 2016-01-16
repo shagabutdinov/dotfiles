@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+"use strict";
+]]></content>
+	<tabTrigger>us</tabTrigger>
+	<scope>source.js</scope>
+	<context>
+		[
+			{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "function\\([\\w,]*\\) {\\s*us$"},
+		]
+	</context>
+	<description>use strict</description>
+</snippet>

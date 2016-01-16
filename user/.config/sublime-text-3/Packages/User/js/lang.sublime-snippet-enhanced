@@ -1,0 +1,161 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+null
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "add_semicolon_to_statement"},
+			]
+		</commands>
+		<tabTrigger>n</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w=,(]\\s*$"},
+			]
+		]]></context>
+		<description>lang: null</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+true
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "add_semicolon_to_statement"},
+			]
+		</commands>
+		<tabTrigger>t</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w=,(]\\s*$"},
+			]
+		]]></context>
+		<description>lang: true</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+false
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "add_semicolon_to_statement"},
+			]
+		</commands>
+		<tabTrigger>false</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w=,(]\\s*$"},
+			]
+		]]></context>
+		<description>lang: false</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+success
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "add_semicolon_to_statement"},
+			]
+		</commands>
+		<tabTrigger>s</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.s$"},
+			]
+		]]></context>
+		<description>lang: success</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+then(${0:$selection})
+]]></content>
+	<commands>
+		[
+			"RUN",
+			{"command": "add_semicolon_to_statement"},
+		]
+	</commands>
+		<tabTrigger>t</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.\\s*t"},
+			]
+		</context>
+		<description>lang: then</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+then(function($1) {
+	${0:$selection}
+})
+]]></content>
+	<commands>
+		[
+			"RUN",
+			{"command": "add_semicolon_to_statement"},
+		]
+	</commands>
+		<tabTrigger>t</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.\\s*t"},
+				{"key": "selection_empty", "operator": "equal", "operand": false},
+			]
+		</context>
+		<description>lang: then with selection</description>
+		<order>2</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+then(function($1) {
+	$0
+}
+]]></content>
+	<commands>
+		[
+			"RUN",
+			{"command": "add_semicolon_to_statement"},
+		]
+	</commands>
+		<tabTrigger>then(</tabTrigger>
+		<scope>source.js</scope>
+		<description>lang: then function</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+then(function(response
+]]></content>
+	<commands>
+		[
+			"RUN",
+			{"command": "add_semicolon_to_statement"},
+		]
+	</commands>
+		<tabTrigger>then(function(</tabTrigger>
+		<scope>source.js</scope>
+		<description>lang: then function response</description>
+	</snippet>
+
+</snippets>

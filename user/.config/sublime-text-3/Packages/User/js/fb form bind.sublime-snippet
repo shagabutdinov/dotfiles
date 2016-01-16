@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+\$idfly.call('Form.bind', [${1:form}, '$2', {
+	onsuccess: function(result) {
+		$0
+	}
+}]);
+]]></content>
+	<tabTrigger>fb</tabTrigger>
+	<scope>source.js</scope>
+	<description></description>
+</snippet>

@@ -1,0 +1,47 @@
+<snippets>
+
+	<snippet>
+	  <content><![CDATA[
+<snippets>
+
+	${0:$selection}
+
+</snippets>
+]]></content>
+	  <tabTrigger>s</tabTrigger>
+	  <commands><![CDATA[
+	    [
+	    	{
+	    		"command": "move_to",
+	    		"args": {
+	    		  "extend": true,
+	    		  "to": "eof",
+	    		}
+	    	},
+	    	"RUN",
+	    ]
+	  ]]></commands>
+	  <scope>text.xml</scope>
+	  <context><![CDATA[
+	  	[
+	  		{"key": "following_128_chars_end", "operator": "regex_contains", "operand": "^\\s*\\<snippet\\>"},
+	  	]
+	  ]]></context>
+	  <description>snippets</description>
+	</snippet>
+
+	<snippet>
+	  <content><![CDATA[
+\${${1:0}:\$selection__or__last_assigned_variable}
+]]></content>
+	  <tabTrigger>s</tabTrigger>
+	  <scope>text.xml</scope>
+	  <context><![CDATA[
+	  	[
+	  		{"key": "following_128_chars_end", "operator": "not_regex_contains", "operand": "^\\s*\\<snippet\\>"},
+	  	]
+	  ]]></context>
+	  <description>selected text</description>
+	</snippet>
+
+</snippets>

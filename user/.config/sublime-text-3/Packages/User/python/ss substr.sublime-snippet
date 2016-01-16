@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+substr(${0:$selection})
+]]></content>
+	<tabTrigger>su</tabTrigger>
+	<scope>source.python</scope>
+	<description>substr</description>
+</snippet>

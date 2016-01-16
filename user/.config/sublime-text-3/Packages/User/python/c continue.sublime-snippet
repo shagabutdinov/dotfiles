@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+continue
+]]></content>
+	<tabTrigger>c</tabTrigger>
+	<scope>source.python</scope>
+	<description>continue</description>
+</snippet>

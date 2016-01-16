@@ -1,0 +1,18 @@
+<snippet>
+  <content>
+&lt;commands&gt;&lt;![CDATA[
+  [
+  	{
+  		"command": "run_macro_file_with_context",
+  		"args": {
+  			"file": "Packages/User/macro/${1:add_semicolon_and_select_token}.sublime-macro",
+  		}
+  	},
+  	"RUN",
+  ]
+]]&gt;&lt;/commands&gt;
+</content>
+  <tabTrigger>cm</tabTrigger>
+  <scope>text.xml</scope>
+  <description>commands</description>
+</snippet>

@@ -1,0 +1,221 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+float64
+]]></content>
+		<tabTrigger>fo</tabTrigger>
+		<scope>source.go</scope>
+		<description>float64</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+int64
+]]></content>
+		<tabTrigger>it</tabTrigger>
+		<scope>source.go</scope>
+		<description>int64</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+[]$1{$2}
+]]></content>
+		<tabTrigger>sl</tabTrigger>
+		<scope>source.go</scope>
+		<description>slice</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+string
+]]></content>
+		<tabTrigger>st</tabTrigger>
+		<scope>source.go</scope>
+		<description>string</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+type $1 ${2:struct} {
+	$0
+}
+]]></content>
+		<commands>
+			[
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				{"command": "replace_text_by_regexp", "args": {"regexp": "\\s*", "replacement": ""}},
+				"RUN",
+			]
+		</commands>
+		<trigger>t</trigger>
+		<context><![CDATA[
+			[
+				{"key": "nesting", "operator": "equal", "operand": null},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*t$"},
+			]
+		]]></context>
+		<order>0</order>
+		<scope>source.go</scope>
+		<description>type ai struct</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+interface
+]]></content>
+		<commands>
+			[
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		</commands>
+		<trigger>i</trigger>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "type \\w+ i"},
+				{"key": "nesting", "operator": "equal", "operand": null},
+			]
+		]]></context>
+		<scope>source.go</scope>
+		<description>type ai struct</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+func ($this) ${2:name}(${3:args})$4 {
+	${0:$selection}
+}
+]]></content>
+		<trigger>d</trigger>
+		<eval><![CDATA[
+			{
+				'this': __import__('Utilities').go.find_this_arg(view, True)
+			}
+		]]></eval>
+		<scope>source.go</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^d$"},
+				{"key": "nesting", "operator": "equal", "operand": null},
+			]
+		]]></context>
+		<description>func this (no star)</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+func Test$1(test *testing.T) {
+	${0:$selection}
+}
+]]></content>
+		<trigger>d</trigger>
+		<scope>source.go</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^d$"},
+				{"key": "nesting", "operator": "equal", "operand": null},
+				{"key": "filename", "operator": "regex_contains", "operand": "_test\\.go$"},
+			]
+		]]></context>
+		<description>func this</description>
+		<order>5</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+string
+]]></content>
+		<trigger>s</trigger>
+		<scope>source.go</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "(\\w\\s*s)$"},
+				[
+					{"key": "in_go_type_definition", "operator": "equal", "operand": true},
+					"or",
+					{"key": "in_method_definition", "operator": "equal", "operand": true},
+				],
+				"or",
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "([\\[\\]]|\\.\\()s$"},
+			]
+		]]></context>
+		<description>string</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+s${trigger1}
+]]></content>
+		<triggerRegexp>string(\w)</triggerRegexp>
+		<scope>source.go</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "(\\w\\s*string\\w)$"},
+				[
+					{"key": "in_go_type_definition", "operator": "equal", "operand": true},
+					"or",
+					{"key": "in_method_definition", "operator": "equal", "operand": true},
+				],
+				"or",
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "([\\[\\]]|\\.\\()string\\w$"},
+			]
+		]]></context>
+		<description>string</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+int
+]]></content>
+		<trigger>i</trigger>
+		<scope>source.go</scope>
+		<context><![CDATA[
+			[
+				{"key": "in_go_type_definition", "operator": "equal", "operand": true},
+			]
+		]]></context>
+		<description>string</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+interface
+]]></content>
+		<trigger>intn</trigger>
+		<scope>source.go</scope>
+		<context><![CDATA[
+			[
+				{"key": "in_go_type_definition", "operator": "equal", "operand": true},
+			]
+		]]></context>
+		<description>string</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+bool
+]]></content>
+		<trigger>b</trigger>
+		<scope>source.go</scope>
+		<context><![CDATA[
+			[
+				{"key": "in_go_type_definition", "operator": "equal", "operand": true},
+			]
+		]]></context>
+		<description>string</description>
+	</snippet>
+
+	<snippet>
+			<content><![CDATA[
+func ${1:name}(${2:args})$3 {
+	${0:$selection}
+}
+]]></content>
+			<tabTrigger>u</tabTrigger>
+			<scope>source.go</scope>
+			<description>func this</description>
+	</snippet>
+
+</snippets>

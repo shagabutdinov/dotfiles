@@ -1,0 +1,716 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertArrayHasKey(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>aahk</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertArrayHasKey()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertClassHasAttribute(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>acha</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertClassHasAttribute()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertArraySubset(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>aas</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertArraySubset()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertClassHasStaticAttribute(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>achsa</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertClassHasStaticAttribute()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertContains(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>ac</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertContains()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertCount(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>ac</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertCount()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertEmpty(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>aem</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertEmpty()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertEquals(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>ae</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertEquals()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertFalse(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>af</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertFalse()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertFileEquals(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>afe</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertFileEquals()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertFileExists(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>afe</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertFileExists()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertGreaterThan(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>agt</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertGreaterThan()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertGreaterThanOrEqual(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>agtoe</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertGreaterThanOrEqual()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertInfinite(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>ai</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertInfinite()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertInstanceOf(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>aio</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertInstanceOf()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertInternalType(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>ait</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertInternalType()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertLessThan(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>alt</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertLessThan()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertLessThanOrEqual(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>altoe</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertLessThanOrEqual()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertNan(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>an</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertNan()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertNull(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>an</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertNull()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertObjectHasAttribute(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>aoha</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertObjectHasAttribute()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertRegExp(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>are</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertRegExp()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertStringMatchesFormat(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>asmf</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertStringMatchesFormat()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertStringMatchesFormatFile(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>asmff</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertStringMatchesFormatFile()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertSame(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>as</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertSame()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertStringEndsWith(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>asew</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertStringEndsWith()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertStringEqualsFile(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>asef</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertStringEqualsFile()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertStringStartsWith(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>assw</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertStringStartsWith()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertThat(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>ath</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertThat()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->assertTrue(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>at</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: assertTrue()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->setExpectedException(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>see</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "TestCase"},
+			]
+		]]></context>
+		<description>test: setExpectedException()</description>
+	</snippet>
+
+</snippets>

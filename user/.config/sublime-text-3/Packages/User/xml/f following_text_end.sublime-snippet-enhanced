@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+following_text_end
+]]></content>
+	<tabTrigger>f</tabTrigger>
+	<scope>text.xml</scope>
+	<context><![CDATA[
+		[
+			{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\"f$"},
+		]
+	]]></context>
+	<order>1</order>
+	<description>following_text_end</description>
+</snippet>

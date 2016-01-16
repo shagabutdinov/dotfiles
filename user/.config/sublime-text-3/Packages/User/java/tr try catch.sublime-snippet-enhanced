@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+try {
+  ${0:$selection}
+} catch($1 exception) {
+	$2
+}
+]]></content>
+	<tabTrigger>tr</tabTrigger>
+	<scope>source.java</scope>
+	<description>try catch</description>
+</snippet>

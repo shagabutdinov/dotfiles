@@ -1,0 +1,183 @@
+[
+	{
+		"args":
+		{
+			"by": "lines",
+			"forward": false
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"by": "lines",
+			"forward": false
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"by": "lines",
+			"forward": false
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"extend": false,
+			"to": "eol"
+		},
+		"command": "move_to"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": false
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": true
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"by": "lines",
+			"forward": true
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"extend": false,
+			"to": "bol"
+		},
+		"command": "move_to"
+	},
+	{
+		"args":
+		{
+			"alignment": "right",
+			"before": 1,
+			"expand": true,
+			"type": "lesser"
+		},
+		"command": "goto_indentation"
+	},
+	{
+		"args": null,
+		"command": "unindent"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": false
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"by": "lines",
+			"forward": false
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"extend": false,
+			"to": "eol"
+		},
+		"command": "move_to"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": false
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"file": "Packages/Expression/macro/select_over_brackets_forward.sublime-macro"
+		},
+		"command": "run_macro_file"
+	},
+	{
+		"args":
+		{
+			"source":
+			[
+				[
+					"\"",
+					"\""
+				],
+				[
+					"`",
+					"`"
+				],
+				[
+					"'",
+					"'"
+				],
+				[
+					"(",
+					")"
+				],
+				[
+					"[",
+					"]"
+				],
+				[
+					"{",
+					"}"
+				]
+			],
+			"target":
+			[
+				"",
+				""
+			]
+		},
+		"command": "toggle_wrap"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": false
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"file": "Packages/Expression/macro/select_over_brackets_backward.sublime-macro"
+		},
+		"command": "run_macro_file"
+	},
+	{
+		"args": null,
+		"command": "left_delete"
+	},
+	{
+		"args":
+		{
+			"file": "res://Packages/Default/Delete Line.sublime-macro"
+		},
+		"command": "run_macro_file"
+	}
+]

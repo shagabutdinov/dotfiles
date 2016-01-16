@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+not_
+]]></content>
+	<tabTrigger>n</tabTrigger>
+	<scope>text.xml</scope>
+	<description>not_</description>
+</snippet>

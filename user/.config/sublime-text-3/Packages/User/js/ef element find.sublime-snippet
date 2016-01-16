@@ -1,0 +1,9 @@
+<snippet>
+		<content><![CDATA[
+${1:element}.
+	find( '.$2' )
+]]></content>
+		<tabTrigger>ef</tabTrigger>
+		<scope>source.js</scope>
+		<description></description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+sublime.Region(${1:$selection})
+]]></content>
+	<tabTrigger>sr</tabTrigger>
+	<scope>source.python</scope>
+	<description>sublime.Region</description>
+</snippet>

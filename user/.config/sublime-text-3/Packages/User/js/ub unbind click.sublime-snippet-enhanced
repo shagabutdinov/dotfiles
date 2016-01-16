@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[
+unbind('${1:click}').
+on('${1:click}', ${0:$selection__or__last_assigned_variable})
+]]></content>
+	<commands><![CDATA[
+	  [
+	  	{
+	  		"command": "run_macro_file_with_context",
+	  		"args": {
+	  			"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro",
+	  		}
+	  	},
+	  	"RUN",
+	  ]
+	]]></commands>
+	<tabTrigger>ub</tabTrigger>
+	<scope>source.js</scope>
+	<context>
+		[
+			{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.\\s*ub$"},
+		]
+	</context>
+	<description>unbind on</description>
+</snippet>

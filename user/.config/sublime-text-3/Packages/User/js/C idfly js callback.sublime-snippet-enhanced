@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+IdFly.Js.Callback
+]]></content>
+	<tabTrigger>C</tabTrigger>
+	<scope>source.js</scope>
+	<context>
+		[
+			{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "^\\s*C$"},
+		]
+	</context>
+	<description>idfly js callback</description>
+</snippet>

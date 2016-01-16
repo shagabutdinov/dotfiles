@@ -1,0 +1,15 @@
+<snippet>
+    <content><![CDATA[
+
+typedef boost::shared_ptr<$class> ${class}SP;
+
+]]></content>
+    <description>TEST</description>
+    <tabTrigger>TEST</tabTrigger>
+    <scope>source.java</scope>
+    <eval><![CDATA[
+{
+    'class': 'OLOLO'
+}
+    ]]></eval>
+</snippet>

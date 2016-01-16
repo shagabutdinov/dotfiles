@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+!== false
+]]></content>
+	<tabTrigger>nf</tabTrigger>
+	<scope>source.js</scope>
+	<description>false</description>
+</snippet>

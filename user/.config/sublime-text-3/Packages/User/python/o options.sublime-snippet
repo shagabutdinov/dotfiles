@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+options['${1:$selection}']$0
+]]></content>
+	<tabTrigger>o</tabTrigger>
+	<scope>source.python</scope>
+	<description>options</description>
+</snippet>

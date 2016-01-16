@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+_.map(${1:$selection__or__last_assigned_variable}, function(${2:value}) {
+	$0
+})
+]]></content>
+	<commands><![CDATA[
+	  [
+	  	{
+	  		"command": "run_macro_file_with_context",
+	  		"args": {
+	  			"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro",
+	  		}
+	  	},
+	  	"RUN",
+	  ]
+	]]></commands>
+	<tabTrigger>um</tabTrigger>
+	<scope>source.js</scope>
+	<description>_ map</description>
+</snippet>

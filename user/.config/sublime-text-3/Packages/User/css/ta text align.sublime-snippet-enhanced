@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+text-align: $0;
+]]></content>
+	<tabTrigger>ta</tabTrigger>
+	<scope>source.css</scope>
+	<description>text align</description>
+</snippet>

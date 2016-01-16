@@ -1,0 +1,1755 @@
+<snippets>
+
+	<!-- controller -->
+
+	<snippet>
+		<content><![CDATA[
+<?php
+
+namespace app\\${1:$namespace}\\controllers;
+
+class ${2:$class} extends ${3:\\yii\\web\\Controller}
+{
+
+	public \$layout = '${1:$namespace}.php';
+	$0
+}
+]]></content>
+		<tabTrigger>c</tabTrigger>
+		<trigger>c</trigger>
+		<scope>text.html(?!.*source)</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "/controllers/\\w+\\.\\w+$"},
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "^\\s*c$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		]]></context>
+		<description>yii controller class</description>
+		<eval><![CDATA[
+			{
+				'class': __import__('User').snippets.get_class_name(view.file_name()) or '',
+				'namespace': __import__('User').re.search(r'/(\w+)/\w+/\w+\.\php', view.file_name()) or 'admin',
+			}
+		]]></eval>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+createCommand()->getRawSql()
+]]></content>
+		<tabTrigger>cc</tabTrigger>
+		<trigger>cc</trigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "->cc$"},
+			]
+		]]></context>
+		<description>get sql raw query</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<?php
+
+namespace app\\commands;
+
+class ${2:$class} extends \\yii\\console\\Controller
+{
+
+	$0
+
+}
+]]></content>
+		<tabTrigger>c</tabTrigger>
+		<trigger>c</trigger>
+		<scope>text.html(?!.*source)</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "/commands/\\w+\\.\\w+$"},
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "^\\s*c$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		]]></context>
+		<description>yii controller class</description>
+		<eval><![CDATA[
+			{
+				'class': __import__('User').snippets.get_class_name(view.file_name()) or '',
+			}
+		]]></eval>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+public function action${1:Action}()
+{
+	$0
+	return \$this->render('${1/(.*)/\l$1/i}', []);
+}
+]]></content>
+		<commands><![CDATA[
+			[
+				{"command": "insert", "args": {"characters": "\t"}, "context": [{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^$"}]},
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>d</tabTrigger>
+		<trigger>d</trigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*d$"},
+				{"key": "class_name", "operator": "regex_contains", "operand": "Controller"},
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii action</description>
+		<order>10</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+public function beforeAction(\$action)
+{
+    if(!parent::beforeAction(\$action)) {
+    	return false;
+    }
+
+	$0
+	return true;
+}
+]]></content>
+		<commands><![CDATA[
+			[
+				{"command": "insert", "args": {"characters": "\t"}, "context": [{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^$"}]},
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>ba</tabTrigger>
+		<trigger>ba</trigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "class_name", "operator": "regex_contains", "operand": "Controller"},
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii beforeaction</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+public function afterAction(\$action)
+{
+    \$result = parent::beforeAction(\$action);
+    $0
+    return \$result;
+}
+]]></content>
+		<commands><![CDATA[
+			[
+				{"command": "insert", "args": {"characters": "\t"}, "context": [{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^$"}]},
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>aa</tabTrigger>
+		<trigger>aa</trigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "class_name", "operator": "regex_contains", "operand": "Controller"},
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii beforeaction</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+new \\yii\\data\\ActiveDataProvider([
+	'query' => $1,
+	'pagination' => [
+			'pageSize' => ${2:20},
+	],
+]);
+]]></content>
+		<tabTrigger>dp</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii data activedataprovider</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+render('$1')
+]]></content>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"}
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<tabTrigger>r</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\$this->r$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>this render</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+redirect($0)
+]]></content>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"}
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<tabTrigger>rt</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\$this->rt$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>this render</description>
+		<order>10</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->redirect(\yii::\$app->urlManager->createUrl(['$1'])
+]]></content>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"}
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<tabTrigger>$this->redirect(</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>this render</description>
+		<order>10</order>
+	</snippet>
+
+	<!-- model -->
+
+	<snippet>
+		<content><![CDATA[
+namespace app\\models;
+
+class ${1:$class} extends \\yii\\db\\(ActiveRecord|Model)
+{
+
+	public static function tableName()
+	{
+		return '${2:$class_lower_case}';
+	}
+
+	public function rules()
+	{
+		return [
+		];
+	}
+
+	public function attributeLabels()
+	{
+		return [
+			'id' => '#',
+		];
+	}
+	$0
+}
+]]></content>
+		<tabTrigger>C</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "/models/"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii model class</description>
+		<eval><![CDATA[
+			{
+				'class': __import__('User').snippets.get_class_name(view.file_name()) or '',
+				'class_lower_case': (__import__('User').snippets.to_snake_case(__import__('User').
+					snippets.get_class_name(view.file_name())) or '')
+			}
+		]]></eval>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+namespace app\\models;
+
+class ${1:$class} extends \\yii\\base\\Model
+{
+
+    public function rules()
+    {
+        return [
+        ];
+    }
+
+    public function attributeLabels()
+    {
+        return [
+            'id' => '#',
+        ];
+    }
+
+    public function ${2:action}()
+    {
+        if(!\$this->validate()) {
+            return false;
+        }
+
+        $0
+
+        return true;
+    }
+
+}
+]]></content>
+		<tabTrigger>M</tabTrigger>
+		<scope>source.php</scope>
+		<description>namespace app models</description>
+		<eval><![CDATA[
+			{
+				'class': __import__('User').snippets.get_class_name(view.file_name()) or '',
+				'class_lower_case': (__import__('User').snippets.to_snake_case(__import__('User').
+					snippets.get_class_name(view.file_name())) or '')
+			}
+		]]></eval>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->view->registerJs('$0');
+]]></content>
+		<tabTrigger>rj</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		]]></context>
+		<description>this registerjs</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+static public function find()
+{
+	return parent::find()$0;
+}
+]]></content>
+		<tabTrigger>f</tabTrigger>
+		<trigger>f</trigger>
+		<commands><![CDATA[
+			[
+				{"command": "insert", "args": {"characters": "\t"}, "context": [{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^$"}]},
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		]]></commands>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*f$"},
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+				{"key": "class_name", "operator": "regex_contains", "operand": "(ActiveRecord|Model)"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		]]></context>
+		<description>static public function find</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+public function afterFind()
+{
+	$0
+	return parent::afterFind();
+}
+]]></content>
+		<commands><![CDATA[
+			[
+				{"command": "insert", "args": {"characters": "\t"}, "context": [{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^$"}]},
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>af</tabTrigger>
+		<trigger>af</trigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "class_name", "operator": "regex_contains", "operand": "(ActiveRecord|Model)"},
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii aftersave</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+public function afterSave(\$insert, \$changedAttributes) {
+	$0
+	return parent::afterSave(\$insert, \$changedAttributes);
+}
+]]></content>
+		<commands><![CDATA[
+			[
+				{"command": "insert", "args": {"characters": "\t"}, "context": [{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^$"}]},
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>as</tabTrigger>
+		<trigger>as</trigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "class_name", "operator": "regex_contains", "operand": "(ActiveRecord|Model)"},
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii aftersave</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+public function beforeSave(\$insert) {
+	if(!parent::beforeSave(\$insert)) {
+		return false;
+	}
+
+	$0
+	return true;
+}
+]]></content>
+		<commands><![CDATA[
+			[
+				{"command": "insert", "args": {"characters": "\t"}, "context": [{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^$"}]},
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>bs</tabTrigger>
+		<trigger>bs</trigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "class_name", "operator": "regex_contains", "operand": "(ActiveRecord|Model)"},
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii beforeSave</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+public function beforeValidate()
+{
+	$0
+	return parent::beforeValidate();
+}
+]]></content>
+		<commands><![CDATA[
+			[
+				{"command": "insert", "args": {"characters": "\t"}, "context": [{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^$"}]},
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>bv</tabTrigger>
+		<trigger>bv</trigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "class_name", "operator": "regex_contains", "operand": "(ActiveRecord|Model)"},
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii beforeValidate</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+public function afterValidate()
+{
+	$0
+	return parent::afterValidate();
+}
+]]></content>
+		<commands><![CDATA[
+			[
+				{"command": "insert", "args": {"characters": "\t"}, "context": [{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^$"}]},
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>av</tabTrigger>
+		<trigger>av</trigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "class_name", "operator": "regex_contains", "operand": "(ActiveRecord|Model)"},
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii afterValidate</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+public function beforeDelete()
+{
+	if(!parent::beforeDelete()) {
+		return false;
+	}
+
+	$0
+	return true;
+}
+]]></content>
+		<commands><![CDATA[
+			[
+				{"command": "insert", "args": {"characters": "\t"}, "context": [{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^$"}]},
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>bd</tabTrigger>
+		<trigger>bd</trigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "class_name", "operator": "regex_contains", "operand": "(ActiveRecord|Model)"},
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii beforeDelete</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+public function afterDelete()
+{
+	$0
+	return parent::afterDelete();
+}
+]]></content>
+		<commands><![CDATA[
+			[
+				{"command": "insert", "args": {"characters": "\t"}, "context": [{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^$"}]},
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>ad</tabTrigger>
+		<trigger>ad</trigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "class_name", "operator": "regex_contains", "operand": "(ActiveRecord|Model)"},
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii afterDelete</description>
+	</snippet>
+
+	<snippet>
+			<content><![CDATA[
+public function get${1:class}()
+{
+	return \$this->hasOne(${2:$1}::className(), ['${3:id}' => '${4:field}']);
+}
+]]></content>
+		<commands><![CDATA[
+			[
+				{"command": "insert", "args": {"characters": "\t"}, "context": [{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^$"}]},
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		]]></commands>
+			<tabTrigger>gd</tabTrigger>
+			<trigger>gd</trigger>
+			<scope>source.php</scope>
+			<context>
+					[
+							{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+							{"key": "in_class_definition", "operator": "equal", "operand": true}
+					]
+			</context>
+			<description>yii backward relation</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+public function get${1:class}()
+{
+	return \$this->hasMany(${2:$1}::className(), ['${3:field}' => '${4:id}']);
+}
+]]></content>
+		<commands><![CDATA[
+			[
+				{"command": "insert", "args": {"characters": "\t"}, "context": [{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^$"}]},
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>gb</tabTrigger>
+		<trigger>gb</trigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+				{"key": "in_class_definition", "operator": "equal", "operand": true}
+			]
+		</context>
+		<description>yii backward relation</description>
+	</snippet>
+
+	<snippet>
+			<content><![CDATA[
+addError(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {
+						"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro",
+					}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>ae</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "class_name", "operator": "regex_contains", "operand": "((ActiveRecord|Model)|Model)"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii aftersave</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+oldAttributes
+]]></content>
+		<tabTrigger>oa</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\$this->oa$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		]]></context>
+		<description>oldAttributes</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+save()
+]]></content>
+		<tabTrigger>s</tabTrigger>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {
+		  			"file": "Packages/User/macro/add_semicolon.sublime-macro",
+		  		}
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "selection_empty", "operator": "equal", "operand": true},
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "->\\s*s$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>select</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+setAttributes(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<tabTrigger>sa</tabTrigger>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {
+		  			"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro",
+		  		}
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "->\\s*sa$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>setAttributes</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+[[${1:$selection}], 'safe']
+]]></content>
+		<tabTrigger>s</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "method_name", "operator": "equal", "operand": "rules"},
+				{"key": "selection_empty", "operator": "equal", "operand": false},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>select</description>
+	</snippet>
+
+	<!-- namespaces -->
+
+	<snippet>
+		<content><![CDATA[
+\\app\\models\\$0
+]]></content>
+		<tabTrigger>ym</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		]]></context>
+		<description>app models</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\\app\\components\\$0
+]]></content>
+		<tabTrigger>yc</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		]]></context>
+		<description>app components</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\\app\\${1:$namespace}\\forms\\$0
+]]></content>
+		<tabTrigger>yf</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		]]></context>
+		<description>app models</description>
+		<eval><![CDATA[
+			{
+				'namespace': __import__('User').re.search(r'/(\w+)/\w+/\w+\.\php', view.file_name()) or 'admin',
+			}
+		]]></eval>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\\yii\\helpers\\$0
+]]></content>
+		<tabTrigger>yh</tabTrigger>
+		<scope>source.php</scope>
+		<description>yii helpers</description>
+	</snippet>
+
+	<!-- classes -->
+
+
+	<snippet>
+		<content><![CDATA[
+NumberHelper::format(${1:$last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "create_keyword",
+					"args": {"keyword_type": "php.use", "keyword": "idfly\\components\\NumberHelper"},
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>nf</tabTrigger>
+		<scope>source.php</scope>
+		<description>yii helpers arrayhelper</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<?= NumberHelper::format(${1:$last_assigned_variable}) ?>
+]]></content>
+		<commands>
+			[
+				{
+					"command": "create_keyword",
+					"args": {"keyword_type": "php.use", "keyword": "idfly\\components\\NumberHelper"},
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>nf</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<description>NumberHelper format</description>
+	</snippet>
+
+
+	<snippet>
+		<content><![CDATA[
+DateHelper::format(${1:$last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "create_keyword",
+					"args": {"keyword_type": "php.use", "keyword": "idfly\\components\\DateHelper"},
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>df</tabTrigger>
+		<scope>source.php</scope>
+		<description>DateHelper format</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<?= DateHelper::format(${1:$last_assigned_variable}) ?>
+]]></content>
+		<commands>
+			[
+				{
+					"command": "create_keyword",
+					"args": {"keyword_type": "php.use", "keyword": "idfly\\components\\DateHelper"},
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>df</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<description>DateHelper format</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+ArrayHelper::
+]]></content>
+		<commands>
+			[
+				{
+					"command": "create_keyword",
+					"args": {"keyword_type": "php.use", "keyword": "yii\\helpers\\ArrayHelper"},
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ah</tabTrigger>
+		<scope>source.php</scope>
+		<description>yii helpers arrayhelper</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+getColumn(${1:$selection}, $2)
+]]></content>
+		<tabTrigger>c</tabTrigger>
+		<trigger>c</trigger>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {
+		  			"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro",
+		  		}
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "ArrayHelper::c$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		]]></context>
+		<description>getcolumn</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+getValue(${1:$selection}, $2)
+]]></content>
+		<tabTrigger>v</tabTrigger>
+		<trigger>v</trigger>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {
+		  			"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro",
+		  		}
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "ArrayHelper::v$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		]]></context>
+		<description>getValue</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+ArrayHelper::getValue(${1:$selection}, $2)
+]]></content>
+		<tabTrigger>ArrayHelper::</tabTrigger>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {
+		  			"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro",
+		  		}
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		]]></context>
+		<description>getValue</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+getErrors()
+]]></content>
+		<tabTrigger>ge</tabTrigger>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {
+		  			"file": "Packages/User/macro/add_semicolon.sublime-macro",
+		  		}
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "->ge$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		]]></context>
+		<description>getValue</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+map(${1:self::find()->all()}, '${2:id}', '${3:name}')
+]]></content>
+		<tabTrigger>m</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "ArrayHelper::m$"},
+			]
+		]]></context>
+		<description>map</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+new \yii\db\Expression('${1:NOW()}')
+]]></content>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"}
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<tabTrigger>E</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii db expression</description>
+	</snippet>
+
+	<!-- app -->
+
+	<snippet>
+		<content><![CDATA[
+\\yii::\$app->
+]]></content>
+		<tabTrigger>y</tabTrigger>
+		<scope>source.php</scope>
+		<description>yii app</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\\yii::\$app->params['$1']
+]]></content>
+		<tabTrigger>yp</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii app params</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\\yii::\$app->session
+]]></content>
+		<tabTrigger>ys</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii app session</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\yii::\$app->urlManager->createUrl(['${1:$selection}'])
+]]></content>
+		<tabTrigger>cu</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii::app->urlManager->createUrl</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+$trigger1="<?= Html::encode(\yii::\$app->urlManager->createUrl(['${1:$selection}']))
+	?>
+]]></content>
+		<commands>
+			[
+				{"command": "create_keyword", "args": {"keyword_type": "php.use", "keyword": "yii\\helpers\\Html"}},
+				"RUN",
+			]
+		</commands>
+		<tabTriggerRegexp>(href|action)="</tabTriggerRegexp>
+		<scope>text.html.*string</scope>
+		<context>
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii::app->urlManager->createUrl in href</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\yii::\$app->db->pdo->exec("$1");
+]]></content>
+		<tabTrigger>de</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii db createCommand execute</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\$this->execute("
+	$1
+");
+]]></content>
+		<tabTrigger>de</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+				{"key": "filename", "operator": "regex_contains", "operand": "m\\d+"},
+			]
+		</context>
+		<description>yii db createCommand execute</description>
+		<order>2</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\yii::\$app->db->pdo->query(${1:\$query})->fetchAll();
+]]></content>
+		<tabTrigger>dq</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii db createCommand execute</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\\yii::\$app->db->quoteValue(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<tabTrigger>dv</tabTrigger>
+		<scope>source.php</scope>
+		<description>yii app db quotevalue</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+${1:\\app\\models}\\${2:User}::getCurrent()
+]]></content>
+		<tabTrigger>uc</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>user (yii)</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+${1:\\app\\models}\\${2:User}::getCurrentId()
+]]></content>
+		<tabTrigger>ui</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>user (yii)</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\yii::\$app->request
+]]></content>
+		<tabTrigger>yr</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii app request</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\\yii::\$app->request->isPost
+]]></content>
+		<tabTrigger>rip</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii request isPost</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\\yii::\$app->request->get(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {
+						"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro",
+					}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>rg</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii app request</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\\yii::\$app->request->post(${1:$selection})
+]]></content>
+		<tabTrigger>rp</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii app request post</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+\\yii::\$app->request->getAbsoluteUrl()
+]]></content>
+		<tabTrigger>ra</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii app request post</description>
+	</snippet>
+
+	<!-- active query -->
+
+	<snippet>
+		<content><![CDATA[
+find($1)
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>f</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "::f$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>find</description>
+		<order>10</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+::find($1)
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>::</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "models[\\w\\\\]+::$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>find</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+where(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<tabTrigger>w</tabTrigger>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {
+		  			"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro",
+		  		}
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "selection_empty", "operator": "equal", "operand": true},
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "->\\s*w$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>where</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+andWhere(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<tabTrigger>aw</tabTrigger>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {
+		  			"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro",
+		  		}
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "selection_empty", "operator": "equal", "operand": true},
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "->\\s*aw$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>where</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+select(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<tabTrigger>se</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "selection_empty", "operator": "equal", "operand": true},
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "->\\s*se$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>select</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+orderBy('${1:name} ${2:asc}')
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {
+						"file": "Packages/User/macro/add_semicolon.sublime-macro",
+					},
+					"context": [
+						{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^\\s*->"},
+					]
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>o</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "->\\s*o$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>orderby</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+all()
+]]></content>
+		<tabTrigger>a</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "->\\s*a$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>all</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+delete()
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {
+						"file": "Packages/User/macro/add_semicolon.sublime-macro",
+					}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>d</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_512_chars_begin", "operator": "not_regex_contains", "operand": "\\<\\?"},
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "->\\s*d$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		]]></context>
+		<description>delete</description>
+	</snippet>
+
+	<!-- active form -->
+
+	<snippet>
+		<content><![CDATA[
+<? ${1:\$form = }ActiveForm::begin() ?>
+]]></content>
+		<tabTrigger>afb</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<context>
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<commands>
+			[
+				{
+					"command": "create_keyword",
+					"args": {"keyword_type": "php.use", "keyword": "yii\\widgets\\ActiveForm"},
+				},
+				"RUN",
+			]
+		</commands>
+		<description>yii ActiveForm begin</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<? ActiveForm::end() ?>
+]]></content>
+		<tabTrigger>afe</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<context>
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>ActiveForm end</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+dropDownList($1, ['prompt' => ''])
+]]></content>
+		<tabTrigger>d</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\<\\?"},
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "->\\s*d$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		]]></context>
+		<description>dropdownlist</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+dropDownList(ArrayHelper::map(\\app\\models\\$1::${2:find()->all()}, 'id', '${3:name}')
+]]></content>
+		<tabTrigger>dropDownList(</tabTrigger>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>dropdownlist</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<?php ${1:\$elements} = \\yii\\helpers\\ArrayHelper::map(\\app\\models\\${2:$model}::find()->
+	orderBy(['${3:name}' => 'asc'])->all(), 'id', '${3:name}'); ?>
+
+<?= \$form->field(${4:\$element}, '${5:field}')->
+	dropDownList(${1:\$elements}) ?>
+]]></content>
+		<tabTrigger>fd</tabTrigger>
+		<scope>html(?!.*source.php)</scope>
+		<context>
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<description>yii form</description>
+	</snippet>
+
+	<!-- html -->
+
+	<snippet>
+		<content><![CDATA[
+Html::encode(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "create_keyword", "args": {"keyword_type": "php.use", "keyword": "yii\\helpers\\Html"}},
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>he</tabTrigger>
+		<scope>source.php</scope>
+		<description>Html::encode (view)</description>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.php(\\.\\w+)?$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "<a\\s*t$"},
+			]
+		]]></context>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<?= Html::encode(${1:$selection__or__last_assigned_variable}) ?>
+]]></content>
+		<commands>
+			[
+				{
+					"command": "create_keyword",
+					"args": {"keyword_type": "php.use", "keyword": "yii\\helpers\\Html"},
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>t</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<description>Html::encode (view)</description>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.php(\\.\\w+)?$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "<a\\s*t$"},
+			]
+		]]></context>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<?= HtmlPurifier::process(${1:$selection__or__last_assigned_variable}) ?>
+]]></content>
+		<tabTrigger>tt</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<description>HtmlPurifier::process (view)</description>
+		<context>
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.php(\\.\\w+)?$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<commands>
+			[
+				{
+					"command": "create_keyword",
+					"args": {"keyword_type": "php.use", "keyword": "yii\\helpers\\HtmlPurifier"},
+				},
+				"RUN",
+			]
+		</commands>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+'class' => '$1'
+]]></content>
+		<tabTrigger>c</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\[c$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		]]></context>
+		<description>class</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+input('${1:text}')
+]]></content>
+		<tabTrigger>i</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "->\\s*i$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		]]></context>
+		<description>input text</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+textarea($1)
+]]></content>
+		<tabTrigger>t</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "->\\s*t$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		]]></context>
+		<description>input text</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<?php \$this->registerJsFile('$1', [
+		'depends' => [\app\assets\${1:App}Asset::className()]
+], '$1') ;?>
+]]></content>
+		<tabTrigger>rjf</tabTrigger>
+		<scope>html(?!.*source)</scope>
+		<description>php this registerjsfile</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<?php \$this->registerJs('$0'); ?>
+]]></content>
+		<tabTrigger>rj</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<context><![CDATA[
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		]]></context>
+		<description>php this registerjs</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<?= \$this->context->renderPartial('${1:$selection__or__last_assigned_variable}') ?>
+]]></content>
+		<tabTrigger>rp</tabTrigger>
+		<description>renderPartial</description>
+		<scope>text.html(?!.*source)</scope>
+		<context>
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.php(\\.\\w+)?$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+'template' => '{input}{error}'
+]]></content>
+		<tabTrigger>t</tabTrigger>
+		<description>template {input}{error}</description>
+		<scope>source.php</scope>
+		<context>
+			[
+				{"key": "called_method", "operator": "equal", "operand": "field"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "(\\[|,)\\s*t$"},
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		</context>
+		<order>10</order>
+	</snippet>
+
+</snippets>

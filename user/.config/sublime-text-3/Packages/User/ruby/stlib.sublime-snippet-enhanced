@@ -1,0 +1,351 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+File.join(${0:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>fj</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: File.join</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+File.read(${0:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>fr</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: File.read</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+File.exists?(${0:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>fe</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: File.exists?</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+length
+]]></content>
+		<tabTrigger>l</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.l$"},
+			]
+		]]></context>
+		<description>stdlib: File.read</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+JSON.generate(${0:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>jg</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: JSON.generate</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+JSON.parse(${0:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>jp</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: JSON.parse</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+collect { |$1|
+	$0
+}
+]]></content>
+		<tabTrigger>c</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.\\s+c$"},
+			]
+		]]></context>
+		<order>1</order>
+		<description>stdlib: collect</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+collect do |$1|
+	$0
+end
+]]></content>
+		<tabTrigger>c</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.c$"},
+			]
+		]]></context>
+		<order>1</order>
+		<description>stdlib: collect</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+each { |$1|
+	$0
+}
+]]></content>
+		<tabTrigger>e</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.\\s+e$"},
+			]
+		]]></context>
+		<order>1</order>
+		<description>stdlib: each</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+each do |$1|
+	$0
+end
+]]></content>
+		<tabTrigger>e</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.e$"},
+			]
+		]]></context>
+		<order>1</order>
+		<description>stdlib: each</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+nil?
+]]></content>
+		<trigger>?</trigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.\\?$"},
+			]
+		]]></context>
+		<description>stdlib: nil</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+start_with?($1)
+]]></content>
+		<tabTrigger>sw</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.sw$"},
+			]
+		]]></context>
+		<description>stdlib: start_with</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+end_with?($1)
+]]></content>
+		<tabTrigger>ew</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ew$"},
+			]
+		]]></context>
+		<description>stdlib: end_with</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+instance_of?($1)
+]]></content>
+		<tabTrigger>io</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.io$"},
+			]
+		]]></context>
+		<description>stdlib: instance_of</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+is_a?($1)
+]]></content>
+		<tabTrigger>ia</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ia$"},
+			]
+		]]></context>
+		<description>stdlib: is_a</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+kind_of?($1)
+]]></content>
+		<tabTrigger>ko</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ko$"},
+			]
+		]]></context>
+		<description>stdlib: kind_of</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+::Hash
+]]></content>
+		<tabTrigger>H</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: Hash</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+::Array
+]]></content>
+		<tabTrigger>A</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: Array</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+::String
+]]></content>
+		<tabTrigger>S</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: String</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+::Symbol
+]]></content>
+		<tabTrigger>Y</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: Symbol</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+to_s
+]]></content>
+		<tabTrigger>s</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.s$"},
+			]
+		]]></context>
+		<description>stdlib: to_s</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+to_sym
+]]></content>
+		<tabTrigger>y</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.y$"},
+			]
+		]]></context>
+		<description>stdlib: to_s</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+has_key?($1)
+]]></content>
+		<tabTrigger>hk</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.hk$"},
+			]
+		]]></context>
+		<description>stdlib: has_key</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+includes?($1)
+]]></content>
+		<tabTrigger>iu</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.iu$"},
+			]
+		]]></context>
+		<description>stdlib: includes</description>
+	</snippet>
+
+</snippets>

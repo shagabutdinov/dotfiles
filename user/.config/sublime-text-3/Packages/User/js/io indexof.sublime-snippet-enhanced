@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+indexOf(${1:$last_assigned_variable})
+]]></content>
+    <tabTrigger>io</tabTrigger>
+    <scope>source.js</scope>
+    <context>
+      [
+        {"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.io$"},
+      ]
+    </context>
+    <description></description>
+</snippet>

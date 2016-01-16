@@ -1,0 +1,220 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+<?php if($1): ?>
+	${0:$selection}
+<?php endif ?>
+]]></content>
+		<tabTrigger>i</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<context>
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.php(\\.\\w+)?$"}
+			]
+		</context>
+		<description></description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<?php if(!$1) : ?>
+	${0:$selection}
+<?php endif ?>
+]]></content>
+		<tabTrigger>in</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<context>
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.php(\\.\\w+)?$"}
+			]
+		</context>
+		<description></description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<?php if(empty($1)) : ?>
+	${0:$selection}
+<?php endif ?>
+]]></content>
+		<tabTrigger>ie</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<context>
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.php(\\.\\w+)?$"}
+			]
+		</context>
+		<description></description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<?php if(!empty($1)) : ?>
+	${0:$selection}
+<?php endif ?>
+]]></content>
+		<tabTrigger>ine</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<context>
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.php(\\.\\w+)?$"}
+			]
+		</context>
+		<description></description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<?php if(isset($1)): ?>
+	${0:$selection}
+<?php endif ?>
+]]></content>
+		<tabTrigger>ii</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<context>
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.php(\\.\\w+)?$"}
+			]
+		</context>
+		<description></description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<?php if(!isset( $1 )): ?>
+	${0:$selection}
+<?php endif ?>
+]]></content>
+		<tabTrigger>ins</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<context>
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.php(\\.\\w+)?$"}
+			]
+		</context>
+		<description></description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<?php else: ?>
+]]></content>
+		<tabTrigger>e</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<context>
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.php(\\.\\w+)?$"}
+			]
+		</context>
+		<description>else</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<?php elseif($1): ?>
+]]></content>
+		<tabTrigger>ei</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<context>
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.php(\\.\\w+)?$"}
+			]
+		</context>
+		<description>elseif</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<?php endif ?>
+]]></content>
+		<tabTrigger>n</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<description>endif</description>
+		<context>
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.php(\\.\\w+)?$"}
+			]
+		</context>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<?php foreach(${1:\$items} as ${2:\$key => }${3:\$value}): ?>
+	${0:$selection}
+<?php endforeach ?>
+]]></content>
+		<tabTrigger>f</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<context>
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.php(\\.\\w+)?$"}
+			]
+		</context>
+		<description></description>
+	</snippet>
+
+
+	<snippet>
+		<content><![CDATA[
+<?= htmlspecialchars($0) ?>
+]]></content>
+		<tabTrigger>h</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<context>
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.php(\\.\\w+)?$"}
+			]
+		</context>
+		<description></description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<?= htmlspecialchars(${1:$selection__or__last_assigned_variable}) ?>
+]]></content>
+		<tabTrigger>t</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<description>htmlspecialchars (view)</description>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.php(\\.\\w+)?$"},
+				{"key": "settings.frameworks", "operator": "not_regex_contains", "operand": "'yii'"},
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "<a\\s*t$"},
+			]
+		]]></context>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<?php ${0:$selection} ?>
+]]></content>
+		<tabTrigger>r</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<context>
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.php(\\.\\w+)?$"}
+			]
+		</context>
+		<description></description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<?php if($1): ?>checked="checked"<?php endif ?>
+]]></content>
+		<tabTrigger>ci</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<description>if then checked</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<?php if($1): ?>selected="selected"<?php endif ?>
+]]></content>
+		<tabTrigger>si</tabTrigger>
+		<scope>text.html(?!.*source)</scope>
+		<description>if then checked</description>
+	</snippet>
+
+</snippets>

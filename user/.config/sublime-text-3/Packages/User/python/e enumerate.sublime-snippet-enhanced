@@ -1,0 +1,65 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+enumerate(${1:$selection})
+	]]></content>
+		<commands>
+			[
+				{
+					"command": "replace_text_by_regexp",
+					"args": {
+						"regexp": "^(\\s*for\\s+)(\\w+\\s+in)",
+						"replacement": "\\1index, \\2"
+					}
+				},
+				{
+					"command": "select_current_token",
+					"context": [
+						{"key": "selection_empty", "operator": "equal", "operand": true},
+					]
+				},
+				"RUN"
+			]
+		</commands>
+		<tabTrigger>e</tabTrigger>
+		<scope>source.python</scope>
+		<context>
+			[
+				{"key": "preceding_text_b", "operator": "regex_contains", "operand": "^\\s*for([\\w,\\s]+)in.*(?&lt;! e)$"},
+			]
+		</context>
+		<description>enumerate</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+enumerate($1)
+	]]></content>
+		<tabTrigger>e</tabTrigger>
+		<scope>source.python</scope>
+		<context>
+			[
+				{"key": "selection_empty", "operator": "equal", "operand": true},
+				{"key": "preceding_text_b", "operator": "regex_contains", "operand": "\\S.* e$"},
+			]
+		</context>
+		<description>enumerate</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+enumerate(${1:$selection})
+	]]></content>
+		<tabTrigger>e</tabTrigger>
+		<scope>source.python</scope>
+		<context>
+			[
+				{"key": "selection_empty", "operator": "equal", "operand": false},
+				{"key": "preceding_text_b", "operator": "regex_contains", "operand": "\\S"},
+			]
+		</context>
+		<description>enumerate</description>
+	</snippet>
+
+</snippets>

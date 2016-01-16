@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+import re
+]]></content>
+	<tabTrigger>imr</tabTrigger>
+	<scope>source.python</scope>
+	<description>import re</description>
+</snippet>

@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+re.compile(${1:$selection__or__last_assigned_variable})
+]]></content>
+	<tabTrigger>rc</tabTrigger>
+	<scope>source.python</scope>
+  <commands>
+    [
+      {
+        "command": "create_keyword",
+        "args": {"keyword_type": "python.import", "keyword": "re"},
+      },
+      "RUN",
+    ]
+  </commands>
+	<description>re.compile</description>
+</snippet>

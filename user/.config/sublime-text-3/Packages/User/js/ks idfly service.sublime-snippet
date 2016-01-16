@@ -1,0 +1,8 @@
+<snippet>
+		<content><![CDATA[
+\$idfly.service($1);
+]]></content>
+		<tabTrigger>ks</tabTrigger>
+		<scope>source.js</scope>
+		<description>core $idfly service</description>
+</snippet>

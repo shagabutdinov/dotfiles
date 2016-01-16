@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+preceding_128_chars_begin
+]]></content>
+	<tabTrigger>preceding_text_begin</tabTrigger>
+	<scope>text.xml</scope>
+	<description></description>
+</snippet>

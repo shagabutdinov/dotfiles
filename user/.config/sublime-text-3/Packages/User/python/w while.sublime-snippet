@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+while $1:
+	${0:$selection}
+]]></content>
+	<tabTrigger>w</tabTrigger>
+	<scope>source.python</scope>
+	<description>while</description>
+</snippet>

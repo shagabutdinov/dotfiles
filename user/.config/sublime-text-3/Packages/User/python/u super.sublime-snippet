@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+super().
+]]></content>
+	<tabTrigger>u</tabTrigger>
+	<scope>source.python</scope>
+	<description>super</description>
+</snippet>

@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[
+throw new ${1:$exception}($2);
+]]></content>
+	<tabTrigger>tn</tabTrigger>
+	<eval><![CDATA[
+		{
+			'exception':
+				".".join([x for x in [
+					__import__('Expression').expression.find_text(
+						view,
+						0,
+						r'IdFly.Js.Class.create\(\'(.*?)\'',
+						{"nesting": True}
+					),
+					"Error"
+				] if x is not None])
+		 }
+	]]></eval>
+	<scope>source.js</scope>
+	<description></description>
+</snippet>

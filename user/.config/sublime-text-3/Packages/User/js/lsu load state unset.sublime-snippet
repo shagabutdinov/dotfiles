@@ -1,0 +1,6 @@
+<snippet>
+		<content><![CDATA[\$idfly.call('UiLoadState.unset', [ $1 ]);]]></content>
+		<tabTrigger>lsu</tabTrigger>
+		<scope>source.js</scope>
+		<description>load state unset</description>
+</snippet>

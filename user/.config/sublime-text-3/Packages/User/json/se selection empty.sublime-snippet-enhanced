@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+{"key": "selection_empty", "operator": "equal", "operand": true},
+]]></content>
+	<tabTrigger>se</tabTrigger>
+	<scope>source.json</scope>
+	<description>selection empty</description>
+</snippet>

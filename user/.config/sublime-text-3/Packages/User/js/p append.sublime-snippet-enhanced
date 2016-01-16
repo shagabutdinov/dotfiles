@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+append(${1:$last_assigned_variable})
+]]></content>
+	<tabTrigger>p</tabTrigger>
+	<scope>source.js</scope>
+	<context>
+		[
+			{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.p$"},
+		]
+	</context>
+	<description>append</description>
+</snippet>

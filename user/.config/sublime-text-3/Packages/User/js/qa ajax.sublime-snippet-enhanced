@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+\$.ajax({
+    method: '${1:get}',
+    url: '$2',
+    data: {$3},
+    success: function(result) {
+    	$4
+    },
+});
+]]></content>
+	<tabTrigger>qa</tabTrigger>
+	<scope>source.js</scope>
+	<description>ajax</description>
+</snippet>

@@ -1,0 +1,37 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+__static: {
+	factory: function(name, kernel) {
+		${0}
+	},
+},
+]]></content>
+		<tabTrigger>df</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "__static"},
+			]
+		</context>
+		<description>define factory method</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+factory: function(name, kernel) {
+	${0}
+},
+]]></content>
+		<tabTrigger>df</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "__static"},
+			]
+		</context>
+		<description>define factory method</description>
+	</snippet>
+
+</snippets>

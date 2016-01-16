@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+remove()
+]]></content>
+	<tabTrigger>qr</tabTrigger>
+	<scope>source.js</scope>
+	<description>jquery remove</description>
+</snippet>

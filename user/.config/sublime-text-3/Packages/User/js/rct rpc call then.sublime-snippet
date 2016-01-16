@@ -1,0 +1,10 @@
+<snippet>
+		<content><![CDATA[
+rpc.
+	call('$1', [ $2 ]).
+	then($0);
+]]></content>
+		<tabTrigger>rct</tabTrigger>
+		<scope>source.js</scope>
+		<description></description>
+</snippet>

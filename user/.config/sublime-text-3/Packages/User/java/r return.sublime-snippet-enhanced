@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+return ${1:$selection__or__last_assigned_variable}
+]]></content>
+	<tabTrigger>r</tabTrigger>
+	<scope>source.java</scope>
+	<description>return</description>
+</snippet>

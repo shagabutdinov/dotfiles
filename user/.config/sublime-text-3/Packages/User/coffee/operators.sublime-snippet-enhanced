@@ -1,0 +1,611 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+this
+]]></content>
+		<tabTrigger>.</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "[\\w\\(,=:]?\\s*\\.$"},
+			]
+		]]></context>
+		<description>operators: false</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+false
+]]></content>
+		<tabTrigger>f</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "[\\(,=:]\\s*f$"},
+				"or",
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w]\\s*f$"},
+			]
+		]]></context>
+		<description>operators: false</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+true
+]]></content>
+		<tabTrigger>t</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "[\\(,=:]\\s*t$"},
+				"or",
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w]\\s*t$"},
+			]
+		]]></context>
+		<description>operators: true</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+null
+]]></content>
+		<tabTrigger>n</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "[\\(,=:]\\s*n$"},
+				"or",
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w]\\s*n$"},
+			]
+		]]></context>
+		<description>operators: true</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+undefined
+]]></content>
+		<tabTrigger>u</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "[\\(,=:]\\s*u$"},
+				"or",
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w]\\s*u$"},
+			]
+		]]></context>
+		<description>operators: true</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+continue
+]]></content>
+		<tabTrigger>c</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>operators: continue</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+callback
+]]></content>
+		<tabTrigger>c</tabTrigger>
+		<scope>source.coffee</scope>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "[\\(,=:]\\s*c$"},
+				"or",
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w]\\s*c$"},
+			]
+		]]></context>
+		<description>operators: callback</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+return $0
+]]></content>
+		<tabTrigger>r</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*r$"},
+			]
+		]]></context>
+		<description>operators: return </description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+return result
+]]></content>
+		<tabTrigger>rr</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*rr$"},
+			]
+		]]></context>
+		<description>operators: return </description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+return true
+]]></content>
+		<tabTrigger>rt</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*rt$"},
+			]
+		]]></context>
+		<description>operators: return true</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+return false
+]]></content>
+		<tabTrigger>rt</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*rf$"},
+			]
+		]]></context>
+		<description>operators: return false</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+if ${1:$last_assigned_variable}
+	${0:$selection}
+]]></content>
+		<tabTrigger>i</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*i$"},
+			]
+		]]></context>
+		<description>operators: if</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+if !${1:$last_assigned_variable}
+	${0:$selection}
+]]></content>
+		<tabTrigger>in</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*in$"},
+			]
+		]]></context>
+		<description>operators: if</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+==
+]]></content>
+		<trigger>=</trigger>
+		<scope>source.coffee(?!.*(string|comment))</scope>
+		<context><![CDATA[
+			[
+				[
+					{"key": "statement", "operator": "regex_contains", "operand": "^\\s*(if|else if)"},
+					"or",
+					{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*(if|else if)"},
+				],
+				"and",
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w\\)\\]]\\s*=$"},
+				"and",
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "^\\s*(if|else if)\\s*=$"},
+			]
+		]]></context>
+		<description>if ==</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+!=
+]]></content>
+		<trigger>!</trigger>
+		<scope>source.coffee(?!.*(string|comment))</scope>
+		<context><![CDATA[
+			[
+				[
+					{"key": "statement", "operator": "regex_contains", "operand": "^\\s*(if|else if)"},
+					"or",
+					{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*(if|else if)"},
+				],
+				"and",
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w\\)\\]]\\s*!$"},
+				"and",
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "^\\s*(if|else if)\\s*!$"},
+			]
+		]]></context>
+		<description>if !=</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+||
+]]></content>
+		<trigger>|</trigger>
+		<scope>source.coffee(?!.*(string|comment))</scope>
+		<context><![CDATA[
+			[
+				[
+					{"key": "statement", "operator": "regex_contains", "operand": "^\\s*(if|else if)"},
+					"or",
+					{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*(if|else if)"},
+				],
+				"and",
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w\\)\\]]\\s*\\|$"},
+			]
+		]]></context>
+		<description>if ||</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+&&
+]]></content>
+		<trigger><![CDATA[&]]></trigger>
+		<scope>source.coffee(?!.*(string|comment))</scope>
+		<context><![CDATA[
+			[
+				[
+					{"key": "statement", "operator": "regex_contains", "operand": "^\\s*(if|else if)"},
+					"or",
+					{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*(if|else if)"},
+				],
+				"and",
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w\\)\\]]\\s*&$"},
+			]
+		]]></context>
+		<description><![CDATA[if &&]]></description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+for ${1:item} in ${2:$last_assigned_variable}
+	${1:$selection}
+]]></content>
+		<tabTrigger>f</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*f$"},
+			]
+		]]></context>
+		<description>operators: for</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+typeof ${1:$last_assigned_variable}
+]]></content>
+		<tabTrigger>to</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>operators: typeof</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+undefined
+]]></content>
+		<trigger>u</trigger>
+		<scope>source\.coffee.*?string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "typeof\\s*[\\w\\$\\.]+\\s*[=!]=\\s*'u$"},
+			]
+		]]></context>
+		<description>operators: typeof var == 'undefined'</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+object
+]]></content>
+		<trigger>o</trigger>
+		<scope>source\.coffee.*?string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "typeof\\s*[\\w\\$\\.]+\\s*[=!]=\\s*'o$"},
+			]
+		]]></context>
+		<description>operators: typeof var == 'object'</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+boolean
+]]></content>
+		<trigger>b</trigger>
+		<scope>source\.coffee.*?string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "typeof\\s*[\\w\\$\\.]+\\s*[=!]=\\s*'b$"},
+			]
+		]]></context>
+		<description>operators: typeof var == 'boolean'</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+number
+]]></content>
+		<trigger>n</trigger>
+		<scope>source\.coffee.*?string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "typeof\\s*[\\w\\$\\.]+\\s*[=!]=\\s*'n$"},
+			]
+		]]></context>
+		<description>operators: typeof var == 'number'</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+string
+]]></content>
+		<trigger>s</trigger>
+		<scope>source\.coffee.*?string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "typeof\\s*[\\w\\$\\.]+\\s*[=!]=\\s*'s$"},
+			]
+		]]></context>
+		<description>operators: typeof var == 'string'</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+symbol
+]]></content>
+		<trigger>y</trigger>
+		<scope>source\.coffee.*?string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "typeof\\s*[\\w\\$\\.]+\\s*[=!]=\\s*'y$"},
+			]
+		]]></context>
+		<description>operators: typeof var == 'symbol'</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+function
+]]></content>
+		<trigger>f</trigger>
+		<scope>source\.coffee.*?string</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "typeof\\s*[\\w\\$\\.]+\\s*[=!]=\\s*'f$"},
+			]
+		]]></context>
+		<description>operators: typeof var == 'function'</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+($1) ->
+	${0:$selection}
+]]></content>
+		<commands>
+			[
+				{"command": "run_macro_file", "args": {
+					"file":"res://Packages/User/coffee/macro/expand_brackets_for_callback.sublime-macro"
+				}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>j</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "[\\(,=:]\\s*j$"},
+				"or",
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w]\\s*j$"},
+			]
+		]]></context>
+		<description>operators: anonymous function</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+($1) =>
+	${0:$selection}
+]]></content>
+		<commands>
+			[
+				{"command": "run_macro_file", "args": {
+					"file":"res://Packages/User/coffee/macro/expand_brackets_for_callback.sublime-macro"
+				}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>jj</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "[\\(,=:]\\s*jj$"},
+				"or",
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w]\\s*jj$"},
+			]
+		]]></context>
+		<description>operators: anonymous function</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+($1) -> ${0:$selection}
+]]></content>
+		<tabTrigger>k</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "[\\(,=:]\\s*k$"},
+				"or",
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w]\\s*k$"},
+			]
+		]]></context>
+		<description>operators: anonymous function</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+($1) => ${0:$selection}
+]]></content>
+		<tabTrigger>kk</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "[\\(,=:]\\s*kk$"},
+				"or",
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w]\\s*kk$"},
+			]
+		]]></context>
+		<description>operators: anonymous function</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+${1:name}: ($2) ->
+	${0:$selection}
+]]></content>
+		<tabTrigger>d</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				[
+					{"key": "nesting", "operator": "regex_contains", "operand": "\\{"},
+					"or",
+					{"key": "begin_512_chars", "operator": "regex_contains", "operand": "(\\n|^)\\s*class"},
+				],
+				"and",
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*d$"},
+				"and",
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "^\\s*$"},
+			]
+		]]></context>
+		<description>operators: define function</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+constructor: ($2) ->
+	${0:$selection}
+]]></content>
+		<trigger>dc</trigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				[
+					{"key": "nesting", "operator": "regex_contains", "operand": "\\{"},
+					"or",
+					{"key": "begin_512_chars", "operator": "regex_contains", "operand": "(\\n|^)\\s*class"},
+				],
+				"and",
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*dc$"},
+				"and",
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "^\\s*$"},
+			]
+		]]></context>
+		<description>operators: define function</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+${1:name}: ($2) =>
+	${0:$selection}
+]]></content>
+		<trigger>dd</trigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				[
+					{"key": "nesting", "operator": "regex_contains", "operand": "\\{"},
+					"or",
+					{"key": "begin_512_chars", "operator": "regex_contains", "operand": "(\\n|^)\\s*class"},
+				],
+				"and",
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*dd$"},
+				"and",
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "^\\s*$"},
+			]
+		]]></context>
+		<description>operators: define bound function</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+then($1)
+]]></content>
+		<tabTrigger>t</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.\\s*t$"},
+			]
+		]]></context>
+		<description>operators: then</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+then(($1) ->
+	$0
+]]></content>
+		<commands>
+			[
+				{"command": "run_macro_file", "args": {
+					"file":"res://Packages/User/coffee/macro/expand_brackets_for_callback.sublime-macro"
+				}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>then(</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>operators: then</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+self = this
+]]></content>
+		<tabTrigger>st</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.\\s*t$"},
+			]
+		]]></context>
+		<description>operators: then</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+instanceof
+]]></content>
+		<tabTrigger>io</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "[\\w\\)\\]]\\s+io$"},
+			]
+		]]></context>
+		<description>operators: instanceof</description>
+	</snippet>
+
+</snippets>

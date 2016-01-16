@@ -1,0 +1,107 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+return ${0:$selection__or__last_assigned_variable};
+]]></content>
+		<tabTrigger>r</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "\\.r$"},
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "^\\s*$"},
+			]
+		</context>
+		<description>return</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+return $0
+]]></content>
+		<tabTrigger>r</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "\\.r$"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^\\s*$"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^\\s"},
+			]
+		</context>
+		<description>return</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+return
+]]></content>
+		<tabTrigger>r</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "\\.r$"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^\\s*$"},
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "^\\s"},
+			]
+		</context>
+		<description>return</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+returns(${0});
+]]></content>
+		<tabTrigger>r</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.r$"},
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "^\\s*$"},
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "IdFly\\.Js\\.Callback\\.r$"},
+			]
+		</context>
+		<description>returns</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+returns(${0})
+]]></content>
+		<tabTrigger>r</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.r$"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^\\s*$"},
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "IdFly\\.Js\\.Callback\\.r$"},
+			]
+		</context>
+		<description>returns</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+resolve(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {
+		  			"file": "Packages/User/macro/add_semicolon_and_ensure_dot_before_and_select_token.sublime-macro",
+		  		}
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<tabTrigger>r</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "IdFly\\.Js\\.Callback\\.r$"},
+			]
+		</context>
+		<description>returns</description>
+	</snippet>
+
+</snippets>

@@ -1,0 +1,24 @@
+[
+
+  {
+    "command": "insert",
+    "args": {
+      "characters": "p", // placeholder
+    },
+    "context": [
+      {"key": "selection_empty", "operator": "equal", "operand": true},
+    ]
+  },
+
+  {
+    "command": "add_semicolon_to_statement",
+  },
+
+  {
+    "command": "left_delete", // remove placeholder
+    "context": [
+      {"key": "selection_empty", "operator": "equal", "operand": true},
+    ]
+  },
+
+]

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+\${${1:0}:\$selection}
+]]></content>
+	<tabTrigger>ss</tabTrigger>
+	<scope>text.xml</scope>
+	<description>selected text</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+this._object
+]]></content>
+	<tabTrigger>to</tabTrigger>
+	<scope>source.js</scope>
+	<description>this object</description>
+</snippet>

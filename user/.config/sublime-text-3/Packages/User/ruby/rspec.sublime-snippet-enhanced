@@ -1,0 +1,129 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+expect($1).to $0
+]]></content>
+		<tabTrigger>x</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "RSpec\\.describe"},
+			]
+		]]></context>
+		<description>rspec: expect(OBJ).to</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+allow($1).to $0
+]]></content>
+		<tabTrigger>a</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "RSpec\\.describe"},
+			]
+		]]></context>
+		<description>rspec: allow(OBJ).to</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+_not $0
+]]></content>
+		<commands>
+			[
+				{"command": "left_delete"},
+				"RUN",
+			]
+		</commands>
+		<trigger>n</trigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "RSpec\\.describe"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\)\\.to\\sn$"},
+			]
+		]]></context>
+		<description>rspec: expect(OBJ).to_not</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+eq($1)
+]]></content>
+		<trigger>e</trigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "RSpec\\.describe"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\)\\.to(_not)?\\s+e$"},
+			]
+		]]></context>
+		<description>rspec: expect(OBJ).to eq</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+raise_error($1)
+]]></content>
+		<trigger>ra</trigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "RSpec\\.describe"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\)\\.to(_not)?\\s+ra$"},
+			]
+		]]></context>
+		<description>rspec: expect(OBJ).to raise_error</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+receive($1)
+]]></content>
+		<trigger>re</trigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "RSpec\\.describe"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\)\\.to(_not)?\\s+re$"},
+			]
+		]]></context>
+		<description>rspec: expect(OBJ).to receive</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+with($1)
+]]></content>
+		<trigger>w</trigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "RSpec\\.describe"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "receive\\("},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\)\\.w"},
+			]
+		]]></context>
+		<description>rspec: expect(OBJ).to receive</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+and_return($1)
+]]></content>
+		<trigger>a</trigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "RSpec\\.describe"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "receive\\("},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\)\\.a"},
+			]
+		]]></context>
+		<description>rspec: expect(OBJ).to receive</description>
+	</snippet>
+
+</snippets>

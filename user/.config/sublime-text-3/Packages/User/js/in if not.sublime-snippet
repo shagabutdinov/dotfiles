@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+if(!${1:$last_assigned_variable}) {
+	${0:$selection}
+}
+]]></content>
+	<tabTrigger>in</tabTrigger>
+	<scope>source.js</scope>
+	<description></description>
+</snippet>

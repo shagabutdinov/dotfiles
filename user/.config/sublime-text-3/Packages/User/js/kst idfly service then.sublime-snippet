@@ -1,0 +1,10 @@
+<snippet>
+		<content><![CDATA[
+\$idfly.
+	service($1).
+	then($2);
+]]></content>
+		<tabTrigger>kst</tabTrigger>
+		<scope>source.js</scope>
+		<description>core $idfly service</description>
+</snippet>

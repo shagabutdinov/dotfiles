@@ -1,0 +1,10 @@
+<snippet>
+		<content><![CDATA[
+\$idfly.
+	call('RpcClientAjax.call', ['$1', [$2]]).
+	then($0);
+]]></content>
+		<tabTrigger>krt</tabTrigger>
+		<scope>source.js</scope>
+		<description></description>
+</snippet>

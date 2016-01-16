@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+None
+]]></content>
+	<tabTrigger>N</tabTrigger>
+	<scope>source.python</scope>
+	<description>None</description>
+</snippet>

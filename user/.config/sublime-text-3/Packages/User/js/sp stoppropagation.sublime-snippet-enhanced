@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+stopPropagation();
+]]></content>
+	<commands><![CDATA[
+	  [
+	  	{
+	  		"command": "run_macro_file_with_context",
+	  		"args": {
+	  			"file": "Packages/User/macro/add_semicolon_and_ensure_dot_before_and_select_token.sublime-macro",
+	  		}
+	  	},
+	  	"RUN",
+	  ]
+	]]></commands>
+	<tabTrigger>sp</tabTrigger>
+	<scope>source.js</scope>
+	<description>stoppropagation</description>
+</snippet>

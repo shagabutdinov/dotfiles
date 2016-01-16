@@ -1,0 +1,8 @@
+<snippet>
+		<content><![CDATA[
+RpcClientAjax
+]]></content>
+		<tabTrigger>rca</tabTrigger>
+		<scope>source.js</scope>
+		<description></description>
+</snippet>

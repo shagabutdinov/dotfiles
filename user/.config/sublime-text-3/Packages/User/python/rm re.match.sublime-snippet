@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+re.match($1, ${2:$selection})
+]]></content>
+	<tabTrigger>rm</tabTrigger>
+	<scope>source.python</scope>
+	<description>re.match</description>
+</snippet>

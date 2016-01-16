@@ -1,0 +1,23 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+assert.strictEqual(${1:expected}, ${2:$selection})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {
+						"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro",
+					}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>as</tabTrigger>
+		<scope>source.js</scope>
+		<description>test strictEqual</description>
+	</snippet>
+
+</snippets>

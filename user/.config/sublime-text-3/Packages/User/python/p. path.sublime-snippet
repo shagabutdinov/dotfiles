@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+path.$1(${2:$selection})
+]]></content>
+	<tabTrigger>pa</tabTrigger>
+	<scope>source.python</scope>
+	<commands>
+		[
+			{
+				"command": "create_keyword",
+				"args": {"keyword_type": "python.import", "keyword": "path"},
+			},
+			"RUN",
+		]
+	</commands>
+	<description>path</description>
+</snippet>

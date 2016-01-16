@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+super().__init__(${1:view})
+]]></content>
+	<tabTrigger>ui</tabTrigger>
+	<scope>source.python</scope>
+	<description>super().__init__()</description>
+</snippet>

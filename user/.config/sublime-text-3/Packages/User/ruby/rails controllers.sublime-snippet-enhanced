@@ -1,0 +1,47 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+render json: {
+	success: ${1:$last_assigned_variable}.persisted?,
+	errors: ${1:$last_assigned_variable}.errors.to_hash
+}
+]]></content>
+		<tabTrigger>rs</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>rails: render json success</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+render json: $0
+]]></content>
+		<tabTrigger>rj</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>rails: render json success</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+ActionController::RoutingError.new('$1')
+]]></content>
+		<tabTrigger>re</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "raise\\s*re$"},
+			]
+		]]></context>
+		<description>rails: RoutingError</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+current_user
+]]></content>
+		<tabTrigger>cu</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>rails: current_user</description>
+	</snippet>
+
+</snippets>

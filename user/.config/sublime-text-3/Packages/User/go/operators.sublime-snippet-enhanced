@@ -1,0 +1,126 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+:= $0
+]]></content>
+		<commands>
+			[
+				{"command": "ensure_space_before"},
+				"RUN",
+			]
+		</commands>
+		<trigger>;</trigger>
+		<scope>source.go(?!.*string)</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w\\]]+\\s*;$"},
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "(\\W|^)(?!(for|if))\\w+\\s+\\w+\\s*;$"},
+			]
+		</context>
+		<description>define variable</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+" +
+	$0
+]]></content>
+		<tabTrigger>&quot;</tabTrigger>
+		<scope>source.go</scope>
+		<description>define variable</description>
+	</snippet>
+
+
+	<snippet>
+		<content><![CDATA[
+==
+]]></content>
+		<trigger>=</trigger>
+		<scope>source.go(?!.*(string|comment))</scope>
+		<context><![CDATA[
+			[
+				{"key": "statement", "operator": "regex_contains", "operand": "^\\s*if"},
+			]
+		]]></context>
+		<description>if equal nil</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+==
+]]></content>
+		<trigger>=</trigger>
+		<scope>source.go(?!.*(string|comment))</scope>
+		<context><![CDATA[
+			[
+				{"key": "nesting", "operator": "regex_contains", "operand": "\\("},
+				{"key": "called_method", "operator": "not_regex_contains", "operand": "(const|var)"},
+			]
+		]]></context>
+		<description>if equal nil</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+||
+]]></content>
+		<trigger>|</trigger>
+		<scope>source.go(?!.*(string|comment))</scope>
+		<description>if equal nil</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+&&
+]]></content>
+		<trigger>&amp;</trigger>
+		<scope>source.go(?!.*(string|comment))</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "(return|[:{,\\(=])\\s*&$"},
+			]
+		]]></context>
+		<description>if equal nil</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+!=
+]]></content>
+		<trigger>!</trigger>
+		<scope>source.go(?!.*(string|comment))</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "(\\W|^)[\\w\\]\\)]+\\s*!"},
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "(if|[\\|&])\\s*!"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^\\s*[=]"},
+				{"key": "statement", "operator": "regex_contains", "operand": "^\\s*if"},
+			]
+		]]></context>
+		<description>if equal nil</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+!= nil
+]]></content>
+		<commands>
+			[
+				{"command": "ensure_space_before"},
+				{"command": "ensure_space_after"},
+				"RUN",
+			]
+		</commands>
+		<trigger>!</trigger>
+		<scope>source.go(?!.*(string|comment))</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "err\\w*\\s*!$"},
+			]
+		]]></context>
+		<description>if error not equal nil</description>
+		<order>5</order>
+	</snippet>
+
+</snippets>

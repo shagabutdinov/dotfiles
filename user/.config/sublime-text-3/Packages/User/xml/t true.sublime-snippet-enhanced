@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+true
+]]></content>
+	<tabTrigger>t</tabTrigger>
+	<scope>text.xml</scope>
+	<description>true</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+		<content><![CDATA[
+IdFly.Kernel.Kernel
+]]></content>
+		<tabTrigger>IKK</tabTrigger>
+		<scope>source.js</scope>
+		<description></description>
+</snippet>

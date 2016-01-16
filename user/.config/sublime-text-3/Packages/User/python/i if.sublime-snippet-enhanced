@@ -1,0 +1,35 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+if ${1:$last_assigned_variable}:
+	$0
+		]]></content>
+		<tabTrigger>i</tabTrigger>
+		<scope>source.python</scope>
+		<context>
+			[
+				{"key": "selection_empty", "operator": "equal", "operand": true},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*i$"},
+			]
+		</context>
+		<description>if condition:</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+if $1:
+	${0:$selection}
+	]]></content>
+		<tabTrigger>i</tabTrigger>
+		<scope>source.python</scope>
+		<context>
+			[
+				{"key": "selection_empty", "operator": "equal", "operand": false},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*$"},
+			]
+		</context>
+		<description>if</description>
+	</snippet>
+
+</snippets>

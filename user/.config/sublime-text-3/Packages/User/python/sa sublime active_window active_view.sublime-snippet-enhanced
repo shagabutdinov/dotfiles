@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+sublime.active_window().active_view()
+]]></content>
+	<tabTrigger>sa</tabTrigger>
+	<scope>source.python</scope>
+	<description>sublime active_window active_view</description>
+</snippet>

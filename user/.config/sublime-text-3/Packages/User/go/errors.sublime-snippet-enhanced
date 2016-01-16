@@ -1,0 +1,195 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+err
+]]></content>
+		<tabTrigger>e</tabTrigger>
+		<scope>source.go</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "}\\s*e$"},
+			]
+		]]></context>
+		<description>err</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+err :=
+]]></content>
+		<commands>
+			[
+				{"command": "ensure_space_after"},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>e</tabTrigger>
+		<scope>source.go</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": ",\\s*e$"},
+				"or",
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
+				"and",
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^\\s*:"},
+			]
+		]]></context>
+		<description>err :=</description>
+		<order>5</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+, err :=
+]]></content>
+		<tabTrigger>, </tabTrigger>
+		<scope>source.go</scope>
+		<description>err :=</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+errors.
+]]></content>
+		<tabTrigger>err</tabTrigger>
+		<scope>source.go</scope>
+		<description>errors new</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+error
+]]></content>
+		<trigger>e</trigger>
+		<scope>source.go</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\)[\\w\\s,]*e$"},
+			]
+		]]></context>
+		<description>error</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+errors.New(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<tabTrigger>errors.</tabTrigger>
+		<scope>source.go</scope>
+		<description>errors new</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+errors.New(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<tabTrigger>en</tabTrigger>
+		<scope>source.go</scope>
+		<description>errors new</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+if err != nil {
+	${0:$selection}
+}
+]]></content>
+		<tabTrigger>ie</tabTrigger>
+		<scope>source.go</scope>
+		<description>if equal nil</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+if err != nil {
+	return err
+}
+]]></content>
+		<tabTrigger>ir</tabTrigger>
+		<scope>source.go</scope>
+		<description>if equal nil</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+panic(err)
+]]></content>
+		<tabTrigger>p</tabTrigger>
+		<scope>source.go</scope>
+		<description>panic err</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+debug.PrintStack()
+]]></content>
+		<tabTrigger>dp</tabTrigger>
+		<scope>source.go</scope>
+		<description>debug printstack</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+log.Println("LOG($TM_FILENAME:$TM_LINE_NUMBER) - ", ${1:$selection__or__last_assigned_variable})
+]]></content>
+		<tabTrigger>l</tabTrigger>
+		<scope>source.go</scope>
+		<description>log</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+log.
+]]></content>
+		<tabTrigger>g</tabTrigger>
+		<scope>source.go</scope>
+		<description>log</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+log.Fatal(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<trigger>log.f</trigger>
+		<scope>source.go</scope>
+		<description>log</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+log.Println(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<trigger>log.p</trigger>
+		<scope>source.go</scope>
+		<description>log print</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+log.Printf("$1", ${2:$selection__or__last_assigned_variable})
+]]></content>
+		<trigger>log.f</trigger>
+		<scope>source.go</scope>
+		<description>log printf</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+log.Printf("${1:v#%}", ${2:$selection__or__last_assigned_variable})
+]]></content>
+		<trigger>log.v</trigger>
+		<scope>source.go</scope>
+		<description>log printf</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+log.Printf("LOG($TM_FILENAME:$TM_LINE_NUMBER) - %+v", ${2:$selection__or__last_assigned_variable})
+]]></content>
+		<trigger>lf</trigger>
+		<scope>source.go</scope>
+		<description>log printf</description>
+	</snippet>
+
+</snippets>

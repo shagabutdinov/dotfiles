@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+!== undefined
+]]></content>
+	<tabTrigger>nu</tabTrigger>
+	<scope>source.js</scope>
+	<description>not undefined</description>
+</snippet>

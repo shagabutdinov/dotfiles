@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+null
+]]></content>
+	<tabTrigger>n</tabTrigger>
+	<scope>source.java</scope>
+	<description>null</description>
+</snippet>

@@ -1,0 +1,249 @@
+[
+  {
+    "keys": ["ctrl+n", "ctrl+d"],
+    "command": "open_file",
+    "args": {
+      "file": "/home/leo/.config/balmora/conf.d/dotfiles.variables.conf"
+    },
+    "context": [
+      {"key": "setting.sublime_enhanced_keybindings", "operator": "equal", "operand": true},
+      {"key": "overlay_visible", "operator": "equal", "operand": false}
+    ],
+  },
+
+  // {
+  //   "keys": ["f6"],
+  //   "command": "print_current_line",
+  //   "context": [
+  //     {"key": "in_method_definition", "operator": "equal", "operand": true},
+  //   ],
+  // },
+
+  {
+    "keys": ["f5"],
+    "command": "test_eclim",
+    // "context": [
+    //   {"key": "clipboard", "operator": "regex_contains", "operand": "\n", "match_all": true}
+    // ]
+  },
+
+  // {
+  //   "keys": ["f5"],
+  //   "command": "in_method_definition",
+  // },
+
+  // {
+  //   "keys": ["ctrl+f5"],
+  //   "command": "run_mysql_query",
+  //   "args": {
+  //     "replace": true,
+  //   },
+  // },
+
+  {
+    "keys": ["ctrl+u", "tab"],
+    "command": "open_file",
+    "args": {
+      "file": "/home/leo/projects/personal/log.txt"
+    },
+  },
+
+  // KeymapEnhanced:
+  // Should be in User/Default ().sublime-keymap to avoid conflicts with
+  // terminal plugin
+
+  {
+    "keys": ["ctrl+shift+t"],
+    "command": "reopen_last_file"
+  },
+
+  // {
+  //   "keys": ["ctrl+f8"],
+  //   "command": "create_save_prompt"
+  // },
+
+  // JointStatement:
+  // Next two mappings should be in User/Default ().sublime-keymap to avoid
+  // conflicts with terminal plugin
+
+  {
+    "keys": ["ctrl+alt+shift+t"],
+    "command": "unjoin_statement",
+    "args": {
+      "as_arguments": false
+    },
+    "context": [
+      {"key": "setting.sublime_enhanced_keybindings", "operator": "equal", "operand": true},
+      {"key": "in_arguments", "operator": "equal", "operand": false}
+    ]
+  },
+
+  {
+    "keys": ["ctrl+alt+shift+t"],
+    "command": "unjoin_statement",
+    "args": {
+      "as_arguments": true
+    },
+    "context": [
+      {"key": "setting.sublime_enhanced_keybindings", "operator": "equal", "operand": true},
+      {"key": "in_arguments", "operator": "equal", "operand": true}
+    ]
+  },
+
+  // Expression:
+  // should be in User/Default ().sublime-keymap to avoid [ctrl+k, ...] calls
+  {
+    "keys": ["ctrl+k"],
+    "command": "run_macro_file",
+    "args": {
+      "file": "res://Packages/Expression/macro/goto_block_down.sublime-macro"
+    },
+  },
+
+  // Case Conversion
+
+  {
+    "keys": ["ctrl+u", "ctrl+-"],
+    "command": "convert_to_snake"
+  },
+
+  {
+    "keys": ["ctrl+u", "ctrl+="],
+    "command": "convert_to_camel"
+  },
+
+  // Inc-Dec-Value
+
+  {
+    "keys": ["ctrl+="],
+    "command": "inc_dec_value",
+    "args": {
+      "action": "inc_min"
+    }
+  },
+
+  {
+    "keys": ["ctrl+-"],
+    "command": "inc_dec_value",
+    "args": {
+      "action": "dec_min"
+    }
+  },
+
+  {
+    "keys": ["ctrl+shift+="],
+    "command": "inc_dec_value",
+    "args": {
+      "action": "inc_max"
+    }
+  },
+
+  {
+    "keys": ["ctrl+shift+-"],
+    "command": "inc_dec_value",
+    "args": {
+      "action": "dec_max"
+    }
+  },
+
+  {
+    "keys": ["ctrl+alt+="],
+    "command": "inc_dec_value",
+    "args": {
+      "action": "inc_all"
+    }
+  },
+
+  {
+    "keys": ["ctrl+alt+-"],
+    "command": "inc_dec_value",
+    "args": {
+      "action": "dec_all"
+    }
+  },
+
+  // MoveTab
+
+  {
+    "keys": ["ctrl+shift+,"],
+    "command": "move_tab",
+    "args": {
+      "position": "-1"
+    }
+  },
+
+  {
+    "keys": ["ctrl+shift+."],
+    "command": "move_tab",
+    "args": {
+      "position": "+1"
+    }
+  },
+
+  // ColorSchemeSelector
+
+  {
+    "keys": ["ctrl+u", "ctrl+t"],
+    "command": "select_color_scheme"
+  },
+
+  // Open Search Result
+
+  {
+    "keys": ["enter"],
+    "command": "open_search_result",
+    "context": [
+      {"key": "setting.sublime_enhanced_keybindings", "operator": "equal", "operand": true},
+      {"key": "selector", "operator": "equal", "operand": "text.find-in-files"}
+    ]
+  },
+
+  // Duplicate Lines
+
+  {
+    "keys": ["ctrl+d"],
+    "command": "duplicate_lines",
+    "context": [
+      {"key": "setting.sublime_enhanced_keybindings", "operator": "equal", "operand": true},
+      {"key": "overlay_visible", "operator": "equal", "operand": false},
+      {"key": "is_search_panel_enhanced_visible", "operator" : "equal", "operand": false}
+    ],
+  },
+
+  // MarkdownPreview
+
+  {
+    "keys": ["ctrl+u", "m"],
+    "command": "markdown_preview",
+    "args": {
+      "target": "browser",
+      "parser":"github"
+    }
+  },
+
+  // GoSublime
+  {
+    "keys": ["f4"],
+    "command": "gs_palette",
+    "args": {"palette": "imports", "direct": true},
+    "context": [{ "key": "selector", "operator": "equal", "operand": "source.go" }]
+  },
+
+  // // JavaImports
+  // {
+  //   "keys": ["ctrl+u", "ctrl+j"],
+  //   "command": "java_add_import",
+  // },
+
+  {
+    "keys": ["alt+]"],
+    "command": "focus_neighboring_group",
+  },
+
+  {
+    "keys": ["alt+["],
+    "command": "focus_neighboring_group",
+    "args": {"forward": false},
+  },
+
+]

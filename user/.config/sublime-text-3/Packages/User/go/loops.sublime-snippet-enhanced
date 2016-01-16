@@ -1,0 +1,82 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+for $1 {
+	${0:$selection}
+}
+]]></content>
+		<tabTrigger>f</tabTrigger>
+		<scope>source.go</scope>
+		<description>for index</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+range $0
+]]></content>
+		<trigger>r</trigger>
+		<scope>source.go</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*.*?for.*?:= r$"},
+			]
+		]]></context>
+		<description>for range</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+:= range $0
+]]></content>
+		<commands>
+			[
+				{"command": "ensure_space_before"},
+				"RUN",
+			]
+		</commands>
+		<trigger>;</trigger>
+		<scope>source.go</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*.*?for.*?,.*?;$"},
+			]
+		]]></context>
+		<description>for range</description>
+		<order>5</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+${1:index} := ${2:0}; ${1:index} < $3; ${1:index} += ${4:1}
+]]></content>
+		<trigger>i</trigger>
+		<scope>source.go</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "for\\s*i$"},
+			]
+		]]></context>
+		<order>10</order>
+		<description>for index</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+break
+]]></content>
+		<tabTrigger>b</tabTrigger>
+		<scope>source.go(?!=.*string)</scope>
+		<description>break</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+continue
+]]></content>
+		<tabTrigger>c</tabTrigger>
+		<scope>source.go</scope>
+		<description>continue</description>
+	</snippet>
+
+</snippets>

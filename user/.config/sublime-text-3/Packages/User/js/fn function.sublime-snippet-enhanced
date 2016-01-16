@@ -1,0 +1,43 @@
+<snippets>
+	<snippet>
+		<content><![CDATA[
+function($1) {${0:$selection}};
+]]></content>
+		<tabTrigger>fn</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "^\\s*$"},
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": ":\\s*fn$"},
+			]
+		</context>
+		<description>Anonymous Function</description>
+	</snippet>
+	<snippet>
+		<content><![CDATA[
+function($1) {${0:$selection}},
+]]></content>
+		<tabTrigger>fn</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "^\\s*$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": ":\\s*fn$"},
+			]
+		</context>
+		<description>Anonymous Function</description>
+	</snippet>
+	<snippet>
+		<content><![CDATA[
+function($1) {${0:$selection}}
+]]></content>
+		<tabTrigger>fn</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^\\s*$"},
+			]
+		</context>
+		<description>Anonymous Function</description>
+	</snippet>
+</snippets>

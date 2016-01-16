@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+console.error(${1:$selection__or__last_assigned_variable});
+]]></content>
+	<tabTrigger>le</tabTrigger>
+	<scope>source.js</scope>
+	<description>console error</description>
+</snippet>

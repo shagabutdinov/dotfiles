@@ -1,0 +1,1717 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"add",
+				"addError"
+			],
+			[
+				"Up",
+				"updateUserStatistic	error ƒ"
+			],
+			[
+				"html",
+				"htmlspecialchars"
+			],
+			[
+				"Q",
+				"QueryRow	*sql.Row ƒ"
+			],
+			[
+				"con",
+				"connection	Connection ν"
+			],
+			[
+				"Use",
+				"UserId	int ν"
+			],
+			[
+				"getVa",
+				"getValidSqlPart"
+			],
+			[
+				"err",
+				"error_reporting"
+			],
+			[
+				"Par",
+				"ParseInt	i int64, err error ƒ"
+			],
+			[
+				"For",
+				"FormValue	string ƒ"
+			],
+			[
+				"OfferRe",
+				"OfferResult	struct ʈ"
+			],
+			[
+				"Fo",
+				"FormValue	string ƒ"
+			],
+			[
+				"Blo",
+				"BlockCallType	string ν"
+			],
+			[
+				"Process",
+				"ProcessShow	error ƒ"
+			],
+			[
+				"N",
+				"NullString	struct ʈ"
+			],
+			[
+				"Nu",
+				"NullString	struct ʈ"
+			],
+			[
+				"Print",
+				"Println	 ƒ"
+			],
+			[
+				"Form",
+				"FormatInt	string ƒ"
+			],
+			[
+				"get",
+				"getElementsByClassName"
+			],
+			[
+				"http",
+				"httpRequest"
+			],
+			[
+				"Wr",
+				"WriteHeader	 ƒ"
+			],
+			[
+				"Ro",
+				"Rows	struct ʈ"
+			],
+			[
+				"qu",
+				"QueryRow	*sql.Row ƒ"
+			],
+			[
+				"code",
+				"codeId	int ν"
+			],
+			[
+				"pu",
+				"publishOfferRequest	error ƒ"
+			],
+			[
+				"Int31",
+				"Int31n	int32 ƒ"
+			],
+			[
+				"Un",
+				"UnixNano	int64 ƒ"
+			],
+			[
+				"tar",
+				"targetGetInt	int ƒ"
+			],
+			[
+				"testDb",
+				"testDbGetInteger	int ƒ"
+			],
+			[
+				"im",
+				"import	import (...) ʂ"
+			],
+			[
+				"ProcessOffer",
+				"ProcessOfferLikeAction	error ƒ"
+			],
+			[
+				"d",
+				"targetDataConnection	*sql.DB ν"
+			],
+			[
+				"De",
+				"Delivery	struct ʈ"
+			],
+			[
+				"am",
+				"amqpChannel	*amqp.Channel ν"
+			],
+			[
+				"amqp",
+				"amqpConnection	*amqp.Connection ν"
+			],
+			[
+				"a",
+				"UserAgent	string ƒ"
+			],
+			[
+				"re",
+				"result	sql.Result ν"
+			],
+			[
+				"q",
+				"QueueDeclare	amqp.Queue, error ƒ"
+			],
+			[
+				"Unix",
+				"UnixNano	int64 ƒ"
+			],
+			[
+				"No",
+				"Now	time.Time ƒ"
+			],
+			[
+				"new",
+				"NewSource	rand.Source ƒ"
+			],
+			[
+				"Pr",
+				"Print	 ƒ"
+			],
+			[
+				"Status",
+				"StatusInternalServerError	 Ɩ"
+			],
+			[
+				"write",
+				"WriteHeader	 ƒ"
+			],
+			[
+				"ur",
+				"RequestURI	string ν"
+			],
+			[
+				"if",
+				"if	if-html"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"pregma",
+				"preg_match"
+			],
+			[
+				"http_b",
+				"http_build_url"
+			],
+			[
+				"_SE",
+				"_SESSION"
+			],
+			[
+				"i",
+				"i	if … end"
+			],
+			[
+				"r",
+				"r	r return"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 180.0,
+		"last_filter": "ss2",
+		"selected_items":
+		[
+			[
+				"ss2",
+				"KeymapEnhanced: set tab size - 2"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"uniq",
+				"Permute Lines: Unique"
+			],
+			[
+				"sort",
+				"Sort Lines"
+			],
+			[
+				"sshtml",
+				"Set Syntax: HTML"
+			],
+			[
+				"ss2	",
+				"KeymapEnhanced: set tab size - 2"
+			],
+			[
+				"goto",
+				"GotoDefinitionEnhanced: Goto definition"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"das",
+				"Convert Case: dash-case"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove",
+				"Snippet: removeClass"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"bas",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"form",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"forma",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"xml	",
+				"Set Syntax: XML"
+			],
+			[
+				"ml",
+				"Move Tab: To last position"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"tabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"relo",
+				"Snippet Enhanced: Reload snippets"
+			],
+			[
+				"dash",
+				"Convert Case: dash-case"
+			],
+			[
+				"reload",
+				"Snippet Enhanced: Reload snippets"
+			],
+			[
+				"cam",
+				"Convert Case: camelCase"
+			],
+			[
+				"sscss",
+				"Set Syntax: CSS"
+			],
+			[
+				"css",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"camel",
+				"Convert Case: camelCase"
+			],
+			[
+				"bash",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"format json",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"format js",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"q",
+				"Snippet: q jquery"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"js",
+				"Set Syntax: JSON"
+			],
+			[
+				"ss css",
+				"Set Syntax: CSS"
+			],
+			[
+				"slim",
+				"Set Syntax: Ruby Slim"
+			],
+			[
+				"isntall",
+				"Package Control: Install Package"
+			],
+			[
+				"mar",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"vash",
+				"EvalSelection: Show evaluation history"
+			],
+			[
+				"markex",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"movelast",
+				"Method: Move method to last"
+			],
+			[
+				"move metholast",
+				"Method: Move method to last"
+			],
+			[
+				"",
+				""
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"prett",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"wra",
+				"HTML: Wrap Selection With Tag"
+			],
+			[
+				"SQL",
+				"Set Syntax: SQL"
+			],
+			[
+				"local",
+				"Local History: Browse"
+			],
+			[
+				"hist",
+				"Local History: Open"
+			],
+			[
+				"jsfor",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"if",
+				"Snippet: if"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"wrap",
+				"HTML: Wrap Selection With Tag"
+			],
+			[
+				"upgra",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"upgr",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"ifn",
+				"Snippet: in if not"
+			],
+			[
+				"purl",
+				"Snippet: pu package get url"
+			],
+			[
+				"url",
+				"Snippet: pu package get url"
+			],
+			[
+				"synhtml",
+				"Set Syntax: HTML"
+			],
+			[
+				"isntal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 556.0
+	},
+	"console":
+	{
+		"height": 559.0,
+		"history":
+		[
+			"sublime.log_commands(True);",
+			"sublime.log_commands(False);",
+			"sublime.log_commands(True);",
+			"sublime.log_commands(False);",
+			"sublime.log_commands(True);",
+			"re.search('(a)|(A)', 'AAAaaa').start(1)",
+			"re.search('(a)|(A)', 'AAAaaa').group(1)",
+			"re.search('(a)(A)', 'AAAaaa').group(1)",
+			"import re",
+			"sublime.log_commands(True);",
+			"print(__file__);",
+			"print(persist.errors)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.find_resources('*.sublime-snippet')",
+			"sublime.find_reosources('*.sublime-snippet')",
+			"sublime.active_window()",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/leo/src/9fine-idfly-ru"
+	],
+	"file_history":
+	[
+		"/home/leo/projects/personal/log.txt",
+		"/home/leo/src/9fine-idfly-ru/.darius.yml",
+		"/home/leo/src/9fine-idfly-ru/config/darius/merge-branch-to-development.task.yml",
+		"/tmp/vimperator-rm.idfly.ru.tmp",
+		"/home/leo/src/9fine-idfly-ru/data-processor/offer_info_processor.go",
+		"/home/leo/.config/sublime-text-3/Projects/9fine.sublime-project",
+		"/home/leo/.config/sublime-text-3/Packages/User/GoSublime.sublime-settings",
+		"/home/leo/.config/sublime-text-3/Packages/GoSublime/GoSublime.sublime-settings",
+		"/home/leo/.sublime/history/home/leo/projects/personal/2015-08-01_13.24.48.log.txt",
+		"/home/leo/src/9fine-idfly-ru/data-saver/data_storage.go",
+		"/home/leo/src/9fine-idfly-ru/data-saver/data_storage_code.go",
+		"/home/leo/src/9fine-idfly-ru/web/js/counter.js",
+		"/home/leo/src/9fine-idfly-ru/data-processor/code_info_processor.go",
+		"/home/leo/src/balmora/Rakefile",
+		"/home/leo/src/balmora/Gemfile",
+		"/home/leo/src/9fine-idfly-ru/data-processor/main.go",
+		"/home/leo/src/9fine-idfly-ru/data-saver/id_storage.go",
+		"/home/leo/src/9fine-idfly-ru/data-saver/main.go",
+		"/home/leo/src/9fine-idfly-ru/data-saver/data_storage_offer.go",
+		"/home/leo/src/9fine-idfly-ru/data-processor/user_info_processor.go",
+		"/home/leo/src/9fine-idfly-ru/web/js/common.js",
+		"/home/leo/tmp.json",
+		"/home/leo/src/9fine-idfly-ru/web/html/default.html",
+		"/home/leo/src/9fine-idfly-ru/web/html/popup/default.html",
+		"/home/leo/src/9fine-idfly-ru/web/mailru-verification2068e2794c612049.html",
+		"/home/leo/src/9fine-idfly-ru/modules/partner/views/code/form.php",
+		"/home/leo/src/9fine-idfly-ru/web/css/satellite/main.css",
+		"/home/leo/.vimperatorrc",
+		"/home/leo/src/9fine-idfly-ru/data-processor/test_utilities.go",
+		"/home/leo/src/9fine-idfly-ru/data-processor/connection.go",
+		"/home/leo/src/9fine-idfly-ru/data-saver/utility.go",
+		"/home/leo/src/9fine-idfly-ru/controllers/PagesController.php",
+		"/home/leo/src/9fine-idfly-ru/admin/controllers/CategoryController.php",
+		"/home/leo/src/9fine-idfly-ru/admin/controllers/CodeController.php",
+		"/home/leo/src/9fine-idfly-ru/partner/controllers/CodeController.php",
+		"/home/leo/.vimperator/plugin/redmine.js",
+		"/usr/lib/firefox/browser/extensions/vimperator@mozdev.org/common/content/events.js",
+		"/usr/lib/firefox/browser/extensions/vimperator@mozdev.org/content/ignorekeys.js",
+		"/usr/lib/firefox/browser/extensions/vimperator@mozdev.org/content/config.js",
+		"/usr/lib/firefox/browser/extensions/vimperator@mozdev.org/common/content/editor.js",
+		"/usr/lib/firefox/browser/extensions/vimperator@mozdev.org/common/content/modes.js",
+		"/usr/lib/firefox/browser/extensions/vimperator@mozdev.org/common/content/hints.js",
+		"/usr/lib/firefox/browser/extensions/vimperator@mozdev.org/common/modules/template.js",
+		"/usr/lib/firefox/browser/extensions/vimperator@mozdev.org/content/liberator.dtd",
+		"/usr/lib/firefox/browser/extensions/vimperator@mozdev.org/content/vimperator.xul",
+		"/home/leo/.vimperator/plugins/redmine.js",
+		"/home/leo/src/9fine-idfly-ru/components/Cpa.php",
+		"/home/leo/src/9fine-idfly-ru/web/js/offer.js",
+		"/home/leo/src/9fine-idfly-ru/vendor/idfly/evercookie/index.html",
+		"/home/leo/src/9fine-idfly-ru/commands/CpaController.php",
+		"/home/leo/.config/sublime-projects/9fine.sublime-project",
+		"/home/leo/src/9fine-idfly-ru/admin/controllers/CrudController.php",
+		"/home/leo/src/9fine-idfly-ru/admin/controllers/TransactionController.php",
+		"/home/leo/src/9fine-idfly-ru/partner/controllers/TransactionController.php",
+		"/home/leo/src/9fine-idfly-ru/admin/controllers/OfferController.php",
+		"/home/leo/src/9fine-idfly-ru/admin/views/layouts/crud/create.php",
+		"/home/leo/src/9fine-idfly-ru/admin/views/advertiser/index.php",
+		"/home/leo/src/9fine-idfly-ru/admin/views/admins/index.php",
+		"/home/leo/src/9fine-idfly-ru/admin/Module.php",
+		"/home/leo/src/9fine-idfly-ru/admin/views/admins/form.php",
+		"/home/leo/src/9fine-idfly-ru/web/porto/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js",
+		"/home/leo/src/9fine-idfly-ru/admin/views/admin/index.php",
+		"/home/leo/src/9fine-idfly-ru/commands/CounterJsController.php",
+		"/home/leo/src/9fine-idfly-ru/tests/codeception/unit/models/UserTest.php",
+		"/home/leo/src/9fine-idfly-ru/admin/views/advertiser/form.php",
+		"/home/leo/src/9fine-idfly-ru/admin/views/layouts/crud/update.php",
+		"/home/leo/src/9fine-idfly-ru/admin/views/offer/create.php",
+		"/home/leo/src/9fine-idfly-ru/partner/views/settings/change-password.php",
+		"/home/leo/src/9fine-idfly-ru/views/layouts/clean.php",
+		"/home/leo/src/9fine-idfly-ru/admin/controllers/AdvertiserController.php",
+		"/home/leo/src/9fine-idfly-ru/partner/views/code/list.php",
+		"/home/leo/src/9fine-idfly-ru/LICENSE.md",
+		"/home/leo/src/9fine-idfly-ru/admin/views/admins/login.php",
+		"/home/leo/src/9fine-idfly-ru/README.md",
+		"/home/leo/src/9fine-idfly-ru/tests/codeception/config/config.php",
+		"/home/leo/src/9fine-idfly-ru/config/console.php",
+		"/home/leo/src/9fine-idfly-ru/models/Request.php",
+		"/home/leo/src/9fine-idfly-ru/tests/codeception/unit/models/ContactFormTest.php",
+		"/home/leo/src/9fine-idfly-ru/web/html/layer/check/confirm_mobile.html",
+		"/home/leo/src/9fine-idfly-ru/models/UserOffer.php",
+		"/home/leo/src/9fine-idfly-ru/web/js/utility.js",
+		"/home/leo/src/9fine-idfly-ru/web/css/utility.css",
+		"/home/leo/src/9fine-idfly-ru/admin/controllers/BaseController.php",
+		"/home/leo/src/9fine-idfly-ru/web/fonts/glyphicons-halflings-regular.svg",
+		"/home/leo/src/9fine-idfly-ru/partner/views/code/preview.php",
+		"/home/leo/src/9fine-idfly-ru/views/site/error.php",
+		"/home/leo/src/9fine-idfly-ru/admin/views/advertiser/search.php",
+		"/home/leo/src/9fine-idfly-ru/controllers/SiteController.php",
+		"/home/leo/src/9fine-idfly-ru/models/Code.php",
+		"/home/leo/src/9fine-idfly-ru/models/Partner.php",
+		"/home/leo/src/9fine-idfly-ru/models/Advertiser.php",
+		"/home/leo/src/9fine-idfly-ru/admin/views/partner/form.php",
+		"/home/leo/src/9fine-idfly-ru/admin/controllers/PartnerController.php",
+		"/home/leo/src/9fine-idfly-ru/admin/views/partner/search.php",
+		"/home/leo/src/9fine-idfly-ru/admin/views/user/offers.php",
+		"/home/leo/src/9fine-idfly-ru/admin/views/offer/delete.php",
+		"/home/leo/src/9fine-idfly-ru/admin/views/partner/index.php",
+		"/home/leo/src/9fine-idfly-ru/views/unsubscribe/subscribed.php",
+		"/home/leo/src/9fine-idfly-ru/views/site/index.php",
+		"/home/leo/src/9fine-idfly-ru/assets/AppAsset.php",
+		"/home/leo/src/9fine-idfly-ru/models/Payout.php",
+		"/home/leo/src/9fine-idfly-ru/models/User.php",
+		"/home/leo/src/9fine-idfly-ru/models/Unsubscribe.php",
+		"/home/leo/src/9fine-idfly-ru/models/Transaction.php",
+		"/home/leo/src/9fine-idfly-ru/models/Skin.php",
+		"/home/leo/src/9fine-idfly-ru/models/Region.php",
+		"/home/leo/src/9fine-idfly-ru/models/OfferStatistic.php",
+		"/home/leo/src/9fine-idfly-ru/models/OfferSearch.php",
+		"/home/leo/src/9fine-idfly-ru/models/OfferRelated.php",
+		"/home/leo/src/9fine-idfly-ru/models/OfferCodeStatistic.php",
+		"/home/leo/src/9fine-idfly-ru/models/OfferCode.php",
+		"/home/leo/src/9fine-idfly-ru/models/Country.php",
+		"/home/leo/src/9fine-idfly-ru/models/Contractor.php",
+		"/home/leo/src/9fine-idfly-ru/models/CodeStatistic.php",
+		"/home/leo/src/9fine-idfly-ru/models/CodeOffer.php",
+		"/home/leo/src/9fine-idfly-ru/models/CodeCategory.php",
+		"/home/leo/src/9fine-idfly-ru/models/City.php",
+		"/home/leo/src/9fine-idfly-ru/models/Category.php",
+		"/home/leo/src/9fine-idfly-ru/models/AdvertiserStatistic.php",
+		"/home/leo/src/9fine-idfly-ru/models/AdvertiserDisabledCode.php",
+		"/home/leo/src/9fine-idfly-ru/models/AdvertiserCodeIgnore.php",
+		"/home/leo/src/9fine-idfly-ru/models/AdvertiserCategory.php",
+		"/home/leo/src/9fine-idfly-ru/models/Admin.php",
+		"/home/leo/src/9fine-idfly-ru/models/UserRegion.php",
+		"/home/leo/src/9fine-idfly-ru/models/UserContact.php",
+		"/home/leo/src/9fine-idfly-ru/models/UserCode.php",
+		"/home/leo/src/9fine-idfly-ru/web/.htaccess",
+		"/home/leo/src/9fine-idfly-ru/web/js/admin.js"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 102.0,
+		"where_history":
+		[
+			"*.go",
+			"*.js",
+			"*.go",
+			"*.rb",
+			"*.js",
+			"",
+			"*.go",
+			"",
+			"data-processor/",
+			"",
+			"/",
+			"data-saver/",
+			"data-processor/",
+			"",
+			"*.go",
+			"*.php",
+			"*.go",
+			"*.php",
+			"*.go",
+			"*.php",
+			"*.go",
+			"*.php",
+			"*.go",
+			"",
+			"/home/leo/.config/sublime-text-3/Packages/",
+			"",
+			"*.js",
+			"*.go",
+			".go",
+			"",
+			"*.php",
+			"",
+			"vendor/",
+			"",
+			"/home/leo/.config/sublime-text-3/Packages/User/js/",
+			"",
+			"config/",
+			"",
+			"*.php, *.js",
+			"",
+			"frontend/",
+			"",
+			"*.js",
+			"",
+			"backend/views/",
+			"",
+			"frontend/view/**",
+			"**/view/**",
+			"",
+			"*.js",
+			"",
+			"backend/",
+			"frontend/",
+			"vendor/2amigos/yii2-ckeditor-widget/presets/",
+			"/home/leo/.config/Dropbox/Server/reelsource.ru/vendor/2amigos/yii2-ckeditor-widget/",
+			"",
+			"Gpn/**.rb",
+			"GPN/**.rb",
+			"*.rb",
+			"",
+			"Gpn/**.erb",
+			"Gpn/",
+			"",
+			"*.erb",
+			"*.rb",
+			"*.erb",
+			"",
+			"*.yml",
+			"",
+			"Gpn/",
+			"Gpn/**.rb",
+			"Gpn/",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"user_code_statistic",
+			"ShowPopup",
+			"show_popup",
+			"\"exit\"",
+			"test_unit",
+			"test-system",
+			"test-unit",
+			"action",
+			"aciton",
+			"SELECT COUNT(DISTINCT user_id)",
+			".Publish",
+			"default.html",
+			"Цвет рекла",
+			"popup/bg-content-green.png",
+			".nf-background",
+			"nf-element",
+			"FIXME",
+			"LOG(",
+			"LOG(data_storage",
+			"LOG:",
+			"INSERT INTO offer_statistic SET",
+			"visits = visits + 1",
+			"INSERT INTO offer_statistic SE",
+			"SELECT COUNT",
+			"Consume(",
+			"COUNT(",
+			"LOG(",
+			"SELECT COUNT(DISTINCT user_id)",
+			"Consume(",
+			"DATE(",
+			"DAY(",
+			"LOG(",
+			"data_storage_code.go:638",
+			"Consume(",
+			".Ack(",
+			".Confirm",
+			"QueueDeclare",
+			"amqpQueue",
+			"QueueDeclare",
+			"ExchangeDeclare",
+			"ProcessQueue",
+			".Ack",
+			"fmt.Println",
+			"SELECT COUNT(DISTINCT user_id",
+			"first_code_id",
+			"storage.channel.Publish",
+			"StoreCodeRequest",
+			"type CodeInfo",
+			"INSERT INTO code",
+			"INSERT INTO",
+			"BEGIN",
+			"TRANSACTION",
+			"Transaction",
+			"WindowPixelRatio",
+			"Unmarshal",
+			"IsMobile",
+			"Invalid windowPixelRatio",
+			"windowPixel",
+			"RemoteAddr= ",
+			"_extend9fineObjects",
+			"window.nf = ",
+			"function nf",
+			"window.nf = ",
+			"Access-Control-Allow-Origin",
+			"Code is not allowed on this domain",
+			"Not allow",
+			"region_id",
+			"getIp",
+			"ec = ",
+			"has_offer",
+			"-",
+			".",
+			"StoreCodeRequest",
+			"StoreOfferRequest",
+			"StoreOfferRequest\n",
+			" [текст песни]",
+			"'-o'",
+			"-o",
+			"console.log",
+			"\"insert_space_after_regexp\": \"()\"",
+			"\"()\"",
+			"blocks",
+			"block",
+			"blocks",
+			"blocks = blocks",
+			"OLOLO",
+			"user_contact",
+			"__nfc__",
+			"has_offer",
+			"src=\"/js/counter.js\"",
+			"counter.js",
+			"close_by_background",
+			"closed_by_background",
+			"->user_contact",
+			"offerAcions",
+			"wrong action",
+			"ProcessShow",
+			"INSERT INTO",
+			"region",
+			"offer_code_statistic.visits",
+			"detected",
+			"disable_refferer_values",
+			"meta#csrf-token",
+			"code-preview",
+			"// unbind",
+			"unbind",
+			"unbind(",
+			"unbind('click change').",
+			"unbind('click change')",
+			"block_call_type",
+			"block_call_timeout",
+			"field-code-block_call_type",
+			"#block_call_type",
+			"если url содержит или равен",
+			"[:=*/+-]",
+			"[=*/+-&|]",
+			"[*/+-&|]",
+			"[=*/+-&|]",
+			"[*/+-&|]",
+			"[=*/+-]",
+			"[*/+-]",
+			"category",
+			"Category",
+			"dropDown",
+			"code",
+			"$this->hasMany",
+			"statistics_server",
+			"data-server"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"CodeInfo",
+			"offer_code_statistic",
+			"partner/code/index",
+			"partner",
+			"src=\"../content/",
+			"\\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 25.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.9o:///home/leo/server/9fine.idfly.ru/data-processor":
+	{
+		"height": 104.0
+	},
+	"output.9o:///home/leo/src/idfly-deploy":
+	{
+		"height": 104.0
+	},
+	"output.GoSublime-main-output":
+	{
+		"height": 104.0
+	},
+	"output.exec":
+	{
+		"height": 104.0
+	},
+	"output.find_results":
+	{
+		"height": 86.0
+	},
+	"output.run_mysql_query_result":
+	{
+		"height": 696.0
+	},
+	"pinned_build_system": "",
+	"project": "9fine.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				".dariu",
+				".darius.yml"
+			],
+			[
+				"offe.go",
+				"data-processor/offer_info_processor.go"
+			],
+			[
+				"ofinf",
+				"data-processor/offer_info_processor.go"
+			],
+			[
+				"cou.js",
+				"web/js/counter.js"
+			],
+			[
+				"dast",
+				"data-saver/data_storage.go"
+			],
+			[
+				"datasave/id",
+				"data-saver/id_storage.go"
+			],
+			[
+				"datapr/main",
+				"data-processor/main.go"
+			],
+			[
+				"codeinf",
+				"data-processor/code_info_processor.go"
+			],
+			[
+				"defa.html",
+				"web/html/popup/default.html"
+			],
+			[
+				"defa.htm",
+				"web/html/default.html"
+			],
+			[
+				"coinf",
+				"data-processor/code_info_processor.go"
+			],
+			[
+				"coinfpr",
+				"data-processor/code_info_processor.go"
+			],
+			[
+				"proces",
+				"data-processor/code_info_processor.go"
+			],
+			[
+				"saver",
+				"data-saver/data_storage.go"
+			],
+			[
+				"common.js",
+				"web/js/common.js"
+			],
+			[
+				"datasave",
+				"data-saver/main.go"
+			],
+			[
+				"off.js",
+				"web/js/offer.js"
+			],
+			[
+				"id_sta",
+				"data-saver/id_storage.go"
+			],
+			[
+				"par/trans",
+				"partner/controllers/TransactionController.php"
+			],
+			[
+				"crud",
+				"admin/controllers/CrudController.php"
+			],
+			[
+				"datasogo",
+				"data-saver/data_storage.go"
+			],
+			[
+				"counter.js",
+				"web/js/counter.js"
+			],
+			[
+				"dasc",
+				"data-saver/data_storage_code.go"
+			],
+			[
+				"crud.",
+				"admin/controllers/CrudController.php"
+			],
+			[
+				"read",
+				"README.md"
+			],
+			[
+				"data_storage_code.go",
+				"data-saver/data_storage_code.go"
+			],
+			[
+				"",
+				"admin/controllers/AdvertiserController.php"
+			],
+			[
+				"view/offer",
+				"admin/views/user/offers.php"
+			],
+			[
+				"parcontr",
+				"admin/controllers/PartnerController.php"
+			],
+			[
+				"views/part/for",
+				"admin/views/partner/form.php"
+			],
+			[
+				"adver",
+				"models/Advertiser.php"
+			],
+			[
+				"code.ph",
+				"models/Code.php"
+			],
+			[
+				"code_info",
+				"data-processor/code_info_processor.go"
+			],
+			[
+				"offer.js",
+				"web/js/offer.js"
+			],
+			[
+				"offersear",
+				"models/OfferSearch.php"
+			],
+			[
+				"deliver",
+				"commands/DeliveryController.php"
+			],
+			[
+				"staticon",
+				"commands/StatisticController.php"
+			],
+			[
+				"search",
+				"admin/views/advertiser/search.php"
+			],
+			[
+				"utili.js",
+				"web/js/utility.js"
+			],
+			[
+				"cou",
+				"web/js/counter.js"
+			],
+			[
+				".js",
+				"web/js/utility.js"
+			],
+			[
+				"giig",
+				".gitignore"
+			],
+			[
+				"counter",
+				"web/js/counter.js"
+			],
+			[
+				"datsave",
+				"data-saver/data_storage.go"
+			],
+			[
+				"preview",
+				"partner/views/code/preview.php"
+			],
+			[
+				"req",
+				"models/Request.php"
+			],
+			[
+				"proc/code",
+				"data-processor/code_info_processor.go"
+			],
+			[
+				"datapr/",
+				"data-processor/code_info_processor.go"
+			],
+			[
+				"tood",
+				"todo.md"
+			],
+			[
+				"todo",
+				"todo.md"
+			],
+			[
+				"code/stat",
+				"admin/views/code/statistic.php"
+			],
+			[
+				"par/inde",
+				"admin/views/partner/index.php"
+			],
+			[
+				"code-form.js",
+				"web/js/partner/code-form.js"
+			],
+			[
+				"bootstrap/activefield",
+				"vendor/yiisoft/yii2-dev/extensions/bootstrap/ActiveField.php"
+			],
+			[
+				"widget.php",
+				"vendor/yiisoft/yii2-dev/framework/base/Widget.php"
+			],
+			[
+				"widge/activeform",
+				"vendor/yiisoft/yii2-dev/framework/widgets/ActiveForm.php"
+			],
+			[
+				"activeform",
+				"vendor/yiisoft/yii2-dev/extensions/bootstrap/ActiveForm.php"
+			],
+			[
+				"country",
+				"models/Country.php"
+			],
+			[
+				"region",
+				"models/Region.php"
+			],
+			[
+				"utili",
+				"web/js/utility.js"
+			],
+			[
+				"code-fo",
+				"web/js/partner/code-form.js"
+			],
+			[
+				"ad/code/for",
+				"admin/views/code/form.php"
+			],
+			[
+				"usreg",
+				"models/UserRegion.php"
+			],
+			[
+				"cr",
+				"admin/controllers/CrudController.php"
+			],
+			[
+				"usecon",
+				"models/UserContact.php"
+			],
+			[
+				"userreg",
+				"models/UserRegion.php"
+			],
+			[
+				"userregion",
+				"models/UserRegion.php"
+			],
+			[
+				"partner/view/index",
+				"partner/views/code/index.php"
+			],
+			[
+				"adve",
+				"models/Advertiser.php"
+			],
+			[
+				"adsta",
+				"models/AdvertiserStatistic.php"
+			],
+			[
+				"db/activerecord",
+				"vendor/yiisoft/yii2-dev/framework/db/ActiveRecord.php"
+			],
+			[
+				"adve/inde",
+				"admin/views/code/index.php"
+			],
+			[
+				"codeof",
+				"models/CodeOfferStatistic.php"
+			],
+			[
+				"ad/ofjs",
+				"web/js/admin/offer.js"
+			],
+			[
+				"offer/inde",
+				"admin/views/offer/index.php"
+			],
+			[
+				"par/code-form",
+				"web/js/partner/code-form.js"
+			],
+			[
+				"codecon",
+				"admin/controllers/CodeController.php"
+			],
+			[
+				"unsbed",
+				"views/unsubscribe/unsubscribed.php"
+			],
+			[
+				"unsb",
+				"models/Unsubscribe.php"
+			],
+			[
+				"mail/offer.php",
+				"mail/request/offer.php"
+			],
+			[
+				"index",
+				"web/index.php"
+			],
+			[
+				"statda",
+				"models/StatisticDaily.php"
+			],
+			[
+				"index.",
+				"views/site/index.php"
+			],
+			[
+				"offer.php",
+				"models/Offer.php"
+			],
+			[
+				"clea",
+				"views/layouts/clean.php"
+			],
+			[
+				"code-form",
+				"web/js/partner/code-form.js"
+			],
+			[
+				"preivew.",
+				"partner/views/code/preview.php"
+			],
+			[
+				"code.php",
+				"models/Code.php"
+			],
+			[
+				"coform",
+				"web/js/partner/code-form.js"
+			],
+			[
+				"par/code/form",
+				"partner/views/code/form.php"
+			],
+			[
+				"dasav/",
+				"data-saver/data_storage.go"
+			],
+			[
+				"form",
+				"admin/views/code/form.php"
+			],
+			[
+				"actioncolumn",
+				"vendor/idfly/yii2-porto/ActionColumn.php"
+			],
+			[
+				"codeca",
+				"models/CodeCategory.php"
+			],
+			[
+				"admin/offer/form",
+				"admin/views/offer/form.php"
+			],
+			[
+				"site",
+				"controllers/SiteController.php"
+			],
+			[
+				"error",
+				"views/site/error.php"
+			],
+			[
+				"proce",
+				"data-processor/code_info_processor.go"
+			],
+			[
+				"9fincontrol",
+				"commands/9fine.control"
+			],
+			[
+				"data-save",
+				"data-saver/data-saver"
+			],
+			[
+				"data-pro",
+				"data-processor/offer_info_processor.go"
+			],
+			[
+				"delcontr",
+				"commands/DeliveryController.php"
+			],
+			[
+				"conf/loca",
+				"config/local.php"
+			],
+			[
+				"9fcon",
+				"commands/9fine.control"
+			],
+			[
+				".control",
+				"commands/9fine.control"
+			],
+			[
+				"req.",
+				"models/Request.php"
+			],
+			[
+				"com",
+				"composer.json"
+			],
+			[
+				"local",
+				"config/local.php"
+			],
+			[
+				"dataproce",
+				"data-processor/code_info_processor.go"
+			],
+			[
+				"idst",
+				"data-saver/id_storage.go"
+			],
+			[
+				"fincontr",
+				"commands/9fine.control"
+			],
+			[
+				"9fin.con",
+				"commands/9fine.control"
+			],
+			[
+				"main",
+				"data-saver/main.go"
+			],
+			[
+				"datasave/main",
+				"data-saver/main.go"
+			],
+			[
+				"sp",
+				"specifications/popup.md"
+			],
+			[
+				"login",
+				"admin/views/admins/login.php"
+			],
+			[
+				"notfoud",
+				"vendor/yiisoft/yii2-dev/framework/web/NotFoundHttpException.php"
+			],
+			[
+				"httpex",
+				"vendor/yiisoft/yii2-dev/framework/web/HttpException.php"
+			],
+			[
+				"site/err",
+				"views/site/error.php"
+			],
+			[
+				"errorhandler",
+				"vendor/yiisoft/yii2-dev/framework/web/ErrorHandler.php"
+			],
+			[
+				"sitecontr",
+				"controllers/SiteController.php"
+			],
+			[
+				"admincontr",
+				"admin/controllers/AdminController.php"
+			],
+			[
+				"base",
+				"admin/controllers/BaseController.php"
+			],
+			[
+				"appass",
+				"assets/AppAsset.php"
+			],
+			[
+				"uti",
+				"web/js/utility.js"
+			],
+			[
+				"admin/login",
+				"admin/views/admins/login.php"
+			],
+			[
+				"login.php",
+				"admin/views/admins/login.php"
+			],
+			[
+				"cru",
+				"admin/controllers/CrudController.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "uve",
+		"selected_items":
+		[
+			[
+				"uve",
+				"~/.config/sublime-text-3/Projects/uveliriya-ru.sublime-project"
+			],
+			[
+				"nal",
+				"~/.config/sublime-text-3/Projects/nalopatu-ru.sublime-project"
+			],
+			[
+				"9if",
+				"~/.config/sublime-text-3/Projects/9fine.sublime-project"
+			],
+			[
+				"bal",
+				"~/.config/sublime-text-3/Projects/balmora.sublime-project"
+			],
+			[
+				"nalo",
+				"~/.config/sublime-text-3/Projects/nalopatu-ru.sublime-project"
+			],
+			[
+				"9fin",
+				"~/.config/sublime-text-3/Projects/9fine.sublime-project"
+			],
+			[
+				"cr",
+				"~/.config/sublime-text-3/Projects/cr911-idfly-ru.sublime-project"
+			],
+			[
+				"pack",
+				"~/.config/sublime-projects/packages.sublime-project"
+			],
+			[
+				"nalop",
+				"~/.config/sublime-projects/nalopatu-ru.sublime-project"
+			],
+			[
+				"idf",
+				"~/.config/sublime-projects/idfly15.sublime-project"
+			],
+			[
+				"up",
+				"~/.config/sublime-projects/upstock.sublime-project"
+			],
+			[
+				"9fine",
+				"~/.config/sublime-projects/9fine.sublime-project"
+			],
+			[
+				"upst",
+				"~/.config/sublime-projects/upstock.sublime-project"
+			],
+			[
+				"price",
+				"~/.config/sublime-projects/pricelessly.sublime-project"
+			],
+			[
+				"tppr",
+				"~/.config/sublime-projects/tppr-me.sublime-project"
+			],
+			[
+				"mosc",
+				"~/.config/sublime-projects/moscowcasting-pro.sublime-project"
+			],
+			[
+				"tpp",
+				"~/.config/sublime-projects/tppr-me.sublime-project"
+			],
+			[
+				"reel",
+				"~/.config/sublime-projects/reelsource-ru.sublime-project"
+			],
+			[
+				"vali",
+				"~/.config/sublime-projects/valiorussia-ru.sublime-project"
+			],
+			[
+				"upsto",
+				"~/.config/sublime-projects/upstock.sublime-project"
+			],
+			[
+				"ree",
+				"~/.config/sublime-projects/reelsource-ru.sublime-project"
+			],
+			[
+				"nive",
+				"~/.config/sublime-projects/niveamen-ru.sublime-project"
+			],
+			[
+				"9f",
+				"~/.config/sublime-projects/9five.sublime-workspace"
+			],
+			[
+				"alfa",
+				"~/.config/sublime-projects/alfa-avia.sublime-project"
+			],
+			[
+				"nine",
+				"~/.config/sublime-projects/ninefine.sublime-project"
+			],
+			[
+				"funk",
+				"~/.config/sublime-projects/funkytown-ru.sublime-project"
+			],
+			[
+				"pkg",
+				"~/.config/sublime-projects/packages.sublime-project"
+			],
+			[
+				"offi",
+				"~/.config/sublime-projects/officerm-ru.sublime-project"
+			],
+			[
+				"paper",
+				"~/.config/sublime-projects/paper-io.sublime-project"
+			],
+			[
+				"pa",
+				"~/.config/sublime-projects/paper-io.sublime-project"
+			],
+			[
+				"mos",
+				"~/.config/sublime-projects/moscowcasting-pro.sublime-project"
+			],
+			[
+				"fun",
+				"~/.config/sublime-projects/funkytown-ru.sublime-project"
+			],
+			[
+				"pap",
+				"~/.config/sublime-projects/paper-io.sublime-project"
+			],
+			[
+				"gp",
+				"~/.config/sublime-projects/gpn-promo-ru.sublime-project"
+			],
+			[
+				"gpn-pr",
+				"~/.config/sublime-projects/gpn-promo-ru.sublime-project"
+			],
+			[
+				"pesk",
+				"~/.config/sublime-projects/pesok-piop-ru.sublime-project"
+			],
+			[
+				"mnosc",
+				"~/.config/sublime-projects/moscowcasting-pro.sublime-project"
+			],
+			[
+				"dev",
+				"~/.config/sublime-projects/dev-reelsource-ru.sublime-project"
+			],
+			[
+				"val",
+				"~/.config/sublime-projects/valiorussia-ru.sublime-project"
+			],
+			[
+				"pac",
+				"~/.config/sublime-projects/packages.sublime-project"
+			],
+			[
+				"gpn",
+				"~/.config/sublime-projects/gpn-promo-ru.sublime-project"
+			],
+			[
+				"pr",
+				"~/.config/sublime-projects/priceless-ly.sublime-project"
+			],
+			[
+				"pape",
+				"~/.config/sublime-projects/paper-io.sublime-project"
+			],
+			[
+				"idfl",
+				"~/.config/sublime-projects/idfly15.sublime-project"
+			],
+			[
+				"pg",
+				"~/.config/sublime-projects/gpn-promo-ru.sublime-project"
+			],
+			[
+				"evo",
+				"~/.config/sublime-projects/evo-net-ua.sublime-project"
+			],
+			[
+				"pricel",
+				"~/.config/sublime-projects/priceless-ly.sublime-project"
+			],
+			[
+				"",
+				"~/.config/sublime-projects/paper-io.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

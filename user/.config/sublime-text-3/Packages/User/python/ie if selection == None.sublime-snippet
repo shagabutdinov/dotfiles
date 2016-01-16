@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+if ${1:$selection__or__last_assigned_variable} == None$2:
+	$0
+]]></content>
+	<tabTrigger>ie</tabTrigger>
+	<scope>source.python</scope>
+	<description>if language == None:</description>
+</snippet>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+expected
+]]></content>
+	<tabTrigger>te</tabTrigger>
+	<scope>source.js</scope>
+	<description>expected</description>
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+def $1($2):
+	${0:$selection}
+]]></content>
+	<tabTrigger>D</tabTrigger>
+	<scope>source.python</scope>
+	<description>define function</description>
+</snippet>

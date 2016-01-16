@@ -1,0 +1,113 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+class $1
+	${0:$selection}
+end
+]]></content>
+		<commands>
+			[
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>c</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*c$"},
+			]
+		]]></context>
+		<description>class</description>
+	</snippet>
+
+		<snippet>
+		<content><![CDATA[
+def $1 $2
+	${0:$selection}
+end
+]]></content>
+		<commands>
+			[
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>d</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*d$"},
+			]
+		]]></context>
+		<description>def</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+($trigger1$0)
+]]></content>
+		<commands>
+			[
+				{"command": "move", "args": {"by": "characters", "forward": false}},
+				{"command": "ensure_space_before","args": {"space_char": ""}},
+				{"command": "move", "args": {"by": "characters", "forward": true}},
+				"RUN",
+			]
+		</commands>
+		<triggerRegexp>\s(\w)</triggerRegexp>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "def\\s+.+?\\s+\\w$"},
+			]
+		]]></context>
+		<description>def</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+def initialize $1
+	${0:$selection}
+end
+]]></content>
+		<commands>
+			[
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>di</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*di$"},
+			]
+		]]></context>
+		<description>def initialize</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+def self.$1 $2
+	${0:$selection}
+end
+]]></content>
+		<commands>
+			[
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ds</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*ds$"},
+			]
+		]]></context>
+		<description>def</description>
+	</snippet>
+
+</snippets>

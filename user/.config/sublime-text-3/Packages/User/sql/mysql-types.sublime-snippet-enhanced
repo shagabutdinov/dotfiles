@@ -1,0 +1,335 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+INT(${1:10}) ${2:UNSIGNED} ${3:NOT NULL} $0
+]]></content>
+		<tabTrigger>i</tabTrigger>
+		<trigger>i</trigger>
+		<scope>source.sql(?!.*string)</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "^\\s*i$"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		</context>
+		<description>int 10 unsigned</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+`$1` INT(${2:10}) ${3:UNSIGNED} ${4:NOT NULL} $0
+]]></content>
+		<tabTrigger>I</tabTrigger>
+		<trigger>I</trigger>
+		<scope>source.sql(?!.*string)</scope>
+		<description>int 10 unsigned</description>
+		<context>
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*CREATE\\s*TABLE"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		</context>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+ADD `$1` INT(${2:10}) ${3:UNSIGNED} ${4:NOT NULL} $0
+]]></content>
+		<tabTrigger>I</tabTrigger>
+		<trigger>I</trigger>
+		<scope>source.sql(?!.*string)</scope>
+		<context>
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*ALTER\\s*TABLE"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		</context>
+		<description>int 10 unsigned</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+VARCHAR(${1:256}) ${3:NOT NULL} $0
+]]></content>
+		<tabTrigger>v</tabTrigger>
+		<trigger>v</trigger>
+		<scope>source.sql(?!.*string)</scope>
+		<description>varchar 256</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+`$1` VARCHAR(${2:256}) ${3:NOT NULL} $0
+]]></content>
+		<tabTrigger>V</tabTrigger>
+		<trigger>V</trigger>
+		<context>
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*CREATE\\s*TABLE"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		</context>
+		<scope>source.sql(?!.*string)</scope>
+		<description>varchar 256</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+ADD `$1` VARCHAR(${2:256}) ${3:NOT NULL} $0
+]]></content>
+		<tabTrigger>V</tabTrigger>
+		<trigger>V</trigger>
+		<scope>source.sql(?!.*string)</scope>
+		<context>
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*ALTER\\s*TABLE"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		</context>
+		<description>varchar 256</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+DATETIME ${1:NOT NULL}
+]]></content>
+		<tabTrigger>dt</tabTrigger>
+		<trigger>dt</trigger>
+		<scope>source.sql(?!.*string)</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "^\\s*dt$"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		]]></context>
+		<description>datetime</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+TINYINT(${1:1}) ${2:UNSIGNED} ${3:NOT NULL}
+]]></content>
+		<tabTrigger>ti</tabTrigger>
+		<trigger>ti</trigger>
+		<scope>source.sql(?!.*string)</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "^\\s*e$"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		</context>
+		<description>tinyint 3 unsigned</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+`$1` TINYINT(${2:1}) ${3:UNSIGNED} ${4:NOT NULL}
+]]></content>
+		<tabTrigger>TI</tabTrigger>
+		<trigger>TI</trigger>
+		<scope>source.sql(?!.*string)</scope>
+		<context>
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*CREATE\\s*TABLE"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		</context>
+		<description>tinyint 3 unsigned</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+ADD `$1` TINYINT(${2:1}) ${3:UNSIGNED} ${4:NOT NULL}
+]]></content>
+		<tabTrigger>TI</tabTrigger>
+		<trigger>TI</trigger>
+		<scope>source.sql(?!.*string)</scope>
+		<context>
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*ALTER\\s*TABLE"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		</context>
+		<description>tinyint 3 unsigned</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+`$1` ENUM($2) ${3:NOT NULL}
+]]></content>
+		<tabTrigger>E</tabTrigger>
+		<trigger>E</trigger>
+		<scope>source.sql(?!.*string)</scope>
+		<context>
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*CREATE\\s*TABLE"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		</context>
+		<description>tinyint 3 unsigned</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+ADD `$1` ENUM($2) ${3:NOT NULL}
+]]></content>
+		<tabTrigger>E</tabTrigger>
+		<trigger>E</trigger>
+		<scope>source.sql(?!.*string)</scope>
+		<context>
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*ALTER\\s*TABLE"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		</context>
+		<description>tinyint 3 unsigned</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+ENUM($1) ${2:NOT NULL}
+]]></content>
+		<tabTrigger>e</tabTrigger>
+		<trigger>e</trigger>
+		<scope>source.sql(?!.*string)</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "^\\s*e$"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		</context>
+		<description>tinyint 3 unsigned</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+TIMESTAMP ${1:NOT NULL} DEFAULT CURRENT_TIMESTAMP
+]]></content>
+		<tabTrigger>ts</tabTrigger>
+		<trigger>ts</trigger>
+		<scope>source.sql(?!.*string)</scope>
+		<description>timestamp not null default current_timestamp</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+`$1` DATETIME ${2:NOT NULL}
+]]></content>
+		<tabTrigger>DT</tabTrigger>
+		<trigger>DT</trigger>
+		<scope>source.sql(?!.*string)</scope>
+		<context>
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*CREATE\\s*TABLE"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		</context>
+		<description>tinyint 3 unsigned</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+ADD `$1` DATETIME ${2:NOT NULL}
+]]></content>
+		<tabTrigger>DT</tabTrigger>
+		<trigger>DT</trigger>
+		<scope>source.sql(?!.*string)</scope>
+		<context>
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*ALTER\\s*TABLE"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		</context>
+		<description>tinyint 3 unsigned</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+TIME ${1:NOT NULL}
+]]></content>
+		<tabTrigger>tm</tabTrigger>
+		<trigger>tm</trigger>
+		<scope>source.sql(?!.*string)</scope>
+		<description>time</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+`$1` TIME ${1:NOT NULL}
+]]></content>
+		<tabTrigger>TM</tabTrigger>
+		<trigger>TM</trigger>
+		<scope>source.sql(?!.*string)</scope>
+		<context>
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*CREATE\\s*TABLE"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		</context>
+		<description>tinyint 3 unsigned</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+ADD `$1` TIME ${2:NOT NULL}
+]]></content>
+		<tabTrigger>TM</tabTrigger>
+		<trigger>TM</trigger>
+		<scope>source.sql(?!.*string)</scope>
+		<context>
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*ALTER\\s*TABLE"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		</context>
+		<description>tinyint 3 unsigned</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+TEXT ${1:NOT NULL}
+]]></content>
+		<tabTrigger>te</tabTrigger>
+		<trigger>te</trigger>
+		<scope>source.sql(?!.*string)</scope>
+		<description>text</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+DATE ${1:NOT NULL}
+]]></content>
+		<tabTrigger>da</tabTrigger>
+		<trigger>da</trigger>
+		<scope>source.sql(?!.*string)</scope>
+		<description>date</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+NULL
+]]></content>
+		<tabTrigger>n</tabTrigger>
+		<trigger>n</trigger>
+		<scope>source.sql(?!.*string)</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "^\\s*n$"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		</context>
+		<description>null</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+NOT NULL
+]]></content>
+		<tabTrigger>nn</tabTrigger>
+		<trigger>NULLn</trigger>
+		<scope>source.sql(?!.*string)</scope>
+		<description>not null</description>
+	</snippet>
+
+</snippets>

@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+System.out.println(${1:$selection__or__last_assigned_variable});
+]]></content>
+	<tabTrigger>p</tabTrigger>
+	<scope>source.java</scope>
+	<description>system out println</description>
+</snippet>

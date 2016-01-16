@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+appendChild(${1:$last_assigned_variable})
+]]></content>
+	<tabTrigger>ap</tabTrigger>
+	<scope>source.js</scope>
+	<description>appendchild</description>
+</snippet>

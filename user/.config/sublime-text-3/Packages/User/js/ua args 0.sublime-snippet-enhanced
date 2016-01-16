@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+args[0]
+]]></content>
+	<tabTrigger>ua</tabTrigger>
+	<scope>source.js</scope>
+	<description>args 0</description>
+</snippet>
