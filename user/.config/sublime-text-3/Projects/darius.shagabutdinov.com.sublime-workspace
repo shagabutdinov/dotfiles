@@ -1,0 +1,1880 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Q",
+				"QueryRow	*sql.Row ƒ"
+			],
+			[
+				"Repl",
+				"ReplaceAllString	string ƒ"
+			],
+			[
+				"ar",
+				"args	map[interface{}]interface{} ν"
+			],
+			[
+				"Ex",
+				"Expand	interface{}, error ƒ"
+			],
+			[
+				"arg",
+				"argv	[]string ν"
+			],
+			[
+				"Log",
+				"LogStdErr	 Ɩ"
+			],
+			[
+				"lo",
+				"load	interface{}, error ƒ"
+			],
+			[
+				"Fg",
+				"FgCyan	 Ɩ"
+			],
+			[
+				"inc",
+				"includeRecursive	interface{}, error ƒ"
+			],
+			[
+				"FindSub",
+				"FindAllSubmatch	[][][]byte ƒ"
+			],
+			[
+				"conf",
+				"configPath	string ν"
+			],
+			[
+				"Close",
+				"CloseWithError	error ƒ"
+			],
+			[
+				"Pip",
+				"PipeReader	struct ʈ"
+			],
+			[
+				"C",
+				"Close	error ƒ"
+			],
+			[
+				"Cl",
+				"close	error ƒ"
+			],
+			[
+				"cl",
+				"Close	error ƒ"
+			],
+			[
+				"Re",
+				"RemoteConfig	struct ʈ"
+			],
+			[
+				"Bg",
+				"BgYellow	 Ɩ"
+			],
+			[
+				"L",
+				"LogStdOut	 Ɩ"
+			],
+			[
+				"T",
+				"Type	ArgumentType ν"
+			],
+			[
+				"add",
+				"addError"
+			],
+			[
+				"Up",
+				"updateUserStatistic	error ƒ"
+			],
+			[
+				"html",
+				"htmlspecialchars"
+			],
+			[
+				"con",
+				"connection	Connection ν"
+			],
+			[
+				"Use",
+				"UserId	int ν"
+			],
+			[
+				"getVa",
+				"getValidSqlPart"
+			],
+			[
+				"err",
+				"error_reporting"
+			],
+			[
+				"Par",
+				"ParseInt	i int64, err error ƒ"
+			],
+			[
+				"For",
+				"FormValue	string ƒ"
+			],
+			[
+				"OfferRe",
+				"OfferResult	struct ʈ"
+			],
+			[
+				"Fo",
+				"FormValue	string ƒ"
+			],
+			[
+				"Blo",
+				"BlockCallType	string ν"
+			],
+			[
+				"Process",
+				"ProcessShow	error ƒ"
+			],
+			[
+				"N",
+				"NullString	struct ʈ"
+			],
+			[
+				"Nu",
+				"NullString	struct ʈ"
+			],
+			[
+				"Print",
+				"Println	 ƒ"
+			],
+			[
+				"Form",
+				"FormatInt	string ƒ"
+			],
+			[
+				"get",
+				"getElementsByClassName"
+			],
+			[
+				"http",
+				"httpRequest"
+			],
+			[
+				"Wr",
+				"WriteHeader	 ƒ"
+			],
+			[
+				"Ro",
+				"Rows	struct ʈ"
+			],
+			[
+				"qu",
+				"QueryRow	*sql.Row ƒ"
+			],
+			[
+				"code",
+				"codeId	int ν"
+			],
+			[
+				"pu",
+				"publishOfferRequest	error ƒ"
+			],
+			[
+				"Int31",
+				"Int31n	int32 ƒ"
+			],
+			[
+				"Un",
+				"UnixNano	int64 ƒ"
+			],
+			[
+				"tar",
+				"targetGetInt	int ƒ"
+			],
+			[
+				"testDb",
+				"testDbGetInteger	int ƒ"
+			],
+			[
+				"im",
+				"import	import (...) ʂ"
+			],
+			[
+				"ProcessOffer",
+				"ProcessOfferLikeAction	error ƒ"
+			],
+			[
+				"d",
+				"targetDataConnection	*sql.DB ν"
+			],
+			[
+				"De",
+				"Delivery	struct ʈ"
+			],
+			[
+				"am",
+				"amqpChannel	*amqp.Channel ν"
+			],
+			[
+				"amqp",
+				"amqpConnection	*amqp.Connection ν"
+			],
+			[
+				"a",
+				"UserAgent	string ƒ"
+			],
+			[
+				"re",
+				"result	sql.Result ν"
+			],
+			[
+				"q",
+				"QueueDeclare	amqp.Queue, error ƒ"
+			],
+			[
+				"Unix",
+				"UnixNano	int64 ƒ"
+			],
+			[
+				"No",
+				"Now	time.Time ƒ"
+			],
+			[
+				"new",
+				"NewSource	rand.Source ƒ"
+			],
+			[
+				"Pr",
+				"Print	 ƒ"
+			],
+			[
+				"Status",
+				"StatusInternalServerError	 Ɩ"
+			],
+			[
+				"write",
+				"WriteHeader	 ƒ"
+			],
+			[
+				"ur",
+				"RequestURI	string ν"
+			],
+			[
+				"if",
+				"if	if-html"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"pregma",
+				"preg_match"
+			],
+			[
+				"http_b",
+				"http_build_url"
+			],
+			[
+				"_SE",
+				"_SESSION"
+			],
+			[
+				"i",
+				"i	if … end"
+			],
+			[
+				"r",
+				"r	r return"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/leo/projects/personal/log.txt",
+			"settings":
+			{
+				"buffer_size": 6884,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 179.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ss2",
+				"KeymapEnhanced: set tab size - 2"
+			],
+			[
+				"ss4",
+				"KeymapEnhanced: set tab size - 4"
+			],
+			[
+				"ssgo",
+				"Set Syntax: Go"
+			],
+			[
+				"ss",
+				"Set Syntax: HTML"
+			],
+			[
+				"sste",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"uniq",
+				"Permute Lines: Unique"
+			],
+			[
+				"sort",
+				"Sort Lines"
+			],
+			[
+				"sshtml",
+				"Set Syntax: HTML"
+			],
+			[
+				"ss2	",
+				"KeymapEnhanced: set tab size - 2"
+			],
+			[
+				"goto",
+				"GotoDefinitionEnhanced: Goto definition"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"das",
+				"Convert Case: dash-case"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove",
+				"Snippet: removeClass"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"bas",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"form",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"forma",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"xml	",
+				"Set Syntax: XML"
+			],
+			[
+				"ml",
+				"Move Tab: To last position"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"tabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"relo",
+				"Snippet Enhanced: Reload snippets"
+			],
+			[
+				"dash",
+				"Convert Case: dash-case"
+			],
+			[
+				"reload",
+				"Snippet Enhanced: Reload snippets"
+			],
+			[
+				"cam",
+				"Convert Case: camelCase"
+			],
+			[
+				"sscss",
+				"Set Syntax: CSS"
+			],
+			[
+				"css",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"camel",
+				"Convert Case: camelCase"
+			],
+			[
+				"bash",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"format json",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"format js",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"q",
+				"Snippet: q jquery"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"js",
+				"Set Syntax: JSON"
+			],
+			[
+				"ss css",
+				"Set Syntax: CSS"
+			],
+			[
+				"slim",
+				"Set Syntax: Ruby Slim"
+			],
+			[
+				"isntall",
+				"Package Control: Install Package"
+			],
+			[
+				"mar",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"vash",
+				"EvalSelection: Show evaluation history"
+			],
+			[
+				"markex",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"movelast",
+				"Method: Move method to last"
+			],
+			[
+				"move metholast",
+				"Method: Move method to last"
+			],
+			[
+				"",
+				""
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"prett",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"wra",
+				"HTML: Wrap Selection With Tag"
+			],
+			[
+				"SQL",
+				"Set Syntax: SQL"
+			],
+			[
+				"local",
+				"Local History: Browse"
+			],
+			[
+				"hist",
+				"Local History: Open"
+			],
+			[
+				"jsfor",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"if",
+				"Snippet: if"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"wrap",
+				"HTML: Wrap Selection With Tag"
+			],
+			[
+				"upgra",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"upgr",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"ifn",
+				"Snippet: in if not"
+			],
+			[
+				"purl",
+				"Snippet: pu package get url"
+			],
+			[
+				"url",
+				"Snippet: pu package get url"
+			],
+			[
+				"synhtml",
+				"Set Syntax: HTML"
+			],
+			[
+				"isntal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 496.0
+	},
+	"console":
+	{
+		"height": 559.0,
+		"history":
+		[
+			"sublime.log_commands(True);",
+			"sublime.log_commands(False);",
+			"sublime.log_commands(True);",
+			"sublime.log_commands(False);",
+			"sublime.log_commands(True);",
+			"re.search('(a)|(A)', 'AAAaaa').start(1)",
+			"re.search('(a)|(A)', 'AAAaaa').group(1)",
+			"re.search('(a)(A)', 'AAAaaa').group(1)",
+			"import re",
+			"sublime.log_commands(True);",
+			"print(__file__);",
+			"print(persist.errors)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.find_resources('*.sublime-snippet')",
+			"sublime.find_reosources('*.sublime-snippet')",
+			"sublime.active_window()",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/leo/src/go/src/darius"
+	],
+	"file_history":
+	[
+		"/home/leo/src/go/src/darius/dariusd/main.go",
+		"/home/leo/src/go/src/darius/dariusd/repo.go",
+		"/home/leo/src/go/src/darius/dariusd/server.go",
+		"/home/leo/src/go/src/darius/dariusd/state.go",
+		"/home/leo/src/go/src/darius/dariusd/utils.go",
+		"/home/leo/src/go/src/darius/cli/main_test.go",
+		"/home/leo/src/go/src/darius/cli/state.go",
+		"/home/leo/src/go/src/darius/state.go",
+		"/home/leo/src/go/src/darius/cli/utils.go",
+		"/home/leo/src/go/src/darius/cli/run.go",
+		"/home/leo/src/go/src/github.com/shagabutdinov/shell/shell.go",
+		"/home/leo/src/go/src/github.com/shagabutdinov/shell/utils.go",
+		"/home/leo/src/go/src/darius/cli/test.go",
+		"/home/leo/src/go/src/darius/darius",
+		"/home/leo/src/go/src/darius/utils.go",
+		"/home/leo/src/go/src/darius/expression.go",
+		"/home/leo/src/go/src/darius/expander.go",
+		"/home/leo/src/go/src/darius/tasks/run_test.go",
+		"/home/leo/src/go/src/darius/tasks/state_mock.go",
+		"/home/leo/src/go/src/darius/tasks/run.go",
+		"/home/leo/.config/sublime-text-3/Packages/User/go/go.sublime-snippet-enhanced",
+		"/home/leo/src/go/src/darius/tasks/execute_test.go",
+		"/home/leo/src/go/src/darius/tasks/execute.go",
+		"/home/leo/src/go/src/darius/tasks/call_test.go",
+		"/home/leo/src/go/src/darius/tasks/call.go",
+		"/home/leo/src/go/src/darius/cli/state_test.go",
+		"/home/leo/src/go/src/darius/cli/run_test.go",
+		"/home/leo/src/go/src/darius/arguments/arguments.go",
+		"/home/leo/src/go/src/darius/cli/log_test.go",
+		"/home/leo/src/go/src/darius/cli/utils_mock.go",
+		"/home/leo/src/go/src/darius/tasks/utils.go",
+		"/home/leo/src/go/src/darius/tasks/__call_test.go",
+		"/home/leo/src/go/src/darius/tasks/__call.go",
+		"/home/leo/src/go/src/darius/tasks/run_user_task.go",
+		"/home/leo/src/go/src/darius/tasks/run_user_task_test.go",
+		"/home/leo/src/go/src/darius/arguments/values.go",
+		"/home/leo/src/go/src/darius/arguments/create.go",
+		"/home/leo/src/go/src/darius/arguments/argument.go",
+		"/home/leo/src/go/src/darius/cli/log.go",
+		"/home/leo/src/go/src/darius/cli/main.go",
+		"/home/leo/src/go/src/darius/config.go",
+		"/home/leo/src/go/src/darius/config_test.go",
+		"/home/leo/src/go/src/darius/config/local/up.sh",
+		"/home/leo/projects/personal/log.txt",
+		"/home/leo/projects/idfly.ru/team.txt",
+		"/home/leo/.config/sublime-text-3/Projects/darius.shagabutdinov.com.sublime-project",
+		"/home/leo/src/go/src/darius/config/local/ssh.dockerfile",
+		"/home/leo/src/go/src/darius/config/local/.ssh/user",
+		"/home/leo/src/go/src/darius/config/local/docker-compose.yml",
+		"/home/leo/src/go/src/darius/config/local/.ssh/user.pub",
+		"/home/leo/src/shell/shell.go",
+		"/home/leo/src/shell/remote.go",
+		"/home/leo/src/shell/remote_test.go",
+		"/home/leo/src/shell/config/local/ssh.dockerfile",
+		"/home/leo/src/go/src/darius/config/local/.ssh/authorized_keys",
+		"/home/leo/src/shell/local.go",
+		"/home/leo/src/go/src/github.com/shagabutdinov/shell/readme.md",
+		"/home/leo/src/go/src/github.com/shagabutdinov/shell/re",
+		"/home/leo/src/go/src/github.com/shagabutdinov/shell/shell_test.go",
+		"/home/leo/src/go/src/github.com/shagabutdinov/shell/local.go",
+		"/home/leo/src/go/src/github.com/shagabutdinov/shell/local_test.go",
+		"/home/leo/src/go/src/github.com/shagabutdinov/shell/remote.go",
+		"/home/leo/src/go/src/github.com/shagabutdinov/shell/remote_test.go",
+		"/home/leo/src/go/src/github.com/shagabutdinov/shell/config/local/docker-compose.yml",
+		"/home/leo/src/go/src/darius/config/local/app.dockerfile",
+		"/home/leo/src/go/src/darius/config/local/shadow",
+		"/home/leo/src/go/src/github.com/fatih/color/color.go",
+		"/home/leo/src/go/src/bitbucket.org/shagabutdinov/darius/logger/output/functions.go",
+		"/home/leo/src/go/src/darius/cli/functional_test.go",
+		"/home/leo/src/go/src/darius/cli/state_mock.go",
+		"/home/leo/.config/sublime-text-3/Packages/User/go/types.sublime-snippet-enhanced",
+		"/home/leo/.config/sublime-text-3/Packages/User/coffee/stdlib.sublime-snippet-enhanced",
+		"/home/leo/.config/sublime-text-3/Packages/User/js/l console log.sublime-snippet-enhanced",
+		"/home/leo/src/go/src/darius/commands/execute.go",
+		"/home/leo/src/go/src/darius/commands/run.go",
+		"/home/leo/src/go/src/darius/commands/state_mock.go",
+		"/home/leo/src/go/src/darius/commands/execute_test.go",
+		"/home/leo/src/go/src/darius/commands/run_test.go",
+		"/home/leo/src/go/src/bitbucket.org/shagabutdinov/darius/config/parser.go",
+		"/home/leo/src/go/src/darius/run.go",
+		"/home/leo/src/go/src/darius/state_mock.go",
+		"/home/leo/src/go/src/darius/execute_test.go",
+		"/home/leo/src/go/src/darius/commands.go",
+		"/home/leo/src/go/src/darius/interfaces.go",
+		"/home/leo/src/go/src/bitbucket.org/shagabutdinov/darius/cmd/darius/main.go",
+		"/home/leo/src/go/src/arguments/argument.go",
+		"/home/leo/src/go/src/arguments/arguments_test.go",
+		"/home/leo/src/go/src/arguments/values.go",
+		"/home/leo/src/go/src/arguments/create.go",
+		"/home/leo/src/go/src/arguments/create_test.go",
+		"/home/leo/src/go/src/arguments/arguments_functions.go",
+		"/home/leo/src/go/src/darius/execute.go",
+		"/home/leo/src/go/src/darius/run_test.go",
+		"/home/leo/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/leo/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/leo/src/go/src/arguments/arguments.go",
+		"/home/leo/src/go/src/darius/command_test.go",
+		"/home/leo/src/go/src/darius/command.go",
+		"/home/leo/src/go/src/darius/shell_mock.go",
+		"/home/leo/src/go/src/darius/darius.go",
+		"/home/leo/src/go/src/darius/main.go",
+		"/home/leo/src/shell/readme.md",
+		"/home/leo/src/shell/local_test.go",
+		"/home/leo/src/shell/shell_test.go",
+		"/home/leo/src/shell/config/local/docker-compose.yml",
+		"/home/leo/src/shell/config/local/app.dockerfile",
+		"/home/leo/src/shell/config/local/.ssh/authorized_keys",
+		"/home/leo/src/shell/config/local/up.sh",
+		"/home/leo/src/shell/config/local/shadow",
+		"/home/leo/src/shell/config/local/ssh.docker.file",
+		"/home/leo/src/shell/config/local/Dockerfile",
+		"/home/leo/src/shell/test/data/up.sh",
+		"/home/leo/src/shell/test/data/docker-compose.yml",
+		"/home/leo/src/shell/test/data/Dockerfile",
+		"/home/leo/src/bvk.idfly.ru/main_frontend/src/services/modals.coffee",
+		"/home/leo/src/bvk.idfly.ru/main_frontend/src/controllers/events/scheme_ctrl.coffee",
+		"/home/leo/src/bvk.idfly.ru/main_frontend/views/events/page.html",
+		"/home/leo/src/bvk.idfly.ru/config/local/main.yml",
+		"/home/leo/src/bvk.idfly.ru/main_frontend/src/controllers/events/afisha_ctrl.coffee",
+		"/home/leo/src/bvk.idfly.ru/main_frontend/src/app.coffee",
+		"/home/leo/src/bvk.idfly.ru/main_frontend/.gitignore",
+		"/home/leo/src/bvk.idfly.ru/admin_frontend/.gitignore",
+		"/home/leo/src/bvk.idfly.ru/admin_frontend/tests/controllers/admins_ctrl_test.coffee",
+		"/home/leo/src/bvk.idfly.ru/admin_frontend/tests/controllers/admins_form_ctrl_test.coffee",
+		"/home/leo/src/bvk.idfly.ru/admin_frontend/tests/controllers/categories_ctrl_test.coffee",
+		"/home/leo/src/bvk.idfly.ru/admin_frontend/tests/controllers/categories_form_ctrl_test.coffee",
+		"/home/leo/src/bvk.idfly.ru/admin_frontend/tests/controllers/event_ctrl_test.coffee",
+		"/home/leo/src/bvk.idfly.ru/admin_frontend/tests/controllers/event_form_ctrl_test.coffee"
+	],
+	"find":
+	{
+		"height": 24.0
+	},
+	"find_in_files":
+	{
+		"height": 102.0,
+		"where_history":
+		[
+			"",
+			"/home/leo/src/go/src/github.com/shagabutdinov/shell/",
+			"",
+			"cli/",
+			"",
+			"commands/",
+			"",
+			"/home/leo/src/go/src/bitbucket.org/shagabutdinov/darius/config/",
+			"/home/leo/src/go/src/arguments/",
+			"",
+			"/",
+			"",
+			"*.go",
+			"*.js",
+			"*.go",
+			"*.rb",
+			"*.js",
+			"",
+			"*.go",
+			"",
+			"data-processor/",
+			"",
+			"/",
+			"data-saver/",
+			"data-processor/",
+			"",
+			"*.go",
+			"*.php",
+			"*.go",
+			"*.php",
+			"*.go",
+			"*.php",
+			"*.go",
+			"*.php",
+			"*.go",
+			"",
+			"/home/leo/.config/sublime-text-3/Packages/",
+			"",
+			"*.js",
+			"*.go",
+			".go",
+			"",
+			"*.php",
+			"",
+			"vendor/",
+			"",
+			"/home/leo/.config/sublime-text-3/Packages/User/js/",
+			"",
+			"config/",
+			"",
+			"*.php, *.js",
+			"",
+			"frontend/",
+			"",
+			"*.js",
+			"",
+			"backend/views/",
+			"",
+			"frontend/view/**",
+			"**/view/**",
+			"",
+			"*.js",
+			"",
+			"backend/",
+			"frontend/",
+			"vendor/2amigos/yii2-ckeditor-widget/presets/",
+			"/home/leo/.config/Dropbox/Server/reelsource.ru/vendor/2amigos/yii2-ckeditor-widget/",
+			"",
+			"Gpn/**.rb",
+			"GPN/**.rb",
+			"*.rb",
+			"",
+			"Gpn/**.erb",
+			"Gpn/",
+			"",
+			"*.erb",
+			"*.rb",
+			"*.erb",
+			"",
+			"*.yml",
+			"",
+			"Gpn/",
+			"Gpn/**.rb",
+			"Gpn/",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"lineLimit",
+			"connecting to",
+			"utils utils",
+			"tasksFuncs",
+			"state.Log",
+			"repoDir",
+			"repo.Logger.Log",
+			"dataDir",
+			"DataDir",
+			"Repo",
+			"repo Repo",
+			"expander",
+			"darius.settings",
+			"Settings",
+			"Expander",
+			"expander *Expander",
+			"state.commands",
+			"LOG",
+			"state{",
+			"State {",
+			"State{",
+			"Expander{",
+			"log.Print",
+			"LALA",
+			"\\\"job\\\" or \\\"command\\\" should b",
+			"job\" or ",
+			"\" job or ",
+			"job or ",
+			"TestRunRunsTwoTasks",
+			"= state.Log",
+			"Tasks",
+			"state state",
+			"ExpandVariableByMap",
+			"ExpandExpression",
+			"darius.Expand",
+			"darius.",
+			"expander *expander",
+			"expander *Expand",
+			"Expand",
+			"expandStack",
+			"task[\"",
+			"commands map[string]func(darius.State, interface{}) error",
+			"task interface{}",
+			"to run command",
+			" in order to run command",
+			" in order to run command\n",
+			"key should be defined in order to run command",
+			"command should",
+			"Call(",
+			"RunUserTask",
+			"call",
+			"TestCallUserTaskCallsRun",
+			"__call__",
+			"run",
+			"call",
+			"TestRunUserTaskCallsRun",
+			"TestCallRunsArray",
+			"On(\"run\"",
+			"On(\"run\")",
+			"Run(",
+			"TestRun",
+			"run",
+			"_run",
+			"\"run\"",
+			"_run",
+			"TestExecuteRunsArray",
+			"tasksFuncs",
+			"TestRunRunsTask",
+			".On(\"run\"",
+			"unknown task",
+			"TestRunTaskSendsStdout",
+			"\"run\"",
+			";41m ** task execution failed (check logs for \"+",
+			"TestRunRunsEnsure",
+			"TestRunReportsErrorIfNoTaskProvided",
+			"\"\\x1b[1;37;41m ** task execution failed ** \\x1b[0m\"",
+			"TestRunRunsEnsure",
+			"task exec",
+			"type must be",
+			"runAllLocally",
+			"TestRunReturnsStringError",
+			"!!",
+			"TestRunRunsRescue",
+			"LogCommandFail",
+			"state.Log(darius.LogCommandFail",
+			"return err",
+			"return nil",
+			"state.Log(darius.LogCommandFail",
+			"LogCommandFail",
+			"logCommandFail",
+			"log.Println",
+			"TestExecuteReturnsErrOnUndefinedCommand",
+			"TestRunRunsEnsure",
+			"TestRunReturnsErrorIfTaskIsNotString",
+			"darius.LogCommandFail",
+			"TestRunRunsRescue",
+			"!!",
+			"unknown task",
+			"TestRunReportsErrorIfNoTaskProvided",
+			"task not found",
+			"TestRunReportsErrorIfNoTaskProvided",
+			"last er",
+			"main_test.go",
+			"TestRunReportsErrorIfNoTaskProvided",
+			"utils",
+			"readFileHandler",
+			"includePathStack",
+			"includeRecursive",
+			"\"{KEY",
+			"config *Config",
+			"TestStateExpand",
+			"expandInclude",
+			"expandIncludeRecursive",
+			"includePathStack",
+			"state.",
+			"config *config",
+			"state.utils",
+			"rebasery attach-branch",
+			"ExpandVariable",
+			"TestRunReportsErrorIfNoTaskProvided",
+			"task execution failed; check ",
+			"TestRunTaskSendsStdout",
+			"TestRunRunsString",
+			"TestRunRunsResc",
+			"leo@balmora",
+			"TestRunRunsRuns",
+			"log.",
+			".log"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"run",
+			"__call__",
+			"call",
+			"LogCommandFail",
+			"CodeInfo",
+			"offer_code_statistic",
+			"partner/code/index",
+			"partner",
+			"src=\"../content/",
+			"\\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/leo/projects/personal/log.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6884,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								827,
+								827
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 25.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.9o:///home/leo/server/9fine.idfly.ru/data-processor":
+	{
+		"height": 104.0
+	},
+	"output.9o:///home/leo/src/idfly-deploy":
+	{
+		"height": 104.0
+	},
+	"output.GoSublime-main-output":
+	{
+		"height": 104.0
+	},
+	"output.exec":
+	{
+		"height": 104.0
+	},
+	"output.find_results":
+	{
+		"height": 86.0
+	},
+	"output.gotools_syntax_errors":
+	{
+		"height": 104.0
+	},
+	"output.run_mysql_query_result":
+	{
+		"height": 696.0
+	},
+	"pinned_build_system": "",
+	"project": "darius.shagabutdinov.com.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"state",
+				"cli/state.go"
+			],
+			[
+				"state_moc",
+				"tasks/state_mock.go"
+			],
+			[
+				"expander",
+				"expander.go"
+			],
+			[
+				"state_mo",
+				"tasks/state_mock.go"
+			],
+			[
+				"stt",
+				"cli/state.go"
+			],
+			[
+				"task/run",
+				"tasks/run.go"
+			],
+			[
+				"expa",
+				"expander.go"
+			],
+			[
+				"exp",
+				"expander.go"
+			],
+			[
+				"state.",
+				"cli/state.go"
+			],
+			[
+				"state_cmo",
+				"tasks/state_mock.go"
+			],
+			[
+				"cli/te",
+				"cli/test.go"
+			],
+			[
+				"cli/state",
+				"cli/state.go"
+			],
+			[
+				"cli/run",
+				"cli/run.go"
+			],
+			[
+				"tas/call",
+				"tasks/call.go"
+			],
+			[
+				"run",
+				"tasks/run.go"
+			],
+			[
+				"state_mock",
+				"tasks/state_mock.go"
+			],
+			[
+				"utils",
+				"utils.go"
+			],
+			[
+				"tas/run",
+				"tasks/run.go"
+			],
+			[
+				"cli/stat",
+				"cli/state.go"
+			],
+			[
+				"call",
+				"tasks/call.go"
+			],
+			[
+				"run_test",
+				"cli/run_test.go"
+			],
+			[
+				"stat_moc",
+				"tasks/state_mock.go"
+			],
+			[
+				"call.",
+				"tasks/call.go"
+			],
+			[
+				"tas/cal",
+				"tasks/call.go"
+			],
+			[
+				"task/call",
+				"tasks/call.go"
+			],
+			[
+				"argu",
+				"arguments/arguments.go"
+			],
+			[
+				"tasks/run",
+				"tasks/run.go"
+			],
+			[
+				"ssatte_mck",
+				"tasks/state_mock.go"
+			],
+			[
+				"call_test",
+				"tasks/call_test.go"
+			],
+			[
+				"argue",
+				"arguments/arguments.go"
+			],
+			[
+				"arg/va",
+				"arguments/values.go"
+			],
+			[
+				"arg",
+				"arguments/create.go"
+			],
+			[
+				"log",
+				"cli/log.go"
+			],
+			[
+				"run.",
+				"tasks/run.go"
+			],
+			[
+				"conf",
+				"config.go"
+			],
+			[
+				"main_test",
+				"cli/main_test.go"
+			],
+			[
+				"up.sh",
+				"config/local/up.sh"
+			],
+			[
+				"run.go",
+				"cli/run.go"
+			],
+			[
+				"main",
+				"cli/main_test.go"
+			],
+			[
+				"up",
+				"config/local/up.sh"
+			],
+			[
+				"exe",
+				"tasks/execute.go"
+			],
+			[
+				"docker",
+				"config/local/ssh.dockerfile"
+			],
+			[
+				"user",
+				"config/local/.ssh/user"
+			],
+			[
+				"dc",
+				"config/local/docker-compose.yml"
+			],
+			[
+				"aut",
+				"config/local/.ssh/authorized_keys"
+			],
+			[
+				"remote",
+				"~/src/go/src/github.com/shagabutdinov/shell/remote_test.go"
+			],
+			[
+				"she",
+				"~/src/go/src/github.com/shagabutdinov/shell/shell.go"
+			],
+			[
+				"com",
+				"config/local/docker-compose.yml"
+			],
+			[
+				"do",
+				"config/local/docker-compose.yml"
+			],
+			[
+				"main.go",
+				"cli/main.go"
+			],
+			[
+				"cli/log",
+				"cli/log.go"
+			],
+			[
+				"sstat",
+				"commands/state_mock.go"
+			],
+			[
+				"ru",
+				"run.go"
+			],
+			[
+				"read",
+				"readme.md"
+			],
+			[
+				"shl",
+				"shell.go"
+			],
+			[
+				"loca",
+				"local_test.go"
+			],
+			[
+				"rem",
+				"remote.go"
+			],
+			[
+				"test/data",
+				"test/data/Dockerfile"
+			],
+			[
+				"remo",
+				"remote.go"
+			],
+			[
+				"scheme_ctr",
+				"main_frontend/src/controllers/events/scheme_ctrl.coffee"
+			],
+			[
+				"app.cof",
+				"main_frontend/src/app.coffee"
+			],
+			[
+				"afish",
+				"main_frontend/src/controllers/events/afisha_ctrl.coffee"
+			],
+			[
+				"con/loca/main",
+				"config/local/main.yml"
+			],
+			[
+				"guardfil",
+				"admin_frontend/config/local/guardfile"
+			],
+			[
+				"karm",
+				"admin_frontend/config/karma.conf.js"
+			],
+			[
+				"admins",
+				"admin_frontend/src/controllers/admins_ctrl.coffee"
+			],
+			[
+				"fron/test.coff",
+				"admin_frontend/tests/services/result_test.coffee"
+			],
+			[
+				"_spec",
+				"main_backend/spec/models/user_spec.rb"
+			],
+			[
+				"kar",
+				"main_frontend/config/karma.conf.js"
+			],
+			[
+				"admin_frontend/up.sh",
+				"admin_frontend/config/local/up.sh"
+			],
+			[
+				"main_for/gul",
+				"main_frontend/gulpfile.js"
+			],
+			[
+				"main_forn/conf/local",
+				"main_frontend/config/local/test.sh"
+			],
+			[
+				"rspec",
+				"main_backend/spec/controllers/users/registrations_controller_spec.rb"
+			],
+			[
+				"adm_back/con/lo/te",
+				"admin_backend/config/local/test.sh"
+			],
+			[
+				"main_back/conf/loca/te",
+				"main_backend/config/local/test.sh"
+			],
+			[
+				"ma/route",
+				"main_backend/config/routes.rb"
+			],
+			[
+				"bac/route",
+				"admin_backend/config/routes.rb"
+			],
+			[
+				"rouet",
+				"admin_backend/config/routes.rb"
+			],
+			[
+				"main_ba/conf/lo/up",
+				"main_backend/config/local/up.sh"
+			],
+			[
+				"ad_ba/conf/loca/up",
+				"admin_backend/config/local/up.sh"
+			],
+			[
+				"app.co",
+				"main_frontend/src/app.coffee"
+			],
+			[
+				"app_con",
+				"main_backend/app/controllers/application_controller.rb"
+			],
+			[
+				"app",
+				"admin_backend/app/controllers/application_controller.rb"
+			],
+			[
+				"head.html",
+				"main_frontend/views/layout/head.html"
+			],
+			[
+				"gul",
+				"main_frontend/gulpfile.js"
+			],
+			[
+				"nginx",
+				"main_http/config/local/nginx.conf"
+			],
+			[
+				"fron/gul",
+				"main_frontend/gulpfile.js"
+			],
+			[
+				"loca/wor",
+				"main_backend/config/local/worker.sh"
+			],
+			[
+				"gem",
+				"main_backend/Gemfile"
+			],
+			[
+				"pac",
+				"admin_frontend/package.json"
+			],
+			[
+				".git",
+				".gitignore"
+			],
+			[
+				"applcation.rb",
+				"main_backend/config/application.rb"
+			],
+			[
+				"header_ctr",
+				"main_frontend/src/controllers/header_ctrl.coffee"
+			],
+			[
+				"ap.cof",
+				"main_frontend/src/app.coffee"
+			],
+			[
+				"back/up.sh",
+				"admin_backend/config/local/up.sh"
+			],
+			[
+				"regi",
+				"frontend/views/user/registration_form.slim"
+			],
+			[
+				"front/ge",
+				"frontend/Gemfile"
+			],
+			[
+				"frondocker",
+				"frontend/config/local/dockerfile"
+			],
+			[
+				"main.",
+				"config/local/main.yml"
+			],
+			[
+				"pack",
+				"frontend/package.json"
+			],
+			[
+				"frontup.sh",
+				"frontend/config/local/up.sh"
+			],
+			[
+				"gulp",
+				"frontend/gulpfile.js"
+			],
+			[
+				"gule",
+				"frontend_v2/gulpfile.js"
+			],
+			[
+				"index.",
+				"frontend_v2/views/index.haml"
+			],
+			[
+				"test.sh",
+				"backend_v2/config/local/test.sh"
+			],
+			[
+				"test.hs",
+				"backend_v2/config/local/test.sh"
+			],
+			[
+				".dariu",
+				".darius.yml"
+			],
+			[
+				"offe.go",
+				"data-processor/offer_info_processor.go"
+			],
+			[
+				"ofinf",
+				"data-processor/offer_info_processor.go"
+			],
+			[
+				"cou.js",
+				"web/js/counter.js"
+			],
+			[
+				"dast",
+				"data-saver/data_storage.go"
+			],
+			[
+				"datasave/id",
+				"data-saver/id_storage.go"
+			],
+			[
+				"datapr/main",
+				"data-processor/main.go"
+			],
+			[
+				"codeinf",
+				"data-processor/code_info_processor.go"
+			],
+			[
+				"defa.html",
+				"web/html/popup/default.html"
+			],
+			[
+				"defa.htm",
+				"web/html/default.html"
+			],
+			[
+				"coinf",
+				"data-processor/code_info_processor.go"
+			],
+			[
+				"coinfpr",
+				"data-processor/code_info_processor.go"
+			],
+			[
+				"proces",
+				"data-processor/code_info_processor.go"
+			],
+			[
+				"saver",
+				"data-saver/data_storage.go"
+			],
+			[
+				"common.js",
+				"web/js/common.js"
+			],
+			[
+				"datasave",
+				"data-saver/main.go"
+			],
+			[
+				"off.js",
+				"web/js/offer.js"
+			],
+			[
+				"id_sta",
+				"data-saver/id_storage.go"
+			],
+			[
+				"par/trans",
+				"partner/controllers/TransactionController.php"
+			],
+			[
+				"crud",
+				"admin/controllers/CrudController.php"
+			],
+			[
+				"datasogo",
+				"data-saver/data_storage.go"
+			],
+			[
+				"counter.js",
+				"web/js/counter.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "ins",
+		"selected_items":
+		[
+			[
+				"ins",
+				"~/.config/sublime-text-3/Projects/instore.idfly.ru.sublime-project"
+			],
+			[
+				"bvk",
+				"~/.config/sublime-text-3/Projects/bvk.idfly.sublime-workspace"
+			],
+			[
+				"bi",
+				"~/.config/sublime-text-3/Projects/bi.idfly.sublime-workspace"
+			],
+			[
+				"uve",
+				"~/.config/sublime-text-3/Projects/uveliriya-ru.sublime-project"
+			],
+			[
+				"nal",
+				"~/.config/sublime-text-3/Projects/nalopatu-ru.sublime-project"
+			],
+			[
+				"9if",
+				"~/.config/sublime-text-3/Projects/9fine.sublime-project"
+			],
+			[
+				"bal",
+				"~/.config/sublime-text-3/Projects/balmora.sublime-project"
+			],
+			[
+				"nalo",
+				"~/.config/sublime-text-3/Projects/nalopatu-ru.sublime-project"
+			],
+			[
+				"9fin",
+				"~/.config/sublime-text-3/Projects/9fine.sublime-project"
+			],
+			[
+				"cr",
+				"~/.config/sublime-text-3/Projects/cr911-idfly-ru.sublime-project"
+			],
+			[
+				"pack",
+				"~/.config/sublime-projects/packages.sublime-project"
+			],
+			[
+				"nalop",
+				"~/.config/sublime-projects/nalopatu-ru.sublime-project"
+			],
+			[
+				"idf",
+				"~/.config/sublime-projects/idfly15.sublime-project"
+			],
+			[
+				"up",
+				"~/.config/sublime-projects/upstock.sublime-project"
+			],
+			[
+				"9fine",
+				"~/.config/sublime-projects/9fine.sublime-project"
+			],
+			[
+				"upst",
+				"~/.config/sublime-projects/upstock.sublime-project"
+			],
+			[
+				"price",
+				"~/.config/sublime-projects/pricelessly.sublime-project"
+			],
+			[
+				"tppr",
+				"~/.config/sublime-projects/tppr-me.sublime-project"
+			],
+			[
+				"mosc",
+				"~/.config/sublime-projects/moscowcasting-pro.sublime-project"
+			],
+			[
+				"tpp",
+				"~/.config/sublime-projects/tppr-me.sublime-project"
+			],
+			[
+				"reel",
+				"~/.config/sublime-projects/reelsource-ru.sublime-project"
+			],
+			[
+				"vali",
+				"~/.config/sublime-projects/valiorussia-ru.sublime-project"
+			],
+			[
+				"upsto",
+				"~/.config/sublime-projects/upstock.sublime-project"
+			],
+			[
+				"ree",
+				"~/.config/sublime-projects/reelsource-ru.sublime-project"
+			],
+			[
+				"nive",
+				"~/.config/sublime-projects/niveamen-ru.sublime-project"
+			],
+			[
+				"9f",
+				"~/.config/sublime-projects/9five.sublime-workspace"
+			],
+			[
+				"alfa",
+				"~/.config/sublime-projects/alfa-avia.sublime-project"
+			],
+			[
+				"nine",
+				"~/.config/sublime-projects/ninefine.sublime-project"
+			],
+			[
+				"funk",
+				"~/.config/sublime-projects/funkytown-ru.sublime-project"
+			],
+			[
+				"pkg",
+				"~/.config/sublime-projects/packages.sublime-project"
+			],
+			[
+				"offi",
+				"~/.config/sublime-projects/officerm-ru.sublime-project"
+			],
+			[
+				"paper",
+				"~/.config/sublime-projects/paper-io.sublime-project"
+			],
+			[
+				"pa",
+				"~/.config/sublime-projects/paper-io.sublime-project"
+			],
+			[
+				"mos",
+				"~/.config/sublime-projects/moscowcasting-pro.sublime-project"
+			],
+			[
+				"fun",
+				"~/.config/sublime-projects/funkytown-ru.sublime-project"
+			],
+			[
+				"pap",
+				"~/.config/sublime-projects/paper-io.sublime-project"
+			],
+			[
+				"gp",
+				"~/.config/sublime-projects/gpn-promo-ru.sublime-project"
+			],
+			[
+				"gpn-pr",
+				"~/.config/sublime-projects/gpn-promo-ru.sublime-project"
+			],
+			[
+				"pesk",
+				"~/.config/sublime-projects/pesok-piop-ru.sublime-project"
+			],
+			[
+				"mnosc",
+				"~/.config/sublime-projects/moscowcasting-pro.sublime-project"
+			],
+			[
+				"dev",
+				"~/.config/sublime-projects/dev-reelsource-ru.sublime-project"
+			],
+			[
+				"val",
+				"~/.config/sublime-projects/valiorussia-ru.sublime-project"
+			],
+			[
+				"pac",
+				"~/.config/sublime-projects/packages.sublime-project"
+			],
+			[
+				"gpn",
+				"~/.config/sublime-projects/gpn-promo-ru.sublime-project"
+			],
+			[
+				"pr",
+				"~/.config/sublime-projects/priceless-ly.sublime-project"
+			],
+			[
+				"pape",
+				"~/.config/sublime-projects/paper-io.sublime-project"
+			],
+			[
+				"idfl",
+				"~/.config/sublime-projects/idfly15.sublime-project"
+			],
+			[
+				"pg",
+				"~/.config/sublime-projects/gpn-promo-ru.sublime-project"
+			],
+			[
+				"evo",
+				"~/.config/sublime-projects/evo-net-ua.sublime-project"
+			],
+			[
+				"pricel",
+				"~/.config/sublime-projects/priceless-ly.sublime-project"
+			],
+			[
+				"",
+				"~/.config/sublime-projects/paper-io.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

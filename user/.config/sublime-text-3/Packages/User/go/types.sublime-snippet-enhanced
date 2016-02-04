@@ -195,6 +195,46 @@ interface
 
 	<snippet>
 		<content><![CDATA[
+[]byte
+]]></content>
+		<tabTrigger>b</tabTrigger>
+		<scope>source.go</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\S"},
+			]
+		]]></context>
+		<description>[]byte</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+[]byte(${0:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>b</tabTrigger>
+		<scope>source.go</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\S"},
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "^\\w"},
+			]
+		]]></context>
+		<description>[]byte</description>
+		<order>2</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 bool
 ]]></content>
 		<trigger>b</trigger>
@@ -205,6 +245,7 @@ bool
 			]
 		]]></context>
 		<description>string</description>
+		<order>3</order>
 	</snippet>
 
 	<snippet>
