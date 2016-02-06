@@ -16,8 +16,12 @@
 				"frontend_v2/node_modules",
 				"frontend_v2/build",
 				"frontend_v2/vendor",
+				"frontend_v2/css",
 				"mysql",
 			],
 		}
-	]
+	],
+	"settings": {
+		"mysql": ["mysql", "-h", "127.0.0.1", "-u", "root", "--table", "development"],
+	},
 }

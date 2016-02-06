@@ -1,4 +1,4 @@
-export PATH=$PATH:/home/leo/.composer/vendor/bin:/usr/lib/jvm/java-8-openjdk/bin/:/home/leo/.gem/ruby/2.2.0/bin:/home/leo/src/go/bin:/home/leo/src/go/src/darius/build
+export PATH=$PATH:/home/leo/.composer/vendor/bin:/usr/lib/jvm/java-8-openjdk/bin/:/home/leo/.gem/ruby/2.3.0/bin:/home/leo/src/go/bin:/home/leo/src/go/src/darius/build
 export BROWSER=firefox
 export APPLICATION_ENV=development
 

@@ -1,0 +1,439 @@
+<snippets>
+
+  <snippet>
+    <content><![CDATA[
+ng-bind="$1"
+]]></content>
+    <commands>
+      [
+        {"command": "ensure_space_before"},
+        "RUN",
+      ]
+    </commands>
+    <tabTrigger>nb</tabTrigger>
+    <scope>text.slim(?!.*source)</scope>
+    <description>angular bind</description>
+  </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-change="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nch</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular change</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-class="{$1}"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nc</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular class</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-click="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nl</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular click</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-controller="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nco</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular controller</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-disabled="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nd</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular disabled</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-hide="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nh</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular hide</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-href="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nhr</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular href</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-if="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>ni</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular if</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-include="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nin</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular include</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-keydown="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nkd</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular keydown</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-keypress="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nkp</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular keypress</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-keyup="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nku</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular keyup</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-model="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nm</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular model</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-mousedown="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nmd</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular mousedown</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-mouseenter="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nme</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular mouseenter</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-mouseleave="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nml</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular mouseleave</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-mousemove="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nmm</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular mousemove</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-mouseover="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nmo</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular mouseover</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-mouseup="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nmu</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular mouseup</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-readonly="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nro</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular readonly</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-repeat="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nr</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular repeat</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-selected="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nse</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular selected</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-show="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nsh</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular show</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-style="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nst</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular style</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-submit="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>ns</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular submit</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-switch="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nsw</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular switch</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-value="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>nv</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular value</description>
+    </snippet>
+
+  <snippet>
+      <content><![CDATA[
+ng-options="$1"
+]]></content>
+      <commands>
+        [
+          {"command": "ensure_space_before"},
+          "RUN",
+        ]
+      </commands>
+      <tabTrigger>no</tabTrigger>
+      <scope>text.slim(?!.*source)</scope>
+      <description>angular value</description>
+    </snippet>
+
+
+</snippets>

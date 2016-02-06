@@ -4,7 +4,7 @@
     "args": {
       "commands": [
         {"command": "insert_snippet_enhanced", "args": {"contents": "\n $0\n"}},
-        {"command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"}},
+        # {"command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"}},
         {"command": "move", "args": {"by": "lines", "forward": false}},
         {"command": "move_to", "args": {"extend": false, "to": "eol"}},
       ]

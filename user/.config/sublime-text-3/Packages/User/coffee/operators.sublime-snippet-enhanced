@@ -566,12 +566,11 @@ then($1)
 		<content><![CDATA[
 then(($1) ->
 	$0
+)
 ]]></content>
 		<commands>
 			[
-				{"command": "run_macro_file", "args": {
-					"file":"res://Packages/User/coffee/macro/expand_brackets_for_callback.sublime-macro"
-				}},
+				{"command": "right_delete"},
 				"RUN",
 			]
 		</commands>
