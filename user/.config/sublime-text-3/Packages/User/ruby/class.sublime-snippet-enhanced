@@ -60,7 +60,7 @@ end
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "def\\s+.+?\\s+\\w$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "def\\s+\\w+\\s+\\w$"},
 			]
 		]]></context>
 		<description>def</description>

@@ -4,7 +4,7 @@
 		{
 			"path": "/home/leo/src/instore.idfly.ru",
 			"folder_exclude_patterns": [
-				// "backend",
+				"backend",
 				"backend/log",
 				"backend/tmp",
 				"backend/public",
@@ -16,7 +16,8 @@
 				"frontend_v2/node_modules",
 				"frontend_v2/build",
 				"frontend_v2/vendor",
-				"frontend_v2/css",
+				// "frontend_v2/css",
+				"data",
 				"mysql",
 			],
 		}

@@ -7,7 +7,8 @@ each(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -25,7 +26,8 @@ map(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -43,7 +45,8 @@ collect(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -61,7 +64,8 @@ reduce(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -79,7 +83,8 @@ find(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -97,7 +102,8 @@ filter(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -115,7 +121,8 @@ select(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -133,7 +140,8 @@ where(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -151,7 +159,8 @@ findWhere(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -169,7 +178,8 @@ reject(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -187,7 +197,8 @@ every(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -205,7 +216,8 @@ some(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -223,7 +235,8 @@ contains(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -241,7 +254,8 @@ invoke(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -259,7 +273,8 @@ pluck(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -277,7 +292,8 @@ max(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -295,7 +311,8 @@ min(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -313,7 +330,8 @@ sortBy(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -331,7 +349,8 @@ groupBy(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -349,7 +368,8 @@ indexBy(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -367,7 +387,8 @@ countBy(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -385,7 +406,8 @@ shuffle(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -403,7 +425,8 @@ sample(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -421,7 +444,8 @@ toArray(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -439,7 +463,8 @@ size(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -457,7 +482,8 @@ partition(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -475,7 +501,8 @@ first(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -493,7 +520,8 @@ initial(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -511,7 +539,8 @@ last(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -529,7 +558,8 @@ rest(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -547,7 +577,8 @@ compact(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -565,7 +596,8 @@ flatten(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -583,7 +615,8 @@ without(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -601,7 +634,8 @@ union(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -619,7 +653,8 @@ intersection(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -637,7 +672,8 @@ difference(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -655,7 +691,8 @@ uniq(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -673,7 +710,8 @@ zip(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -691,7 +729,8 @@ unzip(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -709,7 +748,8 @@ object(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -727,7 +767,8 @@ indexOf(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -745,7 +786,8 @@ lastIndexOf(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -763,7 +805,8 @@ sortedIndex(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -781,7 +824,8 @@ findIndex(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -799,7 +843,8 @@ findLastIndex(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -817,7 +862,8 @@ range(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -835,7 +881,8 @@ keys(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -853,7 +900,8 @@ allKeys(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -871,7 +919,8 @@ values(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -889,7 +938,8 @@ mapObject(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -907,7 +957,8 @@ pairs(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -925,7 +976,8 @@ invert(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -943,7 +995,8 @@ create(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -961,7 +1014,8 @@ functions(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -979,7 +1033,8 @@ findKey(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -997,7 +1052,8 @@ extend(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1015,7 +1071,8 @@ extendOwn(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1033,7 +1090,8 @@ pick(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1051,7 +1109,8 @@ omit(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1069,7 +1128,8 @@ defaults(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1087,7 +1147,8 @@ clone(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1105,7 +1166,8 @@ tap(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1123,7 +1185,8 @@ has(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1141,7 +1204,8 @@ matcher(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1159,7 +1223,8 @@ property(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1177,7 +1242,8 @@ propertyOf(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1195,7 +1261,8 @@ isEqual(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1213,7 +1280,8 @@ isMatch(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1231,7 +1299,8 @@ isEmpty(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1249,7 +1318,8 @@ isElement(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1267,7 +1337,8 @@ isArray(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1285,7 +1356,8 @@ isObject(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1303,7 +1375,8 @@ isArguments(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1321,7 +1394,8 @@ isFunction(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1339,7 +1413,8 @@ isString(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1357,7 +1432,8 @@ isNumber(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1375,7 +1451,8 @@ isFinite(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1393,7 +1470,8 @@ isBoolean(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1411,7 +1489,8 @@ isDate(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1429,7 +1508,8 @@ isRegExp(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1447,7 +1527,8 @@ isNaN(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1465,7 +1546,8 @@ isNull(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1483,7 +1565,8 @@ isUndefined(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1501,7 +1584,8 @@ noConflict(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1519,7 +1603,8 @@ identity(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1537,7 +1622,8 @@ times(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1555,7 +1641,8 @@ random(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1573,7 +1660,8 @@ mixin(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1591,7 +1679,8 @@ iteratee(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1609,7 +1698,8 @@ uniqueId(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1627,7 +1717,8 @@ escape(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1645,7 +1736,8 @@ unescape(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1663,7 +1755,8 @@ result(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1681,7 +1774,8 @@ now(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1699,7 +1793,8 @@ template(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",
@@ -1717,7 +1812,8 @@ last(${1:$selection__or__last_assigned_variable})
 		<commands>
 			[
 				{"command": "insert", "args": {"characters": "_."},
-					"context": [{"key": "preceding_128_chars_begin", "operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
 				{"command": "run_macro_file_with_context", "args": {"file":
 					"Packages/User/macro/select_token.sublime-macro"}},
 				"RUN",

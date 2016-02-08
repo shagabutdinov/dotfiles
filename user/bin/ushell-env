@@ -110,6 +110,7 @@ alias ge="git rebase"
 alias gei="git rebase --interactive"
 alias gec="git rebase --continue"
 alias gea="git rebase --abort"
+alias gpu='git push -u origin $(current_branch)'
 
 alias -g B="bundle exec"
 alias -g G="| grep"

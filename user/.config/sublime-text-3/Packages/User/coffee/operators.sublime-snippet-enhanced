@@ -564,7 +564,7 @@ then($1)
 
 	<snippet>
 		<content><![CDATA[
-then(($1) ->
+then(($1) =>
 	$0
 )
 ]]></content>

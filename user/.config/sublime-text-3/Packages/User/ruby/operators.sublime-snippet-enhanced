@@ -99,6 +99,46 @@ end
 
 	<snippet>
 		<content><![CDATA[
+if !${1:$last_assigned_variable}
+	${0:$selection}
+end
+]]></content>
+		<tabTrigger>in</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*in$"},
+			]
+		]]></context>
+		<description>operators: if not</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+if !${0:$selection}
+	$1
+end
+]]></content>
+		<commands>
+			[
+				{"command": "move_to", "args": {"extend": true, "to": "eol"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>in</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*in$"},
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
+			]
+		]]></context>
+		<description>operators: if not</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 if ${1:$last_assigned_variable}
 ]]></content>
 		<tabTrigger>i</tabTrigger>
@@ -110,28 +150,6 @@ if ${1:$last_assigned_variable}
 		]]></context>
 		<description>operators: if</description>
 		<order>2</order>
-	</snippet>
-
-	<snippet>
-		<content><![CDATA[
-if ${0:$selection}
-]]></content>
-		<commands>
-			[
-				{"command": "move_to", "args": {"extend": true, "to": "eol"}},
-				"RUN",
-			]
-		</commands>
-		<tabTrigger>i</tabTrigger>
-		<scope>source.ruby</scope>
-		<context><![CDATA[
-			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\S\\s*i$"},
-				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
-			]
-		]]></context>
-		<description>operators: if</description>
-		<order>3</order>
 	</snippet>
 
 	<snippet>
@@ -168,9 +186,18 @@ raise $0
 
 	<snippet>
 		<content><![CDATA[
-raise ":("
+raise $1Error.new($2)
 ]]></content>
 		<tabTrigger>re</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>operators: raise</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+raise ":("
+]]></content>
+		<tabTrigger>rq</tabTrigger>
 		<scope>source.ruby</scope>
 		<description>operators: raise</description>
 	</snippet>

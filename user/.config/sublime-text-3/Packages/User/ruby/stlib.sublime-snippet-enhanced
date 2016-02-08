@@ -336,7 +336,7 @@ has_key?($1)
 
 	<snippet>
 		<content><![CDATA[
-includes?($1)
+include?($1)
 ]]></content>
 		<tabTrigger>iu</tabTrigger>
 		<scope>source.ruby</scope>

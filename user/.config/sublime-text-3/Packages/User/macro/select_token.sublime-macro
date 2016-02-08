@@ -3,7 +3,7 @@
   {
     "command": "select_current_token_tail",
     "context": [
-      {"key": "following_text_end", "operator": "regex_contains", "operand": "^[\\w'\"({\\[$]"},
+      {"key": "following_text_end", "operator": "regex_contains", "operand": "^[\\w'\"({\\[$@]"},
     ]
   },
 

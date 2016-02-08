@@ -17,6 +17,36 @@
 
 	<snippet>
 		<content><![CDATA[
+@_scope
+]]></content>
+		<tabTrigger>s</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "AngularClass"},
+			]
+		]]></context>
+		<description>angular: scope</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+@_scope.
+]]></content>
+		<tabTrigger>@_scope</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "AngularClass"},
+			]
+		]]></context>
+		<description>angular: scope</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 \$rootScope
 ]]></content>
 		<tabTrigger>rs</tabTrigger>
@@ -24,6 +54,20 @@
 		<context><![CDATA[
 			[
 				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "\\.controller.*?\\$scope"},
+			]
+		]]></context>
+		<description>angular: root scope</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+@_rootScope
+]]></content>
+		<tabTrigger>rs</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "AngularClass"},
 			]
 		]]></context>
 		<description>angular: root scope</description>
@@ -183,14 +227,29 @@ search($0)
 
 	<snippet>
 		<content><![CDATA[
+@_http
+]]></content>
+		<tabTrigger>h</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "AngularClass"},
+			]
+		]]></context>
+		<description>angular: http</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 get($1)
 ]]></content>
 		<trigger>g</trigger>
 		<scope>source.coffee</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\$http\\.\\s*g$"},
-				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "\\.controller.*?\\$scope"},
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "http\\.\\s*g$"},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "(\\.controller.*?\\$scope|AngularClass)"},
 			]
 		]]></context>
 		<description>angular: $http.get</description>
@@ -204,11 +263,26 @@ post($1)
 		<scope>source.coffee</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\$http\\.\\s*p$"},
-				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "\\.controller.*?\\$scope"},
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "http\\.\\s*p$"},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "(\\.controller.*?\\$scope|AngularClass)"},
 			]
 		]]></context>
 		<description>angular: $http.post</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+@_scope.$1 = @_$1
+]]></content>
+		<tabTrigger>ds</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "AngularClass"},
+			]
+		]]></context>
+		<description>angular: define on scope</description>
+		<order>1</order>
 	</snippet>
 
 </snippets>
