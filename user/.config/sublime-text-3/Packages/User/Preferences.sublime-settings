@@ -92,9 +92,9 @@
 	"ignored_packages":
 	[
 		"Tabright",
-		"PHP Modern",
 		"Vintage",
 		"Theme - Centurion Blue",
+		"PHP Modern",
 		"Theme - Cyanide"
 	],
 	"indent_guide_options":
