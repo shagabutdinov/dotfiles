@@ -33,7 +33,7 @@
 	"bold_folder_labels": false,
 	"caret_style": "smooth",
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/User/SublimeLinter/Tomorrow-Night-Eighties (SL).tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Lyte (SL).tmTheme",
 	"create_window_at_startup": false,
 	"default_encoding": "UTF-8",
 	"default_line_ending": "unix",
@@ -80,22 +80,22 @@
 		".hg",
 		"CVS"
 	],
-	"font_face": "Consolas",
+	"font_face": "Dejavu Sans Mono",
 	"font_options":
 	[
 	],
-	"font_size": 12,
+	"font_size": 10,
 	"gutter": true,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"hot_exit": true,
 	"ignored_packages":
 	[
-		"PHP Modern",
 		"Tabright",
+		"PHP Modern",
+		"Vintage",
 		"Theme - Centurion Blue",
-		"Theme - Cyanide",
-		"Vintage"
+		"Theme - Cyanide"
 	],
 	"indent_guide_options":
 	[
@@ -141,6 +141,7 @@
 	"tree_animation_enabled": false,
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,
+	"update_check": false,
 	"use_simple_full_screen": false,
 	"use_tab_stops": true,
 	"word_separators": "./\\()\"':,.;<>~-!@#%^&*|+=[]{}`~?",
