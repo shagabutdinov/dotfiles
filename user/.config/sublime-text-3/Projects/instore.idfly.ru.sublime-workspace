@@ -236,6 +236,7 @@
 	"buffers":
 	[
 		{
+<<<<<<< HEAD
 			"contents": "iD2<CCh>Z",
 			"settings":
 			{
@@ -277,6 +278,12 @@
 			"settings":
 			{
 				"buffer_size": 522,
+=======
+			"file": "/home/leo/.config/balmora/conf.d/dotfiles-update.task.conf",
+			"settings":
+			{
+				"buffer_size": 2237,
+>>>>>>> 8fe349f4d09df110cfa66d3ec3968baafa50fc04
 				"line_ending": "Unix"
 			}
 		}
@@ -288,8 +295,13 @@
 	"build_varint": "",
 	"command_palette":
 	{
+<<<<<<< HEAD
 		"height": 400.0,
 		"last_filter": "remove",
+=======
+		"height": 30.0,
+		"last_filter": "",
+>>>>>>> 8fe349f4d09df110cfa66d3ec3968baafa50fc04
 		"selected_items":
 		[
 			[
@@ -581,7 +593,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 496.0
+		"width": 545.0
 	},
 	"console":
 	{
@@ -638,6 +650,7 @@
 	],
 	"file_history":
 	[
+<<<<<<< HEAD
 		"/home/leo/src/instore.idfly.ru/backend/config/routes.rb",
 		"/home/leo/src/instore.idfly.ru/backend_v2/config/routes.rb",
 		"/home/leo/src/instore.idfly.ru/backend/app/controllers/api/products/products_controller.rb",
@@ -731,6 +744,106 @@
 		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tasks/tabs/main_ctrl.coffee",
 		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/select_material_ctrl.coffee",
 		"/home/leo/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+=======
+		"/home/leo/.config/balmora/conf.d/dotfiles.variables.conf",
+		"/home/leo/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/leo/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/leo/.config/sublime-text-3/Projects/instore.idfly.ru.sublime-project",
+		"/home/leo/packages.txt",
+		"/home/leo/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/leo/projects/personal/log.txt",
+		"/home/leo/.config/sublime-text-3/Packages/GoSublime/USAGE.md",
+		"/home/leo/src/instore.idfly.ru/backend/config/routes.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/config/routes.rb",
+		"/home/leo/src/instore.idfly.ru/backend/app/controllers/api/products/products_controller.rb",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/app.coffee",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/projects_controller.rb",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/new_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/form_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/directives/pikaday.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/form.slim",
+		"/home/leo/.config/sublime-text-3/Packages/User/coffee/angular.sublime-snippet-enhanced",
+		"/home/leo/src/instore.idfly.ru/backend/app/views/layouts/parts/_header.html.haml",
+		"/home/leo/src/instore.idfly.ru/config/darius/deploy-to-development.task.yml",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/new.slim",
+		"/home/leo/src/darius/httpd/user.go",
+		"/home/leo/src/darius/database/common/user.go",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/index.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/edit.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/copy.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/show.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/show/notes_sidebar_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/config/assets.json",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/css/main.css",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/modals/create_waybill.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tasks/tabs/client_files.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/gulpfile.js",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/package.json",
+		"/home/leo/src/bvk.idfly.ru/main_frontend/package.json",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/modals/create_waybill_ctrl.coffee",
+		"/home/leo/src/bvk.idfly.ru/main_frontend/src/directives/events_search.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/directives/chosen.coffee",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/application_controller.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/project_waybills_controller.rb",
+		"/home/leo/src/bvk.idfly.ru/main_frontend/gulpfile.js",
+		"/home/leo/src/instore.idfly.ru/config/production/compose.yml",
+		"/home/leo/src/instore.idfly.ru/config/local/main.yml",
+		"/home/leo/src/instore.idfly.ru/config/development/compose.yml",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/layout/header.slim",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/status_controller.rb",
+		"/home/leo/src/instore.idfly.ru/backend/app/models/user.rb",
+		"/home/leo/src/instore.idfly.ru/backend/app/models/user/relations.rb",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tasks/tabs/design_files.slim",
+		"/home/leo/src/instore.idfly.ru/backend/app/models/task/relations.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/tasks_controller.rb",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/show/left_sidebar.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tabs/tasks_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/sidebars/index/left.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/index_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tabs/labels_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tabs/tasks.slim",
+		"/home/leo/src/instore.idfly.ru/backend/app/assets/javascripts/apps/ligo/controllers/distribution.controller.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/show/materials_sidebar_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/materials_service.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/project_documents_service.rb",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/show_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/backend/app/helpers/projects_helper.rb",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/components/sidebar.coffee",
+		"/home/leo/src/instore.idfly.ru/backend/app/models/project/relations.rb",
+		"/home/leo/src/instore.idfly.ru/http/config/production/nginx.conf",
+		"/home/leo/src/instore.idfly.ru/http/config/development/nginx.conf",
+		"/home/leo/src/instore.idfly.ru/http/config/local/nginx.conf",
+		"/home/leo/src/instore.idfly.ru/backend/app/models/project.rb",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tasks/tabs/design_files_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/show/right_sidebar.slim",
+		"/home/leo/src/instore.idfly.ru/backend/app/views/web/projects/project_notes/print.html.haml",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tasks/tabs/files_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tasks/tabs/client_files_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tasks/show_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tasks/tabs/financial.slim",
+		"/home/leo/src/instore.idfly.ru/backend/app/assets/javascripts/apps/ligo/factories/contractor.factory.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tasks/tabs/financial_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/backend/app/views/web/projects/tasks/_calculator.html.haml",
+		"/home/leo/src/instore.idfly.ru/backend/db/schema.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/project_waybills_service.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/projects_service.rb",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tasks/view.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/show/select_material_modal.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tabs/attachments_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/index/index.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/select_contractor.slim",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/reserved_materials_controller.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/reserved_materials.rb",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/show/reserved_materials_sidebar_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/show/select_material_modal_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/services/message_service.coffee",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/materials_controller.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/material_groups_controller.rb",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/select_contractor_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/select_material_group_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tasks/tabs/main_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/select_material_ctrl.coffee",
+>>>>>>> 8fe349f4d09df110cfa66d3ec3968baafa50fc04
 		"/home/leo/.config/sublime-text-3/Packages/ProjectFiles/project_files.py",
 		"/home/leo/.config/sublime-text-3/Packages/ProjectFiles/Default (Linux).sublime-keymap",
 		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/project_documents_controller.rb",
@@ -760,12 +873,16 @@
 		"/home/leo/src/instore.idfly.ru/backend/app/services/create_waybill.rb",
 		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/tasks_service.rb",
 		"/home/leo/src/instore.idfly.ru/backend/app/controllers/api/waybills/waybills_controller.rb",
+<<<<<<< HEAD
 		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/waybills_service.rb",
 		"/home/leo/.config/sublime-text-3/Packages/User/coffee/test.sublime-snippet-enhanced",
 		"/home/leo/.config/sublime-text-3/Packages/User/coffee/underscore.sublime-snippet-enhanced",
 		"/home/leo/.config/sublime-text-3/Packages/User/macro/select_token.sublime-macro",
 		"/home/leo/.config/sublime-text-3/Packages/Statement/commands.py",
 		"/home/leo/.config/sublime-text-3/Packages/Statement/parser.py"
+=======
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/waybills_service.rb"
+>>>>>>> 8fe349f4d09df110cfa66d3ec3968baafa50fc04
 	],
 	"find":
 	{
@@ -1062,11 +1179,16 @@
 	"groups":
 	[
 		{
+<<<<<<< HEAD
 			"selected": 1,
+=======
+			"selected": 0,
+>>>>>>> 8fe349f4d09df110cfa66d3ec3968baafa50fc04
 			"sheets":
 			[
 				{
 					"buffer": 0,
+<<<<<<< HEAD
 					"semi_transient": false,
 					"settings":
 					{
@@ -1156,23 +1278,31 @@
 				{
 					"buffer": 3,
 					"file": "/home/leo/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+=======
+					"file": "/home/leo/.config/balmora/conf.d/dotfiles-update.task.conf",
+>>>>>>> 8fe349f4d09df110cfa66d3ec3968baafa50fc04
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4941,
+						"buffer_size": 2237,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
+<<<<<<< HEAD
 								526,
 								526
+=======
+								231,
+								231
+>>>>>>> 8fe349f4d09df110cfa66d3ec3968baafa50fc04
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -1180,6 +1310,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+<<<<<<< HEAD
 					"stack_index": 1,
 					"type": "text"
 				},
@@ -1208,6 +1339,8 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+=======
+>>>>>>> 8fe349f4d09df110cfa66d3ec3968baafa50fc04
 					"stack_index": 0,
 					"type": "text"
 				}
@@ -1256,6 +1389,14 @@
 	"output.GoSublime-main-output":
 	{
 		"height": 104.0
+	},
+	"output.GoSublime-output":
+	{
+		"height": 140.0
+	},
+	"output.MarGo-output":
+	{
+		"height": 140.0
 	},
 	"output.exec":
 	{
