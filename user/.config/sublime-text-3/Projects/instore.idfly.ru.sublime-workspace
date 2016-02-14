@@ -236,54 +236,13 @@
 	"buffers":
 	[
 		{
-<<<<<<< HEAD
-			"contents": "iD2<CCh>Z",
-			"settings":
-			{
-				"buffer_size": 9,
-				"line_ending": "Unix",
-				"name": "iD2<CCh>Z"
-			}
-		},
-		{
-			"contents": "i.skvortsova@idfly.ru / D2<CCh>Z\n\nrebasery (вторая попытка)\n-------------------------\n\nПрограмма, которая позволяет коллективно перезаписывать историю веток\nрепозитория, в целью улучшения читабельности истории репозитория и\nвозможности снимать правки из ветки.\n\nОсновные функции:\n\n  * start\n  * attach\n  * detach\n  * release\n\n\nAttach\n------\n\nВносит указанную ветку в целевую ветку.\n\nИспользование:\n\n```\nrebasery attach --branch issue_1234 --target dev\nrebasery attach -b issue_1234 -t dev\n\n# для решения конфликтов:\n\nrebasery attach --branch issue_1234 --target dev --continue\nrebasery attach -b issue_1234 -t dev -c\n```\n\nОбщий алгоритм:\n\n  1. Определяется целевой коммит для ребейза:\n\n  1.1. Происходит поиск ветки `--branch`\n\n  1.2. Происходит поиск номер задачи на топе ветки в комментарии к коммиту по\n       шаблону \\d+; например, для сообщения \"#1234 fix some stuff\" номером\n       задачи будет являться 1234\n\n  1.3. Происходит поиск первого коммита перед коммитом на топе ветки\n       `--branch`, который удовлетворяет следующим условиям:\n\n        * номер задачи в коммите не равен номер задачи на топе ветки\n        * номер задачи в коммите присутствует в целевой ветке\n\n  1.4. Определяется целевой номер задачи в найденном коммите\n\n  1.5. В ветке `--target` происходит поиск последнего коммита с целевым номером\n       задачи\n\n  1.6. Найденный коммит является целевым коммитом\n\n  2. Определяется список коммитов для ребейза\n\n  2.1. Происходит поиск номер задачи в сообщении коммита на топе ветки\n       `--branch`\n\n  2.2. Выбираются все коммиты перед данным коммитом с найденным номер задачи\n\n  2.3. Выбранные коммиты являются списоком коммитов для ребейза\n\n  3. Все коммиты после целевого коммита являются \"хвостом\" (список запоминается)\n\n  4. Происходит ребейз найденных коммитов на целевой коммит для ребейза\n\n  5. Происходит ребейз хвоста на найденные коммиты\n\n  6. Происходит удаление ветки\n\n\nВозможные кейсы перечислены ниже.\n\n\n### Fast-forward\n\nПереключает целевую ветку на топ feature-ветки. Выполняется тогда, когда ветка\nнаходится поверх целевой ветки.\n\n```\n# i1-i1-i1 (dev)\n#         \\\n#          i2-i2\n\n$ rebasery attach -b f -t dev\n\n# i1-i1-i1-i2-i2 (dev)\n```\n\n\n### Rebase\n\nВыполняется тогда, когда в целевой ветке есть коммиты, которые находятся после\nтого, как был сделан старт исходной ветки:\n\n```\n# i1-i1-i1-i2-i2 (dev)\n#         \\\n#          i3-i3\n\n$ rebasery attach -b f2 -t d\n\n# i1-i1-i1-i3-i3-i2-i2\n```\n\n\n### Rebase forward\n\nВыполняется тогда, когда в целевой ветке есть коммиты с тем же номером задачи,\nкоторые находятся после тогда, как был сделан старт исходной ветки:\n\n```\n# i1-i1-i1-i2-i2 (dev)\n#      \\\n#       i3-i3\n\n$ rebasery attach -b f2 -t d\n\n# i1-i1-i1-i3-i3-i2-i2\n```\n\n\n### Rebase lookup\n\nВыполняется тогда, когда уже выполнялся ребейз целевой ветки и исходная\nветка лежит в старой копии целевой ветки:\n\n\n```\ni1-i1-i2-i2-i4-i4 (dev)\n     \\\n      i2'-i2'-i3-i3 (feature)\n\n$ rebasery attach -b i2 -t dev\n\ni1-i1-i2-i2-i3-i3-i4-i4 (dev)\n```\n\n### Append\n\nВыполняется тогда, когда уже выполнялся attach ветки и был добавлен новый\nкоммит:\n\n\n```\ni1-i1-i2-i2-i4-i4 (dev)\n           \\\n            i2 (feature)\n\n$ rebasery attach -b i2 -t dev\n\ni1-i1-i2-i2-i3-i3-i4-i4 (dev)\n```\n\n\n\nhttps://zoom.us/pricing\n\nrefs:\n  packages\n  measurementUnits\n  lightingTypes\n  lightingPositions\n\n\nexpandVariable - expand task parent\n\nrebasery\n========\n\nРебейз флоу тул.\n\n\nattach-branch\n-------------\n\n```\n# m = master\n# s = staging\n# d = dev\n\n# m-m-m-m-m-m-s-s-s-s-d-d--\n#                        \\ \\\n#                         \\ -1-1 feature_1\n#                          -2-2-2 feature_2\n\nattach --to dev --branch feature_2\n\n# m-m-m-m-m-m-s-s-s-s-d-d-2d-2d-2d\n#                        \\\n#                         1-1 feature_1\n\nattach --to dev --branch feature_1\n\n# if conflict - report error, exit status - 1\n\n# m-m-m-m-m-m-s-s-s-s-d-d-1d-1d-2d-2d-2d\n\n# dependend branches\n\n# m-m-m-m-m-m-s-s-s-s-d-d\n#                        \\\n#                         -1-1 feature_1\n#                             \\\n#                              -2-2-2 feature_2\n\nattach --to dev --branch feature_2\n\n# error branch_1 must be attached first\n\n```\n\nРешение конфликтов:\n\n1. Выполняется командой:\n\n```\n  attach --resolve --to dev --branch feature_1\n```\n\n2. Команда делает следующее:\n2.1. Выполняет фетч\n2.2. Проверяет наличие лок-коммита на верхней ветке (dev)\n\nbvk:\n\n  XS:\n\n    #5058 - Всплывашка на покупку билета\n    #5020 - Выбор дня в кадендаре\n    #5021 - Баннера\n    #5022 - Личный кабинет. Профиль\n    #5070 - убрать привязку дат к событиям\n    #5072 - исправить внешние ключи в миграциях\n    #5081 - запретить пользователям изменять данные друг друга\n\n\n  S:\n\n    #4992 - Авторизация и регистрация - высплывашки\n    #4801 - Рекомендуемые события\n    #5012 - Связь событий и локаций\n    #5017 - Виджет Рекомендованных события\n    #5071 - переименовать venue в location\n\n  M:\n\n    #4787 - Статические страницы\n    #5004 - Личный кабинет. Профиль активный\n    #5032 - Аватар в личном кабинете\n    #4807 - Панель управления. Авторизация (без тестов)\n    #4808 - Панель управления. Администраторы (без тестов)\n    #4808 - Панель управления. Пользователи (без тестов)\n    #5077 - выполнить рефакторинг коммита 9f4e5b\n\n  L:\n\n    #4796 - Выгрузка категорий\n    #4797 - Выгрузка событий\n    #4798 - Поиск по событиям\n    #4904 - Выгрузка мест проведения\n    #4799 - Афиша на день/месяц\n    #4802 - Страница события\n    #5008 - Раздел Событий. Главная\n    #4807 - Панель управления. Авторизация (с тестами)\n    #4808 - Панель управления. Администраторы (с тестами)\n    #4808 - Панель управления. Пользователи (с тестами)\n\n  XL:\n\n    #4803 - Страница события, схема зала\n\n\n\n\nПроверка:\n\n# units\n\nde backend.main.bvk.idfly.ru B rake db:drop db:create db:migrate db:seed RAILS_ENV=test\n\nde backend.admin.bvk.idfly.ru bundle install\nde backend.main.bvk.idfly.ru bundle install\n\ndocker exec -i -t test.backend.main.bvk.idfly.ru bundle exec rubocop\ndocker exec -i -t test.backend.admin.bvk.idfly.ru bundle exec rubocop\ndocker exec -i -t test.backend.main.bvk.idfly.ru bundle exec rspec\ndocker exec -i -t test.backend.admin.bvk.idfly.ru bundle exec rspec\ndocker exec -i -t test.frontend.main.bvk.idfly.ru gulp lint\ndocker exec -i -t test.frontend.admin.bvk.idfly.ru gulp lint\ndocker exec -i -t test.frontend.main.bvk.idfly.ru karma run config/karma.conf.js\ndocker exec -i -t test.frontend.admin.bvk.idfly.ru karma run config/karma.conf.js\n\n# functional\n\nde backend.test.bvk.idfly.ru B rake db:drop db:create db:migrate db:seed RAILS_ENV=test\nde backend.test.bvk.idfly.ru B rake db:reset db:seed RAILS_ENV=test\nde tests.test.bvk.idfly.ru node node_modules/protractor/bin/protractor protractor.conf\n\n1. Ассеты нужны были в двух контейнерах, пришлось делать кросс-компиляцию\n\nДокер\n\nМы начинаем активно использовать `docker` и `docker-compose` как на серверах,\nтак и на машинах разработчиков. В связи с этим всем необходимо:\n\n1. Установить `docker`: http://docs.docker.com/engine/installation\n2. Установить `docker-compose`: https://docs.docker.com/compose/install\n3. Ознакомиться с мануалом по использованию `docker`: https://docs.docker.com/engine/userguide/basics\n4. Ознакомиться с мануалом по использованию `docker-compose`: https://docs.docker.com/compose/\n5. Приобрести базовые навыки (потренироваться) администрирования докера на локальной машине:\n5.1. Запуск контейнеров: `docker run` или `docker-compose up`\n5.2. Остановка контейнеров: `docker stop` или `docker-compose stop`\n5.3. Просмотр процессов: `docker ps`\n5.4. Просмотр образов: `docker images`\n5.5. Удаление контейнеров: `docker rm`\n5.6. Удаление образа: `docker rmi`\n5.7. Просмотр докер-образов: `docker rmi`\n\nРассказать всем:\n\nhttps://wiki.archlinux.org/index.php/Access_Control_Lists\nhttps://github.com/Plateful/plateful-mobile/wiki/AngularJS-CoffeeScript-Style-Guide#modules - почитать\n\nп 124 в2\n\nhttps://www.facebook.com/groups/nskfrii/permalink/451708091681533/ - запостить\n\nСтатус программа\n================\n\n====================================================\n    17:37 @a.lushnikov #5004 +3.2µ ❤❤❤\n << 17:28 @olesya: нашли баг #4008\n    17:02 @r.openyshev #4912 +7.9µ ❤❤❤❤❤❤❤❤\n %% 16:52 @leonid: криво смержил ... %59 +4 комментария\n !! 16:45 @general митап завтра в 14:00\n    16:37 @me #5012 +9.4µ          ❤❤❤❤❤❤❤❤❤\n    15:22 @e.bako      #4924 +2.1µ ❤❤\n    14:37 @a.lushnikov #5004 +3.2µ ❤❤❤\n    13:22 @r.openyshev #4912 +7.9µ ❤❤❤❤❤❤❤❤\n    12:55 @me #5004 +3.2µ          ❤❤❤\n    11:55 @a.lushnikov #5012 +9.4µ ❤❤❤❤❤❤❤❤❤\n    10:22 @r.openyshev #4924 +2.1µ ❤❤\n\n+---------------------------+-----------------+-------+-------+\n| Спринт                    | В работе        | >>>>> | ***** |\n+---------------------------+-----------------+-------+-------+\n|                           |                 |       |       |\n| < #4798 6.9µ @a.lushnikov | #5078 2.2µ 1.2h | #5024 | #5004 |\n|   поиск по событиям       | @a.lushnikov    | #5018 | #4909 |\n|                           |                 | #5014 | #4902 |\n| * #5036 4.2µ              | #4982 4.9µ 3.8h | #5011 | #4897 |\n|   список билетов          | @r.openyshev    | #5009 | #4891 |\n|                           |                 | #5002 | #4847 |\n| * #5035 2.7µ              | #5051 3.2µ 0.2h | #4049 | #4824 |\n|   кнопки дат эвентов      | @me             |       | #4820 |\n|                           |                 |       | #4790 |\n| ! #5099 3.2µ              |                 |       | #4789 |\n|   рекомендуемые события   |                 |       | #4788 |\n|                           |                 |       | #4781 |\n| / #4904 8.4µ              |                 |       | #4779 |\n|   места проведения ...    |                 |       | #4774 |\n|                           |                 |       |       |\n| +16 задач & 169µ          |                 |       | +3t   |\n| 73.4µ/день ▼▼             |                 | 48µ   | +461µ |\n|                           |                 |       |       |\n+---------------------------+-----------------+-------+-------+\n\n  >> %63 #4798 добавить поиск по событиям\n  >> %62 #5036 исправить список билетов\n  >> %61 #5035 исправить кнопки дат эвентов\n  >> %60 +8 пул реквестов\n\nP.S. добавь `console.log` в сниппеты, %username%!",
+			"contents": "Дополнительная информация\nИнтересующие Вас вопросы Вы можете задать по тел.\n[tel:227-90-13|227-90-13] или [tel:8-923-227-90-13|8-923-227-90-13]\n\nРАСПИСАНИЕ ЗАНЯТИЙ\nПр-т Димитрова, 7\n3 этаж\nКлуб креативного отдыха \"BE HAPPY\"\n\nПОНЕДЕЛЬНИК\nС 19 до 20 – Сальча (нач.гр) Маркос и Лиза\nС 20 до 22 –  Тимба  (ср.гр.) Маркос и Лиза\n\nВТОРНИК\nС 19 до 20 – Sexy Lady Style (общ.гр) Марина М.\nс 20 до 22 – Cальса NY (нач.гр./набор закрыт) Денис и Марина\n\nСРЕДА\nС 19 до 20 – Кубинская пластика (общ.гр.) Маркос и Лиза\nС 20 до 21 – Сальса касино (нач.гр) Берани и Лиза\nС 21 до 22 – Бачата (нач.гр) Берани и Лиза\n\nЧЕТВЕРГ\nС 19 до 20 – МАСТЕР-КЛАСС (общ.гр) Маркос и Лиза (ТЕМАТИКА И УРОВЕНЬ БУДУТ ОБЪЯВЛЯТЬСЯ ЗАРАНЕЕ)\nС 20 до 22 – Афро (общ.гр.) Маркос и Лиза\n\nСУББОТА\nС 10 до 12 – Сальса касино / Бачата (нач.гр) Маркос\nС 12 до 13 – Реггетон (общ.гр.) Берани\nС 13 до 15 – Кизомба (ср.гр.) Леша и Марина М.\n\nВОСКРЕСЕНЬЕ\nС 11 до 13 – Афро шоу-группа (набор закрыт) Маркос и Лиза\nC 12 до 14 – Кизомба (нач.гр.) Леша и Марина М.\nС 13 до 15 – Перкуссия  (набор закрыт) Маркос и Лиза\n\nrebasery (вторая попытка)\n-------------------------\n\nПрограмма, которая позволяет коллективно перезаписывать историю веток\nрепозитория, в целью улучшения читабельности истории репозитория и\nвозможности снимать правки из ветки.\n\nОсновные функции:\n\n  * start\n  * attach\n  * detach\n  * release\n\n\nAttach\n------\n\nВносит указанную ветку в целевую ветку.\n\nИспользование:\n\n```\nrebasery attach --branch issue_1234 --target dev\nrebasery attach -b issue_1234 -t dev\n\n# для решения конфликтов:\n\nrebasery attach --branch issue_1234 --target dev --continue\nrebasery attach -b issue_1234 -t dev -c\n```\n\nОбщий алгоритм:\n\n  1. Определяется целевой коммит для ребейза:\n\n  1.1. Происходит поиск ветки `--branch`\n\n  1.2. Происходит поиск номер задачи на топе ветки в комментарии к коммиту по\n       шаблону \\d+; например, для сообщения \"#1234 fix some stuff\" номером\n       задачи будет являться 1234\n\n  1.3. Происходит поиск первого коммита перед коммитом на топе ветки\n       `--branch`, который удовлетворяет следующим условиям:\n\n        * номер задачи в коммите не равен номер задачи на топе ветки\n        * номер задачи в коммите присутствует в целевой ветке\n\n  1.4. Определяется целевой номер задачи в найденном коммите\n\n  1.5. В ветке `--target` происходит поиск последнего коммита с целевым номером\n       задачи\n\n  1.6. Найденный коммит является целевым коммитом\n\n  2. Определяется список коммитов для ребейза\n\n  2.1. Происходит поиск номер задачи в сообщении коммита на топе ветки\n       `--branch`\n\n  2.2. Выбираются все коммиты перед данным коммитом с найденным номер задачи\n\n  2.3. Выбранные коммиты являются списоком коммитов для ребейза\n\n  3. Все коммиты после целевого коммита являются \"хвостом\" (список запоминается)\n\n  4. Происходит ребейз найденных коммитов на целевой коммит для ребейза\n\n  5. Происходит ребейз хвоста на найденные коммиты\n\n  6. Происходит удаление ветки\n\n\nВозможные кейсы перечислены ниже.\n\n\n### Fast-forward\n\nПереключает целевую ветку на топ feature-ветки. Выполняется тогда, когда ветка\nнаходится поверх целевой ветки.\n\n```\n# i1-i1-i1 (dev)\n#         \\\n#          i2-i2\n\n$ rebasery attach -b f -t dev\n\n# i1-i1-i1-i2-i2 (dev)\n```\n\n\n### Rebase\n\nВыполняется тогда, когда в целевой ветке есть коммиты, которые находятся после\nтого, как был сделан старт исходной ветки:\n\n```\n# i1-i1-i1-i2-i2 (dev)\n#         \\\n#          i3-i3\n\n$ rebasery attach -b f2 -t d\n\n# i1-i1-i1-i3-i3-i2-i2\n```\n\n\n### Rebase forward\n\nВыполняется тогда, когда в целевой ветке есть коммиты с тем же номером задачи,\nкоторые находятся после тогда, как был сделан старт исходной ветки:\n\n```\n# i1-i1-i1-i2-i2 (dev)\n#      \\\n#       i3-i3\n\n$ rebasery attach -b f2 -t d\n\n# i1-i1-i1-i3-i3-i2-i2\n```\n\n\n### Rebase lookup\n\nВыполняется тогда, когда уже выполнялся ребейз целевой ветки и исходная\nветка лежит в старой копии целевой ветки:\n\n\n```\ni1-i1-i2-i2-i4-i4 (dev)\n     \\\n      i2'-i2'-i3-i3 (feature)\n\n$ rebasery attach -b i2 -t dev\n\ni1-i1-i2-i2-i3-i3-i4-i4 (dev)\n```\n\n### Append\n\nВыполняется тогда, когда уже выполнялся attach ветки и был добавлен новый\nкоммит:\n\n\n```\ni1-i1-i2-i2-i4-i4 (dev)\n           \\\n            i2 (feature)\n\n$ rebasery attach -b i2 -t dev\n\ni1-i1-i2-i2-i3-i3-i4-i4 (dev)\n```\n\n\n\nhttps://zoom.us/pricing\n\nrefs:\n  packages\n  measurementUnits\n  lightingTypes\n  lightingPositions\n\n\nexpandVariable - expand task parent\n\nrebasery\n========\n\nРебейз флоу тул.\n\n\nattach-branch\n-------------\n\n```\n# m = master\n# s = staging\n# d = dev\n\n# m-m-m-m-m-m-s-s-s-s-d-d--\n#                        \\ \\\n#                         \\ -1-1 feature_1\n#                          -2-2-2 feature_2\n\nattach --to dev --branch feature_2\n\n# m-m-m-m-m-m-s-s-s-s-d-d-2d-2d-2d\n#                        \\\n#                         1-1 feature_1\n\nattach --to dev --branch feature_1\n\n# if conflict - report error, exit status - 1\n\n# m-m-m-m-m-m-s-s-s-s-d-d-1d-1d-2d-2d-2d\n\n# dependend branches\n\n# m-m-m-m-m-m-s-s-s-s-d-d\n#                        \\\n#                         -1-1 feature_1\n#                             \\\n#                              -2-2-2 feature_2\n\nattach --to dev --branch feature_2\n\n# error branch_1 must be attached first\n\n```\n\nРешение конфликтов:\n\n1. Выполняется командой:\n\n```\n  attach --resolve --to dev --branch feature_1\n```\n\n2. Команда делает следующее:\n2.1. Выполняет фетч\n2.2. Проверяет наличие лок-коммита на верхней ветке (dev)\n\nbvk:\n\n  XS:\n\n    #5058 - Всплывашка на покупку билета\n    #5020 - Выбор дня в кадендаре\n    #5021 - Баннера\n    #5022 - Личный кабинет. Профиль\n    #5070 - убрать привязку дат к событиям\n    #5072 - исправить внешние ключи в миграциях\n    #5081 - запретить пользователям изменять данные друг друга\n\n\n  S:\n\n    #4992 - Авторизация и регистрация - высплывашки\n    #4801 - Рекомендуемые события\n    #5012 - Связь событий и локаций\n    #5017 - Виджет Рекомендованных события\n    #5071 - переименовать venue в location\n\n  M:\n\n    #4787 - Статические страницы\n    #5004 - Личный кабинет. Профиль активный\n    #5032 - Аватар в личном кабинете\n    #4807 - Панель управления. Авторизация (без тестов)\n    #4808 - Панель управления. Администраторы (без тестов)\n    #4808 - Панель управления. Пользователи (без тестов)\n    #5077 - выполнить рефакторинг коммита 9f4e5b\n\n  L:\n\n    #4796 - Выгрузка категорий\n    #4797 - Выгрузка событий\n    #4798 - Поиск по событиям\n    #4904 - Выгрузка мест проведения\n    #4799 - Афиша на день/месяц\n    #4802 - Страница события\n    #5008 - Раздел Событий. Главная\n    #4807 - Панель управления. Авторизация (с тестами)\n    #4808 - Панель управления. Администраторы (с тестами)\n    #4808 - Панель управления. Пользователи (с тестами)\n\n  XL:\n\n    #4803 - Страница события, схема зала\n\n\n\n\nПроверка:\n\n# units\n\nde backend.main.bvk.idfly.ru B rake db:drop db:create db:migrate db:seed RAILS_ENV=test\n\nde backend.admin.bvk.idfly.ru bundle install\nde backend.main.bvk.idfly.ru bundle install\n\ndocker exec -i -t test.backend.main.bvk.idfly.ru bundle exec rubocop\ndocker exec -i -t test.backend.admin.bvk.idfly.ru bundle exec rubocop\ndocker exec -i -t test.backend.main.bvk.idfly.ru bundle exec rspec\ndocker exec -i -t test.backend.admin.bvk.idfly.ru bundle exec rspec\ndocker exec -i -t test.frontend.main.bvk.idfly.ru gulp lint\ndocker exec -i -t test.frontend.admin.bvk.idfly.ru gulp lint\ndocker exec -i -t test.frontend.main.bvk.idfly.ru karma run config/karma.conf.js\ndocker exec -i -t test.frontend.admin.bvk.idfly.ru karma run config/karma.conf.js\n\n# functional\n\nde backend.test.bvk.idfly.ru B rake db:drop db:create db:migrate db:seed RAILS_ENV=test\nde backend.test.bvk.idfly.ru B rake db:reset db:seed RAILS_ENV=test\nde tests.test.bvk.idfly.ru node node_modules/protractor/bin/protractor protractor.conf\n\n1. Ассеты нужны были в двух контейнерах, пришлось делать кросс-компиляцию\n\nДокер\n\nМы начинаем активно использовать `docker` и `docker-compose` как на серверах,\nтак и на машинах разработчиков. В связи с этим всем необходимо:\n\n1. Установить `docker`: http://docs.docker.com/engine/installation\n2. Установить `docker-compose`: https://docs.docker.com/compose/install\n3. Ознакомиться с мануалом по использованию `docker`: https://docs.docker.com/engine/userguide/basics\n4. Ознакомиться с мануалом по использованию `docker-compose`: https://docs.docker.com/compose/\n5. Приобрести базовые навыки (потренироваться) администрирования докера на локальной машине:\n5.1. Запуск контейнеров: `docker run` или `docker-compose up`\n5.2. Остановка контейнеров: `docker stop` или `docker-compose stop`\n5.3. Просмотр процессов: `docker ps`\n5.4. Просмотр образов: `docker images`\n5.5. Удаление контейнеров: `docker rm`\n5.6. Удаление образа: `docker rmi`\n5.7. Просмотр докер-образов: `docker rmi`\n\nРассказать всем:\n\nhttps://wiki.archlinux.org/index.php/Access_Control_Lists\nhttps://github.com/Plateful/plateful-mobile/wiki/AngularJS-CoffeeScript-Style-Guide#modules - почитать\n\nп 124 в2\n\nhttps://www.facebook.com/groups/nskfrii/permalink/451708091681533/ - запостить\n\nСтатус программа\n================\n\n====================================================\n    17:37 @a.lushnikov #5004 +3.2µ ❤❤❤\n << 17:28 @olesya: нашли баг #4008\n    17:02 @r.openyshev #4912 +7.9µ ❤❤❤❤❤❤❤❤\n %% 16:52 @leonid: криво смержил ... %59 +4 комментария\n !! 16:45 @general митап завтра в 14:00\n    16:37 @me #5012 +9.4µ          ❤❤❤❤❤❤❤❤❤\n    15:22 @e.bako      #4924 +2.1µ ❤❤\n    14:37 @a.lushnikov #5004 +3.2µ ❤❤❤\n    13:22 @r.openyshev #4912 +7.9µ ❤❤❤❤❤❤❤❤\n    12:55 @me #5004 +3.2µ          ❤❤❤\n    11:55 @a.lushnikov #5012 +9.4µ ❤❤❤❤❤❤❤❤❤\n    10:22 @r.openyshev #4924 +2.1µ ❤❤\n\n+---------------------------+-----------------+-------+-------+\n| Спринт                    | В работе        | >>>>> | ***** |\n+---------------------------+-----------------+-------+-------+\n|                           |                 |       |       |\n| < #4798 6.9µ @a.lushnikov | #5078 2.2µ 1.2h | #5024 | #5004 |\n|   поиск по событиям       | @a.lushnikov    | #5018 | #4909 |\n|                           |                 | #5014 | #4902 |\n| * #5036 4.2µ              | #4982 4.9µ 3.8h | #5011 | #4897 |\n|   список билетов          | @r.openyshev    | #5009 | #4891 |\n|                           |                 | #5002 | #4847 |\n| * #5035 2.7µ              | #5051 3.2µ 0.2h | #4049 | #4824 |\n|   кнопки дат эвентов      | @me             |       | #4820 |\n|                           |                 |       | #4790 |\n| ! #5099 3.2µ              |                 |       | #4789 |\n|   рекомендуемые события   |                 |       | #4788 |\n|                           |                 |       | #4781 |\n| / #4904 8.4µ              |                 |       | #4779 |\n|   места проведения ...    |                 |       | #4774 |\n|                           |                 |       |       |\n| +16 задач & 169µ          |                 |       | +3t   |\n| 73.4µ/день ▼▼             |                 | 48µ   | +461µ |\n|                           |                 |       |       |\n+---------------------------+-----------------+-------+-------+\n\n  >> %63 #4798 добавить поиск по событиям\n  >> %62 #5036 исправить список билетов\n  >> %61 #5035 исправить кнопки дат эвентов\n  >> %60 +8 пул реквестов\n\nP.S. добавь `console.log` в сниппеты, %username%!",
 			"file": "/home/leo/projects/personal/log.txt",
-			"file_size": 13534,
-			"file_write_time": 130994100639516103,
+			"file_size": 15331,
+			"file_write_time": 130994774452738827,
 			"settings":
 			{
-				"buffer_size": 10196,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "[300,\n700,\n435,\n680,\n445,\n211,\n200,\n635,\n5000,\n800,\n1600,].inject(:+)",
-			"settings":
-			{
-				"buffer_size": 69,
-				"line_ending": "Unix",
-				"name": "[300,"
-			}
-		},
-		{
-			"file": "/home/leo/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
-			"settings":
-			{
-				"buffer_size": 4941,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/leo/.gem/ruby/2.3.0/gems/balmora-0.0.2/lib/balmora/require.rb",
-			"settings":
-			{
-				"buffer_size": 522,
-=======
-			"file": "/home/leo/.config/balmora/conf.d/dotfiles-update.task.conf",
-			"settings":
-			{
-				"buffer_size": 2237,
->>>>>>> 8fe349f4d09df110cfa66d3ec3968baafa50fc04
+				"buffer_size": 11227,
 				"line_ending": "Unix"
 			}
 		}
@@ -295,13 +254,8 @@
 	"build_varint": "",
 	"command_palette":
 	{
-<<<<<<< HEAD
 		"height": 400.0,
 		"last_filter": "remove",
-=======
-		"height": 30.0,
-		"last_filter": "",
->>>>>>> 8fe349f4d09df110cfa66d3ec3968baafa50fc04
 		"selected_items":
 		[
 			[
@@ -593,7 +547,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 545.0
+		"width": 496.0
 	},
 	"console":
 	{
@@ -650,11 +604,12 @@
 	],
 	"file_history":
 	[
-<<<<<<< HEAD
+		"/home/leo/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/leo/.gem/ruby/2.3.0/gems/balmora-0.0.2/lib/balmora/require.rb",
+		"/home/leo/projects/personal/log.txt",
 		"/home/leo/src/instore.idfly.ru/backend/config/routes.rb",
 		"/home/leo/src/instore.idfly.ru/backend_v2/config/routes.rb",
 		"/home/leo/src/instore.idfly.ru/backend/app/controllers/api/products/products_controller.rb",
-		"/home/leo/projects/personal/log.txt",
 		"/home/leo/src/instore.idfly.ru/frontend_v2/src/app.coffee",
 		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/projects_controller.rb",
 		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/new_ctrl.coffee",
@@ -743,107 +698,6 @@
 		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/select_material_group_ctrl.coffee",
 		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tasks/tabs/main_ctrl.coffee",
 		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/select_material_ctrl.coffee",
-		"/home/leo/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
-=======
-		"/home/leo/.config/balmora/conf.d/dotfiles.variables.conf",
-		"/home/leo/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
-		"/home/leo/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
-		"/home/leo/.config/sublime-text-3/Projects/instore.idfly.ru.sublime-project",
-		"/home/leo/packages.txt",
-		"/home/leo/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
-		"/home/leo/projects/personal/log.txt",
-		"/home/leo/.config/sublime-text-3/Packages/GoSublime/USAGE.md",
-		"/home/leo/src/instore.idfly.ru/backend/config/routes.rb",
-		"/home/leo/src/instore.idfly.ru/backend_v2/config/routes.rb",
-		"/home/leo/src/instore.idfly.ru/backend/app/controllers/api/products/products_controller.rb",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/app.coffee",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/projects_controller.rb",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/new_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/form_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/directives/pikaday.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/form.slim",
-		"/home/leo/.config/sublime-text-3/Packages/User/coffee/angular.sublime-snippet-enhanced",
-		"/home/leo/src/instore.idfly.ru/backend/app/views/layouts/parts/_header.html.haml",
-		"/home/leo/src/instore.idfly.ru/config/darius/deploy-to-development.task.yml",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/new.slim",
-		"/home/leo/src/darius/httpd/user.go",
-		"/home/leo/src/darius/database/common/user.go",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/index.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/edit.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/copy.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/show.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/show/notes_sidebar_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/config/assets.json",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/css/main.css",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/modals/create_waybill.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tasks/tabs/client_files.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/gulpfile.js",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/package.json",
-		"/home/leo/src/bvk.idfly.ru/main_frontend/package.json",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/modals/create_waybill_ctrl.coffee",
-		"/home/leo/src/bvk.idfly.ru/main_frontend/src/directives/events_search.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/directives/chosen.coffee",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/application_controller.rb",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/project_waybills_controller.rb",
-		"/home/leo/src/bvk.idfly.ru/main_frontend/gulpfile.js",
-		"/home/leo/src/instore.idfly.ru/config/production/compose.yml",
-		"/home/leo/src/instore.idfly.ru/config/local/main.yml",
-		"/home/leo/src/instore.idfly.ru/config/development/compose.yml",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/layout/header.slim",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/status_controller.rb",
-		"/home/leo/src/instore.idfly.ru/backend/app/models/user.rb",
-		"/home/leo/src/instore.idfly.ru/backend/app/models/user/relations.rb",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tasks/tabs/design_files.slim",
-		"/home/leo/src/instore.idfly.ru/backend/app/models/task/relations.rb",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/tasks_controller.rb",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/show/left_sidebar.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tabs/tasks_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/sidebars/index/left.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/index_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tabs/labels_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tabs/tasks.slim",
-		"/home/leo/src/instore.idfly.ru/backend/app/assets/javascripts/apps/ligo/controllers/distribution.controller.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/show/materials_sidebar_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/materials_service.rb",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/project_documents_service.rb",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/show_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/backend/app/helpers/projects_helper.rb",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/components/sidebar.coffee",
-		"/home/leo/src/instore.idfly.ru/backend/app/models/project/relations.rb",
-		"/home/leo/src/instore.idfly.ru/http/config/production/nginx.conf",
-		"/home/leo/src/instore.idfly.ru/http/config/development/nginx.conf",
-		"/home/leo/src/instore.idfly.ru/http/config/local/nginx.conf",
-		"/home/leo/src/instore.idfly.ru/backend/app/models/project.rb",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tasks/tabs/design_files_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/show/right_sidebar.slim",
-		"/home/leo/src/instore.idfly.ru/backend/app/views/web/projects/project_notes/print.html.haml",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tasks/tabs/files_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tasks/tabs/client_files_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tasks/show_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tasks/tabs/financial.slim",
-		"/home/leo/src/instore.idfly.ru/backend/app/assets/javascripts/apps/ligo/factories/contractor.factory.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tasks/tabs/financial_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/backend/app/views/web/projects/tasks/_calculator.html.haml",
-		"/home/leo/src/instore.idfly.ru/backend/db/schema.rb",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/project_waybills_service.rb",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/projects_service.rb",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tasks/view.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/show/select_material_modal.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tabs/attachments_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/index/index.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/select_contractor.slim",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/reserved_materials_controller.rb",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/reserved_materials.rb",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/show/reserved_materials_sidebar_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/show/select_material_modal_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/services/message_service.coffee",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/materials_controller.rb",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/material_groups_controller.rb",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/select_contractor_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/select_material_group_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tasks/tabs/main_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/select_material_ctrl.coffee",
->>>>>>> 8fe349f4d09df110cfa66d3ec3968baafa50fc04
 		"/home/leo/.config/sublime-text-3/Packages/ProjectFiles/project_files.py",
 		"/home/leo/.config/sublime-text-3/Packages/ProjectFiles/Default (Linux).sublime-keymap",
 		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/project_documents_controller.rb",
@@ -873,16 +727,11 @@
 		"/home/leo/src/instore.idfly.ru/backend/app/services/create_waybill.rb",
 		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/tasks_service.rb",
 		"/home/leo/src/instore.idfly.ru/backend/app/controllers/api/waybills/waybills_controller.rb",
-<<<<<<< HEAD
 		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/waybills_service.rb",
 		"/home/leo/.config/sublime-text-3/Packages/User/coffee/test.sublime-snippet-enhanced",
 		"/home/leo/.config/sublime-text-3/Packages/User/coffee/underscore.sublime-snippet-enhanced",
 		"/home/leo/.config/sublime-text-3/Packages/User/macro/select_token.sublime-macro",
-		"/home/leo/.config/sublime-text-3/Packages/Statement/commands.py",
-		"/home/leo/.config/sublime-text-3/Packages/Statement/parser.py"
-=======
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/waybills_service.rb"
->>>>>>> 8fe349f4d09df110cfa66d3ec3968baafa50fc04
+		"/home/leo/.config/sublime-text-3/Packages/Statement/commands.py"
 	],
 	"find":
 	{
@@ -1179,57 +1028,24 @@
 	"groups":
 	[
 		{
-<<<<<<< HEAD
-			"selected": 1,
-=======
 			"selected": 0,
->>>>>>> 8fe349f4d09df110cfa66d3ec3968baafa50fc04
 			"sheets":
 			[
 				{
 					"buffer": 0,
-<<<<<<< HEAD
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1,
-								1
-							]
-						],
-						"settings":
-						{
-							"auto_name": "iD2<CCh>Z",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "/home/leo/projects/personal/log.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10196,
+						"buffer_size": 11227,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								516,
-								516
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1242,105 +1058,6 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 69,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								69,
-								69
-							]
-						],
-						"settings":
-						{
-							"auto_name": "[300,",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/home/leo/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
-=======
-					"file": "/home/leo/.config/balmora/conf.d/dotfiles-update.task.conf",
->>>>>>> 8fe349f4d09df110cfa66d3ec3968baafa50fc04
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2237,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-<<<<<<< HEAD
-								526,
-								526
-=======
-								231,
-								231
->>>>>>> 8fe349f4d09df110cfa66d3ec3968baafa50fc04
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-<<<<<<< HEAD
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/home/leo/.gem/ruby/2.3.0/gems/balmora-0.0.2/lib/balmora/require.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 522,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								334,
-								334
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-=======
->>>>>>> 8fe349f4d09df110cfa66d3ec3968baafa50fc04
 					"stack_index": 0,
 					"type": "text"
 				}
@@ -1389,14 +1106,6 @@
 	"output.GoSublime-main-output":
 	{
 		"height": 104.0
-	},
-	"output.GoSublime-output":
-	{
-		"height": 140.0
-	},
-	"output.MarGo-output":
-	{
-		"height": 140.0
 	},
 	"output.exec":
 	{
@@ -1945,9 +1654,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "ins",
+		"last_filter": "bi",
 		"selected_items":
 		[
+			[
+				"bi",
+				"~/.config/sublime-text-3/Projects/bi.idfly.sublime-workspace"
+			],
 			[
 				"ins",
 				"~/.config/sublime-text-3/Projects/instore.idfly.ru.sublime-project"
@@ -1959,10 +1672,6 @@
 			[
 				"dar",
 				"~/.config/sublime-text-3/Projects/darius.shagabutdinov.com.sublime-project"
-			],
-			[
-				"bi",
-				"~/.config/sublime-text-3/Projects/bi.idfly.sublime-workspace"
 			],
 			[
 				"in",

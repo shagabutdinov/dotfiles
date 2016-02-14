@@ -216,18 +216,10 @@
 	"buffers":
 	[
 		{
-			"file": "/home/leo/src/bi.idfly.ru/backend/app/controllers/dashboard_widgets_controller.rb",
+			"file": "/home/leo/projects/personal/log.txt",
 			"settings":
 			{
-				"buffer_size": 808,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/leo/src/bi.idfly.ru/backend/app/models/dashboard_widget.rb",
-			"settings":
-			{
-				"buffer_size": 496,
+				"buffer_size": 11330,
 				"line_ending": "Unix"
 			}
 		}
@@ -566,6 +558,10 @@
 	],
 	"file_history":
 	[
+		"/home/leo/src/bi.idfly.ru/backend/app/controllers/dashboard_widgets_controller.rb",
+		"/home/leo/src/bi.idfly.ru/backend/app/models/dashboard_widget.rb",
+		"/home/leo/src/bi.idfly.ru/config/local/main.yml",
+		"/home/leo/src/bi.idfly.ru/mysql/config/local/my.cnf",
 		"/home/leo/src/bi.idfly.ru/backend/app/controllers/dashboards_controller.rb",
 		"/home/leo/src/bi.idfly.ru/backend/app/controllers/widgets_controller.rb",
 		"/home/leo/src/bi.idfly.ru/backend/config/routes.rb",
@@ -573,7 +569,6 @@
 		"/home/leo/src/bi.idfly.ru/backend/db/migrate/20160126153808_dashboard_widgets.rb",
 		"/home/leo/src/bi.idfly.ru/backend/app/models/model.rb",
 		"/home/leo/src/bi.idfly.ru/backend/app/models/dataset.rb",
-		"/home/leo/src/bi.idfly.ru/backend/app/models/dashboard_widget.rb",
 		"/home/leo/.config/sublime-text-3/Projects/bi.idfly.ru",
 		"/home/leo/src/bi.idfly.ru/frontend/src/lib/widget/list_ctrl.coffee",
 		"/home/leo/src/bi.idfly.ru/frontend/views/dashboards/edit.slim",
@@ -602,9 +597,7 @@
 		"/home/leo/src/bi.idfly.ru/backend/spec/spec_helper.rb",
 		"/home/leo/src/bi.idfly.ru/backend/app/models/widget.rb",
 		"/home/leo/src/bi.idfly.ru/backend/app/helpers/public_error.rb",
-		"/home/leo/src/bi.idfly.ru/mysql/config/local/my.cnf",
 		"/home/leo/src/bi.idfly.ru/backend/db/seeds.rb",
-		"/home/leo/src/bi.idfly.ru/config/local/main.yml",
 		"/home/leo/src/bi.idfly.ru/data/0d47ef61-6eaa-4ef3-bfcc-8bce8d7cb51b.csv",
 		"/home/leo/src/bi.idfly.ru/data/test.csv",
 		"/home/leo/src/bi.idfly.ru/backend/app/models/file_model.rb",
@@ -692,8 +685,7 @@
 		"/home/leo/src/bi.idfly.ru/config/local/test.yml",
 		"/home/leo/src/bi.idfly.ru/config/dev/compose.yml",
 		"/home/leo/src/bi.idfly.ru/backend/.gitignore",
-		"/home/leo/src/bi.idfly.ru/frontend/src/lib/util/model.coffee",
-		"/home/leo/src/bi.idfly.ru/frontend/src/lib/util.coffee"
+		"/home/leo/src/bi.idfly.ru/frontend/src/lib/util/model.coffee"
 	],
 	"find":
 	{
@@ -944,61 +936,29 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/home/leo/src/bi.idfly.ru/backend/app/controllers/dashboard_widgets_controller.rb",
+					"file": "/home/leo/projects/personal/log.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 808,
+						"buffer_size": 11330,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								316,
-								316
+								50,
+								50
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/home/leo/src/bi.idfly.ru/backend/app/models/dashboard_widget.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 496,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								484,
-								268
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1078,6 +1038,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"config/local/main.yml"
+			],
+			[
+				"conf/my",
+				"config/local/main.yml"
+			],
 			[
 				"dashw",
 				"backend/app/models/dashboard_widget.rb"
@@ -1371,10 +1339,6 @@
 				"backend_v2/config/local/up.sh"
 			],
 			[
-				"",
-				"readme.md"
-			],
-			[
 				"gulp",
 				"frontend_v2/gulpfile.js"
 			],
@@ -1584,10 +1548,6 @@
 			],
 			[
 				"tood",
-				"todo.md"
-			],
-			[
-				"todo",
 				"todo.md"
 			]
 		],
