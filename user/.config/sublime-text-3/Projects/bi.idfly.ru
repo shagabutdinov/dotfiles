@@ -12,11 +12,16 @@
 				"frontend/build",
 				"frontend/vendor",
 				"frontend/fonts",
+				"import",
+				"websocket",
 				"mysql",
 				"cassandra",
 				"data",
 				"tests/vendor",
 			],
 		}
-	]
+	],
+	"settings": {
+		"mysql": ["mysql", "-h", "127.0.0.1", "-u", "root", "--table", "development"],
+	},
 }
