@@ -216,44 +216,10 @@
 	"buffers":
 	[
 		{
-			"file": "/home/leo/src/bvk.idfly.ru/config/darius/deploy-to-dev.task.yml",
+			"file": "/home/leo/src/bvk.idfly.ru/main_http/config/local/nginx.conf",
 			"settings":
 			{
-				"buffer_size": 1790,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "Searching 2595 files for \"/status\" (case sensitive)\n\nUnable to open ~/src/bvk.idfly.ru/admin_backend/.rubocop.yml\nUnable to open ~/src/bvk.idfly.ru/admin_backend/db\nUnable to open ~/src/bvk.idfly.ru/admin_backend/app/models\nUnable to open ~/src/bvk.idfly.ru/admin_backend/app/uploaders\nUnable to open ~/src/bvk.idfly.ru/admin_backend/config/database.yml\nUnable to open ~/src/bvk.idfly.ru/admin_backend/config/environments\nUnable to open ~/src/bvk.idfly.ru/admin_backend/config/main.rb\n/home/leo/src/bvk.idfly.ru/admin_backend/config/routes.rb:\n   10    # status\n   11  \n   12:   get '/api/status' => 'status#status'\n   13  \n   14    # users\n\nUnable to open ~/src/bvk.idfly.ru/admin_backend/config/secrets.yml\nUnable to open ~/src/bvk.idfly.ru/admin_backend/config/initializers/main\n/home/leo/src/bvk.idfly.ru/admin_frontend/src/controllers/header_ctrl.coffee:\n   13  \n   14      $http.\n   15:       get('/api/status').\n   16        then(callback, callback)\n   17  \n\n/home/leo/src/bvk.idfly.ru/admin_frontend/tests/controllers/header_ctrl_test.coffee:\n   29    describe 'updateStatus', () ->\n   30  \n   31:     it 'calls GET /api/status on controller creation', () ->\n   32        @createController()\n   33:       expect(@state.$http.get.getCall(0).args[0]).toEqual('/api/status')\n   34  \n   35      it 'sets result.data to $scope.status', () ->\n\n/home/leo/src/bvk.idfly.ru/main_backend/config/routes.rb:\n   18    # status\n   19  \n   20:   get '/api/status' => 'status#status'\n   21  \n   22    # categories\n\nUnable to open ~/src/bvk.idfly.ru/main_backend/public/sitemap.xml\nUnable to open ~/src/bvk.idfly.ru/main_backend/public/sitemaps\n/home/leo/src/bvk.idfly.ru/main_frontend/src/controllers/header_ctrl.coffee:\n   11  \n   12      $http.\n   13:       get('/api/status').\n   14        then(callback, callback)\n   15  \n\n/home/leo/src/bvk.idfly.ru/main_frontend/tests/controllers/header_ctrl_test.coffee:\n   36    describe 'updateStatus', () ->\n   37  \n   38:     it 'calls GET /api/status on controller creation', () ->\n   39        @createController()\n   40:       expect(@state.$http.get.getCall(0).args[0]).toEqual('/api/status')\n   41  \n   42      it 'sets result.data to $rootScope.status', () ->\n\n8 matches across 6 files\n\n\nSearching 2608 files for \"/status\" (case sensitive)\n\nUnable to open ~/src/bvk.idfly.ru/admin_backend/.rubocop.yml\nUnable to open ~/src/bvk.idfly.ru/admin_backend/db\nUnable to open ~/src/bvk.idfly.ru/admin_backend/app/mailers\nUnable to open ~/src/bvk.idfly.ru/admin_backend/app/models\nUnable to open ~/src/bvk.idfly.ru/admin_backend/app/uploaders\nUnable to open ~/src/bvk.idfly.ru/admin_backend/app/views\nUnable to open ~/src/bvk.idfly.ru/admin_backend/config/database.yml\nUnable to open ~/src/bvk.idfly.ru/admin_backend/config/environments\nUnable to open ~/src/bvk.idfly.ru/admin_backend/config/main.rb\n/home/leo/src/bvk.idfly.ru/admin_backend/config/routes.rb:\n   10    # status\n   11  \n   12:   get '/api/status' => 'status#status'\n   13  \n   14    # users\n\nUnable to open ~/src/bvk.idfly.ru/admin_backend/config/secrets.yml\nUnable to open ~/src/bvk.idfly.ru/admin_backend/config/initializers/main\n/home/leo/src/bvk.idfly.ru/admin_frontend/src/controllers/header_ctrl.coffee:\n   13  \n   14      $http.\n   15:       get('/api/status').\n   16        then(callback, callback)\n   17  \n\n/home/leo/src/bvk.idfly.ru/admin_frontend/tests/controllers/header_ctrl_test.coffee:\n   29    describe 'updateStatus', () ->\n   30  \n   31:     it 'calls GET /api/status on controller creation', () ->\n   32        @createController()\n   33:       expect(@state.$http.get.getCall(0).args[0]).toEqual('/api/status')\n   34  \n   35      it 'sets result.data to $scope.status', () ->\n\n/home/leo/src/bvk.idfly.ru/main_backend/config/routes.rb:\n   18    # status\n   19  \n   20:   get '/api/status' => 'status#status'\n   21  \n   22    # events\n\nUnable to open ~/src/bvk.idfly.ru/main_backend/public/sitemap.xml\nUnable to open ~/src/bvk.idfly.ru/main_backend/public/sitemaps\n/home/leo/src/bvk.idfly.ru/main_frontend/src/controllers/application_ctrl.coffee:\n    8  \n    9      $http.\n   10:       get('/api/status').\n   11        then(callback, callback)\n   12  \n\n/home/leo/src/bvk.idfly.ru/main_frontend/tests/controllers/header_ctrl_test.coffee:\n   36    describe 'updateStatus', () ->\n   37  \n   38:     it 'calls GET /api/status on controller creation', () ->\n   39        @createController()\n   40:       expect(@state.$http.get.getCall(0).args[0]).toEqual('/api/status')\n   41  \n   42      it 'sets result.data to $rootScope.status', () ->\n\n8 matches across 6 files\n\n\nSearching 92 files for \"/status\" (case sensitive)\n\n/home/leo/src/bvk.idfly.ru/admin_frontend/src/controllers/header_ctrl.coffee:\n   13  \n   14      $http.\n   15:       get('/api/status').\n   16        then(callback, callback)\n   17  \n\n/home/leo/src/bvk.idfly.ru/admin_frontend/tests/controllers/header_ctrl_test.coffee:\n   29    describe 'updateStatus', () ->\n   30  \n   31:     it 'calls GET /api/status on controller creation', () ->\n   32        @createController()\n   33:       expect(@state.$http.get.getCall(0).args[0]).toEqual('/api/status')\n   34  \n   35      it 'sets result.data to $scope.status', () ->\n\n/home/leo/src/bvk.idfly.ru/main_frontend/src/controllers/application_ctrl.coffee:\n    8  \n    9      $http.\n   10:       get('/api/status').\n   11        then(callback, callback)\n   12  \n\n/home/leo/src/bvk.idfly.ru/main_frontend/tests/controllers/header_ctrl_test.coffee:\n   36    describe 'updateStatus', () ->\n   37  \n   38:     it 'calls GET /api/status on controller creation', () ->\n   39        @createController()\n   40:       expect(@state.$http.get.getCall(0).args[0]).toEqual('/api/status')\n   41  \n   42      it 'sets result.data to $rootScope.status', () ->\n\n6 matches across 4 files\n",
-			"settings":
-			{
-				"buffer_size": 5788,
-				"line_ending": "Unix",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
-			"file": "/home/leo/src/bvk.idfly.ru/main_frontend/src/controllers/application_ctrl.coffee",
-			"settings":
-			{
-				"buffer_size": 1087,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/leo/src/bvk.idfly.ru/main_frontend/src/controllers/header_ctrl.coffee",
-			"settings":
-			{
-				"buffer_size": 1413,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/leo/src/bvk.idfly.ru/admin_frontend/src/controllers/header_ctrl.coffee",
-			"settings":
-			{
-				"buffer_size": 780,
+				"buffer_size": 783,
 				"line_ending": "Unix"
 			}
 		}
@@ -580,6 +546,10 @@
 	],
 	"file_history":
 	[
+		"/home/leo/src/bvk.idfly.ru/admin_frontend/src/controllers/header_ctrl.coffee",
+		"/home/leo/src/bvk.idfly.ru/main_frontend/src/controllers/header_ctrl.coffee",
+		"/home/leo/src/bvk.idfly.ru/main_frontend/src/controllers/application_ctrl.coffee",
+		"/home/leo/src/bvk.idfly.ru/config/darius/deploy-to-dev.task.yml",
 		"/home/leo/src/bvk.idfly.ru/main_frontend/src/app.coffee",
 		"/home/leo/src/bvk.idfly.ru/main_frontend/src/controllers/events/search_ctrl.coffee",
 		"/home/leo/src/bvk.idfly.ru/config/dev/compose.yml",
@@ -588,7 +558,6 @@
 		"/home/leo/src/bvk.idfly.ru/main_frontend/views/events/search_form.html",
 		"/home/leo/src/bvk.idfly.ru/main_frontend/views/events/index.html",
 		"/home/leo/src/bvk.idfly.ru/main_frontend/src/directives/events_search.coffee",
-		"/home/leo/src/bvk.idfly.ru/config/darius/deploy-to-dev.task.yml",
 		"/home/leo/src/bvk.idfly.ru/config/local/main.yml",
 		"/home/leo/src/bvk.idfly.ru/main_backend/config/environments/production.rb",
 		"/home/leo/src/bvk.idfly.ru/main_frontend/src/services/modals.coffee",
@@ -704,10 +673,7 @@
 		"/home/leo/src/instore.idfly.ru/backend/app/controllers/api/waybills/application_controller.rb",
 		"/home/leo/src/instore.idfly.ru/backend/app/controllers/api/waybills/waybills_columns_controller.rb",
 		"/home/leo/src/instore.idfly.ru/backend/app/controllers/api/waybills/waybills_controller.rb",
-		"/home/leo/src/instore.idfly.ru/backend/app/controllers/application_controller.rb",
-		"/home/leo/src/instore.idfly.ru/backend/app/controllers/chat/application_controller.rb",
-		"/home/leo/src/instore.idfly.ru/backend/app/controllers/chat/conversations_controller.rb",
-		"/home/leo/src/instore.idfly.ru/backend/app/controllers/chat/messages_controller.rb"
+		"/home/leo/src/instore.idfly.ru/backend/app/controllers/application_controller.rb"
 	],
 	"find":
 	{
@@ -951,29 +917,29 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/home/leo/src/bvk.idfly.ru/config/darius/deploy-to-dev.task.yml",
+					"file": "/home/leo/src/bvk.idfly.ru/main_http/config/local/nginx.conf",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1790,
+						"buffer_size": 783,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								160,
-								160
+								305,
+								305
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
@@ -981,228 +947,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5788,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										588,
-										595
-									],
-									[
-										908,
-										915
-									],
-									[
-										1128,
-										1135
-									],
-									[
-										1270,
-										1277
-									],
-									[
-										1448,
-										1455
-									],
-									[
-										1761,
-										1768
-									],
-									[
-										1980,
-										1987
-									],
-									[
-										2122,
-										2129
-									],
-									[
-										2935,
-										2942
-									],
-									[
-										3255,
-										3262
-									],
-									[
-										3475,
-										3482
-									],
-									[
-										3617,
-										3624
-									],
-									[
-										3795,
-										3802
-									],
-									[
-										4109,
-										4116
-									],
-									[
-										4328,
-										4335
-									],
-									[
-										4470,
-										4477
-									],
-									[
-										4754,
-										4761
-									],
-									[
-										4974,
-										4981
-									],
-									[
-										5116,
-										5123
-									],
-									[
-										5322,
-										5329
-									],
-									[
-										5541,
-										5548
-									],
-									[
-										5683,
-										5690
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								5306,
-								5306
-							]
-						],
-						"settings":
-						{
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 3,
-							"result_base_dir": "",
-							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2000.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/home/leo/src/bvk.idfly.ru/main_frontend/src/controllers/application_ctrl.coffee",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1087,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								304,
-								304
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/home/leo/src/bvk.idfly.ru/main_frontend/src/controllers/header_ctrl.coffee",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1413,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								301,
-								301
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/home/leo/src/bvk.idfly.ru/admin_frontend/src/controllers/header_ctrl.coffee",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 780,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								400,
-								400
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -1280,6 +1025,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"nginx",
+				"main_http/config/local/nginx.conf"
+			],
 			[
 				"depl",
 				"config/darius/deploy-to-dev.task.yml"
@@ -1423,10 +1172,6 @@
 			[
 				"gul",
 				"main_frontend/gulpfile.js"
-			],
-			[
-				"nginx",
-				"main_http/config/local/nginx.conf"
 			],
 			[
 				"fron/gul",
@@ -1798,16 +1543,16 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "dar",
+		"last_filter": "bvk",
 		"selected_items":
 		[
 			[
-				"dar",
-				"~/.config/sublime-text-3/Projects/darius.shagabutdinov.com.sublime-project"
-			],
-			[
 				"bvk",
 				"~/.config/sublime-text-3/Projects/bvk.idfly.sublime-workspace"
+			],
+			[
+				"dar",
+				"~/.config/sublime-text-3/Projects/darius.shagabutdinov.com.sublime-project"
 			],
 			[
 				"ins",

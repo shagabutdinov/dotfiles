@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"pd",
+				"project_building_distributions"
+			],
+			[
+				"pack",
+				"packing_slips"
+			],
+			[
+				"pr",
+				"projects"
+			],
+			[
+				"proj",
+				"project_building_distributions"
+			],
+			[
+				"prid",
+				"project_id"
+			],
+			[
+				"projec",
+				"project_building_distributions"
+			],
+			[
 				"mater",
 				"material_groups"
 			],
@@ -18,10 +42,6 @@
 			[
 				"ma",
 				"materials"
-			],
-			[
-				"pr",
-				"projects"
 			],
 			[
 				"mes",
@@ -236,10 +256,26 @@
 	"buffers":
 	[
 		{
-			"file": "/home/leo/.config/balmora/conf.d/dotfiles-update.task.conf",
+			"file": "/home/leo/projects/personal/log.txt",
 			"settings":
 			{
-				"buffer_size": 2237,
+				"buffer_size": 17067,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/leo/.config/index.html",
+			"settings":
+			{
+				"buffer_size": 84,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/leo/src/keepup.idfly.ru/backend/controllers/ContractorsController.php",
+			"settings":
+			{
+				"buffer_size": 2251,
 				"line_ending": "Unix"
 			}
 		}
@@ -601,134 +637,134 @@
 	],
 	"file_history":
 	[
-		"/home/leo/.config/balmora/conf.d/dotfiles.variables.conf",
-		"/home/leo/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
-		"/home/leo/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
-		"/home/leo/.config/sublime-text-3/Projects/instore.idfly.ru.sublime-project",
-		"/home/leo/packages.txt",
-		"/home/leo/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
-		"/home/leo/projects/personal/log.txt",
-		"/home/leo/.config/sublime-text-3/Packages/GoSublime/USAGE.md",
-		"/home/leo/src/instore.idfly.ru/backend/config/routes.rb",
-		"/home/leo/src/instore.idfly.ru/backend_v2/config/routes.rb",
-		"/home/leo/src/instore.idfly.ru/backend/app/controllers/api/products/products_controller.rb",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/app.coffee",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/projects_controller.rb",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/new_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/form_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/directives/pikaday.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/form.slim",
-		"/home/leo/.config/sublime-text-3/Packages/User/coffee/angular.sublime-snippet-enhanced",
-		"/home/leo/src/instore.idfly.ru/backend/app/views/layouts/parts/_header.html.haml",
-		"/home/leo/src/instore.idfly.ru/config/darius/deploy-to-development.task.yml",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/new.slim",
-		"/home/leo/src/darius/httpd/user.go",
-		"/home/leo/src/darius/database/common/user.go",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/index.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/edit.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/copy.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/show.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/show/notes_sidebar_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/config/assets.json",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/css/main.css",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/modals/create_waybill.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tasks/tabs/client_files.slim",
+		"/home/leo/src/instore.idfly.ru/.git",
+		"/home/leo/src/instore.idfly.ru/config/dev/compose.yml",
 		"/home/leo/src/instore.idfly.ru/frontend_v2/gulpfile.js",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/package.json",
-		"/home/leo/src/bvk.idfly.ru/main_frontend/package.json",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/modals/create_waybill_ctrl.coffee",
-		"/home/leo/src/bvk.idfly.ru/main_frontend/src/directives/events_search.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/directives/chosen.coffee",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/application_controller.rb",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/project_waybills_controller.rb",
-		"/home/leo/src/bvk.idfly.ru/main_frontend/gulpfile.js",
-		"/home/leo/src/instore.idfly.ru/config/production/compose.yml",
-		"/home/leo/src/instore.idfly.ru/config/local/main.yml",
-		"/home/leo/src/instore.idfly.ru/config/development/compose.yml",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/layout/header.slim",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/status_controller.rb",
-		"/home/leo/src/instore.idfly.ru/backend/app/models/user.rb",
-		"/home/leo/src/instore.idfly.ru/backend/app/models/user/relations.rb",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tasks/tabs/design_files.slim",
-		"/home/leo/src/instore.idfly.ru/backend/app/models/task/relations.rb",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/tasks_controller.rb",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/show/left_sidebar.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tabs/tasks_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/sidebars/index/left.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/index_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tabs/labels_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tabs/tasks.slim",
-		"/home/leo/src/instore.idfly.ru/backend/app/assets/javascripts/apps/ligo/controllers/distribution.controller.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/show/materials_sidebar_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/materials_service.rb",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/project_documents_service.rb",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/show_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/backend/app/helpers/projects_helper.rb",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/components/sidebar.coffee",
-		"/home/leo/src/instore.idfly.ru/backend/app/models/project/relations.rb",
-		"/home/leo/src/instore.idfly.ru/http/config/production/nginx.conf",
-		"/home/leo/src/instore.idfly.ru/http/config/development/nginx.conf",
-		"/home/leo/src/instore.idfly.ru/http/config/local/nginx.conf",
-		"/home/leo/src/instore.idfly.ru/backend/app/models/project.rb",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tasks/tabs/design_files_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/show/right_sidebar.slim",
-		"/home/leo/src/instore.idfly.ru/backend/app/views/web/projects/project_notes/print.html.haml",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tasks/tabs/files_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tasks/tabs/client_files_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tasks/show_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tasks/tabs/financial.slim",
-		"/home/leo/src/instore.idfly.ru/backend/app/assets/javascripts/apps/ligo/factories/contractor.factory.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tasks/tabs/financial_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/backend/app/views/web/projects/tasks/_calculator.html.haml",
-		"/home/leo/src/instore.idfly.ru/backend/db/schema.rb",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/project_waybills_service.rb",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/projects_service.rb",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tasks/view.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/show/select_material_modal.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tabs/attachments_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/index/index.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/select_contractor.slim",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/reserved_materials_controller.rb",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/reserved_materials.rb",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/show/reserved_materials_sidebar_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/show/select_material_modal_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/services/message_service.coffee",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/materials_controller.rb",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/material_groups_controller.rb",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/select_contractor_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/select_material_group_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tasks/tabs/main_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/select_material_ctrl.coffee",
-		"/home/leo/.config/sublime-text-3/Packages/ProjectFiles/project_files.py",
-		"/home/leo/.config/sublime-text-3/Packages/ProjectFiles/Default (Linux).sublime-keymap",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/project_documents_controller.rb",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/show/reserved_materials_sidebar.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/show/reserved_materials.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/show/sidebar_reserved_materials_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/show/sidebar_materials_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/show/sidebar_notes_ctrl.coffee",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/show/reserved_materials_ctrl.coffee",
-		"/home/leo/bin/ushell-env",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/sidebars/show/left.slim",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/sidebars/show/right.slim",
-		"/home/leo/src/instore.idfly.ru/backend/app/models/export.rb",
-		"/home/leo/src/instore.idfly.ru/backend/app/controllers/web/projects_controller.rb",
-		"/home/leo/src/instore.idfly.ru/backend/app/assets/javascripts/components/materials/materials.coffee",
-		"/usr/share/oh-my-zsh/plugins/git/git.plugin.zsh",
-		"/home/leo/src/instore.idfly.ru/backend/config/application.rb",
-		"/home/leo/src/instore.idfly.ru/backend/Gemfile",
-		"/home/leo/src/instore.idfly.ru/backend_v2/Gemfile",
-		"/home/leo/src/instore.idfly.ru/backend_v2/config/application.rb",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/service_error.rb",
-		"/home/leo/src/instore.idfly.ru/backend/app/controllers/concerns/project_concern.rb",
-		"/home/leo/.config/sublime-text-3/Packages/User/ruby/stlib.sublime-snippet-enhanced",
-		"/home/leo/src/instore.idfly.ru/backend/app/repositories/general_repository.rb",
-		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/modals/new_attachment.slim",
+		"/home/leo/src/instore.idfly.ru/config/darius/deploy-to-dev.task.yml",
+		"/home/leo/src/instore.idfly.ru/config/darius/deploy-to-staging.task.yml",
+		"/home/leo/src/instore.idfly.ru/config/darius/build.task.yml",
 		"/home/leo/src/instore.idfly.ru/backend/config/local/up.sh",
-		"/home/leo/src/instore.idfly.ru/backend/app/services/create_waybill.rb",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/tasks_service.rb",
-		"/home/leo/src/instore.idfly.ru/backend/app/controllers/api/waybills/waybills_controller.rb",
-		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/waybills_service.rb"
+		"/home/leo/src/instore.idfly.ru/backend/config/unicorn.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/config/routes.rb",
+		"/home/leo/src/instore.idfly.ru/config/local/main.yml",
+		"/home/leo/src/instore.idfly.ru/config/staging/compose.yml",
+		"/home/leo/src/instore.idfly.ru/config/darius/restart.task.yml",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/config/local/up.sh",
+		"/home/leo/src/instore.idfly.ru/backend/config/staging/unicorn.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/config/staging/unicorn.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/config/unicorn.rb",
+		"/home/leo/src/instore.idfly.ru/backend/config/dev/unicorn.rb",
+		"/home/leo/src/instore.idfly.ru/backend/config/local/unicorn.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/config/dev/database.yml",
+		"/home/leo/src/instore.idfly.ru/backend_v2/config/dev/setup_email.rb",
+		"/home/leo/src/instore.idfly.ru/config/darius/restart.yml",
+		"/home/leo/src/instore.idfly.ru/config/darius/build.yml",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/index.slim",
+		"/home/leo/src/instore.idfly.ru/backend_v2/config/development/unicorn.rb",
+		"/home/leo/src/instore.idfly.ru/backend/config/development/unicorn.rb",
+		"/home/leo/projects/personal/log.txt",
+		"/home/leo/src/instore.idfly.ru/http/config/development/nginx.conf",
+		"/home/leo/src/instore.idfly.ru/backend/config/environments/production.rb",
+		"/home/leo/src/instore.idfly.ru/backend/config/initializers/setup_email.rb",
+		"/home/leo/src/instore.idfly.ru/backend/config/database.yml",
+		"/home/leo/src/instore.idfly.ru/http/config/staging/nginx.conf",
+		"/home/leo/src/instore.idfly.ru/backend/config/environments/development.rb",
+		"/home/leo/src/instore.idfly.ru/config/darius/deploy-to-development.task.yml",
+		"/home/leo/src/instore.idfly.ru/config/development/compose.yml",
+		"/home/leo/src/instore.idfly.ru/backend/config/staging/setup_email.rb",
+		"/home/leo/src/instore.idfly.ru/mysql/config/staging/my.cnf",
+		"/home/leo/src/instore.idfly.ru/backend/config/staging/database.yml",
+		"/home/leo/src/instore.idfly.ru/mysql/config/local/my.cnf",
+		"/home/leo/src/instore.idfly.ru/backend/config/development/Dockerfile",
+		"/home/leo/src/instore.idfly.ru/backend_v2/config/development/Dockerfile",
+		"/home/leo/src/instore.idfly.ru/backend/.dockerignore",
+		"/home/leo/src/instore.idfly.ru/backend_v2/.dockerignore",
+		"/home/leo/src/instore.idfly.ru/http/config/production/nginx.conf",
+		"/home/leo/src/instore.idfly.ru/backend/config/production/database.yml",
+		"/home/leo/.config/sublime-text-3/Projects/instore.idfly.ru.sublime-project",
+		"/home/leo/src/instore.idfly.ru/backend/lib/api_columns.rb",
+		"/home/leo/src/instore.idfly.ru/backend/config/development/database.yml",
+		"/home/leo/src/instore.idfly.ru/config/darius/deploy-branch-to-development.task.yml",
+		"/home/leo/src/instore.idfly.ru/backend/app/models/user_setting.rb",
+		"/home/leo/src/instore.idfly.ru/backend/app/models/user_setting/methods.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/project_distributions_controller.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/project_distributions_service.rb",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tabs/packing_slips/by_quantity_distribution.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tabs/packing_slips.slim",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/packing_slips_controller.rb",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tabs/packing_slips_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/css/old.css",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tabs/packing_slips/by_quantity.slim",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/packing_slips_service.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/project_distribution_acts_service.rb",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/show_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tabs/distribution_by_addresses_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/backend/Gemfile",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/config/assets.json",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/project_documents_controller.rb",
+		"/home/leo/src/instore.idfly.ru/backend/app/models/export.rb",
+		"/home/leo/src/instore.idfly.ru/backend/Gemfile.lock",
+		"/home/leo/src/instore.idfly.ru/backend_v2/Gemfile",
+		"/home/leo/src/instore.idfly.ru/backend_v2/Gemfile.lock",
+		"/home/leo/src/instore.idfly.ru/backend/config/initializers/extensions.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/config/local/up.sh",
+		"/home/leo/src/instore.idfly.ru/backend/app/models/project.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/documents_service.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/projects_service.rb",
+		"/home/leo/src/instore.idfly.ru/backend/config/locales/custom.ru.yml",
+		"/home/leo/src/instore.idfly.ru/backend/config/locales/ru.yml",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tabs/packing_slips/by_sets_distribution.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tabs/packing_slips/by_sets.slim",
+		"/home/leo/src/instore.idfly.ru/backend/app/controllers/web/projects_controller.rb",
+		"/home/leo/src/instore.idfly.ru/backend/app/views/web/projects/tabs/_packing_slips_with_distribution.html.haml",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tabs/distribution_by_addresses.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tabs/packing_slips/by_set.slim",
+		"/home/leo/src/instore.idfly.ru/backend/app/models/project/relations.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/project_tasks_service.rb",
+		"/home/leo/src/instore.idfly.ru/backend/app/models/contact/relations.rb",
+		"/home/leo/src/instore.idfly.ru/backend/app/models/task/relations.rb",
+		"/home/leo/src/instore.idfly.ru/backend/app/models/task_designer_comment.rb",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/show.slim",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/projects_controller.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/project_labels_controller.rb",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tabs/labels.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tabs/labels/labels.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tabs/labels_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/project_packing_slips_controller.rb",
+		"/home/leo/src/instore.idfly.ru/backend/app/helpers/projects_helper.rb",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tabs/labels/by_quantity.slim",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/projects_packing_slips_controller.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/controllers/projects_labels_controller.rb",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/index.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/show/left_sidebar.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/form.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/directives/chosen.coffee",
+		"/home/leo/src/instore.idfly.ru/backend/app/assets/javascripts/apps/ligo/controllers/modal_task.controller.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/directives/column_select.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/index/left_sidebar.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/directives/column_select.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tabs/tasks.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/directives/pagination.coffee",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/project_documents_service.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/service_error.rb",
+		"/home/leo/src/instore.idfly.ru/backend/app/models/user/scopes.rb",
+		"/home/leo/src/instore.idfly.ru/backend/app/models/user.rb",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tabs/history.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tabs/distribution_by_addresses_search_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tabs/distribution_by_addresses/search.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/build/views/projects/tabs/distribution_by_addresses/search.html",
+		"/home/leo/src/instore.idfly.ru/backend/app/views/web/projects/parts/_left_sidebar_filter.html.haml",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/project_distribution_service.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/project_distribution_report_service.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/project_distribution_print_service.rb",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/app.coffee",
+		"/home/leo/src/instore.idfly.ru/backend_v2/config/initializers/constants.rb",
+		"/home/leo/src/instore.idfly.ru/backend_v2/app/services/project_building_distributions_service.rb",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tasks/tabs/main/profile.slim",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tabs/distribution_files_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tabs/tasks_ctrl.coffee",
+		"/home/leo/src/instore.idfly.ru/backend/app/models/project_document.rb",
+		"/home/leo/src/instore.idfly.ru/backend/app/models/project_document/relations.rb"
 	],
 	"find":
 	{
@@ -739,6 +775,13 @@
 		"height": 102.0,
 		"where_history":
 		[
+			"",
+			"config/darius/",
+			"",
+			"*.rb",
+			"",
+			"backend/db",
+			"",
 			"*.coffee",
 			"*.haml",
 			"*.slim",
@@ -859,14 +902,7 @@
 			"",
 			"backend/",
 			"frontend/",
-			"vendor/2amigos/yii2-ckeditor-widget/presets/",
-			"/home/leo/.config/Dropbox/Server/reelsource.ru/vendor/2amigos/yii2-ckeditor-widget/",
-			"",
-			"Gpn/**.rb",
-			"GPN/**.rb",
-			"*.rb",
-			"",
-			"Gpn/**.erb"
+			"vendor/2amigos/yii2-ckeditor-widget/presets/"
 		]
 	},
 	"find_state":
@@ -874,6 +910,123 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"dev/unic",
+			"staging/unic",
+			"run-user-task",
+			"instore.dev1.idfly.ru",
+			"dev1.idfly.ru",
+			"dev1.idfly.ru.local",
+			"mysql.instore.staging.ligo.ru",
+			"instore.staging.ligo.ru",
+			"dev1.idfly.ru",
+			"instore-ligo-ru",
+			"dev1.idfly.ru",
+			"staging_instore.ligo.ru",
+			"public",
+			"working_dir: /app",
+			"development",
+			"instore_staging_ligo_ru",
+			"instore.ligo.ru",
+			"instore_ligo_ru",
+			"_staging",
+			"production",
+			"dev1.idfly.ru",
+			"_dev1_idfly_ru",
+			"dev1_idfly_ru",
+			"user_settings #{",
+			"setting not found",
+			"user setting not found",
+			"def create_xlsx",
+			"ids_for_sheets.each_with_index",
+			"Количество штук в коробке",
+			"= 'packing_slips'",
+			"'packing_sli",
+			"packing_sli",
+			"paking_sli",
+			"deleteXlsx",
+			"project_documents/delete",
+			"prawn",
+			"barby",
+			"bundle install",
+			"Barby",
+			"quantity, quantity",
+			"total",
+			"generate_pdf",
+			"DejaVuSans.ttf",
+			"@_http(",
+			"directions:",
+			"article:",
+			"ligo: ",
+			"provider_contractor",
+			"def self.",
+			"self.",
+			"distr_quantity",
+			"_recountTasksByQuantityAndBuilding",
+			"tasksBySets",
+			"taskGroup",
+			"by_complects",
+			"taskSort",
+			"Complect",
+			"LabelsFile",
+			"accept",
+			"Оформление магазина",
+			"'labels'",
+			"labels",
+			"def get_total",
+			"labels_files",
+			"с учетом распределения и доставки",
+			"box_quantity",
+			"Количество в коробке",
+			"currentTab = ",
+			"leftSideBarState = ",
+			"leftSideBarState",
+			"method: 'delete'",
+			"chosen=\"\"",
+			"Выбрать реги",
+			"project_responsible",
+			"def project_responsible",
+			"currentTab",
+			"def get_store_classes",
+			"get_showcase_sticker_type",
+			"select_pasting_method",
+			"Выбрать способ оклейки",
+			"showcaseStickerType",
+			"Выбрать регион",
+			"generate_distribution",
+			"Export.generate_distribution",
+			"def print",
+			"DISTRIBUTION_FILES_FOLDER",
+			"Количество",
+			"количество",
+			"def print_distributions",
+			"ng-model=\".*?quantity\"",
+			"| filter",
+			"@",
+			"createDocument",
+			"document_data",
+			"@project.project_documents.where(kind: 'certificate', project_building_distribution_id: @distribution.id)",
+			"createDocument",
+			"ProjectBuildingDistributionDateAndReceiver",
+			"desired_delivery_date",
+			"generate_distribution",
+			"create_distribution_sheet",
+			"desired_delivery_date",
+			"project_building_distributions",
+			"ProjectBuildingDistribution",
+			"building_distributions",
+			"ProjectBuildingDistribution",
+			"YAML.",
+			".input-wrapper",
+			"column.type === 'task'",
+			".currentTab =",
+			"distributions_columns",
+			"task_values",
+			"setInitialValues",
+			"DistributionDocuments",
+			"column.balance",
+			"distributionCtrl",
+			"column.balance",
+			"rendered",
 			"функциональная",
 			"функцональной",
 			"console.log",
@@ -884,124 +1037,7 @@
 			".string.optional.disabled",
 			"$scope|AngularClass",
 			"\"AngularClass\"",
-			"AngularClass",
-			".main-content",
-			"#main-content",
-			"project.notes",
-			"@_scope.$parent.project.notes",
-			"#sidebar-left",
-			"Сохранить",
-			"date",
-			"$rootScope",
-			"sidebar-left",
-			"sidebar-toggle",
-			"$rootScope.user",
-			".designer-name",
-			"John Doe",
-			"filterBy",
-			"material.selected = true",
-			"filterByMaterials",
-			"console.log",
-			"'labels'",
-			"/materials",
-			"print_square",
-			"projects/materials",
-			"materials_list_query_builder",
-			"sidebar-toggle",
-			"_filterByMaterials",
-			".roster-expanded",
-			".sidebar.",
-			".sidebar",
-			".content__column",
-			".content__column.main-content-wrapper",
-			"Проверено дизайнером",
-			"option value=\"\"",
-			"/status",
-			"checked_by_designer",
-			"downloadFile",
-			"copyToDesign",
-			"Копировать файл в печать",
-			"'client_front'",
-			"'client_file'",
-			"Дизайн (лицевая сторона)",
-			"Дизайн",
-			"ProjectsTasksShowCtrl",
-			"loadTask",
-			"'contractor'",
-			"\"CUT\"",
-			"'CUT'",
-			"by_measure",
-			"'_' + ",
-			"task_number",
-			"task_file_name",
-			"task_name",
-			"file_name",
-			"ProjectsTasksTabsFinancialCtrl",
-			"task_file_name",
-			"5__подставка__",
-			"Ошибка",
-			"openTask",
-			"@_ModalService",
-			"slim",
-			"slim-sc",
-			"select-all-tasks",
-			"input ng-click=\"selectAllTasks()\" ng-model=\"allTasksSelected\" type=\"checkbox\"",
-			"allTasksSelected",
-			"setStatus",
-			"changeStatus",
-			"set_status",
-			"_changeStatus",
-			"change_status",
-			"showRes",
-			"'",
-			"/status",
-			"ProjectsShowSelectMaterialModalCtrl",
-			"data-",
-			"aria-",
-			".ng-isolate-scope",
-			".ng-valid",
-			".ng-untouched",
-			".ng-pristine",
-			".entity-link",
-			".ui-resizable",
-			".ui-resizable-e",
-			".ui-resizable",
-			".ui-resizable-handle",
-			".ui-resizable",
-			"/!",
-			"/! ngRepeat",
-			"SelectMaterialGroupCtrl",
-			"showRes",
-			" на принтер",
-			"Скопир\\w+ на принтер",
-			"Скопир\\w + на принтер",
-			"Скопир\\w на принтер",
-			"Скопировано на принтер",
-			"left.html",
-			"ShowSidebar",
-			"projects/sidebars",
-			"MaterialsCtrl",
-			"NotesCtrl",
-			".form-section",
-			".removeng-scope",
-			"show/right",
-			"reservedMaterialsCtrl",
-			"Зарезервированные материалы",
-			"workbook.add_worksheet(name:",
-			"@_routeParams.id",
-			"reserved-materials",
-			"проекты:",
-			"ПРОЕКТЫ:",
-			"документы проекта",
-			"MessageService.show",
-			"setStatu",
-			"setStatus",
-			"TEST",
-			"ProjectNotification",
-			"setStatus",
-			"includes?",
-			"includes",
-			"rescue"
+			"AngularClass"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1030,19 +1066,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/home/leo/.config/balmora/conf.d/dotfiles-update.task.conf",
+					"file": "/home/leo/projects/personal/log.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2237,
+						"buffer_size": 17067,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								231,
-								231
+								1377,
+								1377
 							]
 						],
 						"settings":
@@ -1056,6 +1092,64 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/leo/.config/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 84,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								44,
+								44
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/leo/src/keepup.idfly.ru/backend/controllers/ContractorsController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2251,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1811,
+								1811
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1142,16 +1236,288 @@
 		"selected_items":
 		[
 			[
+				"staging/unic",
+				"backend_v2/config/staging/unicorn.rb"
+			],
+			[
+				"main.yml",
+				"config/local/main.yml"
+			],
+			[
+				"loca/uni",
+				"backend/config/local/unicorn.rb"
+			],
+			[
+				"conf/dev/data",
+				"backend_v2/config/dev/database.yml"
+			],
+			[
+				"up.sh",
+				"backend/config/local/up.sh"
+			],
+			[
+				"deply",
+				"config/darius/deploy-to-dev.task.yml"
+			],
+			[
+				"front/up",
+				"frontend_v2/config/local/up.sh"
+			],
+			[
+				"back_v2/deve/un",
+				"backend_v2/config/development/unicorn.rb"
+			],
+			[
+				"conf/dev/",
+				"config/dev/compose.yml"
+			],
+			[
+				"gul",
+				"frontend_v2/gulpfile.js"
+			],
+			[
+				"depl-tost",
+				"config/darius/deploy-to-staging.task.yml"
+			],
+			[
+				"dev/om",
+				"config/dev/compose.yml"
+			],
+			[
+				"dev/nginx",
+				"http/config/development/nginx.conf"
+			],
+			[
+				"depl",
+				"config/darius/deploy-to-dev.task.yml"
+			],
+			[
+				"depl-tde",
+				"config/darius/deploy-to-dev.task.yml"
+			],
+			[
+				"ba/data",
+				"backend/config/database.yml"
+			],
+			[
+				"stag/ng",
+				"http/config/staging/nginx.conf"
+			],
+			[
+				"stagin/com",
+				"config/staging/compose.yml"
+			],
+			[
+				"env/rp",
+				"backend/config/environments/production.rb"
+			],
+			[
+				"env/pr",
+				"backend/config/environments/production.rb"
+			],
+			[
+				"docker",
+				"backend_v2/.dockerignore"
+			],
+			[
+				"dockerfil",
+				"backend/config/development/Dockerfile"
+			],
+			[
+				"dar/depl",
+				"config/darius/deploy-to-development.task.yml"
+			],
+			[
+				"dar/",
+				"config/darius/deploy-branch-to-development.task.yml"
+			],
+			[
+				"conf/deve/data",
+				"backend/config/development/database.yml"
+			],
+			[
+				"lib/ap",
+				"backend/lib/api_columns.rb"
+			],
+			[
+				"frontend_v2/views/projects/tabs/packing_slips.slim",
+				"frontend_v2/views/projects/tabs/packing_slips.slim"
+			],
+			[
+				"frontend_v2/views/projects/tabs/packing_slips/by_quantity_distribution.slim",
+				"frontend_v2/views/projects/tabs/packing_slips/by_quantity_distribution.slim"
+			],
+			[
+				"projectdistributionscontroller",
+				"backend_v2/app/controllers/project_distributions_controller.rb"
+			],
+			[
+				"project_distributions",
+				"backend_v2/app/controllers/project_distributions_controller.rb"
+			],
+			[
+				"ass",
+				"frontend_v2/config/assets.json"
+			],
+			[
+				"gem",
+				"backend_v2/Gemfile"
+			],
+			[
+				"export",
+				"backend/app/models/export.rb"
+			],
+			[
+				"packslipser",
+				"backend_v2/app/services/packing_slips_service.rb"
+			],
+			[
+				"gemfile",
+				"backend/Gemfile"
+			],
+			[
+				"eport",
+				"backend/app/models/export.rb"
+			],
+			[
+				"ru.",
+				"backend/config/locales/ru.yml"
+			],
+			[
+				"label",
+				"frontend_v2/views/projects/tabs/labels.slim"
+			],
+			[
+				"labels",
+				"frontend_v2/views/projects/tabs/labels/labels.slim"
+			],
+			[
+				"chose",
+				"frontend_v2/src/directives/chosen.coffee"
+			],
+			[
+				"elft_se",
+				"frontend_v2/views/projects/index/left_sidebar.slim"
+			],
+			[
+				"pdas",
+				"backend_v2/app/services/project_distribution_acts_service.rb"
+			],
+			[
+				"pagin",
+				"frontend_v2/src/directives/pagination.coffee"
+			],
+			[
+				"projects_con",
+				"backend_v2/app/controllers/projects_controller.rb"
+			],
+			[
+				"hist.sli",
+				"frontend_v2/views/projects/tabs/history.slim"
+			],
+			[
+				"prdoser",
+				"backend_v2/app/services/project_documents_service.rb"
+			],
+			[
+				"_search.slim",
+				"frontend_v2/views/projects/tabs/distribution_by_addresses/search.slim"
+			],
+			[
+				"dis/sear",
+				"frontend_v2/views/projects/tabs/distribution_by_addresses/search.slim"
+			],
+			[
+				"v2/gem",
+				"backend_v2/Gemfile"
+			],
+			[
+				"export.rb",
+				"backend/app/models/export.rb"
+			],
+			[
+				"app",
+				"frontend_v2/src/app.coffee"
+			],
+			[
+				"tasks_ctr",
+				"frontend_v2/src/controllers/projects/tabs/tasks_ctrl.coffee"
+			],
+			[
+				"api/projects/projects/buildings",
+				"backend/app/controllers/api/projects/projects/buildings_controller.rb"
+			],
+			[
+				"distributiondocuments",
+				"backend/app/assets/javascripts/apps/ligo/factories/distribution_documents.factory.coffee"
+			],
+			[
+				"distr.slim",
+				"frontend_v2/views/projects/tabs/distribution_by_addresses.slim"
+			],
+			[
+				"projbuilidatea",
+				"backend/db/migrate/20160210104551_project_building_distribution_date_and_receiver.rb"
+			],
+			[
+				"sche",
+				"backend/db/schema.rb"
+			],
+			[
+				"waybil.slim",
+				"frontend_v2/views/projects/modals/create_waybill.slim"
+			],
+			[
+				"projec",
+				"backend_v2/app/controllers/projects_controller.rb"
+			],
+			[
+				"projeshow_ctr",
+				"frontend_v2/src/controllers/projects/tasks/show_ctrl.coffee"
+			],
+			[
+				"distr",
+				"frontend_v2/views/projects/tabs/distribution_by_addresses.slim"
+			],
+			[
+				"projectstabsdistributionbyaddressesctr",
+				"frontend_v2/src/controllers/projects/tabs/distribution_by_addresses_ctrl.coffee"
+			],
+			[
+				"tabs.slim",
+				"frontend_v2/views/projects/tabs/distribution_by_addresses.slim"
+			],
+			[
+				"projec_con",
+				"backend_v2/app/controllers/projects_controller.rb"
+			],
+			[
+				"distribution_by_addresses.slim",
+				"frontend_v2/views/projects/tabs/distribution_by_addresses.slim"
+			],
+			[
+				"database",
+				"backend/config/development/database.yml"
+			],
+			[
+				"pr_con",
+				"backend_v2/app/controllers/projects_controller.rb"
+			],
+			[
+				"nginx",
+				"http/config/development/nginx.conf"
+			],
+			[
+				"back",
+				"backend_v2/config/initializers/backtrace_silencers.rb"
+			],
+			[
 				"route",
 				"backend/config/routes.rb"
 			],
 			[
 				"routes",
 				"backend_v2/config/routes.rb"
-			],
-			[
-				"app",
-				"frontend_v2/src/app.coffee"
 			],
 			[
 				"pik",
@@ -1178,15 +1544,7 @@
 				"frontend_v2/css/main.css"
 			],
 			[
-				"ass",
-				"frontend_v2/config/assets.json"
-			],
-			[
 				"gulp",
-				"frontend_v2/gulpfile.js"
-			],
-			[
-				"gul",
 				"frontend_v2/gulpfile.js"
 			],
 			[
@@ -1218,10 +1576,6 @@
 				"frontend_v2/views/projects/show/left_sidebar.slim"
 			],
 			[
-				"nginx",
-				"http/config/development/nginx.conf"
-			],
-			[
 				"notes_",
 				"frontend_v2/src/controllers/projects/show/notes_sidebar_ctrl.coffee"
 			],
@@ -1248,10 +1602,6 @@
 			[
 				"modals",
 				"frontend_v2/views/projects/show/select_material_modal.slim"
-			],
-			[
-				"projec",
-				"backend_v2/app/controllers/projects_controller.rb"
 			],
 			[
 				"gin",
@@ -1326,10 +1676,6 @@
 				"frontend_v2/src/services/message_service.coffee"
 			],
 			[
-				"gem",
-				"backend/Gemfile"
-			],
-			[
 				"applcation.rb",
 				"backend/config/application.rb"
 			],
@@ -1390,10 +1736,6 @@
 				"backend/app/services/create_waybill.rb"
 			],
 			[
-				"export",
-				"backend/app/models/export.rb"
-			],
-			[
 				"create.sli",
 				"frontend_v2/views/projects/modals/create_waybill.slim"
 			],
@@ -1404,254 +1746,6 @@
 			[
 				"way",
 				"frontend_v2/views/projects/modals/create_waybill.slim"
-			],
-			[
-				"app.",
-				"frontend_v2/src/app.coffee"
-			],
-			[
-				"ser/rp",
-				"backend_v2/app/services/projects_service.rb"
-			],
-			[
-				"ser/wa",
-				"backend_v2/app/services/waybills_service.rb"
-			],
-			[
-				"services",
-				"backend_v2/app/services/service_error.rb"
-			],
-			[
-				"createwaybill",
-				"backend/app/services/create_waybill.rb"
-			],
-			[
-				"depl",
-				"config/darius/deploy-to-development.task.yml"
-			],
-			[
-				"bac/conf/database",
-				"backend_v2/config/development/database.yml"
-			],
-			[
-				"loca/main",
-				"config/local/main.yml"
-			],
-			[
-				"a",
-				"frontend_v2/config/assets.json"
-			],
-			[
-				"pro/show",
-				"frontend_v2/views/projects/show.slim"
-			],
-			[
-				"tasks_ctr",
-				"frontend_v2/src/controllers/projects/tabs/tasks_ctrl.coffee"
-			],
-			[
-				"pr/show.",
-				"frontend_v2/views/projects/show.slim"
-			],
-			[
-				"utils/mes",
-				"frontend_v2/src/controllers/utils/message_ctrl.coffee"
-			],
-			[
-				"message_ser",
-				"frontend_v2/src/services/message_service.coffee"
-			],
-			[
-				"up.sh",
-				"backend_v2/config/local/up.sh"
-			],
-			[
-				"main.yml",
-				"config/local/main.yml"
-			],
-			[
-				"prodoser",
-				"backend_v2/app/services/project_documents_service.rb"
-			],
-			[
-				"mess",
-				"frontend_v2/src/services/message_service.coffee"
-			],
-			[
-				"mes",
-				"frontend_v2/views/utils/message.slim"
-			],
-			[
-				"view/pr/task",
-				"frontend_v2/views/projects/tabs/tasks.slim"
-			],
-			[
-				"component/",
-				"frontend_v2/src/components/sidebar.coffee"
-			],
-			[
-				"tasks/inde",
-				"frontend_v2/src/controllers/projects/tasks/index_ctrl.coffee"
-			],
-			[
-				"tabs/fin",
-				"frontend_v2/views/projects/tasks/tabs/financial.slim"
-			],
-			[
-				"tabs/tasks",
-				"backend/app/views/web/projects/tabs/_tasks.html.haml"
-			],
-			[
-				"col_sele",
-				"frontend_v2/views/directives/column_select.slim"
-			],
-			[
-				"compon/side",
-				"frontend_v2/src/components/sidebar.coffee"
-			],
-			[
-				"column_select",
-				"backend/app/assets/javascripts/apps/ligo/directives/columns_select.directive.coffee"
-			],
-			[
-				"main.cs",
-				"backend/app/assets/stylesheets/components/main.css.sass"
-			],
-			[
-				"as",
-				"frontend_v2/config/assets.json"
-			],
-			[
-				"pr/tasks/ctr",
-				"frontend_v2/src/controllers/projects/tasks/index_ctrl.coffee"
-			],
-			[
-				"tasks_ctrl.coffee",
-				"frontend_v2/src/controllers/projects/tasks/index_ctrl.coffee"
-			],
-			[
-				"deplo",
-				"config/darius/deploy-to-development.task.yml"
-			],
-			[
-				"pr/tas/in_ctr",
-				"frontend_v2/src/controllers/projects/tasks/index_ctrl.coffee"
-			],
-			[
-				"mode",
-				"frontend_v2/views/projects/tasks/tabs/main/modes.slim"
-			],
-			[
-				"mdoe",
-				"frontend_v2/views/projects/tasks/tabs/main/modes.slim"
-			],
-			[
-				"task/show",
-				"frontend_v2/src/controllers/projects/tasks/show_ctrl.coffee"
-			],
-			[
-				"modes",
-				"frontend_v2/views/projects/tasks/tabs/main/modes.slim"
-			],
-			[
-				"main.sli",
-				"frontend_v2/views/projects/tasks/tabs/main.slim"
-			],
-			[
-				"task_con",
-				"backend_v2/app/controllers/tasks_controller.rb"
-			],
-			[
-				"main.slim",
-				"frontend_v2/views/projects/tasks/tabs/main/main.slim"
-			],
-			[
-				"fin_ctrl",
-				"frontend_v2/src/controllers/projects/tasks/tabs/financial_ctrl.coffee"
-			],
-			[
-				"showctr",
-				"frontend_v2/src/controllers/projects/tasks/show_ctrl.coffee"
-			],
-			[
-				"sche",
-				"backend/db/schema.rb"
-			],
-			[
-				"finan.",
-				"frontend_v2/views/projects/tasks/tabs/financial.slim"
-			],
-			[
-				"config/darius/deploy-to-development.task.yml",
-				"config/darius/deploy-to-development.task.yml"
-			],
-			[
-				"con/pro/show",
-				"frontend_v2/src/controllers/projects/tasks/show_ctrl.coffee"
-			],
-			[
-				"deploy-to-development.task.ym",
-				"config/darius/deploy-to-development.task.yml"
-			],
-			[
-				"fron/up",
-				"frontend_v2/config/local/up.sh"
-			],
-			[
-				"com/",
-				"config/local/main.yml"
-			],
-			[
-				"tasks/edit.h",
-				"backend/app/views/web/projects/tasks/edit.html.haml"
-			],
-			[
-				"sch",
-				"backend/db/schema.rb"
-			],
-			[
-				"models/task",
-				"backend/app/models/task.rb"
-			],
-			[
-				"sceh",
-				"backend/db/schema.rb"
-			],
-			[
-				"tasks",
-				"backend_v2/app/controllers/tasks_controller.rb"
-			],
-			[
-				"finan",
-				"frontend_v2/views/projects/tasks/tabs/financial.slim"
-			],
-			[
-				"dev/data",
-				"backend_v2/config/development/database.yml"
-			],
-			[
-				"deve/data",
-				"backend_v2/config/development/database.yml"
-			],
-			[
-				"client_files",
-				"frontend_v2/views/projects/tasks/tabs/client_files.slim"
-			],
-			[
-				"database",
-				"backend/config/database.yml"
-			],
-			[
-				"design_files",
-				"frontend_v2/views/projects/tasks/tabs/design_files.slim"
-			],
-			[
-				"clinet_files",
-				"frontend_v2/views/projects/tasks/tabs/client_files.slim"
-			],
-			[
-				"color_",
-				"backend_v2/app/controllers/task_color_probes_controller.rb"
 			]
 		],
 		"width": 0.0
@@ -1659,9 +1753,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
+		"last_filter": "bvk",
 		"selected_items":
 		[
+			[
+				"bvk",
+				"~/.config/sublime-text-3/Projects/bvk.idfly.sublime-workspace"
+			],
 			[
 				"ins",
 				"~/.config/sublime-text-3/Projects/instore.idfly.ru.sublime-project"
