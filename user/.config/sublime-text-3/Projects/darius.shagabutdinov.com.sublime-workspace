@@ -291,14 +291,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/home/leo/projects/personal/log.txt",
-			"settings":
-			{
-				"buffer_size": 6884,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -307,10 +299,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 179.0,
-		"last_filter": "",
+		"height": 400.0,
+		"last_filter": "sst",
 		"selected_items":
 		[
+			[
+				"sst",
+				"Set Syntax: Plain Text"
+			],
 			[
 				"ss2",
 				"KeymapEnhanced: set tab size - 2"
@@ -584,7 +580,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 496.0
+		"width": 556.0
 	},
 	"console":
 	{
@@ -634,19 +630,27 @@
 	],
 	"file_history":
 	[
-		"/home/leo/src/go/src/darius/dariusd/main.go",
+		"/home/leo/src/go/src/darius/config/local/docker-compose.yml",
+		"/home/leo/src/go/src/darius/.dockerignore",
 		"/home/leo/src/go/src/darius/dariusd/repo.go",
 		"/home/leo/src/go/src/darius/dariusd/server.go",
 		"/home/leo/src/go/src/darius/dariusd/state.go",
+		"/home/leo/src/go/src/darius/dariusd/main.go",
+		"/home/leo/src/go/src/github.com/shagabutdinov/shell/utils_test.go",
+		"/home/leo/src/go/src/github.com/shagabutdinov/shell/utils.go",
 		"/home/leo/src/go/src/darius/dariusd/utils.go",
-		"/home/leo/src/go/src/darius/cli/main_test.go",
-		"/home/leo/src/go/src/darius/cli/state.go",
+		"/home/leo/src/go/src/darius/config/local/config.yml",
+		"/home/leo/src/go/src/darius/config/local/up.sh",
+		"/home/leo/src/go/src/darius/config/local/app.dockerfile",
+		"/home/leo/src/go/src/darius/config/local/config.json",
 		"/home/leo/src/go/src/darius/state.go",
+		"/home/leo/src/go/src/darius/cli/state.go",
+		"/home/leo/src/go/src/darius/cli/test.go",
+		"/home/leo/projects/personal/log.txt",
+		"/home/leo/src/go/src/darius/cli/main_test.go",
 		"/home/leo/src/go/src/darius/cli/utils.go",
 		"/home/leo/src/go/src/darius/cli/run.go",
 		"/home/leo/src/go/src/github.com/shagabutdinov/shell/shell.go",
-		"/home/leo/src/go/src/github.com/shagabutdinov/shell/utils.go",
-		"/home/leo/src/go/src/darius/cli/test.go",
 		"/home/leo/src/go/src/darius/darius",
 		"/home/leo/src/go/src/darius/utils.go",
 		"/home/leo/src/go/src/darius/expression.go",
@@ -676,13 +680,10 @@
 		"/home/leo/src/go/src/darius/cli/main.go",
 		"/home/leo/src/go/src/darius/config.go",
 		"/home/leo/src/go/src/darius/config_test.go",
-		"/home/leo/src/go/src/darius/config/local/up.sh",
-		"/home/leo/projects/personal/log.txt",
 		"/home/leo/projects/idfly.ru/team.txt",
 		"/home/leo/.config/sublime-text-3/Projects/darius.shagabutdinov.com.sublime-project",
 		"/home/leo/src/go/src/darius/config/local/ssh.dockerfile",
 		"/home/leo/src/go/src/darius/config/local/.ssh/user",
-		"/home/leo/src/go/src/darius/config/local/docker-compose.yml",
 		"/home/leo/src/go/src/darius/config/local/.ssh/user.pub",
 		"/home/leo/src/shell/shell.go",
 		"/home/leo/src/shell/remote.go",
@@ -698,7 +699,6 @@
 		"/home/leo/src/go/src/github.com/shagabutdinov/shell/remote.go",
 		"/home/leo/src/go/src/github.com/shagabutdinov/shell/remote_test.go",
 		"/home/leo/src/go/src/github.com/shagabutdinov/shell/config/local/docker-compose.yml",
-		"/home/leo/src/go/src/darius/config/local/app.dockerfile",
 		"/home/leo/src/go/src/darius/config/local/shadow",
 		"/home/leo/src/go/src/github.com/fatih/color/color.go",
 		"/home/leo/src/go/src/bitbucket.org/shagabutdinov/darius/logger/output/functions.go",
@@ -757,11 +757,7 @@
 		"/home/leo/src/bvk.idfly.ru/main_frontend/.gitignore",
 		"/home/leo/src/bvk.idfly.ru/admin_frontend/.gitignore",
 		"/home/leo/src/bvk.idfly.ru/admin_frontend/tests/controllers/admins_ctrl_test.coffee",
-		"/home/leo/src/bvk.idfly.ru/admin_frontend/tests/controllers/admins_form_ctrl_test.coffee",
-		"/home/leo/src/bvk.idfly.ru/admin_frontend/tests/controllers/categories_ctrl_test.coffee",
-		"/home/leo/src/bvk.idfly.ru/admin_frontend/tests/controllers/categories_form_ctrl_test.coffee",
-		"/home/leo/src/bvk.idfly.ru/admin_frontend/tests/controllers/event_ctrl_test.coffee",
-		"/home/leo/src/bvk.idfly.ru/admin_frontend/tests/controllers/event_form_ctrl_test.coffee"
+		"/home/leo/src/bvk.idfly.ru/admin_frontend/tests/controllers/admins_form_ctrl_test.coffee"
 	],
 	"find":
 	{
@@ -864,6 +860,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"build",
 			"lineLimit",
 			"connecting to",
 			"utils utils",
@@ -990,8 +987,7 @@
 			"TestRunRunsResc",
 			"leo@balmora",
 			"TestRunRunsRuns",
-			"log.",
-			".log"
+			"log."
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1019,39 +1015,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/home/leo/projects/personal/log.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6884,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								827,
-								827
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1128,6 +1093,22 @@
 		"selected_items":
 		[
 			[
+				"utils",
+				"dariusd/utils.go"
+			],
+			[
+				"repo",
+				"dariusd/repo.go"
+			],
+			[
+				"com",
+				"config/local/docker-compose.yml"
+			],
+			[
+				"state.go",
+				"state.go"
+			],
+			[
 				"state",
 				"cli/state.go"
 			],
@@ -1190,10 +1171,6 @@
 			[
 				"state_mock",
 				"tasks/state_mock.go"
-			],
-			[
-				"utils",
-				"utils.go"
 			],
 			[
 				"tas/run",
@@ -1314,10 +1291,6 @@
 			[
 				"she",
 				"~/src/go/src/github.com/shagabutdinov/shell/shell.go"
-			],
-			[
-				"com",
-				"config/local/docker-compose.yml"
 			],
 			[
 				"do",
@@ -1630,14 +1603,6 @@
 			[
 				"crud",
 				"admin/controllers/CrudController.php"
-			],
-			[
-				"datasogo",
-				"data-saver/data_storage.go"
-			],
-			[
-				"counter.js",
-				"web/js/counter.js"
 			]
 		],
 		"width": 0.0
@@ -1645,9 +1610,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "ins",
+		"last_filter": "bi",
 		"selected_items":
 		[
+			[
+				"bi",
+				"~/.config/sublime-text-3/Projects/bi.idfly.sublime-workspace"
+			],
 			[
 				"ins",
 				"~/.config/sublime-text-3/Projects/instore.idfly.ru.sublime-project"
@@ -1655,10 +1624,6 @@
 			[
 				"bvk",
 				"~/.config/sublime-text-3/Projects/bvk.idfly.sublime-workspace"
-			],
-			[
-				"bi",
-				"~/.config/sublime-text-3/Projects/bi.idfly.sublime-workspace"
 			],
 			[
 				"uve",

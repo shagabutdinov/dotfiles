@@ -1640,9 +1640,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
+		"last_filter": "dar",
 		"selected_items":
 		[
+			[
+				"dar",
+				"~/.config/sublime-text-3/Projects/darius.shagabutdinov.com.sublime-project"
+			],
 			[
 				"bvk",
 				"~/.config/sublime-text-3/Projects/bvk.idfly.sublime-workspace"

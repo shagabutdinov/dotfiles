@@ -401,15 +401,8 @@ function
 		<content><![CDATA[
 ($1) ->
 	${0:$selection}
+
 ]]></content>
-		<commands>
-			[
-				{"command": "run_macro_file", "args": {
-					"file":"res://Packages/User/coffee/macro/expand_brackets_for_callback.sublime-macro"
-				}},
-				"RUN",
-			]
-		</commands>
 		<tabTrigger>j</tabTrigger>
 		<scope>source.coffee</scope>
 		<context><![CDATA[
@@ -426,15 +419,8 @@ function
 		<content><![CDATA[
 ($1) =>
 	${0:$selection}
+
 ]]></content>
-		<commands>
-			[
-				{"command": "run_macro_file", "args": {
-					"file":"res://Packages/User/coffee/macro/expand_brackets_for_callback.sublime-macro"
-				}},
-				"RUN",
-			]
-		</commands>
 		<tabTrigger>jj</tabTrigger>
 		<scope>source.coffee</scope>
 		<context><![CDATA[

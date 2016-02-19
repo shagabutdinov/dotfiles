@@ -32,6 +32,22 @@
 
 	<snippet>
 		<content><![CDATA[
+\$watch(${0:$selection__or__last_assigned_variable})
+]]></content>
+		<tabTrigger>w</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "(AngularClass|@_scope)"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "scope\\.w$"},
+			]
+		]]></context>
+		<description>angular: watch</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 @_scope.
 ]]></content>
 		<tabTrigger>@_scope</tabTrigger>
@@ -282,6 +298,22 @@ post($1)
 			]
 		]]></context>
 		<description>angular: define on scope</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+initialize: () ->
+	$1
+]]></content>
+		<tabTrigger>di</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "(AngularClass|@_scope)"},
+			]
+		]]></context>
+		<description>angular: define initialize</description>
 		<order>1</order>
 	</snippet>
 

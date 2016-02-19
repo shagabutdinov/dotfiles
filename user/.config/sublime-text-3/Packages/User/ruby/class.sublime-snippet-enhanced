@@ -22,6 +22,20 @@ end
 		<description>class</description>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+class $1Error < $2Error; end
+]]></content>
+		<tabTrigger>ce</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*ce$"},
+			]
+		]]></context>
+		<description>class</description>
+	</snippet>
+
 		<snippet>
 		<content><![CDATA[
 def $1 $2
