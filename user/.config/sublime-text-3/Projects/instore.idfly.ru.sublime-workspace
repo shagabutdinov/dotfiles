@@ -306,6 +306,40 @@
 				"buffer_size": 273,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"contents": "Searching 1245 files for \"Копировать\"\n\n/home/leo/src/instore.idfly.ru/backend/app/views/web/projects/tabs/_tasks.html.haml:\n   20        - if [1].include?(@obj.status) && (current_user.role?(:designer) || current_user.role?(:admin))\n   21          %li.dd-item\n   22:           = link_to 'Копировать выбранные дизайны', copy_designs_confirm_project_tasks_path(@obj.id), 'ng-click': 'copy_designs($event)'\n   23        %li.dd-item.has-nested\n   24          %span\n   ..\n   63        %i.icon\n   64  \n   65:     %a.toolbar-copy.toolbar-button(href=\"#{task_new_form_project_tasks_path(@obj.id)}\" ng-class=\"toggleButton('copy')\" ng-click=\"copy($event)\" title=\"Копировать\")\n   66        %i.icon\n   67  \n\n/home/leo/src/instore.idfly.ru/backend/app/views/web/projects/tasks/_client_files.html.haml:\n   10        = f.input :client_front_size, as: :flag\n   11        - if !@obj.client_front.current_path.nil?()\n   12:         %a{class: 'button copy-to-design', href: \"/projects/#{@obj.project_id}/tasks/#{@obj.id}/copy_to_design?from=client_front&to=design_front&quantity={{complete_set_number}}\"}= 'Копировать файл в печать'\n   13  \n   14    %section.form-section\n   ..\n   17        = f.input :client_back_size, as: :flag\n   18        - if !@obj.client_back.current_path.nil?()\n   19:         %a{class: 'button copy-to-design', href: \"/projects/#{@obj.project_id}/tasks/#{@obj.id}/copy_to_design?from=client_back&to=design_back&quantity={{complete_set_number}}\"}= 'Копировать файл в печать'\n   20  \n   21    %section.form-section\n\n/home/leo/src/instore.idfly.ru/backend/config/locales/custom.ru.yml:\n   39    December: 'декабря'\n   40    number: 'Номер'\n   41:   copy_designs: 'Копировать все дизайны'\n   42    go_to: 'Перейти'\n   43    for_production: 'Для производства'\n   ..\n  131    new:  'Добавить'\n  132    edit: 'Редактировать'\n  133:   copy: 'Копировать'\n  134    show: 'Обзор'\n  135    delete: 'Удалить'\n\nUnable to open ~/src/instore.idfly.ru/backend_v2/db\nUnable to open ~/src/instore.idfly.ru/backend_v2/config/database.yml\nUnable to open ~/src/instore.idfly.ru/backend_v2/config/environments\nUnable to open ~/src/instore.idfly.ru/backend_v2/config/secrets.yml\nUnable to open ~/src/instore.idfly.ru/backend_v2/lib/attachment_assets\nUnable to open ~/src/instore.idfly.ru/backend_v2/lib/templates\n/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/copy.slim:\n   20      .container-helper\n   21        .page-title\n   22:         | Проекты: Копировать\n   23        div ng-include=\"'assets/views/projects/form.html'\"\n\n/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/index.slim:\n   23            ul.dropdown-menu role=\"menu\"\n   24              li.dd-item ng-show=\"selectedProjects.length == 1\"\n   25:               a href=\"#\" ng-click=\"copyDesignFiles()\" title=\"Копировать все дизайны\"\n   26:                 | Копировать все дизайны\n   27              li.dd-item.has-nested ng-show=\"selectedProjects.length == 1\"\n   28                span\n   ..\n   66          a.toolbar-new.toolbar-button href=\"projects/new\" title=\"Добавить\"\n   67            i.icon\n   68:         a.toolbar-copy.toolbar-button href=\"\" ng-class=\"{disabled: selectedProjects.length != 1}\" ng-click=\"copy()\" title=\"Копировать\"\n   69            i.icon\n   70          a.toolbar-edit.toolbar-button href=\"#\" ng-class=\"{disabled: selectedProjects.length != 1}\" ng-click=\"edit()\" title=\"Редактировать\"\n\n/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tabs/tasks.slim:\n   81      ng-click=\"copy(selectedTasks[0])\"\n   82      href=\"#\"\n   83:     title=\"Копировать\"\n   84    }\n   85      i.icon\n\n/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tasks/tabs/client_files.slim:\n   62          type=\"button\"\n   63        }\n   64:         | Копировать файл в печать\n   65  \n   66  \n   ..\n  121          type=\"button\"\n  122        }\n  123:         | Копировать файл в печать\n  124  \n  125    section.form-section\n\n13 matches across 7 files\n\n\nSearching 1245 files for \"copy_to_design\"\n\n/home/leo/src/instore.idfly.ru/backend/app/controllers/web/projects/tasks_controller.rb:\n   71    end\n   72  \n   73:   def copy_to_design()\n   74      @task = @model.find(params[:task_id])\n   75      @task.start_copy(params[:from], params[:to], params[:quantity])\n\n/home/leo/src/instore.idfly.ru/backend/app/views/web/projects/tasks/_client_files.html.haml:\n   10        = f.input :client_front_size, as: :flag\n   11        - if !@obj.client_front.current_path.nil?()\n   12:         %a{class: 'button copy-to-design', href: \"/projects/#{@obj.project_id}/tasks/#{@obj.id}/copy_to_design?from=client_front&to=design_front&quantity={{complete_set_number}}\"}= 'Копировать файл в печать'\n   13  \n   14    %section.form-section\n   ..\n   17        = f.input :client_back_size, as: :flag\n   18        - if !@obj.client_back.current_path.nil?()\n   19:         %a{class: 'button copy-to-design', href: \"/projects/#{@obj.project_id}/tasks/#{@obj.id}/copy_to_design?from=client_back&to=design_back&quantity={{complete_set_number}}\"}= 'Копировать файл в печать'\n   20  \n   21    %section.form-section\n\n/home/leo/src/instore.idfly.ru/backend/config/routes.rb:\n  278            post(:upload_file)\n  279  \n  280:           get(:copy_to_design)\n  281  \n  282            get :task_edit_form\n\nUnable to open ~/src/instore.idfly.ru/backend_v2/db\nUnable to open ~/src/instore.idfly.ru/backend_v2/config/database.yml\nUnable to open ~/src/instore.idfly.ru/backend_v2/config/environments\nUnable to open ~/src/instore.idfly.ru/backend_v2/config/secrets.yml\nUnable to open ~/src/instore.idfly.ru/backend_v2/lib/attachment_assets\nUnable to open ~/src/instore.idfly.ru/backend_v2/lib/templates\n/home/leo/src/instore.idfly.ru/frontend_v2/src/controllers/projects/tasks/tabs/client_files_ctrl.coffee:\n  118      # @todo make v2 controller for this\n  119      url = '/projects/' + task.project_id + '/tasks/' + task.id +\n  120:       '/copy_to_design?from=' + from + '&to=' + to + '&quantity=' +\n  121        task.quantity\n  122  \n\n5 matches across 4 files\n\n\nSearching 1245 files for \"def start_copy\"\n\n/home/leo/src/instore.idfly.ru/backend/app/models/task.rb:\n  258    end\n  259  \n  260:   def start_copy(from, to, quantity = nil)\n  261      _check_copy_fields(from, to)\n  262  \n\nUnable to open ~/src/instore.idfly.ru/backend_v2/db\nUnable to open ~/src/instore.idfly.ru/backend_v2/config/database.yml\nUnable to open ~/src/instore.idfly.ru/backend_v2/config/environments\nUnable to open ~/src/instore.idfly.ru/backend_v2/config/secrets.yml\nUnable to open ~/src/instore.idfly.ru/backend_v2/lib/attachment_assets\nUnable to open ~/src/instore.idfly.ru/backend_v2/lib/templates\n1 match in 1 file\n",
+			"settings":
+			{
+				"buffer_size": 6627,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "/home/leo/src/instore.idfly.ru/backend/app/models/task.rb",
+			"settings":
+			{
+				"buffer_size": 17913,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/leo/src/instore.idfly.ru/backend/app/controllers/web/projects/tasks_controller.rb",
+			"settings":
+			{
+				"buffer_size": 13921,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tasks/tabs/client_files.slim",
+			"settings":
+			{
+				"buffer_size": 11029,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -938,6 +972,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"def start_copy",
+			"copy_to_design",
+			"Копировать",
 			"\n+",
 			"def get_project_folder",
 			"get_project_folder",
@@ -1062,10 +1099,7 @@
 			"deleteXlsx",
 			"project_documents/delete",
 			"prawn",
-			"barby",
-			"bundle install",
-			"Barby",
-			"quantity, quantity"
+			"barby"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1089,7 +1123,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -1119,7 +1153,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -1149,7 +1183,7 @@
 						"translation.y": 300.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -1177,7 +1211,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -1205,7 +1239,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -1233,7 +1267,216 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6627,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										288,
+										298
+									],
+									[
+										653,
+										663
+									],
+									[
+										1088,
+										1098
+									],
+									[
+										1454,
+										1464
+									],
+									[
+										1667,
+										1677
+									],
+									[
+										1840,
+										1850
+									],
+									[
+										2444,
+										2454
+									],
+									[
+										2773,
+										2783
+									],
+									[
+										2822,
+										2832
+									],
+									[
+										3192,
+										3202
+									],
+									[
+										3533,
+										3543
+									],
+									[
+										3724,
+										3734
+									],
+									[
+										3832,
+										3842
+									],
+									[
+										4090,
+										4104
+									],
+									[
+										4538,
+										4552
+									],
+									[
+										4906,
+										4920
+									],
+									[
+										5179,
+										5193
+									],
+									[
+										5872,
+										5886
+									],
+									[
+										6127,
+										6141
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								6124,
+								6124
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 3,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2085.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/home/leo/src/instore.idfly.ru/backend/app/models/task.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17913,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10881,
+								10650
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4151.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/leo/src/instore.idfly.ru/backend/app/controllers/web/projects/tasks_controller.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13921,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2274,
+								2274
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 746.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/home/leo/src/instore.idfly.ru/frontend_v2/views/projects/tasks/tabs/client_files.slim",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11029,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2127,
+								2127
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby Slim/Syntaxes/Ruby Slim.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 611.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
