@@ -59,6 +59,25 @@ collect(${1:$selection__or__last_assigned_variable})
 
 	<snippet>
 		<content><![CDATA[
+chain(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "insert", "args": {"characters": "_."},
+					"context": [{"key": "preceding_128_chars_begin",
+					"operator": "not_regex_contains", "operand": "\\.\\s*$"}]},
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>uch</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>underscore: chain</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 reduce(${1:$selection__or__last_assigned_variable})
 ]]></content>
 		<commands>

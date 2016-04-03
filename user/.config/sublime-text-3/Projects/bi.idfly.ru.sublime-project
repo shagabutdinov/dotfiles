@@ -12,8 +12,13 @@
 				"frontend/build",
 				"frontend/vendor",
 				"frontend/fonts",
+				"frontend/css/vendor",
 				"import",
-				"websocket",
+				"import/go",
+				"import/vendor",
+				"stream",
+				"stream/go",
+				"stream/vendor",
 				"mysql",
 				"cassandra",
 				"data",
@@ -22,6 +27,6 @@
 		}
 	],
 	"settings": {
-		"mysql": ["mysql", "-h", "127.0.0.1", "-u", "root", "--table", "development"],
+		"mysql": ["mysql", "-h", "127.0.0.1", "-u", "root", "--table", "database"],
 	},
 }

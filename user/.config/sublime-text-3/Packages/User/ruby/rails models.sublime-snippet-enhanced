@@ -98,6 +98,26 @@ has_many :$1
 
 	<snippet>
 		<content><![CDATA[
+belongs_to :$1
+]]></content>
+		<commands>
+			[
+				{"command": "ensure_space_before"},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>bt</tabTrigger>
+		<scope>source\.ruby\s*$</scope>
+		<context>
+			[
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+			]
+		</context>
+		<description>rails models: belongs to</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 where($1)
 ]]></content>
 		<tabTrigger>w</tabTrigger>

@@ -1,0 +1,1803 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"data",
+				"datasets"
+			],
+			[
+				"dat",
+				"datasets"
+			],
+			[
+				"Expa",
+				"ExpandEnv	string ƒ"
+			],
+			[
+				"Std",
+				"Stdout	*os.File ν"
+			],
+			[
+				"da",
+				"datasets_csvs"
+			],
+			[
+				"wi",
+				"widget_texts"
+			],
+			[
+				"add",
+				"addError"
+			],
+			[
+				"Up",
+				"updateUserStatistic	error ƒ"
+			],
+			[
+				"html",
+				"htmlspecialchars"
+			],
+			[
+				"Q",
+				"QueryRow	*sql.Row ƒ"
+			],
+			[
+				"con",
+				"connection	Connection ν"
+			],
+			[
+				"Use",
+				"UserId	int ν"
+			],
+			[
+				"getVa",
+				"getValidSqlPart"
+			],
+			[
+				"err",
+				"error_reporting"
+			],
+			[
+				"Par",
+				"ParseInt	i int64, err error ƒ"
+			],
+			[
+				"For",
+				"FormValue	string ƒ"
+			],
+			[
+				"OfferRe",
+				"OfferResult	struct ʈ"
+			],
+			[
+				"Fo",
+				"FormValue	string ƒ"
+			],
+			[
+				"Blo",
+				"BlockCallType	string ν"
+			],
+			[
+				"Process",
+				"ProcessShow	error ƒ"
+			],
+			[
+				"N",
+				"NullString	struct ʈ"
+			],
+			[
+				"Nu",
+				"NullString	struct ʈ"
+			],
+			[
+				"Print",
+				"Println	 ƒ"
+			],
+			[
+				"Form",
+				"FormatInt	string ƒ"
+			],
+			[
+				"get",
+				"getElementsByClassName"
+			],
+			[
+				"http",
+				"httpRequest"
+			],
+			[
+				"Wr",
+				"WriteHeader	 ƒ"
+			],
+			[
+				"Ro",
+				"Rows	struct ʈ"
+			],
+			[
+				"qu",
+				"QueryRow	*sql.Row ƒ"
+			],
+			[
+				"code",
+				"codeId	int ν"
+			],
+			[
+				"pu",
+				"publishOfferRequest	error ƒ"
+			],
+			[
+				"Int31",
+				"Int31n	int32 ƒ"
+			],
+			[
+				"Un",
+				"UnixNano	int64 ƒ"
+			],
+			[
+				"tar",
+				"targetGetInt	int ƒ"
+			],
+			[
+				"testDb",
+				"testDbGetInteger	int ƒ"
+			],
+			[
+				"im",
+				"import	import (...) ʂ"
+			],
+			[
+				"ProcessOffer",
+				"ProcessOfferLikeAction	error ƒ"
+			],
+			[
+				"d",
+				"targetDataConnection	*sql.DB ν"
+			],
+			[
+				"De",
+				"Delivery	struct ʈ"
+			],
+			[
+				"am",
+				"amqpChannel	*amqp.Channel ν"
+			],
+			[
+				"amqp",
+				"amqpConnection	*amqp.Connection ν"
+			],
+			[
+				"a",
+				"UserAgent	string ƒ"
+			],
+			[
+				"re",
+				"result	sql.Result ν"
+			],
+			[
+				"q",
+				"QueueDeclare	amqp.Queue, error ƒ"
+			],
+			[
+				"Unix",
+				"UnixNano	int64 ƒ"
+			],
+			[
+				"No",
+				"Now	time.Time ƒ"
+			],
+			[
+				"new",
+				"NewSource	rand.Source ƒ"
+			],
+			[
+				"Pr",
+				"Print	 ƒ"
+			],
+			[
+				"Status",
+				"StatusInternalServerError	 Ɩ"
+			],
+			[
+				"write",
+				"WriteHeader	 ƒ"
+			],
+			[
+				"ur",
+				"RequestURI	string ν"
+			],
+			[
+				"if",
+				"if	if-html"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"pregma",
+				"preg_match"
+			],
+			[
+				"http_b",
+				"http_build_url"
+			],
+			[
+				"_SE",
+				"_SESSION"
+			],
+			[
+				"i",
+				"i	if … end"
+			],
+			[
+				"r",
+				"r	r return"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"last_filter": "sst",
+		"selected_items":
+		[
+			[
+				"sst",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"sste",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"ssryb",
+				"Set Syntax: Ruby"
+			],
+			[
+				"ss2",
+				"KeymapEnhanced: set tab size - 2"
+			],
+			[
+				"ssjs",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"sstext",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"uniq",
+				"Permute Lines: Unique"
+			],
+			[
+				"sort",
+				"Sort Lines"
+			],
+			[
+				"sshtml",
+				"Set Syntax: HTML"
+			],
+			[
+				"ss2	",
+				"KeymapEnhanced: set tab size - 2"
+			],
+			[
+				"goto",
+				"GotoDefinitionEnhanced: Goto definition"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"das",
+				"Convert Case: dash-case"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove",
+				"Snippet: removeClass"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"bas",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"form",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"forma",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"xml	",
+				"Set Syntax: XML"
+			],
+			[
+				"ml",
+				"Move Tab: To last position"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"tabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"relo",
+				"Snippet Enhanced: Reload snippets"
+			],
+			[
+				"dash",
+				"Convert Case: dash-case"
+			],
+			[
+				"reload",
+				"Snippet Enhanced: Reload snippets"
+			],
+			[
+				"cam",
+				"Convert Case: camelCase"
+			],
+			[
+				"sscss",
+				"Set Syntax: CSS"
+			],
+			[
+				"css",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"camel",
+				"Convert Case: camelCase"
+			],
+			[
+				"bash",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"format json",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"format js",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"q",
+				"Snippet: q jquery"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"js",
+				"Set Syntax: JSON"
+			],
+			[
+				"ss css",
+				"Set Syntax: CSS"
+			],
+			[
+				"slim",
+				"Set Syntax: Ruby Slim"
+			],
+			[
+				"isntall",
+				"Package Control: Install Package"
+			],
+			[
+				"mar",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"vash",
+				"EvalSelection: Show evaluation history"
+			],
+			[
+				"markex",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"movelast",
+				"Method: Move method to last"
+			],
+			[
+				"move metholast",
+				"Method: Move method to last"
+			],
+			[
+				"",
+				""
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"prett",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"wra",
+				"HTML: Wrap Selection With Tag"
+			],
+			[
+				"SQL",
+				"Set Syntax: SQL"
+			],
+			[
+				"local",
+				"Local History: Browse"
+			],
+			[
+				"hist",
+				"Local History: Open"
+			],
+			[
+				"jsfor",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"if",
+				"Snippet: if"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"wrap",
+				"HTML: Wrap Selection With Tag"
+			],
+			[
+				"upgra",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"upgr",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"ifn",
+				"Snippet: in if not"
+			],
+			[
+				"purl",
+				"Snippet: pu package get url"
+			],
+			[
+				"url",
+				"Snippet: pu package get url"
+			],
+			[
+				"synhtml",
+				"Set Syntax: HTML"
+			],
+			[
+				"isntal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 556.0
+	},
+	"console":
+	{
+		"height": 559.0,
+		"history":
+		[
+			"sublime.log_commands(True);",
+			"sublime.log_commands(False);",
+			"sublime.log_commands(True);",
+			"sublime.log_commands(False);",
+			"sublime.log_commands(True);",
+			"re.search('(a)|(A)', 'AAAaaa').start(1)",
+			"re.search('(a)|(A)', 'AAAaaa').group(1)",
+			"re.search('(a)(A)', 'AAAaaa').group(1)",
+			"import re",
+			"sublime.log_commands(True);",
+			"print(__file__);",
+			"print(persist.errors)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.find_resources('*.sublime-snippet')",
+			"sublime.find_reosources('*.sublime-snippet')",
+			"sublime.active_window()",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/leo/src/bi.idfly.ru/frontend/js/directives/resource_list_status.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/app/routes.coffee",
+		"/home/leo/.config/sublime-text-3/Local/Session.sublime_session",
+		"/home/leo/src/bi.idfly.ru/frontend/js/controllers/dashboards/list_ctrl.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/controllers/dashboards/view_ctrl.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/result_handler.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/directives/resource_status.coffee",
+		"/home/leo/.config/sublime-text-3/Projects/bi.idfly.ru.sublime-project",
+		"/home/leo/src/bi.idfly.ru/frontend/js/app/services.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/util/result_handler.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/app/directives.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/gulpfile.js",
+		"/home/leo/src/bi.idfly.ru/frontend/js/directives/datasets/data.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/config/assets.json",
+		"/home/leo/src/bi.idfly.ru/frontend/package.json",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/model.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/dataset.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widgets/dataset_helper.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/controllers/datasets/view_ctrl.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/controllers/datasets/create_ctrl.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/util.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/util/resource_list_status.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/util/resource_status.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/util/model.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/file.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/controllers/users.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/app/controllers.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/controllers/datasets.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widgets.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/controllers/dataset/create_ctrl.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/datasets.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/resource.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/dashboard.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/dashboard/view_ctrl.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/dashboards.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/dashboard/create_ctrl.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/dashboard/edit_ctrl.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/dashboard/list_ctrl.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/dashboards.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/dashboard.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/dashboard/widget_add_ctrl.coffee",
+		"/home/leo/projects/personal/log.txt",
+		"/home/leo/src/bi.idfly.ru/frontend/js/controllers/users/login_ctrl.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/controllers/users/signup_ctrl.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/user/signup_ctrl.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/user/logout_ctrl.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/user/login_ctrl.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/table.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widgets/text/render.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/table.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widgets/line/factory.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widgets/pie/factory.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widgets/table/factory.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widgets/text/factory.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widgets/bar/factory.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/controllers/widgets/create_ctrl.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/stream.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widgets/table/render.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widgets/render_helper.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widgets/bar/render.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widgets/line/render.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widgets/pie/render.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/widget.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widget/bar/factory.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widget/bar.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widget/line.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widget/pie.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widget/table.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widget/text.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widget/table/factory.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widget/table/render.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widget/table/editor.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widget/bar/render.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widget/bar/editor.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widget/line/factory.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widget/line/render.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widget/line/editor.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widget/text/factory.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widget/text/render.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widget/text/editor.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widget/pie/factory.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widget/pie/render.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/widget/pie/editor.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/widget/table/factory.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/widget/text/factory.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/widget/pie/factory.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/widget/line/factory.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/widget/bar/factory.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/widget/bar/editor.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/lib/widget/dataset_helper.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/views/widgets/list.slim",
+		"/home/leo/src/bi.idfly.ru/frontend/js/controllers/widgets/list_ctrl.coffee",
+		"/home/leo/src/bi.idfly.ru/backend/app/models/widget.rb",
+		"/home/leo/src/bi.idfly.ru/frontend/js/controllers/dataset/view_ctrl.coffee",
+		"/home/leo/src/bi.idfly.ru/config/local/main.yml",
+		"/home/leo/src/bi.idfly.ru/frontend/views/datasets/view.slim",
+		"/home/leo/src/bi.idfly.ru/frontend/views/datasets/list.slim",
+		"/home/leo/src/bi.idfly.ru/frontend/views/datasets/create.slim",
+		"/home/leo/src/bi.idfly.ru/frontend/js/services/service.coffee",
+		"/home/leo/src/bi.idfly.ru/backend/typescript",
+		"/home/leo/src/bi.idfly.ru/import/src/main.go",
+		"/home/leo/src/bi.idfly.ru/stream/src/main.go",
+		"/home/leo/src/bi.idfly.ru/import/src/job.go",
+		"/home/leo/src/bi.idfly.ru/import/config/local/guardfile",
+		"/home/leo/src/bi.idfly.ru/import/src/state.go",
+		"/home/leo/src/bi.idfly.ru/backend/db/seeds.rb",
+		"/home/leo/src/bi.idfly.ru/stream/config/local/guardfile",
+		"/home/leo/src/bi.idfly.ru/backend/db/migrate/20151214074200_datasets.rb",
+		"/home/leo/src/bi.idfly.ru/backend/app/models/file_model.rb",
+		"/home/leo/src/bi.idfly.ru/backend/config/application.rb",
+		"/home/leo/src/bi.idfly.ru/backend/config/local/up.sh",
+		"/home/leo/src/bi.idfly.ru/backend/config/database.yml",
+		"/home/leo/src/bi.idfly.ru/backend/config/initializers/redis.rb",
+		"/home/leo/src/bi.idfly.ru/import/config/local/up.sh",
+		"/home/leo/src/bi.idfly.ru/stream/config/local/up.sh",
+		"/home/leo/src/bi.idfly.ru/stream/src/server.go",
+		"/home/leo/src/bi.idfly.ru/stream/src/state.go",
+		"/home/leo/src/bi.idfly.ru/backend/app/controllers/datasets_controller.rb",
+		"/home/leo/src/bi.idfly.ru/backend/app/models/dataset.rb",
+		"/home/leo/src/bi.idfly.ru/backend/app/models/dataset_csv.rb",
+		"/home/leo/src/bi.idfly.ru/frontend/views/datasets/data.slim",
+		"/home/leo/src/bi.idfly.ru/frontend/js/controllers/dataset/list_ctrl.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/js/app/utilities.coffee",
+		"/home/leo/src/bi.idfly.ru/backend/config/routes.rb",
+		"/home/leo/src/angular-class-coffee/angular-class.coffee",
+		"/home/leo/src/bi.idfly.ru/frontend/node_modules/angular-class-coffee/angular-class.coffee",
+		"/home/leo/src/bi.idfly.ru/import/src/logger.go",
+		"/home/leo/src/bi.idfly.ru/http/config/local/nginx.conf"
+	],
+	"find":
+	{
+		"height": 24.0
+	},
+	"find_in_files":
+	{
+		"height": 102.0,
+		"where_history":
+		[
+			"",
+			"stream/src/",
+			"import/src/",
+			"",
+			"import/src/",
+			"",
+			"stream/src/",
+			"",
+			"/home/leo/.config/sublime-text-3/Packages/User/coffee/",
+			"",
+			"backend/db/migrate/",
+			"*.coffee",
+			"*.rb",
+			"*.html",
+			"*.rb,*.coffee",
+			"",
+			"backend/app/assets/stylesheets/",
+			"",
+			"*.go",
+			"*.js",
+			"*.go",
+			"*.rb",
+			"*.js",
+			"",
+			"*.go",
+			"",
+			"data-processor/",
+			"",
+			"/",
+			"data-saver/",
+			"data-processor/",
+			"",
+			"*.go",
+			"*.php",
+			"*.go",
+			"*.php",
+			"*.go",
+			"*.php",
+			"*.go",
+			"*.php",
+			"*.go",
+			"",
+			"/home/leo/.config/sublime-text-3/Packages/",
+			"",
+			"*.js",
+			"*.go",
+			".go",
+			"",
+			"*.php",
+			"",
+			"vendor/",
+			"",
+			"/home/leo/.config/sublime-text-3/Packages/User/js/",
+			"",
+			"config/",
+			"",
+			"*.php, *.js",
+			"",
+			"frontend/",
+			"",
+			"*.js",
+			"",
+			"backend/views/",
+			"",
+			"frontend/view/**",
+			"**/view/**",
+			"",
+			"*.js",
+			"",
+			"backend/",
+			"frontend/",
+			"vendor/2amigos/yii2-ckeditor-widget/presets/",
+			"/home/leo/.config/Dropbox/Server/reelsource.ru/vendor/2amigos/yii2-ckeditor-widget/",
+			"",
+			"Gpn/**.rb",
+			"GPN/**.rb",
+			"*.rb",
+			"",
+			"Gpn/**.erb",
+			"Gpn/",
+			"",
+			"*.erb",
+			"*.rb",
+			"*.erb",
+			"",
+			"*.yml",
+			"",
+			"Gpn/",
+			"Gpn/**.rb",
+			"Gpn/",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"LogoutCtrl",
+			"UsersLogoutCtrl",
+			"Util.ResultHandler",
+			"ResultHandler",
+			"DashboardsListCtrl",
+			"ResourceListStatus",
+			"roboto-fonts",
+			".getData",
+			"$then",
+			"App.Resource",
+			"getKinds",
+			".attributes",
+			"attributes",
+			"$rootScope",
+			"UserLoginCtrl",
+			"decodePoint",
+			"app.Table",
+			"appTable",
+			"instanceof @table.Error",
+			"Factory', @class()",
+			"createEditor: (scope)",
+			"@class)",
+			"@_DatasetHelper",
+			"'DatasetHelper'",
+			"DatasetHelper",
+			"pp.Widget.Ren",
+			"idget.DatasetHelper",
+			"DatasetHelper",
+			"App.Widget.",
+			"RenderError",
+			"Dataset",
+			"dataset",
+			"'dataset'",
+			"Widgets",
+			"WidgetListCtrl",
+			"development",
+			"dataset.item",
+			"dataset",
+			"datasets",
+			"'redis.bi.local:6379'",
+			"'redis://redis.bi.local:6379'",
+			"'cassandra.bi.local'",
+			"CASSANDRA_DATABASE: 'development'",
+			"development",
+			"BI_STREAM",
+			"BI_IMPORT",
+			"log.",
+			"notice: ",
+			"notice:",
+			"State",
+			"*Handler",
+			"State",
+			"log.",
+			"dataset.data",
+			"csv_attributes",
+			"_delete_data",
+			"Datasets",
+			"Dataset",
+			"_Dataset",
+			"subscribe",
+			"$BI_IMPORT",
+			"Logger",
+			"websocket",
+			" $",
+			"app",
+			"--config",
+			"Process",
+			"state.",
+			"redisData",
+			"state.",
+			"Redis",
+			"Process",
+			"Start",
+			"State",
+			"\"",
+			"STREAM",
+			"config.Redis",
+			"Cassandra.",
+			"State",
+			".Config",
+			"GetConfig",
+			"redisHost",
+			"BI_STREAM_REDIS_HOST",
+			"Secret",
+			"Listen",
+			"websocket",
+			"'TEST'",
+			"dataset_csvcsv",
+			"result.errors",
+			"_scope.result",
+			"@_connection",
+			"'webSocket'",
+			"webSocket",
+			"src/",
+			"js/",
+			"css/",
+			"js/",
+			"webscocket",
+			"dataset._errors",
+			">j<",
+			"then",
+			"App.Dataset",
+			"dataset_kind",
+			"#dataset_kind",
+			"Файл",
+			"pk_and_sequence_for",
+			"file_name",
+			"main.bvk.idfly",
+			"#csv_file",
+			",",
+			"akito@",
+			"ClusterConfig",
+			"import",
+			".kind",
+			"dataset",
+			"Добавить виджет",
+			"Type",
+			"unknown message type",
+			"types",
+			"dataset_type",
+			"/types",
+			"root:password",
+			"widgets_texts",
+			".$save",
+			"nested",
+			"accept_",
+			")}",
+			".form-group.form-material"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Factory', @factory()",
+			"@_WidgetsDatasetHelper",
+			"'WidgetsDatasetHelper'",
+			"App.Widgets.",
+			"CodeInfo",
+			"offer_code_statistic",
+			"partner/code/index",
+			"partner",
+			"src=\"../content/",
+			"\\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 25.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.9o:///home/leo/server/9fine.idfly.ru/data-processor":
+	{
+		"height": 104.0
+	},
+	"output.9o:///home/leo/src/idfly-deploy":
+	{
+		"height": 104.0
+	},
+	"output.GoSublime-main-output":
+	{
+		"height": 104.0
+	},
+	"output.exec":
+	{
+		"height": 104.0
+	},
+	"output.find_results":
+	{
+		"height": 86.0
+	},
+	"output.gotools_syntax_errors":
+	{
+		"height": 98.0
+	},
+	"output.run_mysql_query_result":
+	{
+		"height": 696.0
+	},
+	"pinned_build_system": "",
+	"project": "bi.idfly.ru.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"resour",
+				"frontend/js/directives/resource_list_status.coffee"
+			],
+			[
+				"ass",
+				"frontend/config/assets.json"
+			],
+			[
+				"gule",
+				"frontend/gulpfile.js"
+			],
+			[
+				"model.coff",
+				"frontend/js/services/model.coffee"
+			],
+			[
+				"file",
+				"frontend/js/services/file.coffee"
+			],
+			[
+				"controll",
+				"frontend/js/app/controllers.coffee"
+			],
+			[
+				"ser/datase",
+				"frontend/js/services/datasets.coffee"
+			],
+			[
+				"app/r",
+				"frontend/js/app/routes.coffee"
+			],
+			[
+				"user/log",
+				"frontend/js/lib/user/login_ctrl.coffee"
+			],
+			[
+				"wid/create",
+				"frontend/js/controllers/widgets/create_ctrl.coffee"
+			],
+			[
+				"strea",
+				"frontend/js/services/stream.coffee"
+			],
+			[
+				"serv",
+				"frontend/js/app/services.coffee"
+			],
+			[
+				"table/redn",
+				"frontend/js/services/widgets/table/render.coffee"
+			],
+			[
+				"widgets.coff",
+				"frontend/js/services/widgets.coffee"
+			],
+			[
+				"bar/fa",
+				"frontend/js/services/widget/bar/factory.coffee"
+			],
+			[
+				"widgettablefactory",
+				"frontend/js/services/widget/table/factory.coffee"
+			],
+			[
+				"widgetbarfactory",
+				"frontend/js/services/widget/bar/factory.coffee"
+			],
+			[
+				"widgetlinefactory",
+				"frontend/js/services/widget/line/factory.coffee"
+			],
+			[
+				"wi/text/fa",
+				"frontend/js/services/widget/text/factory.coffee"
+			],
+			[
+				"services",
+				"frontend/js/app/services.coffee"
+			],
+			[
+				"wid/te/fa",
+				"frontend/js/lib/widget/table/factory.coffee"
+			],
+			[
+				"bar/edi",
+				"frontend/js/lib/widget/bar/editor.coffee"
+			],
+			[
+				"datasethelp",
+				"frontend/js/lib/widget/dataset_helper.coffee"
+			],
+			[
+				"widgetslistctrl",
+				"frontend/js/controllers/widgets/list_ctrl.coffee"
+			],
+			[
+				"wid/list",
+				"frontend/views/widgets/list.slim"
+			],
+			[
+				"data/cre_ctr",
+				"frontend/js/controllers/dataset/create_ctrl.coffee"
+			],
+			[
+				"data/view",
+				"frontend/js/controllers/dataset/view_ctrl.coffee"
+			],
+			[
+				"contr",
+				"frontend/js/app/controllers.coffee"
+			],
+			[
+				"view",
+				"frontend/views/datasets/view.slim"
+			],
+			[
+				"gulp",
+				"frontend/gulpfile.js"
+			],
+			[
+				"glp",
+				"frontend/gulpfile.js"
+			],
+			[
+				"con/wid/cre",
+				"frontend/js/controllers/widgets/create_ctrl.coffee"
+			],
+			[
+				"wid",
+				"backend/app/models/widget.rb"
+			],
+			[
+				"guar",
+				"stream/config/local/guardfile"
+			],
+			[
+				"import/main",
+				"import/src/main.go"
+			],
+			[
+				"seed",
+				"backend/db/seeds.rb"
+			],
+			[
+				"main.go",
+				"import/src/main.go"
+			],
+			[
+				"application",
+				"backend/config/application.rb"
+			],
+			[
+				"main",
+				"config/local/main.yml"
+			],
+			[
+				"migra/datase",
+				"backend/db/migrate/20151214074200_datasets.rb"
+			],
+			[
+				"see",
+				"backend/db/seeds.rb"
+			],
+			[
+				"ba/up",
+				"backend/config/local/up.sh"
+			],
+			[
+				"data.yml",
+				"backend/config/database.yml"
+			],
+			[
+				"guard",
+				"import/config/local/guardfile"
+			],
+			[
+				"up.sh",
+				"stream/config/local/up.sh"
+			],
+			[
+				"import/up.sh",
+				"import/config/local/up.sh"
+			],
+			[
+				"migradata",
+				"backend/db/migrate/20151214074200_datasets.rb"
+			],
+			[
+				"data/list",
+				"frontend/views/datasets/list.slim"
+			],
+			[
+				"datasets",
+				"frontend/js/services/datasets.coffee"
+			],
+			[
+				"data/data",
+				"frontend/views/datasets/data.slim"
+			],
+			[
+				"ser/data",
+				"frontend/js/services/datasets.coffee"
+			],
+			[
+				"serv/data",
+				"frontend/js/services/datasets.coffee"
+			],
+			[
+				"ser",
+				"frontend/js/app/services.coffee"
+			],
+			[
+				"uti",
+				"frontend/js/app/utilities.coffee"
+			],
+			[
+				"as",
+				"frontend/config/assets.json"
+			],
+			[
+				"routes.co",
+				"frontend/js/app/routes.coffee"
+			],
+			[
+				"routes",
+				"backend/config/routes.rb"
+			],
+			[
+				"ser/data.coff",
+				"frontend/js/services/dataset.coffee"
+			],
+			[
+				"stra/main",
+				"stream/src/main.go"
+			],
+			[
+				"streaup.sh",
+				"stream/config/local/up.sh"
+			],
+			[
+				"http/",
+				"http/config/local/nginx.conf"
+			],
+			[
+				"stream/guar",
+				"stream/config/local/guardfile"
+			],
+			[
+				"strea/main",
+				"stream/src/main.go"
+			],
+			[
+				"stream/up.sh",
+				"stream/config/local/up.sh"
+			],
+			[
+				"im/up.sh",
+				"import/config/local/up.sh"
+			],
+			[
+				"importup",
+				"import/config/local/up.sh"
+			],
+			[
+				"server.go",
+				"stream/src/server.go"
+			],
+			[
+				"csv.go",
+				"import/src/csv.go"
+			],
+			[
+				"strea/up.sh",
+				"stream/config/local/up.sh"
+			],
+			[
+				"data_cctr",
+				"frontend/js/controllers/dataset/create_ctrl.coffee"
+			],
+			[
+				"http",
+				"http/config/local/nginx.conf"
+			],
+			[
+				"dataset",
+				"backend/app/controllers/datasets_controller.rb"
+			],
+			[
+				"control",
+				"frontend/js/app/controllers.coffee"
+			],
+			[
+				"serve",
+				"frontend/js/app/services.coffee"
+			],
+			[
+				"gul",
+				"frontend/gulpfile.js"
+			],
+			[
+				"webo",
+				"frontend/src/lib/util/web_socket.coffee"
+			],
+			[
+				"ngin",
+				"http/config/local/nginx.conf"
+			],
+			[
+				"se/file",
+				"frontend/src/services/file.coffee"
+			],
+			[
+				"dataset_csv",
+				"backend/app/models/dataset_csv.rb"
+			],
+			[
+				"migra/data",
+				"backend/db/migrate/20151214075026_datasets_csvs.rb"
+			],
+			[
+				"file_mod",
+				"backend/app/models/file_model.rb"
+			],
+			[
+				"file.co",
+				"frontend/src/services/file.coffee"
+			],
+			[
+				"file.cofe",
+				"frontend/src/services/file.coffee"
+			],
+			[
+				"dataset/cre",
+				"frontend/src/controllers/dataset/create_ctrl.coffee"
+			],
+			[
+				"controllers",
+				"frontend/src/app/controllers.coffee"
+			],
+			[
+				"daset_csv",
+				"backend/app/models/dataset_csv.rb"
+			],
+			[
+				"migratfile",
+				"backend/db/migrate/20151213055232_files.rb"
+			],
+			[
+				"file_mode",
+				"backend/app/models/file_model.rb"
+			],
+			[
+				"gem",
+				"backend/Gemfile"
+			],
+			[
+				"ini/dev",
+				"backend/config/initializers/devise.rb"
+			],
+			[
+				"con/ini/dev",
+				"backend/config/initializers/devise.rb"
+			],
+			[
+				"mig",
+				"backend/db/migrate/20151214073319_dashboards.rb"
+			],
+			[
+				"sche",
+				"backend/db/schema.rb"
+			],
+			[
+				"schem",
+				"backend/db/schema.rb"
+			],
+			[
+				"application.rb",
+				"backend/config/application.rb"
+			],
+			[
+				"migrai",
+				"backend/db/migrate/20151213055232_files.rb"
+			],
+			[
+				"data/crea_ctr",
+				"frontend/src/lib/dataset/create_ctrl.coffee"
+			],
+			[
+				"conf/app",
+				"backend/config/application.rb"
+			],
+			[
+				"nginx",
+				"http/config/local/nginx.conf"
+			],
+			[
+				"applcia",
+				"backend/config/application.rb"
+			],
+			[
+				"app",
+				"backend/app/controllers/application_controller.rb"
+			],
+			[
+				"back",
+				"backend/config/initializers/backtrace_silencers.rb"
+			],
+			[
+				"datasets_ctrl",
+				"frontend/src/lib/dataset/list_ctrl.coffee"
+			],
+			[
+				"bakc/up",
+				"backend/config/local/up.sh"
+			],
+			[
+				"csv",
+				"backend/app/models/dataset_csv.rb"
+			],
+			[
+				"man",
+				"backend/lib/assets_manager.rb"
+			],
+			[
+				"init/cass",
+				"backend/config/initializers/cassandra.rb"
+			],
+			[
+				"data_con",
+				"backend/app/controllers/datasets_controller.rb"
+			],
+			[
+				"db/see",
+				"backend/db/seeds.rb"
+			],
+			[
+				"im/git",
+				"import/.gitignore"
+			],
+			[
+				"state.go",
+				"import/src/state.go"
+			],
+			[
+				"web/up.",
+				"websocket/config/local/up.sh"
+			],
+			[
+				"test",
+				"backend/config/local/test.sh"
+			],
+			[
+				"web/up",
+				"websocket/config/local/up.sh"
+			],
+			[
+				"dashw",
+				"backend/app/models/dashboard_widget.rb"
+			],
+			[
+				"dash",
+				"backend/app/controllers/dashboards_controller.rb"
+			],
+			[
+				"mode",
+				"backend/app/models/model.rb"
+			],
+			[
+				"migrati",
+				"backend/db/migrate/20151213055232_files.rb"
+			],
+			[
+				"app.co",
+				"frontend/src/app/app.coffee"
+			],
+			[
+				"widget_cre",
+				"frontend/src/lib/widget/create_ctrl.coffee"
+			],
+			[
+				"datasets/list",
+				"frontend/views/datasets/list.slim"
+			],
+			[
+				"dataset/",
+				"frontend/src/lib/dataset/create_ctrl.coffee"
+			],
+			[
+				"datasets_",
+				"backend/app/controllers/datasets_controller.rb"
+			],
+			[
+				"widgetlistctrl",
+				"frontend/src/lib/widget/list_ctrl.coffee"
+			],
+			[
+				"publ",
+				"backend/app/helpers/public_error.rb"
+			],
+			[
+				"filemodel",
+				"backend/app/models/file_model.rb"
+			],
+			[
+				"widget",
+				"backend/app/models/widget.rb"
+			],
+			[
+				"widget_contr",
+				"backend/app/controllers/widgets_controller.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "inst",
+		"selected_items":
+		[
+			[
+				"inst",
+				"~/.config/sublime-text-3/Projects/instore.idfly.ru.sublime-project"
+			],
+			[
+				"ins",
+				"~/.config/sublime-text-3/Projects/instore.idfly.ru.sublime-project"
+			],
+			[
+				"bvk",
+				"~/.config/sublime-text-3/Projects/bvk.idfly.ru.sublime-workspace"
+			],
+			[
+				"bi",
+				"~/.config/sublime-text-3/Projects/bi.idfly.ru.sublime-workspace"
+			],
+			[
+				"in",
+				"~/.config/sublime-text-3/Projects/instore.idfly.ru.sublime-project"
+			],
+			[
+				"uve",
+				"~/.config/sublime-text-3/Projects/uveliriya-ru.sublime-project"
+			],
+			[
+				"nal",
+				"~/.config/sublime-text-3/Projects/nalopatu-ru.sublime-project"
+			],
+			[
+				"9if",
+				"~/.config/sublime-text-3/Projects/9fine.sublime-project"
+			],
+			[
+				"bal",
+				"~/.config/sublime-text-3/Projects/balmora.sublime-project"
+			],
+			[
+				"nalo",
+				"~/.config/sublime-text-3/Projects/nalopatu-ru.sublime-project"
+			],
+			[
+				"9fin",
+				"~/.config/sublime-text-3/Projects/9fine.sublime-project"
+			],
+			[
+				"cr",
+				"~/.config/sublime-text-3/Projects/cr911-idfly-ru.sublime-project"
+			],
+			[
+				"pack",
+				"~/.config/sublime-projects/packages.sublime-project"
+			],
+			[
+				"nalop",
+				"~/.config/sublime-projects/nalopatu-ru.sublime-project"
+			],
+			[
+				"idf",
+				"~/.config/sublime-projects/idfly15.sublime-project"
+			],
+			[
+				"up",
+				"~/.config/sublime-projects/upstock.sublime-project"
+			],
+			[
+				"9fine",
+				"~/.config/sublime-projects/9fine.sublime-project"
+			],
+			[
+				"upst",
+				"~/.config/sublime-projects/upstock.sublime-project"
+			],
+			[
+				"price",
+				"~/.config/sublime-projects/pricelessly.sublime-project"
+			],
+			[
+				"tppr",
+				"~/.config/sublime-projects/tppr-me.sublime-project"
+			],
+			[
+				"mosc",
+				"~/.config/sublime-projects/moscowcasting-pro.sublime-project"
+			],
+			[
+				"tpp",
+				"~/.config/sublime-projects/tppr-me.sublime-project"
+			],
+			[
+				"reel",
+				"~/.config/sublime-projects/reelsource-ru.sublime-project"
+			],
+			[
+				"vali",
+				"~/.config/sublime-projects/valiorussia-ru.sublime-project"
+			],
+			[
+				"upsto",
+				"~/.config/sublime-projects/upstock.sublime-project"
+			],
+			[
+				"ree",
+				"~/.config/sublime-projects/reelsource-ru.sublime-project"
+			],
+			[
+				"nive",
+				"~/.config/sublime-projects/niveamen-ru.sublime-project"
+			],
+			[
+				"9f",
+				"~/.config/sublime-projects/9five.sublime-workspace"
+			],
+			[
+				"alfa",
+				"~/.config/sublime-projects/alfa-avia.sublime-project"
+			],
+			[
+				"nine",
+				"~/.config/sublime-projects/ninefine.sublime-project"
+			],
+			[
+				"funk",
+				"~/.config/sublime-projects/funkytown-ru.sublime-project"
+			],
+			[
+				"pkg",
+				"~/.config/sublime-projects/packages.sublime-project"
+			],
+			[
+				"offi",
+				"~/.config/sublime-projects/officerm-ru.sublime-project"
+			],
+			[
+				"paper",
+				"~/.config/sublime-projects/paper-io.sublime-project"
+			],
+			[
+				"pa",
+				"~/.config/sublime-projects/paper-io.sublime-project"
+			],
+			[
+				"mos",
+				"~/.config/sublime-projects/moscowcasting-pro.sublime-project"
+			],
+			[
+				"fun",
+				"~/.config/sublime-projects/funkytown-ru.sublime-project"
+			],
+			[
+				"pap",
+				"~/.config/sublime-projects/paper-io.sublime-project"
+			],
+			[
+				"gp",
+				"~/.config/sublime-projects/gpn-promo-ru.sublime-project"
+			],
+			[
+				"gpn-pr",
+				"~/.config/sublime-projects/gpn-promo-ru.sublime-project"
+			],
+			[
+				"pesk",
+				"~/.config/sublime-projects/pesok-piop-ru.sublime-project"
+			],
+			[
+				"mnosc",
+				"~/.config/sublime-projects/moscowcasting-pro.sublime-project"
+			],
+			[
+				"dev",
+				"~/.config/sublime-projects/dev-reelsource-ru.sublime-project"
+			],
+			[
+				"val",
+				"~/.config/sublime-projects/valiorussia-ru.sublime-project"
+			],
+			[
+				"pac",
+				"~/.config/sublime-projects/packages.sublime-project"
+			],
+			[
+				"gpn",
+				"~/.config/sublime-projects/gpn-promo-ru.sublime-project"
+			],
+			[
+				"pr",
+				"~/.config/sublime-projects/priceless-ly.sublime-project"
+			],
+			[
+				"pape",
+				"~/.config/sublime-projects/paper-io.sublime-project"
+			],
+			[
+				"idfl",
+				"~/.config/sublime-projects/idfly15.sublime-project"
+			],
+			[
+				"pg",
+				"~/.config/sublime-projects/gpn-promo-ru.sublime-project"
+			],
+			[
+				"evo",
+				"~/.config/sublime-projects/evo-net-ua.sublime-project"
+			],
+			[
+				"pricel",
+				"~/.config/sublime-projects/priceless-ly.sublime-project"
+			],
+			[
+				"",
+				"~/.config/sublime-projects/paper-io.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
