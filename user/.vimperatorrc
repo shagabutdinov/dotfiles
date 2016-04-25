@@ -2,7 +2,7 @@
 
 set hintchars=abcdefghijklmnopqrstuvwxyz
 source! /home/leo/.vimperatorrc.local
-set gui=none
+set gui=none,tabs
 set editor=subl3
 " vim: set ft=vimperator:
 
@@ -48,6 +48,8 @@ inoremap <A-w> <ESC><ESC><ESC>:tabnext<CR>
 noremap xc :silent execute "!chromium \"" + content.location.href + "\" &"<CR>
 noremap xs :js saveToPocket()<CR>
 noremap xp :open http://getpocket.com/<CR>
+
+inoremap <C-t> <ESC>:tabnew<CR>
 
 set hto=300
 
