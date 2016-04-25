@@ -2,7 +2,7 @@
 
 	<snippet>
 		<content><![CDATA[
-validates :$1, $0
+validates(:$1, $0)
 ]]></content>
 		<tabTrigger>v</tabTrigger>
 		<scope>source.ruby</scope>
@@ -58,7 +58,7 @@ inclusion: { in: [$0] }
 
 	<snippet>
 		<content><![CDATA[
-has_one :$1
+has_one(:$1)
 ]]></content>
 		<commands>
 			[
@@ -78,7 +78,7 @@ has_one :$1
 
 	<snippet>
 		<content><![CDATA[
-has_many :$1
+has_many(:$1)
 ]]></content>
 		<commands>
 			[
@@ -98,7 +98,7 @@ has_many :$1
 
 	<snippet>
 		<content><![CDATA[
-belongs_to :$1
+belongs_to(:$1)
 ]]></content>
 		<commands>
 			[
@@ -114,6 +114,26 @@ belongs_to :$1
 			]
 		</context>
 		<description>rails models: belongs to</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+accepts_nested_attributes_for(:$1, {allow_destroy: true})
+]]></content>
+		<commands>
+			[
+				{"command": "ensure_space_before"},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>an</tabTrigger>
+		<scope>source\.ruby\s*$</scope>
+		<context>
+			[
+				{"key": "in_class_definition", "operator": "equal", "operand": true},
+			]
+		</context>
+		<description>rails models: accepts_nested_attributes_for</description>
 	</snippet>
 
 	<snippet>

@@ -148,27 +148,9 @@ each { |$1|
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.\\s+e$"},
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.\\s*e$"},
 			]
 		]]></context>
-		<order>1</order>
-		<description>stdlib: each</description>
-	</snippet>
-
-	<snippet>
-		<content><![CDATA[
-each do |$1|
-	$0
-end
-]]></content>
-		<tabTrigger>e</tabTrigger>
-		<scope>source.ruby</scope>
-		<context><![CDATA[
-			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.e$"},
-			]
-		]]></context>
-		<order>1</order>
 		<description>stdlib: each</description>
 	</snippet>
 
@@ -360,6 +342,49 @@ include?($1)
 			]
 		]]></context>
 		<description>stdlib: includes</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+File.write($1, ${2:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "move_to", "args": {"extend": true, "to": "eol"}, "context": [
+					{"key": "following_text_end", "operator": "regex_contains", "operand": "^\\S"},
+				]},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>fw</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: File.write</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+File.write('log', ${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "move_to", "args": {"extend": true, "to": "eol"}, "context": [
+					{"key": "following_text_end", "operator": "regex_contains", "operand": "^\\S"},
+				]},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>fl</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: File.write</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+File.read($1)
+]]></content>
+		<tabTrigger>fr</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: File.write</description>
 	</snippet>
 
 </snippets>

@@ -1,0 +1,40 @@
+{
+	"folders":
+	[
+		{
+			"path": "/home/leo/src/bvk.idfly.ru",
+      "folder_exclude_patterns": [
+        "main_frontend/node_modules",
+        "main_frontend/build",
+        "main_frontend/vendor",
+        "main_frontend/css",
+
+        "admin_backend/log",
+        "admin_backend/tmp",
+        "admin_backend/public",
+        "admin_backend/coverage",
+        "admin_backend/vendor",
+        "admin_backend/log",
+        "admin_backend/coverage",
+        "admin_backend/vendor",
+
+        "main_backend/log",
+        "main_backend/tmp",
+        "main_backend/public",
+        "main_backend/coverage",
+        "main_backend/vendor",
+        "main_backend/log",
+        "main_backend/coverage",
+        "main_backend/vendor",
+
+        "admin_frontend/node_modules",
+        "admin_frontend/build",
+        "admin_frontend/vendor",
+        "admin_frontend/css",
+
+        "data",
+        "mysql",
+      ],
+		}
+	]
+}

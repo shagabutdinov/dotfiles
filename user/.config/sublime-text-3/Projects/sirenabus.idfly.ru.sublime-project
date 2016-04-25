@@ -1,0 +1,18 @@
+{
+    "folders":
+    [
+        {
+            "path": "/home/leo/src/sirenabus.idfly.ru",
+            "folder_exclude_patterns": [
+                "backend/log",
+                "backend/tmp",
+                "backend/public",
+                "backend/coverage",
+                "backend/vendor",
+                "backend/node_modules",
+                "data",
+                "mysql",
+            ],
+        }
+    ]
+}

@@ -2,7 +2,13 @@
 	"folders":
 	[
 		{
-			"path": "/home/leo/src/go/src/dariusd"
+			"path": "/home/leo/src/dariusd",
+      "folder_exclude_patterns": [
+        "app/.build/go",
+        "app/.build/vendor",
+        "worker/.build/go",
+        "worker/.build/vendor",
+      ],
 		}
 	]
 }

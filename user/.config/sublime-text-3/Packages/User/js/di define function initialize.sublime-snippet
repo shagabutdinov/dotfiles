@@ -1,6 +1,6 @@
 <snippet>
 		<content><![CDATA[
-__import: function(helper) {
+initialize: function(helper) {
 	return $0;
 },
 ]]></content>

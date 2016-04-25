@@ -1,0 +1,14 @@
+{
+	"folders":
+	[
+		{
+			"path": "/home/leo/src/go/src/github.com/idfly/darius",
+      "folder_exclude_patterns": [
+        ".build/go",
+        ".build/vendor",
+        ".build/build",
+        "mysql",
+      ],
+		}
+	]
+}

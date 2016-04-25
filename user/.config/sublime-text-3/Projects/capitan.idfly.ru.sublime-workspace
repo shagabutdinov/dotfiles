@@ -1,0 +1,2048 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"T",
+				"Type	FieldType ν"
+			],
+			[
+				"Enc",
+				"NewEncoder	*json.Encoder ƒ"
+			],
+			[
+				"data",
+				"dataset_tables"
+			],
+			[
+				"daat",
+				"datasets"
+			],
+			[
+				"Query",
+				"QueryRow	*sql.Row ƒ"
+			],
+			[
+				"dataset_co",
+				"dataset_columns"
+			],
+			[
+				"da",
+				"dataset_tables"
+			],
+			[
+				"wid",
+				"widgets"
+			],
+			[
+				"go",
+				"dataset_googles"
+			],
+			[
+				"widget_pie",
+				"widget_pies"
+			],
+			[
+				"widget_pi",
+				"widget_pies"
+			],
+			[
+				"Par",
+				"ParseFloat	f float64, err error ƒ"
+			],
+			[
+				"Raw",
+				"RawQuery	string ν"
+			],
+			[
+				"dat",
+				"dataset_tables"
+			],
+			[
+				"use",
+				"user_google_accounts"
+			],
+			[
+				"lin",
+				"widget_line_ranges"
+			],
+			[
+				"line",
+				"widget_line_ranges"
+			],
+			[
+				"wili",
+				"widget_line_labels"
+			],
+			[
+				"wi",
+				"widget_pies"
+			],
+			[
+				"us",
+				"user_sessions"
+			],
+			[
+				"widpi",
+				"widget_pie_labels"
+			],
+			[
+				"widli",
+				"widget_line_ranges"
+			],
+			[
+				"widba",
+				"widget_bar_ranges"
+			],
+			[
+				"w",
+				"widget_pies"
+			],
+			[
+				"wt",
+				"widget_texts"
+			],
+			[
+				"wiba",
+				"widget_bar_bars"
+			],
+			[
+				"dash",
+				"dashboard_widgets"
+			],
+			[
+				"Expa",
+				"ExpandEnv	string ƒ"
+			],
+			[
+				"Std",
+				"Stdout	*os.File ν"
+			],
+			[
+				"add",
+				"addError"
+			],
+			[
+				"Up",
+				"updateUserStatistic	error ƒ"
+			],
+			[
+				"html",
+				"htmlspecialchars"
+			],
+			[
+				"Q",
+				"QueryRow	*sql.Row ƒ"
+			],
+			[
+				"con",
+				"connection	Connection ν"
+			],
+			[
+				"Use",
+				"UserId	int ν"
+			],
+			[
+				"getVa",
+				"getValidSqlPart"
+			],
+			[
+				"err",
+				"error_reporting"
+			],
+			[
+				"For",
+				"FormValue	string ƒ"
+			],
+			[
+				"OfferRe",
+				"OfferResult	struct ʈ"
+			],
+			[
+				"Fo",
+				"FormValue	string ƒ"
+			],
+			[
+				"Blo",
+				"BlockCallType	string ν"
+			],
+			[
+				"Process",
+				"ProcessShow	error ƒ"
+			],
+			[
+				"N",
+				"NullString	struct ʈ"
+			],
+			[
+				"Nu",
+				"NullString	struct ʈ"
+			],
+			[
+				"Print",
+				"Println	 ƒ"
+			],
+			[
+				"Form",
+				"FormatInt	string ƒ"
+			],
+			[
+				"get",
+				"getElementsByClassName"
+			],
+			[
+				"http",
+				"httpRequest"
+			],
+			[
+				"Wr",
+				"WriteHeader	 ƒ"
+			],
+			[
+				"Ro",
+				"Rows	struct ʈ"
+			],
+			[
+				"qu",
+				"QueryRow	*sql.Row ƒ"
+			],
+			[
+				"code",
+				"codeId	int ν"
+			],
+			[
+				"pu",
+				"publishOfferRequest	error ƒ"
+			],
+			[
+				"Int31",
+				"Int31n	int32 ƒ"
+			],
+			[
+				"Un",
+				"UnixNano	int64 ƒ"
+			],
+			[
+				"tar",
+				"targetGetInt	int ƒ"
+			],
+			[
+				"testDb",
+				"testDbGetInteger	int ƒ"
+			],
+			[
+				"im",
+				"import	import (...) ʂ"
+			],
+			[
+				"ProcessOffer",
+				"ProcessOfferLikeAction	error ƒ"
+			],
+			[
+				"d",
+				"targetDataConnection	*sql.DB ν"
+			],
+			[
+				"De",
+				"Delivery	struct ʈ"
+			],
+			[
+				"am",
+				"amqpChannel	*amqp.Channel ν"
+			],
+			[
+				"amqp",
+				"amqpConnection	*amqp.Connection ν"
+			],
+			[
+				"a",
+				"UserAgent	string ƒ"
+			],
+			[
+				"re",
+				"result	sql.Result ν"
+			],
+			[
+				"q",
+				"QueueDeclare	amqp.Queue, error ƒ"
+			],
+			[
+				"Unix",
+				"UnixNano	int64 ƒ"
+			],
+			[
+				"No",
+				"Now	time.Time ƒ"
+			],
+			[
+				"new",
+				"NewSource	rand.Source ƒ"
+			],
+			[
+				"Pr",
+				"Print	 ƒ"
+			],
+			[
+				"Status",
+				"StatusInternalServerError	 Ɩ"
+			],
+			[
+				"write",
+				"WriteHeader	 ƒ"
+			],
+			[
+				"ur",
+				"RequestURI	string ν"
+			],
+			[
+				"if",
+				"if	if-html"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"pregma",
+				"preg_match"
+			],
+			[
+				"http_b",
+				"http_build_url"
+			],
+			[
+				"_SE",
+				"_SESSION"
+			],
+			[
+				"i",
+				"i	if … end"
+			],
+			[
+				"r",
+				"r	r return"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "Searching 291 files for \"criterionGroupName\" (case sensitive)\n\n0 matches",
+			"settings":
+			{
+				"buffer_size": 72,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"last_filter": "sste",
+		"selected_items":
+		[
+			[
+				"sste",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"ssbash",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"ssmark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"sscoff",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"sscof",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"ssru",
+				"Set Syntax: Ruby"
+			],
+			[
+				"ss2",
+				"KeymapEnhanced: set tab size - 2"
+			],
+			[
+				"ssmar",
+				"Set Syntax: Markdown"
+			],
+			[
+				"ss",
+				"Set Syntax: SQL"
+			],
+			[
+				"ssql",
+				"Set Syntax: SQL"
+			],
+			[
+				"ssq",
+				"Set Syntax: SQL"
+			],
+			[
+				"sshtml",
+				"Set Syntax: HTML"
+			],
+			[
+				"sst",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"ssryb",
+				"Set Syntax: Ruby"
+			],
+			[
+				"ssjs",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"sstext",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"uniq",
+				"Permute Lines: Unique"
+			],
+			[
+				"sort",
+				"Sort Lines"
+			],
+			[
+				"ss2	",
+				"KeymapEnhanced: set tab size - 2"
+			],
+			[
+				"goto",
+				"GotoDefinitionEnhanced: Goto definition"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"das",
+				"Convert Case: dash-case"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove pac",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove",
+				"Snippet: removeClass"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"bas",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"form",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"forma",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"xml	",
+				"Set Syntax: XML"
+			],
+			[
+				"ml",
+				"Move Tab: To last position"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"tabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"relo",
+				"Snippet Enhanced: Reload snippets"
+			],
+			[
+				"dash",
+				"Convert Case: dash-case"
+			],
+			[
+				"reload",
+				"Snippet Enhanced: Reload snippets"
+			],
+			[
+				"cam",
+				"Convert Case: camelCase"
+			],
+			[
+				"sscss",
+				"Set Syntax: CSS"
+			],
+			[
+				"css",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"camel",
+				"Convert Case: camelCase"
+			],
+			[
+				"bash",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"format json",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"format js",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"q",
+				"Snippet: q jquery"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"js",
+				"Set Syntax: JSON"
+			],
+			[
+				"ss css",
+				"Set Syntax: CSS"
+			],
+			[
+				"slim",
+				"Set Syntax: Ruby Slim"
+			],
+			[
+				"isntall",
+				"Package Control: Install Package"
+			],
+			[
+				"mar",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"vash",
+				"EvalSelection: Show evaluation history"
+			],
+			[
+				"markex",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"movelast",
+				"Method: Move method to last"
+			],
+			[
+				"move metholast",
+				"Method: Move method to last"
+			],
+			[
+				"",
+				""
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"prett",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"wra",
+				"HTML: Wrap Selection With Tag"
+			],
+			[
+				"SQL",
+				"Set Syntax: SQL"
+			],
+			[
+				"local",
+				"Local History: Browse"
+			],
+			[
+				"hist",
+				"Local History: Open"
+			],
+			[
+				"jsfor",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"if",
+				"Snippet: if"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"wrap",
+				"HTML: Wrap Selection With Tag"
+			],
+			[
+				"upgra",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"upgr",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"ifn",
+				"Snippet: in if not"
+			],
+			[
+				"purl",
+				"Snippet: pu package get url"
+			],
+			[
+				"url",
+				"Snippet: pu package get url"
+			],
+			[
+				"synhtml",
+				"Set Syntax: HTML"
+			],
+			[
+				"isntal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 556.0
+	},
+	"console":
+	{
+		"height": 559.0,
+		"history":
+		[
+			"sublime.log_commands(False);",
+			"sublime.log_commands(True);",
+			"sublime.log_commands(False);",
+			"sublime.log_commands(True);",
+			"sublime.log_commands(False);",
+			"sublime.log_commands(True);",
+			"sublime.log_commands(False);",
+			"sublime.log_commands(True);",
+			"sublime.log_commands(False);",
+			"sublime.log_commands(True);",
+			"re.search('(a)|(A)', 'AAAaaa').start(1)",
+			"re.search('(a)|(A)', 'AAAaaa').group(1)",
+			"re.search('(a)(A)', 'AAAaaa').group(1)",
+			"import re",
+			"sublime.log_commands(True);",
+			"print(__file__);",
+			"print(persist.errors)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.find_resources('*.sublime-snippet')",
+			"sublime.find_reosources('*.sublime-snippet')",
+			"sublime.active_window()",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/leo/src/capitan.idfly.ru"
+	],
+	"file_history":
+	[
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160331083943_create_data.rb",
+		"/home/leo/src/capitan.idfly.ru/Makefile",
+		"/home/leo/src/capitan.idfly.ru/import/import_google.go",
+		"/home/leo/src/capitan.idfly.ru/import/import_csv.go",
+		"/home/leo/src/capitan.idfly.ru/import/table.go",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/controllers/datasets/upload_csv_ctrl.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/notifications/edit.slim",
+		"/home/leo/src/capitan.idfly.ru/backend/app/models/dataset_table.rb",
+		"/home/leo/src/capitan.idfly.ru/import/job.go",
+		"/home/leo/projects/personal/log.txt",
+		"/home/leo/src/capitan.idfly.ru/backend/Gemfile",
+		"/home/leo/src/capitan.idfly.ru/backend/app/models/dataset.rb",
+		"/home/leo/.config/sublime-text-3/Packages/User/ruby/operators.sublime-snippet-enhanced",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160331083943_create_data_table.rb",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/pie.coffee",
+		"/home/leo/src/karimini.idfly.ru/app/modules/pm_advancedsearch4/pm_advancedsearch4.php",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/line.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/services/widget.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/controllers/dashboards/view_ctrl.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/services/dashboard.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/services/table.coffee",
+		"/home/leo/src/capitan.idfly.ru/backend/app/controllers/dashboards_controller.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/app/controllers/datasets_controller.rb",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/controllers/datasets/data_ctrl.coffee",
+		"/home/leo/src/capitan.idfly.ru/backend/app/models/dataset_google.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160331050306_add_fields_created_to_datasets.rb",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/datasets/settings.slim",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/controllers/datasets/settings_ctrl.coffee",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160311045747_create_widget_line_labels.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160329054732_create_dataset_columns.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20151201061335_create_users.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160315232303_create_dataset_tables.rb",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/datasets/upload_csv.slim",
+		"/home/leo/src/capitan.idfly.ru/backend/cron.yml",
+		"/home/leo/src/capitan.idfly.ru/import/state.go",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/widgets/form.slim",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/app/routes.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/datasets/create.slim",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/datasets/form.slim",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/controllers/datasets/view_ctrl.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/datasets/view.slim",
+		"/home/leo/src/capitan.idfly.ru/backend/config/routes.rb",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/datasets/settings.html",
+		"/home/leo/src/capitan.idfly.ru/frontend/config/guardfile",
+		"/home/leo/src/capitan.idfly.ru/config/capitan.local/main.yml",
+		"/home/leo/src/capitan.idfly.ru/.darius.yml",
+		"/home/leo/src/capitan.idfly.ru/config/darius/up.task.yml",
+		"/home/leo/src/capitan.idfly.ru/config/darius/prepare.task.yml",
+		"/home/leo/bin/ushell-env",
+		"/home/leo/src/docs.idfly.ru/docs/docker_manual.md",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/layout/blocks/header.slim",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/app/app.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/controllers/header_ctrl.coffee",
+		"/home/leo/src/capitan.idfly.ru/backend/app/models/dataset_column.rb",
+		"/home/leo/.config/sublime-text-3/Packages/User/ruby/rails models.sublime-snippet-enhanced",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20151213055232_files.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160318104330_add_import_interval_to_datasets.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160317110455_create_dataset_googles.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20151215061146_widgets.rb",
+		"/home/leo/.config/sublime-text-3/Projects/capitan.idfly.ru.sublime-project",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20151214074200_datasets.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160329054149_create_dataset_columns.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/config/local/test.sh",
+		"/home/leo/src/capitan.idfly.ru/backend/config/clockwork.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160329054149_create_dataset_fields.rb",
+		"/home/leo/src/capitan.idfly.ru/http/local.conf",
+		"/home/leo/src/capitan.idfly.ru/mysql/my.cnf",
+		"/home/leo/src/docs.idfly.ru/readme.md",
+		"/home/leo/src/capitan.idfly.ru/config/capitan.dev1.idfly.ru/main.yml",
+		"/home/leo/src/docs.idfly.ru/manuals/docker.md",
+		"/home/leo/src/keepup.idfly.ru/config/dev/main.yml",
+		"/home/leo/src/keepup.idfly.ru/config/local/main.yml",
+		"/home/leo/src/capitan.idfly.ru/config/capitan.local/config.env",
+		"/home/leo/src/capitan.idfly.ru/config/darius/deploy-to-dev.task.yml",
+		"/home/leo/src/capitan.idfly.ru/config/local/main.yml",
+		"/home/leo/src/capitan.idfly.ru/http/capitan.dev1.idfly.ru.conf",
+		"/home/leo/src/capitan.idfly.ru/config/local/config.env",
+		"/home/leo/src/capitan.idfly.ru/config/dev/main.yml",
+		"/home/leo/src/capitan.idfly.ru/http/config/dev/nginx.conf",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/user/accounts/google/index.slim",
+		"/home/leo/src/capitan.idfly.ru/config/dev/config.env",
+		"/home/leo/src/capitan.idfly.ru/backend/config/application.rb",
+		"/home/leo/src/capitan.idfly.ru/config/config.env",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/notifications/form.slim",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/controllers/notifications/form_ctrl.coffee",
+		"/home/leo/src/capitan.idfly.ru/backend/app/controllers/notifications_controller.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160325071251_create_notifications.rb",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/controllers/datasets/form_ctrl.coffee",
+		"/home/leo/src/capitan.idfly.ru/backend/lib/tasks/notifications.rake",
+		"/home/leo/src/capitan.idfly.ru/backend/app/models/notification.rb",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/notifications/create.slim",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/controllers/widgets/form_ctrl.coffee",
+		"/home/leo/src/capitan.idfly.ru/backend/lib/tasks/datasets.rake",
+		"/home/leo/src/capitan.idfly.ru/backend/lib/assets_manager.rb",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/controllers/notifications/list_ctrl.coffee",
+		"/home/leo/src/capitan.idfly.ru/backend/app/controllers/widgets_controller.rb",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/services/notification.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/services/model.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/services/idfly_model.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/controllers/widgets.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/controllers/notifications.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/directives/widget/bar_editor.slim",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/dashboards/form.slim",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/dashboards/create.slim",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/notifications/list.slim",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/dashboards/list.slim",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/notifications/list.html",
+		"/home/leo/src/capitan.idfly.ru/backend/app/models/dashboard.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/app/models/Notification.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20151201061336_create_user_sessions.rb",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/services/dataset.coffee",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160325071251_create_notifications_table.rb",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/controllers/datasets/list_ctrl.coffee",
+		"/home/leo/src/capitan.idfly.ru/backend/app/models/widget.rb",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/table.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/basic_editor.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/dataset_data.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/directives/dataset_data.slim",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/text.coffee",
+		"/home/leo/src/landing.capitan.idfly.ru/config/local/test.yml",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160325040903_change_url_in_dataset_googles.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160324084531_add_email_to_user_google_account.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/app/controllers/users_controller.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/app/controllers/application_controller.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/app/controllers/utils_controller.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/app/services/google_service.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160324072644_add_table_id_to_widgets.rb"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 102.0,
+		"where_history":
+		[
+			"",
+			"import/",
+			"/home/leo/.config/sublime-text-3/Packages/User/ruby/",
+			"",
+			"backend/db/migrate/",
+			"",
+			"import/",
+			"",
+			"/home/leo/.config/sublime-text-3/Packages/User/ruby/",
+			"backend/db/migrate/",
+			"",
+			"*.coffee",
+			"*.slim",
+			"",
+			"backend/db/migrate/",
+			"*.coffee",
+			"",
+			"*.slim",
+			"*.js",
+			"*.coffee",
+			"*.slim",
+			"",
+			"*.coffee",
+			"",
+			"frontend/views/datasets/",
+			"backend/db/migrate/",
+			"",
+			"import/",
+			"",
+			"import/",
+			"",
+			"/home/leo/.config/sublime-text-3/Packages/User/ruby/",
+			"",
+			"/home/leo/.config/sublime-text-3/Packages/User/ruby/",
+			"",
+			"frontend/js",
+			"",
+			"frontend/js/",
+			"",
+			"frontend/js/directives/",
+			"",
+			"/home/leo/.config/sublime-text-3/Packages/User/",
+			"/home/leo/.config/sublime-text-3/Packages/User/slim/",
+			"",
+			"/home/leo/src/dev1.idfly.ru/nginx/",
+			"",
+			"config/darius/",
+			"",
+			"backend/app/controllers/",
+			"",
+			"/home/leo/.config/sublime-text-3/Packages/User/ruby/",
+			"",
+			"/home/leo/.config/sublime-text-3/Packages/",
+			"",
+			"backend/db/migrate/",
+			"backend/db",
+			"import/src/",
+			"",
+			"/home/leo/.config/sublime-text-3/Packages/",
+			"",
+			"backend/app/models/",
+			"",
+			"stream/src/",
+			"import/src/",
+			"",
+			"import/src/",
+			"",
+			"stream/src/",
+			"",
+			"/home/leo/.config/sublime-text-3/Packages/User/coffee/",
+			"",
+			"backend/db/migrate/",
+			"*.coffee",
+			"*.rb",
+			"*.html",
+			"*.rb,*.coffee",
+			"",
+			"backend/app/assets/stylesheets/",
+			"",
+			"*.go",
+			"*.js",
+			"*.go",
+			"*.rb",
+			"*.js",
+			"",
+			"*.go",
+			"",
+			"data-processor/",
+			"",
+			"/",
+			"data-saver/",
+			"data-processor/",
+			"",
+			"*.go",
+			"*.php",
+			"*.go",
+			"*.php",
+			"*.go",
+			"*.php",
+			"*.go",
+			"*.php",
+			"*.go",
+			"",
+			"/home/leo/.config/sublime-text-3/Packages/",
+			"",
+			"*.js",
+			"*.go",
+			".go",
+			"",
+			"*.php",
+			"",
+			"vendor/",
+			"",
+			"/home/leo/.config/sublime-text-3/Packages/User/js/",
+			"",
+			"config/",
+			"",
+			"*.php, *.js",
+			"",
+			"frontend/",
+			"",
+			"*.js",
+			"",
+			"backend/views/",
+			"",
+			"frontend/view/**",
+			"**/view/**",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"criterionGroupName",
+			"rm -rf ",
+			"ExtractTypes",
+			"lala",
+			"DROP TABL",
+			"ImportGoogle",
+			"json",
+			"console.log",
+			"normalize",
+			"subscribe",
+			"start-date",
+			"fields_created",
+			"add_",
+			"integer",
+			"NewTable",
+			"datasetId",
+			"table.text",
+			"#",
+			"#dataset_name",
+			"Дата",
+			"LALA",
+			"CASSANDRA_TYPES",
+			"FIELD_TYPE_STRING",
+			"FIELD_TYPE_FLOAT",
+			"FIELD_TYPE_INT",
+			"mysql",
+			"Fields",
+			"def run",
+			"\n	# ==========================\n	# ",
+			"\n	# ==========================",
+			"# ==========================",
+			"echo \"${GREEN}",
+			"  ",
+			"		",
+			"  ",
+			"docker run \\",
+			"- >",
+			"visible",
+			".visible",
+			"hamburger-arrow-left",
+			"belongs",
+			"\"",
+			"10",
+			"TIMEOUT",
+			"my.cnf",
+			"  gb -d add_docker_manual\n  gb -d add_new_coding_standards\n  gb -d add_newbies_tutorial\n  gb -d code_review\n  gb -d coffee_coding_standards\n  gb -d master\n  gb -d pair_programming\n  gb -d slim_coding_standards\n  gb -d sprint_planning",
+			"dev1.idfly.ru",
+			"'\n",
+			"capitan_local",
+			"\n#",
+			"dev/",
+			"_capitan_dev1_idfly_ru",
+			"Аккаунты google",
+			"GOOGLE_CLIENT_SECRET",
+			"SECRET",
+			"{'",
+			", ",
+			"setDataSelecter",
+			".select =",
+			"displayData",
+			"ng-model=\"notification",
+			"widget",
+			"Widget",
+			"control-label ",
+			"AngularMode",
+			"AngularModel",
+			"#widget_bar_dataset_id",
+			"widget.bar",
+			"dashboard",
+			"dataset_id",
+			"table.",
+			"dashboard",
+			"dashboards",
+			"dataset",
+			"datasets",
+			"Dataset",
+			"user/not",
+			"dashboard",
+			"dashboards",
+			"datasets",
+			"Dataset",
+			"Datasets",
+			"Аккаунт",
+			"аккаунт",
+			"_keepup_local",
+			"_capitan_local",
+			".local",
+			"console.log",
+			"dataset_table_id",
+			"start-",
+			"_.sort",
+			"sort_",
+			"normalizeDa",
+			"start",
+			"from",
+			"userinfo.profile",
+			"profile",
+			"googleapis",
+			"загрузка...",
+			"console.log",
+			"normalizeWid",
+			"normalizeD",
+			"normalize",
+			"loadData",
+			"query",
+			"/data",
+			"normalizeWidgetData",
+			"dashboard.coffee:15 ",
+			"dashboard.coffee:15",
+			"link: (sc",
+			"link: (",
+			"fa-play",
+			"md-(?!(\\d|off))",
+			"md-(?!\\d)",
+			"md-",
+			"$(",
+			"| date",
+			", y HH:mm",
+			"table.status",
+			"/datasets/",
+			"1 час",
+			"1 чам",
+			"refresh_token",
+			"normalizeData(",
+			".normalizeData",
+			"second =",
+			"second = ",
+			"two"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"@_location.path('",
+			"'api",
+			"Kinds",
+			"widget: '=widget'",
+			"_current_user",
+			"Factory', @factory()",
+			"@_WidgetsDatasetHelper",
+			"'WidgetsDatasetHelper'",
+			"App.Widgets.",
+			"CodeInfo",
+			"offer_code_statistic",
+			"partner/code/index",
+			"partner",
+			"src=\"../content/",
+			"\\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 72,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								72,
+								72
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 38.0
+	},
+	"input":
+	{
+		"height": 25.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.9o:///home/leo/server/9fine.idfly.ru/data-processor":
+	{
+		"height": 104.0
+	},
+	"output.9o:///home/leo/src/capitan.idfly.ru/frontend/views/notifications":
+	{
+		"height": 98.0
+	},
+	"output.9o:///home/leo/src/idfly-deploy":
+	{
+		"height": 104.0
+	},
+	"output.GoSublime-main-output":
+	{
+		"height": 104.0
+	},
+	"output.exec":
+	{
+		"height": 104.0
+	},
+	"output.find_results":
+	{
+		"height": 86.0
+	},
+	"output.gotools_syntax_errors":
+	{
+		"height": 98.0
+	},
+	"output.run_mysql_query_result":
+	{
+		"height": 696.0
+	},
+	"pinned_build_system": "",
+	"project": "capitan.idfly.ru.sublime-project",
+	"replace":
+	{
+		"height": 56.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"make",
+				"Makefile"
+			],
+			[
+				"20160331083943_create_data.rb",
+				"backend/db/migrate/20160331083943_create_data.rb"
+			],
+			[
+				"mig/data",
+				"backend/db/migrate/20160331083943_create_data.rb"
+			],
+			[
+				"dataset_tal",
+				"backend/app/models/dataset_table.rb"
+			],
+			[
+				"import",
+				"import/import_google.go"
+			],
+			[
+				"gem",
+				"backend/Gemfile"
+			],
+			[
+				"dataset",
+				"backend/app/models/dataset.rb"
+			],
+			[
+				"cre_data_ta",
+				"backend/db/migrate/20160331083943_create_data_table.rb"
+			],
+			[
+				"mak",
+				"Makefile"
+			],
+			[
+				"lnie",
+				"frontend/js/directives/widget/line.coffee"
+			],
+			[
+				"widget.coff",
+				"frontend/js/services/widget.coffee"
+			],
+			[
+				"pie",
+				"frontend/js/directives/widget/pie.coffee"
+			],
+			[
+				"dire/wid",
+				"frontend/js/directives/widget.coffee"
+			],
+			[
+				"wid.co",
+				"frontend/js/services/widget.coffee"
+			],
+			[
+				"dash/view_ctr",
+				"frontend/js/controllers/dashboards/view_ctrl.coffee"
+			],
+			[
+				"dashboard_con",
+				"backend/app/controllers/dashboards_controller.rb"
+			],
+			[
+				"data_con",
+				"backend/app/controllers/datasets_controller.rb"
+			],
+			[
+				"sett_ctrl",
+				"frontend/js/controllers/datasets/settings_ctrl.coffee"
+			],
+			[
+				"settings",
+				"frontend/views/datasets/settings.slim"
+			],
+			[
+				"mig/colum",
+				"backend/db/migrate/20160329054732_create_dataset_columns.rb"
+			],
+			[
+				"dataset_columns",
+				"backend/db/migrate/20160329054732_create_dataset_columns.rb"
+			],
+			[
+				"mig/dataset",
+				"backend/db/migrate/20160315232303_create_dataset_tables.rb"
+			],
+			[
+				"columns",
+				"backend/db/migrate/20160329054732_create_dataset_columns.rb"
+			],
+			[
+				"im/job",
+				"import/job.go"
+			],
+			[
+				"column",
+				"backend/db/migrate/20160329054732_create_dataset_columns.rb"
+			],
+			[
+				"migr/col",
+				"backend/db/migrate/20160329054732_create_dataset_columns.rb"
+			],
+			[
+				"data/vi_c",
+				"frontend/js/controllers/datasets/view_ctrl.coffee"
+			],
+			[
+				"datasets/view.lim",
+				"frontend/views/datasets/view.slim"
+			],
+			[
+				"main.yml",
+				"config/capitan.local/main.yml"
+			],
+			[
+				"loca/main",
+				"config/capitan.local/main.yml"
+			],
+			[
+				"darius",
+				".darius.yml"
+			],
+			[
+				"app",
+				"frontend/js/app/app.coffee"
+			],
+			[
+				"datacl",
+				"backend/app/models/dataset_column.rb"
+			],
+			[
+				"clo",
+				"backend/config/clockwork.rb"
+			],
+			[
+				"credatafie",
+				"backend/db/migrate/20160329054149_create_dataset_fields.rb"
+			],
+			[
+				"data",
+				"backend/app/models/dataset.rb"
+			],
+			[
+				"data.rb",
+				"backend/app/models/dataset.rb"
+			],
+			[
+				"clock",
+				"backend/config/clockwork.rb"
+			],
+			[
+				"de/main",
+				"config/dev/main.yml"
+			],
+			[
+				"main",
+				"config/local/main.yml"
+			],
+			[
+				"config.env",
+				"config/config.env"
+			],
+			[
+				"lo/main",
+				"config/local/main.yml"
+			],
+			[
+				"form",
+				"frontend/views/notifications/form.slim"
+			],
+			[
+				"noti",
+				"backend/db/migrate/20160325071251_create_notifications.rb"
+			],
+			[
+				"table.coff",
+				"frontend/js/services/table.coffee"
+			],
+			[
+				"noticreate.slim",
+				"frontend/views/notifications/create.slim"
+			],
+			[
+				"not",
+				"backend/db/migrate/20160325071251_create_notifications.rb"
+			],
+			[
+				"noform_ctr",
+				"frontend/js/controllers/notifications/form_ctrl.coffee"
+			],
+			[
+				"create_not",
+				"backend/db/migrate/20160325071251_create_notifications.rb"
+			],
+			[
+				"ser/not",
+				"frontend/js/services/notification.coffee"
+			],
+			[
+				"wid_con",
+				"backend/app/controllers/widgets_controller.rb"
+			],
+			[
+				"not/for",
+				"frontend/js/controllers/notifications/form_ctrl.coffee"
+			],
+			[
+				"notis",
+				"backend/db/migrate/20160325071251_create_notifications.rb"
+			],
+			[
+				"mig/noti",
+				"backend/db/migrate/20160325071251_create_notifications.rb"
+			],
+			[
+				"creanotifi",
+				"backend/db/migrate/20160325071251_create_notifications_table.rb"
+			],
+			[
+				"dir/table",
+				"frontend/js/directives/widget/table.coffee"
+			],
+			[
+				"dire/data",
+				"frontend/views/directives/dataset_data.slim"
+			],
+			[
+				"data.coff",
+				"frontend/js/directives/dataset_data.coffee"
+			],
+			[
+				"job.",
+				"import/job.go"
+			],
+			[
+				"text.co",
+				"frontend/js/directives/widget/text.coffee"
+			],
+			[
+				"chang",
+				"backend/db/migrate/20160325040903_change_url_in_dataset_googles.rb"
+			],
+			[
+				"local",
+				"config/local/main.yml"
+			],
+			[
+				"loca/te",
+				"backend/config/local/test.sh"
+			],
+			[
+				"add_email",
+				"backend/db/migrate/20160324084531_add_email_to_user_google_account.rb"
+			],
+			[
+				"test/wid",
+				"frontend/tests/services/widget_test.coffee"
+			],
+			[
+				"wi/pie.cof",
+				"frontend/js/directives/widget/pie.coffee"
+			],
+			[
+				"wid_pie.coff",
+				"frontend/js/directives/widget/color_picker.coffee"
+			],
+			[
+				"dataset.",
+				"frontend/js/services/dataset.coffee"
+			],
+			[
+				"tests/",
+				"frontend/tests/services/widget_test.coffee"
+			],
+			[
+				"services/data",
+				"frontend/js/services/dataset.coffee"
+			],
+			[
+				"atitw",
+				"backend/db/migrate/20160324072644_add_table_id_to_widgets.rb"
+			],
+			[
+				"dashboard",
+				"frontend/js/services/dashboard.coffee"
+			],
+			[
+				"dash_ctr",
+				"frontend/js/controllers/dashboards/view_ctrl.coffee"
+			],
+			[
+				"ass",
+				"frontend/config/assets.json"
+			],
+			[
+				"gul",
+				"frontend/gulpfile.js"
+			],
+			[
+				"pack",
+				"frontend/package.json"
+			],
+			[
+				"tables.",
+				"frontend/views/directives/widget/table.slim"
+			],
+			[
+				"datasets_con",
+				"backend/app/controllers/datasets_controller.rb"
+			],
+			[
+				"dataset/create",
+				"frontend/views/datasets/create.slim"
+			],
+			[
+				"guard",
+				"frontend/config/guardfile"
+			],
+			[
+				"widge.coff",
+				"frontend/js/services/widget.coffee"
+			],
+			[
+				"uti.co",
+				"frontend/js/app/utilities.coffee"
+			],
+			[
+				"app.co",
+				"frontend/js/app/app.coffee"
+			],
+			[
+				"kar",
+				"frontend/config/karma.conf.js"
+			],
+			[
+				"guar",
+				"import/.build/guardfile"
+			],
+			[
+				"dev/main",
+				"config/dev/main.yml"
+			],
+			[
+				"dash.coff",
+				"frontend/js/services/dashboard.coffee"
+			],
+			[
+				"state.go",
+				"import/state.go"
+			],
+			[
+				".coff",
+				"frontend/js/services/table.coffee"
+			],
+			[
+				"seed",
+				"backend/db/seeds.rb"
+			],
+			[
+				"conf.env",
+				"config/local/config.env"
+			],
+			[
+				"env",
+				"config/config.env"
+			],
+			[
+				"con/de/main",
+				"config/dev/main.yml"
+			],
+			[
+				"stream/main",
+				"stream/main.go"
+			],
+			[
+				"dev/mai",
+				"config/dev/main.yml"
+			],
+			[
+				"datasetsra",
+				"backend/lib/tasks/datasets.rake"
+			],
+			[
+				"ba/gem",
+				"backend/Gemfile"
+			],
+			[
+				"im.rak",
+				"backend/lib/tasks/import.rake"
+			],
+			[
+				"datset.",
+				"backend/app/models/dataset.rb"
+			],
+			[
+				"data/edit",
+				"frontend/views/datasets/edit.slim"
+			],
+			[
+				"data/form",
+				"frontend/views/datasets/form.slim"
+			],
+			[
+				"dataset/vi",
+				"frontend/views/datasets/view.slim"
+			],
+			[
+				"job.go",
+				"import/job.go"
+			],
+			[
+				"add_imi",
+				"backend/db/migrate/20160318104330_add_import_interval_to_datasets.rb"
+			],
+			[
+				"stra",
+				"frontend/js/services/stream.coffee"
+			],
+			[
+				"data_ctrl",
+				"frontend/js/controllers/datasets/data_ctrl.coffee"
+			],
+			[
+				"data/viw",
+				"frontend/views/datasets/view.slim"
+			],
+			[
+				"dataset_con",
+				"backend/app/controllers/datasets_controller.rb"
+			],
+			[
+				"data/viw_",
+				"frontend/js/controllers/datasets/view_ctrl.coffee"
+			],
+			[
+				"datasetstable",
+				"frontend/js/controllers/datasets/table_ctrl.coffee"
+			],
+			[
+				"table.slim",
+				"frontend/views/datasets/table.slim"
+			],
+			[
+				"data/view",
+				"frontend/js/controllers/datasets/view_ctrl.coffee"
+			],
+			[
+				"data/table",
+				"frontend/views/datasets/table.slim"
+			],
+			[
+				"data/im",
+				"frontend/views/datasets/create.slim"
+			],
+			[
+				"imgoo",
+				"import/import_google.go"
+			],
+			[
+				"ap",
+				"backend/config/application.rb"
+			],
+			[
+				"applica",
+				"backend/config/application.rb"
+			],
+			[
+				"conf/ini/cass",
+				"backend/config/initializers/cassandra.rb"
+			],
+			[
+				"appli",
+				"backend/config/application.rb"
+			],
+			[
+				"im",
+				"import/job.go"
+			],
+			[
+				"depl-to",
+				"config/darius/deploy-to-dev.task.yml"
+			],
+			[
+				"up.task",
+				"config/darius/up.task.yml"
+			],
+			[
+				"dariu",
+				"config/darius/up.task.yml"
+			],
+			[
+				"table",
+				"frontend/views/datasets/table.slim"
+			],
+			[
+				"datasets/vie",
+				"frontend/views/datasets/view.slim"
+			],
+			[
+				"create",
+				"backend/db/migrate/20160317110455_create_dataset_googles.rb"
+			],
+			[
+				"createdata",
+				"backend/db/migrate/20160317110455_create_dataset_googles.rb"
+			],
+			[
+				"credatgo",
+				"backend/db/migrate/20160317110455_create_dataset_google_api.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"kee",
+				"~/.config/sublime-text-3/Projects/keepup.idfly.ru.sublime-project"
+			],
+			[
+				"inst",
+				"~/.config/sublime-text-3/Projects/instore.idfly.ru.sublime-project"
+			],
+			[
+				"",
+				"~/.config/sublime-text-3/Projects/capitan.idfly.ru.sublime-project"
+			],
+			[
+				"land",
+				"~/.config/sublime-text-3/Projects/landing.capitan.idfly.ru.sublime-project"
+			],
+			[
+				"bvk",
+				"~/.config/sublime-text-3/Projects/bvk.idfly.ru.sublime-project"
+			],
+			[
+				"capi",
+				"~/.config/sublime-text-3/Projects/capitan.idfly.ru.sublime-project"
+			],
+			[
+				"capit",
+				"~/.config/sublime-text-3/Projects/capitan.idfly.ru.sublime-project"
+			],
+			[
+				"sire",
+				"~/.config/sublime-text-3/Projects/sirenabus.idfly.ru.sublime-project"
+			],
+			[
+				"bi",
+				"~/.config/sublime-text-3/Projects/capitan.idfly.ru.sublime-project"
+			],
+			[
+				"ins",
+				"~/.config/sublime-text-3/Projects/instore.idfly.ru.sublime-project"
+			],
+			[
+				"in",
+				"~/.config/sublime-text-3/Projects/instore.idfly.ru.sublime-project"
+			],
+			[
+				"uve",
+				"~/.config/sublime-text-3/Projects/uveliriya-ru.sublime-project"
+			],
+			[
+				"nal",
+				"~/.config/sublime-text-3/Projects/nalopatu-ru.sublime-project"
+			],
+			[
+				"9if",
+				"~/.config/sublime-text-3/Projects/9fine.sublime-project"
+			],
+			[
+				"bal",
+				"~/.config/sublime-text-3/Projects/balmora.sublime-project"
+			],
+			[
+				"nalo",
+				"~/.config/sublime-text-3/Projects/nalopatu-ru.sublime-project"
+			],
+			[
+				"9fin",
+				"~/.config/sublime-text-3/Projects/9fine.sublime-project"
+			],
+			[
+				"cr",
+				"~/.config/sublime-text-3/Projects/cr911-idfly-ru.sublime-project"
+			],
+			[
+				"pack",
+				"~/.config/sublime-projects/packages.sublime-project"
+			],
+			[
+				"nalop",
+				"~/.config/sublime-projects/nalopatu-ru.sublime-project"
+			],
+			[
+				"idf",
+				"~/.config/sublime-projects/idfly15.sublime-project"
+			],
+			[
+				"up",
+				"~/.config/sublime-projects/upstock.sublime-project"
+			],
+			[
+				"9fine",
+				"~/.config/sublime-projects/9fine.sublime-project"
+			],
+			[
+				"upst",
+				"~/.config/sublime-projects/upstock.sublime-project"
+			],
+			[
+				"price",
+				"~/.config/sublime-projects/pricelessly.sublime-project"
+			],
+			[
+				"tppr",
+				"~/.config/sublime-projects/tppr-me.sublime-project"
+			],
+			[
+				"mosc",
+				"~/.config/sublime-projects/moscowcasting-pro.sublime-project"
+			],
+			[
+				"tpp",
+				"~/.config/sublime-projects/tppr-me.sublime-project"
+			],
+			[
+				"reel",
+				"~/.config/sublime-projects/reelsource-ru.sublime-project"
+			],
+			[
+				"vali",
+				"~/.config/sublime-projects/valiorussia-ru.sublime-project"
+			],
+			[
+				"upsto",
+				"~/.config/sublime-projects/upstock.sublime-project"
+			],
+			[
+				"ree",
+				"~/.config/sublime-projects/reelsource-ru.sublime-project"
+			],
+			[
+				"nive",
+				"~/.config/sublime-projects/niveamen-ru.sublime-project"
+			],
+			[
+				"9f",
+				"~/.config/sublime-projects/9five.sublime-workspace"
+			],
+			[
+				"alfa",
+				"~/.config/sublime-projects/alfa-avia.sublime-project"
+			],
+			[
+				"nine",
+				"~/.config/sublime-projects/ninefine.sublime-project"
+			],
+			[
+				"funk",
+				"~/.config/sublime-projects/funkytown-ru.sublime-project"
+			],
+			[
+				"pkg",
+				"~/.config/sublime-projects/packages.sublime-project"
+			],
+			[
+				"offi",
+				"~/.config/sublime-projects/officerm-ru.sublime-project"
+			],
+			[
+				"paper",
+				"~/.config/sublime-projects/paper-io.sublime-project"
+			],
+			[
+				"pa",
+				"~/.config/sublime-projects/paper-io.sublime-project"
+			],
+			[
+				"mos",
+				"~/.config/sublime-projects/moscowcasting-pro.sublime-project"
+			],
+			[
+				"fun",
+				"~/.config/sublime-projects/funkytown-ru.sublime-project"
+			],
+			[
+				"pap",
+				"~/.config/sublime-projects/paper-io.sublime-project"
+			],
+			[
+				"gp",
+				"~/.config/sublime-projects/gpn-promo-ru.sublime-project"
+			],
+			[
+				"gpn-pr",
+				"~/.config/sublime-projects/gpn-promo-ru.sublime-project"
+			],
+			[
+				"pesk",
+				"~/.config/sublime-projects/pesok-piop-ru.sublime-project"
+			],
+			[
+				"mnosc",
+				"~/.config/sublime-projects/moscowcasting-pro.sublime-project"
+			],
+			[
+				"dev",
+				"~/.config/sublime-projects/dev-reelsource-ru.sublime-project"
+			],
+			[
+				"val",
+				"~/.config/sublime-projects/valiorussia-ru.sublime-project"
+			],
+			[
+				"pac",
+				"~/.config/sublime-projects/packages.sublime-project"
+			],
+			[
+				"gpn",
+				"~/.config/sublime-projects/gpn-promo-ru.sublime-project"
+			],
+			[
+				"pr",
+				"~/.config/sublime-projects/priceless-ly.sublime-project"
+			],
+			[
+				"pape",
+				"~/.config/sublime-projects/paper-io.sublime-project"
+			],
+			[
+				"idfl",
+				"~/.config/sublime-projects/idfly15.sublime-project"
+			],
+			[
+				"pg",
+				"~/.config/sublime-projects/gpn-promo-ru.sublime-project"
+			],
+			[
+				"evo",
+				"~/.config/sublime-projects/evo-net-ua.sublime-project"
+			],
+			[
+				"pricel",
+				"~/.config/sublime-projects/priceless-ly.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

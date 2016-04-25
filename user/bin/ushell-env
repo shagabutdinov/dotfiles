@@ -99,12 +99,15 @@ alias dlf="docker logs --follow"
 alias da="docker attach --no-stdin"
 
 alias c="docker-compose -f"
-alias cm="docker-compose -f config/local/main.yml"
-alias ca="docker-compose -f config/local/admin.yml"
-alias ct="docker-compose -f config/local/test.yml"
+alias cm='docker-compose -f config/local/main.yml'
+alias cl='docker-compose -f config/$(ls --color=none config/ | grep --color=none \\.local)/main.yml'
+alias ct='docker-compose -f config/$(ls --color=none config/ | grep --color=none \\.local)/test.yml'
+# alias cd='docker-compose -f config/$(ls --color=none config/ | grep --color=none \\.dev1\\.idfly\\.ru)/main.yml'
 
-alias gs="git commit -a && git push"
-alias gsa="git commit -a --amend && git push --force"
+alias co='sudo chown -R leo: .'
+
+alias gs="git commit -v -a && git push"
+alias gsa="git commit -v -a --amend && git push --force"
 alias gpf="git push --force"
 alias ge="git rebase"
 alias gei="git rebase --interactive"
@@ -115,7 +118,6 @@ alias gdd='git diff --color | diff-so-fancy | less'
 
 alias -g B="bundle exec"
 alias -g G="| grep"
-
 alias uskypeweb="chromium -app=https://web.skype.com/en/"
 
 umask 002
