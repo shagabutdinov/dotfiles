@@ -11,7 +11,7 @@ ng-bind="$1"
       ]
     </commands>
     <tabTrigger>nb</tabTrigger>
-    <scope>text.slim(?!.*source)</scope>
+    <scope>text.slim(?!.*(source|meta\.tag))</scope>
     <description>angular bind</description>
   </snippet>
 
@@ -26,7 +26,7 @@ ng-change="$1"
         ]
       </commands>
       <tabTrigger>nch</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular change</description>
     </snippet>
 
@@ -41,7 +41,7 @@ ng-class="{$1}"
         ]
       </commands>
       <tabTrigger>nc</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular class</description>
     </snippet>
 
@@ -56,7 +56,7 @@ ng-click="$1"
         ]
       </commands>
       <tabTrigger>nl</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular click</description>
     </snippet>
 
@@ -71,7 +71,7 @@ ng-controller="$1"
         ]
       </commands>
       <tabTrigger>nco</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular controller</description>
     </snippet>
 
@@ -86,7 +86,7 @@ ng-disabled="$1"
         ]
       </commands>
       <tabTrigger>nd</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular disabled</description>
     </snippet>
 
@@ -101,7 +101,7 @@ ng-hide="$1"
         ]
       </commands>
       <tabTrigger>nh</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular hide</description>
     </snippet>
 
@@ -116,7 +116,7 @@ ng-href="$1"
         ]
       </commands>
       <tabTrigger>nhr</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular href</description>
     </snippet>
 
@@ -131,7 +131,7 @@ ng-if="$1"
         ]
       </commands>
       <tabTrigger>ni</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular if</description>
     </snippet>
 
@@ -146,7 +146,7 @@ ng-include="$1"
         ]
       </commands>
       <tabTrigger>nin</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular include</description>
     </snippet>
 
@@ -161,7 +161,7 @@ ng-keydown="$1"
         ]
       </commands>
       <tabTrigger>nkd</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular keydown</description>
     </snippet>
 
@@ -176,7 +176,7 @@ ng-keypress="$1"
         ]
       </commands>
       <tabTrigger>nkp</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular keypress</description>
     </snippet>
 
@@ -191,7 +191,7 @@ ng-keyup="$1"
         ]
       </commands>
       <tabTrigger>nku</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular keyup</description>
     </snippet>
 
@@ -206,7 +206,7 @@ ng-model="$1"
         ]
       </commands>
       <tabTrigger>nm</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular model</description>
     </snippet>
 
@@ -221,7 +221,7 @@ ng-mousedown="$1"
         ]
       </commands>
       <tabTrigger>nmd</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular mousedown</description>
     </snippet>
 
@@ -236,7 +236,7 @@ ng-mouseenter="$1"
         ]
       </commands>
       <tabTrigger>nme</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular mouseenter</description>
     </snippet>
 
@@ -251,7 +251,7 @@ ng-mouseleave="$1"
         ]
       </commands>
       <tabTrigger>nml</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular mouseleave</description>
     </snippet>
 
@@ -266,7 +266,7 @@ ng-mousemove="$1"
         ]
       </commands>
       <tabTrigger>nmm</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular mousemove</description>
     </snippet>
 
@@ -281,7 +281,7 @@ ng-mouseover="$1"
         ]
       </commands>
       <tabTrigger>nmo</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular mouseover</description>
     </snippet>
 
@@ -296,7 +296,7 @@ ng-mouseup="$1"
         ]
       </commands>
       <tabTrigger>nmu</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular mouseup</description>
     </snippet>
 
@@ -311,7 +311,7 @@ ng-readonly="$1"
         ]
       </commands>
       <tabTrigger>nro</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular readonly</description>
     </snippet>
 
@@ -326,7 +326,7 @@ ng-repeat="$1"
         ]
       </commands>
       <tabTrigger>nr</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular repeat</description>
     </snippet>
 
@@ -341,7 +341,7 @@ ng-selected="$1"
         ]
       </commands>
       <tabTrigger>nse</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular selected</description>
     </snippet>
 
@@ -356,7 +356,7 @@ ng-show="$1"
         ]
       </commands>
       <tabTrigger>nsh</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular show</description>
     </snippet>
 
@@ -371,7 +371,7 @@ ng-style="$1"
         ]
       </commands>
       <tabTrigger>nst</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular style</description>
     </snippet>
 
@@ -386,7 +386,7 @@ ng-submit="$1"
         ]
       </commands>
       <tabTrigger>ns</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular submit</description>
     </snippet>
 
@@ -401,7 +401,7 @@ ng-switch="$1"
         ]
       </commands>
       <tabTrigger>nsw</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular switch</description>
     </snippet>
 
@@ -416,7 +416,7 @@ ng-value="$1"
         ]
       </commands>
       <tabTrigger>nv</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular value</description>
     </snippet>
 
@@ -431,7 +431,7 @@ ng-options="$1"
         ]
       </commands>
       <tabTrigger>no</tabTrigger>
-      <scope>text.slim(?!.*source)</scope>
+      <scope>text.slim(?!.*(source|meta\.tag))</scope>
       <description>angular value</description>
     </snippet>
 

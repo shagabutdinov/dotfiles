@@ -1,8 +1,7 @@
 {
-	"folders":
-	[
+	"folders":	[
 		{
-			"path": "/home/leo/src/bi.idfly.ru",
+			"path": "/home/leo/src/capitan.idfly.ru",
 			"folder_exclude_patterns": [
 				"backend/log",
 				"backend/coverage",
@@ -13,12 +12,10 @@
 				"frontend/vendor",
 				"frontend/fonts",
 				"frontend/css/vendor",
-				"import",
-				"import/go",
-				"import/vendor",
-				"stream",
-				"stream/go",
-				"stream/vendor",
+				// "import",
+				"import/.build",
+				// "stream",
+				"stream/.build",
 				"mysql",
 				"cassandra",
 				"data",

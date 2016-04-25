@@ -4,12 +4,12 @@
 		"selected_items":
 		[
 			[
-				"Fprin",
-				"Fprintln	n int, err error ƒ"
+				"a",
+				"argv	[]string ν"
 			],
 			[
-				"data",
-				"DataDir	string ν"
+				"LogS",
+				"LogSystem	 Ɩ"
 			],
 			[
 				"ar",
@@ -224,10 +224,6 @@
 				"amqpConnection	*amqp.Connection ν"
 			],
 			[
-				"a",
-				"UserAgent	string ƒ"
-			],
-			[
 				"re",
 				"result	sql.Result ν"
 			],
@@ -296,10 +292,66 @@
 	"buffers":
 	[
 		{
-			"file": "/home/leo/src/darius/readme.md",
+			"file": "/home/leo/src/go/src/github.com/idfly/darius/darius/state.go",
 			"settings":
 			{
-				"buffer_size": 792,
+				"buffer_size": 6515,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/leo/src/go/src/github.com/idfly/darius/darius/main.go",
+			"settings":
+			{
+				"buffer_size": 801,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/leo/src/go/src/github.com/idfly/darius/.build/docker-compose.yml",
+			"settings":
+			{
+				"buffer_size": 454,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/leo/src/go/src/github.com/idfly/darius/.build/guardfile",
+			"settings":
+			{
+				"buffer_size": 754,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/leo/src/go/src/github.com/shagabutdinov/arguments/argument.go",
+			"settings":
+			{
+				"buffer_size": 1498,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/leo/src/go/src/github.com/shagabutdinov/arguments/arguments.go",
+			"settings":
+			{
+				"buffer_size": 3725,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/leo/src/go/src/github.com/shagabutdinov/arguments/values.go",
+			"settings":
+			{
+				"buffer_size": 1710,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/leo/src/go/src/github.com/shagabutdinov/arguments/create.go",
+			"settings":
+			{
+				"buffer_size": 2027,
 				"line_ending": "Unix"
 			}
 		}
@@ -311,12 +363,20 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 331.0,
-		"last_filter": "ssrub",
+		"height": 400.0,
+		"last_filter": "ssr",
 		"selected_items":
 		[
 			[
-				"ssrub",
+				"ssr",
+				"Set Syntax: Ruby"
+			],
+			[
+				"sssssr",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"ssru",
 				"Set Syntax: Ruby"
 			],
 			[
@@ -638,153 +698,154 @@
 	},
 	"expanded_folders":
 	[
-		"/home/leo/src/dariusd"
+		"/home/leo/src/go/src/github.com/idfly/darius"
 	],
 	"file_history":
 	[
-		"/home/leo/src/dariusd/app/cmd/dariusd/main.go",
-		"/home/leo/src/dariusd/app/database/functions.go",
-		"/home/leo/src/dariusd/app/httpd/functions.go",
-		"/home/leo/src/dariusd/app/httpd/httpd.go",
-		"/home/leo/src/dariusd/app/httpd/request.go",
-		"/home/leo/src/dariusd/worker/main.go",
-		"/home/leo/src/dariusd/app/interfaces.go",
-		"/home/leo/src/dariusd/config/local/main.yml",
-		"/home/leo/src/dariusd/worker/.gitignore",
-		"/home/leo/src/dariusd/app/.gitignore",
-		"/home/leo/src/dariusd/web/.gitignore",
-		"/home/leo/src/dariusd/.gitignore",
-		"/home/leo/src/dariusd/app/.build/app.dockerfile",
-		"/home/leo/src/dariusd/app/.build/config.yml",
-		"/home/leo/src/dariusd/web/package.json",
-		"/home/leo/src/dariusd/app/database/sql/functions.go",
-		"/home/leo/src/dariusd/app/.build/guardfile",
-		"/home/leo/src/dariusd/.darius.yml",
-		"/home/leo/.config/sublime-text-3/Projects/dariusd.shagabutdinov.com.sublime-project",
-		"/home/leo/src/dariusd/app/server/functions.go",
-		"/home/leo/src/dariusd/worker/repo.go",
-		"/home/leo/src/dariusd/app/.build/local.yml",
-		"/home/leo/src/dariusd/worker/.build/local.yml",
-		"/home/leo/src/dariusd/worker/.build/docker-compose.yml",
-		"/home/leo/src/dariusd/app/.build/docker-compose.yml",
-		"/home/leo/projects/personal/log.txt",
-		"/home/leo/src/dariusd/worker/server.go",
-		"/home/leo/src/dariusd/worker/.build/guardfile",
-		"/home/leo/src/dariusd/worker/.build/ssh/ssh.dockerfile",
-		"/home/leo/src/dariusd/worker/state.go",
-		"/home/leo/src/dariusd/worker/.build/go/bin/dariusd",
-		"/home/leo/src/dariusd/.build/docker-compose.yml",
+		"/home/leo/src/go/src/github.com/idfly/darius/darius/main_test.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/darius/main.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/darius/run_test.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/darius/run.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/expression.go",
+		"/home/leo/src/go/src/github.com/shagabutdinov/arguments/create.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/.build/build/darius",
+		"/home/leo/src/go/src/github.com/idfly/darius/tasks/call.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/utils.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/tasks/run.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/tasks/run_test.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/tasks/run_user_task.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/tasks/run_user_task_test.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/darius/state.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/darius/state_test.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/tasks/execute.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/tasks/call_test.go",
 		"/home/leo/src/go/src/github.com/idfly/darius/.darius.yml",
+		"/home/leo/src/go/src/github.com/idfly/darius/readme.md",
+		"/home/leo/src/go-app/readme.md",
+		"/home/leo/src/go/src/github.com/idfly/darius/darius/log.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/tasks/ololo_test.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/tasks/ololo.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/darius/test.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/darius/utils_mock.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/tasks/execute_test.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/tasks/state_mock.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/state.go",
+		"/home/leo/.config/sublime-text-3/Projects/darius.sublime-project",
+		"/home/leo/src/go/src/github.com/idfly/darius/.build/docker-compose.yml",
+		"/home/leo/src/go/src/github.com/idfly/darius/.gitignore",
+		"/home/leo/src/go/src/bitbucket.org/shagabutdinov/dariusd/.build/docker-compose.yml",
+		"/home/leo/src/go/src/github.com/idfly/darius/.build/ssh/ssh.dockerfile",
+		"/home/leo/src/go/src/github.com/idfly/darius/cli/log_test.go",
 		"/home/leo/src/go/src/dariusd/main.go",
-		"/home/leo/src/go/src/darius/expander.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/.build/up.sh",
+		"/home/leo/src/go/src/github.com/idfly/darius/.build/ssh.dockerfile",
+		"/home/leo/src/go/src/github.com/idfly/darius/.build/guardfile",
+		"/home/leo/src/go/src/github.com/idfly/darius/cli/log.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/config_test.go",
+		"/home/leo/src/go-app/Dockerfile",
+		"/home/leo/src/go/src/github.com/idfly/darius/.config/docker-compose.yml",
+		"/home/leo/src/go/src/github.com/idfly/darius/.config/guardfile",
+		"/home/leo/src/go/src/github.com/idfly/darius/.config/ssh.dockerfile",
+		"/home/leo/src/go/src/github.com/idfly/darius/.config/gemfile",
+		"/home/leo/src/go/src/github.com/idfly/darius/Gemfile",
+		"/home/leo/src/go/src/github.com/idfly/darius/.dockerignore",
+		"/home/leo/src/go/src/github.com/idfly/darius/config/local/app.dockerfile",
+		"/home/leo/src/go/src/github.com/idfly/darius/config/local/up.sh",
+		"/home/leo/src/go/src/github.com/idfly/darius/config/local/docker-compose.yml",
+		"/home/leo/projects/personal/hiring/Вопросы для собеседования - ruby.txt",
+		"/home/leo/projects/personal/hiring/Вопросы для собеседования - php&yii.txt",
+		"/home/leo/src/go/src/github.com/idfly/darius/cli/main.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/cli/main_test.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/cli/run.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/cli/run_test.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/cli/state.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/cli/state_test.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/cli/test.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/cli/utils.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/cli/utils_mock.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/config.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/dariusd/main.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/dariusd/repo.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/dariusd/server.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/dariusd/state.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/dariusd/utils.go",
+		"/home/leo/src/go/src/github.com/shagabutdinov/arguments/readme.md",
+		"/home/leo/projects/personal/log.txt",
+		"/home/leo/src/go/src/github.com/shagabutdinov/arguments/argument.go",
+		"/home/leo/src/go/src/github.com/shagabutdinov/arguments/arguments.go",
+		"/home/leo/src/go/src/github.com/shagabutdinov/arguments/arguments_test.go",
+		"/home/leo/src/go/src/github.com/shagabutdinov/arguments/create_test.go",
+		"/home/leo/src/go/src/github.com/shagabutdinov/arguments/values.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/arguments/argument.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/arguments/arguments.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/arguments/arguments_test.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/arguments/create.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/arguments/create_test.go",
+		"/home/leo/src/go/src/github.com/idfly/darius/arguments/values.go",
+		"/home/leo/src/go/src/darius/arguments/argument.go",
+		"/home/leo/src/go/src/darius/arguments/arguments.go",
+		"/home/leo/src/go/src/darius/arguments/arguments_test.go",
+		"/home/leo/src/go/src/darius/arguments/create.go",
+		"/home/leo/src/go/src/darius/arguments/create_test.go",
+		"/home/leo/src/go/src/darius/arguments/values.go",
+		"/home/leo/src/go/src/darius/cli/log.go",
+		"/home/leo/src/go/src/darius/cli/log_test.go",
+		"/home/leo/src/go/src/darius/cli/main.go",
+		"/home/leo/src/go/src/darius/cli/main_test.go",
+		"/home/leo/src/go/src/darius/cli/run.go",
+		"/home/leo/src/go/src/darius/cli/run_test.go",
+		"/home/leo/src/go/src/darius/cli/state.go",
+		"/home/leo/src/go/src/darius/cli/state_test.go",
+		"/home/leo/src/go/src/darius/cli/test.go",
+		"/home/leo/src/go/src/darius/cli/utils.go",
+		"/home/leo/src/go/src/darius/cli/utils_mock.go",
+		"/home/leo/src/go/src/darius/config.go",
+		"/home/leo/src/go/src/darius/config_test.go",
+		"/home/leo/src/go/src/darius/dariusd/main.go",
+		"/home/leo/src/go/src/darius/dariusd/repo.go",
+		"/home/leo/src/go/src/darius/dariusd/server.go",
+		"/home/leo/src/go/src/darius/dariusd/state.go",
+		"/home/leo/src/go/src/darius/dariusd/utils.go",
+		"/home/leo/src/go/src/darius/expression.go",
+		"/home/leo/src/go/src/darius/state.go",
+		"/home/leo/src/go/src/darius/tasks/call.go",
+		"/home/leo/src/go/src/darius/tasks/call_test.go",
+		"/home/leo/src/go/src/darius/tasks/execute.go",
+		"/home/leo/src/go/src/darius/tasks/execute_test.go",
+		"/home/leo/src/go/src/darius/tasks/run.go",
 		"/home/leo/src/go/src/darius/tasks/run_test.go",
 		"/home/leo/src/go/src/darius/tasks/state_mock.go",
-		"/home/leo/src/go/src/darius/tasks/run.go",
-		"/home/leo/.config/sublime-text-3/Packages/User/go/go.sublime-snippet-enhanced",
-		"/home/leo/src/go/src/darius/tasks/execute_test.go",
-		"/home/leo/src/go/src/darius/tasks/execute.go",
-		"/home/leo/src/go/src/darius/cli/state.go",
-		"/home/leo/src/go/src/darius/cli/main_test.go",
-		"/home/leo/src/go/src/darius/tasks/call_test.go",
-		"/home/leo/src/go/src/darius/tasks/call.go",
 		"/home/leo/src/go/src/darius/utils.go",
-		"/home/leo/src/go/src/darius/cli/state_test.go",
-		"/home/leo/src/go/src/darius/state.go",
-		"/home/leo/src/go/src/darius/cli/run_test.go",
-		"/home/leo/src/go/src/darius/cli/test.go",
-		"/home/leo/src/go/src/darius/cli/run.go",
-		"/home/leo/src/go/src/darius/arguments/arguments.go",
-		"/home/leo/src/go/src/darius/cli/log_test.go",
-		"/home/leo/src/go/src/darius/cli/utils_mock.go",
+		"/home/leo/src/go/src/darius/.gitignore",
+		"/home/leo/src/go/src/darius/expander.go",
+		"/home/leo/.config/sublime-text-3/Packages/User/go/go.sublime-snippet-enhanced",
 		"/home/leo/src/go/src/darius/tasks/utils.go",
-		"/home/leo/src/go/src/darius/expression.go",
 		"/home/leo/src/go/src/darius/darius",
 		"/home/leo/src/go/src/darius/tasks/__call_test.go",
 		"/home/leo/src/go/src/darius/tasks/__call.go",
 		"/home/leo/src/go/src/darius/tasks/run_user_task.go",
 		"/home/leo/src/go/src/darius/tasks/run_user_task_test.go",
-		"/home/leo/src/go/src/darius/arguments/values.go",
-		"/home/leo/src/go/src/darius/arguments/create.go",
-		"/home/leo/src/go/src/darius/arguments/argument.go",
-		"/home/leo/src/go/src/darius/cli/log.go",
-		"/home/leo/src/go/src/darius/cli/main.go",
-		"/home/leo/src/go/src/darius/config.go",
-		"/home/leo/src/go/src/darius/config_test.go",
-		"/home/leo/src/go/src/darius/cli/utils.go",
 		"/home/leo/src/go/src/darius/config/local/up.sh",
 		"/home/leo/projects/idfly.ru/team.txt",
 		"/home/leo/.config/sublime-text-3/Projects/darius.shagabutdinov.com.sublime-project",
 		"/home/leo/src/go/src/darius/config/local/ssh.dockerfile",
-		"/home/leo/src/go/src/darius/config/local/.ssh/user",
-		"/home/leo/src/go/src/darius/config/local/docker-compose.yml",
-		"/home/leo/src/go/src/darius/config/local/.ssh/user.pub",
-		"/home/leo/src/shell/shell.go",
-		"/home/leo/src/shell/remote.go",
-		"/home/leo/src/shell/remote_test.go",
-		"/home/leo/src/shell/config/local/ssh.dockerfile",
-		"/home/leo/src/go/src/darius/config/local/.ssh/authorized_keys",
-		"/home/leo/src/shell/local.go",
-		"/home/leo/src/go/src/github.com/shagabutdinov/shell/readme.md",
-		"/home/leo/src/go/src/github.com/shagabutdinov/shell/re",
-		"/home/leo/src/go/src/github.com/shagabutdinov/shell/shell.go",
-		"/home/leo/src/go/src/github.com/shagabutdinov/shell/shell_test.go",
-		"/home/leo/src/go/src/github.com/shagabutdinov/shell/local.go",
-		"/home/leo/src/go/src/github.com/shagabutdinov/shell/local_test.go",
-		"/home/leo/src/go/src/github.com/shagabutdinov/shell/remote.go",
-		"/home/leo/src/go/src/github.com/shagabutdinov/shell/remote_test.go",
-		"/home/leo/src/go/src/github.com/shagabutdinov/shell/config/local/docker-compose.yml",
-		"/home/leo/src/go/src/darius/config/local/app.dockerfile",
-		"/home/leo/src/go/src/darius/config/local/shadow",
-		"/home/leo/src/go/src/github.com/fatih/color/color.go",
-		"/home/leo/src/go/src/bitbucket.org/shagabutdinov/darius/logger/output/functions.go",
-		"/home/leo/src/go/src/darius/cli/functional_test.go",
-		"/home/leo/src/go/src/darius/cli/state_mock.go",
-		"/home/leo/.config/sublime-text-3/Packages/User/go/types.sublime-snippet-enhanced",
-		"/home/leo/.config/sublime-text-3/Packages/User/coffee/stdlib.sublime-snippet-enhanced",
-		"/home/leo/.config/sublime-text-3/Packages/User/js/l console log.sublime-snippet-enhanced",
-		"/home/leo/src/go/src/darius/commands/execute.go",
-		"/home/leo/src/go/src/darius/commands/run.go",
-		"/home/leo/src/go/src/darius/commands/state_mock.go",
-		"/home/leo/src/go/src/darius/commands/execute_test.go",
-		"/home/leo/src/go/src/darius/commands/run_test.go",
-		"/home/leo/src/go/src/bitbucket.org/shagabutdinov/darius/config/parser.go",
-		"/home/leo/src/go/src/darius/run.go",
-		"/home/leo/src/go/src/darius/state_mock.go",
-		"/home/leo/src/go/src/darius/execute_test.go",
-		"/home/leo/src/go/src/darius/commands.go",
-		"/home/leo/src/go/src/darius/interfaces.go",
-		"/home/leo/src/go/src/bitbucket.org/shagabutdinov/darius/cmd/darius/main.go",
-		"/home/leo/src/go/src/arguments/argument.go",
-		"/home/leo/src/go/src/arguments/arguments_test.go",
-		"/home/leo/src/go/src/arguments/values.go",
-		"/home/leo/src/go/src/arguments/create.go",
-		"/home/leo/src/go/src/arguments/create_test.go",
-		"/home/leo/src/go/src/arguments/arguments_functions.go",
-		"/home/leo/src/go/src/darius/execute.go",
-		"/home/leo/src/go/src/darius/run_test.go",
-		"/home/leo/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
-		"/home/leo/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
-		"/home/leo/src/go/src/arguments/arguments.go",
-		"/home/leo/src/go/src/darius/command_test.go",
-		"/home/leo/src/go/src/darius/command.go",
-		"/home/leo/src/go/src/darius/shell_mock.go",
-		"/home/leo/src/go/src/darius/darius.go",
-		"/home/leo/src/go/src/darius/main.go"
+		"/home/leo/src/go/src/darius/config/local/.ssh/user"
 	],
 	"find":
 	{
-		"height": 24.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
 		"height": 102.0,
 		"where_history":
 		[
+			"/home/leo/src/go/src/github.com/shagabutdinov/arguments/",
 			"",
-			"app/httpd/",
+			"/home/leo/src/go/src/github.com/shagabutdinov/arguments/",
+			"*.go",
 			"",
-			"app/",
-			"app/httpd/",
+			"/home/leo/src/go/src/github.com/shagabutdinov/arguments/",
 			"",
 			"/home/leo/src/go/src/github.com/shagabutdinov/shell/",
 			"",
@@ -877,32 +938,41 @@
 		"case_sensitive": true,
 		"find_history":
 		[
-			"StartTask",
-			"/run",
+			"_darius_local",
+			"package",
+			"Create",
+			"argv: ",
+			"unknown argument type",
+			"bool",
+			"boolean",
+			"CALL",
+			"no task pro",
+			"not found",
+			"run-user-task",
+			"params",
+			"task",
+			"Ololo(?=\\W)",
+			"ololo(?=\\W)",
+			"call(?=\\W)",
+			"Call(?=\\W)",
+			"shell.Olo",
+			"Run(?=\\W)",
+			"run(?=\\W)",
+			"run\\W",
 			"run",
-			"Run",
-			"redis.Con",
-			"redis-",
-			"redis",
-			"/run",
-			"worker",
-			"/f/",
-			"Database type",
-			"Bind",
-			"listen",
-			"appDir",
-			"app",
-			"dataDir",
-			"htm",
-			"idfly/darius",
-			".build/docker-compose.yml",
-			"ssh_dariu",
-			"darius/tasks",
-			"darius.local",
-			"_darius_local",
-			"captainanalytics.ru",
-			"capitan",
-			"_darius_local",
+			"\"run\"",
+			"job",
+			"/cli",
+			"./..",
+			"github.com/darius",
+			".config",
+			"/../",
+			"/..",
+			"\"darius",
+			"\"darius\"",
+			"arguments.",
+			"config",
+			"\"darius",
 			"Expander",
 			"expander *Expander",
 			"state.commands",
@@ -995,23 +1065,25 @@
 			"TestRunReportsErrorIfNoTaskProvided",
 			"utils",
 			"readFileHandler",
-			"includePathStack",
-			"includeRecursive",
-			"\"{KEY",
-			"config *Config",
-			"TestStateExpand",
-			"expandInclude",
-			"expandIncludeRecursive",
-			"includePathStack",
-			"state.",
-			"config *config"
+			"includePathStack"
 		],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": false,
+		"regex": true,
 		"replace_history":
 		[
+			"Call",
+			"call",
+			"run",
+			"Run",
+			"Ololo",
+			"ololo",
+			"ololo\\1",
+			"ololo$1",
+			"run$1",
+			"ololo",
+			"\"ololo\"",
 			"run",
 			"__call__",
 			"call",
@@ -1032,29 +1104,119 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/home/leo/src/darius/readme.md",
+					"file": "/home/leo/src/go/src/github.com/idfly/darius/darius/state.go",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 792,
+						"buffer_size": 6515,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								237,
-								237
+								417,
+								417
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+							"syntax": "Packages/GoSublime/syntax/GoSublime-Go.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/leo/src/go/src/github.com/idfly/darius/darius/main.go",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 801,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								229,
+								229
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GoSublime/syntax/GoSublime-Go.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/leo/src/go/src/github.com/idfly/darius/.build/docker-compose.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 454,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								389,
+								389
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/leo/src/go/src/github.com/idfly/darius/.build/guardfile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 754,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								473,
+								473
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1062,13 +1224,129 @@
 					},
 					"stack_index": 0,
 					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/leo/src/go/src/github.com/shagabutdinov/arguments/argument.go",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1498,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1221,
+								1221
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GoSublime/syntax/GoSublime-Go.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 208.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/leo/src/go/src/github.com/shagabutdinov/arguments/arguments.go",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3725,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3723,
+								3723
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GoSublime/syntax/GoSublime-Go.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2407.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/home/leo/src/go/src/github.com/shagabutdinov/arguments/values.go",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1710,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7,
+								7
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GoSublime/syntax/GoSublime-Go.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/leo/src/go/src/github.com/shagabutdinov/arguments/create.go",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2027,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2000,
+								2000
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GoSublime/syntax/GoSublime-Go.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 900.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 38.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -1126,10 +1404,10 @@
 		"height": 696.0
 	},
 	"pinned_build_system": "",
-	"project": "dariusd.shagabutdinov.com.sublime-project",
+	"project": "darius.sublime-project",
 	"replace":
 	{
-		"height": 44.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1139,36 +1417,56 @@
 		"selected_items":
 		[
 			[
-				"main",
-				"config/local/main.yml"
-			],
-			[
-				"http/func",
-				"app/httpd/functions.go"
-			],
-			[
-				".darius",
-				".darius.yml"
-			],
-			[
-				"main.yml",
-				"config/local/main.yml"
-			],
-			[
 				"guard",
-				"app/.build/guardfile"
+				".build/guardfile"
+			],
+			[
+				"doc-com",
+				".build/docker-compose.yml"
+			],
+			[
+				"run_test",
+				"darius/run_test.go"
+			],
+			[
+				"stat",
+				"darius/state.go"
+			],
+			[
+				"call",
+				"tasks/call.go"
+			],
+			[
+				".git",
+				".gitignore"
+			],
+			[
+				"up",
+				".build/up.sh"
+			],
+			[
+				"log",
+				"cli/log.go"
 			],
 			[
 				"guar",
-				"app/.build/guardfile"
+				".build/guardfile"
 			],
 			[
-				".daruis",
-				".darius.yml"
+				"test",
+				"config_test.go"
 			],
 			[
-				"darius",
-				"worker/.build/go/bin/dariusd"
+				"com",
+				".build/docker-compose.yml"
+			],
+			[
+				"app",
+				"config/local/app.dockerfile"
+			],
+			[
+				"cli",
+				"cli/test.go"
 			],
 			[
 				"state",
@@ -1247,14 +1545,6 @@
 				"cli/state.go"
 			],
 			[
-				"call",
-				"tasks/call.go"
-			],
-			[
-				"run_test",
-				"cli/run_test.go"
-			],
-			[
 				"stat_moc",
 				"tasks/state_mock.go"
 			],
@@ -1299,10 +1589,6 @@
 				"arguments/create.go"
 			],
 			[
-				"log",
-				"cli/log.go"
-			],
-			[
 				"run.",
 				"tasks/run.go"
 			],
@@ -1323,8 +1609,8 @@
 				"cli/run.go"
 			],
 			[
-				"up",
-				"config/local/up.sh"
+				"main",
+				"cli/main_test.go"
 			],
 			[
 				"exe",
@@ -1353,10 +1639,6 @@
 			[
 				"she",
 				"~/src/go/src/github.com/shagabutdinov/shell/shell.go"
-			],
-			[
-				"com",
-				"config/local/docker-compose.yml"
 			],
 			[
 				"do",
@@ -1495,10 +1777,6 @@
 				"main_backend/app/controllers/application_controller.rb"
 			],
 			[
-				"app",
-				"admin_backend/app/controllers/application_controller.rb"
-			],
-			[
 				"head.html",
 				"main_frontend/views/layout/head.html"
 			],
@@ -1525,10 +1803,6 @@
 			[
 				"pac",
 				"admin_frontend/package.json"
-			],
-			[
-				".git",
-				".gitignore"
 			],
 			[
 				"applcation.rb",
@@ -1649,6 +1923,10 @@
 			[
 				"common.js",
 				"web/js/common.js"
+			],
+			[
+				"datasave",
+				"data-saver/main.go"
 			]
 		],
 		"width": 0.0
@@ -1656,16 +1934,16 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "capi",
+		"last_filter": "bi",
 		"selected_items":
 		[
 			[
-				"capi",
-				"~/.config/sublime-text-3/Projects/landing.capitan.idfly.ru.sublime-project"
+				"bi",
+				"~/.config/sublime-text-3/Projects/bi.idfly.ru.sublime-project"
 			],
 			[
-				"darius",
-				"~/.config/sublime-text-3/Projects/darius.sublime-project"
+				"insto",
+				"~/.config/sublime-text-3/Projects/instore.idfly.ru.sublime-project"
 			],
 			[
 				"dar",
@@ -1678,10 +1956,6 @@
 			[
 				"ins",
 				"~/.config/sublime-text-3/Projects/instore.idfly.ru.sublime-project"
-			],
-			[
-				"bi",
-				"~/.config/sublime-text-3/Projects/bi.idfly.sublime-workspace"
 			],
 			[
 				"uve",

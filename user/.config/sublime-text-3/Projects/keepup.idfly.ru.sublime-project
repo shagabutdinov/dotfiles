@@ -1,0 +1,21 @@
+{
+	"folders":
+	[
+		{
+			"path": "/home/leo/src/keepup.idfly.ru",
+      "folder_exclude_patterns": [
+        "backend/vendor",
+        "backend/runtime",
+        "frontend/build",
+        "frontend/vendor",
+        "frontend/node_modules",
+        "data",
+        "mysql",
+      ],
+		},
+  ],
+  // "settings": {
+  //   "mysql": ["mysql", "-h", "dev1.idfly.ru", "-u", "keepup-idfly-ru",
+  //     "-pAeMah-xo7eiY", "--table", "keepup-idfly-ru"],
+  // },
+}

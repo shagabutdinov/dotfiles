@@ -238,11 +238,20 @@ return result
 
   <snippet>
   	<content><![CDATA[
+return nil
+]]></content>
+    <tabTrigger>rn</tabTrigger>
+    <scope>source.ruby</scope>
+    <description>return nil</description>
+  </snippet>
+
+  <snippet>
+  	<content><![CDATA[
 return false
 ]]></content>
     <tabTrigger>rf</tabTrigger>
     <scope>source.ruby</scope>
-    <description>return</description>
+    <description>return false</description>
   </snippet>
 
   <snippet>
@@ -251,7 +260,7 @@ return true
 ]]></content>
     <tabTrigger>rt</tabTrigger>
     <scope>source.ruby</scope>
-    <description>return</description>
+    <description>return true</description>
   </snippet>
 
 	<snippet>

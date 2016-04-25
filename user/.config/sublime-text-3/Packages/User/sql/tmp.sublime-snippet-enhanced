@@ -1,0 +1,12 @@
+<snippets>
+
+  <snippet>
+    <content><![CDATA[
+CONVERT(CAST(CONVERT(${1:$selection__or__last_assigned_variable} USING latin1) AS BINARY) USING utf8)
+]]></content>
+    <tabTrigger>C</tabTrigger>
+    <scope>source.sql</scope>
+    <description>TEMP</description>
+  </snippet>
+
+</snippets>

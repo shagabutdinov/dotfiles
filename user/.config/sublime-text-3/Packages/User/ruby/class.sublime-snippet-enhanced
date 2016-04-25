@@ -104,6 +104,29 @@ end
 
 	<snippet>
 		<content><![CDATA[
+def initialize(*args)
+	$0
+  return super(*args)
+end
+]]></content>
+		<commands>
+			[
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>dii</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*dii$"},
+			]
+		]]></context>
+		<description>def initialize(*args)</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 def self.$1 $2
 	${0:$selection}
 end
@@ -122,6 +145,48 @@ end
 			]
 		]]></context>
 		<description>def</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+attr_accessor($1)
+]]></content>
+		<tabTrigger>aa</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*aa$"},
+			]
+		]]></context>
+		<description>attr_accessor</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+attr_reader($1)
+]]></content>
+		<tabTrigger>ar</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*ar$"},
+			]
+		]]></context>
+		<description>attr_reader</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+attr_writer($1)
+]]></content>
+		<tabTrigger>aw</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*aw$"},
+			]
+		]]></context>
+		<description>attr_writer</description>
 	</snippet>
 
 </snippets>
