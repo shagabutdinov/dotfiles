@@ -20,6 +20,7 @@
 				"cassandra",
 				"data",
 				"tests/vendor",
+				"pdf/vendor",
 			],
 		}
 	],

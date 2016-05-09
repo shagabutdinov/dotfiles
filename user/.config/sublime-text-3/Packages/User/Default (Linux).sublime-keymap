@@ -19,6 +19,11 @@
     },
   },
 
+  {
+    "keys": ["alt+u"],
+    "command": "find_all_under",
+  },
+
   // KeymapEnhanced:
   // Should be in User/Default ().sublime-keymap to avoid conflicts with
   // terminal plugin

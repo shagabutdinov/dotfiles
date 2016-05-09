@@ -287,10 +287,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 232.0,
-		"last_filter": "ssmark",
+		"height": 400.0,
+		"last_filter": "sste",
 		"selected_items":
 		[
+			[
+				"sste",
+				"Set Syntax: Plain Text"
+			],
 			[
 				"ssmark",
 				"Set Syntax: Markdown"
@@ -338,10 +342,6 @@
 			[
 				"ssjo",
 				"Set Syntax: JSON"
-			],
-			[
-				"sste",
-				"Set Syntax: Plain Text"
 			],
 			[
 				"sstext",
@@ -603,6 +603,8 @@
 			"sublime.log_commands(True)",
 			"sublime.log_commands(False);",
 			"sublime.log_commands(True)",
+			"sublime.log_commands(False);",
+			"sublime.log_commands(True)",
 			"sublime.log_commands(True);",
 			"sublime.log_commands(False);",
 			"sublime.log_commands(True);",
@@ -646,30 +648,50 @@
 	],
 	"file_history":
 	[
-		"/home/leo/src/landing.capitan.idfly.ru/admin/backend/config/database.yml",
-		"/home/leo/src/landing.capitan.idfly.ru/config/landing.capitan.dev1.idfly.ru/main.yml",
-		"/home/leo/src/landing.capitan.idfly.ru/admin/backend/config/application.rb",
-		"/home/leo/src/landing.capitan.idfly.ru/config/captainanalytics.ru/config.env",
+		"/home/leo/src/landing.capitan.idfly.ru/config/config.env",
+		"/home/leo/projects/personal/log.txt",
 		"/home/leo/src/landing.capitan.idfly.ru/config/captainanalytics.ru/main.yml",
+		"/home/leo/src/landing.capitan.idfly.ru/main/backend/app/mailers/request_mailer.rb",
+		"/home/leo/src/landing.capitan.idfly.ru/main/backend/config/application.rb",
+		"/home/leo/src/landing.capitan.idfly.ru/config/captainanalytics.ru/config.env",
+		"/home/leo/src/landing.capitan.idfly.ru/config/captainanalytics.local/config.env",
+		"/home/leo/src/landing.capitan.idfly.ru/config/captainanalytics.local/main.yml",
+		"/home/leo/src/landing.capitan.idfly.ru/admin/backend/config/application.rb",
+		"/home/leo/src/landing.capitan.idfly.ru/main/backend/config/initializers/mailer.rb",
+		"/home/leo/src/dev2.idfly.ru/nginx/capitan.dev2.idfly.ru.conf",
+		"/home/leo/src/dev2.idfly.ru/docker-compose.yml",
+		"/home/leo/src/prod1.idfly.ru/nginx/captainanalytics.ru.conf",
+		"/home/leo/src/prod1.idfly.ru/docker-compose.yml",
+		"/home/leo/src/landing.capitan.idfly.ru/http/nginx.conf",
+		"/home/leo/src/landing.capitan.idfly.ru/Makefile",
+		"/home/leo/src/landing.capitan.idfly.ru/main/backend/app/controllers/requests_controller.rb",
+		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/js/app/app.coffee",
+		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/js/app/routes.coffee",
+		"/home/leo/src/landing.capitan.idfly.ru/admin/frontend/gulpfile.js",
+		"/home/leo/.config/sublime-text-3/Projects/landing.capitan.idfly.ru.sublime-project",
+		"/home/leo/src/capitan.idfly.ru/Makefile",
+		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/gulpfile.js",
+		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/config/assets.json",
+		"/home/leo/src/landing.capitan.idfly.ru/main/backend/vendor/bundle/ruby/2.3.0/gems/redis-3.2.2/lib/redis/client.rb",
+		"/home/leo/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/leo/src/landing.capitan.idfly.ru/http/config/local/nginx.conf",
+		"/home/leo/src/landing.capitan.idfly.ru/config/captainanalytics.local/test.yml",
+		"/home/leo/src/landing.capitan.idfly.ru/config/captainanalytics.dev1.idfly.ru/main.yml",
+		"/home/leo/src/landing.capitan.idfly.ru/config/landing.capitan.dev1.idfly.ru/main.yml",
+		"/home/leo/src/landing.capitan.idfly.ru/config/local/main.yml",
+		"/home/leo/src/landing.capitan.idfly.ru/config/landing.capitan.dev1.idfly.ru/config.env",
+		"/home/leo/src/landing.capitan.idfly.ru/admin/backend/config/database.yml",
 		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/views/index/requests/request.slim",
 		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/views/index/prices.slim",
 		"/home/leo/bin/ushell-env",
-		"/home/leo/projects/personal/log.txt",
 		"/home/leo/src/landing.capitan.idfly.ru/config/darius/deploy-to-dev.task.yml",
-		"/home/leo/src/landing.capitan.idfly.ru/admin/frontend/gulpfile.js",
 		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/views/index/desk.slim",
 		"/home/leo/src/docs.idfly.ru/docs/newbies_tutorial.md",
 		"/home/leo/src/docs.idfly.ru/docs/newbies_messages.md",
-		"/home/leo/src/landing.capitan.idfly.ru/config/local/main.yml",
-		"/home/leo/src/landing.capitan.idfly.ru/main/backend/config/application.rb",
-		"/home/leo/src/landing.capitan.idfly.ru/config/config.env",
-		"/home/leo/src/landing.capitan.idfly.ru/config/landing.capitan.dev1.idfly.ru/config.env",
 		"/home/leo/src/landing.capitan.idfly.ru/config/local/config.env",
-		"/home/leo/src/landing.capitan.idfly.ru/main/backend/app/mailers/request_mailer.rb",
 		"/home/leo/src/landing.capitan.idfly.ru/config/localhost/config.env",
 		"/home/leo/src/landing.capitan.idfly.ru/config/localhost/main.yml",
 		"/home/leo/src/landing.capitan.idfly.ru/config/localhost/test.yml",
-		"/home/leo/src/landing.capitan.idfly.ru/http/config/local/nginx.conf",
 		"/home/leo/src/landing.capitan.idfly.ru/tests/spec/spec_helper.rb",
 		"/home/leo/src/landing.capitan.idfly.ru/config/darius/up.task.yml",
 		"/home/leo/src/landing.capitan.idfly.ru/config/landing.capitan.dev1.idfly.ru/conig.env",
@@ -677,7 +699,6 @@
 		"/home/leo/src/landing.capitan.idfly.ru/config/localhost/conig.env",
 		"/home/leo/src/landing.capitan.idfly.ru/config/darius/deploy-to-prod.task.yml",
 		"/home/leo/src/landing.capitan.idfly.ru/main/backend/Gemfile",
-		"/home/leo/src/landing.capitan.idfly.ru/main/backend/app/controllers/requests_controller.rb",
 		"/home/leo/src/landing.capitan.idfly.ru/config/prod/main.yml",
 		"/home/leo/src/landing.capitan.idfly.ru/config/dev/main.yml",
 		"/home/leo/src/landing.capitan.idfly.ru/admin/backend/app/controllers/requests_controller.rb",
@@ -708,7 +729,6 @@
 		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/js/directives/navigation_directive.coffee",
 		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/js/controllers/index_ctrl.coffee",
 		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/views/directives/navigation.slim",
-		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/gulpfile.js",
 		"/home/leo/.config/sublime-text-3/Local/Session.sublime_session",
 		"/home/leo/src/landing.capitan.idfly.ru/http/config/dev/nginx.conf",
 		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/views/index/infographics.slim",
@@ -716,7 +736,6 @@
 		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/package.json",
 		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/node_modules/angular-class-coffee/build/angular-class.js",
 		"/home/leo/src/capitan.idfly.ru/frontend/node_modules/angular-class-coffee/build/angular-class.js",
-		"/home/leo/.config/sublime-text-3/Projects/landing.capitan.idfly.ru.sublime-project",
 		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/vendor/html.landing.capitan.idfly.ru/frontend/css/navigation.scss",
 		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/vendor/html.landing.capitan.idfly.ru/frontend/views/index.slim",
 		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/js/controllers/requests_ctrl.coffee",
@@ -756,28 +775,11 @@
 		"/home/leo/src/go/src/github.com/idfly/darius/jobs/run_test.go",
 		"/home/leo/src/go/src/github.com/idfly/darius/jobs/run_user_task.go",
 		"/home/leo/src/go/src/github.com/idfly/darius/jobs/run_user_task_test.go",
-		"/home/leo/src/go/src/github.com/idfly/darius/jobs/state_mock.go",
-		"/home/leo/src/keepup.idfly.ru/tests/config/local/up.sh",
-		"/home/leo/src/keepup.idfly.ru/config/local/test.yml",
-		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/css/app.scss",
-		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/css/tariffs.scss",
-		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/config/assets.json",
-		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/views/index.slim",
-		"/home/leo/src/bvk.idfly.ru/main_backend/app/models/event.rb",
-		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/build/js/vendor/jquery-ui.js",
-		"/home/leo/src/landing.capitan.idfly.ru/.gitmodules",
-		"/home/leo/src/bvk.idfly.ru/main_backend/app/models/event",
-		"/home/leo/src/bvk.idfly.ru/config/darius/deploy-to-dev.task.yml",
-		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/js/directives/random_images_directive.coffee",
-		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/build/js/vendor/Chart.js",
-		"/home/leo/src/landing.capitan.idfly.ru/main/frontend/views/index/index.slim",
-		"/home/leo/src/landing.capitan.idfly.ru/admin/frontend/config/assets.json",
-		"/home/leo/src/landing.capitan.idfly.ru/main/backend/app/services/secrets_service.rb",
-		"/home/leo/src/landing.capitan.idfly.ru/main/backend/app/models/user.rb"
+		"/home/leo/src/go/src/github.com/idfly/darius/jobs/state_mock.go"
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -919,6 +921,50 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"leonid@shaga",
+			"main_sidekiq",
+			"TEST",
+			"MAIL_DOMAIN",
+			"hello@captainanalytics.ru",
+			"ADMIN_EMA",
+			"frontend_main",
+			"admin_email",
+			"ADMIN_EMAIL",
+			"leonid@sha",
+			"ADMIN_",
+			"baseHref",
+			"capitan",
+			"$httpProvider.interceptors.push('myHttpInterceptor', ['$q', ($q) ->\n      return {\n        requestError: ((rejection) ->\n          console.log('OLO')\n          alert('Ошибка; попробуйте повторить действие или обратитесь к ' +\n            'администрации')\n          return $q.reject(rejection);\n        )\n        responseError: ((rejection) ->\n          console.log(\"MDA\")\n          alert('Ошибка; попробуйте повторить действие или обратитесь к ' +\n            'администрации')\n          return $q.reject(rejection);\n        )\n      };\n    ]);\n  ])",
+			"$http.defaults.headers.common['Content-Type'] = 'application/json'\n  $http.defaults.headers.common['Accept'] = 'application/json'\n\n  token = localStorage.getItem('user.token')\n  $http.defaults.headers.common['X-User-Token'] = token\n\n  $http\n    .get('/api/status')\n    .then((response) =>\n      _.extend($rootScope, response.data)\n    )\n\n  $httpProvider.interceptors.push('myHttpInterceptor', ['$q', ($q) ->\n  return {\n    requestError: ((rejection) ->\n      console.log('OLO')\n      alert('Ошибка; попробуйте повторить действие или обратитесь к ' +\n        'администрации')\n      return $q.reject(rejection);\n    )\n    responseError: ((rejection) ->\n      console.log(\"MDA\")\n      alert('Ошибка; попробуйте повторить действие или обратитесь к ' +\n        'администрации')\n      return $q.reject(rejection);\n    )\n  };\n]); ",
+			"// ",
+			"bvk.idfly.ru",
+			"dev1.idfly.ru",
+			"dev2.idfly.ru",
+			"command",
+			"    \"",
+			"\n  ",
+			"sublime_enhanced_keybindings",
+			"dev2.idfly.ru",
+			"DOMAIN",
+			"landing.capitan",
+			"admin.landing.capitan.local",
+			"capitan.local",
+			"landing.capitan.local",
+			"dev1.idfly.ru",
+			"sidekiq_main",
+			"landing.capitan",
+			"backend.main",
+			"landing.capitan",
+			"backend_admin",
+			"backend_main",
+			"backend_admin",
+			"backend_main",
+			"backend_admin",
+			"backend_main",
+			"SMTP_HOST",
+			"admin_notifi",
+			"RequestMailer",
+			"send_notification",
 			"Стоимость системы для одного пользователя",
 			"100 дней бесплатно",
 			"baseHref",
@@ -1002,51 +1048,7 @@
 			"tarifs__basic__total__count",
 			"productionu",
 			"ем сервисе",
-			"navigation__logo",
-			".navigation__logo",
-			"menuCheck",
-			"tariffs",
-			"href=\"",
-			"navigation__logo",
-			"showModalRequest",
-			"White L",
-			"White l",
-			"secret_token",
-			"Количество",
-			"Данные виджета",
-			"admin.token",
-			"rootScope.admin",
-			"rootScope.user",
-			"fa-download",
-			"require_authorization",
-			"request_a",
-			"requests/{{",
-			"request/{{",
-			"requests/{{",
-			"not $0",
-			"to $0",
-			"expect",
-			"Selenium::WebDriver::Remote::Capabilities.chrome",
-			"navigation__user__item",
-			"class=\"navigation__table",
-			"navigation__user__item",
-			"keepup",
-			"keepup.idfly.ru",
-			".keepup",
-			"last_name",
-			"tasks",
-			"job: ",
-			"keepup.idfly.ru",
-			"rm -rf",
-			"tariffs-slider",
-			"tariffsSlider",
-			"md-sli",
-			"Chart",
-			"block-tarifs__basic__slider",
-			"require_signin",
-			"capitan.prod1.idfly",
-			"миграций",
-			"darius"
+			"navigation__logo"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1173,6 +1175,90 @@
 		"selected_items":
 		[
 			[
+				"main/applica",
+				"main/backend/config/application.rb"
+			],
+			[
+				"conf",
+				"config/config.env"
+			],
+			[
+				"mailer",
+				"main/backend/app/mailers/request_mailer.rb"
+			],
+			[
+				"main.yml",
+				"config/captainanalytics.local/main.yml"
+			],
+			[
+				"applica.",
+				"main/backend/config/application.rb"
+			],
+			[
+				"main",
+				"config/captainanalytics.local/main.yml"
+			],
+			[
+				"nginx",
+				"http/nginx.conf"
+			],
+			[
+				"ngin",
+				"http/nginx.conf"
+			],
+			[
+				"conf.env",
+				"config/config.env"
+			],
+			[
+				"applica",
+				"admin/backend/config/application.rb"
+			],
+			[
+				"request_mai",
+				"main/backend/app/mailers/request_mailer.rb"
+			],
+			[
+				"make",
+				"Makefile"
+			],
+			[
+				"gul",
+				"main/frontend/gulpfile.js"
+			],
+			[
+				"ass",
+				"main/frontend/config/assets.json"
+			],
+			[
+				"app.coff",
+				"main/frontend/js/app/app.coffee"
+			],
+			[
+				"rqecon",
+				"main/backend/app/controllers/requests_controller.rb"
+			],
+			[
+				"application",
+				"main/backend/config/application.rb"
+			],
+			[
+				"initial",
+				"main/backend/config/initializers/mailer.rb"
+			],
+			[
+				"requmail",
+				"main/backend/app/mailers/request_mailer.rb"
+			],
+			[
+				"main.",
+				"config/captainanalytics.local/main.yml"
+			],
+			[
+				"mainym",
+				"config/captainanalytics.local/main.yml"
+			],
+			[
 				"databa",
 				"admin/backend/config/database.yml"
 			],
@@ -1185,28 +1271,12 @@
 				"config/darius/deploy-to-dev.task.yml"
 			],
 			[
-				"conf.env",
-				"config/config.env"
-			],
-			[
-				"main",
-				"config/local/main.yml"
-			],
-			[
 				"req_con",
 				"admin/backend/app/controllers/requests_controller.rb"
 			],
 			[
-				"applica",
-				"admin/backend/config/application.rb"
-			],
-			[
 				"dev/",
 				"config/dev/main.yml"
-			],
-			[
-				"gul",
-				"main/frontend/gulpfile.js"
 			],
 			[
 				"depl-t",
@@ -1361,10 +1431,6 @@
 				"main/frontend/js/directives/tariffs_slider.coffee"
 			],
 			[
-				"ass",
-				"main/frontend/config/assets.json"
-			],
-			[
 				"gitmo",
 				".gitmodules"
 			],
@@ -1391,10 +1457,6 @@
 			[
 				"assets",
 				"admin/frontend/config/assets.json"
-			],
-			[
-				"app.coff",
-				"main/frontend/js/app/app.coffee"
 			],
 			[
 				"mig/user",
@@ -1443,10 +1505,6 @@
 			[
 				"darius",
 				"config/darius/up.task.yml"
-			],
-			[
-				"main.",
-				"config/dev/main.yml"
 			],
 			[
 				"up.task",
@@ -1541,10 +1599,6 @@
 				"http/config/local/nginx.conf"
 			],
 			[
-				"nginx",
-				"http/config/local/nginx.conf"
-			],
-			[
 				"mig/req",
 				"backend/db/migrate/20160303111340_create_requests.rb"
 			],
@@ -1563,10 +1617,6 @@
 			[
 				"req",
 				"frontend/js/controllers/requests_ctrl.coffee"
-			],
-			[
-				"application",
-				"backend/config/application.rb"
 			],
 			[
 				"backe/config/aa",
@@ -1635,54 +1685,6 @@
 			[
 				"sent.",
 				"frontend/views/index/request/sent.slim"
-			],
-			[
-				"requ.si",
-				"frontend/views/index/request/request.slim"
-			],
-			[
-				"as",
-				"frontend/config/assets.json"
-			],
-			[
-				"ind",
-				"frontend/views/index.slim"
-			],
-			[
-				"app.cof",
-				"frontend/js/app/app.coffee"
-			],
-			[
-				"index.sli",
-				"frontend/views/index.slim"
-			],
-			[
-				"uni",
-				"backend/config/unicorn.rb"
-			],
-			[
-				"ge",
-				"backend/Gemfile"
-			],
-			[
-				"data",
-				"backend/config/database.yml"
-			],
-			[
-				"http/conlo/",
-				"http/config/local/nginx.conf"
-			],
-			[
-				"gem",
-				"backend/Gemfile"
-			],
-			[
-				"my.cn",
-				"mysql/config/my.cnf"
-			],
-			[
-				"de/com",
-				"config/dev/compose.yml"
 			]
 		],
 		"width": 0.0
