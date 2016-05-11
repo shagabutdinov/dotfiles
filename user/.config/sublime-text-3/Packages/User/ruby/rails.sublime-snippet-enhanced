@@ -1,0 +1,21 @@
+<snippets>
+
+  <snippet>
+    <content><![CDATA[
+Rails.application.config
+]]></content>
+    <tabTrigger>rc</tabTrigger>
+    <scope>source.ruby</scope>
+    <description>rails: application config</description>
+  </snippet>
+
+  <snippet>
+    <content><![CDATA[
+Rails.application
+]]></content>
+    <tabTrigger>ra</tabTrigger>
+    <scope>source.ruby</scope>
+    <description>rails: application config</description>
+  </snippet>
+
+</snippets>
