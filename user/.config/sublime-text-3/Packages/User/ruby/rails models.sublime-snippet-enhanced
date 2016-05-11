@@ -106,7 +106,7 @@ belongs_to(:$1)
 				"RUN",
 			]
 		</commands>
-		<tabTrigger>bt</tabTrigger>
+		<tabTrigger>bo</tabTrigger>
 		<scope>source\.ruby\s*$</scope>
 		<context>
 			[
