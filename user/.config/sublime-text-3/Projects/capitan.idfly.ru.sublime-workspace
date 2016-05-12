@@ -328,10 +328,18 @@
 	"buffers":
 	[
 		{
-			"contents": "",
+			"file": "/home/leo/src/capitan.idfly.ru/backend/lib/formula.rb",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 5180,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/leo/src/capitan.idfly.ru/backend/spec/formula_spec.rb",
+			"settings":
+			{
+				"buffer_size": 2665,
 				"line_ending": "Unix"
 			}
 		}
@@ -344,9 +352,17 @@
 	"command_palette":
 	{
 		"height": 400.0,
-		"last_filter": "sste",
+		"last_filter": "ssru",
 		"selected_items":
 		[
+			[
+				"ssru",
+				"Set Syntax: Ruby"
+			],
+			[
+				"sssql",
+				"Set Syntax: SQL"
+			],
 			[
 				"sste",
 				"Set Syntax: Plain Text"
@@ -366,10 +382,6 @@
 			[
 				"sscof",
 				"Set Syntax: CoffeeScript"
-			],
-			[
-				"ssru",
-				"Set Syntax: Ruby"
 			],
 			[
 				"ss2",
@@ -715,15 +727,61 @@
 	],
 	"file_history":
 	[
-		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget.coffee",
+		"/home/leo/src/capitan.idfly.ru/backend/lib/formula/string.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/lib/formula/number.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/lib/formula/integer.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/lib/formula/value.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/spec/formula_spec.rb",
+		"/home/leo/src/capitan.idfly.ru/config/capitan.local/main.yml",
+		"/home/leo/src/capitan.idfly.ru/backend/Guardfile",
+		"/home/leo/src/capitan.idfly.ru/pdf/Guardfile",
+		"/home/leo/src/capitan.idfly.ru/backend/spec/controllers/application_controller_spec.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/spec/controllers/status_controller_spec.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/spec/controllers/users/registrations_controller_spec.rb",
+		"/home/leo/src/capitan.idfly.ru/config/app.captainanalytics.ru/main.yml",
+		"/home/leo/src/capitan.idfly.ru/backend/lib/formula/formula.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/app/services/formula_service.rb",
+		"/home/leo/.local/dotfiles/public/user/bin/uupwork",
 		"/home/leo/projects/personal/log.txt",
-		"/home/leo/src/capitan.idfly.ru/backend/app/controllers/dashboards_controller.rb",
-		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20151214074200_datasets.rb",
 		"/home/leo/src/capitan.idfly.ru/backend/app/models/dataset.rb",
-		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160506114604_change_dataset_tables_date.rb",
-		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160325040903_change_url_in_dataset_googles.rb",
 		"/home/leo/src/capitan.idfly.ru/frontend/views/dashboards/view.slim",
 		"/home/leo/src/capitan.idfly.ru/frontend/js/controllers/dashboards/view_ctrl.coffee",
+		"/home/leo/src/capitan.idfly.ru/backend/app/services/service_error.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/app/controllers/dashboards_controller.rb",
+		"/home/leo/src/capitan.idfly.ru/config/capitan.dev2.idfly.ru/config.env",
+		"/home/leo/src/capitan.idfly.ru/config/capitan.dev2.idfly.ru/main.yml",
+		"/home/leo/.config/sublime-text-3/Projects/capitan.idfly.ru.sublime-project",
+		"/home/leo/src/capitan.idfly.ru/backend/app/models/notification.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/lib/tasks/notifications.rake",
+		"/home/leo/src/capitan.idfly.ru/backend/config/clockwork.rb",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/notifications/form.slim",
+		"/home/leo/src/capitan.idfly.ru/backend/app/controllers/notifications_controller.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160510070626_add_time_to_notifications.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160324072644_add_table_id_to_widgets.rb",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/gauge.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/directives/widget/gauge.slim",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/text.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/funnel.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/line.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/pie.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/bar.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/table.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/pie_editor.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/directives/widget/funnel.slim",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/directives/widget/bar.slim",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/directives/widget/pie.slim",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/services/widget.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/views/directives/widget/text.slim",
+		"/home/leo/src/capitan.idfly.ru/backend/app/models/dataset_table.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/app/models/widget_text.rb",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/controllers/datasets.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/dataset_data.coffee",
+		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget.coffee",
+		"/home/leo/src/capitan.idfly.ru/backend/app/models/widget.rb",
+		"/home/leo/src/capitan.idfly.ru/frontend/gulpfile.js",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20151214074200_datasets.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160506114604_change_dataset_tables_date.rb",
+		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160325040903_change_url_in_dataset_googles.rb",
 		"/home/leo/src/capitan.idfly.ru/data/seed/datasets/3.csv",
 		"/home/leo/src/capitan.idfly.ru/data/seed/datasets/4.csv",
 		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/pikaday.coffee",
@@ -732,46 +790,33 @@
 		"/home/leo/src/capitan.idfly.ru/Makefile",
 		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160427082325_create_widget_table_headers.rb",
 		"/home/leo/src/prod1.idfly.ru/nginx/app.captainanalytics.ru.conf",
-		"/home/leo/src/capitan.idfly.ru/config/app.captainanalytics.ru/main.yml",
 		"/home/leo/src/capitan.idfly.ru/config/app.captainanalytics.ru/config.env",
 		"/home/leo/src/capitan.idfly.ru/backend/db/seeds.rb",
-		"/home/leo/src/capitan.idfly.ru/config/capitan.local/main.yml",
 		"/home/leo/src/capitan.idfly.ru/frontend/config/assets.json",
-		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/funnel.coffee",
 		"/home/leo/src/capitan.idfly.ru/frontend/package.json",
 		"/home/leo/src/capitan.idfly.ru/backend/app/controllers/widgets_controller.rb",
-		"/home/leo/src/capitan.idfly.ru/backend/app/models/widget.rb",
 		"/home/leo/src/capitan.idfly.ru/frontend/js/services/table.coffee",
-		"/home/leo/src/capitan.idfly.ru/frontend/js/services/widget.coffee",
 		"/home/leo/src/capitan.idfly.ru/frontend/views/directives/widget/table.slim",
 		"/home/leo/src/capitan.idfly.ru/frontend/views/directives/widget/table_editor.slim",
 		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/table_editor.coffee",
 		"/home/leo/src/capitan.idfly.ru/backend/app/models/widget_table.rb",
-		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/gauge.coffee",
 		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/funnel_editor.coffee",
-		"/home/leo/src/capitan.idfly.ru/backend/app/models/dataset_table.rb",
 		"/home/leo/src/capitan.idfly.ru/frontend/js/services/dataset.coffee",
 		"/home/leo/src/capitan.idfly.ru/frontend/js/app/routes.coffee",
 		"/home/leo/src/capitan.idfly.ru/frontend/js/controllers/datasets/data_ctrl.coffee",
 		"/home/leo/src/capitan.idfly.ru/frontend/views/directives/widget/editor.slim",
-		"/home/leo/src/capitan.idfly.ru/frontend/views/directives/widget/funnel.slim",
 		"/home/leo/src/capitan.idfly.ru/frontend/views/directives/widget/gauge_editor.slim",
 		"/home/leo/src/capitan.idfly.ru/frontend/views/directives/widget/funnel_editor.slim",
 		"/home/leo/src/capitan.idfly.ru/frontend/views/widgets/form.slim",
 		"/home/leo/src/capitan.idfly.ru/frontend/views/directives/widget.slim",
-		"/home/leo/src/capitan.idfly.ru/frontend/views/directives/widget/gauge.slim",
 		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/gauge_editor.coffee",
 		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160506054646_create_widget_funnels.rb",
 		"/home/leo/src/capitan.idfly.ru/backend/app/models/widget_funnel.rb",
 		"/home/leo/src/capitan.idfly.ru/backend/app/models/widget_gauge.rb",
 		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160506044937_create_widget_gauges.rb",
-		"/home/leo/src/capitan.idfly.ru/config/capitan.dev2.idfly.ru/main.yml",
 		"/home/leo/src/capitan.idfly.ru/frontend/css/widgets.scss",
-		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/text.coffee",
-		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/table.coffee",
 		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20151215061146_widgets.rb",
 		"/home/leo/src/capitan.idfly.ru/backend/app/models/widget_bar.rb",
-		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160324072644_add_table_id_to_widgets.rb",
 		"/home/leo/src/capitan.idfly.ru/backend/app/models/widget_bar_range.rb",
 		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160219130306_widget_bars.rb",
 		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160311045748_create_widget_bar_labels.rb",
@@ -780,10 +825,8 @@
 		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20151201061335_create_users.rb",
 		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20151201061336_create_user_sessions.rb",
 		"/home/leo/src/capitan.idfly.ru/frontend/views/widgets/edit.slim",
-		"/home/leo/src/capitan.idfly.ru/frontend/gulpfile.js",
 		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/text_editor.coffee",
 		"/home/leo/src/capitan.idfly.ru/frontend/views/directives/widget/text_editor.slim",
-		"/home/leo/src/capitan.idfly.ru/frontend/views/directives/widget/text.slim",
 		"/home/leo/src/capitan.idfly.ru/frontend/views/directives/widget/guage_editor.slim",
 		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/GaugeEditor.coffee",
 		"/home/leo/src/capitan.idfly.ru/frontend/views/index.slim",
@@ -791,11 +834,9 @@
 		"/home/leo/src/capitan.idfly.ru/frontend/node_modules/syncfusion-javascript/Content/ejthemes/web/default-theme/ej.theme.min.css",
 		"/home/leo/src/capitan.idfly.ru/frontend/node_modules/syncfusion-javascript/Content/ejthemes/web/ej.widgets.core.min.css",
 		"/home/leo/src/capitan.idfly.ru/frontend/node_modules/syncfusion-javascript/Scripts/ej.widgets.all.min.js",
-		"/home/leo/.config/sublime-text-3/Projects/capitan.idfly.ru.sublime-project",
 		"/home/leo/src/capitan.idfly.ru/http/nginx.conf",
 		"/home/leo/src/capitan.idfly.ru/backend/config/initializers/mailer.rb",
 		"/home/leo/src/capitan.idfly.ru/config/config.env",
-		"/home/leo/src/capitan.idfly.ru/config/capitan.dev2.idfly.ru/config.env",
 		"/home/leo/src/capitan.idfly.ru/config/capitan.local/config.env",
 		"/home/leo/src/capitan.idfly.ru/backend/config/application.rb",
 		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160331083943_create_data.rb",
@@ -808,41 +849,12 @@
 		"/home/leo/src/capitan.idfly.ru/backend/Gemfile",
 		"/home/leo/.config/sublime-text-3/Packages/User/ruby/operators.sublime-snippet-enhanced",
 		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160331083943_create_data_table.rb",
-		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/pie.coffee",
 		"/home/leo/src/karimini.idfly.ru/app/modules/pm_advancedsearch4/pm_advancedsearch4.php",
-		"/home/leo/src/capitan.idfly.ru/frontend/js/directives/widget/line.coffee",
 		"/home/leo/src/capitan.idfly.ru/frontend/js/services/dashboard.coffee",
 		"/home/leo/src/capitan.idfly.ru/backend/app/controllers/datasets_controller.rb",
 		"/home/leo/src/capitan.idfly.ru/backend/app/models/dataset_google.rb",
 		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160331050306_add_fields_created_to_datasets.rb",
-		"/home/leo/src/capitan.idfly.ru/frontend/views/datasets/settings.slim",
-		"/home/leo/src/capitan.idfly.ru/frontend/js/controllers/datasets/settings_ctrl.coffee",
-		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160311045747_create_widget_line_labels.rb",
-		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160329054732_create_dataset_columns.rb",
-		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160315232303_create_dataset_tables.rb",
-		"/home/leo/src/capitan.idfly.ru/frontend/views/datasets/upload_csv.slim",
-		"/home/leo/src/capitan.idfly.ru/backend/cron.yml",
-		"/home/leo/src/capitan.idfly.ru/import/state.go",
-		"/home/leo/src/capitan.idfly.ru/frontend/views/datasets/create.slim",
-		"/home/leo/src/capitan.idfly.ru/frontend/views/datasets/form.slim",
-		"/home/leo/src/capitan.idfly.ru/frontend/js/controllers/datasets/view_ctrl.coffee",
-		"/home/leo/src/capitan.idfly.ru/frontend/views/datasets/view.slim",
-		"/home/leo/src/capitan.idfly.ru/backend/config/routes.rb",
-		"/home/leo/src/capitan.idfly.ru/frontend/views/datasets/settings.html",
-		"/home/leo/src/capitan.idfly.ru/frontend/config/guardfile",
-		"/home/leo/src/capitan.idfly.ru/.darius.yml",
-		"/home/leo/src/capitan.idfly.ru/config/darius/up.task.yml",
-		"/home/leo/src/capitan.idfly.ru/config/darius/prepare.task.yml",
-		"/home/leo/bin/ushell-env",
-		"/home/leo/src/docs.idfly.ru/docs/docker_manual.md",
-		"/home/leo/src/capitan.idfly.ru/frontend/views/layout/blocks/header.slim",
-		"/home/leo/src/capitan.idfly.ru/frontend/js/app/app.coffee",
-		"/home/leo/src/capitan.idfly.ru/frontend/js/controllers/header_ctrl.coffee",
-		"/home/leo/src/capitan.idfly.ru/backend/app/models/dataset_column.rb",
-		"/home/leo/.config/sublime-text-3/Packages/User/ruby/rails models.sublime-snippet-enhanced",
-		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20151213055232_files.rb",
-		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160318104330_add_import_interval_to_datasets.rb",
-		"/home/leo/src/capitan.idfly.ru/backend/db/migrate/20160317110455_create_dataset_googles.rb"
+		"/home/leo/src/capitan.idfly.ru/frontend/views/datasets/settings.slim"
 	],
 	"find":
 	{
@@ -853,6 +865,8 @@
 		"height": 102.0,
 		"where_history":
 		[
+			"",
+			"*.coffee",
 			"*.rb",
 			"backend/db/migrate/",
 			"*.rb",
@@ -978,8 +992,6 @@
 			"*.php, *.js",
 			"",
 			"frontend/",
-			"",
-			"*.js",
 			""
 		]
 	},
@@ -988,6 +1000,25 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"'\\+|\\-|\\*|/',",
+			") {",
+			"date_from",
+			"date <",
+			"date_to",
+			"mysql",
+			"daily",
+			"Период срав",
+			"_load: (current, previous)",
+			"_load: (current, previous) ",
+			"data_to",
+			".datas",
+			".data =",
+			"ataset.data =",
+			"dataset.data =",
+			"dataset.data",
+			"Normalize",
+			"normalize",
+			"def datas",
 			"datas",
 			"date_from",
 			"change_c",
@@ -1096,26 +1127,7 @@
 			".select =",
 			"displayData",
 			"ng-model=\"notification",
-			"widget",
-			"Widget",
-			"control-label ",
-			"AngularMode",
-			"AngularModel",
-			"#widget_bar_dataset_id",
-			"widget.bar",
-			"dashboard",
-			"dataset_id",
-			"table.",
-			"dashboard",
-			"dashboards",
-			"dataset",
-			"datasets",
-			"Dataset",
-			"user/not",
-			"dashboard",
-			"dashboards",
-			"datasets",
-			"Dataset"
+			"widget"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1142,21 +1154,22 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": true,
+		"whole_word": false,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
+					"file": "/home/leo/src/capitan.idfly.ru/backend/lib/formula.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 5180,
 						"regions":
 						{
 						},
@@ -1169,11 +1182,42 @@
 						],
 						"settings":
 						{
-							"auto_name": "",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/leo/src/capitan.idfly.ru/backend/spec/formula_spec.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2665,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 260.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1259,6 +1303,90 @@
 		"selected_items":
 		[
 			[
+				"guar",
+				"pdf/Guardfile"
+			],
+			[
+				"main",
+				"config/capitan.local/main.yml"
+			],
+			[
+				"dash_ctrl",
+				"frontend/js/controllers/dashboards/view_ctrl.coffee"
+			],
+			[
+				"dahs/view",
+				"frontend/views/dashboards/view.slim"
+			],
+			[
+				"main.yml",
+				"config/capitan.dev2.idfly.ru/main.yml"
+			],
+			[
+				"clock",
+				"backend/config/clockwork.rb"
+			],
+			[
+				"lib/noto",
+				"backend/lib/tasks/notifications.rake"
+			],
+			[
+				"notif/form",
+				"frontend/views/notifications/form.slim"
+			],
+			[
+				"notifi",
+				"backend/app/models/notification.rb"
+			],
+			[
+				"notifications_contr",
+				"backend/app/controllers/notifications_controller.rb"
+			],
+			[
+				"gauge.sli",
+				"frontend/views/directives/widget/gauge.slim"
+			],
+			[
+				"gauge.co",
+				"frontend/js/directives/widget/gauge.coffee"
+			],
+			[
+				"funn",
+				"frontend/views/directives/widget/funnel.slim"
+			],
+			[
+				"text.",
+				"frontend/js/directives/widget/text.coffee"
+			],
+			[
+				"datasettable",
+				"backend/app/models/dataset_table.rb"
+			],
+			[
+				"text.rb",
+				"backend/app/models/widget_text.rb"
+			],
+			[
+				"data.coff",
+				"frontend/js/directives/dataset_data.coffee"
+			],
+			[
+				"widge",
+				"frontend/js/directives/widget.coffee"
+			],
+			[
+				"dash_con",
+				"backend/app/controllers/dashboards_controller.rb"
+			],
+			[
+				"widge.",
+				"frontend/js/directives/widget.coffee"
+			],
+			[
+				"gulp",
+				"frontend/gulpfile.js"
+			],
+			[
 				"dire/",
 				"frontend/js/directives/widget.coffee"
 			],
@@ -1287,20 +1415,12 @@
 				"backend/db/seeds.rb"
 			],
 			[
-				"main",
-				"config/app.captainanalytics.ru/main.yml"
-			],
-			[
 				"ass",
 				"frontend/config/assets.json"
 			],
 			[
 				"pack",
 				"frontend/package.json"
-			],
-			[
-				"funn",
-				"frontend/js/directives/widget/funnel.coffee"
 			],
 			[
 				"widget",
@@ -1363,14 +1483,6 @@
 				"frontend/js/directives/widget/gauge_editor.coffee"
 			],
 			[
-				"main.yml",
-				"config/capitan.dev2.idfly.ru/main.yml"
-			],
-			[
-				"dash_con",
-				"backend/app/controllers/dashboards_controller.rb"
-			],
-			[
 				"wid.css",
 				"frontend/css/widgets.scss"
 			],
@@ -1419,10 +1531,6 @@
 				"frontend/views/directives/widget/editor.slim"
 			],
 			[
-				"gulp",
-				"frontend/gulpfile.js"
-			],
-			[
 				"gauge_editor",
 				"frontend/views/directives/widget/gauge_editor.slim"
 			],
@@ -1457,10 +1565,6 @@
 			[
 				"editor",
 				"frontend/views/directives/widget/editor.slim"
-			],
-			[
-				"widge",
-				"frontend/js/directives/widget.coffee"
 			],
 			[
 				"ind.slim",
@@ -1631,10 +1735,6 @@
 				"backend/app/models/dataset.rb"
 			],
 			[
-				"clock",
-				"backend/config/clockwork.rb"
-			],
-			[
 				"de/main",
 				"config/dev/main.yml"
 			],
@@ -1703,10 +1803,6 @@
 				"frontend/views/directives/dataset_data.slim"
 			],
 			[
-				"data.coff",
-				"frontend/js/directives/dataset_data.coffee"
-			],
-			[
 				"job.",
 				"import/job.go"
 			],
@@ -1717,58 +1813,6 @@
 			[
 				"chang",
 				"backend/db/migrate/20160325040903_change_url_in_dataset_googles.rb"
-			],
-			[
-				"local",
-				"config/local/main.yml"
-			],
-			[
-				"loca/te",
-				"backend/config/local/test.sh"
-			],
-			[
-				"add_email",
-				"backend/db/migrate/20160324084531_add_email_to_user_google_account.rb"
-			],
-			[
-				"test/wid",
-				"frontend/tests/services/widget_test.coffee"
-			],
-			[
-				"wi/pie.cof",
-				"frontend/js/directives/widget/pie.coffee"
-			],
-			[
-				"wid_pie.coff",
-				"frontend/js/directives/widget/color_picker.coffee"
-			],
-			[
-				"dataset.",
-				"frontend/js/services/dataset.coffee"
-			],
-			[
-				"tests/",
-				"frontend/tests/services/widget_test.coffee"
-			],
-			[
-				"services/data",
-				"frontend/js/services/dataset.coffee"
-			],
-			[
-				"atitw",
-				"backend/db/migrate/20160324072644_add_table_id_to_widgets.rb"
-			],
-			[
-				"dashboard",
-				"frontend/js/services/dashboard.coffee"
-			],
-			[
-				"dash_ctr",
-				"frontend/js/controllers/dashboards/view_ctrl.coffee"
-			],
-			[
-				"tables.",
-				"frontend/views/directives/widget/table.slim"
 			]
 		],
 		"width": 0.0
@@ -1779,6 +1823,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"capi",
+				"~/.config/sublime-text-3/Projects/capitan.idfly.ru.sublime-project"
+			],
 			[
 				"land",
 				"~/.config/sublime-text-3/Projects/landing.capitan.idfly.ru.sublime-project"
@@ -1798,10 +1846,6 @@
 			[
 				"bvk",
 				"~/.config/sublime-text-3/Projects/bvk.idfly.ru.sublime-project"
-			],
-			[
-				"capi",
-				"~/.config/sublime-text-3/Projects/capitan.idfly.ru.sublime-project"
 			],
 			[
 				"capit",
