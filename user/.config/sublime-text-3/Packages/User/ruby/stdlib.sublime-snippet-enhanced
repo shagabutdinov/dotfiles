@@ -123,9 +123,9 @@ collect { |$1|
 
 	<snippet>
 		<content><![CDATA[
-collect do |$1|
+collect { |$1|
 	$0
-end
+}
 ]]></content>
 		<tabTrigger>c</tabTrigger>
 		<scope>source.ruby</scope>
