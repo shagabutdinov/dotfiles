@@ -24,6 +24,7 @@ noremap ia :redmineOpenAllIssues<CR>
 noremap ic :redmineSetIssueStatus 5<CR> | :redmineSetAssignee 4<CR> | :redmineSaveIssue<CR>
 noremap ij :redmineSetIssueStatus 6<CR> | :redmineSetAssignee 4<CR> | :redmineSaveIssue<CR>
 noremap ie :redmineSetIssueStatus 3<CR> | :redmineReturnIssue<CR> | :redmineShowComment<CR> | :redmineFocusComment<CR>
+noremap ip :redmineSetIssueStatus 2<CR> | :redmineSetAssignee 4<CR> | :redmineSaveIssue<CR>
 noremap it :redmineShowComment<CR> | :redmineFocusComment<CR>
 noremap ir :redmineReplyIssue 5<CR>
 noremap is :redmineSaveIssue<CR>
