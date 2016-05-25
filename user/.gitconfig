@@ -6,3 +6,4 @@
 [core]
 	editor = vim
   commentchar = `
+	excludesfile = /home/leo/.gitignore

@@ -6,6 +6,10 @@
 127.0.0.1 localhost.localdomain localhost
 ::1   localhost.localdomain localhost
 
+192.241.168.155 toughdomains1.xyz
+192.241.168.155 toughdomains2.xyz
+127.0.0.1 adm.toughdomains.com
+
 # End of file
 #
 # /etc/hosts: static lookup table for host names
