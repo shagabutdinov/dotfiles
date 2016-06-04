@@ -11,7 +11,8 @@ map Q :tabonly<CR>
 colorscheme darkness
 highlight Hint font-size:12px; color:white; background-color:black; padding:2px; text-transform:uppercase; border-radius:5px; border:1px solid white;
 
-:inoremap <C-a> <Ins><C-a><Ins>
+inoremap <C-a> <Ins><C-a><Ins>
+noremap <C-a> <Ins><C-a><Ins>
 inoremap <ESC> <ESC> | :js content.document.querySelector(':focus') && window.setTimeout(function() { content.document.querySelector(':selected').blur() })<CR>
 
 noremap <C-e> <C-u>
