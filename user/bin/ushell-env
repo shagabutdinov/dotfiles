@@ -106,6 +106,7 @@ alias ct='docker-compose -f config/$(ls --color=none config/ | grep --color=none
 # alias cd='docker-compose -f config/$(ls --color=none config/ | grep --color=none \\.dev1\\.idfly\\.ru)/main.yml'
 
 alias co='sudo chown -R leo: '
+alias cc='sudo chown -R leo: .'
 
 alias gs="git show --color"
 alias gsp="git commit -v -a && git push"
