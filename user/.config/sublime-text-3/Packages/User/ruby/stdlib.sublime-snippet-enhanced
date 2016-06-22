@@ -387,4 +387,29 @@ File.read($1)
 		<description>stdlib: File.write</description>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+puts("XXXX $TM_FILENAME:$TM_LINE_NUMBER #{${1:$selection}}")
+]]></content>
+		<commands>
+			[
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>p</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: p</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+puts("XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX\n")
+]]></content>
+		<tabTrigger>pt</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>operators: puts "TEST" * 100</description>
+	</snippet>
+
 </snippets>

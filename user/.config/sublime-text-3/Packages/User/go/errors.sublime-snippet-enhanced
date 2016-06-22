@@ -131,7 +131,7 @@ debug.PrintStack()
 
 	<snippet>
 		<content><![CDATA[
-log.Println("LOG($TM_FILENAME:$TM_LINE_NUMBER) - ", ${1:$selection__or__last_assigned_variable})
+log.Println("XXXX XXXX XXXX XXXX $TM_FILENAME:$TM_LINE_NUMBER: ", ${1:$selection__or__last_assigned_variable})
 ]]></content>
 		<tabTrigger>l</tabTrigger>
 		<scope>source.go</scope>
@@ -185,7 +185,7 @@ log.Printf("${1:v#%}", ${2:$selection__or__last_assigned_variable})
 
 	<snippet>
 		<content><![CDATA[
-log.Printf("LOG($TM_FILENAME:$TM_LINE_NUMBER) - %+v", ${2:$selection__or__last_assigned_variable})
+log.Printf("XXXX $TM_FILENAME:$TM_LINE_NUMBER - %+v", ${2:$selection__or__last_assigned_variable})
 ]]></content>
 		<trigger>lf</trigger>
 		<scope>source.go</scope>

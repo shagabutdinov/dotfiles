@@ -75,17 +75,8 @@ var_dump(${1:$selection__or__last_assigned_variable})
 
 	<snippet>
 		<content><![CDATA[
-die('EXIT: $file');
+die('XXXX $TM_FILENAME:$TM_LINE_NUMBER');
 ]]></content>
-		<commands><![CDATA[
-			[
-				{
-					"command": "run_macro_file_with_context",
-					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
-				},
-				"RUN",
-			]
-		]]></commands>
 		<tabTrigger>q</tabTrigger>
 		<scope>source.php</scope>
 		<eval>{'file': (view.file_name() or '').split('/')[-1]}</eval>

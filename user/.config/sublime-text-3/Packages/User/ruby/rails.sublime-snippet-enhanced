@@ -13,7 +13,7 @@ Rails.application.config
     <content><![CDATA[
 Rails.application
 ]]></content>
-    <tabTrigger>ra</tabTrigger>
+    <tabTrigger>rp</tabTrigger>
     <scope>source.ruby</scope>
     <description>rails: application config</description>
   </snippet>

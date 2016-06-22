@@ -151,7 +151,7 @@ return true
 		<content><![CDATA[
 return false
 ]]></content>
-		<tabTrigger>rt</tabTrigger>
+		<tabTrigger>rf</tabTrigger>
 		<scope>source.coffee</scope>
 		<context><![CDATA[
 			[
