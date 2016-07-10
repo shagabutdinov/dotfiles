@@ -2,7 +2,7 @@
 
 	<snippet>
 		<content><![CDATA[
-validates(:$1, $0)
+validates :$1, $0
 ]]></content>
 		<tabTrigger>v</tabTrigger>
 		<scope>source.ruby</scope>
@@ -37,7 +37,7 @@ presence: true
 
 	<snippet>
 		<content><![CDATA[
-inclusion: { in: [$0] }
+inclusion: {in: [$0]}
 ]]></content>
 		<commands>
 			[
@@ -58,7 +58,7 @@ inclusion: { in: [$0] }
 
 	<snippet>
 		<content><![CDATA[
-has_one(:$1)
+has_one :$1
 ]]></content>
 		<commands>
 			[
@@ -78,7 +78,7 @@ has_one(:$1)
 
 	<snippet>
 		<content><![CDATA[
-has_many(:$1)
+has_many :$1
 ]]></content>
 		<commands>
 			[
@@ -98,7 +98,7 @@ has_many(:$1)
 
 	<snippet>
 		<content><![CDATA[
-belongs_to(:$1)
+belongs_to :$1
 ]]></content>
 		<commands>
 			[
@@ -118,7 +118,7 @@ belongs_to(:$1)
 
 	<snippet>
 		<content><![CDATA[
-accepts_nested_attributes_for(:$1, {allow_destroy: true})
+accepts_nested_attributes_for :$1, {allow_destroy: true}
 ]]></content>
 		<commands>
 			[
@@ -154,7 +154,7 @@ where($1)
 
 	<snippet>
 		<content><![CDATA[
-after_initialize
+after_initialize $0
 ]]></content>
 		<tabTrigger>ai</tabTrigger>
 		<scope>source\.ruby\s*$</scope>
@@ -168,7 +168,7 @@ after_initialize
 
 	<snippet>
 		<content><![CDATA[
-			before_destroy
+before_destroy $0
 ]]></content>
 		<tabTrigger>bd</tabTrigger>
 		<scope>source\.ruby\s*$</scope>
@@ -182,7 +182,7 @@ after_initialize
 
 	<snippet>
 		<content><![CDATA[
-before_validation
+before_validation $0
 ]]></content>
 		<tabTrigger>bv</tabTrigger>
 		<scope>source\.ruby\s*$</scope>
@@ -196,7 +196,7 @@ before_validation
 
 	<snippet>
 		<content><![CDATA[
-after_validation
+after_validation $0
 ]]></content>
 		<tabTrigger>av</tabTrigger>
 		<scope>source\.ruby\s*$</scope>
@@ -210,7 +210,7 @@ after_validation
 
 	<snippet>
 		<content><![CDATA[
-before_save
+before_save $0
 ]]></content>
 		<tabTrigger>bs</tabTrigger>
 		<scope>source\.ruby\s*$</scope>
@@ -224,7 +224,7 @@ before_save
 
 	<snippet>
 		<content><![CDATA[
-before_create
+before_create $0
 ]]></content>
 		<tabTrigger>bc</tabTrigger>
 		<scope>source\.ruby\s*$</scope>
@@ -238,7 +238,7 @@ before_create
 
 	<snippet>
 		<content><![CDATA[
-after_create
+after_create $0
 ]]></content>
 		<tabTrigger>ac</tabTrigger>
 		<scope>source\.ruby\s*$</scope>
@@ -252,7 +252,7 @@ after_create
 
 	<snippet>
 		<content><![CDATA[
-after_save
+after_save $0
 ]]></content>
 		<tabTrigger>as</tabTrigger>
 		<scope>source\.ruby\s*$</scope>
@@ -266,7 +266,7 @@ after_save
 
 	<snippet>
 		<content><![CDATA[
-after_commit
+after_commit $0
 ]]></content>
 		<tabTrigger>aco</tabTrigger>
 		<scope>source\.ruby\s*$</scope>

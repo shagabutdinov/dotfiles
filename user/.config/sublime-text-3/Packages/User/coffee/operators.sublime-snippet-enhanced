@@ -550,6 +550,20 @@ then($1)
 
 	<snippet>
 		<content><![CDATA[
+after($1)
+]]></content>
+		<tabTrigger>a</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.\\s*a$"},
+			]
+		]]></context>
+		<description>operators: then</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 then(($1) =>
 	$0
 )
@@ -563,6 +577,23 @@ then(($1) =>
 		<tabTrigger>then(</tabTrigger>
 		<scope>source.coffee</scope>
 		<description>operators: then</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+after((${1:response}) =>
+	$0
+)
+]]></content>
+		<commands>
+			[
+				{"command": "right_delete"},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>after(</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>operators: after</description>
 	</snippet>
 
 	<snippet>

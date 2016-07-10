@@ -27,6 +27,7 @@ callCount
     <context><![CDATA[
     	[
     		{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.cc$"},
+    		{"key": "filename", "operator": "regex_contains", "operand": "test"},
     	]
     ]]></context>
     <description>test: callCount</description>
@@ -41,6 +42,7 @@ getCall($1)
     <context><![CDATA[
     	[
     		{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.gc$"},
+    		{"key": "filename", "operator": "regex_contains", "operand": "test"},
     	]
     ]]></context>
     <description>test: getCall</description>
@@ -55,6 +57,7 @@ args
     <context><![CDATA[
     	[
     		{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.a$"},
+    		{"key": "filename", "operator": "regex_contains", "operand": "test"},
     	]
     ]]></context>
     <description>test: args</description>
@@ -69,6 +72,7 @@ returns($1)
     <context><![CDATA[
     	[
     		{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.r$"},
+    		{"key": "filename", "operator": "regex_contains", "operand": "test"},
     	]
     ]]></context>
     <description>test: returns</description>

@@ -131,7 +131,7 @@ debug.PrintStack()
 
 	<snippet>
 		<content><![CDATA[
-log.Println("XXXX XXXX XXXX XXXX $TM_FILENAME:$TM_LINE_NUMBER: ", ${1:$selection__or__last_assigned_variable})
+log.Println("XXXX $TM_FILENAME:$TM_LINE_NUMBER: ", ${1:$selection__or__last_assigned_variable})
 ]]></content>
 		<tabTrigger>l</tabTrigger>
 		<scope>source.go</scope>
