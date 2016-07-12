@@ -581,6 +581,15 @@ then(($1) =>
 
 	<snippet>
 		<content><![CDATA[
+then((response
+]]></content>
+		<tabTrigger>then((</tabTrigger>
+		<scope>source.coffee</scope>
+		<description>operators: then</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 after((${1:response}) =>
 	$0
 )
