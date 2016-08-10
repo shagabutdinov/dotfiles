@@ -120,13 +120,27 @@ alias gdd='git diff --color | diff-so-fancy | less'
 alias gdc='git diff --cached'
 alias gh='git stash'
 alias ghp='git stash pop'
+alias gfp='git fetch --prune'
+alias gcb='git checkout origin/dev'
+alias gcm='git checkout origin/master'
+alias gn='git fetch --prune; git checkout origin/dev; git checkout -b '
 
 alias json='python -m "json.tool"'
 
 alias dbe='docker exec -i -t $(
   docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}" |
-  sort -k 2 |
   grep backend |
+  grep -v admin |
+  sort -k 2 |
+  head -n 1 |
+  awk "{ print \$1 }"
+)'
+
+alias dbea='docker exec -i -t $(
+  docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}" |
+  grep backend |
+  grep admin |
+  sort -k 2 |
   head -n 1 |
   awk "{ print \$1 }"
 )'
@@ -135,6 +149,16 @@ alias dfe='docker exec -i -t $(
   docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}" |
   sort -k 2 |
   grep frontend |
+  grep -v admin |
+  head -n 1 |
+  awk "{ print \$1 }"
+)'
+
+alias dfea='docker exec -i -t $(
+  docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}" |
+  sort -k 2 |
+  grep frontend |
+  grep admin |
   head -n 1 |
   awk "{ print \$1 }"
 )'
@@ -142,5 +166,7 @@ alias dfe='docker exec -i -t $(
 alias -g B="bundle exec"
 alias -g G="| grep"
 alias uskypeweb="chromium -app=https://web.skype.com/en/"
+alias isd="issue -S --from origin/dev --id "
+alias ism="issue -S --from origin/master --id "
 
 umask 002

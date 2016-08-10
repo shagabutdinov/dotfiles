@@ -765,6 +765,20 @@ setAttributes(${1:$selection__or__last_assigned_variable})
 
 	<snippet>
 		<content><![CDATA[
+\\app\\services\\$0
+]]></content>
+		<tabTrigger>ys</tabTrigger>
+		<scope>source.php</scope>
+		<context><![CDATA[
+			[
+				{"key": "settings.frameworks", "operator": "regex_contains", "operand": "'yii'"},
+			]
+		]]></context>
+		<description>app services</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 \\app\\models\\$0
 ]]></content>
 		<tabTrigger>ym</tabTrigger>
@@ -1084,7 +1098,7 @@ new \yii\db\Expression('${1:NOW()}')
 		<content><![CDATA[
 \\yii::\$app->session
 ]]></content>
-		<tabTrigger>ys</tabTrigger>
+		<tabTrigger>ye</tabTrigger>
 		<scope>source.php</scope>
 		<context>
 			[

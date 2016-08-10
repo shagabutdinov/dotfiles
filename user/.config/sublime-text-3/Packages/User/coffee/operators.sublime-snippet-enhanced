@@ -399,6 +399,24 @@ function
 
 	<snippet>
 		<content><![CDATA[
+(($1) ->
+	${0:$selection}
+)
+]]></content>
+		<tabTrigger>fn</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "[\\(,=:]\\s*fn$"},
+				"or",
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w]\\s*fn$"},
+			]
+		]]></context>
+		<description>operators: anonymous function with wrap</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 ($1) ->
 	${0:$selection}
 

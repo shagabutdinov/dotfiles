@@ -22,7 +22,7 @@
 	<snippet>
 		<content><![CDATA[
 <div class="row">
-	<div class="col-md-$1">
+	<div class="col-sm-$1">
 		${0:$selection}
 	</div>
 </div>
@@ -34,7 +34,7 @@
 
 	<snippet>
 		<content><![CDATA[
-<div class="col-md-$1">
+<div class="col-sm-$1">
 	${0:$selection}
 </div>
 ]]></content>

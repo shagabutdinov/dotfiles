@@ -9,6 +9,14 @@
   },
 
   {
+    "keys": ["ctrl+alt+m"],
+    "command": "wrap_lines",
+    "args": {
+      "width": 80, 
+    },
+  },
+
+  {
     "keys": ["ctrl+n", "ctrl+d"],
     "command": "open_file",
     "args": {

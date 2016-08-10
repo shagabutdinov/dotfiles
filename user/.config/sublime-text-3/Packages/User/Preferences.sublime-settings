@@ -91,11 +91,11 @@
 	"hot_exit": true,
 	"ignored_packages":
 	[
-		"PHP Modern",
 		"Tabright",
 		"Theme - Centurion Blue",
+		"Vintage",
 		"Theme - Cyanide",
-		"Vintage"
+		"PHP Modern"
 	],
 	"indent_guide_options":
 	[
