@@ -33,7 +33,7 @@
 	"bold_folder_labels": false,
 	"caret_style": "smooth",
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/User/SublimeLinter/Tubsted (SL).tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Tubnil Bright (SL).tmTheme",
 	"create_window_at_startup": false,
 	"default_encoding": "UTF-8",
 	"default_line_ending": "unix",
@@ -91,11 +91,11 @@
 	"hot_exit": true,
 	"ignored_packages":
 	[
-		"Tabright",
 		"Theme - Centurion Blue",
-		"Vintage",
 		"Theme - Cyanide",
-		"PHP Modern"
+		"PHP Modern",
+		"Vintage",
+		"Tabright"
 	],
 	"indent_guide_options":
 	[
@@ -115,6 +115,7 @@
 	"match_selection": true,
 	"match_tags": true,
 	"move_to_limit_on_up_down": false,
+	"node_path": "/usr/bin/node",
 	"open_files_in_new_window": true,
 	"overlay_scroll_bars": "enabled",
 	"preview_on_click": true,

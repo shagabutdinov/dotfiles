@@ -67,4 +67,18 @@ indexOf($1)
 		<description>stdlib: .indexOf</description>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+preventDefault()
+]]></content>
+		<tabTrigger>pd</tabTrigger>
+		<scope>source.coffee</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.pd$"},
+			]
+		]]></context>
+		<description>stdlib: .prevendDefault</description>
+	</snippet>
+
 </snippets>

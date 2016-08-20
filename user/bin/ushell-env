@@ -170,3 +170,6 @@ alias isd="issue -S --from origin/dev --id "
 alias ism="issue -S --from origin/master --id "
 
 umask 002
+
+eval "$(ssh-agent -s)" > /dev/null 2>&1
+ssh-add > /dev/null 2>&1
