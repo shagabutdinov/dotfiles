@@ -197,7 +197,7 @@ raise $1Error.new($2)
 		<content><![CDATA[
 raise ":("
 ]]></content>
-		<tabTrigger>rq</tabTrigger>
+		<tabTrigger>q</tabTrigger>
 		<scope>source.ruby</scope>
 		<description>operators: raise</description>
 	</snippet>

@@ -123,7 +123,7 @@ alias ghp='git stash pop'
 alias gfp='git fetch --prune'
 alias gcb='git checkout origin/dev'
 alias gcm='git checkout origin/master'
-alias gn='git fetch --prune; git checkout origin/dev; git checkout -b '
+alias glr='git pull --rebase'
 
 alias json='python -m "json.tool"'
 
