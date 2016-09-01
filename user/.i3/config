@@ -47,10 +47,10 @@ bindsym $mod+space exec dmenu_run
 
 # change focus
 bindsym Mod1+Tab focus right
-bindsym $mod+q focus left
-bindsym $mod+d focus down
-bindsym $mod+e focus up
-bindsym $mod+w focus right
+bindsym $mod+a focus left
+bindsym $mod+s focus down
+bindsym $mod+w focus up
+bindsym $mod+d focus right
 
 # alternatively, you can use the cursor keys:
 # bindsym $mod+Left focus left
@@ -59,36 +59,36 @@ bindsym $mod+w focus right
 # bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+colon move right
+# bindsym $mod+shift+j move left
+# bindsym $mod+shift+k move down
+# bindsym $mod+shift+l move up
+# bindsym $mod+shift+colon move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+q move left
-bindsym $mod+Shift+d move down
-bindsym $mod+Shift+e move up
-bindsym $mod+Shift+w move right
+bindsym $mod+shift+a move left
+bindsym $mod+shift+s move down
+bindsym $mod+shift+w move up
+bindsym $mod+shift+d move right
 
 # split in horizontal orientation
-bindsym $mod+c split horizontal
+bindsym $mod+shift+e split horizontal
 
 # split in vertical orientation
-bindsym $mod+x split vertical
+bindsym $mod+e split vertical
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+a layout toggle split
-bindsym $mod+s layout tabbed
-# bindsym $mod+s layout stacking
+bindsym $mod+z layout toggle split
+bindsym $mod+shift+z layout tabbed
+# bindsym $mod+ctrl+z layout stacking
 
 # toggle tiling / floating
-bindsym $mod+z floating toggle
+bindsym $mod+shift+q floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+Shift+z focus mode_toggle
+bindsym $mod+q focus mode_toggle
 
 # focus the parent container
 # bindsym $mod+a focus parent
@@ -109,23 +109,23 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1; workspace 1
-bindsym $mod+Shift+2 move container to workspace 2; workspace 2
-bindsym $mod+Shift+3 move container to workspace 3; workspace 3
-bindsym $mod+Shift+4 move container to workspace 4; workspace 4
-bindsym $mod+Shift+5 move container to workspace 5; workspace 5
-bindsym $mod+Shift+6 move container to workspace 6; workspace 6
-bindsym $mod+Shift+7 move container to workspace 7; workspace 7
-bindsym $mod+Shift+8 move container to workspace 8; workspace 8
-bindsym $mod+Shift+9 move container to workspace 9; workspace 9
-bindsym $mod+Shift+0 move container to workspace 10; workspace 10
+bindsym $mod+shift+1 move container to workspace 1; workspace 1
+bindsym $mod+shift+2 move container to workspace 2; workspace 2
+bindsym $mod+shift+3 move container to workspace 3; workspace 3
+bindsym $mod+shift+4 move container to workspace 4; workspace 4
+bindsym $mod+shift+5 move container to workspace 5; workspace 5
+bindsym $mod+shift+6 move container to workspace 6; workspace 6
+bindsym $mod+shift+7 move container to workspace 7; workspace 7
+bindsym $mod+shift+8 move container to workspace 8; workspace 8
+bindsym $mod+shift+9 move container to workspace 9; workspace 9
+bindsym $mod+shift+0 move container to workspace 10; workspace 10
 
 # reload the configuration file
-# bindsym $mod+Shift+c reload
+# bindsym $mod+shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-# bindsym $mod+Shift+r restart
+# bindsym $mod+shift+r restart
 # exit i3 (logs you out of your X session)
-# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -141,10 +141,10 @@ mode "resize" {
         bindsym i resize shrink height 25 px or 25 ppt
         bindsym l resize grow width 25 px or 25 ppt
 
-        bindsym Shift+j resize shrink width 1 px
-        bindsym Shift+k resize grow height 1 px
-        bindsym Shift+i resize shrink height 1 px
-        bindsym Shift+l resize grow width 1 px
+        bindsym shift+j resize shrink width 1 px
+        bindsym shift+k resize grow height 1 px
+        bindsym shift+i resize shrink height 1 px
+        bindsym shift+l resize grow width 1 px
 
         # same bindings, but for the arrow keys
         # bindsym Left resize shrink width 2 px or 2 ppt
@@ -152,10 +152,10 @@ mode "resize" {
         # bindsym Up resize shrink height 2 px or 2 ppt
         # bindsym Right resize grow width 2 px or 2 ppt
 
-        # bindsym Shift+Left resize shrink width 20 px or 20 ppt
-        # bindsym Shift+Down resize grow height 20 px or 20 ppt
-        # bindsym Shift+Up resize shrink height 20 px or 20 ppt
-        # bindsym Shift+Right resize grow width 20 px or 20 ppt
+        # bindsym shift+Left resize shrink width 20 px or 20 ppt
+        # bindsym shift+Down resize grow height 20 px or 20 ppt
+        # bindsym shift+Up resize shrink height 20 px or 20 ppt
+        # bindsym shift+Right resize grow width 20 px or 20 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -177,13 +177,13 @@ for_window [class="^.*"] border pixel 1
 bindsym $mod+comma exec amixer -q sset Master 3%-
 bindsym $mod+period exec amixer -q sset Master 3%+
 bindsym $mod+slash exec usound-toggle
-bindsym $mod+Shift+grave exec ususpend
+bindsym $mod+shift+grave exec ususpend
 bindsym $mod+g exec thunar
 bindsym $mod+backslash exec subl3
 bindsym $mod+o exec firefox
-bindsym $mod+Shift+o exec chromium
+bindsym $mod+shift+o exec chromium
 bindsym $mod+p exec file-roller ~/projects/keys/passwords.zip
-bindsym $mod+Shift+p exec leafpad ~/projects/personal/development.txt
+bindsym $mod+shift+p exec leafpad ~/projects/personal/development.txt
 
 
 bindcode $mod+shift+22 exec ucreatetodo # backspace

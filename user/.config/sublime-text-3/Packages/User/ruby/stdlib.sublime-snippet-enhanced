@@ -254,66 +254,31 @@ kind_of?($1)
 
 	<snippet>
 		<content><![CDATA[
-::Hash
+empty?
 ]]></content>
-		<tabTrigger>H</tabTrigger>
-		<scope>source.ruby</scope>
-		<description>stdlib: Hash</description>
-	</snippet>
-
-	<snippet>
-		<content><![CDATA[
-::Array
-]]></content>
-		<tabTrigger>A</tabTrigger>
-		<scope>source.ruby</scope>
-		<description>stdlib: Array</description>
-	</snippet>
-
-	<snippet>
-		<content><![CDATA[
-::String
-]]></content>
-		<tabTrigger>S</tabTrigger>
-		<scope>source.ruby</scope>
-		<description>stdlib: String</description>
-	</snippet>
-
-	<snippet>
-		<content><![CDATA[
-::Symbol
-]]></content>
-		<tabTrigger>Y</tabTrigger>
-		<scope>source.ruby</scope>
-		<description>stdlib: Symbol</description>
-	</snippet>
-
-	<snippet>
-		<content><![CDATA[
-to_s
-]]></content>
-		<tabTrigger>s</tabTrigger>
+		<tabTrigger>em</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.s$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.em$"},
 			]
 		]]></context>
-		<description>stdlib: to_s</description>
+		<description>stdlib: empty</description>
 	</snippet>
 
 	<snippet>
 		<content><![CDATA[
-to_sym
+present?
 ]]></content>
-		<tabTrigger>y</tabTrigger>
+		<tabTrigger>p</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.y$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.p"},
 			]
 		]]></context>
-		<description>stdlib: to_s</description>
+		<description>stdlib: present</description>
+		<order>1</order>
 	</snippet>
 
 	<snippet>
@@ -342,6 +307,77 @@ include?($1)
 			]
 		]]></context>
 		<description>stdlib: includes</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+try(:$1)
+]]></content>
+		<tabTrigger>t</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.t$"},
+			]
+		]]></context>
+		<description>stdlib: try</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+end_with?($1)
+]]></content>
+		<tabTrigger>ew</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ew$"},
+			]
+		]]></context>
+		<description>stdlib: ends with</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+start_with?($1)
+]]></content>
+		<tabTrigger>sw</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.sw$"},
+			]
+		]]></context>
+		<description>stdlib: starts with</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+to_s
+]]></content>
+		<tabTrigger>s</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.s$"},
+			]
+		]]></context>
+		<description>stdlib: to_s</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+to_sym
+]]></content>
+		<tabTrigger>y</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.y$"},
+			]
+		]]></context>
+		<description>stdlib: to_s</description>
 	</snippet>
 
 	<snippet>
@@ -410,6 +446,42 @@ puts("XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX
 		<tabTrigger>pt</tabTrigger>
 		<scope>source.ruby</scope>
 		<description>operators: puts "TEST" * 100</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+::Hash
+]]></content>
+		<tabTrigger>H</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: Hash</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+::Array
+]]></content>
+		<tabTrigger>A</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: Array</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+::String
+]]></content>
+		<tabTrigger>S</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: String</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+::Symbol
+]]></content>
+		<tabTrigger>Y</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: Symbol</description>
 	</snippet>
 
 </snippets>

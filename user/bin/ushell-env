@@ -1,4 +1,5 @@
-export PATH=$PATH:/home/leo/.composer/vendor/bin:/usr/lib/jvm/java-8-openjdk/bin/:/home/leo/.gem/ruby/2.3.0/bin:/home/leo/src/go/bin:/home/leo/src/go/src/darius/build
+export PATH=$PATH:/home/leo/.composer/vendor/bin:/usr/lib/jvm/java-8-openjdk/bin/:/home/leo/.gem/ruby/2.3.0/bin:/home/leo/src/go/bin
+
 export BROWSER=firefox
 export APPLICATION_ENV=development
 
@@ -80,9 +81,6 @@ alias goapp="/opt/google-appengine-go/goapp"
 alias b="bundle exec"
 alias bi="bundle install"
 
-alias r="rails"
-alias rg="rails generate"
-
 alias wd="nmcli -p dev wifi list"
 alias wc="nmcli -p dev wifi connect"
 alias wl="nmcli -p con show"
@@ -123,18 +121,11 @@ alias ghp='git stash pop'
 alias gfp='git fetch --prune'
 alias gcb='git checkout origin/dev'
 alias gcm='git checkout origin/master'
-alias glr='git pull --rebase'
+alias gt='git reset'
 
 alias json='python -m "json.tool"'
 
-alias dbe='docker exec -i -t $(
-  docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}" |
-  grep backend |
-  grep -v admin |
-  sort -k 2 |
-  head -n 1 |
-  awk "{ print \$1 }"
-)'
+alias dbe='docker exec -i -t $(docker-backend)'
 
 alias dbea='docker exec -i -t $(
   docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}" |
@@ -168,6 +159,40 @@ alias -g G="| grep"
 alias uskypeweb="chromium -app=https://web.skype.com/en/"
 alias isd="issue -S --from origin/dev --id "
 alias ism="issue -S --from origin/master --id "
+
+function docker-backend() {
+  echo $(
+    docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}" |
+    grep backend |
+    grep -v admin |
+    sort -k 2 |
+    head -n 1 |
+    awk "{ print \$1 }"
+  )
+}
+
+alias rc='docker exec -i -t $(docker-backend) rails console'
+alias re='docker exec -i -t $(docker-backend) rails runner'
+alias rg='docker exec -i -t $(docker-backend) rails generate'
+
+alias rme='docker exec -i -t $(docker-backend) rake db:migrate'
+alias rms='docker exec -i -t $(docker-backend) rake db:migrate:status'
+alias rmr='docker exec -i -t $(docker-backend) rake db:migrate:redo'
+alias rs='docker exec -i -t $(docker-backend) rake db:seed'
+alias rr='docker exec -i -t $(docker-backend) rake db:rollback'
+
+unalias rgm
+function rgm {
+  MIGRATION=$(
+    docker exec -i -t $(docker-backend) rails generate migration $@ |
+      grep -o 'db/.*.rb' |
+      head -n 1
+  )
+
+  docker exec -i -t $(docker-backend) chown 1000:1000 $MIGRATION
+  subl3 $MIGRATION
+}
+
 
 umask 002
 

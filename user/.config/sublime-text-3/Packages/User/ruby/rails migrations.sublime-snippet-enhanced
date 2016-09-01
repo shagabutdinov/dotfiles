@@ -1,0 +1,47 @@
+<snippets>
+
+  <snippet>
+    <content><![CDATA[
+add_column :${1:table}, :${2:name}, :${3:type}, {
+	null: ${4:true},
+	default: $5,
+	comment: '$6',
+}
+]]></content>
+    <tabTrigger>ac</tabTrigger>
+    <scope>source.ruby</scope>
+    <context><![CDATA[
+    	[
+    		{
+    			"key": "begin_512_chars",
+    			"operator": "regex_contains",
+    			"operand": "ActiveRecord::Migration",
+    		},
+    	]
+    ]]></context>
+    <description>rails migrations: add_column</description>
+    <order>1</order>
+  </snippet>
+
+  <snippet>
+    <content><![CDATA[
+create_table :${1:table}, comment: '' do |table|
+	$0
+end
+]]></content>
+    <tabTrigger>ct</tabTrigger>
+    <scope>source.ruby</scope>
+    <context><![CDATA[
+    	[
+    		{
+    			"key": "begin_512_chars",
+    			"operator": "regex_contains",
+    			"operand": "ActiveRecord::Migration",
+    		},
+    	]
+    ]]></context>
+    <description>rails migrations: add_column</description>
+    <order>1</order>
+  </snippet>
+
+</snippets>

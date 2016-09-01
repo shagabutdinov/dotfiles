@@ -63,4 +63,34 @@
 		<order>1</order>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+<p>$0<p>
+]]></content>
+		<tabTrigger>pp</tabTrigger>
+		<scope>text.html.ruby</scope>
+		<description>paragraph</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<% ${0:$selection__or__last_assigned_variable} %>
+]]></content>
+		<tabTrigger>r</tabTrigger>
+		<scope>text.html.ruby</scope>
+		<description>ruby</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<% end %>
+]]></content>
+		<tabTrigger>n</tabTrigger>
+		<scope>text.html.ruby</scope>
+		<description>ruby</description>
+		<order>1</order>
+	</snippet>
+
 </snippets>
