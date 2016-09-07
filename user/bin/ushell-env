@@ -28,41 +28,37 @@ function prepend_sudo() {
         CURSOR=$(($CURSOR+5))
 }
 
-bindkey "^T" prepend-sudo
-
-alias sc="sudo systemctl"
-alias scs="sudo systemctl start"
-alias scr="sudo systemctl restart"
-alias sct="sudo systemctl stop"
-alias subl="subl3 -n -w"
-alias yaourt="yaourt --noconfirm"
-alias shaitan="sudo systemctl"
-alias uo="nohup xdg-open"
-o() {
-  nohup xdg-open "$@" &
+function o() {
+  nohup xdg-open "$@" > /dev/null 2> /dev/null &
   disown
 }
-alias ut="urxvt -cd $(pwd) &"
+
+bindkey "^T" prepend-sudo
+alias -g G="| grep"
+
+alias yaourt="yaourt --noconfirm"
 alias mv=/bin/mv
-alias ms="mysql -u root"
 alias pwgen="pwgen 12"
 alias nc="sudo netctl"
+alias ag='alias | grep -A 2 -B 2'
+alias cds='cd ~/src/'
+
+alias s="subl3"
+alias b="bundle exec"
+alias x="xsel -ib"
+alias l="ls --color -hl --group-directories-first"
+alias ls="ls --color -h --group-directories-first"
+
 alias pm="sudo pacman"
 alias pms="sudo pacman -S"
 alias pmr="sudo pacman -R"
 alias pmro="sudo pacman -Rns \$(pacman -Qtdq)"
 alias pmq="pacman -Ql"
-alias steam="wine '/home/leo/.wine/drive_c/Program Files (x86)/Steam/Steam.exe' -no-dwrite"
-alias s="subl3"
-alias x="xsel -ib"
-alias l="ls --color -hl --group-directories-first"
-alias ls="ls --color -h --group-directories-first"
 
-alias ril="redmine-issue list"
-alias ris="redmine-issue start"
-alias ric="redmine-issue complete"
-alias rip="redmine-issue pause"
-alias rid="redmine-issue description"
+alias sc="sudo systemctl"
+alias scs="sudo systemctl start"
+alias scr="sudo systemctl restart"
+alias sct="sudo systemctl stop"
 
 alias dfp="balmora dotfiles-submit"
 alias dfu="balmora dotfiles-update"
@@ -76,10 +72,6 @@ alias tree="tree --dirsfirst"
 alias ps="ps -xau"
 alias cal="cal -3m"
 alias uwhatsapp="chromium --app=https://web.whatsapp.com"
-
-alias goapp="/opt/google-appengine-go/goapp"
-alias b="bundle exec"
-alias bi="bundle install"
 
 alias wd="nmcli -p dev wifi list"
 alias wc="nmcli -p dev wifi connect"
@@ -123,78 +115,213 @@ alias gcb='git checkout origin/dev'
 alias gcm='git checkout origin/master'
 alias gt='git reset'
 
+
 alias json='python -m "json.tool"'
 
-alias dbe='docker exec -i -t $(docker-backend)'
-
-alias dbea='docker exec -i -t $(
-  docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}" |
-  grep backend |
-  grep admin |
-  sort -k 2 |
-  head -n 1 |
-  awk "{ print \$1 }"
-)'
-
-alias dfe='docker exec -i -t $(
-  docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}" |
-  sort -k 2 |
-  grep frontend |
-  grep -v admin |
-  head -n 1 |
-  awk "{ print \$1 }"
-)'
-
-alias dfea='docker exec -i -t $(
-  docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}" |
-  sort -k 2 |
-  grep frontend |
-  grep admin |
-  head -n 1 |
-  awk "{ print \$1 }"
-)'
-
-alias -g B="bundle exec"
-alias -g G="| grep"
-alias uskypeweb="chromium -app=https://web.skype.com/en/"
-alias isd="issue -S --from origin/dev --id "
-alias ism="issue -S --from origin/master --id "
-
-function docker-backend() {
+function find-docker-container() {
   echo $(
     docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}" |
-    grep backend |
-    grep -v admin |
+    grep $1 |
+    grep $2 $3 |
     sort -k 2 |
     head -n 1 |
     awk "{ print \$1 }"
   )
 }
 
-alias rc='docker exec -i -t $(docker-backend) rails console'
-alias re='docker exec -i -t $(docker-backend) rails runner'
-alias rg='docker exec -i -t $(docker-backend) rails generate'
+alias dbe='docker exec -i -t $(find-docker-container backend -v admin)'
+alias dbea='docker exec -i -t $(find-docker-container backend admin)'
+alias dte='docker exec -i -t $(find-docker-container _test backend)'
+alias dfe='docker exec -i -t $(find-docker-container frontend -v admin)'
+alias dfea='docker exec -i -t $(find-docker-container frontend admin)'
 
-alias rme='docker exec -i -t $(docker-backend) rake db:migrate'
-alias rms='docker exec -i -t $(docker-backend) rake db:migrate:status'
-alias rmr='docker exec -i -t $(docker-backend) rake db:migrate:redo'
-alias rs='docker exec -i -t $(docker-backend) rake db:seed'
-alias rr='docker exec -i -t $(docker-backend) rake db:rollback'
+alias isd="issue -S --from origin/dev --id "
+alias ism="issue -S --from origin/master --id "
 
-unalias rgm
-function rgm {
+alias xe=' \
+  docker exec -i -t $(find-docker-container backend -v admin) \
+'
+
+alias xc='
+  docker exec -i -t $(find-docker-container backend -v admin) \
+    rails console \
+'
+
+alias xr='
+  docker exec -i -t $(find-docker-container backend -v admin) \
+    rails runner \
+'
+
+alias xg='
+  docker exec -i -t $(find-docker-container backend -v admin) \
+    rails generate \
+'
+
+
+alias xm='
+  docker exec -i -t $(find-docker-container backend -v admin) \
+    rake db:migrate \
+'
+
+alias xms='
+  docker exec -i -t $(find-docker-container backend -v admin) \
+    rake db:migrate:status \
+'
+
+alias xmr='
+  docker exec -i -t $(find-docker-container backend -v admin) \
+    rake db:migrate:redo \
+'
+
+alias xs='
+  docker exec -i -t $(find-docker-container backend -v admin) \
+    rake db:seed \
+'
+
+alias xdr='
+  docker exec -i -t $(find-docker-container backend -v admin) \
+    rake db:rollback \
+'
+
+alias xbi='
+  docker exec -i -t $(find-docker-container backend -v admin) \
+    bundle install --jobs 8 --path vendor/bundle --full-index \
+'
+
+alias xd='docker exec -i -t $(find-docker-container postgres -v admin) \
+  psql -P pager -U postgres database \
+'
+
+alias ze=' \
+  docker exec -i -t $(find-docker-container _test -v admin) \
+'
+
+alias zc='
+  docker exec -i -t $(find-docker-container _test -v admin) \
+    rails console \
+'
+
+alias zr='
+  docker exec -i -t $(find-docker-container _test -v admin) \
+    rails runner \
+'
+
+alias zg='
+  docker exec -i -t $(find-docker-container _test -v admin) \
+    rails generate \
+'
+
+alias zm='
+  docker exec -i -t $(find-docker-container _test -v admin) \
+    rake db:migrate \
+'
+
+alias zms='
+  docker exec -i -t $(find-docker-container _test -v admin) \
+    rake db:migrate:status \
+'
+
+alias zmr='
+  docker exec -i -t $(find-docker-container _test -v admin) \
+    rake db:migrate:redo \
+'
+
+alias zs='
+  docker exec -i -t $(find-docker-container _test -v admin) \
+    rake db:seed \
+'
+
+alias zdr='
+  docker exec -i -t $(find-docker-container _test -v admin) \
+    rake db:rollback \
+'
+
+alias zbi='
+  docker exec -i -t $(find-docker-container _test -v admin) \
+    bundle install --jobs 8 --path vendor/bundle --full-index \
+'
+
+alias zd='docker exec -i -t $(find-docker-container postgres -v admin) \
+  psql -P pager -U postgres test \
+'
+
+function docker-backend-path() {
+  docker inspect $(find-docker-container backend -v admin) |
+    grep -o '/.*:/app:rw' | sed -E "s/:.*//"
+}
+
+function xgm {
   MIGRATION=$(
-    docker exec -i -t $(docker-backend) rails generate migration $@ |
+    docker exec -i -t $(find-docker-container backend -v admin) rails generate migration $@ |
       grep -o 'db/.*.rb' |
       head -n 1
   )
 
-  docker exec -i -t $(docker-backend) chown 1000:1000 $MIGRATION
-  subl3 $MIGRATION
+  docker exec -i -t $(find-docker-container backend -v admin) chown 1000:1000 $MIGRATION
+  subl3 $(docker-backend-path)/$MIGRATION
 }
 
+alias xp='cd $(docker-backend-path)'
 
 umask 002
 
 eval "$(ssh-agent -s)" > /dev/null 2>&1
 ssh-add > /dev/null 2>&1
+
+function deploy-celluloidheaven-to-staging {
+  docker exec -i -t $(find-docker-container _test -v admin) rspec
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mBUILD FAILED\033[0m"
+    return 1
+  fi
+
+  git push
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mPUSH FAILED\033[0m"
+    return 1
+  fi
+
+  bundle exec cap staging deploy
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mDEPLOY FAILED\033[0m"
+    return 1
+  fi
+
+  return 0
+}
+
+function download-celluloidheaven-data {
+  cd $(docker-backend-path)
+
+  docker stop $(find-docker-container backend -v admin)
+
+  docker exec -i $(find-docker-container postgres -v admin) psql -U postgres \
+    -c 'DROP DATABASE "database"'
+
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mDOWNLOAD FAILED\033[0m"
+    return 1
+  fi
+
+  ssh ubuntu@staging.celluloidheaven.net "pg_dumpall | gzip" |
+    gunzip |
+    docker exec -i $(find-docker-container postgres -v admin) psql -U postgres
+
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mDOWNLOAD FAILED\033[0m"
+    return 1
+  fi
+
+  docker exec -i $(find-docker-container postgres -v admin) psql -U postgres \
+    -c 'ALTER DATABASE "diagonal_production" RENAME TO "database"'
+
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mDOWNLOAD FAILED\033[0m"
+    return 1
+  fi
+
+  docker-compose -f config/celluloidheaven.local/main.yml stop
+  docker-compose -f config/celluloidheaven.local/main.yml up -d
+
+  return 0
+}

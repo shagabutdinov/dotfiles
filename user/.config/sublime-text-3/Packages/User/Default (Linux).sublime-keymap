@@ -12,7 +12,7 @@
     "keys": ["ctrl+alt+m"],
     "command": "wrap_lines",
     "args": {
-      "width": 80, 
+      "width": 80,
     },
   },
 
@@ -39,6 +39,12 @@
   {
     "keys": ["alt+u"],
     "command": "find_all_under",
+  },
+
+  {
+    "keys": ["alt+shift+u"],
+    "command": "toggle_setting",
+    "args": {"setting": "word_wrap"},
   },
 
   // KeymapEnhanced:

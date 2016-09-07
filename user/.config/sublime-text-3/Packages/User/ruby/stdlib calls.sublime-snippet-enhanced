@@ -1,0 +1,144 @@
+<snippets>
+	<snippet>
+		<content><![CDATA[
+File.join(${0:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>fj</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: File.join</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+File.read(${0:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>fr</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: File.read</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+File.exists?(${0:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>fe</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: File.exists?</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+JSON.generate(${0:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>jg</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: JSON.generate</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+JSON.parse(${0:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>jp</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: JSON.parse</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+File.write($1, ${2:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "move_to", "args": {"extend": true, "to": "eol"}, "context": [
+					{"key": "following_text_end", "operator": "regex_contains", "operand": "^\\S"},
+				]},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>fw</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: File.write</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+File.write('log', ${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{"command": "move_to", "args": {"extend": true, "to": "eol"}, "context": [
+					{"key": "following_text_end", "operator": "regex_contains", "operand": "^\\S"},
+				]},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>fl</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: File.write</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+File.read($1)
+]]></content>
+		<tabTrigger>fr</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: File.write</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+::DateTime.now
+]]></content>
+		<tabTrigger>dn</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: Symbol</description>
+	</snippet>
+
+</snippets>

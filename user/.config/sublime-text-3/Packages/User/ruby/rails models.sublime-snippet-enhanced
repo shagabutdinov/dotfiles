@@ -278,5 +278,34 @@ after_commit $0
 		<description>rails models: after_commit</description>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+connection.execute($1)
+]]></content>
+		<tabTrigger>ce</tabTrigger>
+		<scope>source\.ruby\s*$</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ce$"},
+			]
+		</context>
+		<description>rails models: connection execute</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+to_sql
+]]></content>
+		<tabTrigger>q</tabTrigger>
+		<scope>source\.ruby</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.q$"},
+			]
+		</context>
+		<description>rails models: to_sql</description>
+		<order>1</order>
+	</snippet>
 
 </snippets>
