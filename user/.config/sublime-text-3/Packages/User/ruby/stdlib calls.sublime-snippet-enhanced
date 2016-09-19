@@ -73,7 +73,25 @@ JSON.generate(${0:$selection__or__last_assigned_variable})
 
 	<snippet>
 		<content><![CDATA[
-JSON.parse(${0:$selection__or__last_assigned_variable})
+JSON.pretty_generate(${0:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>je</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: JSON.pretty_generate</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+JSON.parse(${0:$selection__or__last_assigned_variable}, symbolize_names: true)
 ]]></content>
 		<commands>
 			[

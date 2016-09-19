@@ -115,6 +115,38 @@ end
 
 	<snippet>
 		<content><![CDATA[
+if ${1:$last_assigned_variable}.nil?
+	${0:$selection}
+end
+]]></content>
+		<tabTrigger>ii</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*ii$"},
+			]
+		]]></context>
+		<description>operators: if not nil</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+if !${1:$last_assigned_variable}.nil?
+	${0:$selection}
+end
+]]></content>
+		<tabTrigger>ini</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*ini$"},
+			]
+		]]></context>
+		<description>operators: if not nil</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 if !${0:$selection}
 	$1
 end
@@ -195,7 +227,7 @@ raise $1Error.new($2)
 
 	<snippet>
 		<content><![CDATA[
-raise "$TM_FILENAME:$TM_LINE_NUMBER :("
+raise "XXXX $TM_FILENAME:$TM_LINE_NUMBER :("
 ]]></content>
 		<tabTrigger>q</tabTrigger>
 		<scope>source.ruby</scope>

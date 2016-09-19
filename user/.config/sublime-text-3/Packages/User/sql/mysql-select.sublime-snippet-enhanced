@@ -2,7 +2,8 @@
 
 	<snippet>
 		<content><![CDATA[
-${1:LEFT} JOIN `$2`$3 ON `${4:$2}`.`${5:id}` = `$6`.`${7:id}`
+${1:LEFT} JOIN `$2`$3
+	ON `${4:$2}`.`${5:id}` = `$6`.`${7:id}`
 ]]></content>
 		<tabTrigger>j</tabTrigger>
 		<trigger>j</trigger>

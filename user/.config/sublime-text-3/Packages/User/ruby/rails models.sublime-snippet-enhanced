@@ -295,6 +295,21 @@ connection.execute($1)
 
 	<snippet>
 		<content><![CDATA[
+connection.quote($1)
+]]></content>
+		<tabTrigger>cq</tabTrigger>
+		<scope>source\.ruby\s*$</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.cq$"},
+			]
+		</context>
+		<description>rails models: connection quote</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 to_sql
 ]]></content>
 		<tabTrigger>q</tabTrigger>
@@ -305,6 +320,36 @@ to_sql
 			]
 		</context>
 		<description>rails models: to_sql</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+where(${1:$selection})
+]]></content>
+		<tabTrigger>w</tabTrigger>
+		<scope>source\.ruby</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.w$"},
+			]
+		</context>
+		<description>rails models: where</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+exists?(${1:$selection})
+]]></content>
+		<tabTrigger>w</tabTrigger>
+		<scope>source\.ruby</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.w$"},
+			]
+		</context>
+		<description>rails models: exists</description>
 		<order>1</order>
 	</snippet>
 

@@ -17,7 +17,13 @@
 127.0.0.1 nalopatu.local
 127.0.0.1 specctr.local
 127.0.0.1 streakello.local
+127.0.0.1 mirrorello.local
 127.0.0.1 celluloidheaven.local
+# 54.247.92.152 chfs.ch
+# 127.0.0.1 chfs.ch
+# 127.0.0.1 celluloidheaven.ch
+
+172.16.16.59 git.directline.in
 
 45.55.118.33 toughdomains1.xyz
 45.55.118.33 toughdomains2.xyz
@@ -36,6 +42,7 @@
 0.0.0.1 *.adnetwork.vn
 0.0.0.1 *.microadlinc.com
 0.0.0.1 google-analytics.com
+0.0.0.1 www.google-analytics.com
 0.0.0.1 *.doubleclick.net
 
 # This MVPS HOSTS file is a free download from:            #

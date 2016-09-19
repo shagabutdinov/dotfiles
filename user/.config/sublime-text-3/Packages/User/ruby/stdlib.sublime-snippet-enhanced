@@ -18,6 +18,22 @@ puts("XXXX $TM_FILENAME:$TM_LINE_NUMBER #{${1:$selection}}")
 
 	<snippet>
 		<content><![CDATA[
+puts("XXXX $TM_FILENAME:$TM_LINE_NUMBER #{JSON.pretty_generate(${1:$selection})}")
+]]></content>
+		<commands>
+			[
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>pp</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: pp</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 puts("XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX\n")
 ]]></content>
 		<tabTrigger>pt</tabTrigger>

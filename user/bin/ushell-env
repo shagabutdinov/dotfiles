@@ -1,6 +1,6 @@
 export PATH=$PATH:/home/leo/.composer/vendor/bin:/usr/lib/jvm/java-8-openjdk/bin/:/home/leo/.gem/ruby/2.3.0/bin:/home/leo/src/go/bin
 
-export BROWSER=firefox
+export BROWSER=chromium
 export APPLICATION_ENV=development
 
 export PROMPT="%{$bg[blue]%}%{$fg[white]%}%2~ 冬%{$reset_color%} "
@@ -45,7 +45,7 @@ alias cds='cd ~/src/'
 
 alias s="subl3"
 alias b="bundle exec"
-alias x="xsel -ib"
+alias X="| xsel -ib"
 alias l="ls --color -hl --group-directories-first"
 alias ls="ls --color -h --group-directories-first"
 
@@ -88,11 +88,40 @@ alias dl="docker logs --tail 200"
 alias dlf="docker logs --follow"
 alias da="docker attach --no-stdin"
 
-alias c="docker-compose -f"
-alias cm='docker-compose -f config/local/main.yml'
-alias cl='docker-compose -f config/$(ls --color=none config/ | grep --color=none \\.local)/main.yml'
-alias ct='docker-compose -f config/$(ls --color=none config/ | grep --color=none \\.local)/test.yml'
-# alias cd='docker-compose -f config/$(ls --color=none config/ | grep --color=none \\.dev1\\.idfly\\.ru)/main.yml'
+alias c='\
+  docker-compose -f config/$(ls --color=none config/ | \
+    grep --color=none \\.local)/main.yml \
+'
+
+alias cu='\
+  docker-compose -f config/$(ls --color=none config/ | \
+    grep --color=none \\.local)/main.yml up \
+'
+
+alias cs='\
+  docker-compose -f config/$(ls --color=none config/ | \
+    grep --color=none \\.local)/main.yml stop \
+'
+
+alias cr='\
+  docker-compose -f config/$(ls --color=none config/ | \
+    grep --color=none \\.local)/main.yml stop;
+  docker-compose -f config/$(ls --color=none config/ | \
+    grep --color=none \\.local)/main.yml up \
+'
+
+function restart-project() {
+  PROJECT_PATH=$(project-path)
+
+  PROJECT_ENV=$(
+    ls --color=none $PROJECT_PATH/config/ |
+      grep --color=none \\.local
+  )
+
+  docker-compose -f $PROJECT_PATH/config/$PROJECT_ENV/main.yml stop
+  docker-compose -f $PROJECT_PATH/config/$PROJECT_ENV/main.yml up
+}
+
 
 alias co='sudo chown -R leo: '
 alias cc='sudo chown -R leo: .'
@@ -121,7 +150,7 @@ alias json='python -m "json.tool"'
 function find-docker-container() {
   echo $(
     docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}" |
-    grep $1 |
+    grep -E $1 |
     grep $2 $3 |
     sort -k 2 |
     head -n 1 |
@@ -129,115 +158,151 @@ function find-docker-container() {
   )
 }
 
-alias dbe='docker exec -i -t $(find-docker-container backend -v admin)'
-alias dbea='docker exec -i -t $(find-docker-container backend admin)'
-alias dte='docker exec -i -t $(find-docker-container _test backend)'
+alias dbe='docker exec -i -t $(find-docker-container "(backend|app)\." -v admin)'
+alias dbea='docker exec -i -t $(find-docker-container "(backend|app)\." admin)'
+alias dte='docker exec -i -t $(find-docker-container "test.(backend|app)" backend)'
 alias dfe='docker exec -i -t $(find-docker-container frontend -v admin)'
 alias dfea='docker exec -i -t $(find-docker-container frontend admin)'
 
 alias isd="issue -S --from origin/dev --id "
 alias ism="issue -S --from origin/master --id "
 
-alias xe=' \
-  docker exec -i -t $(find-docker-container backend -v admin) \
+alias x=' \
+  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
+'
+
+alias xb=' \
+  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) bash
+'
+
+alias xs=' \
+  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
+    spring \
 '
 
 alias xc='
-  docker exec -i -t $(find-docker-container backend -v admin) \
+  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
     rails console \
 '
 
 alias xr='
-  docker exec -i -t $(find-docker-container backend -v admin) \
+  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
     rails runner \
 '
 
-alias xg='
-  docker exec -i -t $(find-docker-container backend -v admin) \
-    rails generate \
-'
-
-
-alias xm='
-  docker exec -i -t $(find-docker-container backend -v admin) \
+alias xdm='
+  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
     rake db:migrate \
 '
 
-alias xms='
-  docker exec -i -t $(find-docker-container backend -v admin) \
-    rake db:migrate:status \
-'
-
-alias xmr='
-  docker exec -i -t $(find-docker-container backend -v admin) \
-    rake db:migrate:redo \
-'
-
-alias xs='
-  docker exec -i -t $(find-docker-container backend -v admin) \
-    rake db:seed \
-'
-
 alias xdr='
-  docker exec -i -t $(find-docker-container backend -v admin) \
+  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
     rake db:rollback \
 '
 
+alias xdd='
+  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
+    rake db:migrate:redo \
+'
+
+alias xdt='
+  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
+    rake db:migrate:status \
+'
+
+alias xdu='
+  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
+    rake db:create db:structure:load db:seed \
+'
+
+alias xds='
+  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
+    rake db:seed \
+'
+
 alias xbi='
-  docker exec -i -t $(find-docker-container backend -v admin) \
+  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
     bundle install --jobs 8 --path vendor/bundle --full-index \
 '
 
-alias xd='docker exec -i -t $(find-docker-container postgres -v admin) \
-  psql -P pager -U postgres database \
+function open-project-database-console() {
+  CONTAINER=$(find-docker-container postgres -v admin)
+  echo $CONTAINER
+  if [ -n "$CONTAINER" ]; then
+    docker exec -i -t $CONTAINER psql -P pager -U postgres database
+  fi
+
+  CONTAINER=$(find-docker-container mysql -v admin)
+  echo $CONTAINER
+  if [ -n "$CONTAINER" ]; then
+    docker exec -i -t $CONTAINER mysql -u user -ppassword database
+  fi
+
+  echo "NO DATABASE CONTAINER FOUND"
+}
+
+alias xd='open-project-database-console'
+
+alias z=' \
+  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
 '
 
+alias zb=' \
+  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) bash
+'
+
+
 alias ze=' \
-  docker exec -i -t $(find-docker-container _test -v admin) \
+  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
+'
+
+alias zs=' \
+  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
+    spring \
 '
 
 alias zc='
-  docker exec -i -t $(find-docker-container _test -v admin) \
+  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
     rails console \
 '
 
 alias zr='
-  docker exec -i -t $(find-docker-container _test -v admin) \
+  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
     rails runner \
 '
 
-alias zg='
-  docker exec -i -t $(find-docker-container _test -v admin) \
-    rails generate \
-'
-
-alias zm='
-  docker exec -i -t $(find-docker-container _test -v admin) \
+alias zdm='
+  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
     rake db:migrate \
 '
 
-alias zms='
-  docker exec -i -t $(find-docker-container _test -v admin) \
-    rake db:migrate:status \
-'
-
-alias zmr='
-  docker exec -i -t $(find-docker-container _test -v admin) \
-    rake db:migrate:redo \
-'
-
-alias zs='
-  docker exec -i -t $(find-docker-container _test -v admin) \
-    rake db:seed \
-'
-
 alias zdr='
-  docker exec -i -t $(find-docker-container _test -v admin) \
+  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
     rake db:rollback \
 '
 
+alias zdd='
+  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
+    rake db:migrate:redo \
+'
+
+alias zdt='
+  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
+    rake db:migrate:status \
+'
+
+alias zdu='
+  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
+    rake db:create db:structure:load db:seed \
+'
+
+alias zds='
+  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
+    rake db:seed \
+'
+
 alias zbi='
-  docker exec -i -t $(find-docker-container _test -v admin) \
+  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
     bundle install --jobs 8 --path vendor/bundle --full-index \
 '
 
@@ -245,23 +310,28 @@ alias zd='docker exec -i -t $(find-docker-container postgres -v admin) \
   psql -P pager -U postgres test \
 '
 
-function docker-backend-path() {
-  docker inspect $(find-docker-container backend -v admin) |
-    grep -o '/.*:/app:rw' | sed -E "s/:.*//"
+function project-path() {
+  RESULT=$(
+    docker inspect $(find-docker-container "(backend|app)\." -v admin) |
+      grep -o '/.*:/app:rw' | sed -E "s/:.*//"
+  )
+
+  echo $RESULT/..
 }
 
 function xgm {
   MIGRATION=$(
-    docker exec -i -t $(find-docker-container backend -v admin) rails generate migration $@ |
+    docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) rails generate migration $@ |
       grep -o 'db/.*.rb' |
       head -n 1
   )
 
-  docker exec -i -t $(find-docker-container backend -v admin) chown 1000:1000 $MIGRATION
-  subl3 $(docker-backend-path)/$MIGRATION
+  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) chown 1000:1000 $MIGRATION
+  subl3 $(project-path)/app/$MIGRATION
 }
 
-alias xp='cd $(docker-backend-path)'
+alias xp='cd $(project-path)/app'
+alias xx='cd $(project-path)'
 
 umask 002
 
@@ -269,7 +339,7 @@ eval "$(ssh-agent -s)" > /dev/null 2>&1
 ssh-add > /dev/null 2>&1
 
 function deploy-celluloidheaven-to-staging {
-  docker exec -i -t $(find-docker-container _test -v admin) rspec
+  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) rspec
   if [ $? -ne 0 ]; then
     echo "\033[0;31mBUILD FAILED\033[0m"
     return 1
@@ -291,9 +361,9 @@ function deploy-celluloidheaven-to-staging {
 }
 
 function download-celluloidheaven-data {
-  cd $(docker-backend-path)
+  cd $(project-path)/..
 
-  docker stop $(find-docker-container backend -v admin)
+  docker stop $(find-docker-container "(backend|app)\." -v admin)
 
   docker exec -i $(find-docker-container postgres -v admin) psql -U postgres \
     -c 'DROP DATABASE "database"'
@@ -325,3 +395,39 @@ function download-celluloidheaven-data {
 
   return 0
 }
+
+alias clr=restart-project
+
+function generate-rails-object-for-project() {
+  RESULT=$(
+    docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
+      rails generate $@ | tee /dev/tty \
+  )
+
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mGENERATE FAILED\033[0m"
+    return 1
+  fi
+
+  FILES=$(
+    echo $RESULT |
+      grep -E '(create|identical|skip)' | # filter for created files
+      sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g" | # remove colors
+      sed -E "s/\s*(create|identical|skip)[\t ]*//" # remove garbage
+  )
+
+  PROJECT_PATH=$(project-path)
+  for FILE in $(echo $FILES); do
+    FILE=$(echo $FILE | sed -E 's/\r//')
+    FILE_PATH="$PROJECT_PATH/app/$FILE"
+    if ! test -e $FILE_PATH; then
+      echo $FILE_PATH;
+      FILE_PATH="$PROJECT_PATH/app/app/$FILE"
+    fi
+
+    sudo chown leo: $FILE_PATH
+    subl3 $FILE_PATH
+  done
+}
+
+alias xg=generate-rails-object-for-project

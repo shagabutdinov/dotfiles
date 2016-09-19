@@ -18,6 +18,22 @@ end
 
 	<snippet>
 		<content><![CDATA[
+after :each do
+	$0
+end
+]]></content>
+		<tabTrigger>ae</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
+			]
+		]]></context>
+		<description>rspec: after each</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 describe '$1' do
 	$0
 end
@@ -127,7 +143,7 @@ expect { ${1:$selection__or__last_assigned_variable} }.to change { $2 }.${3:by($
 
 	<snippet>
 		<content><![CDATA[
-allow($1).to $0
+allow(${1:$selection__or__last_assigned_variable}).to $0
 ]]></content>
 		<commands>
 			[
@@ -146,6 +162,30 @@ allow($1).to $0
 			]
 		]]></context>
 		<description>rspec: allow(OBJ).to</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+allow_any_instance_of(${1:$selection__or__last_assigned_variable}).to $0
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>aa</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
+			]
+		]]></context>
+		<description>rspec: allow(OBJ).to</description>
+		<order>1</order>
 	</snippet>
 
 	<snippet>
@@ -309,6 +349,22 @@ save_screenshot(${1:'screenshot.jpg'})
 			]
 		]]></context>
 		<description>rspec: save_screenshot</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+params: {$0}
+]]></content>
+		<tabTrigger>p</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": ",\\s*p$"},
+			]
+		]]></context>
+		<description>rspec: save_screenshot</description>
+		<order>1</order>
 	</snippet>
 
 </snippets>

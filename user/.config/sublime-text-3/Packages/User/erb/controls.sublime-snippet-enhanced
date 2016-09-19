@@ -11,6 +11,8 @@
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*e$"},
+				"or",
+				{"key": "selection_empty", "operator": "equal", "operand": false},
 			]
 		]]></context>
 		<description>each</description>
@@ -27,6 +29,8 @@
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*i$"},
+				"or",
+				{"key": "selection_empty", "operator": "equal", "operand": false},
 			]
 		]]></context>
 		<description>if</description>
@@ -35,7 +39,7 @@
 	<snippet>
 		<content><![CDATA[
 <% else %>
-	$0
+	${0:$selection}
 ]]></content>
 		<commands>
 			[

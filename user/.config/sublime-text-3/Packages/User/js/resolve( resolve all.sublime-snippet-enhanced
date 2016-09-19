@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-resolveAll(${1:$selection__or__last_assigned_variable})
+removeAttr(${1:$selection__or__last_assigned_variable})
 ]]></content>
 	<commands><![CDATA[
 	  [
