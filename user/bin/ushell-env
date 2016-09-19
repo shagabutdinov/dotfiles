@@ -431,3 +431,11 @@ function generate-rails-object-for-project() {
 }
 
 alias xg=generate-rails-object-for-project
+
+function create-feature-branch() {
+  git fetch
+  git checkout origin/master
+  git checkout -b "feature/$1"
+}
+
+alias q=create-feature-branch
