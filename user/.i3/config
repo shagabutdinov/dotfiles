@@ -202,4 +202,10 @@ bindcode $mod+shift+22 exec ucreatetodo # backspace
 bindcode $mod+ctrl+22 exec uscreenshot # backspace
 bindsym $mod+shift+comma exec xbacklight -dec 5
 bindsym $mod+shift+period exec xbacklight -inc 5
-bindcode $mod+23 exec keynav start
+# bindcode $mod+23 exec keynav start
+
+bindcode $mod+shift+112 exec uscreenshot --active-window
+bindcode $mod+112 exec uscreenshot
+
+bindcode $mod+shift+117 exec uscreenshot --active-window --edit --publish --publish-copy-link
+bindcode $mod+117 exec uscreenshot --edit --publish --publish-copy-link

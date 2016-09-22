@@ -227,4 +227,19 @@ merge(${0:$selection})
 		<order>1</order>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+exists?
+]]></content>
+		<tabTrigger>ex</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ex$"},
+			]
+		]]></context>
+		<description>stdlib: exists</description>
+		<order>1</order>
+	</snippet>
+
 </snippets>

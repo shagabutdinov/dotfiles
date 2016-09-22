@@ -159,4 +159,24 @@ File.read($1)
 		<description>stdlib: Symbol</description>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+Proc.new { |${1:args}|
+	$0
+}
+]]></content>
+		<tabTrigger>pn</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: Symbol</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+I18n.translate('${1:$selection__or__last_assigned_variable}')
+]]></content>
+		<tabTrigger>it</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: I18n.translate</description>
+	</snippet>
+
 </snippets>

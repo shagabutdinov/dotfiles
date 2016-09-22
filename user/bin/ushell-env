@@ -210,7 +210,7 @@ alias xdt='
     rake db:migrate:status \
 '
 
-alias xdu='
+alias xdi='
   docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
     rake db:create db:structure:load db:seed \
 '
@@ -291,7 +291,7 @@ alias zdt='
     rake db:migrate:status \
 '
 
-alias zdu='
+alias zdi='
   docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
     rake db:create db:structure:load db:seed \
 '
@@ -330,7 +330,10 @@ function xgm {
   subl3 $(project-path)/app/$MIGRATION
 }
 
-alias xp='cd $(project-path)/app'
+alias xp=' \
+  cd $(project-path)/$(ls -la $(project-path) | grep -E -o "(app|backend)")
+'
+
 alias xx='cd $(project-path)'
 
 umask 002
@@ -398,7 +401,7 @@ function download-celluloidheaven-data {
 
 alias clr=restart-project
 
-function generate-rails-object-for-project() {
+function generate-rails-object() {
   RESULT=$(
     docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
       rails generate $@ | tee /dev/tty \
@@ -421,7 +424,6 @@ function generate-rails-object-for-project() {
     FILE=$(echo $FILE | sed -E 's/\r//')
     FILE_PATH="$PROJECT_PATH/app/$FILE"
     if ! test -e $FILE_PATH; then
-      echo $FILE_PATH;
       FILE_PATH="$PROJECT_PATH/app/app/$FILE"
     fi
 
@@ -430,7 +432,7 @@ function generate-rails-object-for-project() {
   done
 }
 
-alias xg=generate-rails-object-for-project
+alias xg=generate-rails-object
 
 function create-feature-branch() {
   git fetch
@@ -439,3 +441,23 @@ function create-feature-branch() {
 }
 
 alias q=create-feature-branch
+
+function merge-current-branch-to-staging() {
+  branch=$(current_branch)
+  git fetch
+  git branch -d staging
+  git checkout staging
+  git merge "$branch"
+}
+
+alias qc=merge-current-branch-to-staging
+
+function merge-current-branch-to-staging-and-deploy() {
+  git push -u origin $(current_branch)
+  merge-current-branch-to-staging
+  git push -u origin $(current_branch)
+  chromium "https://github.com/diagonal/celluloidheaven/compare/$branch?expand=1"
+  deploy-celluloidheaven-to-staging
+}
+
+alias qcd=merge-current-branch-to-staging-and-deploy

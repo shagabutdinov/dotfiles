@@ -1,10 +1,36 @@
 #!/usr/bin/env ruby
 
 date = `date --rfc-3339=seconds`.strip().gsub(/[^\w:-]/, '_')
-`import -window root -display :0.0 -screen "screen_#{date}.png"`
+file = "screen_#{date}.png"
+
+active_window = 'root'
+if ARGV.include?('--active-window')
+  active_window =
+    `xprop -root | grep "_NET_ACTIVE_WINDOW(WINDOW)"`
+      .strip()[40..-1]
+end
+
+`import -window #{active_window} -display :0.0 -screen "#{file}"`
+
+if ARGV.include?('--edit')
+  `kolourpaint "#{file}"`
+end
+
+if ARGV.include?('--publish')
+  link = `yandex-disk publish #{file}`
+  if ARGV.include?('--publish-copy-link')
+    `echo -n "#{link.strip}" | xsel -ib`
+  end
+end
+
+if !ARGV.include?('--no-notify-send')
+  if $?.exitstatus == 0
+    `notify-send "screenshot made"`
+  else
+    `notify-send "failed to make screenshot"`
+  end
+end
 
 if $?.exitstatus == 0
-	`notify-send "screenshot made"`
-else
-	`notify-send "failed to make screenshot"`
+  puts(file)
 end

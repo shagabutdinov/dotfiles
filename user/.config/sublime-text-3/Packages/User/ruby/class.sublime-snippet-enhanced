@@ -24,7 +24,7 @@ end
 
 	<snippet>
 		<content><![CDATA[
-class $1Error < $2Error; end
+class $1Error < ${2:Standard}Error; end
 ]]></content>
 		<tabTrigger>ce</tabTrigger>
 		<scope>source.ruby</scope>

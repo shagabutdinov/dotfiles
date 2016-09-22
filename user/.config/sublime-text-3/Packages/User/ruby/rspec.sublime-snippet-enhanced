@@ -78,6 +78,7 @@ end
 			]
 		]]></context>
 		<description>rspec: it</description>
+		<order>1</order>
 	</snippet>
 
 	<snippet>
@@ -132,6 +133,29 @@ expect { ${1:$selection__or__last_assigned_variable} }.to change { $2 }.${3:by($
 			]
 		</commands>
 		<tabTrigger>xc</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
+			]
+		]]></context>
+		<description>rspec: expect { EXPR }.to change { EXPR }</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+expect { ${1:$selection__or__last_assigned_variable} }.to raise_error(${2:error})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>xr</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
@@ -242,7 +266,7 @@ raise_error(${1:$selection__or__last_assigned_variable})
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\)\\.to(_not)?\\s+ra$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.to(_not)?\\s+ra$"},
 			]
 		]]></context>
 		<description>rspec: expect(OBJ).to raise_error</description>
@@ -364,6 +388,51 @@ params: {$0}
 			]
 		]]></context>
 		<description>rspec: save_screenshot</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+response
+]]></content>
+		<tabTrigger>s</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
+			]
+		]]></context>
+		<description>rspec: response</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+response.status
+]]></content>
+		<tabTrigger>rs</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
+			]
+		]]></context>
+		<description>rspec: response</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+response.body
+]]></content>
+		<tabTrigger>rb</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
+			]
+		]]></context>
+		<description>rspec: response</description>
 		<order>1</order>
 	</snippet>
 
