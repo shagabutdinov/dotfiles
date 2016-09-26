@@ -86,7 +86,7 @@ alias dp='docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"
 alias dr="docker run --rm -i -t"
 alias dl="docker logs --tail 200"
 alias dlf="docker logs --follow"
-alias da="docker attach --no-stdin"
+alias da='docker attach --no-stdin'
 
 alias c='\
   docker-compose -f config/$(ls --color=none config/ | \
@@ -126,14 +126,14 @@ function restart-project() {
 alias co='sudo chown -R leo: '
 alias cc='sudo chown -R leo: .'
 
-alias gs="git show --color"
-alias gsp="git commit -v -a && git push"
-alias gsa="git commit -v -a --amend && git push --force"
-alias gpf="git push --force"
-alias ge="git rebase"
-alias gei="git rebase --interactive"
-alias gec="git rebase --continue"
-alias gea="git rebase --abort"
+alias gs='git show --color'
+alias gsp='git commit -v -a && git push'
+alias gsa='git commit -v -a --amend && git push --force'
+alias gpf='git push --force'
+alias ge='git rebase'
+alias gei='git rebase --interactive'
+alias gec='git rebase --continue'
+alias gea='git rebase --abort'
 alias gpu='git push -u origin $(current_branch)'
 alias gdd='git diff --color | diff-so-fancy | less'
 alias gdc='git diff --cached'
@@ -142,8 +142,15 @@ alias ghp='git stash pop'
 alias gfp='git fetch --prune'
 alias gcb='git checkout origin/dev'
 alias gcm='git checkout origin/master'
+alias gcs='git checkout origin/staging'
 alias gt='git reset'
 
+function rebase-current-branch-on-master() {
+  git fetch
+  git rebase origin/master
+}
+
+alias geo=rebase-current-branch-on-master
 
 alias json='python -m "json.tool"'
 
@@ -354,7 +361,7 @@ function deploy-celluloidheaven-to-staging {
     return 1
   fi
 
-  bundle exec cap staging deploy
+  bundle exec cap staging deploy deploy:migrate sidekiq:restart
   if [ $? -ne 0 ]; then
     echo "\033[0;31mDEPLOY FAILED\033[0m"
     return 1
@@ -442,22 +449,29 @@ function create-feature-branch() {
 
 alias q=create-feature-branch
 
+function create-pull-request() {
+  repo=$(
+    git remote -v |
+      grep push |
+      sed -r "s/.*@(.*):(.*)\.git\s.*/http:\/\/\1\/\2/g"
+  )
+
+  chromium "$repo/compare/$(current_branch)?expand=1"
+}
+
+alias qr=create-pull-request
+
 function merge-current-branch-to-staging() {
   branch=$(current_branch)
   git fetch
   git branch -d staging
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mFailed to delete staging\033[0m"
+    return 1
+  fi
+
   git checkout staging
   git merge "$branch"
 }
 
-alias qc=merge-current-branch-to-staging
-
-function merge-current-branch-to-staging-and-deploy() {
-  git push -u origin $(current_branch)
-  merge-current-branch-to-staging
-  git push -u origin $(current_branch)
-  chromium "https://github.com/diagonal/celluloidheaven/compare/$branch?expand=1"
-  deploy-celluloidheaven-to-staging
-}
-
-alias qcd=merge-current-branch-to-staging-and-deploy
+alias qs=merge-current-branch-to-staging
