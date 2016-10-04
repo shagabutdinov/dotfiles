@@ -121,6 +121,29 @@ expect(${1:$selection__or__last_assigned_variable}).to $0
 
 	<snippet>
 		<content><![CDATA[
+expect { ${1:$selection__or__last_assigned_variable} }.to $0
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>xx</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
+			]
+		]]></context>
+		<description>rspec: expect(OBJ).to</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 expect { ${1:$selection__or__last_assigned_variable} }.to change { $2 }.${3:by($4)}
 ]]></content>
 		<commands>
@@ -140,6 +163,21 @@ expect { ${1:$selection__or__last_assigned_variable} }.to change { $2 }.${3:by($
 			]
 		]]></context>
 		<description>rspec: expect { EXPR }.to change { EXPR }</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+change { $2 }.${3:by($4)}
+]]></content>
+		<trigger>c</trigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\)}]\\.to(_not)?\\s+c$"},
+			]
+		]]></context>
+		<description>rspec: change { EXPR }</description>
 	</snippet>
 
 	<snippet>
@@ -227,7 +265,7 @@ _not $0
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\)\\.to\\sn$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\)}]\\.to\\sn$"},
 			]
 		]]></context>
 		<description>rspec: expect(OBJ).to_not</description>

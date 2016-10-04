@@ -36,56 +36,60 @@ function o() {
 bindkey "^T" prepend-sudo
 alias -g G="| grep"
 
-alias yaourt="yaourt --noconfirm"
+alias yaourt='yaourt --noconfirm'
 alias mv=/bin/mv
-alias pwgen="pwgen 12"
-alias nc="sudo netctl"
+alias pwgen='pwgen 12'
+alias nc='sudo netctl'
 alias ag='alias | grep -A 2 -B 2'
 alias cds='cd ~/src/'
 
-alias s="subl3"
-alias b="bundle exec"
-alias X="| xsel -ib"
-alias l="ls --color -hl --group-directories-first"
-alias ls="ls --color -h --group-directories-first"
+alias s='subl3'
+alias b='bundle exec'
+alias X='| xsel -ib'
+alias l='ls --color -hl --group-directories-first'
+alias ls='ls --color -h --group-directories-first'
 
-alias pm="sudo pacman"
-alias pms="sudo pacman -S"
-alias pmr="sudo pacman -R"
-alias pmro="sudo pacman -Rns \$(pacman -Qtdq)"
-alias pmq="pacman -Ql"
+alias pm='sudo pacman'
+alias pms='sudo pacman -S'
+alias pmr='sudo pacman -R'
+alias pmro='sudo pacman -Rns \$(pacman -Qtdq)'
+alias pmq='pacman -Ql'
 
-alias sc="sudo systemctl"
-alias scs="sudo systemctl start"
-alias scr="sudo systemctl restart"
-alias sct="sudo systemctl stop"
+alias sc='sudo systemctl'
+alias scs='sudo systemctl start'
+alias scr='sudo systemctl restart'
+alias sct='sudo systemctl stop'
 
-alias dfp="balmora dotfiles-submit"
-alias dfu="balmora dotfiles-update"
+alias dfp='balmora dotfiles-submit'
+alias dfu='balmora dotfiles-update'
 
 export GREP_OPTIONS=''
 export NODE_PATH="~/.node:/usr/lib/node_modules"
 export WINEARCH='win32'
 
-alias grep="grep --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn --color=auto"
-alias tree="tree --dirsfirst"
-alias ps="ps -xau"
-alias cal="cal -3m"
-alias uwhatsapp="chromium --app=https://web.whatsapp.com"
+alias grep='grep --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn --color=auto'
+alias tree='tree --dirsfirst'
+alias ps='ps -xau'
+alias cal='cal -3m'
+alias uwhatsapp='chromium --app=https://web.whatsapp.com'
 
-alias wd="nmcli -p dev wifi list"
-alias wc="nmcli -p dev wifi connect"
-alias wl="nmcli -p con show"
-alias ws="nmcli -p con show --active"
-alias wu="nmcli -p con up id"
+alias wd='nmcli -p dev wifi list'
+alias wc='nmcli -p dev wifi connect'
+alias wl='nmcli -p con show'
+alias ws='nmcli -p con show --active'
+alias wu='nmcli -p con up id'
 
-alias d="docker"
-alias de="docker exec -i -t"
-alias di="docker inspect"
+alias d='docker'
+alias de='docker exec -i -t'
+alias di='docker inspect'
 alias dp='docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
-alias dr="docker run --rm -i -t"
-alias dl="docker logs --tail 200"
-alias dlf="docker logs --follow"
+alias dr='docker run --rm -i -t'
+alias drm='docker rm  --force'
+alias drma='docker rm --force $(docker ps -q -a)'
+alias ds='docker stop'
+alias dsa='docker stop $(docker ps -q)'
+alias dl='docker logs --tail 200'
+alias dlf='docker logs --follow'
 alias da='docker attach --no-stdin'
 
 alias c='\
@@ -171,8 +175,8 @@ alias dte='docker exec -i -t $(find-docker-container "test.(backend|app)" backen
 alias dfe='docker exec -i -t $(find-docker-container frontend -v admin)'
 alias dfea='docker exec -i -t $(find-docker-container frontend admin)'
 
-alias isd="issue -S --from origin/dev --id "
-alias ism="issue -S --from origin/master --id "
+alias isd='issue -S --from origin/dev --id '
+alias ism='issue -S --from origin/master --id '
 
 alias x=' \
   docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
@@ -254,13 +258,13 @@ alias z=' \
   docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
 '
 
-alias zb=' \
-  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) bash
-'
-
-
 alias ze=' \
   docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
+    rspec \
+'
+
+alias zb=' \
+  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) bash
 '
 
 alias zs=' \
@@ -370,8 +374,8 @@ function deploy-celluloidheaven-to-staging {
   return 0
 }
 
-function download-celluloidheaven-data {
-  cd $(project-path)/..
+function download-celluloidheaven-staging-data {
+  cd $(project-path)
 
   docker stop $(find-docker-container "(backend|app)\." -v admin)
 
@@ -384,6 +388,42 @@ function download-celluloidheaven-data {
   fi
 
   ssh ubuntu@staging.celluloidheaven.net "pg_dumpall | gzip" |
+    gunzip |
+    docker exec -i $(find-docker-container postgres -v admin) psql -U postgres
+
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mDOWNLOAD FAILED\033[0m"
+    return 1
+  fi
+
+  docker exec -i $(find-docker-container postgres -v admin) psql -U postgres \
+    -c 'ALTER DATABASE "diagonal_production" RENAME TO "database"'
+
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mDOWNLOAD FAILED\033[0m"
+    return 1
+  fi
+
+  docker-compose -f config/celluloidheaven.local/main.yml stop
+  docker-compose -f config/celluloidheaven.local/main.yml up -d
+
+  return 0
+}
+
+function download-celluloidheaven-production-data {
+  cd $(project-path)
+
+  docker stop $(find-docker-container "(backend|app)\." -v admin)
+
+  docker exec -i $(find-docker-container postgres -v admin) psql -U postgres \
+    -c 'DROP DATABASE "database"'
+
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mDOWNLOAD FAILED\033[0m"
+    return 1
+  fi
+
+  ssh ubuntu@filmservice.net "pg_dumpall | gzip" |
     gunzip |
     docker exec -i $(find-docker-container postgres -v admin) psql -U postgres
 
@@ -443,8 +483,22 @@ alias xg=generate-rails-object
 
 function create-feature-branch() {
   git fetch
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mFETCH FAILED\033[0m"
+    return 1
+  fi
+
   git checkout origin/master
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mCHECKOUT FAILED\033[0m"
+    return 1
+  fi
+
   git checkout -b "feature/$1"
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mNEW BRANCH CHECKOUT FAILED\033[0m"
+    return 1
+  fi
 }
 
 alias q=create-feature-branch
@@ -463,7 +517,13 @@ alias qr=create-pull-request
 
 function merge-current-branch-to-staging() {
   branch=$(current_branch)
+
   git fetch
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mFetch failed\033[0m"
+    return 1
+  fi
+
   git branch -d staging
   if [ $? -ne 0 ]; then
     echo "\033[0;31mFailed to delete staging\033[0m"
@@ -471,7 +531,12 @@ function merge-current-branch-to-staging() {
   fi
 
   git checkout staging
-  git merge "$branch"
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mFetch to checkout \033[0m"
+    return 1
+  fi
+
+  git merge --no-edit "$branch"
 }
 
 alias qs=merge-current-branch-to-staging

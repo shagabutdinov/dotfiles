@@ -1,20 +1,4 @@
 [
-  {
-    "keys": ["ctrl+alt+n"],
-    "command": "show_overlay",
-    "args": {
-      "overlay": "goto",
-      "text": "@",
-    },
-  },
-
-  {
-    "keys": ["ctrl+alt+m"],
-    "command": "wrap_lines",
-    "args": {
-      "width": 80,
-    },
-  },
 
   {
     "keys": ["ctrl+n", "ctrl+d"],
@@ -34,17 +18,6 @@
     "args": {
       "file": "/home/leo/projects/personal/log.txt"
     },
-  },
-
-  {
-    "keys": ["alt+u"],
-    "command": "find_all_under",
-  },
-
-  {
-    "keys": ["alt+shift+u"],
-    "command": "toggle_setting",
-    "args": {"setting": "word_wrap"},
   },
 
   // KeymapEnhanced:
@@ -232,6 +205,15 @@
     "keys": ["alt+["],
     "command": "focus_neighboring_group",
     "args": {"forward": false},
+  },
+
+  {
+    "keys": ["ctrl+alt+n"],
+    "command": "show_overlay",
+    "args": {
+      "overlay": "goto",
+      "text": "@",
+    },
   },
 
 ]

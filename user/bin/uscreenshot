@@ -1,16 +1,16 @@
 #!/usr/bin/env ruby
 
-date = `date --rfc-3339=seconds`.strip().gsub(/[^\w:-]/, '_')
+date = `date +%s`.strip()
 file = "screen_#{date}.png"
 
-active_window = 'root'
+active_window_id = 'root'
 if ARGV.include?('--active-window')
-  active_window =
+  active_window_id =
     `xprop -root | grep "_NET_ACTIVE_WINDOW(WINDOW)"`
       .strip()[40..-1]
 end
 
-`import -window #{active_window} -display :0.0 -screen "#{file}"`
+`import -window #{active_window_id} -display :0.0 -screen "#{file}"`
 
 if ARGV.include?('--edit')
   `kolourpaint "#{file}"`
@@ -23,12 +23,10 @@ if ARGV.include?('--publish')
   end
 end
 
-if !ARGV.include?('--no-notify-send')
-  if $?.exitstatus == 0
-    `notify-send "screenshot made"`
-  else
-    `notify-send "failed to make screenshot"`
-  end
+if $?.exitstatus == 0
+  `notify-send "screenshot made"`
+else
+  `notify-send "failed to make screenshot"`
 end
 
 if $?.exitstatus == 0

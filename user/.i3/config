@@ -204,8 +204,12 @@ bindsym $mod+shift+comma exec xbacklight -dec 5
 bindsym $mod+shift+period exec xbacklight -inc 5
 # bindcode $mod+23 exec keynav start
 
-bindcode $mod+shift+112 exec uscreenshot --active-window
-bindcode $mod+112 exec uscreenshot
+bindcode $mod+112 exec uscreenshot --publish
+bindcode $mod+shift+112 exec uscreenshot --active-window --publish
 
-bindcode $mod+shift+117 exec uscreenshot --active-window --edit --publish --publish-copy-link
 bindcode $mod+117 exec uscreenshot --edit --publish --publish-copy-link
+bindcode $mod+shift+117 exec uscreenshot --active-window --edit --publish --publish-copy-link
+
+bindcode $mod+110 exec uscreencast --publish --publish-copy-link
+bindcode $mod+shift+110 exec uscreencast --active-window --publish --publish-copy-link
+

@@ -19,24 +19,6 @@ File.join(${0:$selection__or__last_assigned_variable})
 
 	<snippet>
 		<content><![CDATA[
-File.read(${0:$selection__or__last_assigned_variable})
-]]></content>
-		<commands>
-			[
-				{
-					"command": "run_macro_file_with_context",
-					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
-				},
-				"RUN",
-			]
-		</commands>
-		<tabTrigger>fr</tabTrigger>
-		<scope>source.ruby</scope>
-		<description>stdlib: File.read</description>
-	</snippet>
-
-	<snippet>
-		<content><![CDATA[
 File.exists?(${0:$selection__or__last_assigned_variable})
 ]]></content>
 		<commands>
@@ -143,11 +125,20 @@ File.write('log', ${1:$selection__or__last_assigned_variable})
 
 	<snippet>
 		<content><![CDATA[
-File.read($1)
+File.read(${0:$selection__or__last_assigned_variable})
 ]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
 		<tabTrigger>fr</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: File.write</description>
+		<description>stdlib: File.read</description>
 	</snippet>
 
 	<snippet>

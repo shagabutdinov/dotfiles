@@ -149,7 +149,7 @@ end
 
 	<snippet>
 		<content><![CDATA[
-attr_accessor($1)
+attr_accessor :$1
 ]]></content>
 		<tabTrigger>aa</tabTrigger>
 		<scope>source.ruby</scope>
@@ -163,7 +163,7 @@ attr_accessor($1)
 
 	<snippet>
 		<content><![CDATA[
-attr_reader($1)
+attr_reader :$1
 ]]></content>
 		<tabTrigger>ar</tabTrigger>
 		<scope>source.ruby</scope>
@@ -177,7 +177,7 @@ attr_reader($1)
 
 	<snippet>
 		<content><![CDATA[
-attr_writer($1)
+attr_writer :$1
 ]]></content>
 		<tabTrigger>aw</tabTrigger>
 		<scope>source.ruby</scope>
