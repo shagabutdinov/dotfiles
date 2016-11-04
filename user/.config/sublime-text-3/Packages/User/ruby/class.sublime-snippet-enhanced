@@ -38,7 +38,7 @@ class $1Error < ${2:Standard}Error; end
 
 		<snippet>
 		<content><![CDATA[
-def $1 $2
+def $1
 	${0:$selection}
 end
 ]]></content>
@@ -127,7 +127,7 @@ end
 
 	<snippet>
 		<content><![CDATA[
-def self.$1 $2
+def self.$1
 	${0:$selection}
 end
 ]]></content>

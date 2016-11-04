@@ -99,18 +99,78 @@ end
 
 	<snippet>
 		<content><![CDATA[
-if !${1:$last_assigned_variable}
+elsif ${1:$last_assigned_variable}
 	${0:$selection}
-end
 ]]></content>
-		<tabTrigger>in</tabTrigger>
+		<tabTrigger>ei</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*in$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*i$"},
 			]
 		]]></context>
-		<description>operators: if not</description>
+		<description>operators: elsif</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+elsif ${0:$selection}
+	$1
+]]></content>
+		<commands>
+			[
+				{"command": "move_to", "args": {"extend": true, "to": "eol"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>ei</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*i$"},
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
+			]
+		]]></context>
+		<description>operators: elsif</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+else ${1:$last_assigned_variable}
+	${0:$selection}
+]]></content>
+		<tabTrigger>el</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*i$"},
+			]
+		]]></context>
+		<description>operators: else</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+else ${0:$selection}
+	$1
+]]></content>
+		<commands>
+			[
+				{"command": "move_to", "args": {"extend": true, "to": "eol"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>el</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*i$"},
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
+			]
+		]]></context>
+		<description>operators: else</description>
+		<order>1</order>
 	</snippet>
 
 	<snippet>
@@ -131,18 +191,18 @@ end
 
 	<snippet>
 		<content><![CDATA[
-if !${1:$last_assigned_variable}.nil?
+if !${1:$last_assigned_variable}
 	${0:$selection}
 end
 ]]></content>
-		<tabTrigger>ini</tabTrigger>
+		<tabTrigger>in</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*ini$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*in$"},
 			]
 		]]></context>
-		<description>operators: if not nil</description>
+		<description>operators: if not</description>
 	</snippet>
 
 	<snippet>
@@ -171,20 +231,21 @@ end
 
 	<snippet>
 		<content><![CDATA[
-if ${1:$last_assigned_variable}
+if !${1:$last_assigned_variable}.nil?
+	${0:$selection}
+end
 ]]></content>
-		<tabTrigger>i</tabTrigger>
+		<tabTrigger>ini</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\S\\s*i$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*ini$"},
 			]
 		]]></context>
-		<description>operators: if</description>
-		<order>2</order>
+		<description>operators: if not nil</description>
 	</snippet>
 
-	<snippet>
+		<snippet>
 		<content><![CDATA[
 do
 	${0:$selection}
@@ -235,55 +296,73 @@ raise "XXXX $TM_FILENAME:$TM_LINE_NUMBER :("
 	</snippet>
 
 	<snippet>
-    <content><![CDATA[
+		<content><![CDATA[
 return ${0:$selection__or__last_assigned_variable}
 ]]></content>
 		<commands>
 			[
 				{"command": "move_to", "args": {"extend": true, "to": "eol"}, "context": [
-				  {"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"}]},
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"}]},
 				"RUN",
 			]
 		</commands>
-    <tabTrigger>r</tabTrigger>
+		<tabTrigger>r</tabTrigger>
     <scope>source.ruby</scope>
     <description>return</description>
   </snippet>
 
   <snippet>
-  	<content><![CDATA[
+		<content><![CDATA[
 return result
 ]]></content>
-    <tabTrigger>rr</tabTrigger>
+		<tabTrigger>rr</tabTrigger>
     <scope>source.ruby</scope>
     <description>return</description>
   </snippet>
 
   <snippet>
-  	<content><![CDATA[
+		<content><![CDATA[
 return nil
 ]]></content>
-    <tabTrigger>rn</tabTrigger>
+		<tabTrigger>rn</tabTrigger>
     <scope>source.ruby</scope>
     <description>return nil</description>
   </snippet>
 
   <snippet>
-  	<content><![CDATA[
+		<content><![CDATA[
 return false
 ]]></content>
-    <tabTrigger>rf</tabTrigger>
+		<tabTrigger>rf</tabTrigger>
     <scope>source.ruby</scope>
     <description>return false</description>
   </snippet>
 
   <snippet>
-  	<content><![CDATA[
+		<content><![CDATA[
 return true
 ]]></content>
-    <tabTrigger>rt</tabTrigger>
+		<tabTrigger>rt</tabTrigger>
     <scope>source.ruby</scope>
     <description>return true</description>
+  </snippet>
+
+  <snippet>
+		<content><![CDATA[
+next false
+]]></content>
+		<tabTrigger>nf</tabTrigger>
+    <scope>source.ruby</scope>
+    <description>next false</description>
+  </snippet>
+
+  <snippet>
+		<content><![CDATA[
+next true
+]]></content>
+		<tabTrigger>nt</tabTrigger>
+    <scope>source.ruby</scope>
+    <description>next true</description>
   </snippet>
 
 	<snippet>

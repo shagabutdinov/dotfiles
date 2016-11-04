@@ -44,6 +44,34 @@ to_sym
 
 	<snippet>
 		<content><![CDATA[
+to_i
+]]></content>
+		<tabTrigger>ti</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ti$"},
+			]
+		]]></context>
+		<description>stdlib: to_i</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+to_f
+]]></content>
+		<tabTrigger>tf</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.tf$"},
+			]
+		]]></context>
+		<description>stdlib: to_f</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 nil?
 ]]></content>
 		<trigger>?</trigger>

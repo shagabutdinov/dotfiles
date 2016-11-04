@@ -353,4 +353,34 @@ exists?(${1:$selection})
 		<order>1</order>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+update(${1:$selection})
+]]></content>
+		<tabTrigger>u</tabTrigger>
+		<scope>source\.ruby</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.u$"},
+			]
+		</context>
+		<description>rails models: update</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+update!(${1:$selection})
+]]></content>
+		<trigger>uu</trigger>
+		<scope>source\.ruby</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.uu$"},
+			]
+		</context>
+		<description>rails models: update!</description>
+		<order>1</order>
+	</snippet>
+
 </snippets>

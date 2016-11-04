@@ -6,6 +6,19 @@ export APPLICATION_ENV=development
 export PROMPT="%{$bg[blue]%}%{$fg[white]%}%2~ 冬%{$reset_color%} "
 export GOPATH=~/src/go
 
+HISTSIZE=999999999
+SAVEHIST=999999999
+
+APPEND_HISTORY=yes
+INC_APPEND_HISTORY=yes
+SHARE_HISTORY=yes
+
+HIST_IGNORE_DUPS=no
+HIST_IGNORE_ALL_DUPS=no
+HIST_EXPIRE_DUPS_FIRST=no
+HIST_SAVE_NO_DUPS=no
+HIST_FIND_NO_DUPS=no
+
 export TERM='rxvt-unicode'
 export COLORTERM='rxvt-unicode-256color'
 
@@ -92,7 +105,9 @@ alias dl='docker logs --tail 200'
 alias dlf='docker logs --follow'
 alias da='docker attach --no-stdin'
 
-alias c='\
+alias c='docker-compose -f'
+
+alias cm='\
   docker-compose -f config/$(ls --color=none config/ | \
     grep --color=none \\.local)/main.yml \
 '
@@ -112,6 +127,13 @@ alias cr='\
     grep --color=none \\.local)/main.yml stop;
   docker-compose -f config/$(ls --color=none config/ | \
     grep --color=none \\.local)/main.yml up \
+'
+
+alias crm='\
+  docker-compose -f config/$(ls --color=none config/ | \
+    grep --color=none \\.local)/main.yml stop;
+  docker-compose -f config/$(ls --color=none config/ | \
+    grep --color=none \\.local)/main.yml rm
 '
 
 function restart-project() {
@@ -254,11 +276,14 @@ function open-project-database-console() {
 
 alias xd='open-project-database-console'
 
+alias xy='bundle exec cap staging deploy'
+alias xyp='bundle exec cap production deploy'
+
 alias z=' \
   docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
 '
 
-alias ze=' \
+alias zx=' \
   docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
     rspec \
 '
@@ -321,13 +346,17 @@ alias zd='docker exec -i -t $(find-docker-container postgres -v admin) \
   psql -P pager -U postgres test \
 '
 
-function project-path() {
+function backend-path() {
   RESULT=$(
     docker inspect $(find-docker-container "(backend|app)\." -v admin) |
       grep -o '/.*:/app:rw' | sed -E "s/:.*//"
   )
 
-  echo $RESULT/..
+  echo $RESULT
+}
+
+function project-path() {
+  echo $(backend-path)/..
 }
 
 function xgm {
@@ -469,9 +498,9 @@ function generate-rails-object() {
   PROJECT_PATH=$(project-path)
   for FILE in $(echo $FILES); do
     FILE=$(echo $FILE | sed -E 's/\r//')
-    FILE_PATH="$PROJECT_PATH/app/$FILE"
+    FILE_PATH="$(backend-path)/$FILE"
     if ! test -e $FILE_PATH; then
-      FILE_PATH="$PROJECT_PATH/app/app/$FILE"
+      FILE_PATH="$(backend-path)/app/$FILE"
     fi
 
     sudo chown leo: $FILE_PATH
@@ -518,25 +547,58 @@ alias qr=create-pull-request
 function merge-current-branch-to-staging() {
   branch=$(current_branch)
 
+  if $(echo $branch | grep -e '-STAGING-TMP$'); then
+    echo "\033[0;31mAlready on staging branch\033[0m"
+  fi
+
   git fetch
   if [ $? -ne 0 ]; then
     echo "\033[0;31mFetch failed\033[0m"
     return 1
   fi
 
-  git branch -d staging
+  git checkout origin/staging
   if [ $? -ne 0 ]; then
-    echo "\033[0;31mFailed to delete staging\033[0m"
+    echo "\033[0;31mFailed to checkout\033[0m"
     return 1
   fi
 
-  git checkout staging
+  git checkout -b "$branch-STAGING-TMP"
   if [ $? -ne 0 ]; then
-    echo "\033[0;31mFetch to checkout \033[0m"
+    echo "\033[0;31mFailed to checkout new branch\033[0m"
     return 1
   fi
 
   git merge --no-edit "$branch"
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mAutomatica merge failed\033[0m"
+    return 1
+  fi
+
+  complete-merge-current-branch-to-staging
+}
+
+function complete-merge-current-branch-to-staging() {
+  branch=$(current_branch | sed -e 's/-STAGING-TMP$//g')
+
+  git push origin "$branch-STAGING-TMP:staging"
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mPush failed\033[0m"
+    return 1
+  fi
+
+  git checkout "$branch"
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mCheckout back failed\033[0m"
+    return 1
+  fi
+
+  git branch -D "$branch-STAGING-TMP"
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mFailed to delete temporary branch\033[0m"
+    return 1
+  fi
 }
 
 alias qs=merge-current-branch-to-staging
+alias qse=complete-merge-current-branch-to-staging

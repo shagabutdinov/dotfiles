@@ -9,6 +9,8 @@
 	[
 		"0_package_control_loader",
 		"bz2",
+		"golangconfig",
+		"shellenv",
 		"ssl-linux"
 	],
 	"installed_packages":
@@ -32,6 +34,7 @@
 		"Drive Color Scheme",
 		"Duplicate Lines",
 		"FireCode Color Scheme",
+		"Golang Tools Integration",
 		"GoSublime",
 		"Goto-CSS-Declaration",
 		"GoTools",
