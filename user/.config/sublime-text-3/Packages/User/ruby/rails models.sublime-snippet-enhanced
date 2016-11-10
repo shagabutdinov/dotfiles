@@ -383,4 +383,19 @@ update!(${1:$selection})
 		<order>1</order>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+attributes
+]]></content>
+		<tabTrigger>at</tabTrigger>
+		<scope>source\.ruby</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.at$"},
+			]
+		</context>
+		<description>rails models: update!</description>
+		<order>1</order>
+	</snippet>
+
 </snippets>

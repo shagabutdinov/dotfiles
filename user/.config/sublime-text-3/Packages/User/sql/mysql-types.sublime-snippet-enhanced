@@ -5,7 +5,6 @@
 INT(${1:10}) ${2:UNSIGNED} ${3:NOT NULL} $0
 ]]></content>
 		<tabTrigger>i</tabTrigger>
-		<trigger>i</trigger>
 		<scope>source.sql(?!.*string)</scope>
 		<context>
 			[
@@ -21,7 +20,6 @@ INT(${1:10}) ${2:UNSIGNED} ${3:NOT NULL} $0
 `$1` INT(${2:10}) ${3:UNSIGNED} ${4:NOT NULL} $0
 ]]></content>
 		<tabTrigger>I</tabTrigger>
-		<trigger>I</trigger>
 		<scope>source.sql(?!.*string)</scope>
 		<description>int 10 unsigned</description>
 		<context>
@@ -37,7 +35,6 @@ INT(${1:10}) ${2:UNSIGNED} ${3:NOT NULL} $0
 ADD `$1` INT(${2:10}) ${3:UNSIGNED} ${4:NOT NULL} $0
 ]]></content>
 		<tabTrigger>I</tabTrigger>
-		<trigger>I</trigger>
 		<scope>source.sql(?!.*string)</scope>
 		<context>
 			[
@@ -53,7 +50,6 @@ ADD `$1` INT(${2:10}) ${3:UNSIGNED} ${4:NOT NULL} $0
 VARCHAR(${1:256}) ${3:NOT NULL} $0
 ]]></content>
 		<tabTrigger>v</tabTrigger>
-		<trigger>v</trigger>
 		<scope>source.sql(?!.*string)</scope>
 		<description>varchar 256</description>
 	</snippet>
@@ -63,7 +59,6 @@ VARCHAR(${1:256}) ${3:NOT NULL} $0
 `$1` VARCHAR(${2:256}) ${3:NOT NULL} $0
 ]]></content>
 		<tabTrigger>V</tabTrigger>
-		<trigger>V</trigger>
 		<context>
 			[
 				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*CREATE\\s*TABLE"},
@@ -79,7 +74,6 @@ VARCHAR(${1:256}) ${3:NOT NULL} $0
 ADD `$1` VARCHAR(${2:256}) ${3:NOT NULL} $0
 ]]></content>
 		<tabTrigger>V</tabTrigger>
-		<trigger>V</trigger>
 		<scope>source.sql(?!.*string)</scope>
 		<context>
 			[
@@ -95,7 +89,6 @@ ADD `$1` VARCHAR(${2:256}) ${3:NOT NULL} $0
 DATETIME ${1:NOT NULL}
 ]]></content>
 		<tabTrigger>dt</tabTrigger>
-		<trigger>dt</trigger>
 		<scope>source.sql(?!.*string)</scope>
 		<context><![CDATA[
 			[
@@ -111,7 +104,6 @@ DATETIME ${1:NOT NULL}
 TINYINT(${1:1}) ${2:UNSIGNED} ${3:NOT NULL}
 ]]></content>
 		<tabTrigger>ti</tabTrigger>
-		<trigger>ti</trigger>
 		<scope>source.sql(?!.*string)</scope>
 		<context>
 			[
@@ -127,7 +119,6 @@ TINYINT(${1:1}) ${2:UNSIGNED} ${3:NOT NULL}
 `$1` TINYINT(${2:1}) ${3:UNSIGNED} ${4:NOT NULL}
 ]]></content>
 		<tabTrigger>TI</tabTrigger>
-		<trigger>TI</trigger>
 		<scope>source.sql(?!.*string)</scope>
 		<context>
 			[
@@ -143,7 +134,6 @@ TINYINT(${1:1}) ${2:UNSIGNED} ${3:NOT NULL}
 ADD `$1` TINYINT(${2:1}) ${3:UNSIGNED} ${4:NOT NULL}
 ]]></content>
 		<tabTrigger>TI</tabTrigger>
-		<trigger>TI</trigger>
 		<scope>source.sql(?!.*string)</scope>
 		<context>
 			[
@@ -159,7 +149,6 @@ ADD `$1` TINYINT(${2:1}) ${3:UNSIGNED} ${4:NOT NULL}
 `$1` ENUM($2) ${3:NOT NULL}
 ]]></content>
 		<tabTrigger>E</tabTrigger>
-		<trigger>E</trigger>
 		<scope>source.sql(?!.*string)</scope>
 		<context>
 			[
@@ -175,7 +164,6 @@ ADD `$1` TINYINT(${2:1}) ${3:UNSIGNED} ${4:NOT NULL}
 ADD `$1` ENUM($2) ${3:NOT NULL}
 ]]></content>
 		<tabTrigger>E</tabTrigger>
-		<trigger>E</trigger>
 		<scope>source.sql(?!.*string)</scope>
 		<context>
 			[
@@ -191,7 +179,6 @@ ADD `$1` ENUM($2) ${3:NOT NULL}
 ENUM($1) ${2:NOT NULL}
 ]]></content>
 		<tabTrigger>e</tabTrigger>
-		<trigger>e</trigger>
 		<scope>source.sql(?!.*string)</scope>
 		<context>
 			[
@@ -207,7 +194,6 @@ ENUM($1) ${2:NOT NULL}
 TIMESTAMP ${1:NOT NULL} DEFAULT CURRENT_TIMESTAMP
 ]]></content>
 		<tabTrigger>ts</tabTrigger>
-		<trigger>ts</trigger>
 		<scope>source.sql(?!.*string)</scope>
 		<description>timestamp not null default current_timestamp</description>
 	</snippet>
@@ -217,7 +203,6 @@ TIMESTAMP ${1:NOT NULL} DEFAULT CURRENT_TIMESTAMP
 `$1` DATETIME ${2:NOT NULL}
 ]]></content>
 		<tabTrigger>DT</tabTrigger>
-		<trigger>DT</trigger>
 		<scope>source.sql(?!.*string)</scope>
 		<context>
 			[
@@ -233,7 +218,6 @@ TIMESTAMP ${1:NOT NULL} DEFAULT CURRENT_TIMESTAMP
 ADD `$1` DATETIME ${2:NOT NULL}
 ]]></content>
 		<tabTrigger>DT</tabTrigger>
-		<trigger>DT</trigger>
 		<scope>source.sql(?!.*string)</scope>
 		<context>
 			[
@@ -249,7 +233,6 @@ ADD `$1` DATETIME ${2:NOT NULL}
 TIME ${1:NOT NULL}
 ]]></content>
 		<tabTrigger>tm</tabTrigger>
-		<trigger>tm</trigger>
 		<scope>source.sql(?!.*string)</scope>
 		<description>time</description>
 	</snippet>
@@ -259,7 +242,6 @@ TIME ${1:NOT NULL}
 `$1` TIME ${1:NOT NULL}
 ]]></content>
 		<tabTrigger>TM</tabTrigger>
-		<trigger>TM</trigger>
 		<scope>source.sql(?!.*string)</scope>
 		<context>
 			[
@@ -275,7 +257,6 @@ TIME ${1:NOT NULL}
 ADD `$1` TIME ${2:NOT NULL}
 ]]></content>
 		<tabTrigger>TM</tabTrigger>
-		<trigger>TM</trigger>
 		<scope>source.sql(?!.*string)</scope>
 		<context>
 			[
@@ -291,7 +272,6 @@ ADD `$1` TIME ${2:NOT NULL}
 TEXT ${1:NOT NULL}
 ]]></content>
 		<tabTrigger>te</tabTrigger>
-		<trigger>te</trigger>
 		<scope>source.sql(?!.*string)</scope>
 		<description>text</description>
 	</snippet>
@@ -301,7 +281,6 @@ TEXT ${1:NOT NULL}
 DATE ${1:NOT NULL}
 ]]></content>
 		<tabTrigger>da</tabTrigger>
-		<trigger>da</trigger>
 		<scope>source.sql(?!.*string)</scope>
 		<description>date</description>
 	</snippet>
@@ -311,7 +290,6 @@ DATE ${1:NOT NULL}
 NULL
 ]]></content>
 		<tabTrigger>n</tabTrigger>
-		<trigger>n</trigger>
 		<scope>source.sql(?!.*string)</scope>
 		<context>
 			[
@@ -327,7 +305,6 @@ NULL
 NOT NULL
 ]]></content>
 		<tabTrigger>nn</tabTrigger>
-		<trigger>NULLn</trigger>
 		<scope>source.sql(?!.*string)</scope>
 		<description>not null</description>
 	</snippet>

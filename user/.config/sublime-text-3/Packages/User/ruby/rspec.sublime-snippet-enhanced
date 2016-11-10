@@ -100,6 +100,23 @@ let(:$1) {
 
 	<snippet>
 		<content><![CDATA[
+let!(:$1) {
+	$0
+}
+]]></content>
+		<trigger>ll</trigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^(\\s*)ll$"},
+			]
+		]]></context>
+		<description>rspec: let(NAME) { ... }</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 expect(${1:$selection__or__last_assigned_variable}).to $0
 ]]></content>
 		<commands>

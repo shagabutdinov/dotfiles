@@ -4,7 +4,6 @@
 		<content><![CDATA[
 ADD `$1` $0
 ]]></content>
-		<trigger>a</trigger>
 		<tabTrigger>a</tabTrigger>
 		<scope>source.sql(?!.*(string|meta))</scope>
 		<context>
@@ -19,7 +18,6 @@ ADD `$1` $0
 		<content><![CDATA[
 CHANGE `$1` `${2:$1}` $0
 ]]></content>
-		<trigger>c</trigger>
 		<tabTrigger>c</tabTrigger>
 		<scope>source.sql(?!.*(string|meta))</scope>
 		<context>
@@ -34,7 +32,6 @@ CHANGE `$1` `${2:$1}` $0
 		<content><![CDATA[
 DROP `$1`
 ]]></content>
-		<trigger>d</trigger>
 		<tabTrigger>d</tabTrigger>
 		<scope>source.sql(?!.*(string|meta))</scope>
 		<context>
@@ -59,7 +56,6 @@ AUTO_INCREMENT
 		<content><![CDATA[
 PRIMARY KEY (`${1:id}`$2)
 ]]></content>
-		<trigger>p</trigger>
 		<tabTrigger>p</tabTrigger>
 		<scope>source.sql(?!.*(string|meta))</scope>
 		<description>primary key id</description>
@@ -79,7 +75,6 @@ DROP PRIMARY KEY
 DEFAULT $0
 ]]></content>
 		<tabTrigger>d</tabTrigger>
-		<trigger>d</trigger>
 		<scope>source.sql(?!.*(string|meta))</scope>
 		<context>
 			[
@@ -95,7 +90,6 @@ DEFAULT $0
 		<content><![CDATA[
 AFTER `$1`
 ]]></content>
-		<trigger>a</trigger>
 		<tabTrigger>a</tabTrigger>
 		<scope>source.sql(?!.*(string|meta))</scope>
 		<context>
@@ -110,7 +104,6 @@ AFTER `$1`
 		<content><![CDATA[
 COMMENT '$1'
 ]]></content>
-		<trigger>c</trigger>
 		<tabTrigger>c</tabTrigger>
 		<scope>source.sql(?!.*(string|meta))</scope>
 		<context>
@@ -126,7 +119,6 @@ COMMENT '$1'
 INDEX (`$1`),
 ]]></content>
 		<tabTrigger>x</tabTrigger>
-		<trigger>x</trigger>
 		<scope>source.sql(?!.*(string|meta))</scope>
 		<context>
 			[
@@ -142,7 +134,6 @@ INDEX (`$1`),
 INDEX (`$1`),
 ]]></content>
 		<tabTrigger>x</tabTrigger>
-		<trigger>x</trigger>
 		<scope>source.sql(?!.*(string|meta))</scope>
 		<context>
 			[
@@ -194,7 +185,6 @@ FOREIGN KEY (`$1`)
 	ON UPDATE RESTRICT ON DELETE ${5:RESTRICT}
 ]]></content>
 		<tabTrigger>f</tabTrigger>
-		<trigger>f</trigger>
 		<scope>source.sql(?!.*(string|meta))</scope>
 		<context>
 			[
@@ -211,7 +201,6 @@ ADD FOREIGN KEY (`$1`)
 	ON UPDATE RESTRICT ON DELETE ${5:RESTRICT}
 ]]></content>
 		<tabTrigger>f</tabTrigger>
-		<trigger>f</trigger>
 		<scope>source.sql(?!.*(string|meta))</scope>
 		<context>
 			[
@@ -226,7 +215,6 @@ ADD FOREIGN KEY (`$1`)
 DROP FOREIGN KEY `$1`
 ]]></content>
 		<tabTrigger>df</tabTrigger>
-		<trigger>df</trigger>
 		<scope>source.sql(?!.*(string|meta))</scope>
 		<context>
 			[
@@ -241,7 +229,6 @@ DROP FOREIGN KEY `$1`
 CASCADE
 ]]></content>
 		<tabTrigger>c</tabTrigger>
-		<trigger>c</trigger>
 		<scope>source.sql(?!.*(string|meta))</scope>
 		<context>
 			[
@@ -256,7 +243,6 @@ CASCADE
 SET NULL
 ]]></content>
 		<tabTrigger>s</tabTrigger>
-		<trigger>s</trigger>
 		<context>
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "DELETE\\s*c$"},

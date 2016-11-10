@@ -25,7 +25,6 @@ SHOW TABLES;
 			]
 		]]></commands>
 		<tabTrigger>st</tabTrigger>
-		<trigger>st</trigger>
 		<scope>source.sql(?!.*(string|entity))</scope>
 		<context><![CDATA[
 			[
@@ -41,7 +40,6 @@ SHOW TABLES;
 SHOW CREATE TABLE `$1`\G
 ]]></content>
 		<tabTrigger>sc</tabTrigger>
-		<trigger>sc</trigger>
 		<scope>source.sql(?!.*(string|entity))</scope>
 		<context><![CDATA[
 			[
@@ -57,7 +55,6 @@ SHOW CREATE TABLE `$1`\G
 CREATE DATABASE `$1`;
 ]]></content>
 		<tabTrigger>cd</tabTrigger>
-		<trigger>cd</trigger>
 		<scope>source.sql(?!.*(string|entity))</scope>
 		<context><![CDATA[
 			[
@@ -73,7 +70,6 @@ CREATE DATABASE `$1`;
 DROP DATABASE `$1`;
 ]]></content>
 		<tabTrigger>dd</tabTrigger>
-		<trigger>dd</trigger>
 		<scope>source.sql(?!.*(string|entity))</scope>
 		<context><![CDATA[
 			[
@@ -89,7 +85,6 @@ DROP DATABASE `$1`;
 RENAME TABLE `$1` TO `${2:$1}`;
 ]]></content>
 		<tabTrigger>r</tabTrigger>
-		<trigger>r</trigger>
 		<scope>source.sql(?!.*(string|entity))</scope>
 		<context>
 			[
@@ -109,7 +104,6 @@ CREATE TABLE `$1` (
 ) COMMENT '$2'\G
 ]]></content>
 		<tabTrigger>c</tabTrigger>
-		<trigger>c</trigger>
 		<scope>source.sql(?!.*(string|entity))</scope>
 		<context>
 			[
@@ -128,7 +122,6 @@ ALTER TABLE `$1`
 	$0;
 ]]></content>
 		<tabTrigger>a</tabTrigger>
-		<trigger>a</trigger>
 		<scope>source.sql(?!.*(string|entity))</scope>
 		<context>
 			[
@@ -146,7 +139,6 @@ ALTER TABLE `$1`
 DROP TABLE `${1:$selection__or__last_assigned_variable}`;
 ]]></content>
 		<tabTrigger>dt</tabTrigger>
-		<trigger>dt</trigger>
 		<scope>source.sql(?!.*(string|entity))</scope>
 		<context><![CDATA[
 			[
@@ -165,7 +157,6 @@ SELECT
 FROM `$1`$2;$0
 ]]></content>
 		<tabTrigger>s</tabTrigger>
-		<trigger>se</trigger>
 		<scope>source.sql(?!.*(string|entity))</scope>
 		<context>
 			[
@@ -185,7 +176,6 @@ SELECT
 FROM `$1`$2
 ]]></content>
 		<tabTrigger>s</tabTrigger>
-		<trigger>se</trigger>
 		<scope>source.sql(?!.*(string|entity))</scope>
 		<context>
 			[
@@ -206,7 +196,6 @@ ${2:SET}
 	$0;
 ]]></content>
 		<tabTrigger>i</tabTrigger>
-		<trigger>i</trigger>
 		<scope>source.sql(?!.*(string|entity))</scope>
 		<context>
 			[
@@ -226,7 +215,6 @@ ${2:SET}
 	$0;
 ]]></content>
 		<tabTrigger>u</tabTrigger>
-		<trigger>u</trigger>
 		<scope>source.sql(?!.*(string|entity))</scope>
 		<context><![CDATA[
 			[
@@ -242,7 +230,6 @@ ${2:SET}
 DELETE FROM `$1`;
 ]]></content>
 		<tabTrigger>df</tabTrigger>
-		<trigger>df</trigger>
 		<scope>source.sql(?!.*(string|entity))</scope>
 		<context>
 			[
