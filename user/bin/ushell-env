@@ -2,6 +2,7 @@ export PATH=$PATH:/home/leo/.composer/vendor/bin:/usr/lib/jvm/java-8-openjdk/bin
 
 export BROWSER=chromium
 export APPLICATION_ENV=development
+export LC_ALL="en_US.UTF-8"
 
 export PROMPT="%{$bg[blue]%}%{$fg[white]%}%2~ 冬%{$reset_color%} "
 export GOPATH=~/src/go
