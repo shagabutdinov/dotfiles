@@ -58,6 +58,7 @@ alias cds='cd ~/src/'
 
 alias s='subl3'
 alias b='bundle exec'
+alias bi='bundle install --path vendor/bundle --jobs 32'
 alias X='| xsel -ib'
 alias l='ls --color -hl --group-directories-first'
 alias ls='ls --color -h --group-directories-first'

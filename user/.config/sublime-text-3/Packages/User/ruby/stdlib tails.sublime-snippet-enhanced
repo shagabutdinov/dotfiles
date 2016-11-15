@@ -2,13 +2,27 @@
 
 	<snippet>
 		<content><![CDATA[
-length
+count
 ]]></content>
 		<tabTrigger>l</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.l$"},
+			]
+		]]></context>
+		<description>stdlib: File.read</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+length
+]]></content>
+		<tabTrigger>ll</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ll$"},
 			]
 		]]></context>
 		<description>stdlib: File.read</description>
