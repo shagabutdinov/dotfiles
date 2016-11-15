@@ -1,0 +1,8 @@
+if [ $(lsmod | grep psmouse | wc -l) -eq 0 ]; then
+	sudo modprobe psmouse
+	notify-send "mouse enabled"
+else
+	sudo modprobe -rvf psmouse
+	notify-send "mouse disabled"
+fi
+
