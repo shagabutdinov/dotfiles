@@ -1,8 +1,0 @@
-<snippet>
-	<content><![CDATA[
-Object
-]]></content>
-	<tabTrigger>O</tabTrigger>
-	<scope>source.js</scope>
-	<description>object</description>
-</snippet>

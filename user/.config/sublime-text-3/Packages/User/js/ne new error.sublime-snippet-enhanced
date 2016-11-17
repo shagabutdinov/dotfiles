@@ -1,8 +1,0 @@
-<snippet>
-	<content><![CDATA[
-new $1Error(${0:$selection__or__last_assigned_variable})
-]]></content>
-	<tabTrigger>ne</tabTrigger>
-	<scope>source.js</scope>
-	<description>new error</description>
-</snippet>
