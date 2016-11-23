@@ -107,6 +107,21 @@ alias dl='docker logs --tail 200'
 alias dlf='docker logs --follow'
 alias da='docker attach --no-stdin'
 
+alias k='kubectl'
+alias ka='kubectl apply'
+alias kl='kubectl logs'
+alias kd='kubectl describe'
+alias kdp='kubectl describe pods'
+alias kds='kubectl describe services'
+alias kc='kubectl create'
+alias kD='kubectl delete'
+alias kDp='kubectl delete pod'
+alias kDs='kubectl delete service'
+alias kg='kubectl get'
+alias kgp='kubectl get pods'
+alias kgs='kubectl get services'
+alias ke='kubectl exec'
+
 alias c='docker-compose -f'
 
 alias cm='\
