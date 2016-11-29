@@ -76,3 +76,4 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
