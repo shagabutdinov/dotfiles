@@ -1,8 +1,0 @@
-<snippet>
-		<content><![CDATA[
-parent()
-]]></content>
-		<tabTrigger>qp</tabTrigger>
-		<scope>source.js</scope>
-		<description>jquery parent</description>
-</snippet>

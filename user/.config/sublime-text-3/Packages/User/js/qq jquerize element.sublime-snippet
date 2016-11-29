@@ -1,8 +1,0 @@
-<snippet>
-		<content><![CDATA[
-${1:element} = \$(${1:element});
-]]></content>
-		<tabTrigger>qq</tabTrigger>
-		<scope>source.js</scope>
-		<description>each</description>
-</snippet>

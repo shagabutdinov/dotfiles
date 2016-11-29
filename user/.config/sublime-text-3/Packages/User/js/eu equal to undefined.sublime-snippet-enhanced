@@ -1,8 +1,0 @@
-<snippet>
-	<content><![CDATA[
-=== undefined
-]]></content>
-	<tabTrigger>eu</tabTrigger>
-	<scope>source.js</scope>
-	<description>equal to undefined</description>
-</snippet>

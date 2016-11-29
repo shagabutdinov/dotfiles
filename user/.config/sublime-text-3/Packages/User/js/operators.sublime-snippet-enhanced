@@ -62,7 +62,7 @@ return false
 
 	<snippet>
 		<content><![CDATA[
-continue
+continue ;
 ]]></content>
 		<commands>
 			[

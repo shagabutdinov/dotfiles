@@ -1,8 +1,0 @@
-<snippet>
-	<content><![CDATA[
-hasClass(${1:$selection__or__last_assigned_variable})
-]]></content>
-	<tabTrigger>hc</tabTrigger>
-	<scope>source.js</scope>
-	<description>hasClass</description>
-</snippet>

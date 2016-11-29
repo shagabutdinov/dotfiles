@@ -1,8 +1,0 @@
-<snippet>
-		<content><![CDATA[
-var self = this;
-]]></content>
-		<tabTrigger>vs</tabTrigger>
-		<scope>source.js</scope>
-		<description></description>
-</snippet>
