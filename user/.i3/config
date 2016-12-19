@@ -186,8 +186,8 @@ hide_edge_borders both
 new_window 1pixel
 for_window [class="^.*"] border pixel 1
 
-bindsym $mod+comma exec amixer -q sset Master 3%-
-bindsym $mod+period exec amixer -q sset Master 3%+
+bindsym $mod+comma exec usound-level 3%-
+bindsym $mod+period exec usound-level 3%+
 bindsym $mod+slash exec usound-toggle
 bindsym $mod+shift+grave exec ususpend
 bindsym $mod+g exec thunar

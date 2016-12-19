@@ -158,4 +158,44 @@ then(function(response
 		<description>lang: then function response</description>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+function $1($2) {
+	$0
+}
+]]></content>
+		<tabTrigger>fn</tabTrigger>
+		<scope>source.js</scope>
+		<description>lang: function</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+function($2) {
+	$0
+}
+]]></content>
+		<tabTrigger>fu</tabTrigger>
+		<scope>source.js</scope>
+		<description>lang: function</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+var ${1:$selection__or__last_assigned_variable}
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>v</tabTrigger>
+		<scope>source.js</scope>
+		<description>json: stringify</description>
+	</snippet>
+
 </snippets>

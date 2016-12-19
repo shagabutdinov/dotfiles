@@ -107,6 +107,25 @@ end
 
 	<snippet>
 		<content><![CDATA[
+drop_table :${1:table}
+]]></content>
+		<tabTrigger>dt</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{
+					"key": "begin_512_chars",
+					"operator": "regex_contains",
+					"operand": "ActiveRecord::Migration",
+				},
+			]
+		]]></context>
+		<description>rails migrations: add_column</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 integer :${1:name}, {
 	null: ${2:true},
 	default: ${3:nil},
