@@ -12,6 +12,7 @@
   end
 
   `amixer --card #{index} set Master #{command}`
+  `amixer --card #{index} set Headphone #{command}`
   break
 }
 

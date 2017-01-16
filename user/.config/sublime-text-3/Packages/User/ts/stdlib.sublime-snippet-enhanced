@@ -1,0 +1,39 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+console.log(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>l</tabTrigger>
+		<scope>source.ts</scope>
+		<description>stdlib: console.log</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+let $0;
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>e</tabTrigger>
+		<scope>source.ts</scope>
+		<description>stdlib: console.log</description>
+	</snippet>
+
+</snippets>

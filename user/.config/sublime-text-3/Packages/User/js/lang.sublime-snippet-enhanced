@@ -83,6 +83,36 @@ success
 
 	<snippet>
 		<content><![CDATA[
+return $0;
+]]></content>
+		<tabTrigger>r</tabTrigger>
+		<scope>source.js</scope>
+		<description>lang: return</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+return $0;
+]]></content>
+		<commands>
+			[
+				{"command": "move_to", "args": {"extend": true, "to": "eol"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>r</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
+			]
+		</context>
+		<description>lang: return</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 then(${0:$selection})
 ]]></content>
 	<commands>

@@ -99,6 +99,22 @@ if(${1:$last_assigned_variable}) {
 
 	<snippet>
 		<content><![CDATA[
+if(!${1:$last_assigned_variable}) {
+	${0:$selection}
+}
+]]></content>
+		<tabTrigger>in</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*in$"},
+			]
+		</context>
+		<description>operators: if not</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 if(${1:$last_assigned_variable}) {
 	${0:$selection}
 }
@@ -114,10 +130,35 @@ if(${1:$last_assigned_variable}) {
 		<context>
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*i$"},
-				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S$"},
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
 			]
 		</context>
 		<description>operators: if</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+if(!${1:$last_assigned_variable}) {
+	${0:$selection}
+}
+]]></content>
+		<commands>
+			[
+				{"command": "move_to", "args": {"extend": true, "to": "eol"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>in</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*in$"},
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
+			]
+		</context>
+		<description>operators: if</description>
+		<order>1</order>
 	</snippet>
 
 </snippets>
