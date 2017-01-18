@@ -2,6 +2,40 @@
 
 	<snippet>
 		<content><![CDATA[
+p "XXXX", Benchmark.measure {
+	${0:$selection}
+}
+]]></content>
+		<commands>
+			[
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>pb</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: Benchmark.measure</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+puts("XXXX $TM_FILENAME:$TM_LINE_NUMBER #{Time.now.to_f - \$TIME}")
+]]></content>
+		<commands>
+			[
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>pe</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: print execution time</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 puts("XXXX $TM_FILENAME:$TM_LINE_NUMBER #{${1:$selection}}")
 ]]></content>
 		<commands>
@@ -34,7 +68,7 @@ puts("XXXX $TM_FILENAME:$TM_LINE_NUMBER #{JSON.pretty_generate(${1:$selection})}
 
 	<snippet>
 		<content><![CDATA[
-puts("XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX\n")
+puts("XXXX $TM_FILENAME:$TM_LINE_NUMBER XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX\n")
 ]]></content>
 		<tabTrigger>pt</tabTrigger>
 		<scope>source.ruby</scope>
