@@ -19,15 +19,18 @@ o cell-select 7,warp
 l cell-select 8,warp
 period cell-select 9,warp
 
+h warp, click 4
+n warp, click 5
+
 p cell-select 10,warp
 semicolon cell-select 11,warp
 slash cell-select 12,warp
 
-space click 1
-ctrl+space click 3
+space warp, click 1
+ctrl+space warp, click 3
 
-shift+space drag 1
-shift+ctrl+space drag 3
+shift+space warp, drag 1
+shift+ctrl+space warp, drag 3
 
 q history-back
 
