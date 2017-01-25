@@ -140,6 +140,29 @@ expect(${1:$selection__or__last_assigned_variable}).to $0
 
 	<snippet>
 		<content><![CDATA[
+expect_any_instance_of(${1:$selection__or__last_assigned_variable}).to $0
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>xa</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
+			]
+		]]></context>
+		<description>rspec: expect(OBJ).to</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 expect { ${1:$selection__or__last_assigned_variable} }.to $0
 ]]></content>
 		<commands>

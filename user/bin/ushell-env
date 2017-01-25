@@ -179,6 +179,7 @@ alias gs='git show --color'
 alias gsp='git commit -v -a && git push'
 alias gsa='git commit -v -a --amend && git push --force'
 alias gsn='git commit -v -a --amend --no-verify && git push --force'
+alias gcn='git commit --no-verify'
 alias gpf='git push --force'
 alias ge='git rebase'
 alias gei='git rebase --interactive'
@@ -194,6 +195,7 @@ alias gcb='git checkout origin/dev'
 alias gcm='git checkout origin/master'
 alias gcs='git checkout origin/staging'
 alias gt='git reset'
+alias gth='git reset --hard'
 
 function rebase-current-branch-on-master() {
   git fetch
@@ -440,7 +442,7 @@ function download-celluloidheaven-staging-data {
     return 1
   fi
 
-  ssh ubuntu@staging.celluloidheaven.net "pg_dumpall | gzip" |
+  ssh ubuntu@test.celluloidheaven.net "pg_dumpall | gzip" |
     gunzip |
     docker exec -i $(find-docker-container postgres -v admin) psql -U postgres
 

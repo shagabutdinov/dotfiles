@@ -1,23 +1,6 @@
-# -- THEME AUTO-WRITTEN DO NOT EDIT
-include "/usr/share/themes/Zukitwo/gtk-2.0/gtkrc"
+# -- THEME AUTO-WRITTEN BY gtk-theme-switch2 DO NOT EDIT
+include "/usr/share/themes/Adwaita/gtk-2.0/gtkrc"
 
-style "user-font" {
-	font_name = "Sans 10"
-}
+include "/home/leo/.gtkrc-2.0.mine"
 
-widget_class "*" style "user-font"
-
-style "user-font-small" {
-    font_name = "Sans 8"
-}
-
-widget_class "*Menu*" style "user-font-small"
-widget_class "*TreeView*" style "user-font-small"
-widget_class "*EventBox*" style "user-font-small"
-widget_class "*Exolcon*" style "user-font-small"
-
-gtk-font-name="Sans 10"
-gtk-cursor-blink-time = 150
-include "/home/leo/.gtkrc.mine"
-
-# -- THEME AUTO-WRITTEN DO NOT EDIT
+# -- THEME AUTO-WRITTEN BY gtk-theme-switch2 DO NOT EDIT
