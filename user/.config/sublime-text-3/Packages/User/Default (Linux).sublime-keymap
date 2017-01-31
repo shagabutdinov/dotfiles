@@ -1,5 +1,4 @@
 [
-
   {
     "keys": ["ctrl+n", "ctrl+d"],
     "command": "open_file",

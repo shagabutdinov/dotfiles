@@ -4,18 +4,24 @@
 	"ignore_vcs_packages": true,
 	"in_process_packages":
 	[
+		"ThemeTweaker"
 	],
 	"installed_dependencies":
 	[
 		"0_package_control_loader",
 		"bz2",
 		"golangconfig",
+		"markupsafe",
+		"mdpopups",
+		"pygments",
+		"python-jinja2",
 		"shellenv",
 		"ssl-linux"
 	],
 	"installed_packages":
 	[
 		"1337 Color Scheme",
+		"3024 Color Scheme",
 		"Agila Theme",
 		"Agola Color Schemes",
 		"Appealr",
@@ -81,7 +87,8 @@
 		"Today Color Scheme",
 		"Tomorrow Color Schemes",
 		"Tubsted Color Schemes",
-		"TypeScript"
+		"TypeScript",
+		"Wildlife Color Scheme"
 	],
 	"submit_usage": false
 }
