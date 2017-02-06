@@ -12,6 +12,6 @@ sudo sysctl fs.inotify.max_user_watches=65536
 thunar --daemon &
 dunst &
 
-feh --bg-scale ~/pictures/background.jpg
+feh --bg-scale ~/.config/background.jpg
 
 exec i3

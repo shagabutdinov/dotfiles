@@ -245,4 +245,9 @@
     },
   },
 
+  {
+    "keys": ["ctrl+n", "ctrl+e"],
+    "command": "enumerate",
+  },
+
 ]

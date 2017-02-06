@@ -308,7 +308,7 @@ return ${0:$selection__or__last_assigned_variable}
 		</commands>
 		<tabTrigger>r</tabTrigger>
     <scope>source.ruby</scope>
-    <description>return</description>
+    <description>operators: return</description>
   </snippet>
 
   <snippet>
@@ -317,7 +317,7 @@ return result
 ]]></content>
 		<tabTrigger>rr</tabTrigger>
     <scope>source.ruby</scope>
-    <description>return</description>
+    <description>operators: return</description>
   </snippet>
 
   <snippet>
@@ -326,7 +326,7 @@ return nil
 ]]></content>
 		<tabTrigger>rn</tabTrigger>
     <scope>source.ruby</scope>
-    <description>return nil</description>
+    <description>operators: return nil</description>
   </snippet>
 
   <snippet>
@@ -335,7 +335,7 @@ return false
 ]]></content>
 		<tabTrigger>rf</tabTrigger>
     <scope>source.ruby</scope>
-    <description>return false</description>
+    <description>operators: return false</description>
   </snippet>
 
   <snippet>
@@ -344,7 +344,7 @@ return true
 ]]></content>
 		<tabTrigger>rt</tabTrigger>
     <scope>source.ruby</scope>
-    <description>return true</description>
+    <description>operators: return true</description>
   </snippet>
 
   <snippet>

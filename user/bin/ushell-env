@@ -302,8 +302,8 @@ function open-project-database-console() {
 
 alias xd='open-project-database-console'
 
-alias xy='bundle exec cap staging deploy'
-alias xyp='bundle exec cap production deploy'
+alias xy='bundle exec cap staging deploy sidekiq:stop sidekiq:start'
+alias xyp='bundle exec cap production deploy sidekiq:stop sidekiq:start'
 
 alias z=' \
   docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \

@@ -1,11 +1,29 @@
-#!/bin/bash
+#!/usr/bin/env ruby
 
-length=$(($#-1))
-array=${@:1:$length}
-last_arg="${!#}"
+require 'open3'
 
-while inotifywait $array; do
-  sleep 0.1
-  echo -e "\e[45;37m変更 $last_arg\e[0m"
-	eval $last_arg
-done
+args = ARGV[0...-1]
+command = ARGV[-1]
+
+loop do
+  stdout, stderr, status = Open3.capture3('inotifywait', *args)
+  if status != 0
+    next
+  end
+
+  file = stdout.split("\n")[0].split(' ')[0...-1].join(' ')
+  local_command = command.gsub('$$', file)
+  puts("\e[45;37m変更 #{local_command}\e[0m")
+  system(local_command)
+end
+
+# length=$(($#-1))
+# array=${@:1:$length}
+# last_arg="${!#}"
+
+# while true; do
+#   inotifywait $array
+#   sleep 0.1
+#   echo -e "\e[45;37m変更 $last_arg\e[0m"
+# 	eval $last_arg
+# done
