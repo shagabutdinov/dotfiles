@@ -14,7 +14,7 @@ loop do
   file = stdout.split("\n")[0].split(' ')[0...-1].join(' ')
   local_command = command.gsub('$$', file)
   puts("\e[45;37m変更 #{local_command}\e[0m")
-  system(local_command)
+  system('sh', '-c', local_command)
 end
 
 # length=$(($#-1))
