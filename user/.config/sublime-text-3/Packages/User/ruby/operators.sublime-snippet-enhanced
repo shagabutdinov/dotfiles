@@ -191,6 +191,22 @@ end
 
 	<snippet>
 		<content><![CDATA[
+if ${1:$last_assigned_variable}.empty?
+	${0:$selection}
+end
+]]></content>
+		<tabTrigger>ie</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*ie$"},
+			]
+		]]></context>
+		<description>operators: if empty</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 if !${1:$last_assigned_variable}
 	${0:$selection}
 end
@@ -245,7 +261,23 @@ end
 		<description>operators: if not nil</description>
 	</snippet>
 
-		<snippet>
+	<snippet>
+		<content><![CDATA[
+if !${1:$last_assigned_variable}.empty?
+	${0:$selection}
+end
+]]></content>
+		<tabTrigger>ine</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*ine$"},
+			]
+		]]></context>
+		<description>operators: if empty</description>
+	</snippet>
+
+	<snippet>
 		<content><![CDATA[
 do
 	${0:$selection}
