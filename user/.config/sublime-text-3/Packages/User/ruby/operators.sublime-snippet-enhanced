@@ -381,6 +381,15 @@ return true
 
   <snippet>
 		<content><![CDATA[
+next
+]]></content>
+		<tabTrigger>n</tabTrigger>
+    <scope>source.ruby</scope>
+    <description>next</description>
+  </snippet>
+
+  <snippet>
+		<content><![CDATA[
 next false
 ]]></content>
 		<tabTrigger>nf</tabTrigger>
