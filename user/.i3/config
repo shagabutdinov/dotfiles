@@ -192,6 +192,7 @@ bindsym $mod+slash exec usound-toggle
 bindsym $mod+shift+grave exec ususpend
 bindsym $mod+g exec thunar
 bindsym $mod+backslash exec subl3
+bindsym $mod+shift+backslash exec subl3 --new-window
 bindsym $mod+o exec firefox
 bindsym $mod+shift+o exec chromium
 bindsym $mod+p exec file-roller ~/projects/keys/passwords.zip

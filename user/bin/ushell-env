@@ -85,7 +85,7 @@ export WINEARCH='win32'
 alias grep='grep --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn --color=auto'
 alias tree='tree --dirsfirst'
 alias ps='ps -xau'
-alias cal='cal $(date +%Y)'
+alias cal='cal -m $(date +%Y)'
 alias uwhatsapp='chromium --app=https://web.whatsapp.com'
 
 alias wd='nmcli -p dev wifi list'
@@ -302,8 +302,15 @@ function open-project-database-console() {
 
 alias xd='open-project-database-console'
 
-alias xy='bundle exec cap staging deploy sidekiq:stop sidekiq:start'
-alias xyp='bundle exec cap production deploy sidekiq:stop sidekiq:start'
+alias xy='
+  bundle exec cap staging deploy api:restart \
+    sidekiq:stop sidekiq:start
+'
+
+alias xyp='
+  bundle exec cap production deploy api:restart \
+    sidekiq:stop sidekiq:start
+'
 
 alias z=' \
   docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
