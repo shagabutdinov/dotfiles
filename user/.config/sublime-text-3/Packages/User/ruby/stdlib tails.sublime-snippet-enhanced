@@ -2,7 +2,7 @@
 
 	<snippet>
 		<content><![CDATA[
-count
+length
 ]]></content>
 		<tabTrigger>l</tabTrigger>
 		<scope>source.ruby</scope>
@@ -11,21 +11,21 @@ count
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.l$"},
 			]
 		]]></context>
-		<description>stdlib: File.read</description>
+		<description>stdlib: .length</description>
 	</snippet>
 
 	<snippet>
 		<content><![CDATA[
-length
+count
 ]]></content>
-		<tabTrigger>ll</tabTrigger>
+		<tabTrigger>length</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ll$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.length$"},
 			]
 		]]></context>
-		<description>stdlib: File.read</description>
+		<description>stdlib: .count</description>
 	</snippet>
 
 	<snippet>
@@ -60,14 +60,15 @@ to_sym
 		<content><![CDATA[
 to_i
 ]]></content>
-		<tabTrigger>ti</tabTrigger>
+		<tabTrigger>i</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ti$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.i$"},
 			]
 		]]></context>
 		<description>stdlib: to_i</description>
+		<order>1</order>
 	</snippet>
 
 	<snippet>

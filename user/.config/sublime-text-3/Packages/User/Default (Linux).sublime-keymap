@@ -250,4 +250,14 @@
     "command": "enumerate",
   },
 
+  // in absecense of this item ctrl+n should be pressed two time in order to
+  // create folder
+  {
+    "keys": ["ctrl+n"],
+    "command": "create_folder_in_list",
+    "context": [
+      {"key": "setting.sublime_enhanced_keybindings", "operator": "equal", "operand": true},
+      {"key": "search_panel_name", "operator": "regex_contains", "operand": "folder_files"}
+    ]
+  },
 ]

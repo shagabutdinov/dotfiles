@@ -2,14 +2,13 @@
 
 	<snippet>
 		<content><![CDATA[
-return ${0:$selection__or__last_assigned_variable}
+return ${0:$selection__or__last_assigned_variable};
 ]]></content>
 		<commands>
 			[
 				{"command": "move_to", "args": {"extend": true, "to": "eol"}, "context": [
 				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"}]},
 				"RUN",
-				{"command": "add_semicolon_to_statement"},
 			]
 		</commands>
 		<tabTrigger>r</tabTrigger>

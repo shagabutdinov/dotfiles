@@ -362,7 +362,7 @@ alias zdt='
 
 alias zdi='
   docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
-    rake db:create db:structure:load db:seed \
+    rake db:create db:structure:load \
 '
 
 alias zds='
