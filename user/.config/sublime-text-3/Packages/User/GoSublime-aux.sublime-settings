@@ -1,4 +1,9 @@
 {
+	"9o.hist./home/leo/bin":
+	[
+		"ls -replay",
+		"ls -la"
+	],
 	"ann": "a16.05.07-1",
 	"install_version": "r16.05.07-1",
 	"version": "r16.05.07-1"

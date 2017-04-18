@@ -2,9 +2,18 @@
 # /etc/hosts: static lookup table for host names
 #
 
+81.63.186.235 node1.dalco.diagonal.com node1 dalco.diagonal.com transfer1.celluloidheaven.net
+
 #<ip-address> <hostname.domain.org> <hostname>
 127.0.0.1 localhost.localdomain localhost
 ::1   localhost.localdomain localhost
+
+5.102.147.87 storage.filmservice.net
+5.102.146.138 master.filmservice.net
+5.102.145.172 node1.filmservice.net
+
+5.102.146.138 registry.filmservice.net
+5.102.146.138 staging.filmservice.net
 
 192.241.168.155 toughdomains1.xyz
 192.241.168.155 toughdomains2.xyz
@@ -25,7 +34,7 @@
 # 127.0.0.1 celluloidheaven.ch
 
 # 52.41.223.43 www.pivotaltracker.com
-212.51.143.250 dalco 
+212.51.143.250 dalco
 
 172.16.16.59 git.directline.in
 
@@ -1391,7 +1400,7 @@
 0.0.0.1 d-track.send.microad.jp
 0.0.0.1 ads.minireklam.com
 0.0.0.1 counter.mirohost.net
-0.0.0.1 mixmarket.biz
+# 0.0.0.1 mixmarket.biz
 0.0.0.1 www.mlclick.com
 0.0.0.1 www.mmaaxx.com
 0.0.0.1 mmgads.com
@@ -3869,12 +3878,12 @@
 0.0.0.1 tracking2.channeladvisor.com
 0.0.0.1 idvisitor.click2houston.com
 0.0.0.1 images1.cliqueclack.com
-0.0.0.1 d1l6p2sc9645hc.cloudfront.net
-0.0.0.1 d13dhn7ldhrcf6.cloudfront.net #[Win32/InstallCore.QC]
-0.0.0.1 d31qbv1cthcecs.cloudfront.net
-0.0.0.1 d5nxst8fruw4z.cloudfront.net
-0.0.0.1 d8rk54i4mohrb.cloudfront.net
-0.0.0.1 dl1d2m8ri9v3j.cloudfront.net
+# 0.0.0.1 d1l6p2sc9645hc.cloudfront.net
+# 0.0.0.1 d13dhn7ldhrcf6.cloudfront.net #[Win32/InstallCore.QC]
+# 0.0.0.1 d31qbv1cthcecs.cloudfront.net
+# 0.0.0.1 d5nxst8fruw4z.cloudfront.net
+# 0.0.0.1 d8rk54i4mohrb.cloudfront.net
+# 0.0.0.1 dl1d2m8ri9v3j.cloudfront.net
 0.0.0.1 rec.convertale.com
 0.0.0.1 cdn-1.convertexperiments.com
 0.0.0.1 use.convertglobal.com
@@ -4995,7 +5004,7 @@
 0.0.0.1 intext.lookit.cz
 0.0.0.1 ads.monogram.sk
 # [Casale Media][Comspec Communications]
-0.0.0.1 casalemedia.com
+# 0.0.0.1 casalemedia.com
 0.0.0.1 as.casalemedia.com #[Tracking.Cookie]
 0.0.0.1 b.casalemedia.com
 0.0.0.1 c.casalemedia.com
@@ -5573,7 +5582,7 @@
 0.0.0.1 widget.criteo.com
 0.0.0.1 www.criteo.com
 # [Cable & Wireless][AS1273][63.130.0.0 - 63.130.255.255]
-0.0.0.1 cdn.adnxs.com
+# 0.0.0.1 cdn.adnxs.com
 0.0.0.1 search.ipromote.com
 # [Cybercon / Ratchaga][AS7393][216.15.223.224 - 216.15.223.255]
 # [Cybercon][AS7393][64.37.82.96 - 64.37.82.127]
@@ -11434,7 +11443,7 @@
 0.0.0.1 ad2.ycasmd.info
 0.0.0.1 ads.9mp.ro
 # [PlusServer / Server4you][AS8972][217.172.182.0 - 217.172.183.255]
-0.0.0.1 mouseflow.com
+# 0.0.0.1 mouseflow.com
 0.0.0.1 a.mouseflow.com
 0.0.0.1 www.onlinewebservice3.de
 # [PlusServer][AS8972][62.75.177.0 - 62.75.219.255]

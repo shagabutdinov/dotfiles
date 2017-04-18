@@ -65,3 +65,4 @@ URxvt.keysym.M-W: autocomplete-ALL-the-things:skeleton-complete
 Xcursor.size: 16
 
 URxvt.keysym.M-v:   perl:clipboard:paste
+URxvt.saveLines:         20000

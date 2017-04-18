@@ -1,0 +1,48 @@
+#!/usr/bin/env ruby
+
+keys = [
+  'ctrl+1',
+  'ctrl+2',
+  'ctrl+3',
+  'ctrl+4',
+  'ctrl+5',
+
+  'alt+i',
+  'alt+k',
+  'alt+j',
+  'alt+l',
+
+  'ctrl+i',
+  'ctrl+k',
+  'ctrl+j',
+  'ctrl+l',
+
+  'ctrl+alt+i',
+  'ctrl+alt+k',
+  'ctrl+alt+j',
+  'ctrl+alt+l',
+
+  'ctrl+period',
+  'ctrl+comma',
+]
+
+loop do
+  if rand > 0.75
+    (rand * 5).to_i.times {
+      `xdotool mousemove #{rand * 1000} #{rand * 1000}`
+      if rand > 0.5
+        `xdotool click 1`
+      end
+
+      `xdotool mousemove 960 540 click 1`
+      sleep rand
+    }
+  else
+    (rand * 7).to_i.times {
+      `xdotool key #{keys.sample}`
+      sleep rand * 0.25
+    }
+  end
+
+  sleep rand * 9
+end

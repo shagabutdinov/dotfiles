@@ -234,4 +234,25 @@ add_index :${1:table}, [:${2:column}], unique: true
 		<order>1</order>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+execute <<-SQL
+	$0
+SQL
+]]></content>
+		<tabTrigger>x</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{
+					"key": "begin_512_chars",
+					"operator": "regex_contains",
+					"operand": "ActiveRecord::Migration",
+				},
+			]
+		]]></context>
+		<description>rails migrations: execute</description>
+		<order>1</order>
+	</snippet>
+
 </snippets>

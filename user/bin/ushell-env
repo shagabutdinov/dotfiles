@@ -58,6 +58,7 @@ alias ag='alias | grep -A 2 -B 2'
 alias cds='cd ~/src/'
 
 alias s='subl3'
+alias h='ssh'
 alias b='bundle exec'
 alias bi='bundle install --path vendor/bundle --jobs 32'
 alias X='| xsel -ib'
@@ -67,7 +68,7 @@ alias ls='ls --color -h --group-directories-first'
 alias pm='sudo pacman'
 alias pms='sudo pacman -S'
 alias pmr='sudo pacman -R'
-alias pmro='sudo pacman -Rns \$(pacman -Qtdq)'
+alias pmro='sudo pacman -Rns $(pacman -Qtdq)'
 alias pmq='pacman -Ql'
 
 alias sc='sudo systemctl'
@@ -88,6 +89,7 @@ alias ps='ps -xau'
 alias cal='cal -m $(date +%Y)'
 alias uwhatsapp='chromium --app=https://web.whatsapp.com'
 
+alias wr='nmcli -p dev wifi rescan'
 alias wd='nmcli -p dev wifi list'
 alias wc='nmcli -p dev wifi connect'
 alias wl='nmcli -p con show'
@@ -109,7 +111,7 @@ alias da='docker attach --no-stdin'
 
 alias k='kubectl'
 alias ka='kubectl apply'
-alias kaf='kubectl apply -f kubernetes.yml'
+alias kaf='kubectl apply -f'
 alias kl='kubectl logs'
 alias kd='kubectl describe'
 alias kdp='kubectl describe pods'
@@ -136,26 +138,26 @@ alias cm='\
 '
 
 alias cu='\
-  docker-compose -f config/$(ls --color=none config/ | \
+  docker-compose -f config/**/$(ls --color=none config/ | \
     grep --color=none \\.local)/main.yml up \
 '
 
 alias cs='\
-  docker-compose -f config/$(ls --color=none config/ | \
+  docker-compose -f config/**/$(ls --color=none config/ | \
     grep --color=none \\.local)/main.yml stop \
 '
 
 alias cr='\
-  docker-compose -f config/$(ls --color=none config/ | \
+  docker-compose -f config/**/$(ls --color=none config/ | \
     grep --color=none \\.local)/main.yml stop;
-  docker-compose -f config/$(ls --color=none config/ | \
+  docker-compose -f config/**/$(ls --color=none config/ | \
     grep --color=none \\.local)/main.yml up \
 '
 
 alias crm='\
-  docker-compose -f config/$(ls --color=none config/ | \
+  docker-compose -f config/**/$(ls --color=none config/ | \
     grep --color=none \\.local)/main.yml stop;
-  docker-compose -f config/$(ls --color=none config/ | \
+  docker-compose -f config/**/$(ls --color=none config/ | \
     grep --color=none \\.local)/main.yml rm
 '
 
@@ -467,7 +469,6 @@ function download-celluloidheaven-staging-data {
   fi
 
   docker-compose -f config/celluloidheaven.local/main.yml stop
-  docker-compose -f config/celluloidheaven.local/main.yml up -d
 
   return 0
 }
@@ -502,8 +503,7 @@ function download-celluloidheaven-production-data {
     return 1
   fi
 
-  docker-compose -f config/celluloidheaven.local/main.yml stop
-  docker-compose -f config/celluloidheaven.local/main.yml up -d
+  docker-compose -f config/filmservice/celluloidheaven.local/main.yml stop
 
   return 0
 }
