@@ -28,6 +28,7 @@ keys = [
 
 loop do
   if rand > 0.75
+    next
     (rand * 5).to_i.times {
       `xdotool mousemove #{rand * 1000} #{rand * 1000}`
       if rand > 0.5
