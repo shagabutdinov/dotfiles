@@ -406,7 +406,7 @@ function xgm {
 }
 
 alias xp=' \
-  cd $(project-path)/$(ls -la $(project-path) | grep -E -o "(app|backend)")
+  cd $(project-path)/app
 '
 
 alias xx='cd $(project-path)'

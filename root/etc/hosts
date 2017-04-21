@@ -8,12 +8,12 @@
 127.0.0.1 localhost.localdomain localhost
 ::1   localhost.localdomain localhost
 
-5.102.147.87 storage.filmservice.net
-5.102.146.138 master.filmservice.net
-5.102.145.172 node1.filmservice.net
+5.102.147.93 master.cluster.filmservice.net
+5.102.146.167 storage.cluster.filmservice.net
+5.102.145.187 node1.cluster.filmservice.net
 
-5.102.146.138 registry.filmservice.net
-5.102.146.138 staging.filmservice.net
+5.102.147.93 registry.system.cloud.filmservice.net
+# 5.102.146.138 staging.filmservice.net
 
 192.241.168.155 toughdomains1.xyz
 192.241.168.155 toughdomains2.xyz
