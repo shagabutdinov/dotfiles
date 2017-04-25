@@ -13,6 +13,8 @@
 5.102.145.187 node1.cluster.filmservice.net
 
 5.102.147.93 registry.system.cloud.filmservice.net
+5.102.147.93 filmservice.cloud.filmservice.net
+5.102.147.93 staging.cloud.filmservice.net
 # 5.102.146.138 staging.filmservice.net
 
 192.241.168.155 toughdomains1.xyz

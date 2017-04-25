@@ -4,6 +4,7 @@
 	"ignore_vcs_packages": true,
 	"in_process_packages":
 	[
+		"MarkdownEditing"
 	],
 	"installed_dependencies":
 	[
@@ -12,7 +13,6 @@
 		"golangconfig",
 		"markupsafe",
 		"pygments",
-		"python-jinja2",
 		"shellenv",
 		"ssl-linux"
 	],
@@ -52,7 +52,6 @@
 		"Local History",
 		"Madebyphunky Color Scheme",
 		"Markdown Preview",
-		"MarkdownEditing",
 		"MoveTab",
 		"Mreq Color Scheme",
 		"Mustang Color Scheme",
