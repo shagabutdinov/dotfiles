@@ -58,6 +58,7 @@ alias ag='alias | grep -A 2 -B 2'
 alias cds='cd ~/src/'
 
 alias s='subl3'
+alias ss='subl3 -n'
 alias h='ssh'
 alias b='bundle exec'
 alias bi='bundle install --path vendor/bundle --jobs 32'
@@ -113,23 +114,25 @@ alias k='kubectl'
 alias ka='kubectl apply'
 alias kaf='kubectl apply -f'
 alias kl='kubectl logs'
+alias klf='kubectl logs -f'
 alias kd='kubectl describe'
 alias kdp='kubectl describe pods'
 alias kds='kubectl describe services'
 alias kdd='kubectl describe deployment'
 alias kc='kubectl create'
-alias kcf='kubectl create -f kubernetes.yml'
+alias kcf='kubectl create -f'
 alias kr='kubectl delete'
-alias krf='kubectl delete -f kubernetes.yml'
+alias krf='kubectl delete -f'
 alias krp='kubectl delete pod'
 alias krs='kubectl delete service'
 alias krd='kubectl delete deployment'
 alias kg='kubectl get'
-alias kgp='kubectl get pods'
+alias kgp='kubectl get pods --show-all'
 alias kgs='kubectl get services'
 alias kgd='kubectl get deployments'
 alias ke='kubectl exec'
-
+alias kei='kubectl exec -it'
+alias ksn='kubectl config set-context $(kubectl config current-context) --namespace '
 alias c='docker-compose -f'
 
 alias cm='\
@@ -441,7 +444,8 @@ function deploy-celluloidheaven-to-staging {
 function download-celluloidheaven-staging-data {
   cd $(project-path)
 
-  docker stop $(find-docker-container "(backend|app)\." -v admin)
+  docker stop $(find-docker-container "(backend)\." -v admin)
+  docker stop $(find-docker-container "(app)\." -v admin)
 
   docker exec -i $(find-docker-container postgres -v admin) psql -U postgres \
     -c 'DROP DATABASE "database"'
@@ -468,7 +472,7 @@ function download-celluloidheaven-staging-data {
     return 1
   fi
 
-  docker-compose -f config/celluloidheaven.local/main.yml stop
+  docker-compose -f config/filmservice.local/main.yml stop
 
   return 0
 }
@@ -476,7 +480,8 @@ function download-celluloidheaven-staging-data {
 function download-celluloidheaven-production-data {
   cd $(project-path)
 
-  docker stop $(find-docker-container "(backend|app)\." -v admin)
+  docker stop $(find-docker-container "(backend)\." -v admin)
+  docker stop $(find-docker-container "(app)\." -v admin)
 
   docker exec -i $(find-docker-container postgres -v admin) psql -U postgres \
     -c 'DROP DATABASE "database"'
@@ -503,7 +508,7 @@ function download-celluloidheaven-production-data {
     return 1
   fi
 
-  docker-compose -f config/filmservice/celluloidheaven.local/main.yml stop
+  docker-compose -f config/filmservice.local/main.yml stop
 
   return 0
 }
@@ -556,7 +561,7 @@ function create-feature-branch() {
     return 1
   fi
 
-  git checkout -b "feature/$1"
+  git checkout -b "$1"
   if [ $? -ne 0 ]; then
     echo "\033[0;31mNEW BRANCH CHECKOUT FAILED\033[0m"
     return 1

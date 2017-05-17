@@ -1,0 +1,20 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+false
+]]></content>
+		<tabTrigger>f</tabTrigger>
+		<scope>source.yaml</scope>
+		<description>false</description>
+	</snippet>
+	<snippet>
+		<content><![CDATA[
+true
+]]></content>
+		<tabTrigger>t</tabTrigger>
+		<scope>source.yaml</scope>
+		<description>true</description>
+	</snippet>
+
+</snippets>

@@ -16,7 +16,6 @@ return ${0:$selection__or__last_assigned_variable};
 		<description>lang: return</description>
 	</snippet>
 
-
 	<snippet>
 		<content><![CDATA[
 return null
@@ -29,11 +28,6 @@ return null
 		</commands>
 		<tabTrigger>rn</tabTrigger>
 		<scope>source.js</scope>
-		<context><![CDATA[
-			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*rt$"},
-			]
-		]]></context>
 		<description>operators: return null</description>
 	</snippet>
 
@@ -49,11 +43,6 @@ return true
 		</commands>
 		<tabTrigger>rt</tabTrigger>
 		<scope>source.js</scope>
-		<context><![CDATA[
-			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*rt$"},
-			]
-		]]></context>
 		<description>operators: return true</description>
 	</snippet>
 
@@ -69,12 +58,22 @@ return false
 		</commands>
 		<tabTrigger>rf</tabTrigger>
 		<scope>source.js</scope>
-		<context><![CDATA[
-			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*rf$"},
-			]
-		]]></context>
 		<description>operators: return false</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+return result
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "add_semicolon_to_statement"},
+			]
+		</commands>
+		<tabTrigger>rr</tabTrigger>
+		<scope>source.js</scope>
+		<description>operators: return result</description>
 	</snippet>
 
 	<snippet>
@@ -175,6 +174,23 @@ if(!${1:$last_assigned_variable}) {
 			]
 		</context>
 		<description>operators: if</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+else {
+	$0
+}
+]]></content>
+		<tabTrigger>e</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "}\\s*e$"},
+			]
+		</context>
+		<description>operators: else</description>
 		<order>1</order>
 	</snippet>
 

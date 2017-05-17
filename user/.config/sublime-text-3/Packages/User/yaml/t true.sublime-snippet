@@ -1,8 +1,0 @@
-<snippet>
-	<content><![CDATA[
-true
-]]></content>
-	<tabTrigger>t</tabTrigger>
-	<scope>source.yaml</scope>
-	<description>true</description>
-</snippet>

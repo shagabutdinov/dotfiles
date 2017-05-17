@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+command: ["sh", "-c", "sleep 100000"]
+]]></content>
+  <tabTrigger>cs</tabTrigger>
+  <scope>source.yaml</scope>
+  <description>command: sleep</description>
+</snippet>

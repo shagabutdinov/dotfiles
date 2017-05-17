@@ -15,7 +15,7 @@ JSON.parse(${1:$selection__or__last_assigned_variable})
 		]]></commands>
 		<tabTrigger>jp</tabTrigger>
 		<scope>source.js</scope>
-		<description>json: parse</description>
+		<description>stdlib: parse</description>
 	</snippet>
 
 	<snippet>
@@ -33,7 +33,7 @@ JSON.stringify(${1:$selection__or__last_assigned_variable})
 		]]></commands>
 		<tabTrigger>js</tabTrigger>
 		<scope>source.js</scope>
-		<description>json: stringify</description>
+		<description>stdlib: stringify</description>
 	</snippet>
 
 	<snippet>
@@ -51,12 +51,12 @@ alert(${1:$selection__or__last_assigned_variable})
 		]]></commands>
 		<tabTrigger>a</tabTrigger>
 		<scope>source.js</scope>
-		<description>json: stringify</description>
+		<description>stdlib: alert</description>
 	</snippet>
 
 	<snippet>
 		<content><![CDATA[
-console.log(${1:$selection__or__last_assigned_variable})
+console.log(${1:$selection__or__last_assigned_variable});
 ]]></content>
 		<commands><![CDATA[
 			[
@@ -69,12 +69,7 @@ console.log(${1:$selection__or__last_assigned_variable})
 		]]></commands>
 		<tabTrigger>l</tabTrigger>
 		<scope>source.js</scope>
-		<context><![CDATA[
-			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*l$"},
-			]
-		]]></context>
-		<description>json: stringify</description>
+		<description>stdlib: console.log</description>
 	</snippet>
 
 	<snippet>
@@ -97,7 +92,8 @@ length
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.l$"},
 			]
 		]]></context>
-		<description>json: stringify</description>
+		<description>stdlib: length</description>
+		<order>1</order>
 	</snippet>
 
 </snippets>

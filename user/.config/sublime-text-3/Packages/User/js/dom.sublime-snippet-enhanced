@@ -40,7 +40,7 @@ addEventListener($0)
 		<scope>source.js</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ael$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.al$"},
 			]
 		]]></context>
 		<description>dom: addEventListener()</description>
@@ -63,7 +63,30 @@ removeEventListener($0)
 		<scope>source.js</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.rel$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.rl$"},
+			]
+		]]></context>
+		<description>dom: removeEventListener()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+preventDefault()
+]]></content>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<tabTrigger>pd</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.pd$"},
 			]
 		]]></context>
 		<description>dom: removeEventListener()</description>

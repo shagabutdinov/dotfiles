@@ -398,4 +398,18 @@ attributes
 		<order>1</order>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+as_json($0)
+]]></content>
+		<tabTrigger>aj</tabTrigger>
+		<scope>source\.ruby</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.aj$"},
+			]
+		</context>
+		<description>rails models: .as_json</description>
+	</snippet>
+
 </snippets>

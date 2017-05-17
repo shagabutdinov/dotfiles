@@ -188,4 +188,49 @@ I18n.translate('${1:$selection__or__last_assigned_variable}')
 		<description>stdlib: I18n.translate</description>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+Base64.encode64(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<tabTrigger>be</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: Base64.encode64</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+Base64.decode64(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<tabTrigger>bd</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: Base64.decode64</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+Base64.urlsafe_encode64(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<tabTrigger>bue</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: Base64.urlsafe_encode64</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+Base64.urlsafe_decode64(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<tabTrigger>bud</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: Base64.urlsafe_decode64</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+instance_variable_get(:@$0)
+]]></content>
+		<tabTrigger>ig</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: Base64.decode64</description>
+	</snippet>
+
 </snippets>

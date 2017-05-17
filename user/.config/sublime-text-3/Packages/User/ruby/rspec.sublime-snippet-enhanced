@@ -14,6 +14,7 @@ end
 			]
 		]]></context>
 		<description>rspec: before each</description>
+		<order>1</order>
 	</snippet>
 
 	<snippet>

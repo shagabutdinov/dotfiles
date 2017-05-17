@@ -4,15 +4,12 @@
 	"ignore_vcs_packages": true,
 	"in_process_packages":
 	[
-		"MarkdownEditing"
 	],
 	"installed_dependencies":
 	[
 		"0_package_control_loader",
 		"bz2",
 		"golangconfig",
-		"markupsafe",
-		"pygments",
 		"shellenv",
 		"ssl-linux"
 	],
@@ -23,11 +20,11 @@
 		"Agila Theme",
 		"Agola Color Schemes",
 		"Appealr",
+		"Babel",
 		"Better CoffeeScript",
 		"Broadcast Color Scheme",
 		"Case Conversion",
 		"CheerfullyDark",
-		"CJSX Syntax",
 		"Color Schemes by carlcalderon",
 		"ColorSchemeSelector",
 		"Create Save Prompt",
@@ -47,7 +44,6 @@
 		"ImprovedSQL",
 		"Inc-Dec-Value",
 		"Jade",
-		"JSX",
 		"LESS",
 		"Local History",
 		"Madebyphunky Color Scheme",
