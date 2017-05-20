@@ -1,0 +1,148 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+<form $1>$0</form>
+]]></content>
+		<tabTrigger>f</tabTrigger>
+		<scope>source.js.*?meta.jsx.js\s*$</scope>
+		<description>react: form</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<div $1>$0</div>
+]]></content>
+		<tabTrigger>d</tabTrigger>
+		<scope>source.js.*?meta.jsx.js\s*$</scope>
+		<description>react: div</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<span $1>$0</span>
+]]></content>
+		<tabTrigger>s</tabTrigger>
+		<scope>source.js.*?meta.jsx.js\s*$</scope>
+		<description>react: span</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<a href=$1>$0</a>
+]]></content>
+		<tabTrigger>a</tabTrigger>
+		<scope>source.js.*?meta.jsx.js\s*$</scope>
+		<description>react: a</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<button type="${1:button}"$2>$0</button>
+]]></content>
+		<tabTrigger>b</tabTrigger>
+		<scope>source.js.*?meta.jsx.js\s*$</scope>
+		<description>react: b</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+className="$1"
+]]></content>
+		<tabTrigger>c</tabTrigger>
+		<scope>source.js.*meta.jsx.js</scope>
+		<context><![CDATA[
+			[
+				{
+					"key": "preceding_128_chars_begin",
+					"operator": "regex_contains",
+					"operand": "(<\\w+|}|\")\\s+c$"
+				},
+			]
+		]]></context>
+		<description>react: className</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+title="$1"
+]]></content>
+		<tabTrigger>t</tabTrigger>
+		<scope>source.js.*meta.jsx.js</scope>
+		<context><![CDATA[
+			[
+				{
+					"key": "preceding_128_chars_begin",
+					"operator": "regex_contains",
+					"operand": "(<\\w+|}|\")[\\s]+t$"
+				},
+			]
+		]]></context>
+		<description>react: title</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+onChange=$1
+]]></content>
+		<tabTrigger>och</tabTrigger>
+		<scope>source.js.*meta.jsx.js</scope>
+		<context><![CDATA[
+			[
+				{
+					"key": "preceding_128_chars_begin",
+					"operator": "regex_contains",
+					"operand": "(<\\w+|}|\")\\s+och$"
+				},
+			]
+		]]></context>
+		<description>react: onChange</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+onClick=$1
+]]></content>
+		<tabTrigger>ocl</tabTrigger>
+		<scope>source.js.*meta.jsx.js</scope>
+		<context><![CDATA[
+			[
+				{
+					"key": "preceding_128_chars_begin",
+					"operator": "regex_contains",
+					"operand": "(<\\w+|}|\")\\s+ocl$"
+				},
+			]
+		]]></context>
+		<description>react: onClick</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+onSubmit=$1
+]]></content>
+		<tabTrigger>os</tabTrigger>
+		<scope>source.js.*meta.jsx.js</scope>
+		<context><![CDATA[
+			[
+				{
+					"key": "preceding_128_chars_begin",
+					"operator": "regex_contains",
+					"operand": "(<\\w+|}|\")\\s+os$"
+				},
+			]
+		]]></context>
+		<description>react: onSubmit</description>
+		<order>1</order>
+	</snippet>
+
+</snippets>

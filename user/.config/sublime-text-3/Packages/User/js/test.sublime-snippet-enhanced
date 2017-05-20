@@ -2,23 +2,33 @@
 
 	<snippet>
 		<content><![CDATA[
-describe('$1', () => {
+describe('$1', function() {
 	$0
 });
 ]]></content>
 		<tabTrigger>de</tabTrigger>
 		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
+			]
+		]]></context>
 		<description>test: describe</description>
 	</snippet>
 
 	<snippet>
 		<content><![CDATA[
-it('$1', () => {
+it('$1', function() {
 	$0
 });
 ]]></content>
 		<tabTrigger>it</tabTrigger>
 		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
+			]
+		]]></context>
 		<description>test: it</description>
 	</snippet>
 
@@ -37,7 +47,35 @@ assert.equal(${1:$selection__or__last_assigned_variable}, ${2:expected})
 		]]></commands>
 		<tabTrigger>ae</tabTrigger>
 		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
+			]
+		]]></context>
 		<description>test: assert.equal</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+assert.deepEqual(${1:$selection__or__last_assigned_variable}, ${2:expected})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>ad</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
+			]
+		]]></context>
+		<description>test: assert.deepEqual</description>
 	</snippet>
 
 	<snippet>
@@ -55,12 +93,63 @@ assert.isOk(${1:$selection__or__last_assigned_variable})
 		]]></commands>
 		<tabTrigger>ao</tabTrigger>
 		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
+			]
+		]]></context>
 		<description>test: assert.isOk</description>
 	</snippet>
 
 	<snippet>
 		<content><![CDATA[
-sinon.stub($0)
+assert.isTrue(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>at</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
+			]
+		]]></context>
+		<description>test: assert.isOk</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+assert.isNull(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>an</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
+			]
+		]]></context>
+		<description>test: assert.isNull</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+sinon.stub(${1:$selection__or__last_assigned_variable})
 ]]></content>
 		<commands><![CDATA[
 			[
@@ -76,6 +165,7 @@ sinon.stub($0)
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?$"},
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "\\.ss$"},
 			]
 		]]></context>
 		<description>test: sinon.stub</description>
@@ -84,7 +174,7 @@ sinon.stub($0)
 
 	<snippet>
 		<content><![CDATA[
-sinon.spy($0)
+sinon.spy(${1:$selection__or__last_assigned_variable})
 ]]></content>
 		<commands><![CDATA[
 			[
@@ -103,6 +193,192 @@ sinon.spy($0)
 			]
 		]]></context>
 		<description>test: sinon.spy</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+returns(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>r</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.r$"},
+				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
+			]
+		]]></context>
+		<description>test: sinon - returns</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+beforeEach(function() {
+	$0
+});
+]]></content>
+		<tabTrigger>be</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
+			]
+		]]></context>
+		<description>test: beforeEach</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+callCount
+]]></content>
+		<tabTrigger>cc</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.cc$"},
+				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
+			]
+		]]></context>
+		<description>test: callCount</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+calledOnce
+]]></content>
+		<tabTrigger>co</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.co$"},
+				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
+			]
+		]]></context>
+		<description>test: calledOnce</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+notCalled
+]]></content>
+		<tabTrigger>nc</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.nc$"},
+				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
+			]
+		]]></context>
+		<description>test: notCalled</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+calledTwice
+]]></content>
+		<tabTrigger>ct</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ct$"},
+				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
+			]
+		]]></context>
+		<description>test: calledTwice</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+calledThrice
+]]></content>
+		<tabTrigger>ctr</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ctr$"},
+				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
+			]
+		]]></context>
+		<description>test: calledThrice</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+getCall(${1:0})
+]]></content>
+		<tabTrigger>cc</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.cc$"},
+				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
+			]
+		]]></context>
+		<description>test: getCall</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+firstCall.args
+]]></content>
+		<tabTrigger>fc</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.fc$"},
+				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
+			]
+		]]></context>
+		<description>test: firstCall</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+secondCall.args
+]]></content>
+		<tabTrigger>sc</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.sc$"},
+				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
+			]
+		]]></context>
+		<description>test: secondCall</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+thirdCall.args
+]]></content>
+		<tabTrigger>tc</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.tc$"},
+				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
+			]
+		]]></context>
+		<description>test: thirdCall</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+actual
+]]></content>
+		<tabTrigger>a</tabTrigger>
+		<scope>source.js</scope>
+		<description>test: actual</description>
+		<order>1</order>
 	</snippet>
 
 </snippets>

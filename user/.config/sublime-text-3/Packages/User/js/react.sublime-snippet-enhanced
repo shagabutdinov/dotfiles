@@ -81,7 +81,31 @@ setState($1)
 		]]></commands>
 		<tabTrigger>ss</tabTrigger>
 		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ss$"},
+			]
+		]]></context>
 		<description>react: setState</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+this.setState($1)
+]]></content>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<tabTrigger>ss</tabTrigger>
+		<scope>source.js</scope>
+		<description>react: this.setState</description>
 	</snippet>
 
 	<snippet>
@@ -100,6 +124,30 @@ this.state
 		<tabTrigger>ts</tabTrigger>
 		<scope>source.js</scope>
 		<description>react: this.state</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+this.state
+]]></content>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<tabTrigger>.s</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\W\\.s$"},
+			]
+		]]></context>
+		<description>react: this.state</description>
+		<order>1</order>
 	</snippet>
 
 	<snippet>

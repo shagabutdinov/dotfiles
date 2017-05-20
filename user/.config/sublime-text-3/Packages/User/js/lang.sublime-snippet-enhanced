@@ -98,7 +98,6 @@ success
 			]
 		]]></context>
 		<description>lang: success</description>
-		<order>1</order>
 	</snippet>
 
 	<snippet>
@@ -287,48 +286,6 @@ super()
 
 	<snippet>
 		<content><![CDATA[
-const $0
-]]></content>
-		<commands><![CDATA[
-			[
-				{
-					"command": "run_macro_file_with_context",
-					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
-				},
-				"RUN",
-			]
-		]]></commands>
-		<tabTrigger>c</tabTrigger>
-		<scope>source.js</scope>
-		<description>lang: const</description>
-	</snippet>
-
-	<snippet>
-		<content><![CDATA[
-const $1 = ${0:$selection__or__last_assigned_variable}
-]]></content>
-		<commands><![CDATA[
-			[
-				{
-					"command": "run_macro_file_with_context",
-					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
-				},
-				"RUN",
-			]
-		]]></commands>
-		<tabTrigger>c</tabTrigger>
-		<scope>source.js</scope>
-		<context><![CDATA[
-			[
-				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
-			]
-		]]></context>
-		<description>lang: const</description>
-		<order>1</order>
-	</snippet>
-
-	<snippet>
-		<content><![CDATA[
 class $1 {
 
 	$0
@@ -353,8 +310,17 @@ $1($2) {
 
 	<snippet>
 		<content><![CDATA[
-let $1 = $0;
+let ${0:$selection__or__last_assigned_variable}
 ]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
 		<tabTrigger>e</tabTrigger>
 		<scope>source.js</scope>
 		<description>lang: let</description>
@@ -362,13 +328,23 @@ let $1 = $0;
 
 	<snippet>
 		<content><![CDATA[
-let $1 = $0
+let $1 = ${0:$selection__or__last_assigned_variable}
 ]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
 		<tabTrigger>e</tabTrigger>
 		<scope>source.js</scope>
 		<context><![CDATA[
 			[
 				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^\\s*\\S+ ="},
 			]
 		]]></context>
 		<description>lang: let</description>
@@ -377,7 +353,7 @@ let $1 = $0
 
 	<snippet>
 		<content><![CDATA[
-export
+export $0
 ]]></content>
 		<tabTrigger>ex</tabTrigger>
 		<scope>source.js</scope>
@@ -387,7 +363,7 @@ export
 
 	<snippet>
 		<content><![CDATA[
-export default
+export default $0
 ]]></content>
 		<tabTrigger>ed</tabTrigger>
 		<scope>source.js</scope>
@@ -413,6 +389,212 @@ typeof $1
 		<scope>source.js</scope>
 		<description>lang: typeof</description>
 		<order>1</order>
+	</snippet>
+
+
+	<snippet>
+		<content><![CDATA[
+return ${0:$selection__or__last_assigned_variable}
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>r</tabTrigger>
+		<scope>source.js</scope>
+		<description>lang: return</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+return null
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "add_semicolon_to_statement"},
+			]
+		</commands>
+		<tabTrigger>rn</tabTrigger>
+		<scope>source.js</scope>
+		<description>lang: return null</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+return true
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "add_semicolon_to_statement"},
+			]
+		</commands>
+		<tabTrigger>rt</tabTrigger>
+		<scope>source.js</scope>
+		<description>lang: return true</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+return false
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "add_semicolon_to_statement"},
+			]
+		</commands>
+		<tabTrigger>rf</tabTrigger>
+		<scope>source.js</scope>
+		<description>lang: return false</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+return result
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "add_semicolon_to_statement"},
+			]
+		</commands>
+		<tabTrigger>rr</tabTrigger>
+		<scope>source.js</scope>
+		<description>lang: return result</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+continue ;
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "add_semicolon_to_statement"},
+			]
+		</commands>
+		<tabTrigger>c</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "selection_empty", "operator": "equal", "operand": true},
+				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "\\s*c$"},
+			]
+		</context>
+		<description>lang: continue</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+if(${1:$last_assigned_variable}) {
+	${0:$selection}
+}
+]]></content>
+		<tabTrigger>i</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*i$"},
+			]
+		</context>
+		<description>lang: if</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+if(!${1:$last_assigned_variable}) {
+	${0:$selection}
+}
+]]></content>
+		<tabTrigger>in</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*in$"},
+			]
+		</context>
+		<description>lang: if not</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+if(${1:$last_assigned_variable}) {
+	${0:$selection}
+}
+]]></content>
+		<commands>
+			[
+				{"command": "move_to", "args": {"extend": true, "to": "eol"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>i</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*i$"},
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
+			]
+		</context>
+		<description>lang: if</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+if(!${1:$last_assigned_variable}) {
+	${0:$selection}
+}
+]]></content>
+		<commands>
+			[
+				{"command": "move_to", "args": {"extend": true, "to": "eol"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>in</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*in$"},
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
+			]
+		</context>
+		<description>lang: if</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+else {
+	$0
+}
+]]></content>
+		<tabTrigger>e</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "}\\s*e$"},
+			]
+		</context>
+		<description>lang: else</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+this.$1 = this.$1.bind(this);
+]]></content>
+		<tabTrigger>tb</tabTrigger>
+		<scope>source.js</scope>
+		<description>lang: bind</description>
 	</snippet>
 
 </snippets>

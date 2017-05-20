@@ -17,6 +17,8 @@ keys = [
   'ctrl+j',
   'ctrl+l',
 
+  'ctrl+s',
+
   'ctrl+alt+i',
   'ctrl+alt+k',
   'ctrl+alt+j',
@@ -26,27 +28,52 @@ keys = [
   'ctrl+comma',
 ]
 
+browser_keys = [
+  'F5',
+  'Up',
+  'Down',
+  'Left',
+  'Right',
+  'Prior',
+  'Next',
+  'Home',
+  'End',
+  'ctrl+Prior',
+  'ctrl+Next',
+]
+
 sleep(5)
 
 loop do
-  if rand > 0.75
+  value = rand
+  if 0 <= value && value < 0.7
+    (rand * 7).to_i.times {
+      `xdotool key #{keys.sample}`
+      sleep(rand * 0.25)
+    }
+  elsif 0.7 < value && value <= 0.75
+    `xdotool key #{['super+2', 'super+3'].sample}`
+    `xdotool key #{['alt+1', 'alt+2', 'alt+3', 'alt+4', 'alt+5'].sample}`
+
+    sleep(rand * 3 + 1)
+
+    (rand * 3).to_i.times {
+      `xdotool key #{browser_keys.sample}`
+      sleep(rand * 0.25)
+    }
+
+    sleep(rand * 3 + 1)
+
+    `xdotool key super+1`
+  elsif 0.75 < value
     initial = `xdotool getmouselocation`.match(/x:(\d+) y:(\d+)/).to_a
     (rand * 5).to_i.times {
       `xdotool mousemove #{rand * 1000} #{rand * 1000}`
-      # if rand > 0.95
-      #   `xdotool click 1`
-      # end
-
       sleep(rand)
     }
 
     `xdotool mousemove #{initial[1]} #{initial[2]} click 1`
     sleep rand
-  else
-    (rand * 7).to_i.times {
-      `xdotool key #{keys.sample}`
-      sleep(rand * 0.25)
-    }
   end
 
   sleep(rand * 9)
