@@ -358,7 +358,6 @@ export $0
 		<tabTrigger>ex</tabTrigger>
 		<scope>source.js</scope>
 		<description>lang: export</description>
-		<order>1</order>
 	</snippet>
 
 	<snippet>
@@ -368,7 +367,6 @@ export default $0
 		<tabTrigger>ed</tabTrigger>
 		<scope>source.js</scope>
 		<description>lang: export default</description>
-		<order>1</order>
 	</snippet>
 
 	<snippet>
@@ -378,7 +376,6 @@ import $1 from '$2'
 		<tabTrigger>im</tabTrigger>
 		<scope>source.js</scope>
 		<description>lang: import</description>
-		<order>1</order>
 	</snippet>
 
 	<snippet>
@@ -388,7 +385,6 @@ typeof $1
 		<tabTrigger>to</tabTrigger>
 		<scope>source.js</scope>
 		<description>lang: typeof</description>
-		<order>1</order>
 	</snippet>
 
 

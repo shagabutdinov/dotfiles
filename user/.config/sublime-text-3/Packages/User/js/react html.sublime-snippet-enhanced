@@ -92,7 +92,7 @@ title="$1"
 		<content><![CDATA[
 onChange=$1
 ]]></content>
-		<tabTrigger>och</tabTrigger>
+		<tabTrigger>oc</tabTrigger>
 		<scope>source.js.*meta.jsx.js</scope>
 		<context><![CDATA[
 			[

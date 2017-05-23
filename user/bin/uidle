@@ -62,7 +62,7 @@ loop do
       sleep(rand * 0.25)
     }
 
-    sleep(rand * 3 + 1)
+    sleep(rand * 3 + 3)
 
     `xdotool key super+1`
   elsif 0.75 < value

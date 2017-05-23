@@ -313,13 +313,13 @@ calledThrice
 
 	<snippet>
 		<content><![CDATA[
-getCall(${1:0})
+getCall(${1:0}).args
 ]]></content>
-		<tabTrigger>cc</tabTrigger>
+		<tabTrigger>gc</tabTrigger>
 		<scope>source.js</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.cc$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.gc$"},
 				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
 			]
 		]]></context>
@@ -377,7 +377,27 @@ actual
 ]]></content>
 		<tabTrigger>a</tabTrigger>
 		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
+			]
+		]]></context>
 		<description>test: actual</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+expected
+]]></content>
+		<tabTrigger>ex</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
+			]
+		]]></context>
+		<description>test: expected</description>
 		<order>1</order>
 	</snippet>
 
