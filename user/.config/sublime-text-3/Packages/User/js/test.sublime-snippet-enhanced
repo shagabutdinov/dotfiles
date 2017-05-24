@@ -121,7 +121,30 @@ assert.isTrue(${1:$selection__or__last_assigned_variable})
 				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
 			]
 		]]></context>
-		<description>test: assert.isOk</description>
+		<description>test: assert.isTrue</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+assert.isFalse(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>af</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
+			]
+		]]></context>
+		<description>test: assert.isFalse</description>
 	</snippet>
 
 	<snippet>
