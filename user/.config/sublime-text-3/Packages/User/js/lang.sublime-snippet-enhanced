@@ -40,7 +40,7 @@ true
 		<description>lang: true</description>
 	</snippet>
 
-	<snippet>
+c	<snippet>
 		<content><![CDATA[
 false
 ]]></content>

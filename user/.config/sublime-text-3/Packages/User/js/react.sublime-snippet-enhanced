@@ -68,6 +68,17 @@ componentWillUnmount() {
 
 	<snippet>
 		<content><![CDATA[
+componentWillReceiveProps(props) {
+	$0
+}
+]]></content>
+		<tabTrigger>dwr</tabTrigger>
+		<scope>source.js</scope>
+		<description>react: define componentWillUpdate</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 setState($1)
 ]]></content>
 		<commands><![CDATA[

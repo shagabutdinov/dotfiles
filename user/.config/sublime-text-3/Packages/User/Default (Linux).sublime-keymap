@@ -12,6 +12,15 @@
   },
 
   {
+    "keys": ["delete"],
+    "command": "next_field",
+    "context": [
+      {"key": "setting.sublime_enhanced_keybindings", "operator": "equal", "operand": true},
+      {"key": "has_next_field", "operator": "equal", "operand": true},
+    ]
+  },
+
+  {
     "keys": ["alt+shift+9"],
     "command": "set_layout",
     "args": {

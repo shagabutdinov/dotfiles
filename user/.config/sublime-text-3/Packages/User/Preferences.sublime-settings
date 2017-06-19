@@ -80,17 +80,18 @@
 		".hg",
 		"CVS"
 	],
-	"font_face": "Dejavu Sans Mono",
+	"font_face": "Consolas",
 	"font_options":
 	[
 	],
-	"font_size": 10,
-	"gutter": true,
+	"font_size": 10.5,
+ 	"gutter": true,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"hot_exit": true,
 	"ignored_packages":
 	[
+		"MarkdownEditing",
 		"PHP Modern",
 		"Tabright",
 		"Theme - Centurion Blue",
