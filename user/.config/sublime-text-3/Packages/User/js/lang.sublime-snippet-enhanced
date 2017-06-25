@@ -223,7 +223,7 @@ function($2) {
 				"RUN",
 			]
 		]]></commands>
-		<tabTrigger>fi</tabTrigger>
+		<tabTrigger>jj</tabTrigger>
 		<scope>source.js</scope>
 		<description>lang: inline doublearrow callback</description>
 	</snippet>
@@ -387,6 +387,14 @@ typeof $1
 		<description>lang: typeof</description>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+instanceof $1
+]]></content>
+		<tabTrigger>io</tabTrigger>
+		<scope>source.js</scope>
+		<description>lang: instanceof</description>
+	</snippet>
 
 	<snippet>
 		<content><![CDATA[

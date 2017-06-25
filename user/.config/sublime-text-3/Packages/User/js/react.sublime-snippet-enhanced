@@ -46,7 +46,7 @@ componentDidUpdate() {
 
 	<snippet>
 		<content><![CDATA[
-componentWillUpdate() {
+componentWillUnmount() {
 	$0
 }
 ]]></content>
@@ -57,11 +57,11 @@ componentWillUpdate() {
 
 	<snippet>
 		<content><![CDATA[
-componentWillUnmount() {
+componentWillUpdate() {
 	$0
 }
 ]]></content>
-		<tabTrigger>dun</tabTrigger>
+		<tabTrigger>dwup</tabTrigger>
 		<scope>source.js</scope>
 		<description>react: define componentWillUpdate</description>
 	</snippet>
@@ -74,7 +74,7 @@ componentWillReceiveProps(props) {
 ]]></content>
 		<tabTrigger>dwr</tabTrigger>
 		<scope>source.js</scope>
-		<description>react: define componentWillUpdate</description>
+		<description>react: define componentWillReceiveProps</description>
 	</snippet>
 
 	<snippet>

@@ -310,12 +310,12 @@ function open-project-database-console() {
 alias xd='open-project-database-console'
 
 alias xy='
-  bundle exec cap staging deploy api:restart \
+  bundle exec cap staging deploy deploy:migrate api:restart \
     sidekiq:stop sidekiq:start
 '
 
 alias xyp='
-  bundle exec cap production deploy api:restart \
+  bundle exec cap production deploy deploy:migrate api:restart \
     sidekiq:stop sidekiq:start
 '
 
