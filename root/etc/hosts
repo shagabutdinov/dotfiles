@@ -4,6 +4,8 @@
 
 # 81.63.186.235 node1.dalco.diagonal.com node1 dalco.diagonal.com transfer1.celluloidheaven.net
 
+127.0.0.1 cryptolocator.local
+
 #<ip-address> <hostname.domain.org> <hostname>
 127.0.0.1 localhost.localdomain localhost
 ::1   localhost.localdomain localhost

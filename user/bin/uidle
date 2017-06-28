@@ -49,7 +49,7 @@ loop do
   if 0 <= value && value < 0.7
     (rand * 7).to_i.times {
       `xdotool key #{keys.sample}`
-      sleep(rand * 0.25)
+      sleep(rand * 0.25 + 0.25)
     }
   elsif 0.7 < value && value <= 0.75
     `xdotool key #{['super+2', 'super+3'].sample}`
@@ -59,7 +59,7 @@ loop do
 
     (rand * 3).to_i.times {
       `xdotool key #{browser_keys.sample}`
-      sleep(rand * 0.25)
+      sleep(rand * 0.25 + 0.25)
     }
 
     sleep(rand * 3 + 3)
@@ -76,5 +76,5 @@ loop do
     sleep rand
   end
 
-  sleep(rand * 9)
+  sleep(rand * 9 + 1)
 end

@@ -739,4 +739,49 @@ as_json($0)
 		<description>rails models: .as_json</description>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+Rails.logger
+]]></content>
+		<tabTrigger>rl</tabTrigger>
+		<scope>source\.ruby</scope>
+		<description>rails logger: logger</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+Rails.logger.debug($1)
+]]></content>
+		<tabTrigger>ld</tabTrigger>
+		<scope>source\.ruby</scope>
+		<description>rails logger: debug</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+Rails.logger.info($1)
+]]></content>
+		<tabTrigger>li</tabTrigger>
+		<scope>source\.ruby</scope>
+		<description>rails logger: info</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+Rails.logger.warning($1)
+]]></content>
+		<tabTrigger>lw</tabTrigger>
+		<scope>source\.ruby</scope>
+		<description>rails logger: warning</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+Rails.logger.error($1)
+]]></content>
+		<tabTrigger>le</tabTrigger>
+		<scope>source\.ruby</scope>
+		<description>rails logger: logger</description>
+	</snippet>
+
 </snippets>
