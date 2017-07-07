@@ -69,11 +69,11 @@ loop do
     initial = `xdotool getmouselocation`.match(/x:(\d+) y:(\d+)/).to_a
     (rand * 5).to_i.times {
       `xdotool mousemove #{rand * 1000} #{rand * 1000}`
-      sleep(rand)
+      sleep(rand + 0.5)
     }
 
     `xdotool mousemove #{initial[1]} #{initial[2]} click 1`
-    sleep rand
+    sleep rand + 0.5
   end
 
   sleep(rand * 9 + 1)

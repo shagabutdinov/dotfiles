@@ -6,6 +6,12 @@ before :each do
 	$0
 end
 ]]></content>
+		<commands>
+			[
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		</commands>
 		<tabTrigger>be</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
@@ -23,6 +29,12 @@ before :all do
 	$0
 end
 ]]></content>
+		<commands>
+			[
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		</commands>
 		<tabTrigger>ba</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
@@ -39,6 +51,12 @@ after :each do
 	$0
 end
 ]]></content>
+		<commands>
+			[
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		</commands>
 		<tabTrigger>ae</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
@@ -55,6 +73,12 @@ describe '$1' do
 	$0
 end
 ]]></content>
+		<commands>
+			[
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		</commands>
 		<tabTrigger>de</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
@@ -71,6 +95,12 @@ context '$1' do
 	$0
 end
 ]]></content>
+		<commands>
+			[
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		</commands>
 		<tabTrigger>co</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
@@ -87,6 +117,12 @@ it '$1' do
 	$0
 end
 ]]></content>
+		<commands>
+			[
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		</commands>
 		<tabTrigger>it</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
@@ -104,6 +140,12 @@ let(:$1) {
 	$0
 }
 ]]></content>
+		<commands>
+			[
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		</commands>
 		<tabTrigger>l</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
@@ -121,6 +163,12 @@ let!(:$1) {
 	$0
 }
 ]]></content>
+		<commands>
+			[
+				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				"RUN",
+			]
+		</commands>
 		<trigger>ll</trigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[

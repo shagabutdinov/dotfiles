@@ -89,7 +89,30 @@ preventDefault()
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.pd$"},
 			]
 		]]></context>
-		<description>dom: removeEventListener()</description>
+		<description>dom: preventDefault()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+stopPropagation()
+]]></content>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<tabTrigger>sp</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.sp$"},
+			]
+		]]></context>
+		<description>dom: stopPropagation()</description>
 	</snippet>
 
 </snippets>

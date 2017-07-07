@@ -98,7 +98,7 @@ length
 
 	<snippet>
 		<content><![CDATA[
-forEach(${1:$selection__or__last_assigned_variable})
+forEach(${0:$selection})
 ]]></content>
 		<commands><![CDATA[
 			[
@@ -122,6 +122,29 @@ forEach(${1:$selection__or__last_assigned_variable})
 
 	<snippet>
 		<content><![CDATA[
+map(${0:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>m</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.m$"},
+			]
+		]]></context>
+		<description>stdlib: map</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 startsWith(${1:$selection__or__last_assigned_variable})
 ]]></content>
 		<commands><![CDATA[
@@ -141,6 +164,149 @@ startsWith(${1:$selection__or__last_assigned_variable})
 			]
 		]]></context>
 		<description>stdlib: startsWith</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+Object.entries(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>oe</tabTrigger>
+		<scope>source.js</scope>
+		<description>stdlib: Object.entries</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+Object.keys(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>ok</tabTrigger>
+		<scope>source.js</scope>
+		<description>stdlib: Object.keys</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+Object.values(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>ov</tabTrigger>
+		<scope>source.js</scope>
+		<description>stdlib: Object.values</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+hasOwnProperty(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>ho</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ho$"},
+			]
+		]]></context>
+		<description>stdlib: Object.hasOwnProperty</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+parseInt(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>pi</tabTrigger>
+		<scope>source.js</scope>
+		<description>stdlib: parseInt</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+toString()
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>ts</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ts$"},
+			]
+		]]></context>
+		<description>stdlib: toString</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+includes(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>i</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.i$"},
+			]
+		]]></context>
+		<description>stdlib: toString</description>
+		<order>2</order>
 	</snippet>
 
 </snippets>
