@@ -57,7 +57,7 @@ componentWillUnmount() {
 
 	<snippet>
 		<content><![CDATA[
-componentWillUpdate() {
+componentWillUpdate($1props, state) {
 	$0
 }
 ]]></content>
@@ -178,7 +178,7 @@ this.state.
 		<scope>source.js</scope>
 		<context><![CDATA[
 			[
-				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\w"},
 			]
 		]]></context>
 		<order>1</order>
