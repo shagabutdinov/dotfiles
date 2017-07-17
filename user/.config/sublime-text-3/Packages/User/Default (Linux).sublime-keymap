@@ -1,5 +1,14 @@
 [
   {
+    "keys": ["f1"],
+    "command": "set_setting",
+    "args": {
+      "setting": "wrap_width",
+      "value": 81,
+    },
+  },
+
+  {
     "keys": ["ctrl+n", "ctrl+d"],
     "command": "open_file",
     "args": {

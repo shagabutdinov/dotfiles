@@ -84,8 +84,8 @@
 	"font_options":
 	[
 	],
-	"font_size": 10.5,
- 	"gutter": true,
+	"font_size": 9.5,
+	"gutter": true,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"hot_exit": true,
@@ -123,8 +123,8 @@
 	"remember_open_files": true,
 	"rulers":
 	[
-		80,
-		120
+		81,
+		121
 	],
 	"save_on_focus_lost": false,
 	"scroll_past_end": true,

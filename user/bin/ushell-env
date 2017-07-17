@@ -98,7 +98,7 @@ alias ws='nmcli -p con show --active'
 alias wu='nmcli -p con up id'
 
 alias d='docker'
-alias de='docker exec -i -t'
+alias dx='docker exec -i -t'
 alias di='docker inspect'
 alias dp='docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
 alias dr='docker run --rm -i -t'
@@ -106,8 +106,8 @@ alias drm='docker rm  --force'
 alias drma='docker rm --force $(docker ps -q -a)'
 alias ds='docker stop'
 alias dsa='docker stop $(docker ps -q)'
-alias dst='docker start'
-alias dre='docker restart'
+alias dt='docker start'
+alias de='docker restart'
 alias dl='docker logs --tail 200'
 alias dlf='docker logs --follow'
 alias da='docker attach --no-stdin'
@@ -224,9 +224,9 @@ function find-docker-container() {
   )
 }
 
-alias dbe='docker exec -i -t $(find-docker-container "(backend|app)\." -v admin)'
-alias dbea='docker exec -i -t $(find-docker-container "(backend|app)\." admin)'
-alias dte='docker exec -i -t $(find-docker-container "test.(backend|app)" backend)'
+alias dbe='docker exec -i -t $(find-docker-container "(backend|app|rails)\." -v admin)'
+alias dbea='docker exec -i -t $(find-docker-container "(backend|app|rails)\." admin)'
+alias dte='docker exec -i -t $(find-docker-container "test.(backend|app|rails)" backend)'
 alias dfe='docker exec -i -t $(find-docker-container frontend -v admin)'
 alias dfea='docker exec -i -t $(find-docker-container frontend admin)'
 
@@ -234,60 +234,60 @@ alias isd='issue -S --from origin/dev --id '
 alias ism='issue -S --from origin/master --id '
 
 alias x=' \
-  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
+  docker exec -i -t $(find-docker-container "(backend|app|rails)\." -v admin) \
 '
 
 alias xb=' \
-  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) bash
+  docker exec -i -t $(find-docker-container "(backend|app|rails)\." -v admin) bash
 '
 
 alias xs=' \
-  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
+  docker exec -i -t $(find-docker-container "(backend|app|rails)\." -v admin) \
     spring \
 '
 
 alias xc='
-  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
+  docker exec -i -t $(find-docker-container "(backend|app|rails)\." -v admin) \
     rails console \
 '
 
 alias xr='
-  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
+  docker exec -i -t $(find-docker-container "(backend|app|rails)\." -v admin) \
     rails runner \
 '
 
 alias xdm='
-  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
+  docker exec -i -t $(find-docker-container "(backend|app|rails)\." -v admin) \
     rake db:migrate \
 '
 
 alias xdr='
-  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
+  docker exec -i -t $(find-docker-container "(backend|app|rails)\." -v admin) \
     rake db:rollback \
 '
 
 alias xdd='
-  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
+  docker exec -i -t $(find-docker-container "(backend|app|rails)\." -v admin) \
     rake db:migrate:redo \
 '
 
 alias xdt='
-  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
+  docker exec -i -t $(find-docker-container "(backend|app|rails)\." -v admin) \
     rake db:migrate:status \
 '
 
 alias xdi='
-  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
+  docker exec -i -t $(find-docker-container "(backend|app|rails)\." -v admin) \
     rake db:create db:structure:load db:seed \
 '
 
 alias xds='
-  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
+  docker exec -i -t $(find-docker-container "(backend|app|rails)\." -v admin) \
     rake db:seed \
 '
 
 alias xbi='
-  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
+  docker exec -i -t $(find-docker-container "(backend|app|rails)\." -v admin) \
     bundle install --jobs 8 --path vendor/bundle --full-index \
 '
 
@@ -320,65 +320,65 @@ alias xyp='
 '
 
 alias z=' \
-  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
+  docker exec -i -t $(find-docker-container "test.(backend|app|rails)" -v admin) \
 '
 
 alias zx=' \
-  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
+  docker exec -i -t $(find-docker-container "test.(backend|app|rails)" -v admin) \
     rspec \
 '
 
 alias zb=' \
-  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) bash
+  docker exec -i -t $(find-docker-container "test.(backend|app|rails)" -v admin) bash
 '
 
 alias zs=' \
-  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
+  docker exec -i -t $(find-docker-container "test.(backend|app|rails)" -v admin) \
     spring \
 '
 
 alias zc='
-  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
+  docker exec -i -t $(find-docker-container "test.(backend|app|rails)" -v admin) \
     rails console \
 '
 
 alias zr='
-  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
+  docker exec -i -t $(find-docker-container "test.(backend|app|rails)" -v admin) \
     rails runner \
 '
 
 alias zdm='
-  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
+  docker exec -i -t $(find-docker-container "test.(backend|app|rails)" -v admin) \
     rake db:migrate \
 '
 
 alias zdr='
-  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
+  docker exec -i -t $(find-docker-container "test.(backend|app|rails)" -v admin) \
     rake db:rollback \
 '
 
 alias zdd='
-  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
+  docker exec -i -t $(find-docker-container "test.(backend|app|rails)" -v admin) \
     rake db:migrate:redo \
 '
 
 alias zdt='
-  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
+  docker exec -i -t $(find-docker-container "test.(backend|app|rails)" -v admin) \
     rake db:migrate:status \
 '
 
 alias zdi='
-  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
+  docker exec -i -t $(find-docker-container "test.(backend|app|rails)" -v admin) \
     rake db:create db:structure:load \
 '
 
 alias zds='
-  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
+  docker exec -i -t $(find-docker-container "test.(backend|app|rails)" -v admin) \
     rake db:seed \
 '
 
 alias zbi='
-  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) \
+  docker exec -i -t $(find-docker-container "test.(backend|app|rails)" -v admin) \
     bundle install --jobs 8 --path vendor/bundle --full-index \
 '
 
@@ -388,7 +388,7 @@ alias zd='docker exec -i -t $(find-docker-container postgres -v admin) \
 
 function backend-path() {
   RESULT=$(
-    docker inspect $(find-docker-container "(backend|app)\." -v admin) |
+    docker inspect $(find-docker-container "(backend|app|rails)\." -v admin) |
       grep -o '/.*:/app:rw' | sed -E "s/:.*//"
   )
 
@@ -401,12 +401,12 @@ function project-path() {
 
 function xgm {
   MIGRATION=$(
-    docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) rails generate migration $@ |
+    docker exec -i -t $(find-docker-container "(backend|app|rails)\." -v admin) rails generate migration $@ |
       grep -o 'db/.*.rb' |
       head -n 1
   )
 
-  docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) chown 1000:1000 $MIGRATION
+  docker exec -i -t $(find-docker-container "(backend|app|rails)\." -v admin) chown 1000:1000 $MIGRATION
   subl3 $(project-path)/app/$MIGRATION
 }
 
@@ -422,7 +422,7 @@ eval "$(ssh-agent -s)" > /dev/null 2>&1
 ssh-add > /dev/null 2>&1
 
 function deploy-celluloidheaven-to-staging {
-  docker exec -i -t $(find-docker-container "test.(backend|app)" -v admin) rspec
+  docker exec -i -t $(find-docker-container "test.(backend|app|rails)" -v admin) rspec
   if [ $? -ne 0 ]; then
     echo "\033[0;31mBUILD FAILED\033[0m"
     return 1
@@ -519,7 +519,7 @@ alias clr=restart-project
 
 function generate-rails-object() {
   RESULT=$(
-    docker exec -i -t $(find-docker-container "(backend|app)\." -v admin) \
+    docker exec -i -t $(find-docker-container "(backend|app|rails)\." -v admin) \
       rails generate $@ | tee /dev/tty \
   )
 
