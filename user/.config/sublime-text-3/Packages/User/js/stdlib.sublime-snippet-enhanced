@@ -117,7 +117,7 @@ forEach(${0:$selection})
 			]
 		]]></context>
 		<description>stdlib: forEach</description>
-		<order>1</order>
+		<order>3</order>
 	</snippet>
 
 	<snippet>
@@ -307,6 +307,102 @@ includes(${1:$selection__or__last_assigned_variable})
 		]]></context>
 		<description>stdlib: toString</description>
 		<order>2</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+this.$1.bind(this)
+]]></content>
+		<tabTrigger>b</tabTrigger>
+		<scope>source.js</scope>
+		<description>stdlib: bind</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+bind(this)
+]]></content>
+		<tabTrigger>b</tabTrigger>
+		<scope>source.js</scope>
+		<description>stdlib: bind</description>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.b$"},
+			]
+		]]></context>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+addEventListener('$1', $2)
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>al</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.al$"},
+			]
+		]]></context>
+		<description>stdlib: addEventListener</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+toLowerCase()
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>tl</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.tl$"},
+			]
+		]]></context>
+		<description>stdlib: toLowerCase</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+toUpperCase()
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>tu</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.tu$"},
+			]
+		]]></context>
+		<description>stdlib: toUpperCase</description>
+		<order>1</order>
 	</snippet>
 
 </snippets>

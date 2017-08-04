@@ -1,24 +1,24 @@
 <snippets>
 
-  <snippet>
-    <content><![CDATA[
+	<snippet>
+		<content><![CDATA[
 Rails.application.config
 ]]></content>
-    <tabTrigger>rc</tabTrigger>
-    <scope>source.ruby</scope>
-    <description>rails: application config</description>
-  </snippet>
+		<tabTrigger>rc</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>rails: application config</description>
+	</snippet>
 
-  <snippet>
-    <content><![CDATA[
+	<snippet>
+		<content><![CDATA[
 Rails.application
 ]]></content>
-    <tabTrigger>rp</tabTrigger>
-    <scope>source.ruby</scope>
-    <description>rails: application config</description>
-  </snippet>
+		<tabTrigger>rp</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>rails: application config</description>
+	</snippet>
 
-  <!-- controllers -->
+	<!-- controllers -->
 
 	<snippet>
 		<content><![CDATA[
@@ -72,6 +72,25 @@ end
 
 	<snippet>
 		<content><![CDATA[
+reverting?
+]]></content>
+		<tabTrigger>r</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{
+					"key": "begin_512_chars",
+					"operator": "regex_contains",
+					"operand": "ActiveRecord::Migration",
+				},
+			]
+		]]></context>
+		<description>rails migrations: reverting?</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 add_column :${1:table}, :${2:name}, :${3:type}, {
 	null: ${4:true},
 	default: ${5:nil},
@@ -79,6 +98,29 @@ add_column :${1:table}, :${2:name}, :${3:type}, {
 }
 ]]></content>
 		<tabTrigger>ac</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{
+					"key": "begin_512_chars",
+					"operator": "regex_contains",
+					"operand": "ActiveRecord::Migration",
+				},
+			]
+		]]></context>
+		<description>rails migrations: add_column</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+add_reference :${1:table}, ${2:field}, {
+	foreign_key: true,
+	null: false,
+	comment: '$3',
+}
+]]></content>
+		<tabTrigger>ar</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
@@ -156,7 +198,7 @@ rename_column :${1:table}, :${2:name}, :${3:newname}
 
 	<snippet>
 		<content><![CDATA[
-create_table :${1:table}, comment: '' do |table|
+create_table :${1:table}, comment: '$2' do |table|
 	$0
 end
 ]]></content>
@@ -220,10 +262,34 @@ integer :${1:name}, {
 
 	<snippet>
 		<content><![CDATA[
+column :${1:name}, :${2:type}, {
+	null: true,
+	default: nil,
+	comment: '$3',
+}
+]]></content>
+		<tabTrigger>c</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{
+					"key": "begin_512_chars",
+					"operator": "regex_contains",
+					"operand": "ActiveRecord::Migration",
+				},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "table\\.c$"},
+			]
+		]]></context>
+		<description>rails migrations: column</description>
+		<order>3</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 string :${1:name}, {
-	null: ${2:true},
-	default: ${3:nil},
-	comment: '$4',
+	null: true,
+	default: nil,
+	comment: '$2',
 }
 ]]></content>
 		<tabTrigger>s</tabTrigger>
@@ -245,9 +311,9 @@ string :${1:name}, {
 	<snippet>
 		<content><![CDATA[
 text :${1:name}, {
-	null: ${2:true},
-	default: ${3:nil},
-	comment: '$4',
+	null: true,
+	default: nil,
+	comment: '$2',
 }
 ]]></content>
 		<tabTrigger>t</tabTrigger>
@@ -264,6 +330,54 @@ text :${1:name}, {
 		]]></context>
 		<description>rails migrations: text</description>
 		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+boolean :${1:name}, {
+	null: false,
+	default: false,
+	comment: '$2',
+}
+]]></content>
+		<tabTrigger>t</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{
+					"key": "begin_512_chars",
+					"operator": "regex_contains",
+					"operand": "ActiveRecord::Migration",
+				},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.s$"},
+			]
+		]]></context>
+		<description>rails migrations: boolean</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+references :${1:name}, {
+	foreign_key: true,
+	null: false,
+	comment: '$2',
+}
+]]></content>
+		<tabTrigger>r</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{
+					"key": "begin_512_chars",
+					"operator": "regex_contains",
+					"operand": "ActiveRecord::Migration",
+				},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.r$"},
+			]
+		]]></context>
+		<description>rails migrations: references</description>
+		<order>2</order>
 	</snippet>
 
 	<snippet>
@@ -301,6 +415,78 @@ add_index :${1:table}, [:${2:column}], unique: true
 			]
 		]]></context>
 		<description>rails migrations: text</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+unique: true,
+]]></content>
+		<tabTrigger>u</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{
+					"key": "begin_512_chars",
+					"operator": "regex_contains",
+					"operand": "ActiveRecord::Migration",
+				},
+				{
+					"key": "preceding_text_begin",
+					"operator": "regex_contains",
+					"operand": "^\\s*t$",
+				},
+			]
+		]]></context>
+		<description>rails migrations: unique</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+default: nil,
+]]></content>
+		<tabTrigger>d</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{
+					"key": "begin_512_chars",
+					"operator": "regex_contains",
+					"operand": "ActiveRecord::Migration",
+				},
+				{
+					"key": "preceding_text_begin",
+					"operator": "regex_contains",
+					"operand": "^\\s*t$",
+				},
+			]
+		]]></context>
+		<description>rails migrations: default</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+table.
+]]></content>
+		<tabTrigger>t</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{
+					"key": "begin_512_chars",
+					"operator": "regex_contains",
+					"operand": "ActiveRecord::Migration",
+				},
+				{
+					"key": "preceding_text_begin",
+					"operator": "regex_contains",
+					"operand": "^\\s*t$",
+				},
+			]
+		]]></context>
+		<description>rails migrations: table</description>
 		<order>1</order>
 	</snippet>
 
@@ -405,7 +591,7 @@ has_one :$1
 
 	<snippet>
 		<content><![CDATA[
-has_many :$1
+has_many :$1, dependent: :destroy
 ]]></content>
 		<commands>
 			[
@@ -667,7 +853,7 @@ where(${1:$selection})
 
 	<snippet>
 		<content><![CDATA[
-exists?(${1:$selection})
+exists?
 ]]></content>
 		<tabTrigger>w</tabTrigger>
 		<scope>source\.ruby</scope>
@@ -684,6 +870,15 @@ exists?(${1:$selection})
 		<content><![CDATA[
 update(${1:$selection})
 ]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
 		<tabTrigger>u</tabTrigger>
 		<scope>source\.ruby</scope>
 		<context>
@@ -699,6 +894,15 @@ update(${1:$selection})
 		<content><![CDATA[
 update!(${1:$selection})
 ]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
 		<trigger>uu</trigger>
 		<scope>source\.ruby</scope>
 		<context>
@@ -707,6 +911,54 @@ update!(${1:$selection})
 			]
 		</context>
 		<description>rails models: update!</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+create(${1:$selection})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>c</tabTrigger>
+		<scope>source\.ruby</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.c$"},
+			]
+		</context>
+		<description>rails models: create</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+create!(${1:$selection})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<trigger>cc</trigger>
+		<scope>source\.ruby</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.cc$"},
+			]
+		</context>
+		<description>rails models: create!</description>
 		<order>1</order>
 	</snippet>
 
@@ -781,6 +1033,25 @@ Rails.logger.error($1)
 ]]></content>
 		<tabTrigger>le</tabTrigger>
 		<scope>source\.ruby</scope>
+		<description>rails logger: logger</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+as_json(
+	only: [
+		:id,
+		:name,$1
+	],
+)
+]]></content>
+		<tabTrigger>j</tabTrigger>
+		<scope>source\.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*\\.j$"},
+			]
+		]]></context>
 		<description>rails logger: logger</description>
 	</snippet>
 

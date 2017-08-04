@@ -4,6 +4,12 @@
 
 # 81.63.186.235 node1.dalco.diagonal.com node1 dalco.diagonal.com transfer1.celluloidheaven.net
 
+79.137.38.245 registry.vps437521.ovh.net
+79.137.38.245 logs.vps437521.ovh.net
+79.137.38.245 staging.vps437521.ovh.net
+79.137.38.245 mail.staging.vps437521.ovh.net
+79.137.38.245 altagram.vps437521.ovh.net
+
 127.0.0.1 cryptolocator.local
 
 #<ip-address> <hostname.domain.org> <hostname>
@@ -36,6 +42,8 @@
 127.0.0.1 streakello.local
 127.0.0.1 mirrorello.local
 127.0.0.1 celluloidheaven.local
+127.0.0.1 altagram.local
+127.0.0.1 mail.altagram.local
 # 138.201.251.84 dev.captainanalytics.ru
 # 54.247.92.152 chfs.ch
 # 127.0.0.1 chfs.ch

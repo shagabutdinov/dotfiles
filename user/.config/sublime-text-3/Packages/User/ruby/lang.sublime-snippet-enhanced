@@ -613,4 +613,15 @@ attr_writer :$1
 		<description>attr_writer</description>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+<<~TEXT
+	$0
+TEXT
+]]></content>
+		<tabTrigger>T</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>heredoc</description>
+	</snippet>
+
 </snippets>

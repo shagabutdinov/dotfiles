@@ -147,16 +147,10 @@ then(function($1) {
 
 	<snippet>
 		<content><![CDATA[
-then(function($1) {
+then(($1) => {
 	$0
 }
 ]]></content>
-	<commands>
-		[
-			"RUN",
-			{"command": "add_semicolon_to_statement"},
-		]
-	</commands>
 		<tabTrigger>then(</tabTrigger>
 		<scope>source.js</scope>
 		<description>lang: then function</description>
@@ -164,15 +158,9 @@ then(function($1) {
 
 	<snippet>
 		<content><![CDATA[
-then(function(response
+then((response
 ]]></content>
-	<commands>
-		[
-			"RUN",
-			{"command": "add_semicolon_to_statement"},
-		]
-	</commands>
-		<tabTrigger>then(function(</tabTrigger>
+		<tabTrigger>then((</tabTrigger>
 		<scope>source.js</scope>
 		<description>lang: then function response</description>
 	</snippet>
@@ -304,6 +292,17 @@ $1($2) {
 }
 ]]></content>
 		<tabTrigger>d</tabTrigger>
+		<scope>source.js</scope>
+		<description>lang: define method</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+$1 = ($2) => {
+	$0
+}
+]]></content>
+		<tabTrigger>dd</tabTrigger>
 		<scope>source.js</scope>
 		<description>lang: define method</description>
 	</snippet>
@@ -497,6 +496,21 @@ continue ;
 
 	<snippet>
 		<content><![CDATA[
+throw ${1:error}
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "add_semicolon_to_statement"},
+			]
+		</commands>
+		<tabTrigger>th</tabTrigger>
+		<scope>source.js</scope>
+		<description>lang: throw</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 if(${1:$last_assigned_variable}) {
 	${0:$selection}
 }
@@ -589,7 +603,23 @@ else {
 			]
 		</context>
 		<description>lang: else</description>
-		<order>1</order>
+		<order>2</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+else if(${1:$last_assigned_variable}) {
+	${0:$selection}
+}
+]]></content>
+		<tabTrigger>ei</tabTrigger>
+		<scope>source.js</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\}\\s*ei"},
+			]
+		</context>
+		<description>lang: else if</description>
 	</snippet>
 
 	<snippet>

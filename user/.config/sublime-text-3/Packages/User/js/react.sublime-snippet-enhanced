@@ -2,6 +2,58 @@
 
 	<snippet>
 		<content><![CDATA[
+import React from 'react';
+
+export default class $1 extends React.Component {
+
+  render() {
+    return (
+      $0
+    );
+  }
+
+}
+
+]]></content>
+		<tabTrigger>d</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{
+					"key": "preceding_text_begin",
+					"operator": "regex_contains",
+					"operand": "^d$"
+				},
+			]
+		]]></context>
+		<description>react: define component</description>
+		<order>5</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+constructor(props) {
+  super(props)
+  $1
+}
+]]></content>
+		<tabTrigger>dc</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{
+					"key": "preceding_512_chars_begin",
+					"operator": "regex_contains",
+					"operand": "React.Component"
+				},
+			]
+		]]></context>
+		<description>react: onSubmit</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 render() {
 	$0
 }
@@ -159,6 +211,30 @@ this.state
 		]]></context>
 		<description>react: this.state</description>
 		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+this.state
+]]></content>
+		<commands><![CDATA[
+		  [
+		  	{
+		  		"command": "run_macro_file_with_context",
+		  		"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+		  	},
+		  	"RUN",
+		  ]
+		]]></commands>
+		<tabTrigger>ts</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.\\.\\.ts$"},
+			]
+		]]></context>
+		<description>react: this.state</description>
+		<order>2</order>
 	</snippet>
 
 	<snippet>

@@ -113,6 +113,42 @@ File.exist?(${0:$selection__or__last_assigned_variable})
 
 	<snippet>
 		<content><![CDATA[
+File.basename(${0:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>fb</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: File.basename</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+File.dirname(${0:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>fd</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: File.dirname</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 JSON.generate(${0:$selection__or__last_assigned_variable})
 ]]></content>
 		<commands>
@@ -377,7 +413,7 @@ to_i
 			]
 		]]></context>
 		<description>stdlib: to_i</description>
-		<order>1</order>
+		<order>2</order>
 	</snippet>
 
 	<snippet>
@@ -568,11 +604,26 @@ try(:$1)
 		<content><![CDATA[
 merge(${0:$selection})
 ]]></content>
-		<tabTrigger>m</tabTrigger>
+		<tabTrigger>me</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.m$"},
+			]
+		]]></context>
+		<description>stdlib: merge</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+merge!(${0:$selection})
+]]></content>
+		<tabTrigger>mm</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.mm$"},
 			]
 		]]></context>
 		<description>stdlib: merge</description>
@@ -650,36 +701,18 @@ StandardError
 
 	<snippet>
 		<content><![CDATA[
-collect { |$1|
+map { |$1|
 	$0
 }
 ]]></content>
-		<tabTrigger>c</tabTrigger>
+		<tabTrigger>m</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.\\s+c$"},
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.\\s*m$"},
 			]
 		]]></context>
-		<order>1</order>
-		<description>stdlib: collect</description>
-	</snippet>
-
-	<snippet>
-		<content><![CDATA[
-collect { |$1|
-	$0
-}
-]]></content>
-		<tabTrigger>c</tabTrigger>
-		<scope>source.ruby</scope>
-		<context><![CDATA[
-			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.c$"},
-			]
-		]]></context>
-		<order>1</order>
-		<description>stdlib: collect</description>
+		<description>stdlib: map</description>
 	</snippet>
 
 	<snippet>
