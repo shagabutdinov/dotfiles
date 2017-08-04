@@ -50,7 +50,7 @@ function o() {
 bindkey "^T" prepend-sudo
 alias -g G="| grep"
 
-alias yaourt='yaourt --noconfirm'
+alias yaourt='yaourt --noconfirm --m-arg "--skipchecksums --skippgpcheck"'
 alias mv=/bin/mv
 alias pwgen='pwgen 12'
 alias nc='sudo netctl'
