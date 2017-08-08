@@ -4,13 +4,8 @@
 
 # 81.63.186.235 node1.dalco.diagonal.com node1 dalco.diagonal.com transfer1.celluloidheaven.net
 
-79.137.38.245 registry.vps437521.ovh.net
-79.137.38.245 logs.vps437521.ovh.net
-79.137.38.245 staging.vps437521.ovh.net
-79.137.38.245 mail.staging.vps437521.ovh.net
-79.137.38.245 altagram.vps437521.ovh.net
-
 127.0.0.1 cryptolocator.local
+127.0.0.1 altagram.local
 
 #<ip-address> <hostname.domain.org> <hostname>
 127.0.0.1 localhost.localdomain localhost
