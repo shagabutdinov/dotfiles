@@ -263,6 +263,24 @@ parseInt(${1:$selection__or__last_assigned_variable})
 
 	<snippet>
 		<content><![CDATA[
+parseFloat(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>pf</tabTrigger>
+		<scope>source.js</scope>
+		<description>stdlib: parseFloat</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 toString()
 ]]></content>
 		<commands><![CDATA[

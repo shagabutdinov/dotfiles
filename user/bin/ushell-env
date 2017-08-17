@@ -439,6 +439,8 @@ function download-celluloidheaven-staging-data {
   fi
 
   docker-compose -f config/filmservice.local/main.yml stop
+  echo y | docker-compose -f config/filmservice.local/main.yml rm
+  docker-compose -f config/filmservice.local/main.yml up -d
 
   return 0
 }
@@ -469,12 +471,84 @@ function download-celluloidheaven-production-data {
   docker exec -i $(docker-container postgres -v admin) psql -U postgres \
     -c 'ALTER DATABASE "diagonal_production" RENAME TO "database"'
 
+  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
+    "ALTER USER \"user\" WITH PASSWORD 'password';"
+
   if [ $? -ne 0 ]; then
     echo "\033[0;31mDOWNLOAD FAILED\033[0m"
     return 1
   fi
 
   docker-compose -f config/filmservice.local/main.yml stop
+  echo y | docker-compose -f config/filmservice.local/main.yml rm
+  docker-compose -f config/filmservice.local/main.yml up -d
+
+  return 0
+}
+
+function download-altagram-production-data {
+  cd $(project-path)
+
+  docker stop $(docker-container "(backend)\." -v admin)
+  docker stop $(docker-container "(app)\." -v admin)
+
+  docker exec -i $(docker-container postgres -v admin) psql -U postgres \
+    -c 'DROP DATABASE "database"'
+
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mDOWNLOAD FAILED\033[0m"
+    return 1
+  fi
+
+  kubectl exec -it \
+    $(kubectl --namespace altagram get pods | \
+      grep -Eo 'postgres-[0-9]+-[a-Z0-9]+' | head -n 1) -- \
+    pg_dumpall -Uuser | \
+    docker exec -i $(docker-container postgres -v admin) psql -Uuser postgres
+
+  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
+    "ALTER USER \"user\" WITH PASSWORD 'password';"
+
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mDOWNLOAD FAILED\033[0m"
+    return 1
+  fi
+
+  docker-compose -f config/altagram.local/main.yml stop
+  echo y | docker-compose -f config/altagram.local/main.yml rm
+  docker-compose -f config/altagram.local/main.yml up -d
+
+  return 0
+}
+
+function download-altagram-staging-data {
+  cd $(project-path)
+
+  docker stop $(docker-container "(backend)\." -v admin)
+  docker stop $(docker-container "(app)\." -v admin)
+
+  docker exec -i $(docker-container postgres -v admin) psql -U postgres \
+    -c 'DROP DATABASE "database"'
+
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mDOWNLOAD FAILED\033[0m"
+    return 1
+  fi
+
+  kubectl exec -it \
+    $(kubectl --namespace staging get pods | \
+      grep -Eo 'postgres-[0-9]+-[a-Z0-9]+' | head -n 1) -- \
+    pg_dumpall -Uuser | \
+    docker exec -i $(docker-container postgres -v admin) psql -Uuser postgres
+
+  if [ $? -ne 0 ]; then
+    echo "\033[0;31mDOWNLOAD FAILED\033[0m"
+    return 1
+  fi
+
+  docker-compose -f config/altagram.local/main.yml stop
+  echo y | docker-compose -f config/altagram.local/main.yml rm
+  docker-compose -f config/altagram.local/main.yml up -d
 
   return 0
 }
