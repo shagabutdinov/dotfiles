@@ -993,6 +993,15 @@ as_json($0)
 
 	<snippet>
 		<content><![CDATA[
+errors.add(:${1:field}, '${2:message}')
+]]></content>
+		<tabTrigger>ea</tabTrigger>
+		<scope>source\.ruby</scope>
+		<description>rails models: errors.add</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 Rails.logger
 ]]></content>
 		<tabTrigger>rl</tabTrigger>
@@ -1052,7 +1061,7 @@ as_json(
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*\\.j$"},
 			]
 		]]></context>
-		<description>rails logger: logger</description>
+		<description>rails: as_json</description>
 	</snippet>
 
 </snippets>

@@ -624,4 +624,15 @@ TEXT
 		<description>heredoc</description>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+-> ($1) {
+	$0
+}
+]]></content>
+		<tabTrigger>j</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>proc</description>
+	</snippet>
+
 </snippets>

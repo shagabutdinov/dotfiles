@@ -423,4 +423,23 @@ toUpperCase()
 		<order>1</order>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+currentUser
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>cu</tabTrigger>
+		<scope>source.js</scope>
+		<description>stdlib: toUpperCase</description>
+		<order>1</order>
+	</snippet>
+
 </snippets>

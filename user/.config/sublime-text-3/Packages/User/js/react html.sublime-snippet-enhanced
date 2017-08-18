@@ -24,6 +24,28 @@
 
 	<snippet>
 		<content><![CDATA[
+<$1>$0</$1>
+]]></content>
+		<tabTrigger>h</tabTrigger>
+		<scope>source.js</scope>
+		<description>react: tag</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<$1>
+	$0
+</$1>
+]]></content>
+		<tabTrigger>hh</tabTrigger>
+		<scope>source.js</scope>
+		<description>react: tag</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 <form $1>$0</form>
 ]]></content>
 		<tabTrigger>f</tabTrigger>
@@ -141,6 +163,25 @@ onClick={$1}
 					"key": "preceding_128_chars_begin",
 					"operator": "regex_contains",
 					"operand": "(<\\w+|}|\")\\s+ocl$"
+				},
+			]
+		]]></context>
+		<description>react: onClick</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+onClick={$1}
+]]></content>
+		<tabTrigger>ol</tabTrigger>
+		<scope>source.js.*meta.jsx.js</scope>
+		<context><![CDATA[
+			[
+				{
+					"key": "preceding_128_chars_begin",
+					"operator": "regex_contains",
+					"operand": "(<\\w+|}|\")\\s+ol$"
 				},
 			]
 		]]></context>
