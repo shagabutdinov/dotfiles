@@ -541,6 +541,9 @@ function download-altagram-staging-data {
     pg_dumpall -Uuser | \
     docker exec -i $(docker-container postgres -v admin) psql -Uuser postgres
 
+  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
+    "ALTER USER \"user\" WITH PASSWORD 'password';"
+
   if [ $? -ne 0 ]; then
     echo "\033[0;31mDOWNLOAD FAILED\033[0m"
     return 1
