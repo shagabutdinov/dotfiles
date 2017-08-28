@@ -3101,7 +3101,7 @@
 0.0.0.1 z1.zedo.com
 # [Akamai][AS20940][184.50.0.0 - 184.51.255.255]
 0.0.0.1 redir.adap.tv
-0.0.0.1 delivery-s3.adswizz.com
+# 0.0.0.1 delivery-s3.adswizz.com
 0.0.0.1 fast.fairfaxau.demdex.net
 0.0.0.1 fast.philly.demdex.net
 0.0.0.1 tiads.instyle.com
@@ -4427,7 +4427,6 @@
 0.0.0.1 ad.adtegrity.net
 0.0.0.1 ib.adnxs.com
 0.0.0.1 photobucket.adnxs.com
-0.0.0.1 secure.adnxs.com
 0.0.0.1 ym.adnxs.com
 0.0.0.1 ad.aquamediadirect.com
 0.0.0.1 ads.dedicatedmedia.com
