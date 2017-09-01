@@ -138,6 +138,87 @@ alias kei='kubectl exec'
 alias ksn='kubectl config set-context $(kubectl config current-context) --namespace '
 alias c='docker-compose -f'
 
+function ksp() {
+  cp ~/.kube/$1 ~/.kube/config
+}
+
+alias kxc='
+  kubectl \
+    --namespace $(production-namespace "(app|backend)") \
+    exec \
+    -it \
+    $(production-pod "(app|backend)") \
+    -- \
+    rails c \
+'
+
+alias kxd='
+  open-kubernetes-database-console \
+    $(production-namespace postgres) \
+    $(production-pod postgres)
+'
+
+alias kzc='
+  kubectl \
+    --namespace staging \
+    exec \
+      -it \
+      $(staging-pod "(app|backend)") \
+      -- \
+      rails c \
+'
+
+alias kzd='
+  open-kubernetes-database-console \
+    staging \
+    $(staging-pod postgres)
+'
+
+function open-kubernetes-database-console() {
+  export DB=$(
+    kubectl exec \
+      --namespace $1 \
+      $2 \
+      -- \
+      psql -P pager -Upostgres -c '\l' | \
+      grep -E '^ ' | \
+      grep -Ev '^ (postgres|template|ubuntu| )' | \
+      grep -Eo '^ \w+' |
+      grep -Eo '\w+'
+  )
+
+  kubectl \
+    --namespace $1 \
+    exec \
+    -it \
+    $2 \
+    -- \
+    psql -P pager -Uuser \
+    $DB
+}
+
+function staging-pod() {
+  kubectl get pods --all-namespaces -o wide | \
+    grep staging | \
+    grep -Eo " $1-[0-9]+-[a-Z0-9]+" | \
+    head -n 1
+}
+
+function production-pod() {
+  kubectl get pods --all-namespaces -o wide | \
+    grep -v staging | \
+    grep -Eo " $1-[0-9]+-[a-Z0-9]+" | \
+    head -n 1
+}
+
+function production-namespace() {
+  kubectl get pods --all-namespaces -o wide | \
+    grep -v staging | \
+    grep -E " $1-[0-9]+-[a-Z0-9]+" | \
+    grep -Eo "^\w+" | \
+    head -n 1
+}
+
 alias cm='\
   docker-compose -f config/$(ls --color=none config/ | \
     grep --color=none \\.local)/main.yml \
@@ -181,6 +262,7 @@ function restart-project() {
 
 
 alias co='sudo chown -R leo: '
+
 alias cc='sudo chown -R leo: .'
 
 alias gs='git show --color'
@@ -421,10 +503,12 @@ function download-celluloidheaven-staging-data {
     return 1
   fi
 
-  ssh ubuntu@test.celluloidheaven.net "pg_dumpall | gzip" |
-    gunzip |
-    docker exec -i $(docker-container postgres -v admin) psql -U postgres
-
+  kubectl exec --namespace staging -i \
+    $(kubectl --namespace staging get pods | \
+      grep -Eo 'postgres-[0-9]+-[a-Z0-9]+' | head -n 1) -- \
+    sh -c "pg_dumpall -Upostgres | gzip" |
+      gunzip |
+      docker exec -i $(docker-container postgres -v admin) psql -U postgres
   if [ $? -ne 0 ]; then
     echo "\033[0;31mDOWNLOAD FAILED\033[0m"
     return 1
@@ -437,6 +521,9 @@ function download-celluloidheaven-staging-data {
     echo "\033[0;31mDOWNLOAD FAILED\033[0m"
     return 1
   fi
+
+  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
+    "ALTER USER \"user\" WITH PASSWORD 'password';"
 
   docker-compose -f config/filmservice.local/main.yml stop
   echo y | docker-compose -f config/filmservice.local/main.yml rm
@@ -459,9 +546,12 @@ function download-celluloidheaven-production-data {
     return 1
   fi
 
-  ssh ubuntu@filmservice.net "pg_dumpall | gzip" |
-    gunzip |
-    docker exec -i $(docker-container postgres -v admin) psql -U postgres
+  kubectl exec --namespace filmservice -i \
+    $(kubectl --namespace filmservice get pods | \
+      grep -Eo 'postgres-[0-9]+-[a-Z0-9]+' | head -n 1) -- \
+    sh -c "pg_dumpall -Upostgres | gzip" |
+      gunzip |
+      docker exec -i $(docker-container postgres -v admin) psql -U postgres
 
   if [ $? -ne 0 ]; then
     echo "\033[0;31mDOWNLOAD FAILED\033[0m"
@@ -471,13 +561,13 @@ function download-celluloidheaven-production-data {
   docker exec -i $(docker-container postgres -v admin) psql -U postgres \
     -c 'ALTER DATABASE "diagonal_production" RENAME TO "database"'
 
-  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
-    "ALTER USER \"user\" WITH PASSWORD 'password';"
-
   if [ $? -ne 0 ]; then
     echo "\033[0;31mDOWNLOAD FAILED\033[0m"
     return 1
   fi
+
+  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
+    "ALTER USER \"user\" WITH PASSWORD 'password';"
 
   docker-compose -f config/filmservice.local/main.yml stop
   echo y | docker-compose -f config/filmservice.local/main.yml rm
@@ -500,19 +590,19 @@ function download-altagram-production-data {
     return 1
   fi
 
-  kubectl exec -it \
+  kubectl exec --namespace altagram -i \
     $(kubectl --namespace altagram get pods | \
       grep -Eo 'postgres-[0-9]+-[a-Z0-9]+' | head -n 1) -- \
     pg_dumpall -Uuser | \
     docker exec -i $(docker-container postgres -v admin) psql -Uuser postgres
 
-  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
-    "ALTER USER \"user\" WITH PASSWORD 'password';"
-
   if [ $? -ne 0 ]; then
     echo "\033[0;31mDOWNLOAD FAILED\033[0m"
     return 1
   fi
+
+  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
+    "ALTER USER \"user\" WITH PASSWORD 'password';"
 
   docker-compose -f config/altagram.local/main.yml stop
   echo y | docker-compose -f config/altagram.local/main.yml rm
@@ -535,7 +625,7 @@ function download-altagram-staging-data {
     return 1
   fi
 
-  kubectl exec -it \
+  kubectl exec --namespace staging -i \
     $(kubectl --namespace staging get pods | \
       grep -Eo 'postgres-[0-9]+-[a-Z0-9]+' | head -n 1) -- \
     pg_dumpall -Uuser | \

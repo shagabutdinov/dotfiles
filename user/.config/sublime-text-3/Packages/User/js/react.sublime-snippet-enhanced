@@ -6,11 +6,11 @@ import React from 'react';
 
 export default class $1 extends React.Component {
 
-  render() {
-    return (
-      $0
-    );
-  }
+	render() {
+		return (
+			$0
+		);
+	}
 
 }
 
@@ -33,8 +33,8 @@ export default class $1 extends React.Component {
 	<snippet>
 		<content><![CDATA[
 constructor(props) {
-  super(props)
-  $1
+	super(props)
+	$1
 }
 ]]></content>
 		<tabTrigger>dc</tabTrigger>
@@ -134,13 +134,13 @@ componentWillReceiveProps(props) {
 setState($1)
 ]]></content>
 		<commands><![CDATA[
-		  [
-		  	{
-		  		"command": "run_macro_file_with_context",
-		  		"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
-		  	},
-		  	"RUN",
-		  ]
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
 		]]></commands>
 		<tabTrigger>ss</tabTrigger>
 		<scope>source.js</scope>
@@ -158,13 +158,13 @@ setState($1)
 this.setState($1)
 ]]></content>
 		<commands><![CDATA[
-		  [
-		  	{
-		  		"command": "run_macro_file_with_context",
-		  		"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
-		  	},
-		  	"RUN",
-		  ]
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
 		]]></commands>
 		<tabTrigger>ss</tabTrigger>
 		<scope>source.js</scope>
@@ -176,13 +176,13 @@ this.setState($1)
 this.state
 ]]></content>
 		<commands><![CDATA[
-		  [
-		  	{
-		  		"command": "run_macro_file_with_context",
-		  		"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
-		  	},
-		  	"RUN",
-		  ]
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
 		]]></commands>
 		<tabTrigger>ts</tabTrigger>
 		<scope>source.js</scope>
@@ -194,13 +194,13 @@ this.state
 this.state
 ]]></content>
 		<commands><![CDATA[
-		  [
-		  	{
-		  		"command": "run_macro_file_with_context",
-		  		"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
-		  	},
-		  	"RUN",
-		  ]
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
 		]]></commands>
 		<tabTrigger>.s</tabTrigger>
 		<scope>source.js</scope>
@@ -218,13 +218,13 @@ this.state
 this.state
 ]]></content>
 		<commands><![CDATA[
-		  [
-		  	{
-		  		"command": "run_macro_file_with_context",
-		  		"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
-		  	},
-		  	"RUN",
-		  ]
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
 		]]></commands>
 		<tabTrigger>ts</tabTrigger>
 		<scope>source.js</scope>
@@ -242,13 +242,13 @@ this.state
 this.state.
 ]]></content>
 		<commands><![CDATA[
-		  [
-		  	{
-		  		"command": "run_macro_file_with_context",
-		  		"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
-		  	},
-		  	"RUN",
-		  ]
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
 		]]></commands>
 		<tabTrigger>ts</tabTrigger>
 		<scope>source.js</scope>
@@ -266,13 +266,13 @@ this.state.
 this.props
 ]]></content>
 		<commands><![CDATA[
-		  [
-		  	{
-		  		"command": "run_macro_file_with_context",
-		  		"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
-		  	},
-		  	"RUN",
-		  ]
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
 		]]></commands>
 		<tabTrigger>tp</tabTrigger>
 		<scope>source.js</scope>
@@ -284,13 +284,13 @@ this.props
 this.props.
 ]]></content>
 		<commands><![CDATA[
-		  [
-		  	{
-		  		"command": "run_macro_file_with_context",
-		  		"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
-		  	},
-		  	"RUN",
-		  ]
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
 		]]></commands>
 		<tabTrigger>tp</tabTrigger>
 		<scope>source.js</scope>
@@ -301,6 +301,48 @@ this.props.
 		]]></context>
 		<order>1</order>
 		<description>react: this.props.</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+this.form
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>tf</tabTrigger>
+		<scope>source.js</scope>
+		<description>react: this.form</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+this.form.
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>tf</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
+			]
+		]]></context>
+		<order>1</order>
+		<description>react: this.form.</description>
 	</snippet>
 
 </snippets>
