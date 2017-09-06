@@ -525,6 +525,9 @@ function download-celluloidheaven-staging-data {
   docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
     "ALTER USER \"user\" WITH PASSWORD 'password';"
 
+  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
+    "GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO \"user\";"
+
   docker-compose -f config/filmservice.local/main.yml stop
   echo y | docker-compose -f config/filmservice.local/main.yml rm
   docker-compose -f config/filmservice.local/main.yml up -d
@@ -568,6 +571,9 @@ function download-celluloidheaven-production-data {
 
   docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
     "ALTER USER \"user\" WITH PASSWORD 'password';"
+
+  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
+    "GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO \"user\";"
 
   docker-compose -f config/filmservice.local/main.yml stop
   echo y | docker-compose -f config/filmservice.local/main.yml rm
