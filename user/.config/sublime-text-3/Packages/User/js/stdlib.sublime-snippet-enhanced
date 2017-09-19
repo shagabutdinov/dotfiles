@@ -442,4 +442,23 @@ currentUser
 		<order>1</order>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+includes($1)
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>iu</tabTrigger>
+		<scope>source.js</scope>
+		<description>stdlib: includes</description>
+		<order>1</order>
+	</snippet>
+
 </snippets>

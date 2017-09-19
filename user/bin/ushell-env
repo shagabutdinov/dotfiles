@@ -343,7 +343,6 @@ alias xbi='
 
 function open-project-database-console() {
   CONTAINER=$(docker-container postgres -v admin)
-  echo $CONTAINER
   if [ -n "$CONTAINER" ]; then
     docker exec -i -t $CONTAINER psql -P pager -U postgres database
   fi
@@ -509,13 +508,6 @@ function download-celluloidheaven-staging-data {
     sh -c "pg_dumpall -Upostgres | gzip" |
       gunzip |
       docker exec -i $(docker-container postgres -v admin) psql -U postgres
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mDOWNLOAD FAILED\033[0m"
-    return 1
-  fi
-
-  docker exec -i $(docker-container postgres -v admin) psql -U postgres \
-    -c 'ALTER DATABASE "diagonal_production" RENAME TO "database"'
 
   if [ $? -ne 0 ]; then
     echo "\033[0;31mDOWNLOAD FAILED\033[0m"
@@ -523,10 +515,7 @@ function download-celluloidheaven-staging-data {
   fi
 
   docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
-    "ALTER USER \"user\" WITH PASSWORD 'password';"
-
-  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
-    "GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO \"user\";"
+    "ALTER USER \"ubuntu\" WITH PASSWORD 'password';"
 
   docker-compose -f config/filmservice.local/main.yml stop
   echo y | docker-compose -f config/filmservice.local/main.yml rm
@@ -570,10 +559,7 @@ function download-celluloidheaven-production-data {
   fi
 
   docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
-    "ALTER USER \"user\" WITH PASSWORD 'password';"
-
-  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
-    "GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO \"user\";"
+    "ALTER USER \"ubuntu\" WITH PASSWORD 'password';"
 
   docker-compose -f config/filmservice.local/main.yml stop
   echo y | docker-compose -f config/filmservice.local/main.yml rm
