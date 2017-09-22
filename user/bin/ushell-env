@@ -1,4 +1,5 @@
-export PATH=$PATH:/home/leo/.composer/vendor/bin:/usr/lib/jvm/java-8-openjdk/bin/:/home/leo/.gem/ruby/2.3.0/bin:/home/leo/src/go/bin
+autoload -U add-zsh-hook
+source ~/bin/_zsh-hijack
 
 export BROWSER=chromium
 export APPLICATION_ENV=development
@@ -28,6 +29,9 @@ select-word-style bash
 
 bindkey "\e\e[D" backward-word
 bindkey "\e\e[C" forward-word
+
+bindkey "^[OA" hijack:history-substring-search-up
+bindkey "^[[A" hijack:history-substring-search-up
 
 autoload -U promptinit
 promptinit
@@ -515,7 +519,7 @@ function download-celluloidheaven-staging-data {
   fi
 
   docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
-    "ALTER USER \"ubuntu\" WITH PASSWORD 'password';"
+    "ALTER USER \"user\" WITH SUPERUSER;"
 
   docker-compose -f config/filmservice.local/main.yml stop
   echo y | docker-compose -f config/filmservice.local/main.yml rm
@@ -559,7 +563,7 @@ function download-celluloidheaven-production-data {
   fi
 
   docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
-    "ALTER USER \"ubuntu\" WITH PASSWORD 'password';"
+    "ALTER USER \"user\" WITH SUPERUSER;"
 
   docker-compose -f config/filmservice.local/main.yml stop
   echo y | docker-compose -f config/filmservice.local/main.yml rm
@@ -765,3 +769,24 @@ function complete-merge-current-branch-to-staging() {
 
 alias qs=merge-current-branch-to-staging
 alias qse=complete-merge-current-branch-to-staging
+
+hijack:reset
+
+hijack:transform '^(\w+)( .*)!$' \
+  'sed -re "s/(\w+)( .*)\s*!$/\1!\2/"'
+
+hijack:transform ' +$' \
+  'sed -re "s/ +$//"'
+
+hijack:transform '^ca?!? ' \
+  'sed -r s"/([\\$<>{}&\\\"([!?)''#^ ])/\\\\\1/g"'
+
+hijack:transform '^ca?\\!' \
+  'sed -re "s/^(ca?)\\\\!/\\1!/"'
+
+hijack:transform '^ca?!?\\ ' \
+  'sed -r s"/^(ca?)(!?)\\\ /\\1\\2 /g"'
+
+alias c="git commit -m "
+alias ca="git commit -a -m "
+alias c!='git commit --amend -m'

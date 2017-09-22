@@ -746,4 +746,13 @@ find { |$1|
 		]]></context>
 		<description>stdlib: find</description>
 	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+sleep(10)
+]]></content>
+		<tabTrigger>sl</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: sleep</description>
+	</snippet>
 </snippets>

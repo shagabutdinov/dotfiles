@@ -1,0 +1,95 @@
+#!/bin/bash
+
+set -euo pipefail
+
+mode=password
+
+if [[ "${1:-}" == "login-password" ]]; then
+    mode=login-password
+fi
+
+secrets_repository=${secrets_repository:-$HOME/.secrets/}
+
+if [[ ! -d "${secrets_repository}" ]]; then
+    notify-send "carcosa-ui" "$secrets_repository does not exist."
+    exit 1
+fi
+
+cd "${secrets_repository}"
+
+if ! carcosa -Fc; then
+    notify-send "carcosa-ui" "Master password key cache file is not found."
+    exit 1
+fi
+
+:type() {
+    cat <<< "$1" \
+        | perl -p -e 'chomp if eof' \
+        | xdotool type --clearmodifiers --delay 1 --file -
+
+}
+
+:type:key() {
+    xdotool \
+        keyup --clearmodifiers "$1" \
+        key --clearmodifiers "$1"
+}
+
+active_window_id=$(xdotool getwindowfocus)
+
+token=$(carcosa -Lc \
+    | sort \
+    | modal 2>/dev/null \
+    | perl -p -e 'chomp if eof'
+)
+
+if [[ ! "$token" ]]; then
+    token=$(carcosa -Lc \
+        | sort \
+        | head -n1)
+fi
+
+if output=$(carcosa -Gc "$token" 2>&1); then
+    password=$output
+
+    screenkey_pid=$(pgrep -f screenkey || true)
+
+    if [[ "$screenkey_pid" ]]; then
+        screenkey_cmdline=$(cat /proc/$screenkey_pid/cmdline | tr '\0' '\n')
+        pkill -f screenkey
+
+        while pgrep -f screenkey > /dev/null; do
+            sleep 0.1
+        done
+    fi
+
+    xdotool \
+        windowfocus --sync "$active_window_id"
+
+    noenter="0"
+    if [[ "$mode" == "login-password" ]]; then
+        login=${token##*/}
+
+        if [[ ${login:0:1} == "!" ]]; then
+            login=${login:1}
+            noenter="1"
+        fi
+
+        :type "$login"
+        :type:key "Tab"
+    fi
+
+    :type "$password"
+
+    if [[ "$noenter" == "0" ]]; then
+        :type:key "Return"
+    fi
+
+    if [[ "$screenkey_pid" ]]; then
+        exec xargs -d'\n' sh -c 'exec "$0" "${@}"'<<< "$screenkey_cmdline"
+    fi
+else
+    if [ "$output" ]; then
+        notify-send "$output"
+    fi
+fi

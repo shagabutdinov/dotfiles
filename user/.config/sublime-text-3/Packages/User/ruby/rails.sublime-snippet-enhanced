@@ -78,11 +78,7 @@ reverting?
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{
-					"key": "begin_512_chars",
-					"operator": "regex_contains",
-					"operand": "ActiveRecord::Migration",
-				},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
 			]
 		]]></context>
 		<description>rails migrations: reverting?</description>
@@ -101,11 +97,7 @@ add_column :${1:table}, :${2:name}, :${3:type}, {
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{
-					"key": "begin_512_chars",
-					"operator": "regex_contains",
-					"operand": "ActiveRecord::Migration",
-				},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
 			]
 		]]></context>
 		<description>rails migrations: add_column</description>
@@ -124,11 +116,7 @@ add_reference :${1:table}, ${2:field}, {
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{
-					"key": "begin_512_chars",
-					"operator": "regex_contains",
-					"operand": "ActiveRecord::Migration",
-				},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
 			]
 		]]></context>
 		<description>rails migrations: add_column</description>
@@ -147,11 +135,7 @@ change_column :${1:table}, :${2:name}, :${3:type}, {
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{
-					"key": "begin_512_chars",
-					"operator": "regex_contains",
-					"operand": "ActiveRecord::Migration",
-				},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
 			]
 		]]></context>
 		<description>rails migrations: add_column</description>
@@ -166,11 +150,7 @@ remove_column :${1:table}, :${2:name}
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{
-					"key": "begin_512_chars",
-					"operator": "regex_contains",
-					"operand": "ActiveRecord::Migration",
-				},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
 			]
 		]]></context>
 		<description>rails migrations: add_column</description>
@@ -185,11 +165,7 @@ rename_column :${1:table}, :${2:name}, :${3:newname}
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{
-					"key": "begin_512_chars",
-					"operator": "regex_contains",
-					"operand": "ActiveRecord::Migration",
-				},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
 			]
 		]]></context>
 		<description>rails migrations: add_column</description>
@@ -206,11 +182,7 @@ end
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{
-					"key": "begin_512_chars",
-					"operator": "regex_contains",
-					"operand": "ActiveRecord::Migration",
-				},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
 			]
 		]]></context>
 		<description>rails migrations: add_column</description>
@@ -225,11 +197,7 @@ drop_table :${1:table}
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{
-					"key": "begin_512_chars",
-					"operator": "regex_contains",
-					"operand": "ActiveRecord::Migration",
-				},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
 			]
 		]]></context>
 		<description>rails migrations: add_column</description>
@@ -248,11 +216,7 @@ integer :${1:name}, {
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{
-					"key": "begin_512_chars",
-					"operator": "regex_contains",
-					"operand": "ActiveRecord::Migration",
-				},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "table\\.i$"},
 			]
 		]]></context>
@@ -272,11 +236,7 @@ column :${1:name}, :${2:type}, {
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{
-					"key": "begin_512_chars",
-					"operator": "regex_contains",
-					"operand": "ActiveRecord::Migration",
-				},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "table\\.c$"},
 			]
 		]]></context>
@@ -296,11 +256,7 @@ string :${1:name}, {
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{
-					"key": "begin_512_chars",
-					"operator": "regex_contains",
-					"operand": "ActiveRecord::Migration",
-				},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.s$"},
 			]
 		]]></context>
@@ -320,11 +276,7 @@ text :${1:name}, {
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{
-					"key": "begin_512_chars",
-					"operator": "regex_contains",
-					"operand": "ActiveRecord::Migration",
-				},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.s$"},
 			]
 		]]></context>
@@ -344,11 +296,7 @@ boolean :${1:name}, {
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{
-					"key": "begin_512_chars",
-					"operator": "regex_contains",
-					"operand": "ActiveRecord::Migration",
-				},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.s$"},
 			]
 		]]></context>
@@ -368,12 +316,24 @@ references :${1:name}, {
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{
-					"key": "begin_512_chars",
-					"operator": "regex_contains",
-					"operand": "ActiveRecord::Migration",
-				},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.r$"},
+			]
+		]]></context>
+		<description>rails migrations: references</description>
+		<order>2</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+timestamps
+]]></content>
+		<tabTrigger>t</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "table\\.t$"},
 			]
 		]]></context>
 		<description>rails migrations: references</description>
@@ -388,11 +348,7 @@ add_foreign_key :${1:source}, :${2:target}, on_delete: :cascade
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{
-					"key": "begin_512_chars",
-					"operator": "regex_contains",
-					"operand": "ActiveRecord::Migration",
-				},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
 			]
 		]]></context>
 		<description>rails migrations: text</description>
@@ -407,11 +363,7 @@ add_index :${1:table}, [:${2:column}], unique: true
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{
-					"key": "begin_512_chars",
-					"operator": "regex_contains",
-					"operand": "ActiveRecord::Migration",
-				},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
 			]
 		]]></context>
 		<description>rails migrations: text</description>
@@ -426,11 +378,7 @@ unique: true,
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{
-					"key": "begin_512_chars",
-					"operator": "regex_contains",
-					"operand": "ActiveRecord::Migration",
-				},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
 				{
 					"key": "preceding_text_begin",
 					"operator": "regex_contains",
@@ -450,11 +398,7 @@ default: nil,
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{
-					"key": "begin_512_chars",
-					"operator": "regex_contains",
-					"operand": "ActiveRecord::Migration",
-				},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
 				{
 					"key": "preceding_text_begin",
 					"operator": "regex_contains",
@@ -474,11 +418,7 @@ table.
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{
-					"key": "begin_512_chars",
-					"operator": "regex_contains",
-					"operand": "ActiveRecord::Migration",
-				},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
 				{
 					"key": "preceding_text_begin",
 					"operator": "regex_contains",
@@ -500,11 +440,7 @@ SQL
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{
-					"key": "begin_512_chars",
-					"operator": "regex_contains",
-					"operand": "ActiveRecord::Migration",
-				},
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
 			]
 		]]></context>
 		<description>rails migrations: execute</description>
