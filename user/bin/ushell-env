@@ -521,6 +521,9 @@ function download-celluloidheaven-staging-data {
   docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
     "ALTER USER \"user\" WITH SUPERUSER;"
 
+  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
+    "ALTER USER \"user\" WITH PASSWORD 'password';"
+
   docker-compose -f config/filmservice.local/main.yml stop
   echo y | docker-compose -f config/filmservice.local/main.yml rm
   docker-compose -f config/filmservice.local/main.yml up -d
@@ -564,6 +567,9 @@ function download-celluloidheaven-production-data {
 
   docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
     "ALTER USER \"user\" WITH SUPERUSER;"
+
+  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
+    "ALTER USER \"user\" WITH PASSWORD 'password';"
 
   docker-compose -f config/filmservice.local/main.yml stop
   echo y | docker-compose -f config/filmservice.local/main.yml rm
@@ -778,15 +784,20 @@ hijack:transform '^(\w+)( .*)!$' \
 hijack:transform ' +$' \
   'sed -re "s/ +$//"'
 
-hijack:transform '^ca?!? ' \
+hijack:transform '^c[au]?!? ' \
   'sed -r s"/([\\$<>{}&\\\"([!?)''#^ ])/\\\\\1/g"'
 
-hijack:transform '^ca?\\!' \
-  'sed -re "s/^(ca?)\\\\!/\\1!/"'
+hijack:transform '^c[au]?\\!' \
+  'sed -re "s/^(c[au]?)\\\\!/\\1!/"'
 
-hijack:transform '^ca?!?\\ ' \
-  'sed -r s"/^(ca?)(!?)\\\ /\\1\\2 /g"'
+hijack:transform '^c[au]?!?\\ ' \
+  'sed -r s"/^(c[au]?)(!?)\\\ /\\1\\2 /g"'
 
 alias c="git commit -m "
 alias ca="git commit -a -m "
+alias cu='() {
+  git commit -a -m "$1"
+  git push
+}'
+
 alias c!='git commit --amend -m'

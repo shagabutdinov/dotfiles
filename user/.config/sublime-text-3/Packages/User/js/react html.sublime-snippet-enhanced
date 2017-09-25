@@ -46,6 +46,17 @@
 
 	<snippet>
 		<content><![CDATA[
+<div>
+	$0
+</div>
+]]></content>
+		<tabTrigger>hd</tabTrigger>
+		<scope>source.js</scope>
+		<description>react: div</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 <form $1>$0</form>
 ]]></content>
 		<tabTrigger>f</tabTrigger>

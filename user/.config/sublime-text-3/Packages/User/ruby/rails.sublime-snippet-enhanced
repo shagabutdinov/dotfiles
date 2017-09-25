@@ -306,6 +306,46 @@ boolean :${1:name}, {
 
 	<snippet>
 		<content><![CDATA[
+date :${1:name}, {
+	null: true,
+	default: nil,
+	comment: '$2',
+}
+]]></content>
+		<tabTrigger>d</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.d$"},
+			]
+		]]></context>
+		<description>rails migrations: date</description>
+		<order>3</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+datetime :${1:name}, {
+	null: true,
+	default: nil,
+	comment: '$2',
+}
+]]></content>
+		<tabTrigger>dt</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.dt$"},
+			]
+		]]></context>
+		<description>rails migrations: datetime</description>
+		<order>2</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 references :${1:name}, {
 	foreign_key: true,
 	null: false,

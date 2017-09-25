@@ -245,6 +245,30 @@ this.
 
 	<snippet>
 		<content><![CDATA[
+this.constructor
+]]></content>
+		<tabTrigger>tc</tabTrigger>
+		<scope>source.js</scope>
+		<description>lang: this.constructor</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+this.constructor.
+]]></content>
+		<tabTrigger>tc</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "^[\\w\\.]"},
+			]
+		]]></context>
+		<description>lang: this.constructor.</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 constructor($1) {
   $0
 }
@@ -370,7 +394,7 @@ export default $0
 
 	<snippet>
 		<content><![CDATA[
-import $1 from '$2'
+import $1 from '$2';
 ]]></content>
 		<tabTrigger>im</tabTrigger>
 		<scope>source.js</scope>
@@ -505,6 +529,21 @@ throw ${1:error}
 			]
 		</commands>
 		<tabTrigger>th</tabTrigger>
+		<scope>source.js</scope>
+		<description>lang: throw</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+throw new Error(${1:error})
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "add_semicolon_to_statement"},
+			]
+		</commands>
+		<tabTrigger>te</tabTrigger>
 		<scope>source.js</scope>
 		<description>lang: throw</description>
 	</snippet>
