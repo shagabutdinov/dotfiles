@@ -363,4 +363,28 @@ this.form.
 		<description>react: this.form.</description>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+forceUpdate()
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>fu</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.fu"},
+			]
+		]]></context>
+		<description>react: forceUpdate()</description>
+		<order>2</order>
+	</snippet>
+
 </snippets>
