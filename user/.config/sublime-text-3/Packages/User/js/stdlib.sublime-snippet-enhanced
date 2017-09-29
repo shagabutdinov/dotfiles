@@ -305,6 +305,30 @@ toString()
 
 	<snippet>
 		<content><![CDATA[
+toFixed($1)
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>tf</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.tf$"},
+			]
+		]]></context>
+		<description>stdlib: toFixed</description>
+		<order>3</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 includes(${1:$selection__or__last_assigned_variable})
 ]]></content>
 		<commands><![CDATA[

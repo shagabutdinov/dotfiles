@@ -2,15 +2,29 @@
 
 	<snippet>
 		<content><![CDATA[
-${1:LEFT} JOIN `$2`$3
-	ON `${4:$2}`.`${5:id}` = `$6`.`${7:id}`
+${1:LEFT} JOIN $2
+	ON ${4:$2}.${5:id} = $6.${7:id}
 ]]></content>
 		<tabTrigger>j</tabTrigger>
 		<scope>source.sql</scope>
 		<context><![CDATA[
 			[
 				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*SELECT"},
-				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
+			]
+		]]></context>
+		<description>left join</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+LEFT JOIN $2
+	ON ${4:$2}.${5:id} = $6.${7:id}
+]]></content>
+		<tabTrigger>lj</tabTrigger>
+		<scope>source.sql</scope>
+		<context><![CDATA[
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*SELECT"},
 			]
 		]]></context>
 		<description>left join</description>
@@ -25,7 +39,6 @@ WHERE $0
 		<context><![CDATA[
 			[
 				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*SELECT"},
-				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
 			]
 		]]></context>
 		<description>where</description>
@@ -40,7 +53,6 @@ LIMIT $0
 		<context><![CDATA[
 			[
 				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*SELECT"},
-				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
 			]
 		]]></context>
 		<description>limit</description>
@@ -55,7 +67,6 @@ OFFSET $0
 		<context><![CDATA[
 			[
 				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*SELECT"},
-				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^`"},
 			]
 		]]></context>
 		<description>limit</description>

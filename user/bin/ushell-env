@@ -291,6 +291,27 @@ alias gcs='git checkout origin/staging'
 alias gt='git reset'
 alias gth='git reset --hard'
 
+alias gg="git commit -m "
+alias ma='git commit -a -m "$1"'
+
+alias gu='() {
+  git commit -a -m "$1"
+  git push
+}'
+
+alias gg!='git commit --amend -m'
+alias gga='git commit --amend -m'
+
+alias gu!='() {
+  git commit -a -m "$1"
+  git push
+}'
+
+alias gua='() {
+  git commit -a -m "$1"
+  git push
+}'
+
 function rebase-current-branch-on-master() {
   git fetch
   git rebase origin/master
@@ -703,7 +724,7 @@ function create-feature-branch() {
   fi
 }
 
-alias q=create-feature-branch
+alias gn=create-feature-branch
 
 function create-pull-request() {
   repo=$(
@@ -715,7 +736,7 @@ function create-pull-request() {
   chromium "$repo/compare/$(current_branch)?expand=1"
 }
 
-alias qr=create-pull-request
+alias gq=create-pull-request
 
 function merge-current-branch-to-staging() {
   branch=$(current_branch)
@@ -773,8 +794,8 @@ function complete-merge-current-branch-to-staging() {
   fi
 }
 
-alias qs=merge-current-branch-to-staging
-alias qse=complete-merge-current-branch-to-staging
+alias gqm=merge-current-branch-to-staging
+alias gqe=complete-merge-current-branch-to-staging
 
 hijack:reset
 
@@ -784,20 +805,11 @@ hijack:transform '^(\w+)( .*)!$' \
 hijack:transform ' +$' \
   'sed -re "s/ +$//"'
 
-hijack:transform '^c[au]?!? ' \
+hijack:transform '^m[au]?!? ' \
   'sed -r s"/([\\$<>{}&\\\"([!?)''#^ ])/\\\\\1/g"'
 
-hijack:transform '^c[au]?\\!' \
-  'sed -re "s/^(c[au]?)\\\\!/\\1!/"'
+hijack:transform '^m[au]?\\!' \
+  'sed -re "s/^(m[au]?)\\\\!/\\1!/"'
 
-hijack:transform '^c[au]?!?\\ ' \
-  'sed -r s"/^(c[au]?)(!?)\\\ /\\1\\2 /g"'
-
-alias c="git commit -m "
-alias ca="git commit -a -m "
-alias cu='() {
-  git commit -a -m "$1"
-  git push
-}'
-
-alias c!='git commit --amend -m'
+hijack:transform '^m[au]?!?\\ ' \
+  'sed -r s"/^(m[au]?)(!?)\\\ /\\1\\2 /g"'

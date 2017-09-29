@@ -403,6 +403,15 @@ import $1 from '$2';
 
 	<snippet>
 		<content><![CDATA[
+import $1 from 'services/$1';
+]]></content>
+		<tabTrigger>is</tabTrigger>
+		<scope>source.js</scope>
+		<description>lang: import</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 typeof $1
 ]]></content>
 		<tabTrigger>to</tabTrigger>
