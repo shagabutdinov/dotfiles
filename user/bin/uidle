@@ -1,5 +1,17 @@
 #!/usr/bin/env ruby
 
+idlers = `ps -xa | grep uidle | grep -v grep | grep -v #{Process.pid}`.chop
+if !idlers.empty?
+  idlers.lines.each { |line|
+    system('kill', line.match(/(\d+)/)[1])
+  }
+
+  system('notify-send', 'uidle stopped')
+  exit(0)
+end
+
+system('notify-send', 'uidle started')
+
 keys = [
   'ctrl+1',
   'ctrl+2',

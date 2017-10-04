@@ -203,6 +203,8 @@ bindsym $mod+o exec firefox
 bindsym $mod+shift+o exec chromium
 bindsym $mod+p exec file-roller ~/projects/keys/passwords.zip
 bindsym $mod+shift+p exec leafpad ~/projects/personal/development.txt
+bindsym $mod+ctrl+u exec uidle
+bindsym $mod+shift+u exec upwork-suspend
 
 
 bindcode $mod+shift+22 exec ucreatetodo # backspace

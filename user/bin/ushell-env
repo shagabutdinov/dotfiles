@@ -61,7 +61,7 @@ alias nc='sudo netctl'
 alias ag='alias | grep -A 2 -B 2'
 alias cds='cd ~/src/'
 
-alias s='subl3'
+alias s='subl3 -a'
 alias ss='subl3 -n'
 alias h='ssh'
 alias b='bundle exec'
@@ -291,25 +291,24 @@ alias gcs='git checkout origin/staging'
 alias gt='git reset'
 alias gth='git reset --hard'
 
-alias gg="git commit -m "
-alias ma='git commit -a -m "$1"'
+alias gg='() { git commit -m "$1" }'
+alias gg!='() { git commit --amend -m "$1" }'
+alias ggx='() { git commit --amend -m "$1" }'
 
-alias gu='() {
-  git commit -a -m "$1"
-  git push
+alias gk='() { git add . ; git commit -m "$1" }'
+alias gk!='() { git add . ; git commit -m "$1" --amend }'
+alias gcx='() { git add . ; git commit -m "$1" --amend }'
+
+alias gx='() {
+  git add .
+  git commit -m "$1"
+  git push -u origin $(current_branch)
 }'
 
-alias gg!='git commit --amend -m'
-alias gga='git commit --amend -m'
-
-alias gu!='() {
-  git commit -a -m "$1"
-  git push
-}'
-
-alias gua='() {
-  git commit -a -m "$1"
-  git push
+alias gxx='() {
+  git add .
+  git commit -m "$(git log -1 --pretty=%s)" --amend
+  git push -u origin $(current_branch) --force
 }'
 
 function rebase-current-branch-on-master() {
@@ -692,7 +691,7 @@ function generate-rails-object() {
   PROJECT_PATH=$(project-path)
   for FILE in $(echo $FILES); do
     FILE=$(echo $FILE | sed -E 's/\r//')
-    FILE_PATH="$(backend-path)/$FILE"
+    FILE_PATH='() { $(backend-path)/$FILE }'
     if ! test -e $FILE_PATH; then
       FILE_PATH="$(backend-path)/app/$FILE"
     fi
@@ -773,6 +772,10 @@ function merge-current-branch-to-staging() {
 }
 
 function complete-merge-current-branch-to-staging() {
+  git add .
+  git commit -m "$(git log -1 --pretty=%B --oneline)"
+  git merge
+
   branch=$(current_branch | sed -e 's/-STAGING-TMP$//g')
 
   git push origin "$branch-STAGING-TMP:staging"
@@ -805,11 +808,11 @@ hijack:transform '^(\w+)( .*)!$' \
 hijack:transform ' +$' \
   'sed -re "s/ +$//"'
 
-hijack:transform '^m[au]?!? ' \
+hijack:transform '^g[gkx]?!? ' \
   'sed -r s"/([\\$<>{}&\\\"([!?)''#^ ])/\\\\\1/g"'
 
-hijack:transform '^m[au]?\\!' \
-  'sed -re "s/^(m[au]?)\\\\!/\\1!/"'
+hijack:transform '^g[gkx]?\\!' \
+  'sed -re "s/^(g[gkx]?)\\\\!/\\1!/"'
 
-hijack:transform '^m[au]?!?\\ ' \
-  'sed -r s"/^(m[au]?)(!?)\\\ /\\1\\2 /g"'
+hijack:transform '^g[gkx]?!?\\ ' \
+  'sed -r s"/^(g[gkx]?)(!?)\\\ /\\1\\2 /g"'

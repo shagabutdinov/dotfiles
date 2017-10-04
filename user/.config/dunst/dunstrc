@@ -1,6 +1,6 @@
 [global]
     font = "Monospace 8"
-    allow_markup = yes
+    markup = yes
     format = "<b>%s %p</b>\n%b"
     sort = yes
     indicate_hidden = true
@@ -13,11 +13,8 @@
     separator_color = frame
     startup_notification = false
     browser = xdg-open
-
-
-[frame]
-    width = 3
-    color = "#000000"
+    frame_width = 3
+    frame_color = "#000000"
 
 [urgency_low]
     background = "#ffffff"
