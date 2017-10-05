@@ -616,12 +616,15 @@ function download-altagram-production-data {
     $(kubectl --namespace altagram get pods | \
       grep -Eo 'postgres-[0-9]+-[a-Z0-9]+' | head -n 1) -- \
     pg_dumpall -Uuser | \
-    docker exec -i $(docker-container postgres -v admin) psql -Uuser postgres
+    docker exec -i $(docker-container postgres -v admin) psql -Upostgres
 
   if [ $? -ne 0 ]; then
     echo "\033[0;31mDOWNLOAD FAILED\033[0m"
     return 1
   fi
+
+  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
+    "ALTER USER \"user\" WITH SUPERUSER;"
 
   docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
     "ALTER USER \"user\" WITH PASSWORD 'password';"
@@ -651,7 +654,10 @@ function download-altagram-staging-data {
     $(kubectl --namespace staging get pods | \
       grep -Eo 'postgres-[0-9]+-[a-Z0-9]+' | head -n 1) -- \
     pg_dumpall -Uuser | \
-    docker exec -i $(docker-container postgres -v admin) psql -Uuser postgres
+    docker exec -i $(docker-container postgres -v admin) psql -Upostgres
+
+  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
+    "ALTER USER \"user\" WITH SUPERUSER;"
 
   docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
     "ALTER USER \"user\" WITH PASSWORD 'password';"
