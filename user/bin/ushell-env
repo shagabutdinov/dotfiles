@@ -77,9 +77,10 @@ alias pmro='sudo pacman -Rns $(pacman -Qtdq)'
 alias pmq='pacman -Ql'
 
 alias sc='sudo systemctl'
-alias scs='sudo systemctl start'
-alias scr='sudo systemctl restart'
-alias sct='sudo systemctl stop'
+alias sca='sudo systemctl start'
+alias sce='sudo systemctl restart'
+alias sco='sudo systemctl stop'
+alias scs='sudo systemctl status'
 
 alias dfp='balmora dotfiles-submit'
 alias dfu='balmora dotfiles-update'
@@ -116,38 +117,103 @@ alias dl='docker logs --tail 200'
 alias dlf='docker logs --follow'
 alias da='docker attach --no-stdin'
 
-alias k='kubectl'
-alias ka='kubectl apply'
-alias kaf='kubectl apply -f'
-alias kl='kubectl logs'
-alias klf='kubectl logs -f'
-alias kd='kubectl describe'
-alias kdp='kubectl describe pods'
-alias kds='kubectl describe services'
-alias kdd='kubectl describe deployment'
-alias kc='kubectl create'
-alias kcf='kubectl create -f'
-alias kr='kubectl delete'
-alias krf='kubectl delete -f'
-alias krp='kubectl delete pod'
-alias krs='kubectl delete service'
-alias krd='kubectl delete deployment'
-alias kg='kubectl get'
-alias kgp='kubectl get pods --show-all'
-alias kga='kubectl get pods --show-all --all-namespaces -o wide'
-alias kgs='kubectl get services'
-alias kgd='kubectl get deployments'
-alias ke='kubectl exec -it'
-alias kei='kubectl exec'
-alias ksn='kubectl config set-context $(kubectl config current-context) --namespace '
-alias c='docker-compose -f'
+:kubectl() {
+    local arg
+    local context
+    local args=()
+    local entity
 
-function ksp() {
-  cp ~/.kube/$1 ~/.kube/config
+    for arg in "$@"; do
+        if [[ "$arg" =~ @.* ]]; then
+            context=$(
+                kubectl config get-contexts --no-headers -o name \
+                    | grep -P "^${arg:1}"
+            )
+        else
+            args+=("$arg")
+        fi
+    done
+
+    set -- "${args[@]}"
+
+    args=()
+    targets=()
+
+    if [[ ! "$context" ]]; then
+        context=$(kubectl config current-context)
+    fi
+
+    for arg in "$@"; do
+        if [[ "$arg" =~ %.* ]]; then
+            entity=${arg%/*}
+
+            if [[ "$entity" == "$arg" ]]; then
+                entity=pod
+            fi
+
+            args+=($(
+                kubectl --context=$context get "$entity" --no-headers \
+                        -o name \
+                    | cut -f2- -d/ \
+                    | grep -P "^${${arg:1}#*/}"
+            ))
+        else
+            args+=("$arg")
+        fi
+    done
+
+
+    kubectl --context=$context ${(q)args[@]}
 }
 
+alias k=':kubectl'
+alias ka='k apply'
+alias kaf='k apply -f'
+alias kl='k logs'
+alias klf='k logs -f'
+alias kd='k describe'
+alias kdp='k describe pods'
+alias kds='k describe services'
+alias kdd='k describe deployment'
+alias kc='k create'
+alias kcf='k create -f'
+alias kr='k delete'
+alias krf='k delete -f'
+alias krp='k delete pod'
+alias krs='k delete service'
+alias krd='k delete deployment'
+alias kg='k get'
+alias kgp='k get pods --show-all'
+alias kga='k get pods --show-all --all-namespaces -o wide'
+alias kgs='k get services'
+alias kgd='k get deployments'
+alias kx='k exec -it'
+alias kxb='() { k exec -it $1 bash }'
+alias kei='k exec'
+alias kgn='kubectl config current-context'
+alias ksc='kubectl config use-context '
+
+alias ksn='() {
+  project=$(kubectl config current-context | grep -Po "(?<=@)\w+")
+  namespace=$(kubectl config get-contexts | grep -Po "$1\w*(?=@$project)" | head -n 1)
+  kubectl config use-context $namespace@$project
+}'
+
+alias ksp='() {
+  project=$(kubectl config get-contexts | grep -Po "(?<=@)$1\w*(?=\s)" | head -n 1)
+  namespace=$(kubectl config current-context | grep -Po "\w+(?=@)")
+  if [ ! "$namespace" ]; then
+    namespace=$project
+  fi
+
+  kubectl config use-context $namespace@$project
+}'
+
+
+alias c='docker-compose -f'
+
 alias kxc='
-  kubectl \
+  k \
     --namespace $(production-namespace "(app|backend)") \
     exec \
     -it \
@@ -163,7 +229,7 @@ alias kxd='
 '
 
 alias kzc='
-  kubectl \
+  k \
     --namespace staging \
     exec \
       -it \
@@ -180,7 +246,7 @@ alias kzd='
 
 function open-kubernetes-database-console() {
   export DB=$(
-    kubectl exec \
+    k exec \
       --namespace $1 \
       $2 \
       -- \
@@ -191,7 +257,7 @@ function open-kubernetes-database-console() {
       grep -Eo '\w+'
   )
 
-  kubectl \
+  k \
     --namespace $1 \
     exec \
     -it \
@@ -202,21 +268,21 @@ function open-kubernetes-database-console() {
 }
 
 function staging-pod() {
-  kubectl get pods --all-namespaces -o wide | \
+  k get pods --all-namespaces -o wide | \
     grep staging | \
     grep -Eo " $1-[0-9]+-[a-Z0-9]+" | \
     head -n 1
 }
 
 function production-pod() {
-  kubectl get pods --all-namespaces -o wide | \
+  k get pods --all-namespaces -o wide | \
     grep -v staging | \
     grep -Eo " $1-[0-9]+-[a-Z0-9]+" | \
     head -n 1
 }
 
 function production-namespace() {
-  kubectl get pods --all-namespaces -o wide | \
+  k get pods --all-namespaces -o wide | \
     grep -v staging | \
     grep -E " $1-[0-9]+-[a-Z0-9]+" | \
     grep -Eo "^\w+" | \
@@ -526,8 +592,8 @@ function download-celluloidheaven-staging-data {
     return 1
   fi
 
-  kubectl exec --namespace staging -i \
-    $(kubectl --namespace staging get pods | \
+  k exec --namespace staging -i \
+    $(k --namespace staging get pods | \
       grep -Eo 'postgres-[0-9]+-[a-Z0-9]+' | head -n 1) -- \
     sh -c "pg_dumpall -Upostgres | gzip" |
       gunzip |
@@ -565,8 +631,8 @@ function download-celluloidheaven-production-data {
     return 1
   fi
 
-  kubectl exec --namespace filmservice -i \
-    $(kubectl --namespace filmservice get pods | \
+  k exec --namespace filmservice -i \
+    $(k --namespace filmservice get pods | \
       grep -Eo 'postgres-[0-9]+-[a-Z0-9]+' | head -n 1) -- \
     sh -c "pg_dumpall -Upostgres | gzip" |
       gunzip |
@@ -612,8 +678,8 @@ function download-altagram-production-data {
     return 1
   fi
 
-  kubectl exec --namespace altagram -i \
-    $(kubectl --namespace altagram get pods | \
+  k exec --namespace altagram -i \
+    $(k --namespace altagram get pods | \
       grep -Eo 'postgres-[0-9]+-[a-Z0-9]+' | head -n 1) -- \
     pg_dumpall -Uuser | \
     docker exec -i $(docker-container postgres -v admin) psql -Upostgres
@@ -650,8 +716,8 @@ function download-altagram-staging-data {
     return 1
   fi
 
-  kubectl exec --namespace staging -i \
-    $(kubectl --namespace staging get pods | \
+  k exec --namespace staging -i \
+    $(k --namespace staging get pods | \
       grep -Eo 'postgres-[0-9]+-[a-Z0-9]+' | head -n 1) -- \
     pg_dumpall -Uuser | \
     docker exec -i $(docker-container postgres -v admin) psql -Upostgres
@@ -691,7 +757,7 @@ function generate-rails-object() {
     echo $RESULT |
       grep -E '(create|identical|skip)' | # filter for created files
       sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g" | # remove colors
-      sed -E "s/\s*(create|identical|skip)[\t ]*//" # remove garbage
+      sed -E "s/*(create|identical|skip)[\t ]*//" # remove garbage
   )
 
   PROJECT_PATH=$(project-path)
@@ -822,3 +888,4 @@ hijack:transform '^g[gkx]?\\!' \
 
 hijack:transform '^g[gkx]?!?\\ ' \
   'sed -r s"/^(g[gkx]?)(!?)\\\ /\\1\\2 /g"'
+
