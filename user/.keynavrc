@@ -20,7 +20,9 @@ l cell-select 8,warp
 period cell-select 9,warp
 
 h warp, click 4, click 4, click 4
+g warp, click 4
 n warp, click 5, click 5, click 5
+b warp, click 5
 
 p cell-select 10,warp
 semicolon cell-select 11,warp

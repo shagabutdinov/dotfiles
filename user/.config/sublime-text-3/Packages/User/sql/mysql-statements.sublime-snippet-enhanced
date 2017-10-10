@@ -2,6 +2,41 @@
 
 	<snippet>
 		<content><![CDATA[
+SELECT ${3:*}
+	FROM $1$0;
+]]></content>
+		<tabTrigger>s</tabTrigger>
+		<scope>source.sql(?!.*(string|entity))</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*s$"},
+				{"key": "mysql_query", "operator": "not_regex_contains", "operand": "^\\s*SELECT"},
+				{"key": "mysql_query_preceding", "operator": "regex_contains", "operand": "^\\s*\\w{1,3}\\s*$"},
+			]
+		</context>
+		<description>select</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+SELECT
+	${3:*}
+FROM $1
+]]></content>
+		<tabTrigger>s</tabTrigger>
+		<scope>source.sql(?!.*(string|entity))</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*s$"},
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*SELECT"},
+				{"key": "mysql_query_preceding", "operator": "regex_contains", "operand": "^\\s*\\w{1,3}\\s*$"},
+			]
+		</context>
+		<description>select</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 SET FOREIGN_KEY_CHECKS = 0;
 ]]></content>
 		<tabTrigger>sf</tabTrigger>
@@ -141,40 +176,6 @@ DROP TABLE ${1:$selection__or__last_assigned_variable};
 		<description>drop table</description>
 	</snippet>
 
-	<snippet>
-		<content><![CDATA[
-SELECT ${3:*}
-	FROM $1;$0
-]]></content>
-		<tabTrigger>s</tabTrigger>
-		<scope>source.sql(?!.*(string|entity))</scope>
-		<context>
-			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*s$"},
-				{"key": "mysql_query", "operator": "not_regex_contains", "operand": "^\\s*SELECT"},
-				{"key": "mysql_query_preceding", "operator": "regex_contains", "operand": "^\\s*\\w{1,3}\\s*$"},
-			]
-		</context>
-		<description>select</description>
-	</snippet>
-
-	<snippet>
-		<content><![CDATA[
-SELECT
-	${3:*}
-FROM $1
-]]></content>
-		<tabTrigger>s</tabTrigger>
-		<scope>source.sql(?!.*(string|entity))</scope>
-		<context>
-			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*s$"},
-				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*SELECT"},
-				{"key": "mysql_query_preceding", "operator": "regex_contains", "operand": "^\\s*\\w{1,3}\\s*$"},
-			]
-		</context>
-		<description>select</description>
-	</snippet>
 
 	<snippet>
 		<content><![CDATA[

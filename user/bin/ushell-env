@@ -155,7 +155,8 @@ alias da='docker attach --no-stdin'
                 kubectl --context=$context get "$entity" --no-headers \
                         -o name \
                     | cut -f2- -d/ \
-                    | grep -P "^${${arg:1}#*/}"
+                    | grep -P "^${${arg:1}#*/}" \
+                    | head -n 1
             ))
         else
             args+=("$arg")
@@ -189,6 +190,7 @@ alias kgs='k get services'
 alias kgd='k get deployments'
 alias kx='k exec -it'
 alias kxb='() { k exec -it $1 bash }'
+alias kxx='k run -i --tty busybox --image=busybox --restart=Never -- sh'
 alias kei='k exec'
 alias kgn='kubectl config current-context'
 alias ksc='kubectl config use-context '

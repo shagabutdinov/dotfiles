@@ -69,7 +69,7 @@
 
 	<snippet>
 		<content><![CDATA[
-<p>$0<p>
+<p>${0:$selection__or__last_assigned_variable}<p>
 ]]></content>
 		<tabTrigger>pp</tabTrigger>
 		<scope>text.html.ruby</scope>
