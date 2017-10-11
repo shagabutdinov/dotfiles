@@ -190,6 +190,7 @@ alias kgs='k get services'
 alias kgd='k get deployments'
 alias kx='k exec -it'
 alias kxb='() { k exec -it $1 bash }'
+alias kxc='() { k exec -it $1 rails c }'
 alias kxx='k run -i --tty busybox --image=busybox --restart=Never -- sh'
 alias kei='k exec'
 alias kgn='kubectl config current-context'
@@ -213,16 +214,6 @@ alias ksp='() {
 
 
 alias c='docker-compose -f'
-
-alias kxc='
-  k \
-    --namespace $(production-namespace "(app|backend)") \
-    exec \
-    -it \
-    $(production-pod "(app|backend)") \
-    -- \
-    rails c \
-'
 
 alias kxd='
   open-kubernetes-database-console \
@@ -558,7 +549,7 @@ umask 002
 eval "$(ssh-agent -s)" > /dev/null 2>&1
 ssh-add > /dev/null 2>&1
 
-function deploy-celluloidheaven-to-staging {
+function deploy-filmservice-to-staging {
   docker exec -i -t $(docker-container "test.(backend|app|rails)" -v admin) rspec
   if [ $? -ne 0 ]; then
     echo "\033[0;31mBUILD FAILED\033[0m"
@@ -580,7 +571,7 @@ function deploy-celluloidheaven-to-staging {
   return 0
 }
 
-function download-celluloidheaven-staging-data {
+function download-filmservice-staging-data {
   cd $(project-path)
 
   docker stop $(docker-container "(backend)\." -v admin)
@@ -619,7 +610,7 @@ function download-celluloidheaven-staging-data {
   return 0
 }
 
-function download-celluloidheaven-production-data {
+function download-filmservice-production-data {
   cd $(project-path)
 
   docker stop $(docker-container "(backend)\." -v admin)
@@ -633,8 +624,8 @@ function download-celluloidheaven-production-data {
     return 1
   fi
 
-  k exec --namespace filmservice -i \
-    $(k --namespace filmservice get pods | \
+  kubectl exec --namespace filmservice -i \
+    $(kubectl --namespace filmservice get pods | \
       grep -Eo 'postgres-[0-9]+-[a-Z0-9]+' | head -n 1) -- \
     sh -c "pg_dumpall -Upostgres | gzip" |
       gunzip |
@@ -681,7 +672,7 @@ function download-altagram-production-data {
   fi
 
   k exec --namespace altagram -i \
-    $(k --namespace altagram get pods | \
+    $(kubectl --namespace altagram get pods | \
       grep -Eo 'postgres-[0-9]+-[a-Z0-9]+' | head -n 1) -- \
     pg_dumpall -Uuser | \
     docker exec -i $(docker-container postgres -v admin) psql -Upostgres
@@ -719,7 +710,7 @@ function download-altagram-staging-data {
   fi
 
   k exec --namespace staging -i \
-    $(k --namespace staging get pods | \
+    $(kubectl --namespace staging get pods | \
       grep -Eo 'postgres-[0-9]+-[a-Z0-9]+' | head -n 1) -- \
     pg_dumpall -Uuser | \
     docker exec -i $(docker-container postgres -v admin) psql -Upostgres
