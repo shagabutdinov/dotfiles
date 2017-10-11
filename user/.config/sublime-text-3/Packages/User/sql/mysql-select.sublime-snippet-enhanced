@@ -120,4 +120,32 @@ $0
 		<order>1</order>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+IS NULL
+]]></content>
+		<tabTrigger>in</tabTrigger>
+		<scope>source.sql</scope>
+		<context><![CDATA[
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
+			]
+		]]></context>
+		<description>IS NULL</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+IS NOT NULL
+]]></content>
+		<tabTrigger>inn</tabTrigger>
+		<scope>source.sql</scope>
+		<context><![CDATA[
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
+			]
+		]]></context>
+		<description>IS NULL</description>
+	</snippet>
+
 </snippets>
