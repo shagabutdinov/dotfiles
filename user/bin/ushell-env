@@ -388,7 +388,7 @@ function docker-container() {
     docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}" |
     grep -E $1 |
     grep $2 $3 |
-    sort -kubectl 2 |
+    sort -k 2 |
     head -n 1 |
     awk "{ print \$1 }"
   )
