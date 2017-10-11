@@ -239,7 +239,7 @@ alias kzd='
 
 function open-kubernetes-database-console() {
   export DB=$(
-    k exec \
+    kubectl exec \
       --namespace $1 \
       $2 \
       -- \
@@ -250,7 +250,7 @@ function open-kubernetes-database-console() {
       grep -Eo '\w+'
   )
 
-  k \
+  kubectl \
     --namespace $1 \
     exec \
     -it \
@@ -261,21 +261,21 @@ function open-kubernetes-database-console() {
 }
 
 function staging-pod() {
-  k get pods --all-namespaces -o wide | \
+  kubectl get pods --all-namespaces -o wide | \
     grep staging | \
     grep -Eo " $1-[0-9]+-[a-Z0-9]+" | \
     head -n 1
 }
 
 function production-pod() {
-  k get pods --all-namespaces -o wide | \
+  kubectl get pods --all-namespaces -o wide | \
     grep -v staging | \
     grep -Eo " $1-[0-9]+-[a-Z0-9]+" | \
     head -n 1
 }
 
 function production-namespace() {
-  k get pods --all-namespaces -o wide | \
+  kubectl get pods --all-namespaces -o wide | \
     grep -v staging | \
     grep -E " $1-[0-9]+-[a-Z0-9]+" | \
     grep -Eo "^\w+" | \
@@ -388,7 +388,7 @@ function docker-container() {
     docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}" |
     grep -E $1 |
     grep $2 $3 |
-    sort -k 2 |
+    sort -kubectl 2 |
     head -n 1 |
     awk "{ print \$1 }"
   )
@@ -585,8 +585,8 @@ function download-filmservice-staging-data {
     return 1
   fi
 
-  k exec --namespace staging -i \
-    $(k --namespace staging get pods | \
+  kubectl exec --namespace staging -i \
+    $(kubectl --namespace staging get pods | \
       grep -Eo 'postgres-[0-9]+-[a-Z0-9]+' | head -n 1) -- \
     sh -c "pg_dumpall -Upostgres | gzip" |
       gunzip |
@@ -671,7 +671,7 @@ function download-altagram-production-data {
     return 1
   fi
 
-  k exec --namespace altagram -i \
+  kubectl exec --namespace altagram -i \
     $(kubectl --namespace altagram get pods | \
       grep -Eo 'postgres-[0-9]+-[a-Z0-9]+' | head -n 1) -- \
     pg_dumpall -Uuser | \
@@ -709,7 +709,7 @@ function download-altagram-staging-data {
     return 1
   fi
 
-  k exec --namespace staging -i \
+  kubectl exec --namespace staging -i \
     $(kubectl --namespace staging get pods | \
       grep -Eo 'postgres-[0-9]+-[a-Z0-9]+' | head -n 1) -- \
     pg_dumpall -Uuser | \
