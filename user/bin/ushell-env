@@ -356,7 +356,7 @@ alias ggx='() { git commit --amend -m "$1" }'
 
 alias gk='() { git add . ; git commit -m "$1" }'
 alias gk!='() { git add . ; git commit -m "$1" --amend }'
-alias gcx='() { git add . ; git commit -m "$1" --amend }'
+alias gkx='() { git add . ; git commit -m "$1" --amend }'
 
 alias gx='() {
   git add .

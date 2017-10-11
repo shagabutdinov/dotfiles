@@ -8,7 +8,6 @@ true
 		<scope>source.sql(?!.*string)</scope>
 		<context>
 			[
-				{"key": "preceding_text_begin", "operator": "not_regex_contains", "operand": "^\\s*t$"},
 				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^(`|\")"},
 			]
 		</context>

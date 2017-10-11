@@ -9,7 +9,7 @@ ${1:LEFT} JOIN $2
 		<scope>source.sql</scope>
 		<context><![CDATA[
 			[
-				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*SELECT"},
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
 			]
 		]]></context>
 		<description>left join</description>
@@ -24,7 +24,7 @@ LEFT JOIN $2
 		<scope>source.sql</scope>
 		<context><![CDATA[
 			[
-				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*SELECT"},
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
 			]
 		]]></context>
 		<description>left join</description>
@@ -39,7 +39,7 @@ WHERE
 		<scope>source.sql</scope>
 		<context><![CDATA[
 			[
-				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*SELECT"},
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
 			]
 		]]></context>
 		<description>where</description>
@@ -53,7 +53,7 @@ LIMIT $0
 		<scope>source.sql</scope>
 		<context><![CDATA[
 			[
-				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*SELECT"},
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
 			]
 		]]></context>
 		<description>limit</description>
@@ -68,7 +68,7 @@ ORDER BY
 		<scope>source.sql</scope>
 		<context><![CDATA[
 			[
-				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*SELECT"},
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
 			]
 		]]></context>
 		<description>order by</description>
