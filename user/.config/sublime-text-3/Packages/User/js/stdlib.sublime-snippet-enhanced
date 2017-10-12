@@ -485,4 +485,22 @@ includes($1)
 		<order>1</order>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+window.location.href
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>wl</tabTrigger>
+		<scope>source.js</scope>
+		<description>stdlib: window.location.href</description>
+	</snippet>
+
 </snippets>
