@@ -148,4 +148,36 @@ IS NOT NULL
 		<description>IS NULL</description>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+DESC
+]]></content>
+		<tabTrigger>d</tabTrigger>
+		<scope>source.sql</scope>
+		<context><![CDATA[
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\"\\s*d$"},
+			]
+		]]></context>
+		<order>1</order>
+		<description>DESC</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+ASC
+]]></content>
+		<tabTrigger>a</tabTrigger>
+		<scope>source.sql</scope>
+		<context><![CDATA[
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\"\\s*d$"},
+			]
+		]]></context>
+		<order>1</order>
+		<description>ASC</description>
+	</snippet>
+
 </snippets>

@@ -468,7 +468,7 @@ currentUser
 
 	<snippet>
 		<content><![CDATA[
-includes($1)
+includes(${1:$selection__or__last_assigned_variable})
 ]]></content>
 		<commands><![CDATA[
 			[

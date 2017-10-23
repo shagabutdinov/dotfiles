@@ -67,6 +67,7 @@ alias h='ssh'
 alias b='bundle exec'
 alias bi='bundle install --path vendor/bundle --jobs 32'
 alias X='| xsel -ib'
+alias w='inotifyrun -r -e MODIFY'
 alias l='ls --color -hl --group-directories-first'
 alias ls='ls --color -h --group-directories-first'
 
@@ -188,7 +189,7 @@ alias kgp='k get pods --show-all'
 alias kga='k get pods --show-all --all-namespaces -o wide'
 alias kgs='k get services'
 alias kgd='k get deployments'
-alias kx='k exec -it'
+alias kx='() { k exec -it $1 -- "${@:2}"}'
 alias kxb='() { k exec -it $1 bash }'
 alias kxc='() { k exec -it $1 rails c }'
 alias kxx='k run -i --tty busybox --image=busybox --restart=Never -- sh'
@@ -325,7 +326,6 @@ function restart-project() {
 
 
 alias co='sudo chown -R leo: '
-
 alias cc='sudo chown -R leo: .'
 
 alias gs='git show --color'
@@ -349,6 +349,7 @@ alias gcm='git checkout origin/master'
 alias gcs='git checkout origin/staging'
 alias gt='git reset'
 alias gth='git reset --hard'
+alias glr='git pull --rebase'
 
 alias gg='() { git commit -m "$1" }'
 alias gg!='() { git commit --amend -m "$1" }'
@@ -571,6 +572,10 @@ function deploy-filmservice-to-staging {
   return 0
 }
 
+function kubernetes-pod {
+  kubectl --context $1 get pods | grep -Po $2 | head -n 1
+}
+
 function download-filmservice-staging-data {
   cd $(project-path)
 
@@ -578,16 +583,15 @@ function download-filmservice-staging-data {
   docker stop $(docker-container "(app)\." -v admin)
 
   docker exec -i $(docker-container postgres -v admin) psql -U postgres \
-    -c 'DROP DATABASE "database"'
+    -c 'DROP DATABASE IF EXISTS "database"'
 
   if [ $? -ne 0 ]; then
     echo "\033[0;31mDOWNLOAD FAILED\033[0m"
     return 1
   fi
 
-  kubectl exec --namespace staging -i \
-    $(kubectl --namespace staging get pods | \
-      grep -Eo 'postgres-[0-9]+-[a-Z0-9]+' | head -n 1) -- \
+  kubectl exec --context staging@filmservice -i \
+    $(kubernetes-pod staging@filmservice 'postgres-[\w\-]+') -- \
     sh -c "pg_dumpall -Upostgres | gzip" |
       gunzip |
       docker exec -i $(docker-container postgres -v admin) psql -U postgres
@@ -617,16 +621,15 @@ function download-filmservice-production-data {
   docker stop $(docker-container "(app)\." -v admin)
 
   docker exec -i $(docker-container postgres -v admin) psql -U postgres \
-    -c 'DROP DATABASE "database"'
+    -c 'DROP DATABASE IF EXISTS "database"'
 
   if [ $? -ne 0 ]; then
     echo "\033[0;31mDOWNLOAD FAILED\033[0m"
     return 1
   fi
 
-  kubectl exec --namespace filmservice -i \
-    $(kubectl --namespace filmservice get pods | \
-      grep -Eo 'postgres-[0-9]+-[a-Z0-9]+' | head -n 1) -- \
+  kubectl exec --context filmservice@filmservice -i \
+    $(kubernetes-pod filmservice@filmservice 'postgres-[\w\-]+') -- \
     sh -c "pg_dumpall -Upostgres | gzip" |
       gunzip |
       docker exec -i $(docker-container postgres -v admin) psql -U postgres
@@ -657,6 +660,44 @@ function download-filmservice-production-data {
   return 0
 }
 
+function download-filmservice-staging-data-to-production {
+  kubectl --context staging@filmservice delete deployment \
+    app backend area51 sidekiq clockwork
+
+  kubectl exec -i \
+    --context staging@filmservice \
+    $(kubernetes-pod staging@filmservice 'postgres-[\w\-]+') \
+      -- sh -c 'psql -Upostgres -c DROP DATABASE IF EXISTS "database"'
+
+  kubectl exec \
+    --context filmservice@filmservice \
+    $(kubernetes-pod filmservice@filmservice 'postgres-[\w\-]+') \
+    -- sh -c "pg_dumpall -Upostgres | gzip" | \
+  kubectl exec -i \
+    --context staging@filmservice \
+    $(kubernetes-pod staging@filmservice 'postgres-[\w\-]+') \
+      -- sh -c "gunzip | psql -Upostgres "
+
+  kubectl --context staging@filmservice apply -f \
+    /home/leo/src/filmservice.net/config/staging.filmservice.net/kubernetes.yml
+
+  kubectl exec \
+    --context staging@filmservice \
+    $(kubernetes-pod staging@filmservice 'postgres-[\w\-]+') -- \
+    psql -Upostgres -c \
+      'ALTER DATABASE "diagonal_production" RENAME TO "database";'
+
+  kubectl exec \
+    --context staging@filmservice \
+    $(kubernetes-pod staging@filmservice 'postgres-[\w\-]+') -- \
+    psql -Upostgres -c 'ALTER USER "user" WITH SUPERUSER;'
+
+  kubectl exec \
+    --context staging@filmservice \
+    $(kubernetes-pod staging@filmservice 'postgres-[\w\-]+') -- \
+    psql -Upostgres -c "ALTER USER \"user\" WITH PASSWORD 'password';"
+}
+
 function download-altagram-production-data {
   cd $(project-path)
 
@@ -664,7 +705,7 @@ function download-altagram-production-data {
   docker stop $(docker-container "(app)\." -v admin)
 
   docker exec -i $(docker-container postgres -v admin) psql -U postgres \
-    -c 'DROP DATABASE "database"'
+    -c 'DROP DATABASE IF EXISTS "database"'
 
   if [ $? -ne 0 ]; then
     echo "\033[0;31mDOWNLOAD FAILED\033[0m"
@@ -702,7 +743,7 @@ function download-altagram-staging-data {
   docker stop $(docker-container "(app)\." -v admin)
 
   docker exec -i $(docker-container postgres -v admin) psql -U postgres \
-    -c 'DROP DATABASE "database"'
+    -c 'DROP DATABASE IF EXISTS "database"'
 
   if [ $? -ne 0 ]; then
     echo "\033[0;31mDOWNLOAD FAILED\033[0m"
