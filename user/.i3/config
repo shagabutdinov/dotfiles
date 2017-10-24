@@ -224,3 +224,5 @@ bindcode $mod+shift+117 exec uscreenshot --active-window --edit --publish --publ
 bindcode $mod+110 exec uscreencast --publish --publish-copy-link
 bindcode $mod+shift+110 exec uscreencast --active-window --publish --publish-copy-link
 bindsym $mod+F12 exec umousetoggle
+bindsym $mod+h exec translator
+bindsym $mod+shift+h exec translator "$(xsel -op)"

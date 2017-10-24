@@ -6,7 +6,7 @@ if printf '%s\n' "$@" | grep -xE -- '-e'; then
 fi
 
 exec rofi \
-    -font "Monaco 12" \
+    -font "Verdana 8" \
     -bw 1 \
     -padding 1 \
     -line-margin 1 \
