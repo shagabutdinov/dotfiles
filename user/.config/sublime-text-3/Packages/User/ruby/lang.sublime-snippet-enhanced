@@ -432,7 +432,7 @@ end
 ]]></content>
 		<commands>
 			[
-				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				{"command": "ensure_lines_around"},
 				"RUN",
 			]
 		</commands>
@@ -468,7 +468,7 @@ end
 ]]></content>
 		<commands>
 			[
-				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				{"command": "ensure_lines_around"},
 				"RUN",
 			]
 		</commands>
@@ -512,7 +512,7 @@ end
 ]]></content>
 		<commands>
 			[
-				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				{"command": "ensure_lines_around"},
 				"RUN",
 			]
 		</commands>
@@ -535,7 +535,7 @@ end
 ]]></content>
 		<commands>
 			[
-				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				{"command": "ensure_lines_around"},
 				"RUN",
 			]
 		</commands>
@@ -557,7 +557,7 @@ end
 ]]></content>
 		<commands>
 			[
-				{"command": "ensure_lines_around", "args": {"ignore_after": [], "ignore_before": []}},
+				{"command": "ensure_lines_around"},
 				"RUN",
 			]
 		</commands>
