@@ -18,7 +18,7 @@ end
 `import -window #{active_window_id} -display :#{display[1]}.0 -screen "#{file}"`
 
 if ARGV.include?('--edit')
-  `kolourpaint "#{file}"`
+  `pinta "#{file}"`
 end
 
 if ARGV.include?('--publish')
