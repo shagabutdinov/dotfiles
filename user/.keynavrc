@@ -2,22 +2,22 @@ clear
 
 super+grave start,grid 4x3
 
-Alt_L+j move-left,warp
-Alt_L+i move-up,warp
-Alt_L+l move-right,warp
-Alt_L+k move-down,warp
+Alt_L+j move-left, warp
+Alt_L+i move-up, warp
+Alt_L+l move-right, warp
+Alt_L+k move-down, warp
 
-u cell-select 1,warp
-j cell-select 2,warp
-m cell-select 3,warp
+u cell-select 1
+j cell-select 2
+m cell-select 3
 
-i cell-select 4,warp
-k cell-select 5,warp
-comma cell-select 6,warp
+i cell-select 4
+k cell-select 5
+comma cell-select 6
 
-o cell-select 7,warp
-l cell-select 8,warp
-period cell-select 9,warp
+o cell-select 7
+l cell-select 8
+period cell-select 9
 
 h warp, click 4, click 4, click 4
 g warp, click 4
@@ -28,6 +28,7 @@ p cell-select 10,warp
 semicolon cell-select 11,warp
 slash cell-select 12,warp
 
+w warp
 space warp, click 1
 alt+space warp, click 2
 ctrl+space warp, click 3

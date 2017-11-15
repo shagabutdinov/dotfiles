@@ -1,5 +1,5 @@
 [global]
-    font = "Monospace 8"
+    font = "Monospace 12"
     markup = yes
     format = "<b>%s %p</b>\n%b"
     sort = yes
@@ -8,8 +8,8 @@
     alignment = center
     word_wrap = yes
     separator_height = 2
-    padding = 10
-    horizontal_padding = 10
+    padding = 20
+    horizontal_padding = 20
     separator_color = frame
     startup_notification = false
     browser = xdg-open
