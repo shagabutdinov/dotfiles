@@ -749,6 +749,22 @@ find { |$1|
 
 	<snippet>
 		<content><![CDATA[
+select { |$1|
+	$0
+}
+]]></content>
+		<tabTrigger>se</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.\\s*se$"},
+			]
+		]]></context>
+		<description>stdlib: select</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 sleep(10)
 ]]></content>
 		<tabTrigger>sl</tabTrigger>
