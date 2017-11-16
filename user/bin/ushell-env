@@ -216,6 +216,7 @@ alias ksp='() {
 
 
 alias c='docker-compose -f'
+alias dc='docker-compose'
 
 alias kxd='
   open-kubernetes-database-console \
