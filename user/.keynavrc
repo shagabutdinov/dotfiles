@@ -24,9 +24,9 @@ g warp, click 4
 n warp, click 5, click 5, click 5
 b warp, click 5
 
-p cell-select 10,warp
-semicolon cell-select 11,warp
-slash cell-select 12,warp
+p cell-select 10
+semicolon cell-select 11
+slash cell-select 12
 
 w warp
 space warp, click 1
