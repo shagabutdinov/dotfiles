@@ -62,6 +62,8 @@ alias nc='sudo netctl'
 alias ag='alias | grep -A 2 -B 2'
 alias cds='cd ~/src/'
 
+alias pa='cd ~/.secrets; carcosa -Ac'
+alias pr='cd ~/.secrets; carcosa -Rc'
 alias e='subl3 -a'
 alias ee='subl3 -n'
 alias h='ssh'
