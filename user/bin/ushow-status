@@ -1,8 +1,17 @@
+battery=$(acpi | sed -E 's/\n//g' | sed -E 's/.+: //g' | sed -E 's/.*Unknown.*//g')
+if [ "$battery" ]; then
+  battery="$battery\n"
+fi
+
 notify-send "
   $(date +%H:%M)
   $(date +%d.%m.%Y)
 "
 
+info=$(curl https://api.kraken.com/0/public/Ticker\?pair\=XBTUSD,ETHUSD,BCHUSD)
+
 notify-send "
-  $(acpi)
+  BTC: \$$(echo $info | jq -r ".result.XXBTZUSD.a[0]" | sed -E "s/\.\w+//g")
+  ETH: \$$(echo $info | jq -r ".result.XETHZUSD.a[0]" | sed -E "s/\.\w+//g")
+  BCH: \$$(echo $info | jq -r ".result.BCHUSD.a[0]" | sed -E "s/\.\w+//g")
 "

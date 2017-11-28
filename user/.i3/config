@@ -226,3 +226,4 @@ bindcode $mod+shift+110 exec uscreencast --active-window --publish --publish-cop
 bindsym $mod+F12 exec umousetoggle
 bindsym $mod+h exec translator
 bindsym $mod+shift+h exec translator "$(xsel -op)"
+bindsym $mod+ctrl+p exec ucreate-secret "$(xsel -op)"
