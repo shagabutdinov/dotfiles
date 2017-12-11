@@ -1,12 +1,12 @@
-battery=$(acpi | sed -E 's/\n//g' | sed -E 's/.+: //g' | sed -E 's/.*Unknown.*//g')
-if [ "$battery" ]; then
-  battery="$battery\n"
-fi
-
 notify-send "
   $(date +%H:%M)
   $(date +%d.%m.%Y)
 "
+
+battery=$(acpi | sed -E 's/\n//g' | sed -E 's/.+: //g' | sed -E 's/.*Unknown.*//g' | sed -E 's/Discharging, //g')
+if [ "$battery" ]; then
+  notify-send "$battery"
+fi
 
 info=$(curl https://api.kraken.com/0/public/Ticker\?pair\=XBTUSD,ETHUSD,BCHUSD)
 

@@ -9,6 +9,9 @@
   command = 'mute'
   if amixer.match(/Playback[^\n]+\[(on|off)\]/)[1] == 'off'
     command = 'unmute'
+    `pacmd set-sink-mute 0 0`
+  else
+    `pacmd set-sink-mute 0 1`
   end
 
   `amixer --card #{index} set Master #{command}`
