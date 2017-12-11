@@ -2,8 +2,8 @@
 
 	<snippet>
 		<content><![CDATA[
-${1:LEFT} JOIN $2
-	ON ${4:$2}.${5:id} = $6.${7:id}
+${1:LEFT} JOIN $2 ON
+	${4:$2}.${5:id} = $6.${7:id}
 ]]></content>
 		<tabTrigger>j</tabTrigger>
 		<scope>source.sql</scope>
@@ -17,8 +17,8 @@ ${1:LEFT} JOIN $2
 
 	<snippet>
 		<content><![CDATA[
-LEFT JOIN $2
-	ON ${4:$2}.${5:id} = $6.${7:id}
+LEFT JOIN $2 ON
+	${4:$2}.${5:id} = $6.${7:id}
 ]]></content>
 		<tabTrigger>lj</tabTrigger>
 		<scope>source.sql</scope>

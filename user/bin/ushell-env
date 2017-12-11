@@ -419,6 +419,9 @@ alias xdd='docker exec -i -t $(application-container) rake db:migrate:redo'
 alias xdt='docker exec -i -t $(application-container) rake db:migrate:status'
 alias xds='docker exec -i -t $(application-container) rake db:seed'
 
+alias m='make'
+alias mx='make exec'
+
 alias xdi='
   docker exec -i -t $(application-container) \
     rake db:create db:structure:load db:seed

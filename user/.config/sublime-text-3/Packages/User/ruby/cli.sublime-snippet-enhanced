@@ -1,0 +1,63 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+@log.debug($1)
+]]></content>
+		<tabTrigger>ld</tabTrigger>
+		<scope>source\.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "@log\\."},
+			]
+		]]></context>
+		<description>log: debug</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+@log.info($1)
+]]></content>
+		<tabTrigger>li</tabTrigger>
+		<scope>source\.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "@log\\."},
+			]
+		]]></context>
+		<description>log: info</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+@log.warning($1)
+]]></content>
+		<tabTrigger>lw</tabTrigger>
+		<scope>source\.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "@log\\."},
+			]
+		]]></context>
+		<description>log: warning</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+@log.error($1)
+]]></content>
+		<tabTrigger>le</tabTrigger>
+		<scope>source\.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "@log\\."},
+			]
+		]]></context>
+		<description>log: error</description>
+		<order>1</order>
+	</snippet>
+
+</snippets>
