@@ -665,7 +665,7 @@ function download-filmservice-production-data {
   return 0
 }
 
-function download-filmservice-staging-data-to-production {
+function download-filmservice-production-data-to-staging {
   kubectl --context staging@filmservice delete deployment \
     app backend area51 sidekiq clockwork
 
