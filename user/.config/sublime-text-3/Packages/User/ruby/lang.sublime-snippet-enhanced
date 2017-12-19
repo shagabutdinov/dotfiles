@@ -635,4 +635,25 @@ TEXT
 		<description>proc</description>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+begin
+	$0
+end
+]]></content>
+		<tabTrigger>b</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>begin</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+rescue $1 => error
+	$0
+]]></content>
+		<tabTrigger>rs</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>rescue</description>
+	</snippet>
+
 </snippets>

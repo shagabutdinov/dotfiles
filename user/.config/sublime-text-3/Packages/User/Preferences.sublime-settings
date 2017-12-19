@@ -92,11 +92,11 @@
 	"ignored_packages":
 	[
 		"MarkdownEditing",
-		"PHP Modern",
-		"Tabright",
 		"Theme - Centurion Blue",
-		"Theme - Cyanide",
-		"Vintage"
+		"Tabright",
+		"Vintage",
+		"PHP Modern",
+		"Theme - Cyanide"
 	],
 	"indent_guide_options":
 	[
