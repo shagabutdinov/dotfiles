@@ -14533,7 +14533,7 @@
 # [WAN Worldcom / LinkShare][63.123.248.0 - 63.123.248.63]
 0.0.0.1 analytics.clickpathmedia.com
 0.0.0.1 ad.linksynergy.com #[Tracking.Cookie]
-0.0.0.1 click.linksynergy.com
+# 0.0.0.1 click.linksynergy.com
 0.0.0.1 ssl.linksynergy.com #[WebBug]
 0.0.0.1 m.www.linksynergy.com
 # [Way Internet][AS13890][216.133.242.224 - 216.133.242.255]
