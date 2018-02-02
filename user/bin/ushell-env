@@ -113,7 +113,7 @@ alias di='docker inspect'
 alias dp='docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"'
 alias dr='docker run --rm -i -t'
 alias drm='docker rm --force'
-alias dra='docker rm --force $(docker ps -q -a)'
+alias dra='docker rm $(docker ps -q -a)'
 alias da='docker start'
 alias ds='docker stop'
 alias dsa='docker stop $(docker ps -q)'
@@ -201,11 +201,9 @@ alias kei='k exec'
 alias kgn='kubectl config current-context'
 alias ksc='kubectl config use-context '
 
-alias ksn='() {
-  project=$(kubectl config current-context | grep -Po "(?<=@)\w+")
-  namespace=$(kubectl config get-contexts | grep -Po "$1\w*(?=@$project)" | head -n 1)
-  kubectl config use-context $namespace@$project
-}'
+alias ksn=' \
+  kubectl config set-context $(kubectl config current-context) --namespace \
+'
 
 alias ksp='() {
   project=$(kubectl config get-contexts | grep -Po "(?<=@)$1\w*(?=\s)" | head -n 1)

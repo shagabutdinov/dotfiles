@@ -18,7 +18,7 @@ ${1:LEFT} JOIN $2 ON
 	<snippet>
 		<content><![CDATA[
 LEFT JOIN $2 ON
-	${4:$2}.${5:id} = $6.${7:id}
+	${4:$2}.${5:id} = $6
 ]]></content>
 		<tabTrigger>lj</tabTrigger>
 		<scope>source.sql</scope>
@@ -65,6 +65,21 @@ ORDER BY
 	$0
 ]]></content>
 		<tabTrigger>ob</tabTrigger>
+		<scope>source.sql</scope>
+		<context><![CDATA[
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
+			]
+		]]></context>
+		<description>order by</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+GROUP BY
+	$0
+]]></content>
+		<tabTrigger>gb</tabTrigger>
 		<scope>source.sql</scope>
 		<context><![CDATA[
 			[
@@ -136,7 +151,7 @@ IS NULL
 
 	<snippet>
 		<content><![CDATA[
-IN $0
+IN ($0)
 ]]></content>
 		<tabTrigger>i</tabTrigger>
 		<scope>source.sql</scope>
@@ -150,7 +165,7 @@ IN $0
 
 	<snippet>
 		<content><![CDATA[
-NOT IN $0
+NOT IN ($0)
 ]]></content>
 		<tabTrigger>ni</tabTrigger>
 		<scope>source.sql</scope>
@@ -174,6 +189,20 @@ IS NOT NULL
 			]
 		]]></context>
 		<description>IS NULL</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+BETWEEN $1 AND $2
+]]></content>
+		<tabTrigger>b</tabTrigger>
+		<scope>source.sql</scope>
+		<context><![CDATA[
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
+			]
+		]]></context>
+		<description>BETWEEN</description>
 	</snippet>
 
 	<snippet>
@@ -206,6 +235,31 @@ ASC
 		]]></context>
 		<order>1</order>
 		<description>ASC</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+DISTINCT
+]]></content>
+		<tabTrigger>d</tabTrigger>
+		<scope>source.sql</scope>
+		<context><![CDATA[
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
+			]
+		]]></context>
+		<order>1</order>
+		<description>DISTINCT</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+COUNT(${1:*})
+]]></content>
+		<tabTrigger>c</tabTrigger>
+		<scope>source.sql</scope>
+		<order>1</order>
+		<description>COUNT</description>
 	</snippet>
 
 </snippets>

@@ -32,7 +32,7 @@
 
 	<snippet>
 		<content><![CDATA[
-@log.warning($1)
+@log.warn($1)
 ]]></content>
 		<tabTrigger>lw</tabTrigger>
 		<scope>source\.ruby</scope>
@@ -41,7 +41,7 @@
 				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "@log\\."},
 			]
 		]]></context>
-		<description>log: warning</description>
+		<description>log: warn</description>
 		<order>1</order>
 	</snippet>
 

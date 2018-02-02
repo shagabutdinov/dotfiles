@@ -840,7 +840,7 @@ where(${1:$selection})
 		<content><![CDATA[
 exists?
 ]]></content>
-		<tabTrigger>w</tabTrigger>
+		<tabTrigger>ex</tabTrigger>
 		<scope>source\.ruby</scope>
 		<context>
 			[
@@ -1014,11 +1014,11 @@ Rails.logger.info($1)
 
 	<snippet>
 		<content><![CDATA[
-Rails.logger.warning($1)
+Rails.logger.warn($1)
 ]]></content>
 		<tabTrigger>lw</tabTrigger>
 		<scope>source\.ruby</scope>
-		<description>rails logger: warning</description>
+		<description>rails logger: warn</description>
 	</snippet>
 
 	<snippet>

@@ -771,4 +771,24 @@ sleep(10)
 		<scope>source.ruby</scope>
 		<description>stdlib: sleep</description>
 	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+puts Benchmark.measure {
+	${0:$selection}
+}
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>bm</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: Benchmark.measure</description>
+	</snippet>
 </snippets>

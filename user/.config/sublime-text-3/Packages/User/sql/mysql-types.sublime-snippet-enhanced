@@ -11,7 +11,21 @@ true
 				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^(`|\")"},
 			]
 		</context>
-		<description>null</description>
+		<description>true</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+false
+]]></content>
+		<tabTrigger>f</tabTrigger>
+		<scope>source.sql(?!.*string)</scope>
+		<context>
+			[
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^(`|\")"},
+			]
+		</context>
+		<description>false</description>
 	</snippet>
 
 	<snippet>
