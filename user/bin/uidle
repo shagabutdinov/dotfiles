@@ -57,6 +57,8 @@ browser_keys = [
 sleep(5)
 
 loop do
+  system('upwork-kill-notification')
+
   value = rand
   if 0 <= value && value < 0.7
     (rand * 7).to_i.times {
