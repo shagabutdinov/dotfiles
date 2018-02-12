@@ -4,6 +4,9 @@
 
 # 81.63.186.235 node1.dalco.diagonal.com node1 dalco.diagonal.com transfer1.celluloidheaven.net
 
+52.73.151.99 slack-redir.net
+13.33.90.252 slack.com
+
 188.226.137.200 idfly.ru
 188.226.137.200 idfly.io
 188.226.137.200 captainanalytics.ru
@@ -16,6 +19,7 @@
 127.0.0.1 localhost.localdomain localhost
 ::1   localhost.localdomain localhost
 
+5.102.145.187 filmservice.net
 # 5.102.147.93 master.cluster.filmservice.net
 # 5.102.147.158 storage.cluster.filmservice.net
 # 5.102.145.187 node1.cluster.filmservice.net
