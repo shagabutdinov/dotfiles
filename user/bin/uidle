@@ -79,6 +79,18 @@ loop do
     sleep(rand * 3 + 3)
 
     `xdotool key super+1`
+  elsif 0.75 < value && value < 0.85
+    `xdotool key ctrl+u ctrl+l`
+    `xdotool key alt+n`
+
+    2.times {
+      `xdotool key #{('a'..'z').to_a.sample}`
+    }
+
+    sleep(2)
+
+    `xdotool key KP_Enter`
+    `xdotool key Escape`
   elsif 0.75 < value
     initial = `xdotool getmouselocation`.match(/x:(\d+) y:(\d+)/).to_a
     (rand * 5).to_i.times {

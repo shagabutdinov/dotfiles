@@ -3,20 +3,7 @@
 xset r rate 150 75
 
 setxkbmap -layout us,ru -option grp:caps_toggle,grp_led:caps
-
-# xmodmap -e "remove mod4 = Super_L"
-# xmodmap -e "add mod5 = Super_L"
-
-# xmodmap -e "remove mod1 = Alt_R"
-# xmodmap -e "add mod4 = Alt_R"
-
-# xmodmap -e "keycode 107 = Insert"
-# xmodmap -e "keycode 218 = Insert"
-# xmodmap -e "keycode 118 = Print"
-# xmodmap -e "keycode 62 = KP_Enter"
 xmodmap -e "keycode 105 = KP_Enter"
 
-# xset +fp /usr/share/fonts/local
-# xset fp rehash
-
 xrdb -merge /home/leo/.Xresources
+
