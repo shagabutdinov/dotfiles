@@ -292,12 +292,12 @@ boolean :${1:name}, {
 	comment: '$2',
 }
 ]]></content>
-		<tabTrigger>t</tabTrigger>
+		<tabTrigger>b</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
 				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.s$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.b$"},
 			]
 		]]></context>
 		<description>rails migrations: boolean</description>

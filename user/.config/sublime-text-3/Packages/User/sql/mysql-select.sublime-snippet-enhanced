@@ -254,6 +254,22 @@ DISTINCT
 
 	<snippet>
 		<content><![CDATA[
+LIKE '%$1%'
+]]></content>
+		<tabTrigger>l</tabTrigger>
+		<scope>source.sql</scope>
+		<context><![CDATA[
+			[
+				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[a-zA-Z\"]\\s*l$"},
+			]
+		]]></context>
+		<order>1</order>
+		<description>DISTINCT</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 COUNT(${1:*})
 ]]></content>
 		<tabTrigger>c</tabTrigger>

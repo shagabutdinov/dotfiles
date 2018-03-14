@@ -136,9 +136,9 @@ end
 
 	<snippet>
 		<content><![CDATA[
-let :$1 do
+let(:$1) {
 	$0
-end
+}
 ]]></content>
 		<commands>
 			[
