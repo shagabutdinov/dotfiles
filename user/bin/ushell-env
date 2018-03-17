@@ -215,7 +215,6 @@ alias ksp='() {
   kubectl config use-context $namespace@$project
 }'
 
-
 alias c='docker-compose -f'
 alias dc='docker-compose'
 
@@ -342,6 +341,7 @@ alias gei='git rebase --interactive'
 alias gec='git rebase --continue'
 alias gea='git rebase --abort'
 alias gpu='git push -u origin $(current_branch)'
+alias gpuf='git push -u origin $(current_branch) --force'
 alias gdd='git diff --color | diff-so-fancy | less'
 alias gdc='git diff --cached'
 alias gh='git stash'

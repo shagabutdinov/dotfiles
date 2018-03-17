@@ -1027,7 +1027,21 @@ Rails.logger.error($1)
 ]]></content>
 		<tabTrigger>le</tabTrigger>
 		<scope>source\.ruby</scope>
-		<description>rails logger: logger</description>
+		<description>rails logger: error</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+error("#{error.class.name} #{error.message} #{error.backtrace}"
+]]></content>
+		<tabTrigger>error(</tabTrigger>
+		<scope>source\.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "Rails.logger.error\\($"},
+			]
+		]]></context>
+		<description>rails logger: full error</description>
 	</snippet>
 
 	<snippet>
