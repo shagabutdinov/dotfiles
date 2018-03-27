@@ -573,8 +573,15 @@ has_key?($1)
 
 	<snippet>
 		<content><![CDATA[
-include?($1)
+include?(${1:$selection})
 ]]></content>
+		<commands>
+			[
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
 		<tabTrigger>iu</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
