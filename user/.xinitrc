@@ -17,6 +17,7 @@ sudo sysctl fs.inotify.max_user_watches=65536
 thunar --daemon &
 keynav &
 dunst &
+echo fs.inotify.max_user_watches=524288 | sudo tee /etc/sysctl.d/40-max-user-watches.conf && sudo sysctl --system
 
 feh --bg-scale ~/.config/background.jpg
 
