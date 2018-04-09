@@ -12,8 +12,6 @@ synclient TapButton1=0
 synclient TapButton2=0
 synclient TapButton3=0
 
-sudo sysctl fs.inotify.max_user_watches=524288
-
 thunar --daemon &
 keynav &
 dunst &
