@@ -12,12 +12,11 @@ synclient TapButton1=0
 synclient TapButton2=0
 synclient TapButton3=0
 
-sudo sysctl fs.inotify.max_user_watches=65536
+sudo sysctl fs.inotify.max_user_watches=524288
 
 thunar --daemon &
 keynav &
 dunst &
-echo fs.inotify.max_user_watches=524288 | sudo tee /etc/sysctl.d/40-max-user-watches.conf && sudo sysctl --system
 
 feh --bg-scale ~/.config/background.jpg
 
