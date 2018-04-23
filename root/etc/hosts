@@ -19,7 +19,7 @@
 127.0.0.1 localhost.localdomain localhost
 ::1   localhost.localdomain localhost
 
-5.102.145.187 filmservice.net
+# 5.102.145.187 filmservice.net
 # 5.102.147.93 master.cluster.filmservice.net
 # 5.102.147.158 storage.cluster.filmservice.net
 # 5.102.145.187 node1.cluster.filmservice.net
