@@ -357,6 +357,7 @@ length
 			]
 		]]></context>
 		<description>stdlib: .length</description>
+		<order>1</order>
 	</snippet>
 
 	<snippet>

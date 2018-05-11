@@ -220,31 +220,13 @@ alias dc='docker-compose'
 
 alias kxd='
   open-kubernetes-database-console \
-    $(production-namespace postgres) \
     $(production-pod postgres)
-'
-
-alias kzc='
-  k \
-    --namespace staging \
-    exec \
-      -it \
-      $(staging-pod "(app|backend)") \
-      -- \
-      rails c \
-'
-
-alias kzd='
-  open-kubernetes-database-console \
-    staging \
-    $(staging-pod postgres)
 '
 
 function open-kubernetes-database-console() {
   export DB=$(
     kubectl exec \
-      --namespace $1 \
-      $2 \
+      $1 \
       -- \
       psql -P pager -Upostgres -c '\l' | \
       grep -E '^ ' | \
@@ -254,10 +236,9 @@ function open-kubernetes-database-console() {
   )
 
   kubectl \
-    --namespace $1 \
     exec \
     -it \
-    $2 \
+    $1 \
     -- \
     psql -P pager -Uuser \
     $DB
@@ -266,52 +247,53 @@ function open-kubernetes-database-console() {
 function staging-pod() {
   kubectl get pods --all-namespaces -o wide | \
     grep staging | \
-    grep -Eo " $1-[0-9]+-[a-Z0-9]+" | \
+    grep -Eo " $1-[a-z0-9]+-[a-Z0-9]+" | \
     head -n 1
 }
 
 function production-pod() {
   kubectl get pods --all-namespaces -o wide | \
     grep -v staging | \
-    grep -Eo " $1-[0-9]+-[a-Z0-9]+" | \
+    grep -Eo " $1-[a-z0-9]+-[a-Z0-9]+" | \
     head -n 1
 }
 
 function production-namespace() {
   kubectl get pods --all-namespaces -o wide | \
     grep -v staging | \
-    grep -E " $1-[0-9]+-[a-Z0-9]+" | \
+    grep -E " $1-[a-z0-9]+-[a-Z0-9]+" | \
     grep -Eo "^\w+" | \
     head -n 1
 }
 
+function docker-compose-file() {
+  echo config/$(ls --color=none config/ | grep --color=none \\.local)/$(
+    ls --color=none config/$(
+      ls --color=none config/ | grep --color=none \\.local
+    ) | grep -E "(main|docker-compose)"
+  )
+}
+
 alias cm='\
-  docker-compose -f config/$(ls --color=none config/ | \
-    grep --color=none \\.local)/main.yml \
+  docker-compose -f $(docker-compose-file) \
 '
 
 alias cu='\
-  docker-compose -f config/**/$(ls --color=none config/ | \
-    grep --color=none \\.local)/main.yml up \
+  docker-compose -f $(docker-compose-file) up
 '
 
 alias cs='\
-  docker-compose -f config/**/$(ls --color=none config/ | \
-    grep --color=none \\.local)/main.yml stop \
+  docker-compose -f $(docker-compose-file) stop \
 '
 
 alias cr='\
-  docker-compose -f config/**/$(ls --color=none config/ | \
-    grep --color=none \\.local)/main.yml stop;
-  docker-compose -f config/**/$(ls --color=none config/ | \
-    grep --color=none \\.local)/main.yml up \
+  docker-compose -f $(docker-compose-file) stop;
+  docker-compose -f $(docker-compose-file) up \
 '
 
 alias crm='\
-  docker-compose -f config/**/$(ls --color=none config/ | \
-    grep --color=none \\.local)/main.yml stop;
-  docker-compose -f config/**/$(ls --color=none config/ | \
-    grep --color=none \\.local)/main.yml rm
+  docker-compose -f $(docker-compose-file) stop;
+  docker-compose -f $(docker-compose-file) rm
 '
 
 function restart-project() {
@@ -720,7 +702,7 @@ function download-altagram-production-data {
 
   kubectl exec --namespace altagram -i \
     $(kubectl --namespace altagram get pods | \
-      grep -Eo 'postgres-[0-9]+-[a-Z0-9]+' | head -n 1) -- \
+      grep -Eo 'postgres-[a-z0-9]+-[a-Z0-9]+' | head -n 1) -- \
     pg_dumpall -Uuser | \
     docker exec -i $(docker-container postgres -v admin) psql -Upostgres
 
@@ -758,7 +740,7 @@ function download-altagram-staging-data {
 
   kubectl exec --namespace staging -i \
     $(kubectl --namespace staging get pods | \
-      grep -Eo 'postgres-[0-9]+-[a-Z0-9]+' | head -n 1) -- \
+      grep -Eo 'postgres-[a-z0-9]+-[a-Z0-9]+' | head -n 1) -- \
     pg_dumpall -Uuser | \
     docker exec -i $(docker-container postgres -v admin) psql -Upostgres
 

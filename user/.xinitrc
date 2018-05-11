@@ -14,6 +14,7 @@ synclient TapButton3=0
 
 thunar --daemon &
 keynav &
+redshift &
 dunst &
 
 feh --bg-scale ~/.config/background.jpg

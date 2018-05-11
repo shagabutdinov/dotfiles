@@ -656,4 +656,15 @@ rescue $1 => error
 		<description>rescue</description>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+-> ($1) {
+	$0
+}
+]]></content>
+		<tabTrigger>l</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>lambda</description>
+	</snippet>
+
 </snippets>

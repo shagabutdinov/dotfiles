@@ -13,6 +13,7 @@
 # 46.101.187.12 idfly.io 
 46.101.187.12 captainanalytics.ru
 127.0.0.1 cryptolocator.local
+127.0.0.1 cryptoinvest.local
 127.0.0.1 altagram.local
 
 #<ip-address> <hostname.domain.org> <hostname>

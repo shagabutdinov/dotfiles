@@ -51,7 +51,7 @@ export default class $1 extends React.Component {
 	<snippet>
 		<content><![CDATA[
 constructor(props) {
-	super(props)
+	super(props);
 	$1
 }
 ]]></content>

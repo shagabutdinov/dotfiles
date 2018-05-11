@@ -526,6 +526,27 @@ presence: true
 
 	<snippet>
 		<content><![CDATA[
+uniqueness: true
+]]></content>
+		<commands>
+			[
+				{"command": "ensure_space_before"},
+				"RUN",
+			]
+		</commands>
+		<trigger>u</trigger>
+		<scope>source\.ruby\s*$</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": ",\\s*u"},
+				{"key": "statement", "operator": "regex_contains", "operand": "^validates"},
+			]
+		</context>
+		<description>rails models: validates presence</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 inclusion: {in: [$0]}
 ]]></content>
 		<commands>
@@ -543,6 +564,30 @@ inclusion: {in: [$0]}
 			]
 		</context>
 		<description>rails models: validates inclusion</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+format: {
+	with: /\A$1\Z/,
+	message: '$2',
+}
+]]></content>
+		<commands>
+			[
+				{"command": "ensure_space_before"},
+				"RUN",
+			]
+		</commands>
+		<trigger>f</trigger>
+		<scope>source\.ruby\s*$</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": ",\\s*f"},
+				{"key": "statement", "operator": "regex_contains", "operand": "^validates"},
+			]
+		</context>
+		<description>rails models: validates presence</description>
 	</snippet>
 
 	<snippet>
@@ -1019,6 +1064,20 @@ Rails.logger.warn($1)
 		<tabTrigger>lw</tabTrigger>
 		<scope>source\.ruby</scope>
 		<description>rails logger: warn</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+warn("#{error.class.name} #{error.message} #{error.backtrace}"
+]]></content>
+		<tabTrigger>warn(</tabTrigger>
+		<scope>source\.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "Rails.logger.warn\\($"},
+			]
+		]]></context>
+		<description>rails logger: full warn</description>
 	</snippet>
 
 	<snippet>

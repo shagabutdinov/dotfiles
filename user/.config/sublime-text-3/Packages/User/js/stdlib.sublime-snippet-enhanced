@@ -462,7 +462,7 @@ currentUser
 		]]></commands>
 		<tabTrigger>cu</tabTrigger>
 		<scope>source.js</scope>
-		<description>stdlib: toUpperCase</description>
+		<description>stdlib: currentUser</description>
 		<order>1</order>
 	</snippet>
 

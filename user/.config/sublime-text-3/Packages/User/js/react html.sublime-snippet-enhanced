@@ -231,4 +231,15 @@ onSubmit={$1}
 		<order>1</order>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+<div>
+	$0
+</div>
+]]></content>
+		<tabTrigger>di</tabTrigger>
+		<scope>source.js.*meta.jsx.js</scope>
+		<description>react: div</description>
+	</snippet>
+
 </snippets>
