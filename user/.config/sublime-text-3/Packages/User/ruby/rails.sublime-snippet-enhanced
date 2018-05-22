@@ -1074,7 +1074,7 @@ warn("#{error.class.name} #{error.message} #{error.backtrace}"
 		<scope>source\.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "Rails.logger.warn\\($"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "(Rails.logger|log).warn\\($"},
 			]
 		]]></context>
 		<description>rails logger: full warn</description>
@@ -1097,7 +1097,7 @@ error("#{error.class.name} #{error.message} #{error.backtrace}"
 		<scope>source\.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "Rails.logger.error\\($"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "(Rails.logger|log).error\\($"},
 			]
 		]]></context>
 		<description>rails logger: full error</description>
