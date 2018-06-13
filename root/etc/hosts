@@ -16,6 +16,9 @@
 127.0.0.1 cryptolocator.local
 127.0.0.1 cryptoinvest.local
 127.0.0.1 altagram.local
+# 5.102.147.66 filmservice.net
+# 5.102.147.66 registry.filmservice.net
+# 5.102.147.66 filmservices.net
 
 #<ip-address> <hostname.domain.org> <hostname>
 127.0.0.1 localhost.localdomain localhost
