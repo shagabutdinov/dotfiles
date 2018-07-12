@@ -4,72 +4,10 @@
 
 # 81.63.186.235 node1.dalco.diagonal.com node1 dalco.diagonal.com transfer1.celluloidheaven.net
 
-52.73.151.99 slack-redir.net
-13.33.90.252 slack.com
+127.0.0.1 f
 
-81.17.31.214 finpower.company
-188.226.137.200 idfly.ru
-188.226.137.200 idfly.io
-188.226.137.200 captainanalytics.ru
-# 46.101.187.12 idfly.io 
-46.101.187.12 captainanalytics.ru
-127.0.0.1 cryptolocator.local
-127.0.0.1 cryptoinvest.local
-127.0.0.1 altagram.local
-# 5.102.147.66 filmservice.net
-# 5.102.147.66 registry.filmservice.net
-# 5.102.147.66 filmservices.net
-
-#<ip-address> <hostname.domain.org> <hostname>
-127.0.0.1 localhost.localdomain localhost
-::1   localhost.localdomain localhost
-
-# 5.102.145.187 filmservice.net
-# 5.102.147.93 master.cluster.filmservice.net
-# 5.102.147.158 storage.cluster.filmservice.net
-# 5.102.145.187 node1.cluster.filmservice.net
-# 5.102.147.159 node2.cluster.filmservice.net
-
-# 5.102.147.93 cloud.filmservice.net
-
-# 5.102.147.93 filmservice.cloud.filmservice.net
-# 5.102.147.93 staging.cloud.filmservice.net
-
-# 5.102.147.93 registry.system.cloud.filmservice.net
-# 5.102.147.93 kibana.system.cloud.filmservice.net
-
-192.241.168.155 toughdomains1.xyz
-192.241.168.155 toughdomains2.xyz
-# 127.0.0.1 adm.toughdomains.com
-127.0.0.1 mmoguard.local
-127.0.0.1 admin.mmoguard.local
-127.0.0.1 capitan.local
-127.0.0.1 repa.local
-127.0.0.1 shagabutdinov.local
-127.0.0.1 nalopatu.local
-127.0.0.1 specctr.local
-127.0.0.1 streakello.local
-127.0.0.1 mirrorello.local
-127.0.0.1 filmservice.local
-127.0.0.1 altagram.local
-127.0.0.1 mail.altagram.local
-# 138.201.251.84 dev.captainanalytics.ru
-# 54.247.92.152 chfs.ch
-# 127.0.0.1 chfs.ch
-# 127.0.0.1 celluloidheaven.ch
-
-# 52.41.223.43 www.pivotaltracker.com
-212.51.143.250 dalco
-
-172.16.16.59 git.directline.in
-
-45.55.118.33 toughdomains1.xyz
-45.55.118.33 toughdomains2.xyz
-45.55.118.33 toughdomains3.xyz
-
-45.55.118.33 test1.test
-45.55.118.33 test2.test
-45.55.118.33 test3.test
+0.0.0.0 api.wb.local
+0.0.0.0 auth.wb.local
 
 # End of file
 #
@@ -5889,7 +5827,7 @@
 0.0.0.1 i.blogads.com
 0.0.0.1 pxl.ibpxl.com
 0.0.0.1 native.sharethrough.com
-0.0.0.1 cdn.tagcommander.com
+# 0.0.0.1 cdn.tagcommander.com
 0.0.0.1 cdn.tradelab.fr
 # [EdgeCast Networks][AS15133][72.21.80.0 - 72.21.95.255]
 0.0.0.1 adv.0tub.com

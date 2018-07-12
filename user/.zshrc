@@ -56,7 +56,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$HOME/bin:/home/leo/.gem/ruby/2.3.0/bin:/home/leo/.gem/ruby/2.4.0/bin:$HOME/.local/deadfiles/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/home/leo/.gem/ruby/2.5.0/bin:$HOME/.local/deadfiles/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -78,3 +78,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export QUOTA=50
+
+# added by travis gem
+[ -f /home/leo/.travis/travis.sh ] && source /home/leo/.travis/travis.sh

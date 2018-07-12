@@ -74,6 +74,7 @@ alias w='() { watch -x zsh -i -c "$@" }'
 alias ww='inotifyrun -r -e MODIFY'
 alias l='ls --color -hl --group-directories-first'
 alias ls='ls --color -h --group-directories-first'
+alias rr='sudo rm -rf'
 
 alias pm='sudo pacman'
 alias pms='sudo pacman --noconfirm -S'
@@ -287,13 +288,19 @@ alias cs='\
 '
 
 alias cr='\
-  docker-compose -f $(docker-compose-file) stop;
-  docker-compose -f $(docker-compose-file) up \
+  docker-compose -f $(docker-compose-file) stop
+  docker-compose -f $(docker-compose-file) up
 '
 
 alias crm='\
   docker-compose -f $(docker-compose-file) stop;
-  docker-compose -f $(docker-compose-file) rm
+  docker-compose -f $(docker-compose-file) rm -f
+'
+
+alias crr='\
+  docker-compose -f $(docker-compose-file) stop
+  docker-compose -f $(docker-compose-file) rm -f
+  docker-compose -f $(docker-compose-file) up \
 '
 
 function restart-project() {
@@ -438,73 +445,6 @@ alias xy='
 alias xyp='
   bundle exec cap production deploy deploy:migrate api:restart \
     sidekiq:stop sidekiq:start
-'
-
-alias z=' \
-  docker exec -i -t $(docker-container "test.(backend|app|rails)" -v admin) \
-'
-
-alias zx=' \
-  docker exec -i -t $(docker-container "test.(backend|app|rails)" -v admin) \
-    rspec \
-'
-
-alias zb=' \
-  docker exec -i -t $(docker-container "test.(backend|app|rails)" -v admin) bash
-'
-
-alias zs=' \
-  docker exec -i -t $(docker-container "test.(backend|app|rails)" -v admin) \
-    spring \
-'
-
-alias zc='
-  docker exec -i -t $(docker-container "test.(backend|app|rails)" -v admin) \
-    rails console \
-'
-
-alias zr='
-  docker exec -i -t $(docker-container "test.(backend|app|rails)" -v admin) \
-    rails runner \
-'
-
-alias zdm='
-  docker exec -i -t $(docker-container "test.(backend|app|rails)" -v admin) \
-    rake db:migrate \
-'
-
-alias zdr='
-  docker exec -i -t $(docker-container "test.(backend|app|rails)" -v admin) \
-    rake db:rollback \
-'
-
-alias zdd='
-  docker exec -i -t $(docker-container "test.(backend|app|rails)" -v admin) \
-    rake db:migrate:redo \
-'
-
-alias zdt='
-  docker exec -i -t $(docker-container "test.(backend|app|rails)" -v admin) \
-    rake db:migrate:status \
-'
-
-alias zdi='
-  docker exec -i -t $(docker-container "test.(backend|app|rails)" -v admin) \
-    rake db:create db:structure:load \
-'
-
-alias zds='
-  docker exec -i -t $(docker-container "test.(backend|app|rails)" -v admin) \
-    rake db:seed \
-'
-
-alias zbi='
-  docker exec -i -t $(docker-container "test.(backend|app|rails)" -v admin) \
-    bundle install --jobs 8 --path vendor/bundle --full-index \
-'
-
-alias zd='docker exec -i -t $(docker-container postgres -v admin) \
-  psql -P pager -U postgres test \
 '
 
 function backend-path() {

@@ -34,6 +34,9 @@ focus_follows_mouse no
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+bindsym ctrl+F12 exec i3-sensible-terminal
+bindsym ctrl+F11 workspace next
+bindsym ctrl+F10 workspace prev
 bindsym $mod+t exec i3-sensible-terminal
 
 # kill focused window

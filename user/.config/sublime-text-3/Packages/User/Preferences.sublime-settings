@@ -84,18 +84,18 @@
 	"font_options":
 	[
 	],
-	"font_size": 9.5,
+	"font_size": 12.5,
 	"gutter": true,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"hot_exit": true,
 	"ignored_packages":
 	[
-		"MarkdownEditing",
-		"Theme - Centurion Blue",
-		"Tabright",
 		"Vintage",
 		"PHP Modern",
+		"MarkdownEditing",
+		"Tabright",
+		"Theme - Centurion Blue",
 		"Theme - Cyanide"
 	],
 	"indent_guide_options":
