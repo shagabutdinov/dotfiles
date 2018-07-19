@@ -254,7 +254,7 @@ DISTINCT
 
 	<snippet>
 		<content><![CDATA[
-LIKE '%$1%'
+ILIKE '%$1%'
 ]]></content>
 		<tabTrigger>l</tabTrigger>
 		<scope>source.sql</scope>

@@ -41,10 +41,10 @@ URxvt*pointerColorForeground:  #93a1a1
 URxvt*termName: rxvt-unicode
 URxvt.scrollBar: false
 ! urxvt*font:        -xos4-terminus-medium-*-*-*-16-*-*-*-*-*-*-*
-urxvt*font:        -xos4-terminus-medium-*-*-*-20-*-*-*-*-*-*-*
+urxvt*font:        -xos4-terminus-medium-*-*-*-18-*-*-*-*-*-*-*
 ! urxvt*font:        -xos4-terminus-bold-*-*-*-28-*-*-*-*-*-*-*
 ! urxvt*boldFont:    -xos4-terminus-bold-*-*-*-16-*-*-*-*-*-*-*
-urxvt*boldFont:    -xos4-terminus-bold-*-*-*-20-*-*-*-*-*-*-*
+urxvt*boldFont:    -xos4-terminus-bold-*-*-*-18-*-*-*-*-*-*-*
 ! rxvt*boldFont:    -xos4-terminus-bold-*-*-*-28-*-*-*-*-*-*-*
 
 URxvt*modifier: mod1

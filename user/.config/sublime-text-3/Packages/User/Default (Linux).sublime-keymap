@@ -278,4 +278,45 @@
       {"key": "search_panel_name", "operator": "regex_contains", "operand": "folder_files"}
     ]
   },
+
+  {
+    "keys": ["ctrl+f"],
+    "command": "display_search_panel_enhanced",
+    "args": {
+      "type": "fuzzy"
+    },
+    "context": [
+      {"key": "setting.sublime_enhanced_keybindings", "operator": "equal", "operand": true},
+      {"key": "overlay_visible", "operator": "equal", "operand": false}
+    ],
+  },
+
+  {
+    "keys": ["ctrl+shift+h"],
+    "command": "goto_indentation",
+    "args": {
+      "type": "lesser_or_equal",
+      "change": true,
+      "use_empty_line": true,
+      "before": 1,
+      "before_if_lesser": true,
+      "expand": true,
+      "alignment": "right"
+    },
+    "context": [
+      {"key": "setting.sublime_enhanced_keybindings", "operator": "equal", "operand": true},
+      {"key": "overlay_visible", "operator": "equal", "operand": false}
+    ]
+  },
+
+  {
+    "keys": ["alt+shift+c"],
+    "command": "append_seletion",
+    "args": {
+      "backward": true,
+    },
+    "context": [
+      {"key": "setting.sublime_enhanced_keybindings", "operator": "equal", "operand": true},
+    ]
+  },
 ]

@@ -136,16 +136,8 @@ end
 
 	<snippet>
 		<content><![CDATA[
-let(:$1) {
-	$0
-}
+let(:$1) { $0 }
 ]]></content>
-		<commands>
-			[
-				{"command": "ensure_lines_around"},
-				"RUN",
-			]
-		</commands>
 		<tabTrigger>l</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
@@ -155,20 +147,13 @@ let(:$1) {
 			]
 		]]></context>
 		<description>rspec: let(NAME) { ... }</description>
+		<order>1</order>
 	</snippet>
 
 	<snippet>
 		<content><![CDATA[
-let! :$1 do
-	$0
-end
+let!(:$1) { $0 }
 ]]></content>
-		<commands>
-			[
-				{"command": "ensure_lines_around"},
-				"RUN",
-			]
-		</commands>
 		<trigger>ll</trigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
@@ -177,22 +162,14 @@ end
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^(\\s*)ll$"},
 			]
 		]]></context>
-		<description>rspec: let(NAME) { ... }</description>
+		<description>rspec: let!(NAME) { ... }</description>
+		<order>1</order>
 	</snippet>
-
 
 	<snippet>
 		<content><![CDATA[
-subject :$1 do
-	$0
-end
+subject(:$1) { $0 }
 ]]></content>
-		<commands>
-			[
-				{"command": "ensure_lines_around"},
-				"RUN",
-			]
-		</commands>
 		<tabTrigger>s</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
