@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# based on carcosa-ui
+
+sleep 0.1
+
+cat <<< "$1" \
+  | perl -p -e 'chomp if eof' \
+  | xdotool type --clearmodifiers --delay 1 --file -
