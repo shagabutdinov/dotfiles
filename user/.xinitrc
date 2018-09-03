@@ -14,7 +14,7 @@ synclient TapButton3=0
 
 thunar --daemon &
 keynav &
-redshift &
+redshift -l $(curl ipinfo.io | jq -j .loc | tr ',' ':') &
 dunst &
 
 feh --bg-scale ~/.config/background.jpg
