@@ -261,7 +261,7 @@ ILIKE '%$1%'
 		<context><![CDATA[
 			[
 				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[a-zA-Z\"]\\s*l$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[a-zA-Z\"`]\\s*l$"},
 			]
 		]]></context>
 		<order>1</order>
@@ -276,6 +276,16 @@ COUNT(${1:*})
 		<scope>source.sql</scope>
 		<order>1</order>
 		<description>COUNT</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+COPY(${1:$selection}) TO STDOUT WITH CSV DELIMITER ','
+]]></content>
+		<tabTrigger>C</tabTrigger>
+		<scope>source.sql</scope>
+		<order>1</order>
+		<description>COPY</description>
 	</snippet>
 
 </snippets>

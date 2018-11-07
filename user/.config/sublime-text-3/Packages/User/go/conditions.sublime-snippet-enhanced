@@ -46,6 +46,28 @@ if ${1:$last_assigned_variable} != nil {
 
 	<snippet>
 		<content><![CDATA[
+if ${1:err} != nil {
+	panic(${1:err})
+}
+]]></content>
+		<tabTrigger>ip</tabTrigger>
+		<scope>source.go(?!.*(string|comment))</scope>
+		<description>if err then panic</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+if ${1:err} != nil {
+	$0
+}
+]]></content>
+		<tabTrigger>ie</tabTrigger>
+		<scope>source.go(?!.*(string|comment))</scope>
+		<description>if err</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 else if ${1:$last_assigned_variable} {
 	${0:$selection}
 }
@@ -55,6 +77,7 @@ else if ${1:$last_assigned_variable} {
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\}\\s*i$"},
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "^\\s*$"},
 			]
 		]]></context>
 		<description>else if</description>
@@ -71,6 +94,22 @@ else {
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\}\\s*e$"},
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "^\\s*$"},
+			]
+		]]></context>
+		<description>else</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+else
+]]></content>
+		<trigger>e</trigger>
+		<scope>source.go(?!.*(string|comment))</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\}\\s*e$"},
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
 			]
 		]]></context>
 		<description>else</description>

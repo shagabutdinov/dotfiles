@@ -89,11 +89,6 @@ func ($this) ${2:name}(${3:args})$4 {
 }
 ]]></content>
 		<trigger>d</trigger>
-		<eval><![CDATA[
-			{
-				'this': __import__('Utilities').go.find_this_arg(view, True)
-			}
-		]]></eval>
 		<scope>source.go</scope>
 		<context><![CDATA[
 			[
@@ -102,6 +97,17 @@ func ($this) ${2:name}(${3:args})$4 {
 			]
 		]]></context>
 		<description>func this (no star)</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+func($3)$4 {
+	${0:$selection}
+}
+]]></content>
+		<tabTrigger>fn</tabTrigger>
+		<scope>source.go</scope>
+		<description>lambda func</description>
 	</snippet>
 
 	<snippet>

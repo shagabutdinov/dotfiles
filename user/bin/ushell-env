@@ -62,6 +62,7 @@ alias nc='sudo netctl'
 alias ag='alias | grep -A 2 -B 2'
 alias cds='cd ~/src/'
 
+alias f='find . -name'
 alias pa='cd ~/.secrets; carcosa -Ac'
 alias pr='cd ~/.secrets; carcosa -Rc'
 alias e='subl3 -a'
@@ -122,6 +123,8 @@ alias de='docker restart'
 alias dl='docker logs --tail 200'
 alias dlf='docker logs --follow'
 alias da='docker attach --no-stdin'
+
+alias rs='/bin/rm -rf ~/.tmp/ssh/*'
 
 :kubectl() {
     local arg
@@ -319,6 +322,7 @@ function restart-project() {
 alias co='sudo chown -R leo: '
 alias cc='sudo chown -R leo: .'
 
+alias g='() { grep $1 -R . }'
 alias gs='git show --color'
 alias gsp='git commit -v -a && git push'
 alias gsa='git commit -v -a --amend && git push --force'

@@ -122,6 +122,15 @@ panic(err)
 
 	<snippet>
 		<content><![CDATA[
+panic(":(")
+]]></content>
+		<tabTrigger>q</tabTrigger>
+		<scope>source.go</scope>
+		<description>panic :(</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 debug.PrintStack()
 ]]></content>
 		<tabTrigger>dp</tabTrigger>

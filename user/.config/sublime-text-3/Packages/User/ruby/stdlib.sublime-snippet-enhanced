@@ -61,6 +61,22 @@ puts("XXXX $TM_FILENAME:$TM_LINE_NUMBER #{JSON.pretty_generate(${1:$selection})}
 				"RUN",
 			]
 		</commands>
+		<tabTrigger>pj</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: p</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+puts("XXXX $TM_FILENAME:$TM_LINE_NUMBER #{JSON.pretty_generate(${1:$selection})}")
+]]></content>
+		<commands>
+			[
+				{"command": "run_macro_file_with_context", "args": {"file":
+					"Packages/User/macro/select_token.sublime-macro"}},
+				"RUN",
+			]
+		</commands>
 		<tabTrigger>pp</tabTrigger>
 		<scope>source.ruby</scope>
 		<description>stdlib: pp</description>
@@ -773,7 +789,7 @@ select { |$1|
 
 	<snippet>
 		<content><![CDATA[
-sleep(10)
+sleep(10$1)
 ]]></content>
 		<tabTrigger>sl</tabTrigger>
 		<scope>source.ruby</scope>

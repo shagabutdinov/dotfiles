@@ -33,7 +33,7 @@
 	"bold_folder_labels": false,
 	"caret_style": "smooth",
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/DevastateMini/DevastateMini.tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Tyrann (SL).tmTheme",
 	"create_window_at_startup": false,
 	"default_encoding": "UTF-8",
 	"default_line_ending": "unix",
@@ -84,7 +84,7 @@
 	"font_options":
 	[
 	],
-	"font_size": 14.5,
+	"font_size": 12.5,
 	"gutter": true,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,

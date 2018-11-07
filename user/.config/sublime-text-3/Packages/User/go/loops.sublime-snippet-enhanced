@@ -13,6 +13,18 @@ for $1 {
 
 	<snippet>
 		<content><![CDATA[
+for ${1:element}Index := 0; ${1:element}Index < len(${2:collection}); ${1:element}Index++ {
+	${1:element} := ${2:collection}[${1:element}Index]
+	${0:$selection}
+}
+]]></content>
+		<tabTrigger>fi</tabTrigger>
+		<scope>source.go</scope>
+		<description>for index</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 range $0
 ]]></content>
 		<trigger>r</trigger>
@@ -48,7 +60,7 @@ range $0
 
 	<snippet>
 		<content><![CDATA[
-${1:index} := ${2:0}; ${1:index} < $3; ${1:index} += ${4:1}
+${1:index} := ${2:0}; ${1:index} < $3; ${1:index}++
 ]]></content>
 		<trigger>i</trigger>
 		<scope>source.go</scope>

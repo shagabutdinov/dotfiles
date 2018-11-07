@@ -4,7 +4,7 @@
 		"ls -replay",
 		"ls -la"
 	],
-	"ann": "a18.05.19-1",
-	"install_version": "r16.05.07-1",
-	"version": "r18.05.19-1"
+	"ann": "a18.09.18-1",
+	"install_version": "r18.07.22-1",
+	"version": "r18.09.18-1"
 }

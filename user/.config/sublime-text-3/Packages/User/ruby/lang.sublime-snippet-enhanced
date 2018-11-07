@@ -419,7 +419,22 @@ require '$1'
 			]
 		]]></context>
 		<order>1</order>
-		<description>def</description>
+		<description>require</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+require_relative '$1'
+]]></content>
+		<tabTrigger>rr</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^rr$"},
+			]
+		]]></context>
+		<order>1</order>
+		<description>require_relative</description>
 	</snippet>
 
 	<!-- class -->
@@ -651,7 +666,16 @@ end
 rescue $1 => error
 	$0
 ]]></content>
-		<tabTrigger>rs</tabTrigger>
+		<tabTrigger>rq</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>rescue</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+rescue StandardError
+]]></content>
+		<tabTrigger>rescue </tabTrigger>
 		<scope>source.ruby</scope>
 		<description>rescue</description>
 	</snippet>

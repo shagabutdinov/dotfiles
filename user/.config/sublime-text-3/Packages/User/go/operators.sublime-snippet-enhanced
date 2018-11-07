@@ -41,6 +41,7 @@
 		<context><![CDATA[
 			[
 				{"key": "statement", "operator": "regex_contains", "operand": "^\\s*if"},
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "^[\\s{]"},
 			]
 		]]></context>
 		<description>if equal nil</description>

@@ -518,7 +518,7 @@ and_raise(${1:$selection__or__last_assigned_variable})
 
 	<snippet>
 		<content><![CDATA[
-save_screenshot(${1:'screenshot.jpg'})
+save_screenshot('XXXX_screenshot_${TM_FILENAME}__${TM_LINE_NUMBER}.png')
 ]]></content>
 		<tabTrigger>ss</tabTrigger>
 		<scope>source.ruby</scope>
@@ -533,7 +533,7 @@ save_screenshot(${1:'screenshot.jpg'})
 	<snippet>
 		<content><![CDATA[
 sleep(2)
-save_screenshot(${1:'screenshot.jpg'})
+save_screenshot(${1:'screenshot.png'})
 ]]></content>
 		<tabTrigger>sc</tabTrigger>
 		<scope>source.ruby</scope>

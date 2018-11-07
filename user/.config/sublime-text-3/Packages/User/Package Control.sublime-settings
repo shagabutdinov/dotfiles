@@ -46,7 +46,9 @@
 		"FileDialog",
 		"FileList",
 		"FireCode Color Scheme",
+		"GoImports",
 		"Golang Tools Integration",
+		"GoSublime",
 		"Goto-CSS-Declaration",
 		"GotoCharacter",
 		"GotoLineEnhanced",
@@ -103,6 +105,10 @@
 		"Tubsted Color Schemes",
 		"TypeScript",
 		"Wildlife Color Scheme"
+	],
+	"repositories":
+	[
+		"https://github.com/ruby-formatter/sublime-rufo"
 	],
 	"submit_usage": false
 }

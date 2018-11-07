@@ -45,7 +45,7 @@ urxvt*font:        -xos4-terminus-medium-*-*-*-18-*-*-*-*-*-*-*
 ! urxvt*font:        -xos4-terminus-bold-*-*-*-28-*-*-*-*-*-*-*
 ! urxvt*boldFont:    -xos4-terminus-bold-*-*-*-16-*-*-*-*-*-*-*
 urxvt*boldFont:    -xos4-terminus-bold-*-*-*-18-*-*-*-*-*-*-*
-! rxvt*boldFont:    -xos4-terminus-bold-*-*-*-28-*-*-*-*-*-*-*
+! urxvt*boldFont:    -xos4-terminus-bold-*-*-*-28-*-*-*-*-*-*-*
 
 URxvt*modifier: mod1
 URxvt.perl-ext-common:      default,url-select,keyboard-select,matcher,clipboard,autocomplete-ALL-the-things

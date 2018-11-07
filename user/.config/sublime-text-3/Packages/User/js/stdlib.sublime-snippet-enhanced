@@ -503,4 +503,22 @@ window.location.href
 		<description>stdlib: window.location.href</description>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+window.setTimeout($1)
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>wso</tabTrigger>
+		<scope>source.js</scope>
+		<description>stdlib: window.location.href</description>
+	</snippet>
+
 </snippets>
