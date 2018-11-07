@@ -310,4 +310,19 @@
       {"key": "setting.sublime_enhanced_keybindings", "operator": "equal", "operand": true},
     ]
   },
+
+  {
+    "keys": ["ctrl+alt+e"],
+    "command": "open_git_branch_switcher",
+    "args": {
+      "all": true,
+    },
+    "context": [
+      {
+        "key": "setting.sublime_enhanced_keybindings",
+        "operator": "equal",
+        "operand": true,
+      },
+    ]
+  },
 ]
