@@ -7,7 +7,7 @@
 		<tabTrigger>g</tabTrigger>
 		<scope>source.js</scope>
 		<description>react: tag</description>
-		<order>1</order>
+		<order>2</order>
 	</snippet>
 
 	<snippet>
@@ -19,7 +19,7 @@
 		<tabTrigger>gg</tabTrigger>
 		<scope>source.js</scope>
 		<description>react: tag</description>
-		<order>1</order>
+		<order>2</order>
 	</snippet>
 
 	<snippet>
@@ -29,7 +29,7 @@
 		<tabTrigger>h</tabTrigger>
 		<scope>source.js</scope>
 		<description>react: tag</description>
-		<order>1</order>
+		<order>2</order>
 	</snippet>
 
 	<snippet>
@@ -41,7 +41,7 @@
 		<tabTrigger>hh</tabTrigger>
 		<scope>source.js</scope>
 		<description>react: tag</description>
-		<order>1</order>
+		<order>2</order>
 	</snippet>
 
 	<snippet>
@@ -62,7 +62,7 @@
 		<tabTrigger>f</tabTrigger>
 		<scope>source.js.*?meta.jsx.js\s*$</scope>
 		<description>react: form</description>
-		<order>1</order>
+		<order>2</order>
 	</snippet>
 
 	<snippet>
@@ -72,7 +72,7 @@
 		<tabTrigger>d</tabTrigger>
 		<scope>source.js.*?meta.jsx.js\s*$</scope>
 		<description>react: div</description>
-		<order>1</order>
+		<order>2</order>
 	</snippet>
 
 	<snippet>
@@ -82,7 +82,67 @@
 		<tabTrigger>s</tabTrigger>
 		<scope>source.js.*?meta.jsx.js\s*$</scope>
 		<description>react: span</description>
-		<order>1</order>
+		<order>2</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<table $1>
+	<tbody>
+		<tr>
+			<td>
+				$0
+			</td>
+		</tr>
+	</tbody>
+</table>
+]]></content>
+		<tabTrigger>&lt; t</tabTrigger>
+		<scope>source.js</scope>
+		<description>react: table</description>
+		<order>2</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<table $1>
+	<tbody>
+		<tr>
+			<td>
+				$0
+			</td>
+		</tr>
+	</tbody>
+</table>
+]]></content>
+		<tabTrigger>t</tabTrigger>
+		<scope>source.js.*?meta.jsx.js\s*$</scope>
+		<description>react: table</description>
+		<order>2</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<React.Fragment>
+	$0
+</React.Fragment>
+]]></content>
+		<tabTrigger>&lt; rf</tabTrigger>
+		<scope>source.js</scope>
+		<description>react: fragment</description>
+		<order>2</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+			<React.Fragment>
+				$0
+			</React.Fragment>
+]]></content>
+		<tabTrigger>rf</tabTrigger>
+		<scope>source.js.*?meta.jsx.js\s*$</scope>
+		<description>react: fragment</description>
+		<order>2</order>
 	</snippet>
 
 	<snippet>
@@ -92,7 +152,7 @@
 		<tabTrigger>a</tabTrigger>
 		<scope>source.js.*?meta.jsx.js\s*$</scope>
 		<description>react: a</description>
-		<order>1</order>
+		<order>2</order>
 	</snippet>
 
 	<snippet>
@@ -102,7 +162,7 @@
 		<tabTrigger>b</tabTrigger>
 		<scope>source.js.*?meta.jsx.js\s*$</scope>
 		<description>react: b</description>
-		<order>1</order>
+		<order>2</order>
 	</snippet>
 
 	<snippet>
@@ -121,7 +181,7 @@ className="$1"
 			]
 		]]></context>
 		<description>react: className</description>
-		<order>1</order>
+		<order>2</order>
 	</snippet>
 
 	<snippet>
@@ -140,7 +200,7 @@ title="$1"
 			]
 		]]></context>
 		<description>react: title</description>
-		<order>1</order>
+		<order>2</order>
 	</snippet>
 
 	<snippet>
@@ -159,7 +219,7 @@ onChange={$1}
 			]
 		]]></context>
 		<description>react: onChange</description>
-		<order>1</order>
+		<order>2</order>
 	</snippet>
 
 	<snippet>
@@ -178,7 +238,7 @@ onClick={$1}
 			]
 		]]></context>
 		<description>react: onClick</description>
-		<order>1</order>
+		<order>2</order>
 	</snippet>
 
 	<snippet>
@@ -197,7 +257,7 @@ onClick={$1}
 			]
 		]]></context>
 		<description>react: onClick</description>
-		<order>1</order>
+		<order>2</order>
 	</snippet>
 
 	<snippet>
@@ -216,7 +276,7 @@ onSubmit={$1}
 			]
 		]]></context>
 		<description>react: onSubmit</description>
-		<order>1</order>
+		<order>2</order>
 	</snippet>
 
 	<snippet>
@@ -228,7 +288,7 @@ onSubmit={$1}
 		<tabTrigger>={</tabTrigger>
 		<scope>source.js.*meta.jsx.js</scope>
 		<description>react: callback</description>
-		<order>1</order>
+		<order>2</order>
 	</snippet>
 
 	<snippet>

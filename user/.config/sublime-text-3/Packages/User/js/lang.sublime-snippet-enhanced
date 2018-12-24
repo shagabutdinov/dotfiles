@@ -14,9 +14,10 @@ null
 		<scope>source.js</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w=,(]\\s*$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w=,(:]\\s*n$"},
 			]
 		]]></context>
+		<order>2</order>
 		<description>lang: null</description>
 	</snippet>
 
@@ -34,9 +35,10 @@ true
 		<scope>source.js</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w=,(]\\s*$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w=,(:]\\s*t$"},
 			]
 		]]></context>
+		<order>2</order>
 		<description>lang: true</description>
 	</snippet>
 
@@ -54,9 +56,10 @@ false
 		<scope>source.js</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w=,(]\\s*$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w=,(:]\\s*f$"},
 			]
 		]]></context>
+		<order>2</order>
 		<description>lang: false</description>
 	</snippet>
 
@@ -74,9 +77,10 @@ undefined
 		<scope>source.js</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w=,(]\\s*$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\w=,(:]\\s*u$"},
 			]
 		]]></context>
+		<order>2</order>
 		<description>lang: undefined</description>
 	</snippet>
 
@@ -376,6 +380,49 @@ let $1 = ${0:$selection__or__last_assigned_variable}
 
 	<snippet>
 		<content><![CDATA[
+const ${0:$selection__or__last_assigned_variable}
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>c</tabTrigger>
+		<scope>source.js</scope>
+		<description>lang: const</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+const $1 = ${0:$selection__or__last_assigned_variable}
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>c</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
+				{"key": "following_text_end", "operator": "not_regex_contains", "operand": "^\\s*\\S+ ="},
+			]
+		]]></context>
+		<description>lang: const</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 export $0
 ]]></content>
 		<tabTrigger>ex</tabTrigger>
@@ -568,7 +615,7 @@ throw new Error(${1:error})
 
 	<snippet>
 		<content><![CDATA[
-if(${1:$last_assigned_variable}) {
+if (${1:$last_assigned_variable}) {
 	${0:$selection}
 }
 ]]></content>
@@ -584,7 +631,7 @@ if(${1:$last_assigned_variable}) {
 
 	<snippet>
 		<content><![CDATA[
-if(!${1:$last_assigned_variable}) {
+if (!${1:$last_assigned_variable}) {
 	${0:$selection}
 }
 ]]></content>
@@ -600,7 +647,7 @@ if(!${1:$last_assigned_variable}) {
 
 	<snippet>
 		<content><![CDATA[
-if(${1:$last_assigned_variable}) {
+if (${1:$last_assigned_variable}) {
 	${0:$selection}
 }
 ]]></content>
@@ -624,7 +671,7 @@ if(${1:$last_assigned_variable}) {
 
 	<snippet>
 		<content><![CDATA[
-if(!${1:$last_assigned_variable}) {
+if (!${1:$last_assigned_variable}) {
 	${0:$selection}
 }
 ]]></content>
@@ -643,6 +690,43 @@ if(!${1:$last_assigned_variable}) {
 			]
 		</context>
 		<description>lang: if</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+for ($1) {
+	$0
+}
+]]></content>
+		<commands>
+			[
+				{"command": "move_to", "args": {"extend": true, "to": "eol"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>f</tabTrigger>
+		<scope>source.js</scope>
+		<description>lang: for</description>
+		<order>1</order>
+	</snippet>
+	<snippet>
+		<content><![CDATA[
+try {
+	${2:$selection}
+} catch (${1:error}) {
+	$0
+}
+]]></content>
+		<commands>
+			[
+				{"command": "move_to", "args": {"extend": true, "to": "eol"}},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>tr</tabTrigger>
+		<scope>source.js</scope>
+		<description>lang: try</description>
 		<order>1</order>
 	</snippet>
 
@@ -665,7 +749,7 @@ else {
 
 	<snippet>
 		<content><![CDATA[
-else if(${1:$last_assigned_variable}) {
+else if (${1:$last_assigned_variable}) {
 	${0:$selection}
 }
 ]]></content>

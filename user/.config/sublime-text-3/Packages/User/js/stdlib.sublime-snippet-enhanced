@@ -516,7 +516,25 @@ window.setTimeout($1)
 				"RUN",
 			]
 		]]></commands>
-		<tabTrigger>wso</tabTrigger>
+		<tabTrigger>so</tabTrigger>
+		<scope>source.js</scope>
+		<description>stdlib: window.location.href</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+encodeURIComponent(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>eu</tabTrigger>
 		<scope>source.js</scope>
 		<description>stdlib: window.location.href</description>
 	</snippet>

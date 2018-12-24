@@ -815,4 +815,33 @@ puts Benchmark.measure {
 		<scope>source.ruby</scope>
 		<description>stdlib: Benchmark.measure</description>
 	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+Time.zone.parse(${1:$selection})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<tabTrigger>tp</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: Benchmark.measure</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+${1:10}.times do |${2:index}|
+	${0:$selection}
+end
+]]></content>
+		<tabTrigger>tt</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: times</description>
+	</snippet>
 </snippets>

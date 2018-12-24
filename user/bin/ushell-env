@@ -220,9 +220,6 @@ alias ksp='() {
   kubectl config use-context $namespace@$project
 }'
 
-alias c='docker-compose -f'
-alias dc='docker-compose'
-
 alias kxd='
   open-kubernetes-database-console \
     $(production-pod postgres)
@@ -272,24 +269,21 @@ function production-namespace() {
 }
 
 function docker-compose-file() {
-  echo config/$(ls --color=none config/ | grep --color=none \\.local)/$(
-    ls --color=none config/$(
-      ls --color=none config/ | grep --color=none \\.local
-    ) | grep -E "(main|docker-compose)"
-  )
+  if [ -e config/*local/docker-compose.yml ]; then
+    echo -n config/*local/docker-compose.yml
+  fi
+
+  if [ -e ./docker-compose.yml ]; then
+    echo -n ./docker-compose.yml
+  fi
 }
 
-alias cm='\
-  docker-compose -f $(docker-compose-file) \
-'
-
-alias cu='\
-  docker-compose -f $(docker-compose-file) up
-'
-
-alias cs='\
-  docker-compose -f $(docker-compose-file) stop \
-'
+alias dc='docker-compose'
+alias c='docker-compose -f $(docker-compose-file)'
+alias cu='docker-compose -f $(docker-compose-file) up'
+alias cl='docker-compose -f $(docker-compose-file) logs'
+alias cx='docker-compose -f $(docker-compose-file) exec'
+alias cs='docker-compose -f $(docker-compose-file) stop'
 
 alias cr='\
   docker-compose -f $(docker-compose-file) stop
@@ -306,19 +300,6 @@ alias crr='\
   docker-compose -f $(docker-compose-file) rm -f
   docker-compose -f $(docker-compose-file) up \
 '
-
-function restart-project() {
-  PROJECT_PATH=$(project-path)
-
-  PROJECT_ENV=$(
-    ls --color=none $PROJECT_PATH/config/ |
-      grep --color=none \\.local
-  )
-
-  docker-compose -f $PROJECT_PATH/config/$PROJECT_ENV/main.yml stop
-  docker-compose -f $PROJECT_PATH/config/$PROJECT_ENV/main.yml up
-}
-
 
 alias co='sudo chown -R leo: '
 alias cc='sudo chown -R leo: .'
@@ -357,9 +338,9 @@ alias gk!='() { git add . ; git commit -m "$1" --amend }'
 alias gkx='() { git add . ; git commit -m "$1" --amend }'
 
 alias gx='() {
-  git add .
-  git commit -m "$1"
-  git push -u origin $(current_branch)
+  git add . && \
+    git commit -m "$1" && \
+    git push -u origin $(current_branch)
 }'
 
 alias gxx='() {
@@ -378,7 +359,7 @@ alias geo=rebase-current-branch-on-master
 alias json='python -m "json.tool"'
 
 function application-container() {
-  echo $(docker-container "(backend|app|rails)\." -v admin)
+  echo $(docker-container "(backend|app|rails|\swebsite)\." -v admin)
 }
 
 function docker-container() {
@@ -508,206 +489,6 @@ function deploy-filmservice-to-staging {
 function kubernetes-pod {
   kubectl --context $1 get pods | grep -Po $2 | head -n 1
 }
-
-function download-filmservice-staging-data {
-  cd $(project-path)
-
-  docker stop $(docker-container "(backend)\." -v admin)
-  docker stop $(docker-container "(app)\." -v admin)
-
-  docker exec -i $(docker-container postgres -v admin) psql -U postgres \
-    -c 'DROP DATABASE IF EXISTS "database"'
-
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mDOWNLOAD FAILED\033[0m"
-    return 1
-  fi
-
-  kubectl exec --context staging@filmservice -i \
-    $(kubernetes-pod staging@filmservice 'postgres-[\w\-]+') -- \
-    sh -c "pg_dumpall -Upostgres | gzip" |
-      gunzip |
-      docker exec -i $(docker-container postgres -v admin) psql -U postgres
-
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mDOWNLOAD FAILED\033[0m"
-    return 1
-  fi
-
-  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
-    "ALTER USER \"user\" WITH SUPERUSER;"
-
-  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
-    "ALTER USER \"user\" WITH PASSWORD 'password';"
-
-  docker-compose -f config/filmservice.local/main.yml stop
-  echo y | docker-compose -f config/filmservice.local/main.yml rm
-  docker-compose -f config/filmservice.local/main.yml up -d
-
-  return 0
-}
-
-function download-filmservice-production-data {
-  cd $(project-path)
-
-  docker stop $(docker-container "(backend)\." -v admin)
-  docker stop $(docker-container "(app)\." -v admin)
-
-  docker exec -i $(docker-container postgres -v admin) psql -U postgres \
-    -c 'DROP DATABASE IF EXISTS "database"'
-
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mDOWNLOAD FAILED\033[0m"
-    return 1
-  fi
-
-  kubectl exec --context filmservice@filmservice -i \
-    $(kubernetes-pod filmservice@filmservice 'postgres-[\w\-]+') -- \
-    sh -c "pg_dumpall -Upostgres | gzip" |
-      gunzip |
-      docker exec -i $(docker-container postgres -v admin) psql -U postgres
-
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mDOWNLOAD FAILED\033[0m"
-    return 1
-  fi
-
-  docker exec -i $(docker-container postgres -v admin) psql -U postgres \
-    -c 'ALTER DATABASE "diagonal_production" RENAME TO "database"'
-
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mDOWNLOAD FAILED\033[0m"
-    return 1
-  fi
-
-  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
-    "ALTER USER \"user\" WITH SUPERUSER;"
-
-  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
-    "ALTER USER \"user\" WITH PASSWORD 'password';"
-
-  docker-compose -f config/filmservice.local/main.yml stop
-  echo y | docker-compose -f config/filmservice.local/main.yml rm
-  docker-compose -f config/filmservice.local/main.yml up -d
-
-  return 0
-}
-
-function download-filmservice-production-data-to-staging {
-  kubectl --context staging@filmservice delete deployment \
-    app backend area51 sidekiq clockwork
-
-  kubectl exec -i \
-    --context staging@filmservice \
-    $(kubernetes-pod staging@filmservice 'postgres-[\w\-]+') \
-      -- sh -c 'psql -Upostgres -c DROP DATABASE IF EXISTS "database"'
-
-  kubectl exec \
-    --context filmservice@filmservice \
-    $(kubernetes-pod filmservice@filmservice 'postgres-[\w\-]+') \
-    -- sh -c "pg_dumpall -Upostgres | gzip" | \
-  kubectl exec -i \
-    --context staging@filmservice \
-    $(kubernetes-pod staging@filmservice 'postgres-[\w\-]+') \
-      -- sh -c "gunzip | psql -Upostgres "
-
-  kubectl --context staging@filmservice apply -f \
-    /home/leo/src/filmservice.net/config/staging.filmservice.net/kubernetes.yml
-
-  kubectl exec \
-    --context staging@filmservice \
-    $(kubernetes-pod staging@filmservice 'postgres-[\w\-]+') -- \
-    psql -Upostgres -c \
-      'ALTER DATABASE "diagonal_production" RENAME TO "database";'
-
-  kubectl exec \
-    --context staging@filmservice \
-    $(kubernetes-pod staging@filmservice 'postgres-[\w\-]+') -- \
-    psql -Upostgres -c 'ALTER USER "user" WITH SUPERUSER;'
-
-  kubectl exec \
-    --context staging@filmservice \
-    $(kubernetes-pod staging@filmservice 'postgres-[\w\-]+') -- \
-    psql -Upostgres -c "ALTER USER \"user\" WITH PASSWORD 'password';"
-}
-
-function download-altagram-production-data {
-  cd $(project-path)
-
-  docker stop $(docker-container "(backend)\." -v admin)
-  docker stop $(docker-container "(app)\." -v admin)
-
-  docker exec -i $(docker-container postgres -v admin) psql -U postgres \
-    -c 'DROP DATABASE IF EXISTS "database"'
-
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mDOWNLOAD FAILED\033[0m"
-    return 1
-  fi
-
-  kubectl exec --namespace altagram -i \
-    $(kubectl --namespace altagram get pods | \
-      grep -Eo 'postgres-[a-z0-9]+-[a-Z0-9]+' | head -n 1) -- \
-    pg_dumpall -Uuser | \
-    docker exec -i $(docker-container postgres -v admin) psql -Upostgres
-
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mDOWNLOAD FAILED\033[0m"
-    return 1
-  fi
-
-  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
-    "ALTER USER \"user\" WITH SUPERUSER;"
-
-  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
-    "ALTER USER \"user\" WITH PASSWORD 'password';"
-
-  docker-compose -f config/altagram.local/main.yml stop
-  echo y | docker-compose -f config/altagram.local/main.yml rm
-  docker-compose -f config/altagram.local/main.yml up -d
-
-  return 0
-}
-
-function download-altagram-staging-data {
-  cd $(project-path)
-
-  docker stop $(docker-container "(backend)\." -v admin)
-  docker stop $(docker-container "(app)\." -v admin)
-
-  docker exec -i $(docker-container postgres -v admin) psql -U postgres \
-    -c 'DROP DATABASE IF EXISTS "database"'
-
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mDOWNLOAD FAILED\033[0m"
-    return 1
-  fi
-
-  kubectl exec --namespace staging -i \
-    $(kubectl --namespace staging get pods | \
-      grep -Eo 'postgres-[a-z0-9]+-[a-Z0-9]+' | head -n 1) -- \
-    pg_dumpall -Uuser | \
-    docker exec -i $(docker-container postgres -v admin) psql -Upostgres
-
-  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
-    "ALTER USER \"user\" WITH SUPERUSER;"
-
-  docker exec -i $(docker-container postgres -v admin) psql -Upostgres -c \
-    "ALTER USER \"user\" WITH PASSWORD 'password';"
-
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mDOWNLOAD FAILED\033[0m"
-    return 1
-  fi
-
-  docker-compose -f config/altagram.local/main.yml stop
-  echo y | docker-compose -f config/altagram.local/main.yml rm
-  docker-compose -f config/altagram.local/main.yml up -d
-
-  return 0
-}
-
-alias clr=restart-project
 
 function generate-rails-object() {
   RESULT=$(

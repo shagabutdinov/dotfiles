@@ -16,6 +16,7 @@
 # /etc/hosts: static lookup table for host names
 #
 
+0.0.0.1 px.ads.linkedin.com
 0.0.0.1 s-cm.send.adnetwork.vn
 0.0.0.1 *.adnetwork.vn
 0.0.0.1 *.microadlinc.com

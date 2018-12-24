@@ -214,6 +214,7 @@ bindsym $mod+m exec ushow-status
 bindsym $mod+n exec enter-text "Leonid Shagabutdinov"
 bindsym $mod+shift+n exec enter-text "leonid@shagabutdinov.com"
 bindsym $mod+ctrl+n exec enter-text "+79059376988"
+bindsym $mod+b exec enter-text "Definition of done:"
 
 bindcode $mod+shift+22 exec ucreatetodo # backspace
 bindcode $mod+ctrl+22 exec uscreenshot # backspace
