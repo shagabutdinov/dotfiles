@@ -7,6 +7,7 @@
 127.0.0.1 f
 127.0.0.1 p
 127.0.0.1 c
+127.0.0.1       localbox
 
 0.0.0.0 api.wb.local
 0.0.0.0 auth.wb.local

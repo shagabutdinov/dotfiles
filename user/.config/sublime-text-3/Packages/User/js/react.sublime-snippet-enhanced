@@ -1,21 +1,32 @@
 <snippets>
-
 	<snippet>
 		<content><![CDATA[
-import Form from 'components/Forms/Form';
+import React from 'react';
 ]]></content>
-		<tabTrigger>if</tabTrigger>
+		<tabTrigger>ir</tabTrigger>
 		<scope>source.js</scope>
 		<context><![CDATA[
 			[
-				{
-					"key": "preceding_text_begin",
-					"operator": "regex_contains",
-					"operand": "^if$"
-				},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^ir$"},
 			]
 		]]></context>
-		<description>react: import form</description>
+		<description>react: import react</description>
+		<order>2</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+import PropTypes from 'prop-types';
+]]></content>
+		<tabTrigger>ip</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^ip$"},
+			]
+		]]></context>
+		<description>react: import prop types</description>
+		<order>2</order>
 	</snippet>
 
 	<snippet>
@@ -386,5 +397,200 @@ forceUpdate()
 		<description>react: forceUpdate()</description>
 		<order>2</order>
 	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+propTypes = {
+	$0
+}
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>pt</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.pt"},
+			]
+		]]></context>
+		<description>react: forceUpdate()</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+PropTypes.string
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>s</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\.propTypes\\s=\\s\\{"},
+			]
+		]]></context>
+		<description>react: PropTypes.string</description>
+		<order>3</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+PropTypes.number
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>n</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\.propTypes\\s=\\s\\{"},
+			]
+		]]></context>
+		<description>react: PropTypes.number</description>
+		<order>3</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+PropTypes.func
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>f</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\.propTypes\\s=\\s\\{"},
+			]
+		]]></context>
+		<description>react: PropTypes.func</description>
+		<order>3</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+isRequired
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>r</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\.propTypes\\s=\\s\\{"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "PropTypes\\."},
+			]
+		]]></context>
+		<description>react: PropTypes.isRequired</description>
+		<order>3</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+PropTypes.arrayOf($1)
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>a</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\.propTypes\\s=\\s\\{"},
+			]
+		]]></context>
+		<description>react: PropTypes.arrayOf</description>
+		<order>3</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+PropTypes.instanceOf($1)
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>i</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\.propTypes\\s=\\s\\{"},
+			]
+		]]></context>
+		<description>react: PropTypes.instanceOf</description>
+		<order>3</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+PropTypes.shape($1)
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>sh</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\.propTypes\\s=\\s\\{"},
+			]
+		]]></context>
+		<description>react: PropTypes.shape</description>
+		<order>3</order>
+	</snippet>
+
 
 </snippets>

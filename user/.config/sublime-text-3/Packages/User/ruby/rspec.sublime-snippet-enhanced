@@ -563,6 +563,30 @@ and_raise(${1:$selection__or__last_assigned_variable})
 
 	<snippet>
 		<content><![CDATA[
+and_call_original
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<trigger>ac</trigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\)\\s*\\.ac"},
+			]
+		]]></context>
+		<description>rspec: and_call_original</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 save_screenshot('XXXX_screenshot_${TM_FILENAME}__${TM_LINE_NUMBER}.png')
 ]]></content>
 		<tabTrigger>ss</tabTrigger>
@@ -712,7 +736,7 @@ FactoryGirl.build(:${0:$selection__or__last_assigned_variable})
 
 	<snippet>
 		<content><![CDATA[
-focus: true ]]></content>
+:focus ]]></content>
 		<trigger>f</trigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
