@@ -452,16 +452,16 @@ import $1 from '$2';
 		<content><![CDATA[
 import $1 from 'services/$1';
 ]]></content>
-		<tabTrigger>is</tabTrigger>
+		<tabTrigger>ise</tabTrigger>
 		<scope>source.js</scope>
 		<description>lang: import service</description>
 	</snippet>
 
 	<snippet>
 		<content><![CDATA[
-import $1 from 'components/$1';
+import $1 from 'Components/$1';
 ]]></content>
-		<tabTrigger>ic</tabTrigger>
+		<tabTrigger>ico</tabTrigger>
 		<scope>source.js</scope>
 		<description>lang: import component</description>
 	</snippet>

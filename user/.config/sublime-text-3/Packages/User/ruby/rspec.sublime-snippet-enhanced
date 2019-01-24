@@ -490,6 +490,30 @@ receive(${1:$selection__or__last_assigned_variable})
 
 	<snippet>
 		<content><![CDATA[
+receive_message_chain(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<commands>
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/select_token.sublime-macro"}
+				},
+				"RUN",
+			]
+		</commands>
+		<trigger>rm</trigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\)\\.to(_not)?\\s+rm$"},
+			]
+		]]></context>
+		<description>rspec: expect(OBJ).to receive</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 with(${1:$selection__or__last_assigned_variable})
 ]]></content>
 		<commands>

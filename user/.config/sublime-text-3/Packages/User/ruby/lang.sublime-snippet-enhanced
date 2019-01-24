@@ -68,7 +68,7 @@ end
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*i$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+i$"},
 			]
 		]]></context>
 		<description>operators: if</description>
@@ -90,7 +90,7 @@ end
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*i$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+i$"},
 				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
 			]
 		]]></context>
@@ -107,7 +107,7 @@ elsif ${1:$last_assigned_variable}
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*i$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+i$"},
 			]
 		]]></context>
 		<description>operators: elsif</description>
@@ -128,7 +128,7 @@ elsif ${0:$selection}
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*i$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+i$"},
 				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
 			]
 		]]></context>
@@ -145,7 +145,7 @@ else ${1:$last_assigned_variable}
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*i$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+i$"},
 			]
 		]]></context>
 		<description>operators: else</description>
@@ -166,7 +166,7 @@ else ${0:$selection}
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*i$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+i$"},
 				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
 			]
 		]]></context>
@@ -184,7 +184,7 @@ end
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*ii$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+ii$"},
 			]
 		]]></context>
 		<description>operators: if not nil</description>
@@ -200,10 +200,26 @@ end
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*ie$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+ie$"},
 			]
 		]]></context>
 		<description>operators: if empty</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+if ${1:$last_assigned_variable}.present?
+	${0:$selection}
+end
+]]></content>
+		<tabTrigger>ip</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+ip$"},
+			]
+		]]></context>
+		<description>operators: if present</description>
 	</snippet>
 
 	<snippet>
@@ -216,7 +232,7 @@ end
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*in$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+in$"},
 			]
 		]]></context>
 		<description>operators: if not</description>
@@ -238,7 +254,7 @@ end
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*in$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+in$"},
 				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
 			]
 		]]></context>
@@ -256,7 +272,7 @@ end
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*ini$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+ini$"},
 			]
 		]]></context>
 		<description>operators: if not nil</description>
@@ -272,7 +288,7 @@ end
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*ine$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+ine$"},
 			]
 		]]></context>
 		<description>operators: if empty</description>
@@ -455,7 +471,7 @@ end
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*c$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+c$"},
 			]
 		]]></context>
 		<description>class</description>
@@ -469,7 +485,7 @@ class $1Error < ${2:Standard}Error; end
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*ce$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+ce$"},
 			]
 		]]></context>
 		<description>class</description>
@@ -491,7 +507,7 @@ end
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*d$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+d$"},
 			]
 		]]></context>
 		<description>def</description>
@@ -535,7 +551,7 @@ end
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*di$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+di$"},
 			]
 		]]></context>
 		<description>def initialize</description>
@@ -558,7 +574,7 @@ end
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*dii$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+dii$"},
 			]
 		]]></context>
 		<description>def initialize(*args)</description>
@@ -580,7 +596,7 @@ end
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*ds$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+ds$"},
 			]
 		]]></context>
 		<description>def</description>
@@ -594,7 +610,7 @@ attr_accessor :$1
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*aa$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+aa$"},
 			]
 		]]></context>
 		<description>attr_accessor</description>
@@ -608,7 +624,7 @@ attr_reader :$1
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*ar$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+ar$"},
 			]
 		]]></context>
 		<description>attr_reader</description>
@@ -622,7 +638,7 @@ attr_writer :$1
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*aw$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+aw$"},
 			]
 		]]></context>
 		<description>attr_writer</description>
