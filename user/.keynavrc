@@ -7,6 +7,11 @@ Alt_L+i move-up, warp
 Alt_L+l move-right, warp
 Alt_L+k move-down, warp
 
+s move-left, warp
+e move-up, warp
+f move-right, warp
+d move-down, warp
+
 u cell-select 1
 j cell-select 2
 m cell-select 3
