@@ -1,3 +1,7 @@
-*.swp
-.bundle/config
+/build/
+/dist/
+/examples/__build__
+/node_modules/
+/coverage/
+config/initializers/backtrace_silencers.local!.rb
 

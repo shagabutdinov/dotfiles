@@ -1,0 +1,13 @@
+<snippets>
+
+  <snippet>
+    <content><![CDATA[
+\${theme.colors.$0}
+]]></content>
+    <tabTrigger>t</tabTrigger>
+    <scope>string.interpolated.js</scope>
+    <description>projects (constructor): theme.colors</description>
+    <order>3</order>
+  </snippet>
+
+</snippets>

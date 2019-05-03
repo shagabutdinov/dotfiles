@@ -2,7 +2,7 @@
 
 	<snippet>
 		<content><![CDATA[
-before :each do
+before do
 	$0
 end
 ]]></content>
@@ -15,9 +15,7 @@ end
 		<tabTrigger>be</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
-			[
-				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-			]
+			[{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"}]
 		]]></context>
 		<description>rspec: before each</description>
 		<order>1</order>
@@ -38,9 +36,7 @@ end
 		<tabTrigger>ba</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
-			[
-				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-			]
+			[{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"}]
 		]]></context>
 		<description>rspec: before all</description>
 	</snippet>
@@ -60,9 +56,7 @@ end
 		<tabTrigger>ae</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
-			[
-				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-			]
+			[{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"}]
 		]]></context>
 		<description>rspec: after each</description>
 	</snippet>
@@ -82,9 +76,7 @@ end
 		<tabTrigger>de</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
-			[
-				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-			]
+			[{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"}]
 		]]></context>
 		<description>rspec: describe</description>
 	</snippet>
@@ -104,9 +96,7 @@ end
 		<tabTrigger>co</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
-			[
-				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-			]
+			[{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"}]
 		]]></context>
 		<description>rspec: context</description>
 	</snippet>
@@ -126,9 +116,7 @@ end
 		<tabTrigger>it</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
-			[
-				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-			]
+			[{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"}]
 		]]></context>
 		<description>rspec: it</description>
 		<order>1</order>
@@ -198,9 +186,7 @@ expect(${1:$selection__or__last_assigned_variable}).to $0
 		<tabTrigger>x</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
-			[
-				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-			]
+			[{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"}]
 		]]></context>
 		<description>rspec: expect(OBJ).to</description>
 	</snippet>
@@ -221,9 +207,7 @@ expect_any_instance_of(${1:$selection__or__last_assigned_variable}).to $0
 		<tabTrigger>xa</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
-			[
-				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-			]
+			[{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"}]
 		]]></context>
 		<description>rspec: expect(OBJ).to</description>
 	</snippet>
@@ -244,9 +228,7 @@ expect { ${1:$selection__or__last_assigned_variable} }.to $0
 		<tabTrigger>xx</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
-			[
-				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-			]
+			[{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"}]
 		]]></context>
 		<description>rspec: expect(OBJ).to</description>
 	</snippet>
@@ -267,9 +249,7 @@ expect { ${1:$selection__or__last_assigned_variable} }.to change { $2 }.${3:by($
 		<tabTrigger>xc</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
-			[
-				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-			]
+			[{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"}]
 		]]></context>
 		<description>rspec: expect { EXPR }.to change { EXPR }</description>
 	</snippet>
@@ -305,9 +285,7 @@ expect { ${1:$selection__or__last_assigned_variable} }.to raise_error(${2:error}
 		<tabTrigger>xr</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
-			[
-				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-			]
+			[{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"}]
 		]]></context>
 		<description>rspec: expect { EXPR }.to change { EXPR }</description>
 	</snippet>
@@ -328,9 +306,7 @@ allow(${1:$selection__or__last_assigned_variable}).to $0
 		<tabTrigger>a</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
-			[
-				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-			]
+			[{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"}]
 		]]></context>
 		<description>rspec: allow(OBJ).to</description>
 	</snippet>
@@ -351,9 +327,7 @@ allow_any_instance_of(${1:$selection__or__last_assigned_variable}).to $0
 		<tabTrigger>aa</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
-			[
-				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-			]
+			[{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"}]
 		]]></context>
 		<description>rspec: allow(OBJ).to</description>
 		<order>1</order>
@@ -616,9 +590,7 @@ save_screenshot('XXXX_screenshot_${TM_FILENAME}__${TM_LINE_NUMBER}.png')
 		<tabTrigger>ss</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
-			[
-				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-			]
+			[{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"}]
 		]]></context>
 		<description>rspec: save_screenshot</description>
 	</snippet>
@@ -631,9 +603,7 @@ save_screenshot(${1:'screenshot.png'})
 		<tabTrigger>sc</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
-			[
-				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-			]
+			[{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"}]
 		]]></context>
 		<description>rspec: save_screenshot</description>
 	</snippet>
@@ -661,9 +631,7 @@ describeb_class
 		<tabTrigger>dc</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
-			[
-				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-			]
+			[{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"}]
 		]]></context>
 		<description>rspec: response</description>
 		<order>1</order>
@@ -676,9 +644,7 @@ response
 		<tabTrigger>re</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
-			[
-				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-			]
+			[{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"}]
 		]]></context>
 		<description>rspec: response</description>
 		<order>1</order>
@@ -691,9 +657,7 @@ response.status
 		<tabTrigger>rs</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
-			[
-				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-			]
+			[{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"}]
 		]]></context>
 		<description>rspec: response</description>
 		<order>1</order>
@@ -706,9 +670,7 @@ response.body
 		<tabTrigger>rb</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
-			[
-				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-			]
+			[{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"}]
 		]]></context>
 		<description>rspec: response</description>
 		<order>1</order>
@@ -728,9 +690,7 @@ FactoryGirl.create(:${0:$selection__or__last_assigned_variable})
 		<tabTrigger>fc</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
-			[
-				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-			]
+			[{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"}]
 		]]></context>
 		<description>rspec: create</description>
 		<order>1</order>
@@ -750,9 +710,7 @@ FactoryGirl.build(:${0:$selection__or__last_assigned_variable})
 		<tabTrigger>fb</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
-			[
-				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
-			]
+			[{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"}]
 		]]></context>
 		<description>rspec: build</description>
 		<order>1</order>
@@ -770,7 +728,23 @@ FactoryGirl.build(:${0:$selection__or__last_assigned_variable})
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*(it|context|describe)\\s"},
 			]
 		]]></context>
-		<description>rspec: build</description>
+		<description>rspec: focus</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+instance_double(${1:$selection__or__last_assigned_variable})
+]]></content>
+		<tabTrigger>id</tabTrigger>
+		<scope>source.ruby</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "_spec\\.rb$"},
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "([(=]|\\)\\s*{)\\s*id$"},
+			]
+		]]></context>
+		<description>rspec: instance_double</description>
 		<order>1</order>
 	</snippet>
 

@@ -31,13 +31,13 @@ import PropTypes from 'prop-types';
 
 	<snippet>
 		<content><![CDATA[
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 ]]></content>
 		<tabTrigger>is</tabTrigger>
 		<scope>source.js</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^ip$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^is$"},
 			]
 		]]></context>
 		<description>react: import styled</description>
@@ -46,17 +46,52 @@ import styled from '@emotion/styled'
 
 	<snippet>
 		<content><![CDATA[
+import { css } from '@emotion/core';
+]]></content>
+		<tabTrigger>ic</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^ic$"},
+			]
+		]]></context>
+		<description>react: import css</description>
+		<order>2</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+import $1 from 'components/Modules/$1';
+]]></content>
+		<tabTrigger>io</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^io$"},
+			]
+		]]></context>
+		<description>react: import module</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default class $1 extends React.Component {
-
+class $1 extends React.Component {
 	render() {
 		return (
 			$0
 		);
 	}
-
 }
+
+$1.propTypes = {
+
+};
+
+export default $1;
 
 ]]></content>
 		<tabTrigger>d</tabTrigger>
@@ -67,6 +102,39 @@ export default class $1 extends React.Component {
 					"key": "preceding_text_begin",
 					"operator": "regex_contains",
 					"operand": "^d$"
+				},
+			]
+		]]></context>
+		<description>react: define component</description>
+		<order>5</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+import React from 'react';
+import PropTypes from 'prop-types';
+
+function $1() {
+	return (
+		$0
+	);
+}
+
+$1.propTypes = {
+
+};
+
+export default $1;
+
+]]></content>
+		<tabTrigger>df</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{
+					"key": "preceding_text_begin",
+					"operator": "regex_contains",
+					"operand": "^df$"
 				},
 			]
 		]]></context>
@@ -181,7 +249,7 @@ setState($1)
 			[
 				{
 					"command": "run_macro_file_with_context",
-					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+					"args": {"file": "Packages/User/macro/add_semimolon.sublime-macro"},
 				},
 				"RUN",
 			]
@@ -205,7 +273,7 @@ this.setState($1)
 			[
 				{
 					"command": "run_macro_file_with_context",
-					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+					"args": {"file": "Packages/User/macro/add_semimolon.sublime-macro"},
 				},
 				"RUN",
 			]
@@ -223,7 +291,7 @@ this.state
 			[
 				{
 					"command": "run_macro_file_with_context",
-					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+					"args": {"file": "Packages/User/macro/add_semimolon.sublime-macro"},
 				},
 				"RUN",
 			]
@@ -241,7 +309,7 @@ this.state
 			[
 				{
 					"command": "run_macro_file_with_context",
-					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+					"args": {"file": "Packages/User/macro/add_semimolon.sublime-macro"},
 				},
 				"RUN",
 			]
@@ -265,7 +333,7 @@ this.state
 			[
 				{
 					"command": "run_macro_file_with_context",
-					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+					"args": {"file": "Packages/User/macro/add_semimolon.sublime-macro"},
 				},
 				"RUN",
 			]
@@ -289,7 +357,7 @@ this.state.
 			[
 				{
 					"command": "run_macro_file_with_context",
-					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+					"args": {"file": "Packages/User/macro/add_semimolon.sublime-macro"},
 				},
 				"RUN",
 			]
@@ -313,7 +381,7 @@ this.props
 			[
 				{
 					"command": "run_macro_file_with_context",
-					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+					"args": {"file": "Packages/User/macro/add_semimolon.sublime-macro"},
 				},
 				"RUN",
 			]
@@ -331,7 +399,7 @@ this.props.
 			[
 				{
 					"command": "run_macro_file_with_context",
-					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+					"args": {"file": "Packages/User/macro/add_semimolon.sublime-macro"},
 				},
 				"RUN",
 			]
@@ -340,7 +408,7 @@ this.props.
 		<scope>source.js</scope>
 		<context><![CDATA[
 			[
-				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "[^\\s;]"},
 			]
 		]]></context>
 		<order>1</order>
@@ -355,7 +423,7 @@ this.form
 			[
 				{
 					"command": "run_macro_file_with_context",
-					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+					"args": {"file": "Packages/User/macro/add_semimolon.sublime-macro"},
 				},
 				"RUN",
 			]
@@ -373,7 +441,7 @@ this.form.
 			[
 				{
 					"command": "run_macro_file_with_context",
-					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+					"args": {"file": "Packages/User/macro/add_semimolon.sublime-macro"},
 				},
 				"RUN",
 			]
@@ -397,7 +465,7 @@ forceUpdate()
 			[
 				{
 					"command": "run_macro_file_with_context",
-					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+					"args": {"file": "Packages/User/macro/add_semimolon.sublime-macro"},
 				},
 				"RUN",
 			]
@@ -423,7 +491,7 @@ defaultProps = {
 			[
 				{
 					"command": "run_macro_file_with_context",
-					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+					"args": {"file": "Packages/User/macro/add_semimolon.sublime-macro"},
 				},
 				"RUN",
 			]
@@ -442,13 +510,13 @@ defaultProps = {
 		<content><![CDATA[
 propTypes = {
 	$0
-}
+};
 ]]></content>
 		<commands><![CDATA[
 			[
 				{
 					"command": "run_macro_file_with_context",
-					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+					"args": {"file": "Packages/User/macro/add_semimolon.sublime-macro"},
 				},
 				"RUN",
 			]
@@ -588,7 +656,7 @@ PropTypes.object
 		<content><![CDATA[
 PropTypes.objectOf($1)
 ]]></content>
-		<tabTrigger>oo</tabTrigger>
+		<tabTrigger>ob</tabTrigger>
 		<scope>source.js</scope>
 		<context><![CDATA[
 			[
@@ -648,7 +716,7 @@ PropTypes.node
 		<content><![CDATA[
 PropTypes.oneOfType([$1])
 ]]></content>
-		<tabTrigger>on</tabTrigger>
+		<tabTrigger>oot</tabTrigger>
 		<scope>source.js</scope>
 		<context><![CDATA[
 			[
@@ -661,11 +729,94 @@ PropTypes.oneOfType([$1])
 
 	<snippet>
 		<content><![CDATA[
+PropTypes.oneOf([$1])
+]]></content>
+		<tabTrigger>oo</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\.propTypes\\s=\\s\\{"},
+			]
+		]]></context>
+		<description>react: PropTypes.oneOf</description>
+		<order>3</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 classNames($1)
 ]]></content>
 		<tabTrigger>cn</tabTrigger>
 		<scope>source.js</scope>
 		<description>react: classNames</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+const $1 = styled.${2:tag}`
+	$0
+`;
+]]></content>
+		<tabTrigger>st</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^st$"},
+			]
+		]]></context>
+		<description>react: styled.tag</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+const $1 = styled.span`
+  $0
+`;
+]]></content>
+		<tabTrigger>ss</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^ss$"},
+			]
+		]]></context>
+		<description>react: styled.span</description>
+		<order>1</order>
+	</snippet>
+
+
+	<snippet>
+		<content><![CDATA[
+const $1 = styled.div`
+  $0
+`;
+]]></content>
+		<tabTrigger>sd</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^sd$"},
+			]
+		]]></context>
+		<description>react: styled.div</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+const { $1 } = this.props;
+]]></content>
+		<tabTrigger>cp</tabTrigger>
+		<scope>source.js</scope>
+		<description>react: const { variable } = this.props</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+const [$1, set${2:$1}] = useState($3);
+]]></content>
+		<tabTrigger>cu</tabTrigger>
+		<scope>source.js</scope>
+		<description>react: useState</description>
 	</snippet>
 
 </snippets>

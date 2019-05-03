@@ -17,6 +17,6 @@ keynav &
 redshift -l $(curl ipinfo.io | jq -j .loc | tr ',' ':') &
 dunst &
 
-feh --bg-scale ~/.config/background.jpg
+# feh --bg-scale ~/.config/background.jpg
 
 exec i3

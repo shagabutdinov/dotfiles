@@ -1,0 +1,349 @@
+<snippets>
+
+	<snippet>
+		<content><![CDATA[
+jest.fn()
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>jf</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+			]
+		]]></context>
+		<description>jest: describe</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+describe('$1', () => {
+	${0:$selection}
+});
+]]></content>
+		<tabTrigger>de</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+			]
+		]]></context>
+		<description>jest: describe</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+it('$1', () => {
+	${0:$selection}
+});
+]]></content>
+		<tabTrigger>it</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+			]
+		]]></context>
+		<description>jest: it</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+beforeEach(() => {
+	${0:$selection}
+});
+]]></content>
+		<tabTrigger>be</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+			]
+		]]></context>
+		<description>jest: beforeEach</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+afterEach(() => {
+	${0:$selection}
+});
+]]></content>
+		<tabTrigger>ae</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+			]
+		]]></context>
+		<description>jest: afterEach</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+expect(${1:$selection}).to$0
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>x</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^(\\s*)x$"},
+			]
+		]]></context>
+		<description>jest: expect</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+not.to
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<trigger>ton</trigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ton$"},
+			]
+		]]></context>
+		<description>jest: .not</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+toEqual($1)
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<trigger>toe</trigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.toe$"},
+			]
+		]]></context>
+		<description>jest: toEqual</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+toBe($1)
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<trigger>tob</trigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.tob$"},
+			]
+		]]></context>
+		<description>jest: toBe</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+toBeNull()
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<trigger>tou</trigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.tou$"},
+			]
+		]]></context>
+		<description>jest: toBeNull</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+toBeTruthy()
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<trigger>tot</trigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.tot$"},
+			]
+		]]></context>
+		<description>jest: toBeTruthy</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+toBeFalsy()
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<trigger>tof</trigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.tof$"},
+			]
+		]]></context>
+		<description>jest: toBeFalsy</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+toHaveTextContent($1)
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<trigger>toht</trigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.toht$"},
+			]
+		]]></context>
+		<description>jest: toHaveTextContent</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+toHaveBeenCalledWith($1)
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<trigger>tohb</trigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.tohb$"},
+			]
+		]]></context>
+		<description>jest: toHaveTextContent</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+const { ${1:container} } = render($2);
+]]></content>
+		<tabTrigger>rc</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*rc$"},
+			]
+		]]></context>
+		<description>jest: render container</description>
+	</snippet>
+
+	<snippet>i
+		<content><![CDATA[
+import React from 'react';
+import { render } from 'react-testing-library';
+
+import $1 from './$1';
+
+describe('$1', () => {
+  const props = {};
+
+  it('$2', () => {
+    const { container } = render(<$1 {...props} />);
+    expect(container).toHaveTextContent('TEST');
+  });
+});
+]]></content>
+		<tabTrigger>d</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "^[\\s\\n]*d$"},
+			]
+		]]></context>
+		<description>jest: test case</description>
+		<order>6</order>
+	</snippet>
+
+</snippets>

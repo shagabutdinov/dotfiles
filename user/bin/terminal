@@ -1,0 +1,3 @@
+#!/bin/bash
+
+marvex -b urxvt --terminal '@path --title "@title" -e @command' -e "cd $PWD"

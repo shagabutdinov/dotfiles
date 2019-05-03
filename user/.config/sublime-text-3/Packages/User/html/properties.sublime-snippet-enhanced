@@ -16,6 +16,7 @@ value="$0"
 		<tabTrigger>v</tabTrigger>
 		<scope>meta.tag</scope>
 		<description>properties: value</description>
+		<order>1</order>
 	</snippet>
 
 	<snippet>

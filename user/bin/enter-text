@@ -1,9 +1,13 @@
-#!/bin/bash
+#!/usr/bin/env ruby
 
 # based on carcosa-ui
+sleep 0.2
 
-sleep 0.1
+*lines, last_line = ARGV[0].split('\n')
 
-cat <<< "$1" \
-  | perl -p -e 'chomp if eof' \
-  | xdotool type --clearmodifiers --delay 1 --file -
+lines.each { |line|
+  system('xdotool', 'type', '--delay', '2', line)
+  system('xdotool', 'key', 'Return')
+}
+
+system('xdotool', 'type', '--delay', '2', last_line)

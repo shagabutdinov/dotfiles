@@ -15,7 +15,7 @@ p "XXXX", Benchmark.measure {
 		</commands>
 		<tabTrigger>pb</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: Benchmark.measure</description>
+		<description>stdlib: p "XXXX", Benchmark.measure {</description>
 	</snippet>
 
 	<snippet>
@@ -31,7 +31,7 @@ puts("XXXX $TM_FILENAME:$TM_LINE_NUMBER #{Time.now.to_f - \$TIME}")
 		</commands>
 		<tabTrigger>pe</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: print execution time</description>
+		<description>stdlib: puts("XXXX $TM_FILENAME:$TM_LINE_NUMBER #{Time.now.to_f - \$TIME}")</description>
 	</snippet>
 
 	<snippet>
@@ -47,7 +47,7 @@ puts("XXXX $TM_FILENAME:$TM_LINE_NUMBER #{${1:$selection}}")
 		</commands>
 		<tabTrigger>p</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: p</description>
+		<description>stdlib: puts("XXXX $TM_FILENAME:$TM_LINE_NUMBER #{${1:$selection}}")</description>
 	</snippet>
 
 	<snippet>
@@ -63,7 +63,7 @@ puts("XXXX $TM_FILENAME:$TM_LINE_NUMBER #{JSON.pretty_generate(${1:$selection})}
 		</commands>
 		<tabTrigger>pj</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: p</description>
+		<description>stdlib: puts("XXXX $TM_FILENAME:$TM_LINE_NUMBER #{JSON.pretty_generate(${1:$selection})}")</description>
 	</snippet>
 
 	<snippet>
@@ -79,7 +79,7 @@ puts("XXXX $TM_FILENAME:$TM_LINE_NUMBER #{JSON.pretty_generate(${1:$selection})}
 		</commands>
 		<tabTrigger>pp</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: pp</description>
+		<description>stdlib: puts("XXXX $TM_FILENAME:$TM_LINE_NUMBER #{JSON.pretty_generate(${1:$selection})}")</description>
 	</snippet>
 
 	<snippet>
@@ -106,7 +106,7 @@ File.join(${0:$selection__or__last_assigned_variable})
 		</commands>
 		<tabTrigger>fj</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: File.join</description>
+		<description>stdlib: File.join(${0:$selection__or__last_assigned_variable})</description>
 	</snippet>
 
 	<snippet>
@@ -124,7 +124,7 @@ File.exist?(${0:$selection__or__last_assigned_variable})
 		</commands>
 		<tabTrigger>fe</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: File.exist?</description>
+		<description>stdlib: File.exist?(${0:$selection__or__last_assigned_variable})</description>
 	</snippet>
 
 	<snippet>
@@ -142,7 +142,7 @@ File.basename(${0:$selection__or__last_assigned_variable})
 		</commands>
 		<tabTrigger>fb</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: File.basename</description>
+		<description>stdlib: File.basename(${0:$selection__or__last_assigned_variable})</description>
 	</snippet>
 
 	<snippet>
@@ -160,7 +160,7 @@ File.dirname(${0:$selection__or__last_assigned_variable})
 		</commands>
 		<tabTrigger>fd</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: File.dirname</description>
+		<description>stdlib: File.dirname(${0:$selection__or__last_assigned_variable})</description>
 	</snippet>
 
 	<snippet>
@@ -178,7 +178,7 @@ JSON.generate(${0:$selection__or__last_assigned_variable})
 		</commands>
 		<tabTrigger>jg</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: JSON.generate</description>
+		<description>stdlib: JSON.generate(${0:$selection__or__last_assigned_variable})</description>
 	</snippet>
 
 	<snippet>
@@ -196,7 +196,7 @@ JSON.pretty_generate(${0:$selection__or__last_assigned_variable})
 		</commands>
 		<tabTrigger>je</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: JSON.pretty_generate</description>
+		<description>stdlib: JSON.pretty_generate(${0:$selection__or__last_assigned_variable})</description>
 	</snippet>
 
 	<snippet>
@@ -214,7 +214,7 @@ JSON.parse(${0:$selection__or__last_assigned_variable})
 		</commands>
 		<tabTrigger>jp</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: JSON.parse</description>
+		<description>stdlib: JSON.parse(${0:$selection__or__last_assigned_variable})</description>
 	</snippet>
 
 	<snippet>
@@ -232,7 +232,7 @@ JSON.parse(${0:$selection__or__last_assigned_variable}, symbolize_names: true)
 		</commands>
 		<tabTrigger>jpp</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: JSON.parse symbolize_names: true</description>
+		<description>stdlib: JSON.parse(${0:$selection__or__last_assigned_variable}, symbolize_names: true)</description>
 	</snippet>
 
 	<snippet>
@@ -249,7 +249,7 @@ File.write($1, ${2:$selection__or__last_assigned_variable})
 		</commands>
 		<tabTrigger>fw</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: File.write</description>
+		<description>stdlib: File.write($1, ${2:$selection__or__last_assigned_variable})</description>
 	</snippet>
 
 	<snippet>
@@ -266,7 +266,7 @@ File.write('log', ${1:$selection__or__last_assigned_variable})
 		</commands>
 		<tabTrigger>fl</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: File.write</description>
+		<description>stdlib: File.write('log', ${1:$selection__or__last_assigned_variable})</description>
 	</snippet>
 
 	<snippet>
@@ -284,7 +284,7 @@ File.read(${0:$selection__or__last_assigned_variable})
 		</commands>
 		<tabTrigger>fr</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: File.read</description>
+		<description>stdlib: File.read(${0:$selection__or__last_assigned_variable})</description>
 	</snippet>
 
 	<snippet>
@@ -293,27 +293,38 @@ File.read(${0:$selection__or__last_assigned_variable})
 ]]></content>
 		<tabTrigger>dn</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: Symbol</description>
+		<description>stdlib: ::DateTime.now</description>
 	</snippet>
 
 	<snippet>
 		<content><![CDATA[
-Proc.new { |${1:args}|
+Proc.new do |${1:args}|
 	$0
-}
+end
 ]]></content>
 		<tabTrigger>pn</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: Symbol</description>
+		<description>stdlib: Proc.new do |${1:args}|</description>
 	</snippet>
 
 	<snippet>
 		<content><![CDATA[
-I18n.translate('${1:$selection__or__last_assigned_variable}')
+lambda do |${1:args}|
+	$0
+end
+]]></content>
+		<tabTrigger>la</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>stdlib: lambda do |${1:args}|</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+I18n.t('${1:$selection__or__last_assigned_variable}')
 ]]></content>
 		<tabTrigger>it</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: I18n.translate</description>
+		<description>stdlib: I18n.t('${1:$selection__or__last_assigned_variable}')</description>
 	</snippet>
 
 	<snippet>
@@ -322,7 +333,7 @@ Base64.encode64(${1:$selection__or__last_assigned_variable})
 ]]></content>
 		<tabTrigger>be</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: Base64.encode64</description>
+		<description>stdlib: Base64.encode64(${1:$selection__or__last_assigned_variable})</description>
 	</snippet>
 
 	<snippet>
@@ -331,7 +342,7 @@ Base64.decode64(${1:$selection__or__last_assigned_variable})
 ]]></content>
 		<tabTrigger>bd</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: Base64.decode64</description>
+		<description>stdlib: Base64.decode64(${1:$selection__or__last_assigned_variable})</description>
 	</snippet>
 
 	<snippet>
@@ -340,7 +351,7 @@ Base64.urlsafe_encode64(${1:$selection__or__last_assigned_variable})
 ]]></content>
 		<tabTrigger>bue</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: Base64.urlsafe_encode64</description>
+		<description>stdlib: Base64.urlsafe_encode64(${1:$selection__or__last_assigned_variable})</description>
 	</snippet>
 
 	<snippet>
@@ -349,7 +360,7 @@ Base64.urlsafe_decode64(${1:$selection__or__last_assigned_variable})
 ]]></content>
 		<tabTrigger>bud</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: Base64.urlsafe_decode64</description>
+		<description>stdlib: Base64.urlsafe_decode64(${1:$selection__or__last_assigned_variable})</description>
 	</snippet>
 
 	<snippet>
@@ -358,7 +369,7 @@ instance_variable_get(:@$0)
 ]]></content>
 		<tabTrigger>ig</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: Base64.decode64</description>
+		<description>stdlib: instance_variable_get(:@$0)</description>
 	</snippet>
 
 	<snippet>
@@ -372,7 +383,7 @@ length
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.l$"},
 			]
 		]]></context>
-		<description>stdlib: .length</description>
+		<description>stdlib: length</description>
 		<order>1</order>
 	</snippet>
 
@@ -387,7 +398,7 @@ count
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.length$"},
 			]
 		]]></context>
-		<description>stdlib: .count</description>
+		<description>stdlib: count</description>
 	</snippet>
 
 	<snippet>
@@ -415,7 +426,7 @@ to_sym
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.y$"},
 			]
 		]]></context>
-		<description>stdlib: to_s</description>
+		<description>stdlib: to_sym</description>
 	</snippet>
 
 	<snippet>
@@ -458,7 +469,7 @@ nil?
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.\\?$"},
 			]
 		]]></context>
-		<description>stdlib: nil</description>
+		<description>stdlib: nil?</description>
 	</snippet>
 
 	<snippet>
@@ -472,7 +483,7 @@ start_with?($1)
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.sw$"},
 			]
 		]]></context>
-		<description>stdlib: start_with</description>
+		<description>stdlib: start_with?($1)</description>
 	</snippet>
 
 	<snippet>
@@ -486,7 +497,7 @@ end_with?($1)
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ew$"},
 			]
 		]]></context>
-		<description>stdlib: end_with</description>
+		<description>stdlib: end_with?($1)</description>
 	</snippet>
 
 	<snippet>
@@ -500,7 +511,7 @@ instance_of?($1)
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.io$"},
 			]
 		]]></context>
-		<description>stdlib: instance_of</description>
+		<description>stdlib: instance_of?($1)</description>
 	</snippet>
 
 	<snippet>
@@ -514,7 +525,7 @@ respond_to?($1)
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ro$"},
 			]
 		]]></context>
-		<description>stdlib: respond_to</description>
+		<description>stdlib: respond_to?($1)</description>
 	</snippet>
 
 	<snippet>
@@ -528,7 +539,7 @@ is_a?($1)
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ia$"},
 			]
 		]]></context>
-		<description>stdlib: is_a</description>
+		<description>stdlib: is_a?($1)</description>
 	</snippet>
 
 	<snippet>
@@ -542,7 +553,7 @@ kind_of?($1)
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ko$"},
 			]
 		]]></context>
-		<description>stdlib: kind_of</description>
+		<description>stdlib: kind_of?($1)</description>
 	</snippet>
 
 	<snippet>
@@ -556,7 +567,7 @@ empty?
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.em$"},
 			]
 		]]></context>
-		<description>stdlib: empty</description>
+		<description>stdlib: empty?</description>
 	</snippet>
 
 	<snippet>
@@ -570,7 +581,7 @@ present?
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.p"},
 			]
 		]]></context>
-		<description>stdlib: present</description>
+		<description>stdlib: present?</description>
 		<order>1</order>
 	</snippet>
 
@@ -585,7 +596,7 @@ has_key?($1)
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.hk$"},
 			]
 		]]></context>
-		<description>stdlib: has_key</description>
+		<description>stdlib: has_key?($1)</description>
 	</snippet>
 
 	<snippet>
@@ -606,7 +617,7 @@ include?(${1:$selection})
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.iu$"},
 			]
 		]]></context>
-		<description>stdlib: includes</description>
+		<description>stdlib: include?(${1:$selection})</description>
 	</snippet>
 
 	<snippet>
@@ -620,7 +631,7 @@ try(:$1)
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.t$"},
 			]
 		]]></context>
-		<description>stdlib: try</description>
+		<description>stdlib: try(:$1)</description>
 		<order>1</order>
 	</snippet>
 
@@ -635,7 +646,7 @@ merge(${0:$selection})
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.m$"},
 			]
 		]]></context>
-		<description>stdlib: merge</description>
+		<description>stdlib: merge(${0:$selection})</description>
 		<order>1</order>
 	</snippet>
 
@@ -650,7 +661,7 @@ merge!(${0:$selection})
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.mm$"},
 			]
 		]]></context>
-		<description>stdlib: merge</description>
+		<description>stdlib: merge!(${0:$selection})</description>
 		<order>1</order>
 	</snippet>
 
@@ -665,7 +676,7 @@ exists?
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ex$"},
 			]
 		]]></context>
-		<description>stdlib: exists</description>
+		<description>stdlib: exists?</description>
 		<order>1</order>
 	</snippet>
 
@@ -711,7 +722,7 @@ DateTime
 ]]></content>
 		<tabTrigger>D</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: Symbol</description>
+		<description>stdlib: DateTime</description>
 	</snippet>
 
 	<snippet>
@@ -720,7 +731,7 @@ StandardError
 ]]></content>
 		<tabTrigger>SE</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: Symbol</description>
+		<description>stdlib: StandardError</description>
 	</snippet>
 
 	<snippet>
@@ -736,7 +747,7 @@ map { |$1|
 				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.\\s*m$"},
 			]
 		]]></context>
-		<description>stdlib: map</description>
+		<description>stdlib: map { |$1|</description>
 	</snippet>
 
 	<snippet>
@@ -752,7 +763,7 @@ each { |$1|
 				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.\\s*e$"},
 			]
 		]]></context>
-		<description>stdlib: each</description>
+		<description>stdlib: each { |$1|</description>
 	</snippet>
 
 	<snippet>
@@ -768,7 +779,7 @@ find { |$1|
 				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.\\s*f$"},
 			]
 		]]></context>
-		<description>stdlib: find</description>
+		<description>stdlib: find { |$1|</description>
 	</snippet>
 
 	<snippet>
@@ -784,7 +795,7 @@ select { |$1|
 				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.\\s*se$"},
 			]
 		]]></context>
-		<description>stdlib: select</description>
+		<description>stdlib: select { |$1|</description>
 	</snippet>
 
 	<snippet>
@@ -793,7 +804,7 @@ sleep(10$1)
 ]]></content>
 		<tabTrigger>sl</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: sleep</description>
+		<description>stdlib: sleep(10$1)</description>
 	</snippet>
 
 	<snippet>
@@ -813,7 +824,7 @@ puts Benchmark.measure {
 		</commands>
 		<tabTrigger>bm</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: Benchmark.measure</description>
+		<description>stdlib: puts Benchmark.measure {</description>
 	</snippet>
 
 	<snippet>
@@ -831,7 +842,7 @@ Time.zone.parse(${1:$selection})
 		</commands>
 		<tabTrigger>tp</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: Benchmark.measure</description>
+		<description>stdlib: Time.zone.parse(${1:$selection})</description>
 	</snippet>
 
 	<snippet>
@@ -842,6 +853,6 @@ end
 ]]></content>
 		<tabTrigger>tt</tabTrigger>
 		<scope>source.ruby</scope>
-		<description>stdlib: times</description>
+		<description>stdlib: ${1:10}.times do |${2:index}|</description>
 	</snippet>
 </snippets>

@@ -1,5 +1,12 @@
 [
   {
+      "keys": ["ctrl+alt+q"],
+      "command": "insert_import",
+      "context": [
+          { "key": "selector", "operator": "equal", "operand": "source.ts, source.tsx, source.js, source.jsx" }
+      ]
+  },
+  {
     "keys": ["ctrl+n", "ctrl+d"],
     "command": "open_file",
     "args": {

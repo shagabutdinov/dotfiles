@@ -37,7 +37,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym ctrl+F12 exec i3-sensible-terminal
 bindsym ctrl+F11 workspace next
 bindsym ctrl+F10 workspace prev
-bindsym $mod+t exec i3-sensible-terminal
+bindsym $mod+t exec marvex -b urxvt --terminal '@path --title "@title" -e @command'
 
 # kill focused window
 bindsym Mod1+F4 kill
@@ -214,7 +214,7 @@ bindsym $mod+m exec ushow-status
 bindsym $mod+n exec enter-text "Leonid Shagabutdinov"
 bindsym $mod+shift+n exec enter-text "leonid@shagabutdinov.com"
 bindsym $mod+ctrl+n exec enter-text "+79059376988"
-bindsym $mod+b exec enter-text "Definition of done:"
+bindsym $mod+b exec enter-text "Definition of done:\n\n*\n\nComments:\n\n* "
 
 bindcode $mod+shift+22 exec ucreatetodo # backspace
 bindcode $mod+ctrl+22 exec uscreenshot # backspace

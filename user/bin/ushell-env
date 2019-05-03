@@ -70,7 +70,9 @@ alias ee='subl3 -n'
 alias h='ssh'
 alias b='bundle exec'
 alias bs='bundle exec ./bin/spring'
-alias bi='bundle install --path vendor/bundle --jobs 32'
+alias bi='bundle install'
+alias bii='bundle install --path vendor/bundle --jobs 32'
+alias ni='npm install'
 alias X='| xsel -ib'
 alias w='() { watch -x zsh -i -c "$@" }'
 alias ww='inotifyrun -r -e MODIFY'
@@ -329,9 +331,14 @@ alias gt='git reset'
 alias gth='git reset --hard'
 alias glr='git pull --rebase'
 
-alias gg='() { git commit -m "$1" }'
+alias gg='() { git add . && git commit -m "$1" }'
 alias gg!='() { git commit --amend -m "$1" }'
 alias ggx='() { git commit --amend -m "$1" }'
+alias gbn='() {
+  git fetch && \
+    git checkout origin/master && \
+    git checkout -b "$1"
+}'
 
 alias gk='() { git add . ; git commit -m "$1" }'
 alias gk!='() { git add . ; git commit -m "$1" --amend }'
@@ -347,6 +354,12 @@ alias gxx='() {
   git add .
   git commit -m "$(git log -1 --pretty=%s)" --amend
   git push -u origin $(current_branch) --force
+}'
+
+alias gct='() {
+  git add .
+  git commit -m tmp --no-verify
+  git push -u origin $(current_branch)
 }'
 
 function rebase-current-branch-on-master() {
@@ -378,9 +391,6 @@ alias dbea='docker exec -i -t $(docker-container "(backend|app|rails)\." admin)'
 alias dte='docker exec -i -t $(docker-container "test.(backend|app|rails)" backend)'
 alias dfe='docker exec -i -t $(docker-container frontend -v admin)'
 alias dfea='docker exec -i -t $(docker-container frontend admin)'
-
-alias isd='issue -S --from origin/dev --id '
-alias ism='issue -S --from origin/master --id '
 
 alias x='docker exec -i -t $(application-container)'
 alias xx='docker exec -i -t $(application-container)'
@@ -637,4 +647,4 @@ hijack:transform '^g[gkx]?\\!' \
 hijack:transform '^g[gkx]?!?\\ ' \
   'sed -r s"/^(g[gkx]?)(!?)\\\ /\\1\\2 /g"'
 
-QUOTA=25
+QUOTA=50
