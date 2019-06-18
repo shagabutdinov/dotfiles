@@ -49,7 +49,7 @@ alert(${1:$selection__or__last_assigned_variable})
 				"RUN",
 			]
 		]]></commands>
-		<tabTrigger>a</tabTrigger>
+		<tabTrigger>al</tabTrigger>
 		<scope>source.js</scope>
 		<description>stdlib: alert</description>
 	</snippet>

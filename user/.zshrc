@@ -56,7 +56,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=./bin:$HOME/bin:$HOME/.local/deadfiles/bin:/home/leo/src/go/bin:$PATH
+export PATH=./bin:$HOME/bin:$HOME/.local/deadfiles/bin:/home/leo/src/go/bin:$PATH:/home/leo/.gem/ruby/2.6.0/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment

@@ -1,23 +1,36 @@
 [
   {
+    "keys": ["ctrl+/"],
+    "command": "run_macro_file",
+    "args": {
+      "file": "Packages/Expression/macro/delete_subword_forward.sublime-macro"
+    },
+    "context": [
+      {"key": "setting.sublime_enhanced_keybindings", "operator": "equal", "operand": true},
+    ],
+  },
+
+  {
+    "keys": ["ctrl+/"],
+    "command": "run_macro_file",
+    "args": {
+      "file": "Packages/Expression/macro/delete_to_nesting_forward.sublime-macro"
+    },
+    "context": [
+      {"key": "setting.sublime_enhanced_keybindings", "operator": "equal", "operand": true},
+      {"key": "selection_empty", "operator": "equal", "operand": "true"},
+      {"key": "scope_b_right", "operator": "not_regex_contains", "operand": "comment|symbol|string"},
+      {"key": "following_text_b", "operator": "regex_contains", "operand": "^[^\\w\\s({\\[]+[({\\[]"},
+    ],
+  },
+
+  {
       "keys": ["ctrl+alt+q"],
       "command": "insert_import",
       "context": [
           { "key": "selector", "operator": "equal", "operand": "source.ts, source.tsx, source.js, source.jsx" }
       ]
   },
-  {
-    "keys": ["ctrl+n", "ctrl+d"],
-    "command": "open_file",
-    "args": {
-      "file": "/home/leo/.config/balmora/conf.d/dotfiles.variables.conf"
-    },
-    "context": [
-      {"key": "setting.sublime_enhanced_keybindings", "operator": "equal", "operand": true},
-      {"key": "overlay_visible", "operator": "equal", "operand": false}
-    ],
-  },
-
   {
     "keys": ["delete"],
     "command": "next_field",

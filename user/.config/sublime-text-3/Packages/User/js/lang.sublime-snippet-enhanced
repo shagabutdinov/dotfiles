@@ -11,7 +11,7 @@ null
 			]
 		</commands>
 		<tabTrigger>n</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "([\\w=,(:]|=\\{)\\s*n$"},
@@ -32,7 +32,7 @@ true
 			]
 		</commands>
 		<tabTrigger>t</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "([\\w=,(:]|=\\{)\\s*t$"},
@@ -53,7 +53,7 @@ false
 			]
 		</commands>
 		<tabTrigger>f</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "([\\w=,(:]|=\\{)\\s*f$"},
@@ -74,7 +74,7 @@ undefined
 			]
 		</commands>
 		<tabTrigger>u</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "([\\w=,(:]|=\\{)\\s*u$"},
@@ -95,7 +95,7 @@ success
 			]
 		</commands>
 		<tabTrigger>s</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.s$"},
@@ -115,7 +115,7 @@ then(${0:$selection})
 		]
 	</commands>
 		<tabTrigger>t</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<context>
 			[
 				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.\\s*t$"},
@@ -138,7 +138,7 @@ then(function($1) {
 		]
 	</commands>
 		<tabTrigger>t</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<context>
 			[
 				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.\\s*t$"},
@@ -156,7 +156,7 @@ then(($1) => {
 }
 ]]></content>
 		<tabTrigger>then(</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: then function</description>
 	</snippet>
 
@@ -165,7 +165,7 @@ then(($1) => {
 then((response
 ]]></content>
 		<tabTrigger>then((</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: then function response</description>
 	</snippet>
 
@@ -176,7 +176,7 @@ function $1($2) {
 }
 ]]></content>
 		<tabTrigger>fn</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: function</description>
 	</snippet>
 
@@ -187,7 +187,7 @@ function($2) {
 }
 ]]></content>
 		<tabTrigger>fu</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: function</description>
 	</snippet>
 
@@ -198,7 +198,7 @@ function($2) {
 }
 ]]></content>
 		<tabTrigger>j</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: doublearrow callback</description>
 	</snippet>
 
@@ -207,7 +207,7 @@ function($2) {
 ($1) => $0
 ]]></content>
 		<tabTrigger>jj</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: inline doublearrow callback</description>
 	</snippet>
 
@@ -225,7 +225,7 @@ var ${1:$selection__or__last_assigned_variable}
 			]
 		]]></commands>
 		<tabTrigger>v</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: stringify</description>
 	</snippet>
 
@@ -234,7 +234,7 @@ var ${1:$selection__or__last_assigned_variable}
 this.
 ]]></content>
 		<tabTrigger>.</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: this</description>
 	</snippet>
 
@@ -243,7 +243,7 @@ this.
 this.constructor
 ]]></content>
 		<tabTrigger>tc</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: this.constructor</description>
 	</snippet>
 
@@ -252,7 +252,7 @@ this.constructor
 this.constructor.
 ]]></content>
 		<tabTrigger>tc</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "following_text_end", "operator": "regex_contains", "operand": "^[\\w\\.]"},
@@ -269,7 +269,7 @@ constructor($1) {
 }
 ]]></content>
 		<tabTrigger>dc</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: constructor</description>
 	</snippet>
 
@@ -287,7 +287,7 @@ super($1)
 			]
 		]]></commands>
 		<tabTrigger>su</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: super</description>
 	</snippet>
 
@@ -300,7 +300,7 @@ class $1 {
 }
 ]]></content>
 		<tabTrigger>cl</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: class</description>
 	</snippet>
 
@@ -311,7 +311,7 @@ $1($2) {
 }
 ]]></content>
 		<tabTrigger>d</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: define method</description>
 	</snippet>
 
@@ -322,7 +322,7 @@ $1 = ($2) => {
 }
 ]]></content>
 		<tabTrigger>dd</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: define method</description>
 	</snippet>
 
@@ -340,7 +340,7 @@ let ${0:$selection__or__last_assigned_variable}
 			]
 		]]></commands>
 		<tabTrigger>e</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: let</description>
 	</snippet>
 
@@ -358,7 +358,7 @@ let $1 = ${0:$selection__or__last_assigned_variable}
 			]
 		]]></commands>
 		<tabTrigger>e</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
@@ -383,7 +383,7 @@ const ${1:$selection__or__last_assigned_variable} = $0
 			]
 		]]></commands>
 		<tabTrigger>cc</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: const</description>
 	</snippet>
 
@@ -401,7 +401,7 @@ const $1 = ${0:$selection__or__last_assigned_variable}
 			]
 		]]></commands>
 		<tabTrigger>cc</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
@@ -426,7 +426,7 @@ const { ${1:$selection__or__last_assigned_variable} } = $0
 			]
 		]]></commands>
 		<tabTrigger>c</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: const {}</description>
 	</snippet>
 
@@ -444,7 +444,7 @@ const { $1 } = ${0:$selection__or__last_assigned_variable}
 			]
 		]]></commands>
 		<tabTrigger>c</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
@@ -460,7 +460,7 @@ const { $1 } = ${0:$selection__or__last_assigned_variable}
 export $0
 ]]></content>
 		<tabTrigger>ex</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: export</description>
 	</snippet>
 
@@ -469,7 +469,7 @@ export $0
 export default $0
 ]]></content>
 		<tabTrigger>ed</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: export default</description>
 	</snippet>
 
@@ -478,7 +478,7 @@ export default $0
 export { ${1:$selection__or__last_assigned_variable} };
 ]]></content>
 		<trigger>x</trigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^x$"},
@@ -492,7 +492,7 @@ export { ${1:$selection__or__last_assigned_variable} };
 import $1 from '$2';
 ]]></content>
 		<tabTrigger>im</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: import</description>
 	</snippet>
 
@@ -501,7 +501,7 @@ import $1 from '$2';
 import $1 from './${2:$1}';
 ]]></content>
 		<tabTrigger>il</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: import</description>
 	</snippet>
 
@@ -510,7 +510,7 @@ import $1 from './${2:$1}';
 import theme from 'components/theme';
 ]]></content>
 		<tabTrigger>it</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: import theme</description>
 	</snippet>
 
@@ -519,7 +519,7 @@ import theme from 'components/theme';
 import $1 from 'services/$1';
 ]]></content>
 		<tabTrigger>ise</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: import service</description>
 	</snippet>
 
@@ -528,8 +528,17 @@ import $1 from 'services/$1';
 import $1 from 'Components/$1';
 ]]></content>
 		<tabTrigger>ico</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: import component</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+import { $1 } from 'components/Modules/$1';
+]]></content>
+		<tabTrigger>ix</tabTrigger>
+		<scope>source.jsx?</scope>
+		<description>lang: import extended components</description>
 	</snippet>
 
 	<snippet>
@@ -537,7 +546,7 @@ import $1 from 'Components/$1';
 typeof $1
 ]]></content>
 		<tabTrigger>to</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: typeof</description>
 	</snippet>
 
@@ -546,7 +555,7 @@ typeof $1
 instanceof $1
 ]]></content>
 		<tabTrigger>io</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: instanceof</description>
 	</snippet>
 
@@ -564,7 +573,7 @@ return ${0:$selection__or__last_assigned_variable}
 			]
 		]]></commands>
 		<tabTrigger>r</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: return</description>
 	</snippet>
 
@@ -579,7 +588,7 @@ return null
 			]
 		</commands>
 		<tabTrigger>rn</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: return null</description>
 	</snippet>
 
@@ -594,7 +603,7 @@ return true
 			]
 		</commands>
 		<tabTrigger>rt</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: return true</description>
 	</snippet>
 
@@ -609,7 +618,7 @@ return false
 			]
 		</commands>
 		<tabTrigger>rf</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: return false</description>
 	</snippet>
 
@@ -624,7 +633,7 @@ return result
 			]
 		</commands>
 		<tabTrigger>rr</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: return result</description>
 	</snippet>
 
@@ -639,7 +648,7 @@ continue ;
 			]
 		</commands>
 		<tabTrigger>c</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<context>
 			[
 				{"key": "selection_empty", "operator": "equal", "operand": true},
@@ -660,7 +669,7 @@ throw ${1:error}
 			]
 		</commands>
 		<tabTrigger>th</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: throw</description>
 	</snippet>
 
@@ -675,7 +684,7 @@ throw new Error(${1:error})
 			]
 		</commands>
 		<tabTrigger>te</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: throw</description>
 	</snippet>
 
@@ -686,7 +695,7 @@ if (${1:$last_assigned_variable}) {
 }
 ]]></content>
 		<tabTrigger>i</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<context>
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*i$"},
@@ -702,7 +711,7 @@ if (!${1:$last_assigned_variable}) {
 }
 ]]></content>
 		<tabTrigger>in</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<context>
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*in$"},
@@ -724,7 +733,7 @@ if (${1:$last_assigned_variable}) {
 			]
 		</commands>
 		<tabTrigger>i</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<context>
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*i$"},
@@ -748,7 +757,7 @@ if (!${1:$last_assigned_variable}) {
 			]
 		</commands>
 		<tabTrigger>in</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<context>
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*in$"},
@@ -772,7 +781,7 @@ for ($1) {
 			]
 		</commands>
 		<tabTrigger>f</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: for</description>
 		<order>1</order>
 	</snippet>
@@ -791,7 +800,7 @@ try {
 			]
 		</commands>
 		<tabTrigger>tr</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: try</description>
 		<order>1</order>
 	</snippet>
@@ -803,7 +812,7 @@ else {
 }
 ]]></content>
 		<tabTrigger>e</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<context>
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "}\\s*e$"},
@@ -820,7 +829,7 @@ else if (${1:$last_assigned_variable}) {
 }
 ]]></content>
 		<tabTrigger>ei</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<context>
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\}\\s*ei"},
@@ -834,7 +843,7 @@ else if (${1:$last_assigned_variable}) {
 this.$1 = this.$1.bind(this);
 ]]></content>
 		<tabTrigger>tb</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: bind</description>
 	</snippet>
 
@@ -845,7 +854,7 @@ this.$1 = this.$1.bind(this);
 }
 ]]></content>
 		<tabTrigger>(</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<description>lang: callback</description>
 	</snippet>
 
@@ -860,7 +869,7 @@ this.$1 = this.$1.bind(this);
 			]
 		</commands>
 		<trigger>=</trigger>
-		<scope>source.js</scope>
+		<scope>source.jsx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\w\\s*=$"},
@@ -870,4 +879,12 @@ this.$1 = this.$1.bind(this);
 		<description>lang: define bind</description>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+await $0
+]]></content>
+		<tabTrigger>a</tabTrigger>
+		<scope>source.jsx?</scope>
+		<description>lang: await</description>
+	</snippet>
 </snippets>

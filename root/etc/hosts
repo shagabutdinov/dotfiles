@@ -14,6 +14,8 @@
 0.0.0.0 api.wb.local
 0.0.0.0 auth.wb.local
 
+# 18.185.118.130 admin-eimo1Ujahyah.ecra.pro
+
 # End of file
 #
 # /etc/hosts: static lookup table for host names
@@ -12918,7 +12920,7 @@
 0.0.0.1 anetse.tradedoubler.com
 0.0.0.1 clk.tradedoubler.com
 0.0.0.1 clkde.tradedoubler.com
-0.0.0.1 clkuk.tradedoubler.com
+# 0.0.0.1 clkuk.tradedoubler.com
 0.0.0.1 hst.tradedoubler.com
 0.0.0.1 hstde.tradedoubler.com
 0.0.0.1 hstes.tradedoubler.com

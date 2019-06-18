@@ -113,6 +113,52 @@ expect(${1:$selection}).to$0
 
 	<snippet>
 		<content><![CDATA[
+expect.$0
+]]></content>
+		<tabTrigger>x</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\(\\s*x$"},
+			]
+		]]></context>
+		<description>jest: expect</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+objectContaining($0)
+]]></content>
+		<tabTrigger>oc</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "expect\\.oc$"},
+			]
+		]]></context>
+		<description>jest: objectContaining</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+anything($0)
+]]></content>
+		<tabTrigger>a</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "expect\\.a$"},
+			]
+		]]></context>
+		<description>jest: anything</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 not.to
 ]]></content>
 		<commands><![CDATA[
@@ -318,6 +364,159 @@ const { ${1:container} } = render($2);
 		<description>jest: render container</description>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+await waitForElement(() => ${0:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>wf</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+			]
+		]]></context>
+		<description>jest: waitForElement</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+waitForElement
+]]></content>
+		<tabTrigger>wf</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": ",\\s*wf$"},
+			]
+		]]></context>
+		<description>jest: waitForElement</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+fireEvent.
+]]></content>
+		<tabTrigger>fe</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+			]
+		]]></context>
+		<description>jest: fireEvent</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+fireEvent
+]]></content>
+		<tabTrigger>fe</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": ",\\s*fe$"},
+			]
+		]]></context>
+		<description>jest: fireEvent</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+fireEvent.click(await waitForElement(() => $0))
+]]></content>
+		<tabTrigger>fec</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+			]
+		]]></context>
+		<description>jest: fireEvent.click(await waitForElement(() => $0))</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+click(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<trigger>c</trigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "fireEvent\\.c$"},
+			]
+		]]></context>
+		<description>jest: fireEvent</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+getByText(${0:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>bt</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+			]
+		]]></context>
+		<description>jest: getByText</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+getByTitle(${0:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>bi</tabTrigger>
+		<scope>source.js</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+			]
+		]]></context>
+		<description>jest: getByTitle</description>
+	</snippet>
+
 	<snippet>i
 		<content><![CDATA[
 import React from 'react';
@@ -326,11 +525,15 @@ import { render } from 'react-testing-library';
 import $1 from './$1';
 
 describe('$1', () => {
-  const props = {};
+  let props;
+
+  beforeEach(() => {
+  	props = {};
+  });
 
   it('$2', () => {
     const { container } = render(<$1 {...props} />);
-    expect(container).toHaveTextContent('TEST');
+    expect(container).toHaveTextContent('$3');$0
   });
 });
 ]]></content>

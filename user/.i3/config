@@ -44,7 +44,7 @@ bindsym Mod1+F4 kill
 
 # start dmenu (a program launcher)
 bindsym Mod1+space exec rofi -show run -matching fuzzy
-bindsym $mod+space exec carcosa-ui login-password
+bindsym $mod+space exec carcosa-ui '~/.secrets' --mode login-password
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -159,10 +159,10 @@ mode "resize" {
         bindsym i resize shrink height 25 px or 25 ppt
         bindsym l resize grow width 25 px or 25 ppt
 
-        bindsym shift+j resize shrink width 1 px
-        bindsym shift+k resize grow height 1 px
-        bindsym shift+i resize shrink height 1 px
-        bindsym shift+l resize grow width 1 px
+        bindsym shift+j resize shrink width 5 px
+        bindsym shift+k resize grow height 5 px
+        bindsym shift+i resize shrink height 5 px
+        bindsym shift+l resize grow width 5 px
 
         bindsym ctrl+j move left 5 px
         bindsym ctrl+k move down 5 px
@@ -200,7 +200,7 @@ for_window [class="^.*"] border pixel 1
 bindsym $mod+comma exec usound-level 3%-
 bindsym $mod+period exec usound-level 3%+
 bindsym $mod+slash exec usound-toggle
-bindsym $mod+shift+grave exec ususpend
+bindsym $mod+shift+grave exec sudo systemctl suspend
 bindsym $mod+g exec thunar
 bindsym $mod+backslash exec subl3
 bindsym $mod+shift+backslash exec subl3 --new-window
@@ -214,7 +214,7 @@ bindsym $mod+m exec ushow-status
 bindsym $mod+n exec enter-text "Leonid Shagabutdinov"
 bindsym $mod+shift+n exec enter-text "leonid@shagabutdinov.com"
 bindsym $mod+ctrl+n exec enter-text "+79059376988"
-bindsym $mod+b exec enter-text "Definition of done:\n\n*\n\nComments:\n\n* "
+bindsym $mod+l exec enter-text "Definition of done:\n\n*\n\nComments:\n\n* "
 
 bindcode $mod+shift+22 exec ucreatetodo # backspace
 bindcode $mod+ctrl+22 exec uscreenshot # backspace
@@ -222,14 +222,14 @@ bindsym $mod+shift+comma exec xbacklight -dec 5
 bindsym $mod+shift+period exec xbacklight -inc 5
 # bindcode $mod+23 exec keynav start
 
-bindcode $mod+112 exec uscreenshot --publish
-bindcode $mod+shift+112 exec uscreenshot --active-window --publish
+bindcode $mod+75 exec uscreenshot --active-window
+bindcode $mod+shift+75 exec uscreenshot
 
-bindcode $mod+117 exec uscreenshot --edit --publish --publish-copy-link
-bindcode $mod+shift+117 exec uscreenshot --active-window --edit --publish --publish-copy-link
+bindcode $mod+76 exec uscreenshot --active-window --edit
+bindcode $mod+shift+76 exec uscreenshot --edit
 
-bindcode $mod+110 exec uscreencast --publish --publish-copy-link
-bindcode $mod+shift+110 exec uscreencast --active-window --publish --publish-copy-link
+bindcode $mod+110 exec uscreencast
+bindcode $mod+shift+110 exec uscreencast --active-window
 bindsym $mod+F12 exec umousetoggle
 bindsym $mod+h exec translator
 bindsym $mod+shift+h exec translator "$(xsel -op)"

@@ -7,6 +7,11 @@ Alt_L+i move-up, warp
 Alt_L+l move-right, warp
 Alt_L+k move-down, warp
 
+Ctrl+j move-left, warp
+Ctrl+i move-up, warp
+Ctrl+l move-right, warp
+Ctrl+k move-down, warp
+
 s move-left, warp
 e move-up, warp
 f move-right, warp

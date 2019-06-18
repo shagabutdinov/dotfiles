@@ -5,7 +5,7 @@
 <$1 $2>$0</$1>
 ]]></content>
 		<tabTrigger>g</tabTrigger>
-		<scope>source.js</scope>
+		<scope>(source.js|html.jsx)</scope>
 		<description>react: tag</description>
 		<order>2</order>
 	</snippet>
@@ -17,7 +17,7 @@
 </$1>
 ]]></content>
 		<tabTrigger>gg</tabTrigger>
-		<scope>source.js</scope>
+		<scope>(source.js|html.jsx)</scope>
 		<description>react: tag</description>
 		<order>2</order>
 	</snippet>
@@ -27,7 +27,7 @@
 <$1>$0</$1>
 ]]></content>
 		<tabTrigger>h</tabTrigger>
-		<scope>source.js</scope>
+		<scope>(source.js|html.jsx)</scope>
 		<description>react: tag</description>
 		<order>2</order>
 	</snippet>
@@ -39,7 +39,7 @@
 </$1>
 ]]></content>
 		<tabTrigger>hh</tabTrigger>
-		<scope>source.js</scope>
+		<scope>(source.js|html.jsx)</scope>
 		<description>react: tag</description>
 		<order>2</order>
 	</snippet>
@@ -51,7 +51,7 @@
 </div>
 ]]></content>
 		<tabTrigger>hd</tabTrigger>
-		<scope>source.js</scope>
+		<scope>(source.js|html.jsx)</scope>
 		<description>react: div</description>
 	</snippet>
 
@@ -60,7 +60,7 @@
 <form $1>$0</form>
 ]]></content>
 		<tabTrigger>f</tabTrigger>
-		<scope>source.js.*?meta.jsx.js\s*$</scope>
+		<scope>(source.js.*?meta.jsx.js\s*$|html.jsx)</scope>
 		<description>react: form</description>
 		<order>2</order>
 	</snippet>
@@ -70,7 +70,7 @@
 <div $1>$0</div>
 ]]></content>
 		<tabTrigger>d</tabTrigger>
-		<scope>source.js.*?meta.jsx.js\s*$</scope>
+		<scope>(source.js.*?meta.jsx.js\s*$|html.jsx)</scope>
 		<description>react: div</description>
 		<order>2</order>
 	</snippet>
@@ -80,7 +80,7 @@
 <span $1>$0</span>
 ]]></content>
 		<tabTrigger>s</tabTrigger>
-		<scope>source.js.*?meta.jsx.js\s*$</scope>
+		<scope>(source.js.*?meta.jsx.js\s*$|html.jsx)</scope>
 		<description>react: span</description>
 		<order>2</order>
 	</snippet>
@@ -98,7 +98,7 @@
 </table>
 ]]></content>
 		<tabTrigger>&lt; t</tabTrigger>
-		<scope>source.js</scope>
+		<scope>(source.js|html.jsx)</scope>
 		<description>react: table</description>
 		<order>2</order>
 	</snippet>
@@ -116,7 +116,7 @@
 </table>
 ]]></content>
 		<tabTrigger>t</tabTrigger>
-		<scope>source.js.*?meta.jsx.js\s*$</scope>
+		<scope>(source.js.*?meta.jsx.js\s*$|html.jsx)</scope>
 		<description>react: table</description>
 		<order>2</order>
 	</snippet>
@@ -128,7 +128,7 @@
 </React.Fragment>
 ]]></content>
 		<tabTrigger>&lt; rf</tabTrigger>
-		<scope>source.js</scope>
+		<scope>(source.js|html.jsx)</scope>
 		<description>react: fragment</description>
 		<order>2</order>
 	</snippet>
@@ -140,7 +140,7 @@
 </div>
 ]]></content>
 		<tabTrigger>&lt; d</tabTrigger>
-		<scope>source.js</scope>
+		<scope>(source.js|html.jsx)</scope>
 		<description>react: fragment</description>
 		<order>2</order>
 	</snippet>
@@ -152,7 +152,7 @@
 </React.Fragment>
 ]]></content>
 		<tabTrigger>rf</tabTrigger>
-		<scope>source.js.*?meta.jsx.js\s*$</scope>
+		<scope>(source.js.*?meta.jsx.js\s*$|html.jsx)</scope>
 		<description>react: fragment</description>
 		<order>2</order>
 	</snippet>
@@ -162,7 +162,7 @@
 <a href=$1>$0</a>
 ]]></content>
 		<tabTrigger>a</tabTrigger>
-		<scope>source.js.*?meta.jsx.js\s*$</scope>
+		<scope>(source.js.*?meta.jsx.js\s*$|html.jsx)</scope>
 		<description>react: a</description>
 		<order>2</order>
 	</snippet>
@@ -172,7 +172,7 @@
 <button type="${1:button}"$2>$0</button>
 ]]></content>
 		<tabTrigger>b</tabTrigger>
-		<scope>source.js.*?meta.jsx.js\s*$</scope>
+		<scope>(source.js.*?meta.jsx.js\s*$|html.jsx)</scope>
 		<description>react: b</description>
 		<order>2</order>
 	</snippet>
@@ -182,7 +182,7 @@
 className="$1"
 ]]></content>
 		<tabTrigger>c</tabTrigger>
-		<scope>source.js.*meta.jsx.js</scope>
+		<scope>(source.js.*meta.jsx.js|html.jsx)</scope>
 		<context><![CDATA[
 			[
 				{
@@ -201,7 +201,7 @@ className="$1"
 title="$1"
 ]]></content>
 		<tabTrigger>t</tabTrigger>
-		<scope>source.js.*meta.jsx.js</scope>
+		<scope>(source.js.*meta.jsx.js|html.jsx)</scope>
 		<context><![CDATA[
 			[
 				{
@@ -220,7 +220,7 @@ title="$1"
 onChange={$1}
 ]]></content>
 		<tabTrigger>oc</tabTrigger>
-		<scope>source.js.*meta.jsx.js</scope>
+		<scope>(source.js.*meta.jsx.js|html.jsx)</scope>
 		<context><![CDATA[
 			[
 				{
@@ -239,7 +239,7 @@ onChange={$1}
 onClick={$1}
 ]]></content>
 		<tabTrigger>ocl</tabTrigger>
-		<scope>source.js.*meta.jsx.js</scope>
+		<scope>(source.js.*meta.jsx.js|html.jsx)</scope>
 		<context><![CDATA[
 			[
 				{
@@ -258,7 +258,7 @@ onClick={$1}
 onClick={$1}
 ]]></content>
 		<tabTrigger>ol</tabTrigger>
-		<scope>source.js.*meta.jsx.js</scope>
+		<scope>(source.js.*meta.jsx.js|html.jsx)</scope>
 		<context><![CDATA[
 			[
 				{
@@ -277,7 +277,7 @@ onClick={$1}
 onSubmit={$1}
 ]]></content>
 		<tabTrigger>os</tabTrigger>
-		<scope>source.js.*meta.jsx.js</scope>
+		<scope>(source.js.*meta.jsx.js|html.jsx)</scope>
 		<context><![CDATA[
 			[
 				{
@@ -298,7 +298,7 @@ onSubmit={$1}
 }
 ]]></content>
 		<tabTrigger>={</tabTrigger>
-		<scope>source.js.*meta.jsx.js</scope>
+		<scope>(source.js.*meta.jsx.js|html.jsx)</scope>
 		<description>react: callback</description>
 		<order>2</order>
 	</snippet>
@@ -310,7 +310,7 @@ onSubmit={$1}
 </div>
 ]]></content>
 		<tabTrigger>di</tabTrigger>
-		<scope>source.js.*meta.jsx.js</scope>
+		<scope>(source.js.*meta.jsx.js|html.jsx)</scope>
 		<description>react: div</description>
 	</snippet>
 

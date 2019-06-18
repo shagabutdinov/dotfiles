@@ -5,8 +5,18 @@
 \${theme.colors.$0}
 ]]></content>
     <tabTrigger>t</tabTrigger>
-    <scope>string.interpolated.js</scope>
+    <scope>source.css.embdedded.js</scope>
     <description>projects (constructor): theme.colors</description>
+    <order>3</order>
+  </snippet>
+
+  <snippet>
+    <content><![CDATA[
+\${theme.fonts.$0}
+]]></content>
+    <tabTrigger>tf</tabTrigger>
+    <scope>source.css.embdedded.js</scope>
+    <description>projects (constructor): theme.fonts</description>
     <order>3</order>
   </snippet>
 

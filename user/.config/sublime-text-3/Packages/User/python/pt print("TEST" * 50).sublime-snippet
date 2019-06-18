@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-print("TEST" * 20)
+print("XXXX $TM_FILENAME:$TM_LINE_NUMBER" + "XXXX " * 20)
 ]]></content>
 	<tabTrigger>pt</tabTrigger>
 	<scope>source.python</scope>

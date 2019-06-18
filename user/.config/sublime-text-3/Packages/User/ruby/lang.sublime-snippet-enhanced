@@ -328,7 +328,7 @@ raise $0
 
 	<snippet>
 		<content><![CDATA[
-raise ${1:StandardError}.new, $2
+raise ${1:StandardError}.new($2)
 ]]></content>
 		<tabTrigger>re</tabTrigger>
 		<scope>source.ruby</scope>

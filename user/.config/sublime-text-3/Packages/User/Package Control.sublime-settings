@@ -34,8 +34,6 @@
 		"FileDialog",
 		"FileList",
 		"FireCode Color Scheme",
-		"GoImports",
-		"Golang Tools Integration",
 		"Goto-CSS-Declaration",
 		"GotoCharacter",
 		"GotoLineEnhanced",
@@ -54,12 +52,12 @@
 		"Local History",
 		"LocalVariable",
 		"Madebyphunky Color Scheme",
-		"MarkdownPreview",
 		"Method",
 		"MoveTab",
 		"Mreq Color Scheme",
 		"Mustang Color Scheme",
 		"NamedMark",
+		"Naomi",
 		"Oceanic Color Scheme",
 		"OpenPath",
 		"Package Control",
@@ -67,7 +65,6 @@
 		"PHP Modern",
 		"PhpDoc",
 		"Pretty JSON",
-		"RuboCop",
 		"Ruby Slim",
 		"Sail Color Scheme",
 		"SCSS",
@@ -75,12 +72,6 @@
 		"Solarized Color Scheme",
 		"Spirit Color Scheme",
 		"SqlBeautifier",
-		"SublimeLinter",
-		"SublimeLinter-coffee",
-		"SublimeLinter-jshint",
-		"SublimeLinter-json",
-		"SublimeLinter-php",
-		"SublimeLinter-ruby",
 		"Superlime",
 		"Terminal",
 		"Theme - Centurion",
@@ -90,12 +81,7 @@
 		"Today Color Scheme",
 		"Tomorrow Color Schemes",
 		"Tubsted Color Schemes",
-		"TypeScript",
 		"Wildlife Color Scheme"
-	],
-	"repositories":
-	[
-		"https://github.com/ruby-formatter/sublime-rufo"
 	],
 	"submit_usage": false
 }
