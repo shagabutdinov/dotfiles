@@ -520,7 +520,7 @@ getByTitle(${0:$selection})
 	<snippet>i
 		<content><![CDATA[
 import React from 'react';
-import { render } from 'react-testing-library';
+import { render } from '@testing-library/react';
 
 import $1 from './$1';
 

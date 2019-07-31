@@ -5,7 +5,7 @@
 \${theme.colors.$0}
 ]]></content>
     <tabTrigger>t</tabTrigger>
-    <scope>source.css.embdedded.js</scope>
+    <scope>source.css</scope>
     <description>projects (constructor): theme.colors</description>
     <order>3</order>
   </snippet>
@@ -15,7 +15,7 @@
 \${theme.fonts.$0}
 ]]></content>
     <tabTrigger>tf</tabTrigger>
-    <scope>source.css.embdedded.js</scope>
+    <scope>source.css</scope>
     <description>projects (constructor): theme.fonts</description>
     <order>3</order>
   </snippet>

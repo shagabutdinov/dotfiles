@@ -14,9 +14,9 @@ synclient TapButton3=0
 
 thunar --daemon &
 keynav &
-redshift -l $(curl ipinfo.io | jq -j .loc | tr ',' ':') &
+redshift -t 6500:2500 -l $(curl ipinfo.io | jq -j .loc | tr ',' ':') &
 dunst &
 
-# feh --bg-scale ~/.config/background.jpg
+sudo sysctl -w vm.max_map_count=262144
 
 exec i3

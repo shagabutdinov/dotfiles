@@ -1,5 +1,53 @@
 [
   {
+    "keys": ["enter"],
+    "command": "insert_snippet_enhanced",
+    "args": {
+      "contents": "\n\t$0\n",
+    },
+    "context": [
+      {"key": "setting.sublime_enhanced_keybindings", "operator": "equal", "operand": true},
+      {"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[\\[\\{\\(]['\"]?$", "match_all": true},
+      {"key": "following_text_end", "operator": "regex_contains", "operand": "^['\"]?[\\]\\}\\)]", "match_all": true}
+    ]
+  },
+
+  {
+      "keys": ["tab"],
+      "command": "hayaku",
+      "context": [{"key": "hayaku_css_context"}]
+  },
+
+  {
+      "keys": ["ctrl+alt+shift+;"],
+      "command": "hayaku_cycling_through_values",
+      "args": {"modifier": 1},
+      "context": [
+        {"key": "setting.hayaku_use_default_cycling_keymaps", "operator": "equal", "operand": true },
+        {"key": "scope_b_right", "operator": "regex_contains", "operand": "source.css.embedded.js"},
+        {"key": "preceding_text", "operator": "regex_contains", "operand": "\\S\\s*$"},
+      ]
+  },
+  {
+      "keys": ["ctrl+alt+shift+'"],
+      "command": "hayaku_cycling_through_values",
+      "args": {"modifier": -1},
+      "context": [
+        {"key": "setting.hayaku_use_default_cycling_keymaps", "operator": "equal", "operand": true },
+        {"key": "scope_b_right", "operator": "regex_contains", "operand": "source.css.embedded.js"},
+        {"key": "preceding_text", "operator": "regex_contains", "operand": "\\S\\s*$"},
+      ]
+  },
+
+  {
+    "keys": ["tab"],
+    "command": "insert_best_completion_enhanced",
+    "context": [
+      {"key": "preceding_text", "operator": "regex_contains", "operand": "[:\\w] t\\w*$"},
+    ],
+  },
+
+  {
     "keys": ["ctrl+/"],
     "command": "run_macro_file",
     "args": {

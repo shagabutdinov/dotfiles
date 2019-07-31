@@ -146,11 +146,12 @@ change_column :${1:table}, :${2:name}, :${3:type}, {
 		<content><![CDATA[
 remove_column :${1:table}, :${2:name}
 ]]></content>
-		<tabTrigger>rmc</tabTrigger>
+		<tabTrigger>rc</tabTrigger>
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
 				{"key": "begin_512_chars", "operator": "regex_contains", "operand": "ActiveRecord::Migration"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*rc$"},
 			]
 		]]></context>
 		<description>rails migrations: remove_column</description>

@@ -123,9 +123,9 @@
 
 	<snippet>
 		<content><![CDATA[
-<React.Fragment>
+<>
 	$0
-</React.Fragment>
+</>
 ]]></content>
 		<tabTrigger>&lt; rf</tabTrigger>
 		<scope>(source.js|html.jsx)</scope>
@@ -147,9 +147,9 @@
 
 	<snippet>
 		<content><![CDATA[
-<React.Fragment>
+<>
 	$0
-</React.Fragment>
+</>
 ]]></content>
 		<tabTrigger>rf</tabTrigger>
 		<scope>(source.js.*?meta.jsx.js\s*$|html.jsx)</scope>
@@ -179,7 +179,7 @@
 
 	<snippet>
 		<content><![CDATA[
-className="$1"
+css={css`$1`}
 ]]></content>
 		<tabTrigger>c</tabTrigger>
 		<scope>(source.js.*meta.jsx.js|html.jsx)</scope>
@@ -189,6 +189,25 @@ className="$1"
 					"key": "preceding_128_chars_begin",
 					"operator": "regex_contains",
 					"operand": "(<\\w+|}|\")\\s+c$"
+				},
+			]
+		]]></context>
+		<description>react: className</description>
+		<order>2</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+className="$1"
+]]></content>
+		<tabTrigger>cn</tabTrigger>
+		<scope>(source.js.*meta.jsx.js|html.jsx)</scope>
+		<context><![CDATA[
+			[
+				{
+					"key": "preceding_128_chars_begin",
+					"operator": "regex_contains",
+					"operand": "(<\\w+|}|\")\\s+cn$"
 				},
 			]
 		]]></context>

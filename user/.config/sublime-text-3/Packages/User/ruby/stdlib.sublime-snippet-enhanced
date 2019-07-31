@@ -520,11 +520,6 @@ respond_to?($1)
 ]]></content>
 		<tabTrigger>ro</tabTrigger>
 		<scope>source.ruby</scope>
-		<context><![CDATA[
-			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ro$"},
-			]
-		]]></context>
 		<description>stdlib: respond_to?($1)</description>
 	</snippet>
 

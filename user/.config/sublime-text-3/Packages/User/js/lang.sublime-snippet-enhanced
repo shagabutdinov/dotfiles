@@ -493,6 +493,11 @@ import $1 from '$2';
 ]]></content>
 		<tabTrigger>im</tabTrigger>
 		<scope>source.jsx?</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^im$"},
+			]
+		]]></context>
 		<description>lang: import</description>
 	</snippet>
 
@@ -502,6 +507,11 @@ import $1 from './${2:$1}';
 ]]></content>
 		<tabTrigger>il</tabTrigger>
 		<scope>source.jsx?</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^il$"},
+			]
+		]]></context>
 		<description>lang: import</description>
 	</snippet>
 
@@ -511,6 +521,11 @@ import theme from 'components/theme';
 ]]></content>
 		<tabTrigger>it</tabTrigger>
 		<scope>source.jsx?</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^it$"},
+			]
+		]]></context>
 		<description>lang: import theme</description>
 	</snippet>
 
@@ -520,6 +535,11 @@ import $1 from 'services/$1';
 ]]></content>
 		<tabTrigger>ise</tabTrigger>
 		<scope>source.jsx?</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^ise$"},
+			]
+		]]></context>
 		<description>lang: import service</description>
 	</snippet>
 
@@ -529,6 +549,11 @@ import $1 from 'Components/$1';
 ]]></content>
 		<tabTrigger>ico</tabTrigger>
 		<scope>source.jsx?</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^ico$"},
+			]
+		]]></context>
 		<description>lang: import component</description>
 	</snippet>
 
@@ -538,6 +563,11 @@ import { $1 } from 'components/Modules/$1';
 ]]></content>
 		<tabTrigger>ix</tabTrigger>
 		<scope>source.jsx?</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^ix$"},
+			]
+		]]></context>
 		<description>lang: import extended components</description>
 	</snippet>
 

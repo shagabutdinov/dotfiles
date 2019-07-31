@@ -58,15 +58,6 @@ alert(${1:$selection__or__last_assigned_variable})
 		<content><![CDATA[
 console.log('XXXX $TM_FILENAME:$TM_LINE_NUMBER', ${1:$selection__or__last_assigned_variable})
 ]]></content>
-		<commands><![CDATA[
-			[
-				{
-					"command": "run_macro_file_with_context",
-					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"}
-				},
-				"RUN",
-			]
-		]]></commands>
 		<tabTrigger>l</tabTrigger>
 		<scope>source.js</scope>
 		<description>stdlib: console.log</description>

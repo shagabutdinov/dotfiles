@@ -25,9 +25,9 @@
 0.0.0.1 s-cm.send.adnetwork.vn
 0.0.0.1 *.adnetwork.vn
 0.0.0.1 *.microadlinc.com
-0.0.0.1 google-analytics.com
-0.0.0.1 www.google-analytics.com
-0.0.0.1 *.doubleclick.net
+# 0.0.0.1 google-analytics.com
+# 0.0.0.1 www.google-analytics.com
+# 0.0.0.1 *.doubleclick.net
 
 # This MVPS HOSTS file is a free download from:            #
 # http://winhelp2002.mvps.org/hosts.htm                    #
@@ -6562,7 +6562,7 @@
 0.0.0.1 clickserve.dartsearch.net
 0.0.0.1 clickserve.eu.dartsearch.net
 0.0.0.1 clickserve.uk.dartsearch.net
-0.0.0.1 doubleclick.net
+# 0.0.0.1 doubleclick.net
 0.0.0.1 ad.doubleclick.net #[MVPS.Criteria]
 0.0.0.1 ad-g.doubleclick.net
 0.0.0.1 ad2.doubleclick.net
@@ -6662,7 +6662,7 @@
 0.0.0.1 ad.bg.doubleclick.net
 0.0.0.1 bid.g.doubleclick.net
 0.0.0.1 cm.g.doubleclick.net
-0.0.0.1 stats.g.doubleclick.net
+# 0.0.0.1 stats.g.doubleclick.net
 0.0.0.1 fls.au.doubleclick.net
 0.0.0.1 video-stats.video.google.com
 0.0.0.1 4.afs.googleadservices.com
