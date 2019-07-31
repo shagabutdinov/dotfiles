@@ -14,7 +14,7 @@ synclient TapButton3=0
 
 thunar --daemon &
 keynav &
-redshift -t 6500:2500 -l $(curl ipinfo.io | jq -j .loc | tr ',' ':') &
+redshift -t 6500:2500 -l $(curl -s ipinfo.io | jq -j .loc | tr ',' ':') &
 dunst &
 
 sudo sysctl -w vm.max_map_count=262144
