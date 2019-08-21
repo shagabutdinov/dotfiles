@@ -626,7 +626,7 @@ params: {$0}
 
 	<snippet>
 		<content><![CDATA[
-describeb_class
+described_class
 ]]></content>
 		<tabTrigger>dc</tabTrigger>
 		<scope>source.ruby</scope>

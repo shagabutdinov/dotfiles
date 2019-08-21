@@ -33,10 +33,11 @@
 	"bold_folder_labels": false,
 	"caret_style": "smooth",
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/Theme - Nil/Tubnil Bright.tmTheme",
+	"color_scheme": "Packages/Solarized/Solarized (light) (patched).tmTheme",
 	"create_window_at_startup": false,
 	"default_encoding": "UTF-8",
 	"default_line_ending": "unix",
+	"detect_acronyms": false,
 	"detect_indentation": true,
 	"dictionary": "Packages/Language - English/en_US.dic",
 	"drag_text": false,
@@ -84,7 +85,7 @@
 	"font_options":
 	[
 	],
-	"font_size": 11.5,
+	"font_size": 12.5,
 	"gutter": true,
 	"hayaku_CSS_prefixes_disable": true,
 	"highlight_line": true,

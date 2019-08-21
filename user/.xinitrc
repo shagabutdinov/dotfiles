@@ -16,6 +16,7 @@ thunar --daemon &
 keynav &
 redshift -t 6500:2500 -l $(curl -s ipinfo.io | jq -j .loc | tr ',' ':') &
 dunst &
+volumectl -D &
 
 sudo sysctl -w vm.max_map_count=262144
 

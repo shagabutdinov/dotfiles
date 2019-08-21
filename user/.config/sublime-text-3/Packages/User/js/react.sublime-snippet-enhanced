@@ -828,15 +828,6 @@ const { $1 } = this.props;
 
 	<snippet>
 		<content><![CDATA[
-const [$1, set${2:$1}] = useState($3);
-]]></content>
-		<tabTrigger>cu</tabTrigger>
-		<scope>source.jsx?</scope>
-		<description>react: useState</description>
-	</snippet>
-
-	<snippet>
-		<content><![CDATA[
 const { $1 } = useContext($2)
 ]]></content>
 		<commands><![CDATA[
@@ -903,7 +894,7 @@ useContext
 
 	<snippet>
 		<content><![CDATA[
-const [ $1, set${1/(.+)/\u$1/g} ] = useState($2)
+const [$1, set${1/(.+)/\u$1/g}] = useState($2)
 ]]></content>
 		<commands><![CDATA[
 			[

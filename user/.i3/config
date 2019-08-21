@@ -197,9 +197,10 @@ hide_edge_borders both
 new_window 1pixel
 for_window [class="^.*"] border pixel 1
 
-bindsym $mod+comma exec usound-level 3%-
-bindsym $mod+period exec usound-level 3%+
-bindsym $mod+slash exec usound-toggle
+bindsym $mod+comma exec volumectl down 10
+bindsym $mod+period exec volumectl up 10
+bindsym $mod+slash exec volumectl
+bindsym $mod+shift+slash exec pa-switch-sink
 bindsym $mod+shift+grave exec sudo systemctl suspend
 bindsym $mod+g exec thunar
 bindsym $mod+backslash exec subl3
@@ -214,7 +215,7 @@ bindsym $mod+m exec ushow-status
 bindsym $mod+n exec enter-text "Leonid Shagabutdinov"
 bindsym $mod+shift+n exec enter-text "leonid@shagabutdinov.com"
 bindsym $mod+ctrl+n exec enter-text "+79059376988"
-bindsym $mod+l exec enter-text "Definition of done:\n\n*\n\nComments:\n\n* "
+bindsym $mod+ctrl+shift+l exec enter-text "Definition of done:\n\n*\n\nComments:\n\n* "
 
 bindcode $mod+shift+22 exec ucreatetodo # backspace
 bindcode $mod+ctrl+22 exec uscreenshot # backspace
