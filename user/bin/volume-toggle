@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+ID_FILE = '/tmp/volume.notification.id'.freeze
+
+pactl_output = `pactl list sinks`
+muted = pactl_output.include?('Mute: yes')
+
+sinks =
+  pactl_output
+  .split("\n")
+  .select { |line| line.include?('Sink #') }
+  .map { |line| line.gsub('Sink #', '').to_i }
+  .each do |sink|
+    `pactl set-sink-mute #{sink} #{muted ? 0 : 1}`
+  end
+
+last_id = File.exist?(ID_FILE) ? File.read(ID_FILE).strip.to_i : 0
+id = `notify-desktop -r "#{last_id}" "" "<b>VOLM</b> » #{muted ?
+  'UNMUTED' : 'MUTED'}"`.strip.to_i
+
+File.write(ID_FILE, id)

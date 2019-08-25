@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+
+CONFIGURATIONS =
+  File
+  .read('.displays')
+  .split("\n")
+  .reject { |line| line.strip.empty? }
+
+CONFIGURATION_ID_FILE = '/tmp/display.id'.freeze
+MESSAGE_ID_FILE = '/tmp/display.notification.id'.freeze
+
+pactl_output = `pactl list sources`
+muted = pactl_output.include?('Mute: yes')
+
+sources =
+  pactl_output
+  .split("\n")
+  .select { |line| line.include?('Source #') }
+  .map { |line| line.gsub('Source #', '').to_i }
+  .each do |sink|
+    `pactl set-source-mute #{sink} #{muted ? 0 : 1}`
+  end
+
+next_configuration_id =
+  File.exist?(CONFIGURATION_ID_FILE) ?
+    File.read(CONFIGURATION_ID_FILE).strip.to_i + 1 :
+    0
+
+next_configuration_id = 0 if next_configuration_id >= CONFIGURATIONS.length
+display_name, command = CONFIGURATIONS[next_configuration_id].split(':')
+
+last_message_id =
+  File.exist?(MESSAGE_ID_FILE) ? File.read(MESSAGE_ID_FILE).strip.to_i : 0
+
+`#{command}`
+
+id = `notify-desktop -r "#{last_message_id}" "" "<b>DISPLAY</b> » \
+#{display_name.strip}"`.strip.to_i
+
+File.write(CONFIGURATION_ID_FILE, next_configuration_id)
+File.write(MESSAGE_ID_FILE, id)
