@@ -1,6 +1,5 @@
 autoload -U add-zsh-hook
-source ~/bin/_zsh-hijack
-source ~/.display-configurations
+source ~/.bin/_zsh-hijack
 
 export BROWSER=chromium
 export APPLICATION_ENV=development

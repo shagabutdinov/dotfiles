@@ -56,7 +56,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=./bin:$HOME/bin:$HOME/.local/deadfiles/bin:/home/leo/src/go/bin:$PATH:/home/leo/.gem/ruby/2.6.0/bin
+export PATH=./bin:$HOME/.bin:$HOME/.local/deadfiles/bin:/home/leo/src/go/bin:$PATH:/home/leo/.gem/ruby/2.6.0/bin:./node_modules/.bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -71,7 +71,7 @@ fi
 autoload -U compinit
 compinit
 
-source ~/bin/ushell-env
+source ~/.bin/ushell-env
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
