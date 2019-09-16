@@ -7,7 +7,7 @@ describe('$1', function() {
 });
 ]]></content>
 		<tabTrigger>de</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
@@ -23,7 +23,7 @@ it('$1', function() {
 });
 ]]></content>
 		<tabTrigger>it</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
@@ -46,7 +46,7 @@ assert.equal(${1:$selection__or__last_assigned_variable}, ${2:expected})
 			]
 		]]></commands>
 		<tabTrigger>ae</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
@@ -69,7 +69,7 @@ assert.deepEqual(${1:$selection__or__last_assigned_variable}, ${2:expected})
 			]
 		]]></commands>
 		<tabTrigger>ad</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
@@ -92,7 +92,7 @@ assert.isOk(${1:$selection__or__last_assigned_variable})
 			]
 		]]></commands>
 		<tabTrigger>ao</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
@@ -115,7 +115,7 @@ assert.isTrue(${1:$selection__or__last_assigned_variable})
 			]
 		]]></commands>
 		<tabTrigger>at</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
@@ -138,7 +138,7 @@ assert.isFalse(${1:$selection__or__last_assigned_variable})
 			]
 		]]></commands>
 		<tabTrigger>af</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
@@ -161,7 +161,7 @@ assert.isNull(${1:$selection__or__last_assigned_variable})
 			]
 		]]></commands>
 		<tabTrigger>an</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
@@ -184,7 +184,7 @@ sinon.stub(${1:$selection__or__last_assigned_variable})
 			]
 		]]></commands>
 		<tabTrigger>ss</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?$"},
@@ -209,7 +209,7 @@ sinon.spy(${1:$selection__or__last_assigned_variable})
 			]
 		]]></commands>
 		<tabTrigger>sy</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
@@ -232,7 +232,7 @@ returns(${1:$selection__or__last_assigned_variable})
 			]
 		]]></commands>
 		<tabTrigger>r</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.r$"},
@@ -250,7 +250,7 @@ beforeEach(function() {
 });
 ]]></content>
 		<tabTrigger>be</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
@@ -264,7 +264,7 @@ beforeEach(function() {
 callCount
 ]]></content>
 		<tabTrigger>cc</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.cc$"},
@@ -279,7 +279,7 @@ callCount
 calledOnce
 ]]></content>
 		<tabTrigger>co</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.co$"},
@@ -294,7 +294,7 @@ calledOnce
 notCalled
 ]]></content>
 		<tabTrigger>nc</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.nc$"},
@@ -309,7 +309,7 @@ notCalled
 calledTwice
 ]]></content>
 		<tabTrigger>ct</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ct$"},
@@ -324,7 +324,7 @@ calledTwice
 calledThrice
 ]]></content>
 		<tabTrigger>ctr</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ctr$"},
@@ -339,7 +339,7 @@ calledThrice
 getCall(${1:0}).args
 ]]></content>
 		<tabTrigger>gc</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.gc$"},
@@ -354,7 +354,7 @@ getCall(${1:0}).args
 firstCall.args
 ]]></content>
 		<tabTrigger>fc</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.fc$"},
@@ -369,7 +369,7 @@ firstCall.args
 secondCall.args
 ]]></content>
 		<tabTrigger>sc</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.sc$"},
@@ -384,7 +384,7 @@ secondCall.args
 thirdCall.args
 ]]></content>
 		<tabTrigger>tc</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.tc$"},
@@ -399,7 +399,7 @@ thirdCall.args
 actual
 ]]></content>
 		<tabTrigger>a</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},
@@ -414,7 +414,7 @@ actual
 expected
 ]]></content>
 		<tabTrigger>ex</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "Test\\.jsx?"},

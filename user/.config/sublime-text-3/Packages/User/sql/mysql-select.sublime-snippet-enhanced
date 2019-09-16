@@ -280,7 +280,7 @@ COUNT(${1:*})
 
 	<snippet>
 		<content><![CDATA[
-COPY(${1:$selection}) TO STDOUT WITH CSV DELIMITER ','
+COPY(${1:$selection}) TO STDOUT WITH CSV DELIMITER ',' HEADER
 ]]></content>
 		<tabTrigger>C</tabTrigger>
 		<scope>source.sql</scope>

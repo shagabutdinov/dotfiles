@@ -14,7 +14,7 @@ className
 		  ]
 		]]></commands>
 		<tabTrigger>cn</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.cn$"},
@@ -37,7 +37,7 @@ addEventListener($0)
 		  ]
 		]]></commands>
 		<tabTrigger>ael</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.al$"},
@@ -60,7 +60,7 @@ removeEventListener($0)
 		  ]
 		]]></commands>
 		<tabTrigger>rel</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.rl$"},
@@ -83,7 +83,7 @@ preventDefault()
 		  ]
 		]]></commands>
 		<tabTrigger>pd</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.pd$"},
@@ -106,7 +106,7 @@ stopPropagation()
 		  ]
 		]]></commands>
 		<tabTrigger>sp</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.sp$"},

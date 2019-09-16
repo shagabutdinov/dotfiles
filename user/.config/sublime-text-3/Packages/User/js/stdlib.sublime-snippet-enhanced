@@ -14,7 +14,7 @@ JSON.parse(${1:$selection__or__last_assigned_variable})
 			]
 		]]></commands>
 		<tabTrigger>jp</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<description>stdlib: parse</description>
 	</snippet>
 
@@ -32,7 +32,7 @@ JSON.stringify(${1:$selection__or__last_assigned_variable})
 			]
 		]]></commands>
 		<tabTrigger>js</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<description>stdlib: stringify</description>
 	</snippet>
 
@@ -50,7 +50,7 @@ alert(${1:$selection__or__last_assigned_variable})
 			]
 		]]></commands>
 		<tabTrigger>al</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<description>stdlib: alert</description>
 	</snippet>
 
@@ -59,7 +59,7 @@ alert(${1:$selection__or__last_assigned_variable})
 console.log('XXXX $TM_FILENAME:$TM_LINE_NUMBER', ${1:$selection__or__last_assigned_variable})
 ]]></content>
 		<tabTrigger>l</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<description>stdlib: console.log</description>
 	</snippet>
 
@@ -77,7 +77,7 @@ length
 			]
 		]]></commands>
 		<tabTrigger>l</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.l$"},
@@ -101,7 +101,7 @@ forEach(${0:$selection})
 			]
 		]]></commands>
 		<tabTrigger>e</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.e$"},
@@ -125,7 +125,7 @@ map(${0:$selection})
 			]
 		]]></commands>
 		<tabTrigger>m</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.m$"},
@@ -148,7 +148,7 @@ startsWith(${1:$selection__or__last_assigned_variable})
 			]
 		]]></commands>
 		<tabTrigger>sw</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.sw$"},
@@ -171,7 +171,7 @@ Object.entries(${1:$selection__or__last_assigned_variable})
 			]
 		]]></commands>
 		<tabTrigger>oe</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<description>stdlib: Object.entries</description>
 	</snippet>
 
@@ -189,7 +189,7 @@ Object.keys(${1:$selection__or__last_assigned_variable})
 			]
 		]]></commands>
 		<tabTrigger>ok</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<description>stdlib: Object.keys</description>
 	</snippet>
 
@@ -207,7 +207,7 @@ Object.values(${1:$selection__or__last_assigned_variable})
 			]
 		]]></commands>
 		<tabTrigger>ov</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<description>stdlib: Object.values</description>
 	</snippet>
 
@@ -225,7 +225,7 @@ hasOwnProperty(${1:$selection__or__last_assigned_variable})
 			]
 		]]></commands>
 		<tabTrigger>ho</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ho$"},
@@ -248,7 +248,7 @@ parseInt(${1:$selection__or__last_assigned_variable})
 			]
 		]]></commands>
 		<tabTrigger>pi</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<description>stdlib: parseInt</description>
 	</snippet>
 
@@ -266,7 +266,7 @@ parseFloat(${1:$selection__or__last_assigned_variable})
 			]
 		]]></commands>
 		<tabTrigger>pf</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<description>stdlib: parseFloat</description>
 	</snippet>
 
@@ -284,7 +284,7 @@ toString()
 			]
 		]]></commands>
 		<tabTrigger>ts</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ts$"},
@@ -308,7 +308,7 @@ toFixed($1)
 			]
 		]]></commands>
 		<tabTrigger>tf</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.tf$"},
@@ -332,7 +332,7 @@ includes(${1:$selection__or__last_assigned_variable})
 			]
 		]]></commands>
 		<tabTrigger>i</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.i$"},
@@ -347,7 +347,7 @@ includes(${1:$selection__or__last_assigned_variable})
 this.$1.bind(this)
 ]]></content>
 		<tabTrigger>b</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<description>stdlib: bind</description>
 	</snippet>
 
@@ -356,7 +356,7 @@ this.$1.bind(this)
 bind(this)
 ]]></content>
 		<tabTrigger>b</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<description>stdlib: bind</description>
 		<context><![CDATA[
 			[
@@ -380,7 +380,7 @@ addEventListener('$1', $2)
 			]
 		]]></commands>
 		<tabTrigger>al</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.al$"},
@@ -404,7 +404,7 @@ toLowerCase()
 			]
 		]]></commands>
 		<tabTrigger>tl</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.tl$"},
@@ -428,7 +428,7 @@ toUpperCase()
 			]
 		]]></commands>
 		<tabTrigger>tu</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.tu$"},
@@ -452,7 +452,7 @@ currentUser
 			]
 		]]></commands>
 		<tabTrigger>cu</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<description>stdlib: currentUser</description>
 		<order>1</order>
 	</snippet>
@@ -471,7 +471,7 @@ includes(${1:$selection__or__last_assigned_variable})
 			]
 		]]></commands>
 		<tabTrigger>iu</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<description>stdlib: includes</description>
 		<order>1</order>
 	</snippet>
@@ -490,7 +490,7 @@ window.location.href
 			]
 		]]></commands>
 		<tabTrigger>wl</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<description>stdlib: window.location.href</description>
 	</snippet>
 
@@ -508,7 +508,7 @@ window.setTimeout($1)
 			]
 		]]></commands>
 		<tabTrigger>so</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<description>stdlib: window.location.href</description>
 	</snippet>
 
@@ -526,7 +526,7 @@ encodeURIComponent(${1:$selection})
 			]
 		]]></commands>
 		<tabTrigger>eu</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<description>stdlib: window.location.href</description>
 	</snippet>
 

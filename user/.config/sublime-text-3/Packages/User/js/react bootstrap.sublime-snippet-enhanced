@@ -17,7 +17,7 @@
 </div>
 ]]></content>
 		<tabTrigger>bp</tabTrigger>
-		<scope>source.js.*?meta.jsx.js\s*$</scope>
+		<scope>source.[tj]s.*?meta.jsx.js\s*$</scope>
 		<description>bootstrap: panel</description>
 	</snippet>
 
@@ -30,7 +30,7 @@
 </div>
 ]]></content>
 		<tabTrigger>br</tabTrigger>
-		<scope>source.js.*?meta.jsx.js\s*$</scope>
+		<scope>source.[tj]s.*?meta.jsx.js\s*$</scope>
 		<description>bootstrap: row</description>
 	</snippet>
 
@@ -41,7 +41,7 @@
 </div>
 ]]></content>
 		<tabTrigger>bc</tabTrigger>
-		<scope>source.js.*?meta.jsx.js\s*$</scope>
+		<scope>source.[tj]s.*?meta.jsx.js\s*$</scope>
 		<description>bootstrap: cell</description>
 	</snippet>
 
@@ -53,7 +53,7 @@
 </div>
 ]]></content>
 		<tabTrigger>bi</tabTrigger>
-		<scope>source.js.*?meta.jsx.js\s*$</scope>
+		<scope>source.[tj]s.*?meta.jsx.js\s*$</scope>
 		<description>bootstrap: cell</description>
 	</snippet>
 
@@ -62,7 +62,7 @@
 <button type="${1:button}" className="btn btn-${2:info}">$0</button>
 ]]></content>
 		<tabTrigger>bb</tabTrigger>
-		<scope>source.js.*?meta.jsx.js\s*$</scope>
+		<scope>source.[tj]s.*?meta.jsx.js\s*$</scope>
 		<description>bootstrap: button</description>
 	</snippet>
 

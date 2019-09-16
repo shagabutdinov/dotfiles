@@ -4,7 +4,7 @@
 import React from 'react';
 ]]></content>
 		<tabTrigger>ir</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^ir$"},
@@ -19,7 +19,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 ]]></content>
 		<tabTrigger>ip</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^ip$"},
@@ -34,7 +34,7 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 ]]></content>
 		<tabTrigger>is</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^is$"},
@@ -49,7 +49,7 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 ]]></content>
 		<tabTrigger>ic</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^ic$"},
@@ -64,7 +64,7 @@ import { css } from '@emotion/core';
 import $1 from 'components/Modules/$1';
 ]]></content>
 		<tabTrigger>io</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^io$"},
@@ -95,7 +95,7 @@ export default $1;
 
 ]]></content>
 		<tabTrigger>d</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{
@@ -128,7 +128,7 @@ export default $1;
 
 ]]></content>
 		<tabTrigger>df</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{
@@ -150,7 +150,7 @@ constructor(props) {
 }
 ]]></content>
 		<tabTrigger>dc</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{
@@ -171,7 +171,7 @@ render() {
 }
 ]]></content>
 		<tabTrigger>dr</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<description>react: define render</description>
 	</snippet>
 
@@ -182,7 +182,7 @@ componentDidMount() {
 }
 ]]></content>
 		<tabTrigger>ddm</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<description>react: define componentDidMount</description>
 	</snippet>
 
@@ -193,7 +193,7 @@ componentWillMount() {
 }
 ]]></content>
 		<tabTrigger>dwm</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<description>react: define componentWillMount</description>
 	</snippet>
 
@@ -204,7 +204,7 @@ componentDidUpdate() {
 }
 ]]></content>
 		<tabTrigger>ddu</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<description>react: define componentDidUpdate</description>
 	</snippet>
 
@@ -215,7 +215,7 @@ componentWillUnmount() {
 }
 ]]></content>
 		<tabTrigger>dwu</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<description>react: define componentWillUpdate</description>
 	</snippet>
 
@@ -226,7 +226,7 @@ componentWillUpdate($1props, state) {
 }
 ]]></content>
 		<tabTrigger>dwup</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<description>react: define componentWillUpdate</description>
 	</snippet>
 
@@ -237,7 +237,7 @@ componentWillReceiveProps(props) {
 }
 ]]></content>
 		<tabTrigger>dwr</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<description>react: define componentWillReceiveProps</description>
 	</snippet>
 
@@ -255,7 +255,7 @@ setState($1)
 			]
 		]]></commands>
 		<tabTrigger>ss</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.ss$"},
@@ -279,7 +279,7 @@ this.setState($1)
 			]
 		]]></commands>
 		<tabTrigger>ss</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<description>react: this.setState</description>
 	</snippet>
 
@@ -297,7 +297,7 @@ this.state
 			]
 		]]></commands>
 		<tabTrigger>ts</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<description>react: this.state</description>
 	</snippet>
 
@@ -315,7 +315,7 @@ this.state
 			]
 		]]></commands>
 		<tabTrigger>.s</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\W\\.s$"},
@@ -339,7 +339,7 @@ this.state
 			]
 		]]></commands>
 		<tabTrigger>ts</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.\\.\\.ts$"},
@@ -363,7 +363,7 @@ this.state.
 			]
 		]]></commands>
 		<tabTrigger>ts</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\w"},
@@ -387,7 +387,7 @@ this.props
 			]
 		]]></commands>
 		<tabTrigger>tp</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<description>react: this.props</description>
 	</snippet>
 
@@ -405,7 +405,7 @@ this.props.
 			]
 		]]></commands>
 		<tabTrigger>tp</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "following_text_end", "operator": "regex_contains", "operand": "[^\\s;]"},
@@ -429,7 +429,7 @@ this.form
 			]
 		]]></commands>
 		<tabTrigger>tf</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<description>react: this.form</description>
 	</snippet>
 
@@ -447,7 +447,7 @@ this.form.
 			]
 		]]></commands>
 		<tabTrigger>tf</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "following_text_end", "operator": "regex_contains", "operand": "\\S"},
@@ -471,7 +471,7 @@ forceUpdate()
 			]
 		]]></commands>
 		<tabTrigger>fu</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.fu"},
@@ -497,7 +497,7 @@ defaultProps = {
 			]
 		]]></commands>
 		<tabTrigger>dp</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.dp$"},
@@ -522,7 +522,7 @@ propTypes = {
 			]
 		]]></commands>
 		<tabTrigger>pt</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\.pt$"},
@@ -536,7 +536,7 @@ propTypes = {
 PropTypes.bool
 ]]></content>
 		<tabTrigger>b</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\.propTypes\\s=\\s\\{"},
@@ -551,7 +551,7 @@ PropTypes.bool
 PropTypes.string
 ]]></content>
 		<tabTrigger>s</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\.propTypes\\s=\\s\\{"},
@@ -566,7 +566,7 @@ PropTypes.string
 PropTypes.number
 ]]></content>
 		<tabTrigger>n</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\.propTypes\\s=\\s\\{"},
@@ -581,7 +581,7 @@ PropTypes.number
 PropTypes.element
 ]]></content>
 		<tabTrigger>e</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\.propTypes\\s=\\s\\{"},
@@ -596,7 +596,7 @@ PropTypes.element
 PropTypes.func
 ]]></content>
 		<tabTrigger>f</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\.propTypes\\s=\\s\\{"},
@@ -611,7 +611,7 @@ PropTypes.func
 isRequired
 ]]></content>
 		<tabTrigger>r</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\.propTypes\\s=\\s\\{"},
@@ -627,7 +627,7 @@ isRequired
 PropTypes.arrayOf($1)
 ]]></content>
 		<tabTrigger>a</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\.propTypes\\s=\\s\\{"},
@@ -642,7 +642,7 @@ PropTypes.arrayOf($1)
 PropTypes.object
 ]]></content>
 		<tabTrigger>o</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\.propTypes\\s=\\s\\{"},
@@ -657,7 +657,7 @@ PropTypes.object
 PropTypes.objectOf($1)
 ]]></content>
 		<tabTrigger>ob</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\.propTypes\\s=\\s\\{"},
@@ -672,7 +672,7 @@ PropTypes.objectOf($1)
 PropTypes.instanceOf($1)
 ]]></content>
 		<tabTrigger>i</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\.propTypes\\s=\\s\\{"},
@@ -687,7 +687,7 @@ PropTypes.instanceOf($1)
 PropTypes.shape($1)
 ]]></content>
 		<tabTrigger>sh</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\.propTypes\\s=\\s\\{"},
@@ -702,7 +702,7 @@ PropTypes.shape($1)
 PropTypes.node
 ]]></content>
 		<tabTrigger>no</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\.propTypes\\s=\\s\\{"},
@@ -717,7 +717,7 @@ PropTypes.node
 PropTypes.oneOfType([$1])
 ]]></content>
 		<tabTrigger>oot</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\.propTypes\\s=\\s\\{"},
@@ -732,7 +732,7 @@ PropTypes.oneOfType([$1])
 PropTypes.oneOf([$1])
 ]]></content>
 		<tabTrigger>oo</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "\\.propTypes\\s=\\s\\{"},
@@ -747,7 +747,7 @@ PropTypes.oneOf([$1])
 classNames($1)
 ]]></content>
 		<tabTrigger>cn</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<description>react: classNames</description>
 	</snippet>
 
@@ -758,7 +758,7 @@ const $1 = styled.${2:tag}`
 `;
 ]]></content>
 		<tabTrigger>st</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^st$"},
@@ -774,7 +774,7 @@ const $1 = styled(${2:func})`
 `;
 ]]></content>
 		<tabTrigger>sf</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^sf$"},
@@ -790,7 +790,7 @@ const $1 = styled.${2:span}`
 `;
 ]]></content>
 		<tabTrigger>ss</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^ss$"},
@@ -808,7 +808,7 @@ const $1 = styled.div`
 `;
 ]]></content>
 		<tabTrigger>sd</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^sd$"},
@@ -822,7 +822,7 @@ const $1 = styled.div`
 const { $1 } = this.props;
 ]]></content>
 		<tabTrigger>cp</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<description>react: const { variable } = this.props</description>
 	</snippet>
 
@@ -840,7 +840,7 @@ const { $1 } = useContext($2)
 			]
 		]]></commands>
 		<tabTrigger>uc</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<description>react: useContext</description>
 	</snippet>
 
@@ -858,7 +858,7 @@ useContext($1)
 			]
 		]]></commands>
 		<tabTrigger>uc</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "=\\s*uc$"},
@@ -882,7 +882,7 @@ useContext
 			]
 		]]></commands>
 		<tabTrigger>uc</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[{,]\\s*uc$"},
@@ -906,7 +906,7 @@ const [$1, set${1/(.+)/\u$1/g}] = useState($2)
 			]
 		]]></commands>
 		<tabTrigger>us</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<description>react: useState</description>
 	</snippet>
 
@@ -924,7 +924,7 @@ useState($1)
 			]
 		]]></commands>
 		<tabTrigger>us</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "=\\s*us$"},
@@ -948,7 +948,7 @@ useState
 			]
 		]]></commands>
 		<tabTrigger>us</tabTrigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[{,]\\s*us$"},
@@ -964,7 +964,7 @@ useState
 , { $0 }
 ]]></content>
 		<trigger>,</trigger>
-		<scope>source.jsx?</scope>
+		<scope>source.[tj]sx?</scope>
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "import \\w+,$"},

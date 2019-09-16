@@ -14,7 +14,7 @@
       ]
     ]]></commands>
     <tabTrigger>q</tabTrigger>
-    <scope>source.js</scope>
+    <scope>source.[tj]s</scope>
     <description>jquery: $</description>
   </snippet>
 

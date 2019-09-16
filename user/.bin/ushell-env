@@ -332,20 +332,19 @@ alias gcs='git checkout origin/staging'
 alias gt='git reset'
 alias gth='git reset --hard'
 alias glr='git pull --rebase'
-alias gii='git update-index --assume-unchanged'
+alias gau='git update-index --assume-unchanged'
+alias gac='git update-index --no-assume-unchanged'
 
-alias gg='() { git add . && git commit -m "$1" }'
-alias gg!='() { git commit --amend -m "$1" }'
-alias ggx='() { git commit --amend -m "$1" }'
 alias gbn='() {
   git fetch && \
     git checkout origin/master && \
     git checkout -b "$1"
 }'
 
-alias gk='() { git add . ; git commit -m "$1" }'
-alias gk!='() { git add . ; git commit -m "$1" --amend }'
-alias gkx='() { git add . ; git commit -m "$1" --amend }'
+alias gg='() { git add . && git commit -m "$1" }'
+alias gk='() { git commit -m "$1" }'
+alias gn='() { git commit -m "$1" --no-verify }'
+alias gkk='() { git commit --amend }'
 
 alias gx='() {
   git add . && \
@@ -353,16 +352,16 @@ alias gx='() {
     git push -u origin $(current_branch)
 }'
 
+alias gxn='() {
+  git add . && \
+    git commit -m "$1" --no-verify && \
+    git push -u origin $(current_branch)
+}'
+
 alias gxx='() {
   git add .
   git commit -m "$(git log -1 --pretty=%s)" --amend
   git push -u origin $(current_branch) --force
-}'
-
-alias gct='() {
-  git add .
-  git commit -m tmp --no-verify
-  git push -u origin $(current_branch)
 }'
 
 function rebase-current-branch-on-master() {
@@ -536,28 +535,6 @@ function generate-rails-object() {
 
 alias xg=generate-rails-object
 
-function create-feature-branch() {
-  git fetch
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mFETCH FAILED\033[0m"
-    return 1
-  fi
-
-  git checkout origin/master
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mCHECKOUT FAILED\033[0m"
-    return 1
-  fi
-
-  git checkout -b "$1"
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mNEW BRANCH CHECKOUT FAILED\033[0m"
-    return 1
-  fi
-}
-
-alias gn=create-feature-branch
-
 function create-pull-request() {
   repo=$(
     git remote -v |
@@ -641,13 +618,13 @@ hijack:transform '^(\w+)( .*)!$' \
 hijack:transform ' +$' \
   'sed -re "s/ +$//"'
 
-hijack:transform '^g[gkx]?!? ' \
+hijack:transform '^g[gkxn]?!? ' \
   'sed -r s"/([\\$<>{}&\\\"([!?)''#^ ])/\\\\\1/g"'
 
-hijack:transform '^g[gkx]?\\!' \
-  'sed -re "s/^(g[gkx]?)\\\\!/\\1!/"'
+hijack:transform '^g[gkxn]?\\!' \
+  'sed -re "s/^(g[gkxn]?)\\\\!/\\1!/"'
 
-hijack:transform '^g[gkx]?!?\\ ' \
-  'sed -r s"/^(g[gkx]?)(!?)\\\ /\\1\\2 /g"'
+hijack:transform '^g[gkxn]?!?\\ ' \
+  'sed -r s"/^(g[gkxn]?)(!?)\\\ /\\1\\2 /g"'
 
 QUOTA=50

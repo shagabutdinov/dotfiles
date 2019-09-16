@@ -1,5 +1,10 @@
 [
   {
+    "keys": ["ctrl+e"],
+    "command": "goto_definition",
+  },
+
+  {
     "keys": ["enter"],
     "command": "insert_snippet_enhanced",
     "args": {

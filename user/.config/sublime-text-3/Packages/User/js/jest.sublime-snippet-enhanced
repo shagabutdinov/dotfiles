@@ -14,7 +14,7 @@ jest.fn()
 			]
 		]]></commands>
 		<tabTrigger>jf</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -30,7 +30,7 @@ describe('$1', () => {
 });
 ]]></content>
 		<tabTrigger>de</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -46,7 +46,7 @@ it('$1', () => {
 });
 ]]></content>
 		<tabTrigger>it</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -62,7 +62,7 @@ beforeEach(() => {
 });
 ]]></content>
 		<tabTrigger>be</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -78,7 +78,7 @@ afterEach(() => {
 });
 ]]></content>
 		<tabTrigger>ae</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -101,7 +101,7 @@ expect(${1:$selection}).to$0
 			]
 		]]></commands>
 		<tabTrigger>x</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -116,7 +116,7 @@ expect(${1:$selection}).to$0
 expect.$0
 ]]></content>
 		<tabTrigger>x</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -131,7 +131,7 @@ expect.$0
 objectContaining($0)
 ]]></content>
 		<tabTrigger>oc</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -146,7 +146,7 @@ objectContaining($0)
 anything($0)
 ]]></content>
 		<tabTrigger>a</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -171,7 +171,7 @@ not.to
 			]
 		]]></commands>
 		<trigger>ton</trigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -195,7 +195,7 @@ toEqual($1)
 			]
 		]]></commands>
 		<trigger>toe</trigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -219,7 +219,7 @@ toBe($1)
 			]
 		]]></commands>
 		<trigger>tob</trigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -243,7 +243,7 @@ toBeNull()
 			]
 		]]></commands>
 		<trigger>tou</trigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -267,7 +267,7 @@ toBeTruthy()
 			]
 		]]></commands>
 		<trigger>tot</trigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -291,7 +291,7 @@ toBeFalsy()
 			]
 		]]></commands>
 		<trigger>tof</trigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -315,7 +315,7 @@ toHaveTextContent($1)
 			]
 		]]></commands>
 		<trigger>toht</trigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -339,7 +339,7 @@ toHaveBeenCalledWith($1)
 			]
 		]]></commands>
 		<trigger>tohb</trigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -354,7 +354,7 @@ toHaveBeenCalledWith($1)
 const { ${1:container} } = render($2);
 ]]></content>
 		<tabTrigger>rc</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -366,7 +366,7 @@ const { ${1:container} } = render($2);
 
 	<snippet>
 		<content><![CDATA[
-await waitForElement(() => ${0:$selection})
+await wait(() => ${0:$selection})
 ]]></content>
 		<commands><![CDATA[
 			[
@@ -377,29 +377,29 @@ await waitForElement(() => ${0:$selection})
 				"RUN",
 			]
 		]]></commands>
-		<tabTrigger>wf</tabTrigger>
-		<scope>source.js</scope>
+		<tabTrigger>aw</tabTrigger>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
 			]
 		]]></context>
-		<description>jest: waitForElement</description>
+		<description>jest: await wait(() => ...)</description>
 	</snippet>
 
 	<snippet>
 		<content><![CDATA[
-waitForElement
+wait
 ]]></content>
-		<tabTrigger>wf</tabTrigger>
-		<scope>source.js</scope>
+		<tabTrigger>w</tabTrigger>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": ",\\s*wf$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[,{]\\s*w$"},
 			]
 		]]></context>
-		<description>jest: waitForElement</description>
+		<description>jest: wait</description>
 		<order>1</order>
 	</snippet>
 
@@ -408,7 +408,7 @@ waitForElement
 fireEvent.
 ]]></content>
 		<tabTrigger>fe</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -422,7 +422,7 @@ fireEvent.
 fireEvent
 ]]></content>
 		<tabTrigger>fe</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -438,7 +438,7 @@ fireEvent
 fireEvent.click(await waitForElement(() => $0))
 ]]></content>
 		<tabTrigger>fec</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -461,7 +461,7 @@ click(${1:$selection})
 			]
 		]]></commands>
 		<trigger>c</trigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -485,7 +485,7 @@ getByText(${0:$selection})
 			]
 		]]></commands>
 		<tabTrigger>bt</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -508,7 +508,7 @@ getByTitle(${0:$selection})
 			]
 		]]></commands>
 		<tabTrigger>bi</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
@@ -538,7 +538,7 @@ describe('$1', () => {
 });
 ]]></content>
 		<tabTrigger>d</tabTrigger>
-		<scope>source.js</scope>
+		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
