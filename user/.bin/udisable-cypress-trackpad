@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-while true; do 
-  echo serio1 | sudo tee /sys/devices/platform/i8042/serio1/input/input*/device/driver/unbind
-  sleep 0.1
-done
-

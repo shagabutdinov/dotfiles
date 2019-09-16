@@ -1,1 +1,0 @@
-ruby -e "require 'time'; puts DateTime.parse( DateTime.now.strftime( '%Y-%m-%d' ) ).to_time.to_i + 31 * 3600;"
