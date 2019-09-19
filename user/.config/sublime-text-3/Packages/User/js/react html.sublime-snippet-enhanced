@@ -182,13 +182,13 @@
 css={css`$1`}
 ]]></content>
 		<tabTrigger>c</tabTrigger>
-		<scope>(source.[tj]s.*meta.jsx.js|html.jsx)</scope>
+		<scope>(source.[tj]s)</scope>
 		<context><![CDATA[
 			[
 				{
 					"key": "preceding_128_chars_begin",
 					"operator": "regex_contains",
-					"operand": "(<\\w+|}|\")\\s+c$"
+					"operand": "(<[\\w\\.]+|}|\")\\s+c$"
 				},
 			]
 		]]></context>

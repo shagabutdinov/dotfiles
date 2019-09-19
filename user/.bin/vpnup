@@ -1,0 +1,12 @@
+notify-desktop -r "/tmp/vpn.notification.id" "" "<b>VPN</b> » UP"
+
+sudo pkill openvpn
+
+sudo openvpn \
+  --verb 6 \
+  --config projects/constructor.io/constructor.ovpn \
+  --auth-user-pass projects/constructor.io/constructor.ovpn.auth &
+
+disown
+
+notify-desktop -r "/tmp/vpn.notification.id" "" "<b>VPN</b> » UP"

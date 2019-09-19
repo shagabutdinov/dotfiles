@@ -1,0 +1,3 @@
+sudo pkill openvpn
+
+notify-desktop -r "/tmp/vpn.notification.id" "" "<b>VPN</b> » DOWN"

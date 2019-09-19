@@ -197,43 +197,40 @@ hide_edge_borders both
 new_window 1pixel
 for_window [class="^.*"] border pixel 1
 
+bindsym $mod+g exec thunar
+bindsym $mod+backslash exec subl3
+bindsym $mod+shift+backslash exec subl3 --new-window
+bindsym $mod+o exec firefox
+bindsym $mod+shift+o exec chromium
+bindsym $mod+h exec translator
+bindsym $mod+shift+h exec translator "$(xsel -op)"
+bindsym $mod+p exec file-roller ~/projects/keys/passwords.zip
+
 bindsym $mod+comma exec /home/leo/.local/seletskiy/bin/volume down 10
 bindsym $mod+period exec /home/leo/.local/seletskiy/bin/volume up 10
 bindsym $mod+slash exec volume-toggle
 bindsym $mod+ctrl+slash exec mic-toggle
 bindsym $mod+shift+slash exec /home/leo/.local/seletskiy/bin/sound-switch
 bindsym $mod+shift+grave exec sudo systemctl suspend
-bindsym $mod+g exec thunar
-bindsym $mod+backslash exec subl3
-bindsym $mod+shift+backslash exec subl3 --new-window
-bindsym $mod+o exec firefox
-bindsym $mod+shift+o exec chromium
-bindsym $mod+p exec file-roller ~/projects/keys/passwords.zip
-bindsym $mod+shift+p exec leafpad ~/projects/personal/development.txt
 bindsym $mod+ctrl+u exec uidle
 bindsym $mod+shift+u exec upwork-suspend
 bindsym $mod+m exec ushow-status
 bindsym $mod+Tab exec switch-display
+bindsym $mod+F12 exec /home/leo/.bin/vpnup
+bindsym $mod+shift+F12 exec /home/leo/.bin/vpndown
+bindsym $mod+shift+comma exec xbacklight -dec 5
+bindsym $mod+shift+period exec xbacklight -inc 5
+bindsym $mod+ctrl+p exec ucreate-secret "$(xsel -op)"
+
+bindsym $mod+F9 exec uscreenshot --active-window
+bindsym $mod+shift+F9 exec uscreenshot
+bindsym $mod+ctrl+F9 exec uscreenshot --active-window --edit
+bindsym $mod+ctrl+shift+F9 exec uscreenshot --edit
+bindsym $mod+Home exec uscreencast
+bindsym $mod+shift+Home exec uscreencast --active-window
+
 bindsym $mod+n exec enter-text "Leonid Shagabutdinov"
 bindsym $mod+shift+n exec enter-text "leonid@shagabutdinov.com"
 bindsym $mod+ctrl+n exec enter-text "+79059376988"
 bindsym $mod+ctrl+shift+l exec enter-text "Definition of done:\n\n*\n\nComments:\n\n* "
-
-bindcode $mod+shift+22 exec ucreatetodo # backspace
-bindcode $mod+ctrl+22 exec uscreenshot # backspace
-bindsym $mod+shift+comma exec xbacklight -dec 5
-bindsym $mod+shift+period exec xbacklight -inc 5
-# bindcode $mod+23 exec keynav start
-
-bindcode $mod+75 exec uscreenshot --active-window
-bindcode $mod+shift+75 exec uscreenshot
-
-bindcode $mod+76 exec uscreenshot --active-window --edit
-bindcode $mod+shift+76 exec uscreenshot --edit
-
-bindcode $mod+110 exec uscreencast
-bindcode $mod+shift+110 exec uscreencast --active-window
-# bindsym $mod+F12 exec umousetoggle
-bindsym $mod+h exec translator
-bindsym $mod+shift+h exec translator "$(xsel -op)"
-bindsym $mod+ctrl+p exec ucreate-secret "$(xsel -op)"
+bindsym $mod+ctrl+shift+p exec enter-text "Requested changes are implemented."

@@ -33,10 +33,12 @@ last_message_id =
   File.exist?(MESSAGE_ID_FILE) ? File.read(MESSAGE_ID_FILE).strip.to_i : 0
 
 `#{command}`
-`pkill keynav; keynav &; disown`
 
 id = `notify-desktop -r "#{last_message_id}" "" "<b>DISPLAY</b> » \
 #{display_name.strip}"`.strip.to_i
 
 File.write(CONFIGURATION_ID_FILE, next_configuration_id)
 File.write(MESSAGE_ID_FILE, id)
+
+system('pkill keynav')
+system('nohup keynav &')
