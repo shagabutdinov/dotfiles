@@ -1,0 +1,8 @@
+<snippet>
+  <content><![CDATA[
+raise ':('
+]]></content>
+  <tabTrigger>q</tabTrigger>
+  <scope>source.python</scope>
+  <description>raise :(</description>
+</snippet>

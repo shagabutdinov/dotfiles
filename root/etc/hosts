@@ -8,6 +8,7 @@
 127.0.0.1 p
 127.0.0.1 c
 127.0.0.1 cc # constructor cached
+127.0.0.1 test.cc # constructor cached
 127.0.0.1 cec # constructor elastic cached
 127.0.0.1 cdc # constructor devac cached
 127.0.0.1 x
@@ -17,6 +18,7 @@
 # 0.0.0.0 devac.cnstrc.com
 0.0.0.0 api.wb.local
 0.0.0.0 auth.wb.local
+0.0.0.0 assets.adobedtm.com
 
 # 18.185.118.130 admin-eimo1Ujahyah.ecra.pro
 
@@ -3092,7 +3094,6 @@
 0.0.0.1 cdn.adk2.co
 0.0.0.1 ad-media.xe.gr
 0.0.0.1 content.adnetinteractive.com
-0.0.0.1 assets.adobedtm.com
 0.0.0.1 www.adobetag.com #[SiteCatalyst Link Tracking]
 0.0.0.1 a.adready.com
 0.0.0.1 www.adreadytractions.com

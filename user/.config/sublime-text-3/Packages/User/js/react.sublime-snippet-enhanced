@@ -803,7 +803,7 @@ const $1 = styled.${2:span}`
 
 	<snippet>
 		<content><![CDATA[
-const $1 = styled.div`
+const $1 = styled${2:.div}`
   $0
 `;
 ]]></content>
@@ -828,7 +828,7 @@ const { $1 } = this.props;
 
 	<snippet>
 		<content><![CDATA[
-const { $1 } = useContext($2)
+const { $1 } = useContext(${2:Context})
 ]]></content>
 		<commands><![CDATA[
 			[
@@ -846,7 +846,7 @@ const { $1 } = useContext($2)
 
 	<snippet>
 		<content><![CDATA[
-useContext($1)
+useContext(${1:Context})
 ]]></content>
 		<commands><![CDATA[
 			[
@@ -1041,6 +1041,48 @@ useRef
 			]
 		]]></context>
 		<description>react: useRef</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+const $1 = useMemo($2)
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>um</tabTrigger>
+		<scope>source.[tj]sx?</scope>
+		<description>react: useMemo</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+useMemo
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>um</tabTrigger>
+		<scope>source.[tj]sx?</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[{,]\\s*um$"},
+			]
+		]]></context>
+		<description>react: useMemo</description>
 		<order>1</order>
 	</snippet>
 

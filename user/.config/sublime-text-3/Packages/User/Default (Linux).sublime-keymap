@@ -1,5 +1,36 @@
 [
   {
+    "keys": ["ctrl+u", "ctrl+k"],
+    "command": "close"
+  },
+
+  {
+    "keys": ["ctrl+u", "k"],
+    "command": "close_others",
+    "context": [
+      {"key": "setting.sublime_enhanced_keybindings", "operator": "equal", "operand": true},
+    ]
+  },
+
+  {
+    "keys": ["ctrl+u", "ctrl+l"],
+    "command": "close_to_right",
+    "context": [
+      {"key": "setting.sublime_enhanced_keybindings", "operator": "equal", "operand": true},
+    ]
+  },
+
+  {
+    "keys": ["ctrl+u", "l"],
+    "command": "close_all"
+  },
+
+  {
+    "keys": ["ctrl+alt+s"],
+    "command": "save_all"
+  },
+
+  {
     "keys": ["ctrl+e"],
     "command": "goto_definition",
   },
