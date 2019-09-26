@@ -976,7 +976,6 @@ useEffect(() => {
 		<tabTrigger>ue</tabTrigger>
 		<scope>source.[tj]sx?</scope>
 		<description>react: useEffect</description>
-		<order>1</order>
 	</snippet>
 
 	<snippet>
@@ -1000,6 +999,48 @@ useEffect
 			]
 		]]></context>
 		<description>react: useEffect</description>
+		<order>1</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+const $1 = useRef($2)
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>ur</tabTrigger>
+		<scope>source.[tj]sx?</scope>
+		<description>react: useRef</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+useRef
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>ur</tabTrigger>
+		<scope>source.[tj]sx?</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[{,]\\s*ur$"},
+			]
+		]]></context>
+		<description>react: useRef</description>
 		<order>1</order>
 	</snippet>
 

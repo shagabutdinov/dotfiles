@@ -20,7 +20,30 @@ jest.fn()
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
 			]
 		]]></context>
-		<description>jest: describe</description>
+		<description>jest: jest.fn</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+jest.mock('$0')
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<tabTrigger>jm</tabTrigger>
+		<scope>source.[tj]s</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+			]
+		]]></context>
+		<description>jest: jest.mock</description>
 	</snippet>
 
 	<snippet>
@@ -415,6 +438,20 @@ fireEvent.
 			]
 		]]></context>
 		<description>jest: fireEvent</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+fireEvent.click($0)
+]]></content>
+		<tabTrigger>fireEvent.</tabTrigger>
+		<scope>source.[tj]s</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+			]
+		]]></context>
+		<description>jest: fireEvent.click()</description>
 	</snippet>
 
 	<snippet>

@@ -62,6 +62,7 @@ alias nc='sudo netctl'
 alias ag='alias | grep -A 2 -B 2'
 alias cds='cd ~/src/'
 
+alias ue='source ~/.bin/ushell-env' # update env
 alias f='find . -name'
 alias pa='cd ~/.secrets; carcosa -Ac'
 alias pr='cd ~/.secrets; carcosa -Rc'
@@ -72,14 +73,16 @@ alias b='bundle exec'
 alias bs='bundle exec ./bin/spring'
 alias bi='bundle install'
 alias bii='bundle install --path vendor/bundle --jobs 32'
+alias bu='bundle update'
 alias ni='npm install'
 alias nl='npm install && git checkout package-lock.json'
 alias -g X='| xsel -ib'
-alias w='() { watch -x zsh -i -c "$@" }'
-alias ww='inotifyrun -r -e MODIFY'
+alias o='() { watch -x zsh -i -c "$@" }' # observe
+alias w='inotifyrun -r -e MODIFY' # watch
 alias l='ls --color -hl --group-directories-first'
 alias ls='ls --color -h --group-directories-first'
 alias rr='sudo rm -rf'
+alias rt='sudo rm -rf ~/.tmp/ssh/*'
 alias ks="kill \$(ps -xa | grep 'spring server' | grep -v 'grep' | awk '{print \$2}')"
 
 alias pm='sudo pacman'
@@ -334,6 +337,7 @@ alias gth='git reset --hard'
 alias glr='git pull --rebase'
 alias gau='git update-index --assume-unchanged'
 alias gac='git update-index --no-assume-unchanged'
+alias gmm='git fetch && git merge origin/master'
 
 alias gbn='() {
   git fetch && \
