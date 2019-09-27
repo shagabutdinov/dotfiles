@@ -7,6 +7,9 @@
 127.0.0.1 f
 127.0.0.1 p
 127.0.0.1 c
+127.0.0.1 cc # constructor cached
+127.0.0.1 cec # constructor elastic cached
+127.0.0.1 cdc # constructor devac cached
 127.0.0.1 x
 127.0.0.1 e
 127.0.0.1       localbox

@@ -62,12 +62,13 @@ alias nc='sudo netctl'
 alias ag='alias | grep -A 2 -B 2'
 alias cds='cd ~/src/'
 
-alias ue='source ~/.bin/ushell-env' # update env
+alias re='source ~/.bin/ushell-env' # reload env
 alias f='find . -name'
 alias pa='cd ~/.secrets; carcosa -Ac'
 alias pr='cd ~/.secrets; carcosa -Rc'
 alias e='subl3 -a'
-alias ee='subl3 -n'
+alias en='subl3 -n'
+alias ee='subl3 ~/.bin/ushell-env'
 alias h='ssh'
 alias b='bundle exec'
 alias bs='bundle exec ./bin/spring'
@@ -338,6 +339,7 @@ alias glr='git pull --rebase'
 alias gau='git update-index --assume-unchanged'
 alias gac='git update-index --no-assume-unchanged'
 alias gmm='git fetch && git merge origin/master'
+alias gj='git rev-parse HEAD | xsel -ib' # copy last commit hash
 
 alias gbn='() {
   git fetch && \
@@ -345,9 +347,12 @@ alias gbn='() {
     git checkout -b "$1"
 }'
 
-alias gg='() { git add . && git commit -m "$1" }'
+alias gz='() { git add . && git commit -m "$1" }'
+alias gzn='() { git add . && git commit -m "$1" --no-verify }'
+alias gzz='() { git add . && git commit -m "$1" --amend }'
+
 alias gk='() { git commit -m "$1" }'
-alias gn='() { git commit -m "$1" --no-verify }'
+alias gkn='() { git commit -m "$1" --no-verify }'
 alias gkk='() { git commit --amend }'
 
 alias gx='() {
@@ -622,13 +627,13 @@ hijack:transform '^(\w+)( .*)!$' \
 hijack:transform ' +$' \
   'sed -re "s/ +$//"'
 
-hijack:transform '^g[gkxn]?!? ' \
+hijack:transform '^g[zxk]?!? ' \
   'sed -r s"/([\\$<>{}&\\\"([!?)''#^ ])/\\\\\1/g"'
 
-hijack:transform '^g[gkxn]?\\!' \
-  'sed -re "s/^(g[gkxn]?)\\\\!/\\1!/"'
+hijack:transform '^g[zxk]?\\!' \
+  'sed -re "s/^(g[zxk]?)\\\\!/\\1!/"'
 
-hijack:transform '^g[gkxn]?!?\\ ' \
-  'sed -r s"/^(g[gkxn]?)(!?)\\\ /\\1\\2 /g"'
+hijack:transform '^g[zxk]?!?\\ ' \
+  'sed -r s"/^(g[zxk]?)(!?)\\\ /\\1\\2 /g"'
 
 QUOTA=50
