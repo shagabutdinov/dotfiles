@@ -339,7 +339,7 @@ alias glr='git pull --rebase'
 alias gau='git update-index --assume-unchanged'
 alias gac='git update-index --no-assume-unchanged'
 alias gmm='git fetch && git merge origin/master'
-alias gj='git rev-parse HEAD | xsel -ib' # copy last commit hash
+alias gj='git rev-parse HEAD | tr -d '\n' | xsel -ib' # copy last commit hash
 
 alias gbn='() {
   git fetch && \
@@ -627,13 +627,13 @@ hijack:transform '^(\w+)( .*)!$' \
 hijack:transform ' +$' \
   'sed -re "s/ +$//"'
 
-hijack:transform '^g[zxk]?!? ' \
+hijack:transform '^g[zxk]?[n]?!? ' \
   'sed -r s"/([\\$<>{}&\\\"([!?)''#^ ])/\\\\\1/g"'
 
-hijack:transform '^g[zxk]?\\!' \
-  'sed -re "s/^(g[zxk]?)\\\\!/\\1!/"'
+hijack:transform '^g[zxk]?[n]?\\!' \
+  'sed -re "s/^(g[zxk]?[n]?)\\\\!/\\1!/"'
 
-hijack:transform '^g[zxk]?!?\\ ' \
-  'sed -r s"/^(g[zxk]?)(!?)\\\ /\\1\\2 /g"'
+hijack:transform '^g[zxk]?[n]?!?\\ ' \
+  'sed -r s"/^(g[zxk]?[n]?)(!?)\\\ /\\1\\2 /g"'
 
 QUOTA=50
