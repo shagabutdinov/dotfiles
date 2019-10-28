@@ -3,23 +3,12 @@
 CONFIGURATIONS =
   File
   .read('.displays')
+  .strip
   .split("\n")
   .reject { |line| line.strip.empty? }
 
 CONFIGURATION_ID_FILE = '/tmp/display.id'.freeze
 MESSAGE_ID_FILE = '/tmp/display.notification.id'.freeze
-
-pactl_output = `pactl list sources`
-muted = pactl_output.include?('Mute: yes')
-
-sources =
-  pactl_output
-  .split("\n")
-  .select { |line| line.include?('Source #') }
-  .map { |line| line.gsub('Source #', '').to_i }
-  .each do |sink|
-    `pactl set-source-mute #{sink} #{muted ? 0 : 1}`
-  end
 
 next_configuration_id =
   File.exist?(CONFIGURATION_ID_FILE) ?
@@ -40,5 +29,4 @@ id = `notify-desktop -r "#{last_message_id}" "" "<b>DISPLAY</b> » \
 File.write(CONFIGURATION_ID_FILE, next_configuration_id)
 File.write(MESSAGE_ID_FILE, id)
 
-system('pkill keynav')
-system('nohup keynav &')
+system('sudo systemctl restart keynav')

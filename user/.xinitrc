@@ -13,7 +13,7 @@ synclient TapButton2=0
 synclient TapButton3=0
 
 thunar --daemon &
-keynav &
+sudo systemctl restart keynav
 redshift -t 6500:2500 -l $(curl -s ipinfo.io | jq -j .loc | tr ',' ':') &
 dunst &
 volumectl -D &

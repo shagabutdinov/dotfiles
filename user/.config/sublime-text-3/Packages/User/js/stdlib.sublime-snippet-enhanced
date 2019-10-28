@@ -521,4 +521,13 @@ encodeURIComponent(${1:$selection})
 		<description>stdlib: window.location.href</description>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+// @todo $0
+]]></content>
+		<tabTrigger>td</tabTrigger>
+		<scope>source.[tj]s</scope>
+		<description>stdlib: todo</description>
+	</snippet>
+
 </snippets>
