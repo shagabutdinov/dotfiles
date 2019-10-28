@@ -36,6 +36,15 @@
   },
 
   {
+    "keys": ["ctrl+e"],
+    "command": "expand_panel_value",
+    "context": [
+      {"key": "setting.sublime_enhanced_keybindings", "operator": "equal", "operand": true},
+      {"key": "search_panel_name", "operator": "regex_contains", "operand": "search_panel"}
+    ]
+  },
+
+  {
     "keys": ["enter"],
     "command": "insert_snippet_enhanced",
     "args": {

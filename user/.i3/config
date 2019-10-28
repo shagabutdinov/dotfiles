@@ -209,7 +209,8 @@ bindsym $mod+period exec /home/leo/.local/seletskiy/bin/volume up 10
 bindsym $mod+slash exec volume-toggle
 bindsym $mod+ctrl+slash exec mic-toggle
 bindsym $mod+shift+slash exec /home/leo/.local/seletskiy/bin/sound-switch
-bindsym $mod+shift+grave exec sudo systemctl suspend
+bindsym $mod+shift+grave exec i3lock -c 000000 && sudo systemctl suspend
+bindsym $mod+ctrl+grave exec i3lock -c 000000
 bindsym $mod+ctrl+u exec uidle
 bindsym $mod+shift+u exec upwork-suspend
 bindsym $mod+m exec ushow-status

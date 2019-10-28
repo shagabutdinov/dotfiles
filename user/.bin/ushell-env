@@ -340,6 +340,7 @@ alias gau='git update-index --assume-unchanged'
 alias gac='git update-index --no-assume-unchanged'
 alias gmm='git fetch && git merge origin/master'
 alias gj='git rev-parse HEAD | tr -d '\n' | xsel -ib' # copy last commit hash
+alias gcoo='git checkout origin/master -- '
 
 alias gbn='() {
   git fetch && \
