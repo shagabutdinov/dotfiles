@@ -690,6 +690,21 @@ continue ;
 
 	<snippet>
 		<content><![CDATA[
+throw ':('
+]]></content>
+		<commands>
+			[
+				"RUN",
+				{"command": "add_semicolon_to_statement"},
+			]
+		</commands>
+		<tabTrigger>q</tabTrigger>
+		<scope>source.[tj]sx?</scope>
+		<description>lang: throw</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 throw ${1:error}
 ]]></content>
 		<commands>

@@ -1,0 +1,7 @@
+notify-desktop -r "todoist" "Creating task..."
+
+if todoist add "$@" "$(xsel)" ; then
+  notify-desktop -r "todoist" "Task created"
+else
+  notify-desktop -r "todoist" "FAILURE"
+fi

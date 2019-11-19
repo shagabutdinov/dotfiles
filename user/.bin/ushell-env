@@ -78,13 +78,14 @@ alias bu='bundle update'
 alias ni='npm install'
 alias nl='npm install && git checkout package-lock.json'
 alias -g X='| xsel -ib'
-alias o='() { watch -x zsh -i -c "$@" }' # observe
+alias ob='() { watch -x zsh -i -c "$@" }' # observe
 alias w='inotifyrun -r -e MODIFY' # watch
 alias l='ls --color -hl --group-directories-first'
 alias ls='ls --color -h --group-directories-first'
 alias rr='sudo rm -rf'
 alias rt='sudo rm -rf ~/.tmp/ssh/*'
 alias ks="kill \$(ps -xa | grep 'spring server' | grep -v 'grep' | awk '{print \$2}')"
+alias kp="kill -9 \$(ps -xa | grep 'puma' | grep -v 'grep' | awk '{print \$2}')"
 
 alias pm='sudo pacman'
 alias pms='sudo pacman --noconfirm -S'
@@ -330,17 +331,17 @@ alias gdc='git diff --cached'
 alias gh='git stash'
 alias ghp='git stash pop'
 alias gfp='git fetch --prune'
-alias gcb='git checkout origin/dev'
-alias gcm='git checkout origin/master'
-alias gcs='git checkout origin/staging'
+alias gcm='git checkout master'
 alias gt='git reset'
 alias gth='git reset --hard'
 alias glr='git pull --rebase'
 alias gau='git update-index --assume-unchanged'
 alias gac='git update-index --no-assume-unchanged'
 alias gmm='git fetch && git merge origin/master'
-alias gj='git rev-parse HEAD | tr -d '\n' | xsel -ib' # copy last commit hash
+alias gj='echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib' # copy last commit hash
 alias gcoo='git checkout origin/master -- '
+alias gdn='git diff --name-only origin/master'
+alias gdo='git diff origin/master -- '
 
 alias gbn='() {
   git fetch && \
@@ -359,19 +360,22 @@ alias gkk='() { git commit --amend }'
 alias gx='() {
   git add . && \
     git commit -m "$1" && \
-    git push -u origin $(current_branch)
+    git push -u origin $(current_branch) &&
+    echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
 }'
 
 alias gxn='() {
   git add . && \
     git commit -m "$1" --no-verify && \
-    git push -u origin $(current_branch)
+    git push -u origin $(current_branch) &&
+    echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
 }'
 
 alias gxx='() {
   git add .
   git commit -m "$(git log -1 --pretty=%s)" --amend
-  git push -u origin $(current_branch) --force
+  git push -u origin $(current_branch) --force &&
+  echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
 }'
 
 function rebase-current-branch-on-master() {

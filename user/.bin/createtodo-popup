@@ -1,0 +1,11 @@
+input=$(modal -input /dev/null -no-fixed-num-lines -sync <&-)
+if [[ "$input" == "" ]]; then
+    exit 1
+fi
+
+notify-desktop -r "todoist" "Creating task..."
+if todoist add "$@" "$input" ; then
+  notify-desktop -r "todoist" "Task created"
+else
+  notify-desktop -r "todoist" "FAILURE"
+fi

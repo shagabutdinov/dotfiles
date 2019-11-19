@@ -142,6 +142,9 @@ bindsym $mod+ctrl+0 move container to workspace 10
 # exit i3 (logs you out of your X session)
 # bindsym $mod+shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+bindsym $mod+semicolon resize shrink width 3 px or 3 ppt
+bindsym $mod+apostrophe resize grow width 3 px or 3 ppt
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -233,3 +236,6 @@ bindsym $mod+shift+n exec enter-text "leonid@shagabutdinov.com"
 bindsym $mod+ctrl+n exec enter-text "+79059376988"
 bindsym $mod+ctrl+shift+l exec enter-text "Definition of done:\n\n*\n\nComments:\n\n* "
 bindsym $mod+ctrl+shift+p exec enter-text "Requested changes are implemented."
+bindsym $mod+BackSpace exec createtodo --date today
+bindsym $mod+shift+BackSpace exec createtodo-popup --date today
+bindsym $mod+Escape exec uxinit

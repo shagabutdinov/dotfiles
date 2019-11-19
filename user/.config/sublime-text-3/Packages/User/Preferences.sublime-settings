@@ -33,7 +33,7 @@
 	"bold_folder_labels": false,
 	"caret_style": "smooth",
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/Wildlife Color Scheme/Wildlife - Day.tmTheme",
+	"color_scheme": "Packages/Tubsted Color Schemes/Tubsted.tmTheme",
 	"create_window_at_startup": false,
 	"default_encoding": "UTF-8",
 	"default_line_ending": "unix",
@@ -85,7 +85,7 @@
 	"font_options":
 	[
 	],
-	"font_size": 12.5,
+	"font_size": 15.5,
 	"gutter": true,
 	"hayaku_CSS_prefixes_disable": true,
 	"highlight_line": true,

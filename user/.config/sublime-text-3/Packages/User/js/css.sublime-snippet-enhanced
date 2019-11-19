@@ -1,0 +1,30 @@
+<snippets>
+
+  <snippet>
+    <content><![CDATA[
+padding: $0;
+]]></content>
+    <tabTrigger>p</tabTrigger>
+    <scope>source.css.embedded.[tj]s</scope>
+    <description>test: padding</description>
+  </snippet>
+
+  <snippet>
+    <content><![CDATA[
+margin: $0;
+]]></content>
+    <tabTrigger>m</tabTrigger>
+    <scope>source.css.embedded.[tj]s</scope>
+    <description>test: margin</description>
+  </snippet>
+
+  <snippet>
+    <content><![CDATA[
+text-transform: ${1:uppercase};
+]]></content>
+    <tabTrigger>tt</tabTrigger>
+    <scope>source.css.embedded.[tj]s</scope>
+    <description>test: margin</description>
+  </snippet>
+
+</snippets>

@@ -548,6 +548,21 @@ PropTypes.bool
 
 	<snippet>
 		<content><![CDATA[
+bool.isRequired
+]]></content>
+		<trigger>boolr</trigger>
+		<scope>source.[tj]sx?</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "PropTypes\\.boolr$"},
+			]
+		]]></context>
+		<description>react: PropTypes.bool.isRequired</description>
+		<order>3</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 PropTypes.string
 ]]></content>
 		<tabTrigger>s</tabTrigger>
@@ -558,6 +573,21 @@ PropTypes.string
 			]
 		]]></context>
 		<description>react: PropTypes.string</description>
+		<order>3</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+string.isRequired
+]]></content>
+		<trigger>stringr</trigger>
+		<scope>source.[tj]sx?</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "PropTypes\\.stringr$"},
+			]
+		]]></context>
+		<description>react: PropTypes.string.isRequired</description>
 		<order>3</order>
 	</snippet>
 
@@ -578,6 +608,21 @@ PropTypes.number
 
 	<snippet>
 		<content><![CDATA[
+number.isRequired
+]]></content>
+		<trigger>numberr</trigger>
+		<scope>source.[tj]sx?</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "PropTypes\\.numberr$"},
+			]
+		]]></context>
+		<description>react: PropTypes.number.isRequired</description>
+		<order>3</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 PropTypes.element
 ]]></content>
 		<tabTrigger>e</tabTrigger>
@@ -593,6 +638,21 @@ PropTypes.element
 
 	<snippet>
 		<content><![CDATA[
+element.isRequired
+]]></content>
+		<trigger>elementr</trigger>
+		<scope>source.[tj]sx?</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "PropTypes\\.elementr$"},
+			]
+		]]></context>
+		<description>react: PropTypes.element.isRequired</description>
+		<order>3</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 PropTypes.func
 ]]></content>
 		<tabTrigger>f</tabTrigger>
@@ -603,6 +663,21 @@ PropTypes.func
 			]
 		]]></context>
 		<description>react: PropTypes.func</description>
+		<order>3</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+func.isRequired
+]]></content>
+		<trigger>funcr</trigger>
+		<scope>source.[tj]sx?</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "PropTypes\\.funcr$"},
+			]
+		]]></context>
+		<description>react: PropTypes.func.isRequired</description>
 		<order>3</order>
 	</snippet>
 
@@ -649,6 +724,21 @@ PropTypes.object
 			]
 		]]></context>
 		<description>react: PropTypes.object</description>
+		<order>3</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+object.isRequired
+]]></content>
+		<trigger>objectr</trigger>
+		<scope>source.[tj]sx?</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "PropTypes\\.objectr$"},
+			]
+		]]></context>
+		<description>react: PropTypes.object.isRequired</description>
 		<order>3</order>
 	</snippet>
 
@@ -709,6 +799,21 @@ PropTypes.node
 			]
 		]]></context>
 		<description>react: PropTypes.node</description>
+		<order>3</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+node.isRequired
+]]></content>
+		<trigger>noder</trigger>
+		<scope>source.[tj]sx?</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "PropTypes\\.noder$"},
+			]
+		]]></context>
+		<description>react: PropTypes.node.isRequired</description>
 		<order>3</order>
 	</snippet>
 

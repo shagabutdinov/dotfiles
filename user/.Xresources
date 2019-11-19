@@ -48,7 +48,7 @@ urxvt*boldFont:    -xos4-terminus-bold-*-*-*-20-*-*-*-*-*-*-*
 ! urxvt*boldFont:    -xos4-terminus-bold-*-*-*-28-*-*-*-*-*-*-*
 
 URxvt*modifier: mod1
-URxvt.perl-ext-common:      default,url-select,keyboard-select,matcher,clipboard,autocomplete-ALL-the-things
+URxvt.perl-ext-common:      default,url-select,keyboard-select,matcher,clipboard,autocomplete-ALL-the-things,tabbedex
 
 URxvt.url-select.launcher:  chromium
 URxvt.url-select.underline: true
@@ -68,3 +68,8 @@ Xcursor.size: 16
 
 URxvt.keysym.M-v:   perl:clipboard:paste
 URxvt.saveLines:         20000
+
+URxvt.tabbed.autohide: true
+URxvt.keysym.Control-t: perl:tabbedex:new_tab
+URxvt.keysym.Control-period: perl:tabbedex:next_tab
+URxvt.keysym.Control-comma: perl:tabbedex:prev_tab

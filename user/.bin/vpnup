@@ -9,7 +9,8 @@ sudo openvpn \
 
 disown
 
-echo "nameserver 8.8.8.8
+echo "nameserver 172.30.1.53
+nameserver 8.8.8.8
 nameserver 8.8.4.4" | sudo tee /etc/resolv.conf
 
 notify-desktop -r "/tmp/vpn.notification.id" "" "<b>VPN</b> » UP"

@@ -30,3 +30,4 @@ File.write(CONFIGURATION_ID_FILE, next_configuration_id)
 File.write(MESSAGE_ID_FILE, id)
 
 system('sudo systemctl restart keynav')
+system('xsetwacom set 13 MapToOutput 2560x1440+1366+0')

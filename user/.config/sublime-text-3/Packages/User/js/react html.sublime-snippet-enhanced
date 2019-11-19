@@ -179,7 +179,9 @@
 
 	<snippet>
 		<content><![CDATA[
-css={css`$1`}
+css={css`
+	$1
+`}
 ]]></content>
 		<tabTrigger>c</tabTrigger>
 		<scope>(source.[tj]s)</scope>
