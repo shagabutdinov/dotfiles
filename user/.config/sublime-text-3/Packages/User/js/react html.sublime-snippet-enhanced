@@ -2,75 +2,15 @@
 
 	<snippet>
 		<content><![CDATA[
-<$1 $2>$0</$1>
-]]></content>
-		<tabTrigger>g</tabTrigger>
-		<scope>(source.[tj]s|html.jsx)</scope>
-		<description>react: tag</description>
-		<order>2</order>
-	</snippet>
-
-	<snippet>
-		<content><![CDATA[
-<$1 $2>
-	$0
-</$1>
-]]></content>
-		<tabTrigger>gg</tabTrigger>
-		<scope>(source.[tj]s|html.jsx)</scope>
-		<description>react: tag</description>
-		<order>2</order>
-	</snippet>
-
-	<snippet>
-		<content><![CDATA[
-<$1>$0</$1>
-]]></content>
-		<tabTrigger>h</tabTrigger>
-		<scope>(source.[tj]s|html.jsx)</scope>
-		<description>react: tag</description>
-		<order>2</order>
-	</snippet>
-
-	<snippet>
-		<content><![CDATA[
-<$1>
-	$0
-</$1>
-]]></content>
-		<tabTrigger>hh</tabTrigger>
-		<scope>(source.[tj]s|html.jsx)</scope>
-		<description>react: tag</description>
-		<order>2</order>
-	</snippet>
-
-	<snippet>
-		<content><![CDATA[
-<div>
-	$0
-</div>
-]]></content>
-		<tabTrigger>hd</tabTrigger>
-		<scope>(source.[tj]s|html.jsx)</scope>
-		<description>react: div</description>
-	</snippet>
-
-	<snippet>
-		<content><![CDATA[
-<form $1>$0</form>
-]]></content>
-		<tabTrigger>f</tabTrigger>
-		<scope>(source.[tj]s.*?meta.jsx.js\s*$|html.jsx)</scope>
-		<description>react: form</description>
-		<order>2</order>
-	</snippet>
-
-	<snippet>
-		<content><![CDATA[
 <div $1>$0</div>
 ]]></content>
 		<tabTrigger>d</tabTrigger>
-		<scope>(source.[tj]s.*?meta.jsx.js\s*$|html.jsx)</scope>
+		<scope>(source.[tj]s)</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": ">\\s*s$"},
+			]
+		]]></context>
 		<description>react: div</description>
 		<order>2</order>
 	</snippet>
@@ -80,7 +20,12 @@
 <span $1>$0</span>
 ]]></content>
 		<tabTrigger>s</tabTrigger>
-		<scope>(source.[tj]s.*?meta.jsx.js\s*$|html.jsx)</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": ">\\s*s$"},
+			]
+		]]></context>
+		<scope>(source.[tj]s)</scope>
 		<description>react: span</description>
 		<order>2</order>
 	</snippet>
@@ -99,24 +44,6 @@
 ]]></content>
 		<tabTrigger>&lt; t</tabTrigger>
 		<scope>(source.[tj]s|html.jsx)</scope>
-		<description>react: table</description>
-		<order>2</order>
-	</snippet>
-
-	<snippet>
-		<content><![CDATA[
-<table $1>
-	<tbody>
-		<tr>
-			<td>
-				$0
-			</td>
-		</tr>
-	</tbody>
-</table>
-]]></content>
-		<tabTrigger>t</tabTrigger>
-		<scope>(source.[tj]s.*?meta.jsx.js\s*$|html.jsx)</scope>
 		<description>react: table</description>
 		<order>2</order>
 	</snippet>
@@ -331,8 +258,27 @@ onSubmit={$1}
 </div>
 ]]></content>
 		<tabTrigger>di</tabTrigger>
-		<scope>(source.[tj]s.*meta.jsx.js|html.jsx)</scope>
+		<scope>(source.[tj]s)</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": ">\\s*s$"},
+			]
+		]]></context>
 		<description>react: div</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+<span title="$1">$0</span>
+]]></content>
+		<tabTrigger>st</tabTrigger>
+		<scope>(source.[tj]s)</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": ">\\s*st$"},
+			]
+		]]></context>
+		<description>react: span</description>
 	</snippet>
 
 </snippets>

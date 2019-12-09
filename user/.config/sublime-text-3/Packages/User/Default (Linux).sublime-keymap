@@ -611,5 +611,7 @@
   { "keys": ["6"], "command": "tab_nine", "args": {"num": 6 }, "context": [ { "key": "tab_nine_choice_available", "operator": "equal", "operand": 6 }] },
   { "keys": ["7"], "command": "tab_nine", "args": {"num": 7 }, "context": [ { "key": "tab_nine_choice_available", "operator": "equal", "operand": 7 }] },
   { "keys": ["8"], "command": "tab_nine", "args": {"num": 8 }, "context": [ { "key": "tab_nine_choice_available", "operator": "equal", "operand": 8 }] },
-  { "keys": ["9"], "command": "tab_nine", "args": {"num": 9 }, "context": [ { "key": "tab_nine_choice_available", "operator": "equal", "operand": 9 }] }
+  { "keys": ["9"], "command": "tab_nine", "args": {"num": 9 }, "context": [ { "key": "tab_nine_choice_available", "operator": "equal", "operand": 9 }] },
+
+  { "keys": ["ctrl+u", "ctrl+0"], "command": "DO_NOTHING"},
 ]

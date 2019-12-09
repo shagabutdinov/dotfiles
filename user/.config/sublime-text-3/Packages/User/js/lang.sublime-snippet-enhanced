@@ -127,30 +127,6 @@ then(${0:$selection})
 
 	<snippet>
 		<content><![CDATA[
-then(function($1) {
-	${0:$selection}
-})
-]]></content>
-	<commands>
-		[
-			"RUN",
-			{"command": "add_semicolon_to_statement"},
-		]
-	</commands>
-		<tabTrigger>t</tabTrigger>
-		<scope>source.[tj]sx?</scope>
-		<context>
-			[
-				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.\\s*t$"},
-				{"key": "selection_empty", "operator": "equal", "operand": false},
-			]
-		</context>
-		<description>lang: then with selection</description>
-		<order>2</order>
-	</snippet>
-
-	<snippet>
-		<content><![CDATA[
 then(($1) => {
 	$0
 }
@@ -162,11 +138,34 @@ then(($1) => {
 
 	<snippet>
 		<content><![CDATA[
-then((response
+catch(${0:$selection})
 ]]></content>
-		<tabTrigger>then((</tabTrigger>
+	<commands>
+		[
+			"RUN",
+			{"command": "add_semicolon_to_statement"},
+		]
+	</commands>
+		<tabTrigger>c</tabTrigger>
 		<scope>source.[tj]sx?</scope>
-		<description>lang: then function response</description>
+		<context>
+			[
+				{"key": "preceding_128_chars_begin", "operator": "regex_contains", "operand": "\\.\\s*c$"},
+			]
+		</context>
+		<description>lang: catch</description>
+		<order>2</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+catch(($1) => {
+	$0
+}
+]]></content>
+		<tabTrigger>catch(</tabTrigger>
+		<scope>source.[tj]sx?</scope>
+		<description>lang: catch function</description>
 	</snippet>
 
 	<snippet>
@@ -496,6 +495,20 @@ import $1 from '$2';
 		<context><![CDATA[
 			[
 				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^im$"},
+			]
+		]]></context>
+		<description>lang: import</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+import $0
+]]></content>
+		<tabTrigger>ii</tabTrigger>
+		<scope>source.[tj]sx?</scope>
+		<context><![CDATA[
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^ii$"},
 			]
 		]]></context>
 		<description>lang: import</description>

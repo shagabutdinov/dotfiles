@@ -412,6 +412,23 @@ await wait(() => ${0:$selection})
 
 	<snippet>
 		<content><![CDATA[
+async
+]]></content>
+		<trigger>a</trigger>
+		<scope>source.[tj]s</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*it\\("},
+				{"key": "following_text_end", "operator": "regex_contains", "operand": "^\\s*\\(\\) => {"},
+			]
+		]]></context>
+		<order>1</order>
+		<description>jest: async test</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 wait
 ]]></content>
 		<tabTrigger>w</tabTrigger>
@@ -506,15 +523,39 @@ click(${1:$selection})
 				"RUN",
 			]
 		]]></commands>
-		<trigger>c</trigger>
+		<trigger>cl</trigger>
 		<scope>source.[tj]s</scope>
 		<context><![CDATA[
 			[
 				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "fireEvent\\.c$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "fireEvent\\.cl$"},
 			]
 		]]></context>
 		<description>jest: fireEvent</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+change(${1:$selection})
+]]></content>
+		<commands><![CDATA[
+			[
+				{
+					"command": "run_macro_file_with_context",
+					"args": {"file": "Packages/User/macro/add_semicolon_and_select_token.sublime-macro"},
+				},
+				"RUN",
+			]
+		]]></commands>
+		<trigger>ch</trigger>
+		<scope>source.[tj]s</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "fireEvent\\.ch$"},
+			]
+		]]></context>
+		<description>jest: fireEvent.change</description>
 	</snippet>
 
 	<snippet>
@@ -563,7 +604,7 @@ getByTitle(${0:$selection})
 		<description>jest: getByTitle</description>
 	</snippet>
 
-	<snippet>i
+	<snippet>
 		<content><![CDATA[
 import React from 'react';
 import { render } from '@testing-library/react';
@@ -571,17 +612,12 @@ import { render } from '@testing-library/react';
 import $1 from './$1';
 
 describe('$1', () => {
-  let props;
-
-  beforeEach(() => {
-  	props = {};
-  });
-
-  it('$2', () => {
-    const { container } = render(<$1 {...props} />);
-    expect(container).toHaveTextContent('$3');$0
-  });
+	it('$2', () => {
+		const { container } = render(<$1 />);
+		expect(container).toHaveTextContent('$3');$0
+	});
 });
+
 ]]></content>
 		<tabTrigger>d</tabTrigger>
 		<scope>source.[tj]s</scope>
@@ -593,6 +629,136 @@ describe('$1', () => {
 		]]></context>
 		<description>jest: test case</description>
 		<order>6</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+import React from 'react';
+import { render } from '@testing-library/react';
+
+import $1 from './$1';
+
+describe('$1', () => {
+	const props = {};
+
+	it('$2', () => {
+		const { container } = render(<$1 {...props} />);
+		expect(container).toHaveTextContent('$3');$0
+	});
+});
+
+]]></content>
+		<tabTrigger>dp</tabTrigger>
+		<scope>source.[tj]s</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "^[\\s\\n]*dp$"},
+			]
+		]]></context>
+		<description>jest: test case</description>
+		<order>6</order>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+import React from 'react';
+import { render } from '@testing-library/react';
+
+import mockFetch from 'utils/tests/mockFetch';
+import withContext from 'utils/tests/withContext';
+
+import Context from '../Shared/Context';
+import $1 from './$1';
+
+describe('$1', () => {
+	const Subject = withContext($1, Context, {
+
+	});
+
+	beforeEach(() => {
+		mockFetch([]);
+	});
+
+	it('$2', () => {
+		const { container } = render(<Subject />);
+		expect(container).toHaveTextContent('$3');
+	});
+});
+
+]]></content>
+		<tabTrigger>ds</tabTrigger>
+		<scope>source.[tj]s</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "^[\\s\\n]*ds$"},
+			]
+		]]></context>
+		<description>jest: test case with context</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+import React from 'react';
+import { render } from '@testing-library/react';
+
+import $1 from './$1';
+
+describe('$1', () => {
+	function Component() {
+		const $2 = $1();
+
+		return (
+			<>
+				$3
+			</>
+		);
+	}
+
+	it('$4', () => {
+		const { container } = render(<Component />);$0
+	});
+});
+]]></content>
+		<tabTrigger>dh</tabTrigger>
+		<scope>source.[tj]s</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_512_chars_begin", "operator": "regex_contains", "operand": "^[\\s\\n]*dh$"},
+			]
+		]]></context>
+		<description>jest: test case with context</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+it.only
+]]></content>
+		<trigger>ito</trigger>
+		<scope>source.[tj]s</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s*ito$"},
+			]
+		]]></context>
+		<description>jest: only</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+expect.anything()
+]]></content>
+		<tabTrigger>ea</tabTrigger>
+		<scope>source.[tj]s</scope>
+		<context><![CDATA[
+			[
+				{"key": "filename", "operator": "regex_contains", "operand": "\\.test\\.js$"},
+			]
+		]]></context>
+		<description>jest: expect.anything()</description>
 	</snippet>
 
 </snippets>

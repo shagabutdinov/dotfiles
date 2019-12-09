@@ -3523,7 +3523,7 @@
 # [Amazon.com][AS16509][177.71.190.213]
 0.0.0.0 dm.demdex.net
 # [Amazon.com][AS16509][178.236.0.0 - 178.236.7.255]
-0.0.0.0 aax-eu.amazon-adsystem.com
+# 0.0.0.0 aax-eu.amazon-adsystem.com
 0.0.0.0 ir-uk.amazon-adsystem.com
 # [Amazon.com][AS16509][184.169.128.0 - 184.169.255.255]
 0.0.0.0 rainbow-us.mythings.com
