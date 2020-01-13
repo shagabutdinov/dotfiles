@@ -1,0 +1,23 @@
+{
+  "version": "2.1.5",
+  "hide_promotional_message": false,
+  "beta_enabled": "No",
+  "ignore_all_lsp": false,
+  "creation_time": "2019-08-20T08:37:20.180430934Z",
+  "semantic_status": {
+    "python": "Suppressed",
+    "javascript": "Enabled",
+    "ruby": "Enabled"
+  },
+  "disable_auto_update": false,
+  "user_understands_that_enabling_tabnine_cloud_sends_code_to_tabnine_servers": true,
+  "hosted_deep_completions_enabled": "Enabled",
+  "tabnine_cloud_host": null,
+  "tabnine_cloud_port": null,
+  "cloud_whitelist": [],
+  "api_key": "yrwzavsfglwnaczzrsvmdiwyajjssi",
+  "api_key_service_level": "Cloud",
+  "api_base_url": null,
+  "local_enabled": "Yes",
+  "disable_local_when_using_battery": false
+}
