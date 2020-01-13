@@ -86,6 +86,7 @@ alias rr='sudo rm -rf'
 alias rt='sudo rm -rf ~/.tmp/ssh/*'
 alias ks="kill \$(ps -xa | grep 'spring server' | grep -v 'grep' | awk '{print \$2}')"
 alias kp="kill -9 \$(ps -xa | grep 'puma' | grep -v 'grep' | awk '{print \$2}')"
+alias kk='() { kill -9 $(ps -xa | grep "$@" | grep -v "grep" | awk "{print \$2}") }' # observe
 
 alias pm='sudo pacman'
 alias pms='sudo pacman --noconfirm -S'
@@ -349,9 +350,23 @@ alias gbn='() {
     git checkout -b "$1"
 }'
 
-alias gz='() { git add . && git commit -m "$1" }'
-alias gzn='() { git add . && git commit -m "$1" --no-verify }'
-alias gzz='() { git add . && git commit -m "$1" --amend }'
+alias gz='() {
+  git add . &&
+  git commit -m "$1" &&
+  echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
+}'
+
+alias gzn='() {
+  git add . &&
+  git commit -m "$1" --no-verify &&
+  echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
+}'
+
+alias gzz='() {
+  git add . &&
+  git commit -m "$1" --amend &&
+  echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
+}'
 
 alias gk='() { git commit -m "$1" }'
 alias gkn='() { git commit -m "$1" --no-verify }'

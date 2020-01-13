@@ -716,4 +716,22 @@ rescue StandardError
 		<description>lambda</description>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+# @xtodo $0
+]]></content>
+		<tabTrigger>xt</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>lambda</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+# @prtodo $0
+]]></content>
+		<tabTrigger>xp</tabTrigger>
+		<scope>source.ruby</scope>
+		<description>lambda</description>
+	</snippet>
+
 </snippets>

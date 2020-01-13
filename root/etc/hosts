@@ -14,6 +14,7 @@
 127.0.0.1 x
 127.0.0.1 e
 127.0.0.1       localbox
+127.0.0.1 elasticsearch
 
 # 0.0.0.0 devac.cnstrc.com
 0.0.0.0 api.wb.local
