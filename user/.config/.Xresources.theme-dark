@@ -1,32 +1,3 @@
-URxvt*termName: rxvt-unicode
-URxvt.scrollBar: false
-
-URxvt*modifier: mod1
-URxvt.perl-ext-common:      default,url-select,keyboard-select,matcher,clipboard,autocomplete-ALL-the-things,tabbedex
-
-URxvt.url-select.launcher:  chromium
-URxvt.url-select.underline: true
-URxvt.keysym.M-q:           perl:url-select:select_next
-URxvt.keysym.M-e:           perl:keyboard-select:activate
-URxvt.keysym.M-s:           perl:keyboard-select:search
-URxvt.clipboard.autocopy:   true
-
-URxvt.url-launcher: /usr/bin/chromium
-URxvt.matcher.button:   1
-
-URxvt.intensityStyles: false
-
-URxvt.keysym.M-w: autocomplete-ALL-the-things:WORD-complete
-URxvt.keysym.M-W: autocomplete-ALL-the-things:skeleton-complete
-Xcursor.size: 16
-
-URxvt.keysym.M-v:   perl:clipboard:paste
-URxvt.saveLines:         20000
-
-URxvt.tabbed.autohide: true
-URxvt.keysym.Control-t: perl:tabbedex:new_tab
-URxvt.keysym.Control-period: perl:tabbedex:next_tab
-URxvt.keysym.Control-comma: perl:tabbedex:prev_tab
 #define S_base03        #000000
 #define S_base02        #073642
 #define S_base01        #586e75
@@ -83,5 +54,3 @@ URxvt.keysym.Control-comma: perl:tabbedex:prev_tab
 !! white dark/light
 *color7:                S_base2
 *color15:               S_base3
-urxvt*font:        -xos4-terminus-medium-*-*-*-20-*-*-*-*-*-*-*
-urxvt*boldFont:    -xos4-terminus-bold-*-*-*-20-*-*-*-*-*-*-*

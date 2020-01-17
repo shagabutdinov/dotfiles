@@ -5,6 +5,11 @@
   },
 
   {
+    "keys": ["ctrl+shift+u"],
+    "command": "close"
+  },
+
+  {
     "keys": ["ctrl+u", "k"],
     "command": "close_others",
     "context": [

@@ -33,7 +33,7 @@
 	"bold_folder_labels": false,
 	"caret_style": "smooth",
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/Spirit Color Scheme/spirit.tmTheme",
+	"color_scheme": "Packages/Agola Color Schemes/AgolaDarkX2.tmTheme",
 	"create_window_at_startup": false,
 	"default_encoding": "UTF-8",
 	"default_line_ending": "unix",
@@ -85,7 +85,7 @@
 	"font_options":
 	[
 	],
-	"font_size": 14.5,
+	"font_size": 14,
 	"gutter": true,
 	"hayaku_CSS_prefixes_disable": true,
 	"highlight_line": true,

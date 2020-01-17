@@ -68,7 +68,7 @@ end
 		<scope>source.ruby</scope>
 		<context><![CDATA[
 			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "\\s+i$"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "(\\s+|^)i$"},
 			]
 		]]></context>
 		<description>operators: if</description>

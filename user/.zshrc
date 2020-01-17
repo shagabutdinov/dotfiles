@@ -50,13 +50,14 @@ HIST_STAMPS="dd.mm.yyyy"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git archlinux django sublime themes python pip node npm history-substring-search zsh-syntax-highlighting rails)
+# plugins=(git archlinux django sublime themes python pip node npm history-substring-search zsh-syntax-highlighting rails)
+plugins=(git archlinux history-substring-search pip python)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=./bin:$HOME/.bin:$HOME/.local/deadfiles/bin:/home/leo/src/go/bin:$PATH:/home/leo/.gem/ruby/2.6.0/bin:./node_modules/.bin
+export PATH=./bin:$HOME/.bin:$HOME/.local/deadfiles/bin:/home/leo/src/go/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -78,9 +79,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export QUOTA=50
-
-# added by travis gem
-[ -f /home/leo/.travis/travis.sh ] && source /home/leo/.travis/travis.sh
 
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load RVM into a shell session *as a function*
 

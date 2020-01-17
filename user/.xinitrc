@@ -1,5 +1,8 @@
 #!/bin/bash
 
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+
 xset r rate 150 75
 
 setxkbmap -layout us,ru -option grp:caps_toggle,grp_led:caps

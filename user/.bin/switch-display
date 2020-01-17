@@ -14,7 +14,7 @@ next_configuration_id =
   File.exist?(CONFIGURATION_ID_FILE) ?
     File.read(CONFIGURATION_ID_FILE).strip.to_i + 1 :
     0
-
+    
 next_configuration_id = 0 if next_configuration_id >= CONFIGURATIONS.length
 display_name, command = CONFIGURATIONS[next_configuration_id].split(':')
 

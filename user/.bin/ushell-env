@@ -56,6 +56,7 @@ bindkey "^T" prepend-sudo
 alias -g G="| grep"
 
 alias yaourt='yaourt --noconfirm --m-arg --skipchecksums --m-arg --skippgpcheck'
+alias yay='yay --removemake --nodiffmenu --nocleanmenu --noupgrademenu --cleanafter'
 alias mv=/bin/mv
 alias pwgen='pwgen 12'
 alias nc='sudo netctl'
@@ -66,9 +67,9 @@ alias re='source ~/.bin/ushell-env' # reload env
 alias f='find . -name'
 alias pa='cd ~/.secrets; carcosa -Ac'
 alias pr='cd ~/.secrets; carcosa -Rc'
-alias e='subl3 -a'
-alias en='subl3 -n'
-alias ee='subl3 ~/.bin/ushell-env'
+alias e='code -a'
+alias en='code -n'
+alias ee='code ~/.bin/ushell-env'
 alias h='ssh'
 alias b='bundle exec'
 alias bs='bundle exec ./bin/spring'
@@ -495,7 +496,7 @@ function xgm {
   )
 
   docker exec -i -t $(application-container) chown 1000:1000 $MIGRATION
-  subl3 $(backend-path)/$MIGRATION
+  code $(backend-path)/$MIGRATION
 }
 
 alias xp='cd $(project-path)/app'
@@ -558,7 +559,7 @@ function generate-rails-object() {
     fi
 
     sudo chown leo: $FILE_PATH
-    subl3 $FILE_PATH
+    code $FILE_PATH
   done
 }
 

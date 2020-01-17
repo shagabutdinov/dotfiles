@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+
+max_brightness = File.read('/sys/class/backlight/intel_backlight/max_brightness').to_i
+current_brightness = File.read('/sys/class/backlight/intel_backlight/brightness').to_i
+brightness_step = (max_brightness / 100) * ARGV[1].to_i
+
+new_brightness =
+  if ARGV[0] == '-i'
+    current_brightness + brightness_step
+  elsif ARGV[0] == '-d'
+    current_brightness - brightness_step
+  elsif ARGV[0] == '-s'
+    brightness_step
+  else
+    raise "Wrong argument: #{ARGV[0]}"
+  end
+
+puts("XXXX backlight:16 #{new_brightness}")
+
+system("echo #{new_brightness} | sudo tee /sys/class/backlight/intel_backlight/brightness")

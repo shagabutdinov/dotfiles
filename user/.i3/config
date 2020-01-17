@@ -33,7 +33,7 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # start a terminal
-bindsym $mod+Return exec marvex -b urxvt --terminal '@path --title "@title" -e @command'
+bindsym $mod+Return i3-sensible-terminal
 bindsym $mod+t exec i3-sensible-terminal
 
 # kill focused window
@@ -100,28 +100,29 @@ bindsym $mod+z focus mode_toggle
 # bindsym $mod+d focus child
 
 # switch to workspace
+bindsym $mod+q workspace 0
 bindsym $mod+1 workspace 1
-bindsym $mod+q workspace 2
-bindsym $mod+2 workspace 3
-bindsym $mod+3 workspace 4
-bindsym $mod+4 workspace 5
-bindsym $mod+5 workspace 6
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
+bindsym $mod+shift+q move container to workspace 0; workspace 0
 bindsym $mod+shift+1 move container to workspace 1; workspace 1
-bindsym $mod+shift+q move container to workspace 2; workspace 2
-bindsym $mod+shift+2 move container to workspace 3; workspace 3
-bindsym $mod+shift+3 move container to workspace 4; workspace 4
-bindsym $mod+shift+4 move container to workspace 5; workspace 5
-bindsym $mod+shift+5 move container to workspace 6; workspace 6
-bindsym $mod+shift+7 move container to workspace 7; workspace 7
-bindsym $mod+shift+8 move container to workspace 8; workspace 8
-bindsym $mod+shift+9 move container to workspace 9; workspace 9
-bindsym $mod+shift+0 move container to workspace 10; workspace 10
+bindsym $mod+shift+2 move container to workspace 2; workspace 2
+bindsym $mod+shift+3 move container to workspace 3; workspace 3
+bindsym $mod+shift+4 move container to workspace 4; workspace 4
+bindsym $mod+shift+5 move container to workspace 5; workspace 5
+bindsym $mod+shift+7 move container to workspace 6; workspace 6
+bindsym $mod+shift+8 move container to workspace 7; workspace 7
+bindsym $mod+shift+9 move container to workspace 8; workspace 8
+bindsym $mod+shift+0 move container to workspace 9; workspace 9
 
 # move focused container to workspace
 bindsym $mod+ctrl+1 move container to workspace 1
@@ -199,8 +200,7 @@ for_window [class="^.*"] border pixel 1
 for_window [class="kolourpaint"] fullscreen enable
 
 bindsym $mod+g exec thunar
-bindsym $mod+backslash exec subl3
-bindsym $mod+shift+backslash exec subl3 --new-window
+bindsym $mod+backslash exec code
 bindsym $mod+o exec firefox
 bindsym $mod+shift+o exec chromium
 bindsym $mod+h exec translator
@@ -220,8 +220,8 @@ bindsym $mod+m exec ushow-status
 bindsym $mod+Tab exec switch-display
 bindsym $mod+F12 exec /home/leo/.bin/vpnup
 bindsym $mod+shift+F12 exec /home/leo/.bin/vpndown
-bindsym $mod+shift+comma exec xbacklight -dec 5
-bindsym $mod+shift+period exec xbacklight -inc 5
+bindsym $mod+shift+comma exec /home/leo/.bin/backlight -d 5
+bindsym $mod+shift+period exec /home/leo/.bin/backlight -i 5
 bindsym $mod+ctrl+p exec ucreate-secret "$(xsel -op)"
 
 bindsym $mod+F9 exec uscreenshot --active-window
@@ -239,3 +239,6 @@ bindsym $mod+ctrl+shift+p exec enter-text "Requested changes are implemented."
 bindsym $mod+BackSpace exec createtodo --date today
 bindsym $mod+shift+BackSpace exec createtodo-popup --date today
 bindsym $mod+Escape exec uxinit
+
+bindsym $mod+minus move workspace to output left
+bindsym $mod+equal move workspace to output right
