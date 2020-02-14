@@ -81,4 +81,3 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 export QUOTA=50
 
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load RVM into a shell session *as a function*
-

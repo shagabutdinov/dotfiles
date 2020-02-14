@@ -1,5 +1,5 @@
 [global]
-    font = "Monospace 14"
+    font = "Monospace 8"
     markup = yes
     format = "<b>%s %p</b>\n%b"
     sort = yes

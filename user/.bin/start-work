@@ -1,21 +1,25 @@
-i3-msg 'workspace 0, move workspace to output DP-4'
+i3-msg 'workspace 6, move workspace to output DP-4'
 
 code &
-sleep 0.5
+sleep 3
 
 urxvt &
-sleep 0.5
+sleep 3
 
 # start app http
 
-enter-text "cd ./src/constructor/website && puma -C ~/.config/puma.rb"
+enter-text "cd ./src/constructor/website"
+xdotool key --clearmodifiers Return
+enter-text "puma -C ~/.config/puma.rb"
 xdotool key --clearmodifiers Return
 sleep 0.5
 
 # start app webpack
 
 xdotool key --clearmodifiers ctrl+t
-enter-text "cd ./src/constructor/website && ./bin/webpack-dev-server"
+enter-text "cd ./src/constructor/website"
+xdotool key --clearmodifiers Return
+enter-text "./bin/webpack-dev-server"
 xdotool key --clearmodifiers Return
 sleep 0.5
 
@@ -25,23 +29,28 @@ xdotool key --clearmodifiers ctrl+t
 
 # telegram
 
-i3-msg 'workspace 8, move workspace to output HDMI-0'
+i3-msg 'workspace 9, move workspace to output HDMI-0'
 telegram-desktop &
-sleep 0.5
+sleep 3
 
 # info
 
-i3-msg 'workspace 9, move workspace to output HDMI-0'
+i3-msg 'workspace 10, move workspace to output HDMI-0'
 chromium &
-sleep 0.5
+sleep 3
+
 utodoist &
 sleep 0.5
-i3-msg 'resize set 640px'
+i3-msg 'resize set 664px'
 
 # slack
-i3-msg 'workspace 10, move workspace to output HDMI-0'
+i3-msg 'workspace 11, move workspace to output HDMI-0'
 uslack &
 sleep 0.5
+
+utodoist &
+sleep 0.5
+i3-msg 'resize set 664px'
 
 # browsers
 
@@ -62,11 +71,11 @@ sleep 0.5
 
 i3-msg 'workspace 4, move workspace to output DP-0'
 i3-msg 'workspace 5, move workspace to output DP-0'
-i3-msg 'workspace 6, move workspace to output HDMI-0'
 i3-msg 'workspace 7, move workspace to output HDMI-0'
+i3-msg 'workspace 8, move workspace to output HDMI-0'
 
 # activate main workspaces
 
 i3-msg 'workspace 1'
-i3-msg 'workspace 10'
-i3-msg 'workspace 0'
+i3-msg 'workspace 11'
+i3-msg 'workspace 6'

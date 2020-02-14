@@ -3,12 +3,7 @@
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
 
-xset r rate 150 75
-
-setxkbmap -layout us,ru -option grp:caps_toggle,grp_led:caps
-xmodmap -e "keycode 105 = KP_Enter"
-
-xrdb -merge ~/.Xresources
+/home/leo/.bin/uxinit
 
 synclient PalmDetect=1
 synclient TapButton1=0

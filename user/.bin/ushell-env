@@ -67,7 +67,7 @@ alias re='source ~/.bin/ushell-env' # reload env
 alias f='find . -name'
 alias pa='cd ~/.secrets; carcosa -Ac'
 alias pr='cd ~/.secrets; carcosa -Rc'
-alias e='code -a'
+alias e='code'
 alias en='code -n'
 alias ee='code ~/.bin/ushell-env'
 alias h='ssh'
@@ -88,6 +88,7 @@ alias rt='sudo rm -rf ~/.tmp/ssh/*'
 alias ks="kill \$(ps -xa | grep 'spring server' | grep -v 'grep' | awk '{print \$2}')"
 alias kp="kill -9 \$(ps -xa | grep 'puma' | grep -v 'grep' | awk '{print \$2}')"
 alias kk='() { kill -9 $(ps -xa | grep "$@" | grep -v "grep" | awk "{print \$2}") }' # observe
+alias el='code ~/projects/personal/log.txt'
 
 alias pm='sudo pacman'
 alias pms='sudo pacman --noconfirm -S'
