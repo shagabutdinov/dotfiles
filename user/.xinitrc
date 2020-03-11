@@ -5,7 +5,7 @@ xrandr --auto
 
 /home/leo/.bin/uxinit
 
-synclient PalmDetect=1
+# synclient PalmDetect=1
 synclient TapButton1=0
 synclient TapButton2=0
 synclient TapButton3=0
@@ -22,5 +22,8 @@ sudo sysctl -w vm.max_map_count=262144
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+
+export GTK_IM_MODULE=xim
+export QT_IM_MODULE=xim
 
 exec i3

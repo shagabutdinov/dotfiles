@@ -7,3 +7,4 @@ config/initializers/backtrace_silencers.local!.rb
 spec/support/backtrace_silencers.local!.rb
 .python-version
 .history
+.vscode

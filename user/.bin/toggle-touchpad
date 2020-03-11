@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+touchpad_id_match = `xinput list`.match(/Touchpad\s+id=(\d+)/)
+touchpad_id = touchpad_id_match && touchpad_id_match[1]
+
+if !touchpad_id
+  puts("no touchpad detected")
+  exit(1)
+end
+
+is_enabled_match = `xinput list-props #{touchpad_id}`.match(
+  /Device Enabled.*?:\s+(0|1)/
+)
+
+is_enabled = is_enabled_match && is_enabled_match[1] == '1'
+
+if is_enabled
+  `xinput disable #{touchpad_id}`
+  `notify-desktop -r "/tmp/toggle-touchpad.notification.id" "" "<b>TOUCHPAD</b> » DISABLED"`
+else
+  `xinput enable #{touchpad_id}`
+  `notify-desktop -r "/tmp/toggle-touchpad.notification.id" "" "<b>TOUCHPAD</b> » ENABLED"`
+end

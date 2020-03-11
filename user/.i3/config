@@ -208,8 +208,8 @@ bindsym $mod+h exec translator
 bindsym $mod+shift+h exec translator "$(xsel -op)"
 bindsym $mod+p exec file-roller ~/projects/keys/passwords.zip
 
-bindsym $mod+comma exec ~/.local/deadfiles/bin/volume down 10
-bindsym $mod+period exec ~/.local/deadfiles/bin/volume up 10
+bindsym $mod+comma exec ~/.local/deadfiles/bin/volume down 4
+bindsym $mod+period exec ~/.local/deadfiles/bin/volume up 4
 bindsym $mod+slash exec volume-toggle
 bindsym $mod+ctrl+slash exec mic-toggle
 bindsym $mod+shift+slash exec ~/.local/seletskiy/bin/sound-switch
@@ -221,6 +221,7 @@ bindsym $mod+m exec ushow-status
 bindsym $mod+Tab exec ~/.bin/switch-display
 bindsym $mod+F12 exec ~/.bin/vpnup
 bindsym $mod+shift+F12 exec ~/.bin/vpndown
+bindsym $mod+ctrl+F12 exec ~/.bin/toggle-touchpad
 bindsym $mod+shift+comma exec ~/.bin/backlight -d 5
 bindsym $mod+shift+period exec ~/.bin/backlight -i 5
 bindsym $mod+ctrl+p exec ucreate-secret "$(xsel -op)"
