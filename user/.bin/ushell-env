@@ -1,7 +1,6 @@
 autoload -U add-zsh-hook
 source ~/.bin/_zsh-hijack
 
-export BROWSER=chromium
 export APPLICATION_ENV=development
 export LC_ALL="en_US.UTF-8"
 
