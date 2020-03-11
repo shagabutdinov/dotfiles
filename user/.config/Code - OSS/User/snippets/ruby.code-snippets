@@ -1,0 +1,44 @@
+{
+  // print
+
+  "puts": {
+    "prefix": ["p"],
+    "body": ["puts(\"XXXX $TM_FILENAME:$TM_LINE_NUMBER #{$0}\")"],
+    "description": "puts",
+    "scope": "ruby"
+  },
+  "puts json": {
+    "prefix": ["pj"],
+    "body": ["puts(\"XXXX $TM_FILENAME:$TM_LINE_NUMBER #{JSON.generate($0)}\")"],
+    "description": "puts json",
+    "scope": "ruby"
+  },
+
+  "pr todo": {
+    "prefix": ["xp"],
+    "body": ["# @prtodo $0"],
+    "description": "pr todo",
+    "scope": "ruby"
+  },
+
+  // json
+
+  "json parse": {
+    "prefix": ["jp"],
+    "body": ["JSON.parse($0)"],
+    "description": "json parse",
+    "scope": "ruby"
+  },
+  "json parse to symbolized keys": {
+    "prefix": ["jp"],
+    "body": ["JSON.parse($0, symbolize_names: true)"],
+    "description": "json parse to symbolized keys",
+    "scope": "ruby"
+  },
+  "json generate": {
+    "prefix": ["jg"],
+    "body": ["JSON.generate($0)"],
+    "description": "json generate",
+    "scope": "ruby"
+  },
+}

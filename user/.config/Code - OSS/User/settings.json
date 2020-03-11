@@ -1,0 +1,73 @@
+{
+  "workbench.activityBar.visible": false,
+  "workbench.colorTheme": "Visual Studio Dark",
+  "editor.fontSize": 18,
+  "window.enableMenuBarMnemonics": false,
+  "window.menuBarVisibility": "hidden",
+  "editor.smoothScrolling": true,
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "editor.rulers": [80, 120],
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wrappingIndent": "same",
+  "editor.wordWrapColumn": 80,
+  "keyboard.dispatch": "keyCode",
+  "multiCommand.commands": [
+    {
+      "command": "multiCommand.changeFileName",
+      "sequence": [
+        "workbench.files.action.showActiveFileInExplorer",
+        "renameFile"
+      ]
+    }
+  ],
+  "window.zoomLevel": 0,
+  "editor.tabSize": 2,
+  "workbench.editor.enablePreview": false,
+  "files.trimTrailingWhitespace": true,
+  "prettier.trailingComma": "all",
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.formatOnSaveTimeout": 5000, // use rubocop for formatting
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "ruby.useBundler": false, //run non-lint commands with bundle exec
+  "ruby.useLanguageServer": true, // use the internal language server (see below)
+  "ruby.lint": {
+    "rubocop": {
+      "useBundler": false // enable rubocop via bundler
+    },
+    "reek": {
+      "useBundler": false // enable reek via bundler
+    }
+  },
+  "ruby.format": "rubocop",
+  "editor.codeActionsOnSave": {
+    // For ESLint
+    "source.fixAll.eslint": true,
+    // For TSLint
+    "source.fixAll.tslint": true,
+    // For Stylelint
+    "source.fixAll.stylelint": true
+  },
+  "ruby.codeCompletion": "rcodetools",
+  "[ruby]": {
+    "editor.defaultFormatter": "rebornix.ruby"
+  },
+
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showExpandedAbbreviation": "never",
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.snippetSuggestions": "top",
+  "editor.suggest.localityBonus": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.fontFamily": "Ubuntu Mono, Consolas, 'JetBrains Mono for Powerline', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "githubPullRequests.showInSCM": true,
+  "vscodeWorkspaceSwitcher.paths": [
+    "/home/leo/projects/vscode"
+  ],
+  "editor.renderIndentGuides": false,
+  "workbench.sideBar.location": "right",
+}
