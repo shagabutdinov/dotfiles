@@ -53,6 +53,34 @@
 		"scope": "javascript,typescript,javascriptreact,typescriptreact"
 	},
 
+	"define component": {
+		"prefix": ["dd"],
+		"body": [
+			"import React from 'react';",
+			"",
+			"export default function $1({$2}: Props) {",
+			"  return (",
+			"    $0",
+			"  )",
+			"}",
+			"",
+			"type Props = {}",
+		],
+		"description": "define component",
+		"scope": "javascript,typescript,javascriptreact,typescriptreact"
+	},
+
+	"define styled component": {
+		"prefix": ["sd"],
+		"body": [
+			"const $1 = styled${2:.div}`",
+			"  $0",
+			"`",
+		],
+		"description": "define styled component",
+		"scope": "javascript,typescript,javascriptreact,typescriptreact"
+	},
+
 	// tests
 
 	"define test": {
@@ -66,7 +94,7 @@
 			"describe('$1', () => {",
 				"\tit('$2', () => {",
 					"\t\tconst { container } = render(<$1 />);",
-					"\t\texpect(container).toHaveTextContent('$3');$0",
+					"\t\texpect(container).toMatchSnapshot();$0",
 				"\t});",
 			"});",
 			""
@@ -87,7 +115,7 @@
 				"",
 				"\tit('$2', () => {",
 					"\t\tconst { container } = render(<$1 {...props} />);",
-					"\t\texpect(container).toHaveTextContent('$3');$0",
+					"\t\texpect(container).toMatchSnapshot();$0",
 				"\t});",
 			"});",
 			""
@@ -118,7 +146,7 @@
 				"",
 				"\tit('$2', () => {",
 					"\t\tconst { container } = render(<Subject />);",
-					"\t\texpect(container).toHaveTextContent('$3');",
+					"\t\texpect(container).toMatchSnapshot();",
 				"\t});",
 			"});",
 			""

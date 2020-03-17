@@ -1,17 +1,5 @@
-notify-send "
+notify-replace status "" "
   $(date +%H:%M)
   $(date +%d.%m.%Y)
+  $(acpi | sed -E 's/\n//g' | sed -E 's/.+: //g' | sed -E 's/.*Unknown.*//g' | sed -E 's/Discharging, //g')
 "
-
-battery=$(acpi | sed -E 's/\n//g' | sed -E 's/.+: //g' | sed -E 's/.*Unknown.*//g' | sed -E 's/Discharging, //g')
-if [ "$battery" ]; then
-  notify-send "$battery"
-fi
-
-# info=$(curl https://api.kraken.com/0/public/Ticker\?pair\=XBTUSD,ETHUSD,BCHUSD)
-
-# notify-send "
-#   BTC: \$$(echo $info | jq -r ".result.XXBTZUSD.a[0]" | sed -E "s/\.\w+//g")
-#   ETH: \$$(echo $info | jq -r ".result.XETHZUSD.a[0]" | sed -E "s/\.\w+//g")
-#   BCH: \$$(echo $info | jq -r ".result.BCHUSD.a[0]" | sed -E "s/\.\w+//g")
-# "

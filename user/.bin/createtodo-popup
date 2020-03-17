@@ -3,9 +3,9 @@ if [[ "$input" == "" ]]; then
     exit 1
 fi
 
-notify-desktop -r "todoist" "Creating task..."
+notify-replace secret "" "<b>TASK</b> » ..."
 if todoist add "$@" "$input" ; then
-  notify-desktop -r "todoist" "Task created"
+  notify-replace secret "" "<b>TASK</b> » CREATED"
 else
-  notify-desktop -r "todoist" "FAILURE"
+  notify-replace secret "" "<b>TASK</b> » FAILURE"
 fi

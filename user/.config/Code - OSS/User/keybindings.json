@@ -1,5 +1,17 @@
 // Place your key bindings in this file to override the defaults
 [
+  // problems
+  {
+    "key": "alt+e",
+    "command": "editor.action.marker.next",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+shift+e",
+    "command": "editor.action.marker.prev",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+
   // bookmarks
 
   {
@@ -115,6 +127,10 @@
     "command": "workbench.action.files.newUntitledFile"
   },
   {
+    "key": "ctrl+alt+shift+n",
+    "command": "workbench.action.newWindow"
+  },
+  {
     "key": "ctrl+u ctrl+r",
     "command": "extension.multiCommand.execute",
     "args": {
@@ -187,7 +203,12 @@
   {
     "key": "ctrl+e",
     "command": "editor.action.revealDefinition",
-    "when": "textInputFocus"
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+  },
+  {
+    "key": "ctrl+shift+e",
+    "command": "editor.action.goToReferences",
+    "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
   },
   {
     "key": "ctrl+m ctrl+e",
@@ -195,14 +216,9 @@
     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
   },
   {
-    "key": "ctrl+e",
-    "command": "goToNextReference",
-    "when": "referenceSearchVisible"
-  },
-  {
-    "key": "ctrl+shift+e",
-    "command": "goToPreviousReference",
-    "when": "referenceSearchVisible"
+    "key": "ctrl+r",
+    "command": "editor.action.rename",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
   },
 
   // tabs groups
@@ -474,14 +490,14 @@
     "when": "textInputFocus && !editorReadonly"
   },
 
-  // block spacing navigation & selection
+  // blocklet navigation & selection
 
   {
     "key": "ctrl+i",
     "command": "blocks.go",
     "args": {
       "to": ["spacing-before", "bof"],
-      "direction": "backward",
+      "direction": "backward"
     },
     "when": "textInputFocus"
   },
@@ -490,7 +506,7 @@
     "command": "blocks.go",
     "args": {
       "to": ["spacing-after", "eof"],
-      "direction": "forward",
+      "direction": "forward"
     },
     "when": "textInputFocus"
   },
@@ -500,7 +516,7 @@
     "args": {
       "expand": ["spacing-bob", "bof"],
       "shrink": ["spacing-eob", "bof"],
-      "direction": "backward",
+      "direction": "backward"
     },
     "when": "textInputFocus"
   },
@@ -510,7 +526,7 @@
     "args": {
       "expand": ["spacing-eob", "eof"],
       "shrink": ["spacing-bob", "eof"],
-      "direction": "forward",
+      "direction": "forward"
     },
     "when": "textInputFocus"
   },
@@ -518,20 +534,20 @@
   // block navigation backward
 
   {
-    "key": "alt+y",
+    "key": "ctrl+y",
     "command": "blocks.go",
     "args": {
       "to": ["hill-eob-before"],
-      "direction": "backward",
+      "direction": "backward"
     },
     "when": "textInputFocus"
   },
   {
-    "key": "alt+shift+y",
+    "key": "alt+y",
     "command": "blocks.go",
     "args": {
       "to": ["plato-before"],
-      "direction": "backward",
+      "direction": "backward"
     },
     "when": "textInputFocus"
   },
@@ -540,7 +556,7 @@
     "command": "blocks.go",
     "args": {
       "to": ["hill-bob"],
-      "direction": "backward",
+      "direction": "backward"
     },
     "when": "textInputFocus"
   },
@@ -548,20 +564,20 @@
   // block navigation forward
 
   {
-    "key": "alt+h",
+    "key": "ctrl+h",
     "command": "blocks.go",
     "args": {
       "to": ["hill-bob-after"],
-      "direction": "forward",
+      "direction": "forward"
     },
     "when": "textInputFocus"
   },
   {
-    "key": "alt+shift+h",
+    "key": "alt+h",
     "command": "blocks.go",
     "args": {
       "to": ["plato-after"],
-      "direction": "forward",
+      "direction": "forward"
     },
     "when": "textInputFocus"
   },
@@ -570,7 +586,7 @@
     "command": "blocks.go",
     "args": {
       "to": ["hill-eob-bol"],
-      "direction": "forward",
+      "direction": "forward"
     },
     "when": "textInputFocus"
   },
@@ -578,11 +594,11 @@
   // block selection backward
 
   {
-    "key": "ctrl+shift+y",
+    "key": "alt+shift+y",
     "command": "blocks.select",
     "args": {
       "expand": ["plato-bob"],
-      "direction": "backward",
+      "direction": "backward"
     },
     "when": "textInputFocus"
   },
@@ -592,7 +608,7 @@
     "args": {
       "expand": ["hill-bob"],
       "shrink": ["hill-eob"],
-      "direction": "backward",
+      "direction": "backward"
     },
     "when": "textInputFocus"
   },
@@ -600,11 +616,11 @@
   // block selection forward
 
   {
-    "key": "ctrl+shift+h",
+    "key": "alt+shift+h",
     "command": "blocks.select",
     "args": {
       "expand": ["plato-eob"],
-      "direction": "forward",
+      "direction": "forward"
     },
     "when": "textInputFocus"
   },
@@ -614,9 +630,40 @@
     "args": {
       "expand": ["hill-eob"],
       "shrink": ["hill-bob"],
-      "direction": "forward",
+      "direction": "forward"
     },
     "when": "textInputFocus"
+  },
+
+  // block movement forward
+
+  {
+    "key": "ctrl+shift+h",
+    "command": "blocks.move",
+    "args": {
+      "to": ["spacing-eob", "plato-eob"],
+      "direction": "forward"
+    },
+    "when": "textInputFocus"
+  },
+
+  {
+    "key": "ctrl+u ctrl+h",
+    "command": "blocks.move",
+    "args": {
+      "to": ["plato-after-eol"],
+      "direction": "forward"
+    },
+    "when": "textInputFocus"
+  },
+
+  {
+    "key": "ctrl+u h",
+    "command": "blocks.move",
+    "args": {
+      "to": ["hill-bob-after"],
+      "direction": "forward"
+    }
   },
 
   // file navigation
@@ -709,7 +756,7 @@
   // edit history
 
   {
-    "key": "ctrl+r",
+    "key": "ctrl+shift+z",
     "command": "redo",
     "when": "textInputFocus && !editorReadonly"
   },

@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+`notify-replace screenshot "" "<b>SCREENSHOT</b> » ..."`
+
 date = `date +%s`.strip()
 file = "screen_#{date}.png"
 
@@ -29,9 +31,9 @@ if ARGV.include?('--publish')
 end
 
 if $?.exitstatus == 0
-  `notify-send "screenshot made"`
+  `notify-replace screenshot "" "<b>SCREENSHOT</b> » OK"`
 else
-  `notify-send "failed to make screenshot"`
+  `notify-replace screenshot "" "<b>SCREENSHOT</b> » FAILURE"`
 end
 
 if $?.exitstatus == 0

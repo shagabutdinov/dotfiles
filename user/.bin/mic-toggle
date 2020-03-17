@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
-
-ID_FILE = '/tmp/volume.notification.id'.freeze
+# frozen_string_literal: true
 
 pactl_output = `pactl list sources`
 muted = pactl_output.include?('Mute: yes')
@@ -14,8 +13,7 @@ sources =
     `pactl set-source-mute #{sink} #{muted ? 0 : 1}`
   end
 
-last_id = File.exist?(ID_FILE) ? File.read(ID_FILE).strip.to_i : 0
-id = `notify-desktop -r "#{last_id}" "" "<b>MIC</b> » #{muted ?
+id = `notify-replace microphone "" "<b>MIC</b> » #{muted ?
   'UNMUTED' : 'MUTED'}"`.strip.to_i
 
 File.write(ID_FILE, id)
