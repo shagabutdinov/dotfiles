@@ -46,7 +46,7 @@ function prepend_sudo() {
         CURSOR=$(($CURSOR+5))
 }
 
-function o() {
+function r() {
   nohup xdg-open "$@" > /dev/null 2> /dev/null &
   disown
 }
@@ -62,7 +62,12 @@ alias nc='sudo netctl'
 alias ag='alias | grep -A 2 -B 2'
 alias cds='cd ~/src/'
 
-alias re='source ~/.bin/ushell-env' # reload env
+alias o='overmind'
+alias or='overmind restart'
+alias oa='overmind start -p 3000'
+alias oaa='overmind start'
+alias oo='overmind stop'
+alias re='source ~/.bin/ushell-env && rehash' # reload env
 alias f='find . -name'
 alias pa='cd ~/.secrets; carcosa -Ac'
 alias pr='cd ~/.secrets; carcosa -Rc'

@@ -26,7 +26,10 @@ URxvt.saveLines:         20000
 URxvt.tabbed.autohide: true
 URxvt.keysym.Control-t: perl:tabbedex:new_tab
 URxvt.keysym.Control-period: perl:tabbedex:next_tab
+URxvt.keysym.Control-Shift-period: perl:tabbedex:move_tab_left
 URxvt.keysym.Control-comma: perl:tabbedex:prev_tab
+URxvt.keysym.Control-Shift-comma: perl:tabbedex:move_tab_right
+
 #define S_base03        #000000
 #define S_base02        #073642
 #define S_base01        #586e75

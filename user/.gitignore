@@ -8,3 +8,5 @@ spec/support/backtrace_silencers.local!.rb
 .python-version
 .history
 .vscode
+Procfile.tests
+config/puma.rb

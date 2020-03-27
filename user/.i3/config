@@ -106,11 +106,12 @@ bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+q workspace 6
-bindsym $mod+6 workspace 7
-bindsym $mod+7 workspace 8
-bindsym $mod+8 workspace 9
-bindsym $mod+9 workspace 10
-bindsym $mod+0 workspace 11
+bindsym $mod+Tab workspace 7
+bindsym $mod+6 workspace 8
+bindsym $mod+7 workspace 9
+bindsym $mod+8 workspace 10
+bindsym $mod+9 workspace 11
+bindsym $mod+0 workspace 12
 
 # move focused container to workspace
 bindsym $mod+shift+1 move container to workspace 1; workspace 1
@@ -119,23 +120,26 @@ bindsym $mod+shift+3 move container to workspace 3; workspace 3
 bindsym $mod+shift+4 move container to workspace 4; workspace 4
 bindsym $mod+shift+5 move container to workspace 5; workspace 5
 bindsym $mod+shift+q move container to workspace 6; workspace 6
-bindsym $mod+shift+6 move container to workspace 7; workspace 7
-bindsym $mod+shift+7 move container to workspace 8; workspace 8
-bindsym $mod+shift+8 move container to workspace 9; workspace 9
-bindsym $mod+shift+9 move container to workspace 10; workspace 10
-bindsym $mod+shift+0 move container to workspace 11; workspace 11
+bindsym $mod+shift+Tab move container to workspace 7; workspace 7
+bindsym $mod+shift+6 move container to workspace 8; workspace 8
+bindsym $mod+shift+7 move container to workspace 9; workspace 9
+bindsym $mod+shift+8 move container to workspace 10; workspace 10
+bindsym $mod+shift+9 move container to workspace 11; workspace 11
+bindsym $mod+shift+0 move container to workspace 12; workspace 12
 
 # move focused container to workspace
 bindsym $mod+ctrl+1 move container to workspace 1
-bindsym $mod+ctrl+q move container to workspace 2
-bindsym $mod+ctrl+2 move container to workspace 3
-bindsym $mod+ctrl+3 move container to workspace 4
-bindsym $mod+ctrl+4 move container to workspace 5
-bindsym $mod+ctrl+5 move container to workspace 6
-bindsym $mod+ctrl+7 move container to workspace 7
-bindsym $mod+ctrl+8 move container to workspace 8
-bindsym $mod+ctrl+9 move container to workspace 9
-bindsym $mod+ctrl+0 move container to workspace 10
+bindsym $mod+ctrl+2 move container to workspace 2
+bindsym $mod+ctrl+3 move container to workspace 3
+bindsym $mod+ctrl+4 move container to workspace 4
+bindsym $mod+ctrl+5 move container to workspace 5
+bindsym $mod+ctrl+q move container to workspace 6
+bindsym $mod+ctrl+Tab move container to workspace 7
+bindsym $mod+ctrl+6 move container to workspace 8
+bindsym $mod+ctrl+7 move container to workspace 9
+bindsym $mod+ctrl+8 move container to workspace 10
+bindsym $mod+ctrl+9 move container to workspace 11
+bindsym $mod+ctrl+0 move container to workspace 12
 
 # reload the configuration file
 # bindsym $mod+shift+c reload
@@ -218,7 +222,7 @@ bindsym $mod+ctrl+grave exec i3lock -c 000000
 bindsym $mod+ctrl+u exec uidle
 bindsym $mod+shift+u exec upwork-suspend
 bindsym $mod+m exec ushow-status
-bindsym $mod+Tab exec ~/.bin/switch-display
+bindsym $mod+ctrl+shift+Tab exec ~/.bin/switch-display
 bindsym $mod+F12 exec ~/.bin/vpnup
 bindsym $mod+shift+F12 exec ~/.bin/vpndown
 bindsym $mod+ctrl+F12 exec ~/.bin/toggle-touchpad

@@ -555,7 +555,7 @@
     "key": "ctrl+alt+y",
     "command": "blocks.go",
     "args": {
-      "to": ["hill-bob"],
+      "to": ["hill-eob-bol"],
       "direction": "backward"
     },
     "when": "textInputFocus"
@@ -585,7 +585,7 @@
     "key": "ctrl+alt+h",
     "command": "blocks.go",
     "args": {
-      "to": ["hill-eob-bol"],
+      "to": ["hill-bob"],
       "direction": "forward"
     },
     "when": "textInputFocus"
@@ -635,18 +635,54 @@
     "when": "textInputFocus"
   },
 
+  // block movement backward
+
+  {
+    "key": "ctrl+shift+y",
+    "command": "blocks.move",
+    "args": {
+      "to": ["spacing-bob", "plato-bob", "hill-eob-bol"],
+      "direction": "backward"
+    },
+    "when": "textInputFocus"
+  },
+  // {
+  //   "key": "ctrl+u ctrl+y",
+  //   "command": "blocks.move",
+  //   "args": {
+  //     "to": ["plato-after-eol"],
+  //     "direction": "forward"
+  //   },
+  //   "when": "textInputFocus"
+  // },
+  // {
+  //   "key": "ctrl+u h",
+  //   "command": "blocks.move",
+  //   "args": {
+  //     "to": ["hill-bob-after"],
+  //     "direction": "forward"
+  //   }
+  // },
+  // {
+  //   "key": "ctrl+alt+n",
+  //   "command": "blocks.move",
+  //   "args": {
+  //     "to": ["hill-eob"],
+  //     "direction": "forward"
+  //   }
+  // },
+
   // block movement forward
 
   {
     "key": "ctrl+shift+h",
     "command": "blocks.move",
     "args": {
-      "to": ["spacing-eob", "plato-eob"],
+      "to": ["spacing-eob", "plato-eob", "hill-bob-after"],
       "direction": "forward"
     },
     "when": "textInputFocus"
   },
-
   {
     "key": "ctrl+u ctrl+h",
     "command": "blocks.move",
@@ -656,12 +692,19 @@
     },
     "when": "textInputFocus"
   },
-
   {
     "key": "ctrl+u h",
     "command": "blocks.move",
     "args": {
       "to": ["hill-bob-after"],
+      "direction": "forward"
+    }
+  },
+  {
+    "key": "ctrl+alt+n",
+    "command": "blocks.move",
+    "args": {
+      "to": ["hill-eob"],
       "direction": "forward"
     }
   },
