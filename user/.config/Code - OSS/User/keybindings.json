@@ -496,7 +496,7 @@
     "key": "ctrl+i",
     "command": "blocks.go",
     "args": {
-      "to": ["spacing-before", "bof"],
+      "to": ["spacing-bob", "bof"],
       "direction": "backward"
     },
     "when": "textInputFocus"
@@ -505,7 +505,7 @@
     "key": "ctrl+k",
     "command": "blocks.go",
     "args": {
-      "to": ["spacing-after", "eof"],
+      "to": ["spacing-bob", "eof"],
       "direction": "forward"
     },
     "when": "textInputFocus"
@@ -555,7 +555,7 @@
     "key": "ctrl+alt+y",
     "command": "blocks.go",
     "args": {
-      "to": ["hill-eob-bol"],
+      "to": ["hill-bob"],
       "direction": "backward"
     },
     "when": "textInputFocus"
@@ -641,36 +641,19 @@
     "key": "ctrl+shift+y",
     "command": "blocks.move",
     "args": {
-      "to": ["spacing-bob", "plato-bob", "hill-eob-bol"],
+      "to": ["spacing-bob", "plato-bob", "hill-eob-bol", "bof"],
       "direction": "backward"
     },
     "when": "textInputFocus"
   },
-  // {
-  //   "key": "ctrl+u ctrl+y",
-  //   "command": "blocks.move",
-  //   "args": {
-  //     "to": ["plato-after-eol"],
-  //     "direction": "forward"
-  //   },
-  //   "when": "textInputFocus"
-  // },
-  // {
-  //   "key": "ctrl+u h",
-  //   "command": "blocks.move",
-  //   "args": {
-  //     "to": ["hill-bob-after"],
-  //     "direction": "forward"
-  //   }
-  // },
-  // {
-  //   "key": "ctrl+alt+n",
-  //   "command": "blocks.move",
-  //   "args": {
-  //     "to": ["hill-eob"],
-  //     "direction": "forward"
-  //   }
-  // },
+  {
+    "key": "ctrl+alt+shift+n",
+    "command": "blocks.move",
+    "args": {
+      "to": ["hill-bob"],
+      "direction": "backward"
+    }
+  },
 
   // block movement forward
 
@@ -678,27 +661,10 @@
     "key": "ctrl+shift+h",
     "command": "blocks.move",
     "args": {
-      "to": ["spacing-eob", "plato-eob", "hill-bob-after"],
+      "to": ["spacing-eob", "plato-eob", "hill-bob-after", "eof"],
       "direction": "forward"
     },
     "when": "textInputFocus"
-  },
-  {
-    "key": "ctrl+u ctrl+h",
-    "command": "blocks.move",
-    "args": {
-      "to": ["plato-after-eol"],
-      "direction": "forward"
-    },
-    "when": "textInputFocus"
-  },
-  {
-    "key": "ctrl+u h",
-    "command": "blocks.move",
-    "args": {
-      "to": ["hill-bob-after"],
-      "direction": "forward"
-    }
   },
   {
     "key": "ctrl+alt+n",

@@ -81,4 +81,5 @@
   "gitlens.hovers.currentLine.enabled": false,
   "gitlens.hovers.annotations.enabled": false,
   "gitlens.hovers.enabled": false,
+  "debug.onTaskErrors": "debugAnyway",
 }
