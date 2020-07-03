@@ -1,0 +1,6 @@
+erb:
+  context: document().languageId == 'erb'
+  snippets:
+    puts:
+      trigger: p
+      snippet: <%= $0 %>

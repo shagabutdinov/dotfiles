@@ -543,6 +543,8 @@ listen_addresses:
   - 127.0.0.1@5353
 appdata_dir: "/var/cache/stubby"
 upstream_recursive_servers:
+  - address_data: 172.30.1.53
+    tls_auth_name: "dns"
   - address_data: 9.9.9.9
     tls_auth_name: "dns.quad9.net"
   - address_data: 9.9.9.10
@@ -555,6 +557,4 @@ upstream_recursive_servers:
     tls_auth_name: "dns.google"
   - address_data: 8.8.4.4
     tls_auth_name: "dns.google"
-  - address_data: 172.30.1.53
-    tls_auth_name: "dns"
 

@@ -7,4 +7,5 @@
 	editor = vim
   commentchar = `
 	excludesfile = /home/leo/.gitignore
-
+[pull]
+	ff = only

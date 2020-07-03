@@ -8,6 +8,7 @@
 127.0.0.1 p
 127.0.0.1 c
 127.0.0.1 cc # constructor cached
+127.0.0.1 cs # constructor storybook
 127.0.0.1 test.cc # constructor cached
 127.0.0.1 cec # constructor elastic cached
 127.0.0.1 cdc # constructor devac cached
@@ -17,6 +18,7 @@
 127.0.0.1 elasticsearch
 
 # 0.0.0.0 devac.cnstrc.com
+0.0.0.0 reports-api.sqreen.io
 0.0.0.0 api.wb.local
 0.0.0.0 auth.wb.local
 0.0.0.0 assets.adobedtm.com

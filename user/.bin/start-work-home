@@ -1,0 +1,54 @@
+/home/leo/.bin/vpnup &
+sudo systemctl start nginx &
+
+i3-msg 'workspace 1, move workspace to output DP-4'
+
+code &
+sleep 3
+
+urxvt &
+sleep 3
+
+# start app http
+
+enter-text "cd ./src/constructor/website"
+xdotool key --clearmodifiers Return
+enter-text "[ -e ./.overmind.sock ] && rm ./.overmind.sock; overmind start -p 3000"
+xdotool key --clearmodifiers Return
+sleep 0.5
+
+xdotool key --clearmodifiers ctrl+t
+xdotool key --clearmodifiers ctrl+t
+xdotool key --clearmodifiers ctrl+t
+
+# uslackd
+
+i3-msg 'workspace 9, move workspace to output DP-4'
+uslackd &
+sleep 3
+
+# telegram
+
+i3-msg 'workspace 10, move workspace to output DP-4'
+telegram-desktop &
+sleep 3
+
+# slack
+
+i3-msg 'workspace 11, move workspace to output eDP-1-1'
+uslack &
+sleep 0.5
+
+utodoist &
+sleep 0.5
+i3-msg 'resize set 616px'
+
+# browsers
+
+i3-msg 'workspace 6, move workspace to output DP-4'
+chromium
+sleep 0.5
+
+i3-msg 'workspace 2, move workspace to output DP-4'
+chromium
+sleep 0.5

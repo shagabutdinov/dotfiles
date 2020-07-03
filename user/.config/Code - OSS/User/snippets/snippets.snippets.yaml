@@ -1,0 +1,28 @@
+snippets:
+  context: |
+    document().languageId == 'yaml' &&
+      document().uri.toString().match('/([^/]+).snippets.yaml$')
+  snippets:
+    context:
+      trigger: c
+      snippet: 'context: '
+
+    snippet:
+      trigger: s
+      snippet: 'snippet: '
+
+    snippet to snippets:
+      trigger: '~snippet:\s*$'
+      snippet: 'snippets: '
+
+    snippets:
+      trigger: ss
+      snippet: 'snippets: '
+
+    placeholders:
+      trigger: p
+      snippet: 'placeholders: '
+
+    trigger:
+      trigger: t
+      snippet: 'trigger: '

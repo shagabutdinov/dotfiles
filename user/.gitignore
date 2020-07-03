@@ -10,3 +10,4 @@ spec/support/backtrace_silencers.local!.rb
 .vscode
 Procfile.tests
 config/puma.rb
+.dev/

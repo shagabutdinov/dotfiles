@@ -1,7 +1,7 @@
 #!/bin/bash
 
 xset r rate 150 75
-xsetwacom set $(xsetwacom list devices | grep STYLUS | grep -Po 'id: \d+' | awk '{print $2}') MapToOutput HEAD-0
+xsetwacom set $(xsetwacom list devices | grep STYLUS | grep -Po 'id: \d+' | awk '{print $2}') MapToOutput 2560x1440+1920+0 # HEAD-0
 
 setxkbmap -layout us,ru -option grp:caps_toggle,grp_led:caps
 xmodmap -e "keycode 105 = F14"

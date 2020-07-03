@@ -1,6 +1,5 @@
 {
   "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "Visual Studio Dark",
   "editor.fontSize": 18,
   "window.enableMenuBarMnemonics": false,
   "window.menuBarVisibility": "hidden",
@@ -12,24 +11,14 @@
   "editor.wrappingIndent": "same",
   "editor.wordWrapColumn": 80,
   "keyboard.dispatch": "keyCode",
-  "multiCommand.commands": [
-    {
-      "command": "multiCommand.changeFileName",
-      "sequence": [
-        "workbench.files.action.showActiveFileInExplorer",
-        "renameFile"
-      ]
-    }
-  ],
   "window.zoomLevel": 0,
   "editor.tabSize": 2,
   "workbench.editor.enablePreview": false,
   "files.trimTrailingWhitespace": true,
-  "prettier.trailingComma": "all",
   "editor.formatOnSave": true,
-  "editor.formatOnType": true,
+  "editor.formatOnType": false,
+  "editor.formatOnPaste": false,
   "editor.formatOnSaveTimeout": 5000, // use rubocop for formatting
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -46,28 +35,24 @@
   "ruby.format": "rubocop",
   "editor.codeActionsOnSave": {
     // For ESLint
-    "source.fixAll.eslint": true,
+    "source.fixAll.eslint": false,
     // For TSLint
-    "source.fixAll.tslint": true,
+    "source.fixAll.tslint": false,
     // For Stylelint
-    "source.fixAll.stylelint": true
+    "source.fixAll.stylelint": false
   },
   "ruby.codeCompletion": "rcodetools",
   "[ruby]": {
     "editor.defaultFormatter": "rebornix.ruby"
   },
-
   "emmet.triggerExpansionOnTab": true,
   "emmet.showExpandedAbbreviation": "never",
   "editor.acceptSuggestionOnEnter": "off",
-  "editor.snippetSuggestions": "top",
   "editor.suggest.localityBonus": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "editor.fontFamily": "Ubuntu Mono, Consolas, 'JetBrains Mono for Powerline', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "githubPullRequests.showInSCM": true,
-  "vscodeWorkspaceSwitcher.paths": [
-    "/home/leo/projects/vscode"
-  ],
+  "vscodeWorkspaceSwitcher.paths": ["/home/leo/projects/vscode"],
   "editor.renderIndentGuides": false,
   "workbench.sideBar.location": "right",
   "gitlens.currentLine.enabled": false,
@@ -82,4 +67,50 @@
   "gitlens.hovers.annotations.enabled": false,
   "gitlens.hovers.enabled": false,
   "debug.onTaskErrors": "debugAnyway",
+  "typescript.suggest.autoImports": false,
+  "javascript.suggest.autoImports": false,
+  "files.exclude": {
+    ".history": true,
+    ".git": true,
+    "out": true
+  },
+  "search.exclude": {
+    "**/.git": true,
+    "**/.history": true
+  },
+  "search.followSymlinks": false,
+  "search.maintainFileSearchCache": true,
+  "search.smartCase": true,
+  "search.useGlobalIgnoreFiles": true,
+  "locations.extensions": {
+    "shagabutdinov.blocks": true,
+    "shagabutdinov.nesting": true,
+    "shagabutdinov.locations-regexp": true
+  },
+  "context.debug": false,
+  "context.extensions": {
+    "shagabutdinov.nesting": true,
+    "shagabutdinov.locations": true,
+    "shagabutdinov.scope": true
+  },
+  "commands.extensions": {
+    "shagabutdinov.locations": true
+  },
+  "tabnine.experimentalAutoImports": true,
+  // "editor.defaultFormatter": "shagabutdinov.format"
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.userWords": [
+    "devtools",
+    "formik",
+    "reindent",
+    "shagabutdinov",
+    "subheadlines",
+    "typeof"
+  ],
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  }
+  // "snippets.path": "/home/leo/.config/Code - OSS/User/snippets",
 }

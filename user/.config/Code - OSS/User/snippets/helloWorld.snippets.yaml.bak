@@ -1,0 +1,7 @@
+helloWorld:
+  trigger: helloWorld
+  snippet: Hello world
+
+helloWorldWithTab:
+  trigger: helloWorldWithTab
+  snippet: Hello$1 world$2!

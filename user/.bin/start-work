@@ -1,3 +1,6 @@
+/home/leo/.bin/vpnup &
+sudo systemctl start nginx &
+
 i3-msg 'workspace 6, move workspace to output DP-4'
 
 code &

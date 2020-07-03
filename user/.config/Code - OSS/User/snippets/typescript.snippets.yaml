@@ -1,0 +1,579 @@
+typescript:
+  context: document().languageId.match("^(type|java)script(react)?$")
+  snippets:
+    tmp:
+      trigger: tmp
+      snippet: |-
+        word1
+          $placeholder
+      placeholders:
+        placeholder:
+          onBeforeExpand: () => `value1\nvalue2\nvalue3`
+
+    tmp2:
+      trigger: tmp
+      snippet: |-
+        word2
+          $placeholder
+      placeholders:
+        placeholder:
+          onBeforeExpand: () => `value1\nvalue2\nvalue3`
+
+    tmp3:
+      trigger: tmp3
+      snippet: result $placeholder
+      placeholders:
+        placeholder:
+          onBeforeExpand: () => { throw new Error(':(') }
+
+    tmp4:
+      trigger: tmp4
+      snippet: result $placeholder
+      placeholders:
+        placeholder:
+          onBeforeExpand: ({ debug }, placeholder) => { debug(placeholder) }
+
+    definitions:
+      context: document().getText().match('^\s*\w+\s*$')
+      snippets:
+        component:
+          trigger: d
+          context: document().uri.toString().match('(?<!\.test)\.tsx$')
+          snippet: |-
+            import React from "react";
+
+            export default function $1:name{Component}({ $2 }: Props) {
+              return (
+                $0
+              );
+            }
+
+            type Props = {
+              $3;
+            }
+          placeholders:
+            name:
+              onBeforeExpand: |
+                ({ document }) => (
+                    document.uri.toString().match('/([^/]+).tsx$') || []
+                )[1]
+
+        function:
+          trigger: d
+          context: document().uri.toString().match('(?<!\.test)\.ts$')
+          snippet: |-
+            export $1default function $2:name($3): $4 {
+              return (
+                $0
+              );
+            }
+
+    keywords:
+      snippets:
+        async:
+          trigger: a
+          context: |
+            cursor.followingText().match('^[ \t]*(\(|function)') ||
+              cursor.precedingText().match('(export\s+(default\s+)?)\w+$')
+          snippet: async $0
+
+        await:
+          trigger: a
+          context: |
+            cursor.followingText().match('^(?!(function|\())') &&
+              !cursor.precedingText().match('(export\s+(default\s+)?)\w+$')
+          snippet: await $0
+
+        typeof:
+          trigger: ~(?<!\.\s*)to$
+          snippet: typeof $0
+
+        import braces:
+          trigger: ~import\s*$
+          snippet: 'import { $0 }'
+
+        double arrow callback:
+          trigger: j
+          snippet: ($1) => $0
+
+        quick double arrow callback:
+          trigger: ~(?<=[(,:]\s*)$
+          snippet: ($1) => $0
+
+        quick double arrow for callback:
+          trigger: ~(?<=[)]\s*)$
+          snippet: ' => $0'
+
+        quick braces for double arrow callback:
+          trigger: ~(?<=\)\s*=>\s*)$
+          snippet: |-
+            {
+              $0
+            }
+    root:
+      context: cursor.precedingText().match('^(export\s+)?(default\s+)?(async\s+)?\w+$')
+      snippets:
+        import:
+          trigger: im
+          snippet: 'import $1 from "$2";'
+
+        export:
+          trigger: e
+          snippet: export $0
+
+        export const:
+          trigger: ec
+          snippet: export const $1 = $0
+
+        export default const:
+          trigger: edc
+          snippet: export default const $1 = $0
+
+        export type:
+          trigger: et
+          snippet: export type $1 = $0
+
+        export default type:
+          trigger: edt
+          snippet: export default type $1 = $0
+
+        export default:
+          trigger: ed
+          snippet: export default $0
+
+        type:
+          trigger: t
+          snippet: type $1 = $0
+
+    function:
+      context: cursor.precedingText().match('(^|\n)(export\s+)?(default\s+)?(async\s+)?\s*\w+$')
+      trigger: fn
+      snippet: |-
+        function $1($2): $3 {
+          $0
+        }
+
+    root exportable sentences:
+      context: cursor.precedingText().match('(^|\n)(export\s+)?(default\s+)?\s*\w+$')
+      snippets:
+        const assignment:
+          trigger: c
+          snippet: const $1 = $0;
+          context: cursor.followingText().match('(^|\n)\s*$')
+
+        const:
+          trigger: c
+          snippet: const $0
+          context: cursor.followingText().match('(^|\n)\s*\S')
+
+        let assignment:
+          trigger: le
+          snippet: let $1 = $0;
+          context: cursor.followingText().match('(^|\n)\s*$')
+
+        let:
+          trigger: le
+          snippet: let $0
+          context: cursor.followingText().match('(^|\n)\s*\S')
+
+    else:
+      trigger: ~(?<=}\s*)e
+      snippet: |-
+        else {
+          $0
+        }
+
+    root sentences:
+      context: cursor.precedingText().match('(^|\n)\s*\w+$')
+      snippets:
+        if:
+          trigger: i
+          snippet: |-
+            if ($1) {
+              $0
+            }
+
+        if not:
+          trigger: in
+          snippet: |-
+            if (!$1) {
+              $0
+            }
+
+        for:
+          context: cursor.precedingText().match('(^|\n)\s+\w+$')
+          trigger: f
+          snippet: |-
+            for ($1) {
+              $0
+            }
+
+        try catch:
+          trigger: tr
+          snippet: |-
+            try {
+              $0
+            } catch($1{error}) {
+              $2
+            }
+
+        throw error:
+          trigger: te
+          snippet: throw new Error("$1");
+
+        throw:
+          trigger: th
+          snippet: throw $0;
+
+        quit:
+          trigger: q
+          snippet: throw new Error("XXXX $id");
+          placeholders:
+            id:
+              onBeforeExpand: |
+                ({ editor, document }) =>
+                  require('path').basename(document.uri.fsPath) + ':' +
+                  editor.selection.anchor.line
+
+    sentences:
+      context: cursor.precedingText().match('(^|\n)\s+\w+$')
+      snippets:
+        return:
+          trigger: r
+          snippet: return $0;
+          context: cursor.followingText().match('(^|\n)\s*$')
+
+        return value:
+          trigger: r
+          snippet: return $0
+          context: cursor.followingText().match('\S')
+
+        return null:
+          trigger: rn
+          snippet: return null;
+
+        return false:
+          trigger: rf
+          snippet: return false;
+
+        return true:
+          trigger: rt
+          snippet: return true;
+
+        return result:
+          trigger: rr
+          snippet: return result;
+
+        continue:
+          trigger: co
+          snippet: continue;
+
+        break:
+          trigger: b
+          snippet: break;
+
+        react hooks:
+          snippets:
+            useState:
+              trigger: us
+              snippet: const [$1, $2] = useState<$3{$4{type} | null}>($5{null});
+
+    array functions:
+      context: cursor.precedingText().match('\.\s*\w+$')
+      snippets:
+        map:
+          trigger: m
+          snippet: map($0)
+
+        forEach:
+          trigger: f
+          snippet: forEach($0)
+
+        reduce:
+          trigger: r
+          snippet: reduce($0)
+
+        length:
+          trigger: l
+          snippet: length
+
+    calls:
+      snippets:
+        Object.keys:
+          trigger: ov
+          snippet: Object.values($1)
+
+        Object.values:
+          trigger: ok
+          snippet: Object.values($1)
+
+        Object.entries:
+          trigger: oe
+          snippet: Object.entries($1)
+
+        JSON.stringify:
+          trigger: js
+          snippet: JSON.stringify($1)
+
+    values:
+      context: cursor.precedingText().match('([:=(,]|=>|\||&|return)\s*\w*$')
+      snippets:
+        undefined:
+          trigger: u
+          snippet: undefined
+
+        'null':
+          trigger: n
+          snippet: 'null'
+
+        'true':
+          trigger: t
+          snippet: 'true'
+
+        'false':
+          trigger: f
+          snippet: 'false'
+
+        'object':
+          trigger: ~(?<=type\s*\w+\s*=\s*)$
+          snippet: |-
+            {
+              $0
+            }
+
+    types:
+      context: cursor.precedingText().match('([:<,]|=>|(?<!\|\s*)\||(?<!&\s*)&)\s*\w+$')
+      snippets:
+        boolean:
+          trigger: b
+          snippet: boolean
+
+        string:
+          trigger: s
+          snippet: string
+
+        number:
+          trigger: nu
+          snippet: number
+
+        null to number:
+          trigger: 'null'
+          snippet: number
+
+        void:
+          trigger: v
+          snippet: void
+
+        Record:
+          trigger: R
+          snippet: Record<string, $0>
+
+        Promise:
+          trigger: P
+          snippet: Promise<$0>
+
+    reactHtml:
+      snippets:
+        css:
+          trigger: ~(?<=[\w}'"][\s\n]*)c$
+          snippet: |-
+            css={css`
+              $0
+            `}
+        styled.div:
+          trigger: sd
+          snippet: |-
+            const $1 = styled.$2{div}`
+              $0
+            `;
+
+    debug:
+      snippets:
+        todo:
+          trigger: xt
+          snippet: // @todo $0
+
+        prtodo:
+          trigger: xp
+          snippet: // @prtodo $0
+
+        sentences:
+          context: cursor.precedingText().match('(^|\n)\s*\w+$')
+          snippets:
+            console.log:
+              trigger: l
+              snippet: console.log("XXXX $id ", $1)
+              placeholders:
+                id:
+                  onBeforeExpand: |
+                    ({ editor, document }) =>
+                      require('path').basename(document.uri.fsPath) + ':' +
+                      editor.selection.anchor.line
+
+            console.warn:
+              trigger: w
+              snippet: console.warn("XXXX $id ", $1)
+              placeholders:
+                id:
+                  onBeforeExpand: |
+                    ({ editor, document }) =>
+                      require('path').basename(document.uri.fsPath) + ':' +
+                      editor.selection.anchor.line
+
+    jest:
+      context: document().uri.toString().match('\.test\.[tj]sx?$')
+      snippets:
+        definitions:
+          context: cursor.precedingText().match('(^|\n)\w+$')
+          snippets:
+            define function:
+              trigger: d
+              context: |
+                document().uri.toString().match('(?<!/use[^/]*)\.test\.ts$') &&
+                  document().getText().match('^\s*\w+\s*$')
+              snippet: |-
+                import $1:importing{object} from "./$filename";
+
+                describe($object{object}, () => {
+                  it("$2", () => {
+                    $0
+                  });
+                });
+              placeholders:
+                filename:
+                  onBeforeExpand: |
+                    ({ document }) => (
+                        document.uri.toString().match('/([^/]+).test.ts$') ||
+                        []
+                    )[1]
+                importing:
+                  onBeforeLeave: |
+                    ({ placeholders: { object } }, placeholder) => {
+                      object.value = placeholder.value.replace(/{(.*?)}/, (_, value) => value.trim());
+                    }
+
+            define component:
+              trigger: d
+              context: |
+                document().uri.toString().match('(?<!/use[^/]*)\.test\.tsx$') &&
+                  document().getText().match('^\s*\w+\s*$')
+              snippet: |-
+                import React from "react";
+                import { render } from "@testing-library/react";
+
+                import $1:component{Component} from "./$1:component{Component}";
+
+                describe("$1:component{Component}", () => {
+                  const props: React.ComponentProps<typeof $1:component{Component}> = {
+                    $2
+                  };
+
+                  it("renders", () => {
+                    const { container } = render(<$1{Component} {...props} />);
+                    expect(container).toMatchSnapshot();
+                  });
+                });
+              placeholders:
+                component:
+                  onBeforeExpand: |
+                    ({ document }) => (
+                      document.uri.toString().match('/([^/]+).test.tsx$') || []
+                    )[1]
+
+            define hook:
+              trigger: d
+              context: |
+                document().uri.toString().match('(?<=/use[^/]*)\.test\.tsx?$') &&
+                  document().getText().match('^\s*\w+\s*$')
+              snippet: |-
+                import React from "react";
+                import { renderHook } from "@testing-library/react-hooks";
+
+                import $1:hook{hook}$2{, { $3{Args} }} from "./$1:hook{hook}";
+
+                describe("$1:hook{hook}", () => {
+                  const args: $3{Args} = {
+                    $4
+                  };
+
+                  it("renders", () => {
+                    const { result } = renderHook(() => $1:hook{hook}(args));
+                    $0expect(result.current).toEqual({});
+                  });
+                });
+              placeholders:
+                hook:
+                  onBeforeExpand: |
+                    ({ document }) => (
+                      document.uri.toString().match('/([^/]+).test.tsx?$') || []
+                    )[1]
+
+        sentences:
+          context: |
+            cursor.precedingText().match('(^|\n)\s+\w+$') &&
+              cursor.followingText().match('(^|\n)\s*$')
+          snippets:
+            describe:
+              trigger: d
+              snippet: |-
+                describe("$1", () => {
+                  $0
+                });
+
+            it: # @todo trigger "it" => "i"
+              trigger: it
+              snippet: |-
+                it("$1", () => {
+                  $0
+                });
+
+            before each:
+              trigger: b
+              snippet: |-
+                beforeEach(() => {
+                  $0
+                });
+
+        functions:
+          snippets:
+            expect toEqual:
+              trigger: ~(?<=\.)to$
+              snippet: toEqual()
+
+        helpers:
+          snippets:
+            add only to test:
+              context: cursor.followingText().match('(^|\n)\(')
+              trigger: it
+              snippet: it.only
+
+            remove only from test:
+              context: cursor.followingText().match('(^|\n)\(')
+              trigger: ~it\.only$
+              snippet: it
+
+        values:
+          snippets:
+            expect:
+              trigger: e
+              snippet: expect($1).to
+
+            expect anything:
+              trigger: ea
+              snippet: expect.anything()
+
+            expect objectContaining:
+              trigger: eo
+              snippet: expect.objectContaining($0)
+
+            jest fn:
+              trigger: jf
+              snippet: jest.fn()
+
+            jest mock:
+              trigger: jm
+              snippet: jest.mock($0)
+
+            await act waitForNextUpdate:
+              trigger: aa
+              snippet: await act(() => waitForNextUpdate())

@@ -1,15 +1,2049 @@
 // Place your key bindings in this file to override the defaults
 [
-  // problems
   {
-    "key": "alt+e",
+    "key": "ctrl+u ctrl+r",
+    "command": "workbench.action.reloadWindow"
+  },
+
+  {
+    "key": "ctrl+alt+shift+f12",
+    "command": "scope.print"
+  },
+
+  {
+    "key": "shift+f3",
+    "command": "snippets.nextTab",
+    "when": "editorTextFocus"
+  },
+
+  {
+    "key": "ctrl+u ctrl+j",
+    "command": "workbench.action.editor.changeLanguageMode",
+    "when": "editorTextFocus"
+  },
+
+  {
+    "key": "ctrl+u ctrl+y",
+    "command": "editor.action.formatDocument",
+    "when": "editorTextFocus"
+  },
+
+  {
+    "key": "ctrl+u y",
+    "command": "editor.action.formatSelection",
+    "when": "editorTextFocus"
+  },
+
+  {
+    "key": "ctrl+m ctrl+n",
+    "command": "editor.action.defineKeybinding",
+    "when": "editorTextFocus"
+  },
+
+  // case convertion
+
+  {
+    "key": "ctrl+=",
+    "command": "commands.run",
+    "args": {
+      "commands": [
+        {
+          "commands": [
+            {
+              "command": "editor.emmet.action.incrementNumberByOne",
+              "context": [
+                "selection.precedingText().match('(\\W|^)\\d+$') || (",
+                "  selection.precedingText().match('\\W*$') && ",
+                "  selection.followingText().match('^\\d+')",
+                ")",
+              ]
+            },
+            {
+              "command": "extension.changeCase.upperFirst",
+              "context": [
+                "selection.precedingText().match('(\\W|^)[a-z]\\w*$') || (",
+                "  selection.precedingText().match('\\W*$') && ",
+                "  selection.followingText().match('^[a-z]\\w*')",
+                ")",
+              ]
+            },
+            {
+              "command": "extension.changeCase.upper",
+              "context": [
+                "selection.precedingText().match('(\\W|^)[A-Z]\\w*$') || (",
+                "  selection.precedingText().match('\\W*$') && ",
+                "  selection.followingText().match('^[A-Z]\\w*')",
+                ")",
+              ]
+            },
+          ],
+          "context": "selection().isEmpty"
+        },
+        {
+          "commands": [
+            {
+              "command": "editor.emmet.action.incrementNumberByOne",
+              "context": "selection.text().match('^\\d+$')",
+            },
+            {
+              "command": "extension.changeCase.upperFirst",
+              "context": "selection.text().match('^[a-z].*$')",
+            },
+            {
+              "command": "extension.changeCase.upper",
+            },
+          ],
+          "context": "!selection().isEmpty"
+        },
+      ],
+    },
+    "when": "textInputFocus"
+  },
+
+  {
+    "key": "ctrl+-",
+    "command": "commands.run",
+    "args": {
+      "commands": [
+        {
+          "commands": [
+            {
+              "command": "editor.emmet.action.decrementNumberByOne",
+              "context": [
+                "selection.precedingText().match('(\\W|^)\\d+$') || (",
+                "  selection.precedingText().match('\\W*$') && ",
+                "  selection.followingText().match('^\\d+')",
+                ")",
+              ]
+            },
+            {
+              "commands": [
+                { "command": "extension.changeCase.lower" },
+                { "command": "extension.changeCase.upperFirst" },
+              ], // shit!
+              "context": [
+                "selection.precedingText().match('(\\W|^)[A-Z]*$') || (",
+                "  selection.precedingText().match('\\W*$') && ",
+                "  selection.followingText().match('^[A-Z]\\w*')",
+                ")",
+              ]
+            },
+            {
+              "command": "extension.changeCase.lower",
+              "context": [
+                "selection.precedingText().match('(\\W|^)[A-Z]\\w*$') || (",
+                "  selection.precedingText().match('\\W*$') && ",
+                "  selection.followingText().match('^[A-Z]\\w*')",
+                ")",
+              ]
+            },
+          ],
+          "context": "selection().isEmpty"
+        },
+        {
+          "commands": [
+            {
+              "command": "editor.emmet.action.decrementNumberByOne",
+              "context": "selection.text().match('^\\d+$')",
+            },
+            {
+              "commands": [
+                { "command": "extension.changeCase.lower" },
+                { "command": "extension.changeCase.upperFirst" },
+              ], // shit!
+              "context": "selection.text().match('^[A-Z].*$')",
+            },
+            {
+              "command": "extension.changeCase.lower",
+            },
+          ],
+          "context": "!selection().isEmpty"
+        },
+      ],
+    },
+    "when": "textInputFocus"
+  },
+
+  {
+    "key": "ctrl+shift+=",
+    "command": "commands.run",
+    "args": {
+      "commands": [
+        {
+          "commands": [
+            {
+              "command": "editor.emmet.action.incrementNumberByTen",
+              "context": [
+                "selection.precedingText().match('(\\W|^)\\d+$') || (",
+                "  selection.precedingText().match('\\W*$') && ",
+                "  selection.followingText().match('^\\d+')",
+                ")",
+              ]
+            },
+            {
+              "command": "extension.changeCase.camel",
+              "context": [
+                "selection.precedingText().match('(\\W|^)\\w+$') || (",
+                "  selection.precedingText().match('\\W*$') && ",
+                "  selection.followingText().match('^\\w+')",
+                ")",
+              ]
+            },
+          ],
+          "context": "selection().isEmpty"
+        },
+        {
+          "commands": [
+            {
+              "command": "editor.emmet.action.incrementNumberByTen",
+              "context": "selection.text().match('^\\d+$')",
+            },
+            {
+              "command": "extension.changeCase.camel",
+              "context": "selection.text().match('^\\w+$')",
+            },
+          ],
+          "context": "!selection().isEmpty"
+        },
+      ],
+    },
+    "when": "textInputFocus"
+  },
+
+  {
+    "key": "ctrl+shift+-",
+    "command": "commands.run",
+    "args": {
+      "commands": [
+        {
+          "commands": [
+            {
+              "command": "editor.emmet.action.decrementNumberByTen",
+              "context": [
+                "selection.precedingText().match('(\\W|^)\\d+$') || (",
+                "  selection.precedingText().match('\\W*$') && ",
+                "  selection.followingText().match('^\\d+')",
+                ")",
+              ]
+            },
+            {
+              "command": "extension.changeCase.snake",
+              "context": [
+                "selection.precedingText().match('(\\W|^)\\w+$') || (",
+                "  selection.precedingText().match('\\W*$') && ",
+                "  selection.followingText().match('^\\w+')",
+                ")",
+              ]
+            },
+          ],
+          "context": "selection().isEmpty"
+        },
+        {
+          "commands": [
+            {
+              "command": "editor.emmet.action.incrementNumberByTen",
+              "context": "selection.text().match('^\\d+$')",
+            },
+            {
+              "command": "extension.changeCase.snake",
+              "context": "selection.text().match('^\\w+$')",
+            },
+          ],
+          "context": "!selection().isEmpty"
+        },
+      ],
+    },
+    "when": "textInputFocus"
+  },
+
+  // {
+  //   "key": "ctrl+=",
+  //   "command": "editor.emmet.action.incrementNumberByOne",
+  //   "when": "textInputFocus"
+  // },
+
+  // {
+  //   "key": "ctrl+-",
+  //   "command": "incrementor.decByOne",
+  //   "when": "textInputFocus"
+  // },
+
+
+  // {
+  //   "key": "ctrl+=",
+  //   "command": "extension.changeCase.upper"
+  // },
+
+  // splitting
+
+  {
+    "key": "enter",
+    "command": "commands.run",
+    "args": {
+      "commands": [
+        {
+          "command": "nesting.split",
+          "context": [
+            "selection().isEmpty &&",
+            "(selection.precedingText().match('[\\{\\(\\[\\<]$') &&",
+            "  selection.followingText().match('^\\s*\\S')) ||",
+            "(selection.followingText().match('^[\\}\\)\\]\\>]') &&",
+            "    selection.precedingText().match('\\S\\s*$')) &&",
+            "nesting.current() &&",
+            "(selection().active.isEqual(nesting.current().start) || ",
+            "selection().active.isEqual(nesting.current().end))"
+          ]
+        },
+        {
+          "command": "editor.action.insertSnippet",
+          "args": { "snippet": "\n  " },
+          "context": [
+            "selection.precedingText().match('[\\{\\(\\[\\<]') &&",
+            "selection.followingText().match('[\\}\\)\\]\\>]') &&",
+            "nesting.current() && (",
+            "  selection().active.line == nesting.current().start.line ||",
+            "  selection().active.line == nesting.current().end.line",
+            ")"
+          ]
+        },
+        {
+          "command": "editor.action.insertSnippet",
+          "args": { "snippet": "\n" }
+        }
+      ]
+    },
+    "when": "editorTextFocus"
+  },
+
+  // character editing
+
+  {
+    "key": "alt+/",
+    "command": "commands.run",
+    "args": {
+      "commands": [
+        {
+          "command": "nesting.join",
+          "context": [
+            "selection().isEmpty &&",
+            "selection.precedingText().match('[\\{\\(\\[\\<]$') &&",
+            "selection.followingText().match('^$') &&",
+            "nesting.current() &&",
+            "selection().active.isEqual(nesting.current().start)"
+          ]
+        },
+        { "command": "deleteRight" }
+      ]
+    },
+    "when": "textInputFocus && !editorReadonly"
+  },
+
+  // word editing
+
+  {
+    "key": "alt+backspace",
+    "command": "commands.run",
+    "args": {
+      "commands": [
+        {
+          "command": "nesting.deleteLeft",
+          "context": [
+            "selection().isEmpty &&",
+            "selection.precedingText().match('[\\)\\}\\]\\>\"\\'`]$') &&",
+            "nesting.outerLeft() &&",
+            "selection().active.isEqual(nesting.outerLeft().outerEnd)"
+          ]
+        },
+        { "command": "deleteWordLeft" }
+      ]
+    },
+    "when": "textInputFocus && !editorReadonly"
+  },
+
+  {
+    "key": "ctrl+alt+/",
+    "command": "commands.run",
+    "args": {
+      "commands": [
+        {
+          "command": "nesting.deleteRight",
+          "context": [
+            "selection.followingText().match('^[\\(\\{\\[\\<\"\\'`]') &&",
+            "selection().isEmpty &&",
+            "nesting.outerRight() &&",
+            "selection().active.isEqual(nesting.outerRight().outerStart)"
+          ]
+        },
+        { "command": "deleteWordRight" }
+      ]
+    },
+    "when": "textInputFocus && !editorReadonly"
+  },
+
+  // word part editing
+
+  {
+    "key": "ctrl+backspace",
+    "command": "commands.run",
+    "args": {
+      "commands": [
+        {
+          "command": "nesting.unwrapLeft",
+          "context": [
+            "selection().isEmpty &&",
+            "selection.precedingText().match('[\\)\\}\\]\\>\"\\'`]$') &&",
+            "nesting.outerLeft() &&",
+            "selection().active.isEqual(nesting.outerLeft().outerEnd)"
+          ]
+        },
+        { "command": "deleteWordPartLeft" }
+      ]
+    },
+    "when": "textInputFocus && !editorReadonly"
+  },
+
+  {
+    "key": "ctrl+/",
+    "command": "commands.run",
+    "args": {
+      "commands": [
+        {
+          "command": "nesting.unwrapSelection",
+          "context": [
+            "!selection().isEmpty &&",
+            "selection.text().match('^[\\(\\{\\[\\<\"\\'`].*[\\)\\}\\]\\>\"\\'`]$') &&",
+            "nesting.outerRight(selection().start) &&",
+            "selection().start.isEqual(",
+            "  nesting.outerRight(selection().start).outerStart",
+            ") && ",
+            "nesting.outerLeft(selection().end) &&",
+            "selection().end.isEqual(",
+            "  nesting.outerLeft(selection().end).outerEnd",
+            ")"
+          ]
+        },
+        {
+          "command": "nesting.unwrapRight",
+          "context": [
+            "selection().isEmpty &&",
+            "selection.followingText().match('^[\\(\\{\\[\\<\"\\'`]') &&",
+            "nesting.outerRight() &&",
+            "selection().active.isEqual(nesting.outerRight().outerStart)"
+          ]
+        },
+        { "command": "deleteWordPartRight" }
+      ]
+    },
+    "when": "textInputFocus && !editorReadonly"
+  },
+
+  // TMP
+
+  // word editing
+
+  // {
+  //   "key": "alt+backspace",
+  //   "command": "deleteWordLeft",
+  //   "when": "textInputFocus && !editorReadonly"
+  // },
+  // {
+  //   "key": "ctrl+alt+/",
+  //   "command": "deleteWordRight",
+  //   "when": "textInputFocus && !editorReadonly"
+  // },
+
+  // word part editing
+
+  // {
+  //   "key": "ctrl+backspace",
+  //   "command": "deleteWordPartLeft",
+  //   "when": "textInputFocus && !editorReadonly"
+  // },
+  // {
+  //   "key": "ctrl+/",
+  //   "command": "deleteWordPartRight",
+  //   "when": "textInputFocus && !editorReadonly"
+  // },
+
+  // nesting change: (
+
+  {
+    "key": "shift+9",
+    "command": "commands.run",
+    "args": {
+      "forEachSelection": true,
+      "commands": [
+        {
+          "commands": [
+            {
+              "command": "nesting.swapSelection",
+              "args": {
+                "into": ["(", ")"]
+              },
+              "context": [
+                "selection.text().match('^[\\{\\[\\<](.|\n)*[\\}\\]\\>]$') &&",
+                "nesting.outerRight(selection().start) &&",
+                "selection().start.isEqual(",
+                "  nesting.outerRight(selection().start).outerStart",
+                ") && ",
+                "nesting.outerLeft(selection().end) &&",
+                "selection().end.isEqual(",
+                "  nesting.outerLeft(selection().end).outerEnd",
+                ")"
+              ]
+            },
+            {
+              "command": "editor.action.insertSnippet",
+              "args": {
+                "snippet": "(${0:$TM_SELECTED_TEXT})"
+              }
+            }
+          ],
+          "context": "!selection().isEmpty"
+        },
+        {
+          "command": "nesting.wrapRight",
+          "args": { "into": ["(", ")"] },
+          "context": [
+            "!selection.scope().match('(comment\\.|string.*(?<!\\spunctuation\\S*(start|begin)\\S*)$)') && ",
+            "selection.followingText().match(",
+            "  '^(\\w|[\\(\\{\\[\\<\"\\'`])'",
+            ")"
+          ]
+        },
+        {
+          "command": "editor.action.insertSnippet",
+          "args": { "snippet": "($0)" },
+          "context": [
+            "!selection.scope().match('(comment\\.|string)') && ",
+            "selection.followingText().match('^(\\W|$)') &&",
+            "!selection.scope().match('(comment\\.|string.*(?<!\\spunctuation\\S*)$)')"
+          ]
+        },
+        {
+          "command": "editor.action.insertSnippet",
+          "args": { "snippet": "(" }
+        }
+      ]
+    },
+    "when": "editorTextFocus"
+  },
+
+  {
+    "key": "shift+0",
+    "command": "commands.run",
+    "args": {
+      "forEachSelection": true,
+      "commands": [
+        {
+          "command": "editor.action.insertSnippet",
+          "args": {
+            "snippet": "(${0:$TM_SELECTED_TEXT})"
+          },
+          "context": [
+            "selection.text().match('^[\\(\\{\\[\\<](.|\n)*[\\)\\}\\]\\>]$') &&",
+            "nesting.outerRight(selection().start) &&",
+            "selection().start.isEqual(",
+            "  nesting.outerRight(selection().start).outerStart",
+            ") && ",
+            "nesting.outerLeft() &&",
+            "selection().end.isEqual(",
+            "  nesting.outerLeft(selection().end).outerEnd",
+            ")"
+          ]
+        },
+        {
+          "command": "cursorRight",
+          "context": [
+            "selection.precedingText().match('\\(\\w*$') &&",
+            "selection.followingText().match('^\\)') &&",
+            "!selection.scope().match('(comment\\.|string)')"
+          ]
+        },
+        {
+          "command": "nesting.stealRight",
+          "args": {
+            "from": ["(", ")"]
+          },
+          "context": [
+            "selection.followingText().match('^[\\w\\.\\-\\/\\?!&\\(\\{\\[\\<\"\\'`]') &&",
+            "!selection.scope().match('(comment\\.|string.*(?<!\\spunctuation\\S*(start|begin)\\S*)$)') && ",
+            "nesting.current().kind == '()' &&",
+            "nesting.current().end.isEqual(nesting.continuationAt(selection().active))"
+          ]
+        },
+        {
+          "command": "editor.action.insertSnippet",
+          "args": { "snippet": ")" }
+        }
+      ]
+    },
+    "when": "editorTextFocus"
+  },
+
+  // nesting change: {
+
+  {
+    "key": "shift+[",
+    "command": "commands.run",
+    "args": {
+      "forEachSelection": true,
+      "commands": [
+        {
+          "commands": [
+            {
+              "command": "nesting.swapSelection",
+              "args": {
+                "into": ["{", "}"]
+              },
+              "context": [
+                "selection.text().match('^[\\(\\[\\<](.|\n)*[\\)\\]\\>]$') &&",
+                "nesting.outerRight(selection().start) &&",
+                "selection().start.isEqual(",
+                "  nesting.outerRight(selection().start).outerStart",
+                ") && ",
+                "nesting.outerLeft(selection().end) &&",
+                "selection().end.isEqual(",
+                "  nesting.outerLeft(selection().end).outerEnd",
+                ")"
+              ]
+            },
+            {
+              "command": "editor.action.insertSnippet",
+              "args": {
+                "snippet": "{${0:$TM_SELECTED_TEXT}}"
+              }
+            }
+          ],
+          "context": "!selection().isEmpty"
+        },
+        {
+          "command": "nesting.wrapRight",
+          "args": { "into": ["{", "}"] },
+          "context": [
+            "!selection.scope().match('(comment\\.|string.*(?<!\\spunctuation\\S*(start|begin)\\S*)$)') && ",
+            "selection.followingText().match(",
+            "  '^(\\w|[\\(\\{\\[\\<\"\\'`])'",
+            ")"
+          ]
+        },
+        {
+          "command": "editor.action.insertSnippet",
+          "args": { "snippet": "{$0}" },
+          "context": [
+            "!selection.scope().match('(comment\\.|string)') && ",
+            "selection.followingText().match('^(\\W|$)') &&",
+            "!selection.scope().match('(comment\\.|string.*(?<!\\spunctuation\\S*)$)')"
+          ]
+        },
+        {
+          "command": "editor.action.insertSnippet",
+          "args": { "snippet": "{" }
+        }
+      ]
+    },
+    "when": "editorTextFocus"
+  },
+
+  {
+    "key": "shift+]",
+    "command": "commands.run",
+    "args": {
+      "forEachSelection": true,
+      "commands": [
+        {
+          "command": "editor.action.insertSnippet",
+          "args": {
+            "snippet": "{${0:$TM_SELECTED_TEXT}}"
+          },
+          "context": [
+            "selection.text().match('^[\\(\\{\\[\\<](.|\n)*[\\)\\}\\]\\>]$') &&",
+            "nesting.outerRight(selection().start) &&",
+            "selection().start.isEqual(",
+            "  nesting.outerRight(selection().start).outerStart",
+            ") && ",
+            "nesting.outerLeft() &&",
+            "selection().end.isEqual(",
+            "  nesting.outerLeft(selection().end).outerEnd",
+            ")"
+          ]
+        },
+        {
+          "command": "cursorRight",
+          "context": [
+            "selection.precedingText().match('\\{\\w*$') &&",
+            "selection.followingText().match('^\\}') &&",
+            "!selection.scope().match('(comment\\.|string)')"
+          ]
+        },
+        {
+          "command": "nesting.stealRight",
+          "args": {
+            "from": ["{", "}"]
+          },
+          "context": [
+            "selection.followingText().match('^[\\w\\.\\-\\/\\?!&\\(\\{\\[\\<\"\\'`]') &&",
+            "!selection.scope().match('(comment\\.|string.*(?<!\\spunctuation\\S*(start|begin)\\S*)$)') && ",
+            "nesting.current().kind == '{}' &&",
+            "nesting.current().end.isEqual(nesting.continuationAt(selection().active))"
+          ]
+        },
+        {
+          "command": "editor.action.insertSnippet",
+          "args": { "snippet": "}" }
+        }
+      ]
+    },
+    "when": "editorTextFocus"
+  },
+
+  // nesting change: [
+
+  {
+    "key": "[",
+    "command": "commands.run",
+    "args": {
+      "forEachSelection": true,
+      "commands": [
+        {
+          "commands": [
+            {
+              "command": "nesting.swapSelection",
+              "args": {
+                "into": ["[", "]"]
+              },
+              "context": [
+                "selection.text().match('^[\\(\\{\\<](.|\n)*[\\)\\}\\>]$') &&",
+                "nesting.outerRight(selection().start) &&",
+                "selection().start.isEqual(",
+                "  nesting.outerRight(selection().start).outerStart",
+                ") && ",
+                "nesting.outerLeft(selection().end) &&",
+                "selection().end.isEqual(",
+                "  nesting.outerLeft(selection().end).outerEnd",
+                ")"
+              ]
+            },
+            {
+              "command": "editor.action.insertSnippet",
+              "args": {
+                "snippet": "[${0:$TM_SELECTED_TEXT}]"
+              }
+            }
+          ],
+          "context": "!selection().isEmpty"
+        },
+        {
+          "command": "nesting.wrapRight",
+          "args": { "into": ["[", "]"] },
+          "context": [
+            "!selection.scope().match('(comment\\.|string.*(?<!\\spunctuation\\S*(start|begin)\\S*)$)') && ",
+            "selection.followingText().match(",
+            "  '^(\\w|[\\(\\{\\[\\<\"\\'`])'",
+            ")"
+          ]
+        },
+        {
+          "command": "editor.action.insertSnippet",
+          "args": { "snippet": "[$0]" },
+          "context": [
+            "!selection.scope().match('(comment\\.|string)') && ",
+            "selection.followingText().match('^(\\W|$)') &&",
+            "!selection.scope().match('(comment\\.|string.*(?<!\\spunctuation\\S*)$)')"
+          ]
+        },
+        {
+          "command": "editor.action.insertSnippet",
+          "args": { "snippet": "[" }
+        }
+      ]
+    },
+    "when": "editorTextFocus"
+  },
+
+  {
+    "key": "]",
+    "command": "commands.run",
+    "args": {
+      "forEachSelection": true,
+      "commands": [
+        {
+          "command": "editor.action.insertSnippet",
+          "args": {
+            "snippet": "[${0:$TM_SELECTED_TEXT}]"
+          },
+          "context": [
+            "selection.text().match('^[\\(\\{\\[\\<](.|\n)*[\\)\\}\\]\\>]$') &&",
+            "nesting.outerRight(selection().start) &&",
+            "selection().start.isEqual(",
+            "  nesting.outerRight(selection().start).outerStart",
+            ") && ",
+            "nesting.outerLeft() &&",
+            "selection().end.isEqual(",
+            "  nesting.outerLeft(selection().end).outerEnd",
+            ")"
+          ]
+        },
+        {
+          "command": "cursorRight",
+          "context": [
+            "selection.precedingText().match('\\[\\w*$') &&",
+            "selection.followingText().match('^\\]') &&",
+            "!selection.scope().match('(comment\\.|string)')"
+          ]
+        },
+        {
+          "command": "nesting.stealRight",
+          "args": {
+            "from": ["[", "]"]
+          },
+          "context": [
+            "selection.followingText().match('^[\\w\\.\\-\\/\\?!&\\(\\{\\[\\<\"\\'`]') &&",
+            "!selection.scope().match('(comment\\.|string.*(?<!\\spunctuation\\S*(start|begin)\\S*)$)') && ",
+            "nesting.current().kind == '[]' &&",
+            "nesting.current().end.isEqual(nesting.continuationAt(selection().active))"
+          ]
+        },
+        {
+          "command": "editor.action.insertSnippet",
+          "args": { "snippet": "]" }
+        }
+      ]
+    },
+    "when": "editorTextFocus"
+  },
+
+  // nesting change: <
+
+  {
+    "key": "shift+,",
+    "command": "commands.run",
+    "args": {
+      "forEachSelection": true,
+      "commands": [
+        {
+          "commands": [
+            {
+              "command": "nesting.swapSelection",
+              "args": {
+                "into": ["<", ">"]
+              },
+              "context": [
+                "selection.text().match('^[\\(\\{\\[](.|\n)*[\\)\\}\\]]$') &&",
+                "nesting.outerRight(selection().start) &&",
+                "selection().start.isEqual(",
+                "  nesting.outerRight(selection().start).outerStart",
+                ") && ",
+                "nesting.outerLeft(selection().end) &&",
+                "selection().end.isEqual(",
+                "  nesting.outerLeft(selection().end).outerEnd",
+                ")"
+              ]
+            },
+            {
+              "command": "editor.action.insertSnippet",
+              "args": {
+                "snippet": "<${0:$TM_SELECTED_TEXT}>"
+              }
+            }
+          ],
+          "context": "!selection().isEmpty"
+        },
+        {
+          "command": "nesting.wrapRight",
+          "args": { "into": ["<", ">"] },
+          "context": [
+            "!selection.scope().endsWith('punctuation.definition.tag.begin.tsx)') && ",
+            "!selection.scope().match('(comment\\.|string.*(?<!\\spunctuation\\S*(start|begin)\\S*)$)') && ",
+            "selection.followingText().match(",
+            "  '^(\\w|[\\(\\{\\[\\<\"\\'`])'",
+            ")"
+          ]
+        },
+        // {
+        //   "command": "editor.action.insertSnippet",
+        //   "args": { "snippet": "<$0>", },
+        //   "context": [
+        //     "!selection.scope().match('(comment\\.|string)') && ",
+        //     "selection.followingText().match('^(\\W|$)') &&",
+        //     "!selection.scope().match('(comment\\.|string.*(?<!\\spunctuation\\S*)$)')",
+        //   ],
+        // },
+        {
+          "command": "editor.action.insertSnippet",
+          "args": { "snippet": "<" }
+        }
+      ]
+    },
+    "when": "editorTextFocus"
+  },
+
+  {
+    "key": "shift+.",
+    "command": "commands.run",
+    "args": {
+      "forEachSelection": true,
+      "commands": [
+        {
+          "command": "editor.action.insertSnippet",
+          "args": {
+            "snippet": "<${0:$TM_SELECTED_TEXT}>"
+          },
+          "context": [
+            "selection.text().match('^[\\(\\{\\[\\<](.|\n)*[\\)\\}\\]\\>]$') &&",
+            "nesting.outerRight(selection().start) &&",
+            "selection().start.isEqual(",
+            "  nesting.outerRight(selection().start).outerStart",
+            ") && ",
+            "nesting.outerLeft() &&",
+            "selection().end.isEqual(",
+            "  nesting.outerLeft(selection().end).outerEnd",
+            ")"
+          ]
+        },
+        // {
+        //   "command": "cursorRight",
+        //   "context": [
+        //     "selection.precedingText().match('\\<\\w*$') &&",
+        //     "selection.followingText().match('^\\>') &&",
+        //     "!selection.scope().match('(comment\\.|string)')",
+        //   ]
+        // },
+        {
+          "command": "nesting.stealRight",
+          "args": {
+            "from": ["<", ">"]
+          },
+          "context": [
+            "selection.followingText().match('^[\\w\\.\\-\\/\\?!&\\(\\{\\[\\<\"\\'`]') &&",
+            "!selection.scope().match('(comment\\.|string.*(?<!\\spunctuation\\S*(start|begin)\\S*)$)') && ",
+            "nesting.current() &&",
+            "nesting.current().kind == '<>' &&",
+            "nesting.current().end.isEqual(nesting.continuationAt(selection().active))"
+          ]
+        },
+        {
+          "command": "editor.action.insertSnippet",
+          "args": { "snippet": ">" }
+        }
+      ]
+    },
+    "when": "editorTextFocus"
+  },
+
+  // nesting change: "
+
+  {
+    "key": "shift+'",
+    "command": "commands.run",
+    "args": {
+      "forEachSelection": true,
+      "commands": [
+        {
+          "commands": [
+            {
+              "command": "nesting.swapSelection",
+              "args": {
+                "into": ["\"", "\""]
+              },
+              "context": [
+                "selection.text().match('^[\\'`](.|\n)*[\\'`]$') &&",
+                "nesting.outerRight(selection().start) &&",
+                "selection().start.isEqual(",
+                "  nesting.outerRight(selection().start).outerStart",
+                ") &&",
+                "nesting.outerLeft(selection().end) &&",
+                "selection().end.isEqual(",
+                "  nesting.outerLeft(selection().end).outerEnd",
+                ")"
+              ]
+            },
+            {
+              "command": "editor.action.insertSnippet",
+              "args": {
+                "snippet": "\"${0:$TM_SELECTED_TEXT}\""
+              }
+            }
+          ],
+          "context": "!selection().isEmpty"
+        },
+        {
+          "command": "editor.action.insertSnippet",
+          "args": { "snippet": "\"$0\"" },
+          "context": ["selection.followingText().match('^(\\W|$)')"]
+        },
+        {
+          "command": "editor.action.insertSnippet",
+          "args": { "snippet": "\"" }
+        }
+      ]
+    },
+    "when": "editorTextFocus"
+  },
+
+  // nesting change: '
+
+  {
+    "key": "'",
+    "command": "commands.run",
+    "args": {
+      "forEachSelection": true,
+      "commands": [
+        {
+          "commands": [
+            {
+              "command": "nesting.swapSelection",
+              "args": {
+                "into": ["'", "'"]
+              },
+              "context": [
+                "selection.text().match('^[\"`](.|\n)*[\"`]$') &&",
+                "nesting.outerRight(selection().start) &&",
+                "selection().start.isEqual(",
+                "  nesting.outerRight(selection().start).outerStart",
+                ") && ",
+                "nesting.outerLeft(selection().end) &&",
+                "selection().end.isEqual(",
+                "  nesting.outerLeft(selection().end).outerEnd",
+                ")"
+              ]
+            },
+            {
+              "command": "editor.action.insertSnippet",
+              "args": {
+                "snippet": "'${0:$TM_SELECTED_TEXT}'"
+              }
+            }
+          ],
+          "context": "!selection().isEmpty"
+        },
+        {
+          "command": "editor.action.insertSnippet",
+          "args": { "snippet": "'$0'" },
+          "context": ["selection.followingText().match('^(\\W|$)')"]
+        },
+        {
+          "command": "editor.action.insertSnippet",
+          "args": { "snippet": "'" }
+        }
+      ]
+    },
+    "when": "editorTextFocus"
+  },
+
+  // nesting change: `
+
+  {
+    "key": "`",
+    "command": "commands.run",
+    "args": {
+      "forEachSelection": true,
+      "commands": [
+        {
+          "commands": [
+            {
+              "command": "nesting.swapSelection",
+              "args": {
+                "into": ["`", "`"]
+              },
+              "context": [
+                "selection.text().match('^[\"\\'](.|\n)*[\"\\']$') &&",
+                "nesting.outerRight(selection().start) &&",
+                "selection().start.isEqual(",
+                "  nesting.outerRight(selection().start).outerStart",
+                ") && ",
+                "nesting.outerLeft(selection().end) &&",
+                "selection().end.isEqual(",
+                "  nesting.outerLeft(selection().end).outerEnd",
+                ")"
+              ]
+            },
+            {
+              "command": "editor.action.insertSnippet",
+              "args": {
+                "snippet": "`${0:$TM_SELECTED_TEXT}`"
+              }
+            }
+          ],
+          "context": "!selection().isEmpty"
+        },
+        {
+          "command": "editor.action.insertSnippet",
+          "args": { "snippet": "`$0`" },
+          "context": ["selection.followingText().match('^(\\W|$)')"]
+        },
+        {
+          "command": "editor.action.insertSnippet",
+          "args": { "snippet": "`" }
+        }
+      ]
+    },
+    "when": "editorTextFocus"
+  },
+
+  // goto into nesting backward
+
+  {
+    "key": "ctrl+'",
+    "command": "locations.go",
+    "args": {
+      "direction": "backward",
+      "to": {
+        "location": {
+          "location": "nestingEnd",
+          "level": 0,
+          "string": false
+        }
+      }
+    },
+    "when": "editorTextFocus"
+  },
+
+  // goto out nesting backward
+
+  {
+    "key": "ctrl+shift+'",
+    "command": "locations.go",
+    "args": {
+      "direction": "backward",
+      "to": {
+        "location": "nestingStart",
+        "level": -1,
+        "string": false
+      }
+    },
+    "when": "editorTextFocus"
+  },
+
+  // goto over nesting backward
+
+  {
+    "key": "ctrl+shift+;",
+    "command": "locations.go",
+    "args": {
+      "direction": "backward",
+      "to": {
+        "location": "nestingStart",
+        "level": 0
+      }
+    },
+    "when": "editorTextFocus"
+  },
+
+  // goto into nesting forward
+
+  {
+    "key": "alt+enter",
+    "command": "locations.go",
+    "args": {
+      "direction": "forward",
+      "to": {
+        "location": "nesting",
+        "kind": "start",
+        "levels": [1],
+        "after": true,
+        "ignore": ["strings", "outer-nesting"]
+      }
+    },
+    "when": "editorTextFocus"
+  },
+
+  // goto over or out nesting forward
+
+  {
+    "key": "alt+shift+enter",
+    "command": "locations.go",
+    "args": {
+      "direction": "forward",
+      "to": {
+        "location": "nesting",
+        "kind": "end",
+        "levels": [0],
+        "after": true,
+        "ignore": ["strings"]
+      }
+    },
+    "when": "editorTextFocus"
+  },
+
+  // goto over nesting forward
+
+  {
+    "key": "ctrl+shift+enter",
+    "command": "locations.go",
+    "args": {
+      "direction": "forward",
+      "to": {
+        "location": "nesting",
+        "kind": "end",
+        "levels": [1],
+        "after": true,
+        "ignore": ["strings", "outer-nesting"]
+      }
+    },
+    "when": "editorTextFocus"
+  },
+
+  // nesting selection
+
+  {
+    "key": "ctrl+alt+shift+enter",
+    "command": "commands.run",
+    "args": {
+      "forEachSelection": true,
+      "commands": [
+        {
+          "command": "locations.expand",
+          "args": {
+            "backward": {
+              "location": "nesting",
+              "kind": "start",
+              "levels": [-2],
+              "after": true
+            },
+            "forward": {
+              "location": "nesting",
+              "kind": "end",
+              "levels": [-2],
+              "after": false
+            }
+          },
+          "context": [
+            "selection().start.isEqual(nesting.current().start) &&",
+            "selection().end.isEqual(nesting.current().end)"
+          ]
+        },
+        {
+          "command": "locations.expand",
+          "args": {
+            "backward": {
+              "location": "nesting",
+              "kind": "start",
+              "levels": [0],
+              "after": true
+            },
+            "forward": {
+              "location": "nesting",
+              "kind": "end",
+              "levels": [0],
+              "after": false
+            }
+          }
+        }
+      ]
+    },
+    "when": "editorTextFocus"
+  },
+
+  // word navigation
+
+  {
+    "key": "ctrl+alt+j",
+    "command": "commands.run",
+    "args": {
+      "forEachSelection": true,
+      "commands": [
+        {
+          "command": "locations.go",
+          "args": {
+            "direction": "backward",
+            "to": {
+              "location": "nesting",
+              "kind": "start",
+              "levels": [1]
+            }
+          },
+          "context": [
+            "selection.precedingText().match('[\\)\\}\\]\\>\"\\'`]$') &&",
+            "nesting.outerLeft(selection().active) &&",
+            "selection().active.isEqual(",
+            "  nesting.outerLeft(selection().active).outerEnd",
+            ")"
+          ]
+        },
+        {
+          "command": "locations.go",
+          "args": {
+            "direction": "backward",
+            "to": {
+              "location": "regexp",
+              "range": 64,
+              "regexp": [
+                "(\\w+)[^\\w\\s\\(\\)\\{\\}\\[\\]\\<\\>\"\\'`]*\\s*|",
+                "(?<=[\\(\\)\\{\\}\\[\\]\\<\\>\"\\'`])|",
+                "[^\\w\\(\\)\\{\\}\\[\\]\\<\\>\"\\'`]+"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "when": "textInputFocus"
+  },
+
+  {
+    "key": "ctrl+alt+shift+j",
+    "command": "commands.run",
+    "args": {
+      "forEachSelection": true,
+      "commands": [
+        {
+          "command": "locations.select",
+          "args": {
+            "direction": "backward",
+            "expand": {
+              "location": "nesting",
+              "kind": "start",
+              "levels": [1]
+            }
+          },
+          "context": [
+            "selection.precedingText().match('[\\)\\}\\]\\>\"\\'`]$') &&",
+            "nesting.outerLeft(selection().active) &&",
+            "selection().active.isEqual(",
+            "  nesting.outerLeft(selection().active).outerEnd",
+            ")"
+          ]
+        },
+        {
+          "command": "locations.select",
+          "args": {
+            "direction": "backward",
+            "expand": {
+              "location": "regexp",
+              "range": 64,
+              "regexp": [
+                "(\\w+)[^\\w\\s\\(\\)\\{\\}\\[\\]\\<\\>\"\\'`]*\\s*|",
+                "(?<=[\\(\\)\\{\\}\\[\\]\\<\\>\"\\'`])|",
+                "[^\\w\\(\\)\\{\\}\\[\\]\\<\\>\"\\'`]+"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "when": "textInputFocus"
+  },
+
+  {
+    "key": "ctrl+alt+l",
+    "command": "commands.run",
+    "args": {
+      "forEachSelection": true,
+      "commands": [
+        {
+          "command": "locations.go",
+          "args": {
+            "direction": "forward",
+            "to": {
+              "location": "nesting",
+              "kind": "end",
+              "after": true,
+              "levels": [1]
+            }
+          },
+          "context": [
+            "selection.followingText().match('^[\\(\\{\\[\\<\"\\'`]') &&",
+            "nesting.outerRight(selection().active) &&",
+            "selection().active.isEqual(",
+            "  nesting.outerRight(selection().active).outerStart",
+            ")"
+          ]
+        },
+        {
+          "command": "locations.go",
+          "args": {
+            "direction": "forward",
+            "to": {
+              "location": "regexp",
+              "range": 64,
+              "regexp": [
+                "\\s*[^\\w\\s\\(\\)\\{\\}\\[\\]\\<\\>\"\\'`]*(\\w+)|",
+                "(?=[\\(\\)\\{\\}\\[\\]\\<\\>\"\\'`])|",
+                "[^\\w\\(\\)\\{\\}\\[\\]\\<\\>\"\\'`]+(?<!\\s)"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "when": "textInputFocus"
+  },
+
+  {
+    "key": "ctrl+alt+shift+l",
+    "command": "commands.run",
+    "args": {
+      "forEachSelection": true,
+      "commands": [
+        {
+          "command": "locations.select",
+          "args": {
+            "direction": "forward",
+            "expand": {
+              "location": "nesting",
+              "kind": "end",
+              "after": true,
+              "levels": [1]
+            }
+          },
+          "context": [
+            "selection.followingText().match('^[\\(\\{\\[\\<\"\\'`]') &&",
+            "nesting.outerRight(selection().active) &&",
+            "selection().active.isEqual(",
+            "  nesting.outerRight(selection().active).outerStart",
+            ")"
+          ]
+        },
+        {
+          "command": "locations.select",
+          "args": {
+            "direction": "forward",
+            "expand": {
+              "location": "regexp",
+              "range": 64,
+              "regexp": [
+                "\\s*[^\\w\\s\\(\\)\\{\\}\\[\\]\\<\\>\"\\'`]*(\\w+)|",
+                "(?=[\\(\\)\\{\\}\\[\\]\\<\\>\"\\'`])|",
+                "[^\\w\\(\\)\\{\\}\\[\\]\\<\\>\"\\'`]+(?<!\\s)"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "when": "textInputFocus"
+  },
+
+  // {
+  //   "key": "ctrl+alt+j",
+  //   "command": "commands.run",
+  //   "args": {
+  //     "forEachSelection": true,
+  //     "commands": [
+  //       { "command": "cursorWordStartLeft" },
+  //     ],
+  //   },
+  //   "when": "textInputFocus"
+  // },
+
+  // {
+  //   "key": "ctrl+alt+shift+j",
+  //   "command": "commands.run",
+  //   "args": {
+  //     "forEachSelection": true,
+  //     "commands": [
+  //       { "command": "cursorWordStartLeftSelect" },
+  //     ],
+  //   },
+  //   "when": "textInputFocus"
+  // },
+
+  // {
+  //   "key": "ctrl+alt+l",
+  //   "command": "commands.run",
+  //   "args": {
+  //     "forEachSelection": true,
+  //     "commands": [
+  //       { "command": "cursorWordEndRight" },
+  //     ],
+  //   },
+  //   "when": "textInputFocus"
+  // },
+
+  // {
+  //   "key": "ctrl+alt+shift+l",
+  //   "command": "commands.run",
+  //   "args": {
+  //     "forEachSelection": true,
+  //     "commands": [
+  //       { "command": "cursorWordEndRightSelect" },
+  //     ],
+  //   },
+  //   "when": "textInputFocus"
+  // },
+
+  // line navigation
+
+  {
+    "key": "alt+;",
+    "command": "commands.run",
+    "args": {
+      "forEachSelection": true,
+      "commands": [
+        {
+          "command": "cursorHome",
+          "context": [
+            "selection.precedingText().match('^[\\(\\{\\[\\<\"\\'`\\s]+(?<=\\S.*)$')"
+          ]
+        },
+        {
+          "command": "locations.go",
+          "args": {
+            "direction": "backward",
+            "to": {
+              "location": "nesting",
+              "kind": "start",
+              "after": true,
+              "levels": [-2]
+            }
+          },
+          "context": [
+            "selection.precedingText().match('[\\(\\{\\[\\<\"\\'`].*[\\(\\{\\[\\<\"\\'`]$') &&",
+            "nesting.current() &&",
+            "nesting.current().start.isEqual(selection().active) &&",
+            "nesting.at(nesting.current().outerStart) &&",
+            "range(selection.bol(), nesting.current().outerStart).contains(",
+            "  nesting.at(nesting.current().outerStart).start",
+            ")"
+          ]
+        },
+        {
+          "command": "locations.go",
+          "args": {
+            "direction": "backward",
+            "to": {
+              "location": "nesting",
+              "kind": "start",
+              "after": true,
+              "levels": [0]
+            }
+          },
+          "context": [
+            "selection().active.isEqual(selection.bolNonEmpty()) || (",
+            "  selection.precedingText().match('[\\(\\{\\[\\<\"\\'`]') &&",
+            "  nesting.current() &&",
+            "  !selection().active.isEqual(nesting.current().start) &&",
+            "  range(selection.bol(), selection().active).contains(",
+            "    nesting.current().outerStart",
+            "  )",
+            ")"
+          ]
+        },
+        { "command": "cursorHome" }
+      ]
+    },
+    "when": "textInputFocus"
+  },
+
+  {
+    "key": "alt+shift+;",
+    "command": "commands.run",
+    "args": {
+      "forEachSelection": true,
+      "commands": [
+        {
+          "command": "cursorHomeSelect",
+          "context": [
+            "selection.precedingText().match('^[\\(\\{\\[\\<\"\\'`\\s]+(?<=\\S.*)$')"
+          ]
+        },
+        {
+          "command": "locations.select",
+          "args": {
+            "direction": "backward",
+            "expand": {
+              "location": "nesting",
+              "kind": "start",
+              "after": true,
+              "levels": [-2]
+            }
+          },
+          "context": [
+            "selection.precedingText().match('[\\(\\{\\[\\<\"\\'`].*[\\(\\{\\[\\<\"\\'`]$') &&",
+            "nesting.current() &&",
+            "nesting.current().start.isEqual(selection().active) &&",
+            "nesting.at(nesting.current().outerStart) &&",
+            "range(selection.bol(), nesting.current().outerStart).contains(",
+            "  nesting.at(nesting.current().outerStart).start",
+            ")"
+          ]
+        },
+        {
+          "command": "locations.select",
+          "args": {
+            "direction": "backward",
+            "expand": {
+              "location": "nesting",
+              "kind": "start",
+              "after": true,
+              "levels": [0]
+            }
+          },
+          "context": [
+            "selection().active.isEqual(selection.bolNonEmpty()) || (",
+            "  selection.precedingText().match('[\\(\\{\\[\\<\"\\'`]') &&",
+            "  nesting.current() &&",
+            "  !selection().active.isEqual(nesting.current().start) &&",
+            "  range(selection.bol(), selection().active).contains(",
+            "    nesting.current().outerStart",
+            "  )",
+            ")"
+          ]
+        },
+        { "command": "cursorHomeSelect" }
+      ]
+    },
+    "when": "textInputFocus"
+  },
+
+  {
+    "key": "alt+'",
+    "command": "commands.run",
+    "args": {
+      "forEachSelection": true,
+      "commands": [
+        {
+          "command": "cursorEnd",
+          "context": [
+            "selection.followingText().match('^[\\)\\}\\]\\>\"\\'`,;\\s]+(?<=\\S.*)$')"
+          ]
+        }
+        {
+          "command": "locations.go",
+          "args": {
+            "direction": "forward",
+            "to": {
+              "location": "nesting",
+              "kind": "end",
+              "after": false,
+              "levels": [-2]
+            }
+          },
+          "context": [
+            "selection.followingText().match('^[\\)\\}\\]\\>\"\\'`].*[\\)\\}\\]\\>\"\\'`]') &&",
+            "nesting.current() &&",
+            "nesting.current().end.isEqual(selection().active) &&",
+            "nesting.at(nesting.current().outerEnd) && ",
+            "range(nesting.current().outerEnd, selection.eol()).contains(",
+            "  nesting.at(nesting.current().outerEnd).end",
+            ")"
+          ]
+        }
+        {
+          "command": "locations.go",
+          "args": {
+            "direction": "forward",
+            "to": {
+              "location": "nesting",
+              "kind": "end",
+              "after": false,
+              "levels": [0]
+            }
+          },
+          "context": [
+            "selection().active.isEqual(selection.eol()) || (",
+            "  selection.followingText().match('[\\)\\}\\]\\>\"\\'`]') &&",
+            "  nesting.current() &&",
+            "  !selection().active.isEqual(nesting.current().end) &&",
+            "  range(selection().active, selection.eol()).contains(",
+            "    nesting.current().outerEnd",
+            "  )",
+            ")"
+          ]
+        },
+        { "command": "cursorEnd" }
+      ]
+    },
+    "when": "textInputFocus"
+  },
+
+  {
+    "key": "alt+shift+'",
+    "command": "commands.run",
+    "args": {
+      "forEachSelection": true,
+      "commands": [
+        {
+          "command": "cursorEndSelect",
+          "context": [
+            "selection.followingText().match('^[\\)\\}\\]\\>\"\\'`,;\\s]+(?<=\\S.*)$')"
+          ]
+        },
+        {
+          "command": "locations.select",
+          "args": {
+            "direction": "forward",
+            "expand": {
+              "location": "nesting",
+              "kind": "end",
+              "after": false,
+              "levels": [-2]
+            }
+          },
+          "context": [
+            "selection.followingText().match('^[\\)\\}\\]\\>\"\\'`].*[\\)\\}\\]\\>\"\\'`]') &&",
+            "nesting.current() &&",
+            "nesting.current().end.isEqual(selection().active) &&",
+            "nesting.at(nesting.current().outerEnd) && ",
+            "range(nesting.current().outerEnd, selection.eol()).contains(",
+            "  nesting.at(nesting.current().outerEnd).end",
+            ")"
+          ]
+        },
+        {
+          "command": "locations.select",
+          "args": {
+            "direction": "forward",
+            "expand": {
+              "location": "nesting",
+              "kind": "end",
+              "after": false,
+              "levels": [0]
+            }
+          },
+          "context": [
+            "selection().active.isEqual(selection.eol()) || (",
+            "  selection.followingText().match('[\\)\\}\\]\\>\"\\'`]') &&",
+            "  nesting.current() &&",
+            "  !selection().active.isEqual(nesting.current().end) &&",
+            "  range(selection().active, selection.eol()).contains(",
+            "    nesting.current().outerEnd",
+            "  )",
+            ")"
+          ]
+        },
+        { "command": "cursorEndSelect" }
+      ]
+    },
+    "when": "textInputFocus"
+  },
+
+  // {
+  //   "key": "alt+'",
+  //   "command": "commands.run",
+  //   "args": {
+  //     "forEachSelection": true,
+  //     "commands": [
+  //       {
+  //         "commands": [
+  //           {
+  //             "command": "locations.go",
+  //             "args": {
+  //               "direction": "forward",
+  //               "to": {
+  //                 "location": "nesting",
+  //                 "kind": "end",
+  //                 "levels": [-2],
+  //               },
+  //             },
+  //             "context": [
+  //               "nesting.outerRight(selection().active) != null &&",
+  //               "range(position.shift(selection().active, 1), selection.eol()).contains(",
+  //               "  nesting.outerRight(selection().active).outerEnd",
+  //               ")",
+  //             ]
+  //           },
+  //           { "command": "cursorEnd" },
+  //         ],
+  //         "context": [
+  //           "nesting.current() &&",
+  //           "selection().active.isEqual(nesting.current().end)"
+  //         ]
+  //       },
+  //       {
+  //         "command": "locations.go",
+  //         "args": {
+  //           "direction": "forward",
+  //           "to": {
+  //             "location": "nesting",
+  //             "kind": "end",
+  //             "levels": [0],
+  //           },
+  //         },
+  //         "context": [
+  //           "selection().active.isEqual(selection.eol()) || (",
+  //           "  nesting.current() &&",
+  //           "  range(selection().active, selection.eol()).contains(",
+  //           "    nesting.current().outerEnd",
+  //           "  )",
+  //           ")",
+  //         ]
+  //       },
+  //       { "command": "cursorEnd" },
+  //     ],
+  //   },
+  //   "when": "textInputFocus"
+  // },
+
+  // {
+  //   "key": "alt+shift+'",
+  //   "command": "commands.run",
+  //   "args": {
+  //     "forEachSelection": true,
+  //     "commands": [
+  //       {
+  //         "commands": [
+  //           {
+  //             "command": "locations.select",
+  //             "args": {
+  //               "direction": "forward",
+  //               "expand": {
+  //                 "location": "nesting",
+  //                 "kind": "end",
+  //                 "levels": [-2],
+  //               },
+  //             },
+  //             "context": [
+  //               "nesting.outerRight(selection().active) != null &&",
+  //               "range(position.shift(selection().active, 1), selection.eol()).contains(",
+  //               "  nesting.outerRight(selection().active).outerEnd",
+  //               ")",
+  //             ]
+  //           },
+  //           { "command": "cursorEndSelect" },
+  //         ],
+  //         "context": [
+  //           "nesting.current() &&",
+  //           "selection().active.isEqual(nesting.current().end)"
+  //         ]
+  //       },
+  //       {
+  //         "command": "locations.select",
+  //         "args": {
+  //           "direction": "forward",
+  //           "expand": {
+  //             "location": "nesting",
+  //             "kind": "end",
+  //             "levels": [0],
+  //           },
+  //         },
+  //         "context": [
+  //           "selection().active.isEqual(selection.eol()) || (",
+  //           "  nesting.current() &&",
+  //           "  range(selection().active, selection.eol()).contains(",
+  //           "    nesting.current().outerEnd",
+  //           "  )",
+  //           ")",
+  //         ]
+  //       },
+  //       { "command": "cursorEndSelect" },
+  //     ],
+  //   },
+  //   "when": "textInputFocus"
+  // },
+
+  // tmp
+
+  // {
+  //   "key": "alt+;",
+  //   "command": "cursorHome",
+  //   "when": "textInputFocus"
+  // },
+  // {
+  //   "key": "alt+shift+;",
+  //   "command": "cursorHomeSelect",
+  //   "when": "textInputFocus"
+  // },
+
+  // {
+  //   "key": "alt+'",
+  //   "command": "cursorEnd",
+  //   "when": "editorTextFocus"
+  // },
+  // {
+  //   "key": "alt+shift+'",
+  //   "command": "cursorEndSelect",
+  //   "when": "textInputFocus"
+  // },
+
+  {
+    "key": "space",
+    "command": "commands.execute",
+    "args": {
+      "commands": [
+        {
+          "command": "editor.action.insertSnippet",
+          "args": { "snippet": " " }
+        },
+        { "command": "hideSuggestWidget" }
+      ]
+    },
+    "when": "editorTextFocus"
+  },
+
+  {
+    "key": ".",
+    "command": "commands.execute",
+    "args": {
+      "commands": [
+        {
+          "command": "editor.action.insertSnippet",
+          "args": { "snippet": "." }
+        },
+        { "command": "hideSuggestWidget" }
+      ]
+    },
+    "when": "editorTextFocus"
+  },
+
+  // imports
+  {
+    "key": "ctrl+u ctrl+i",
+    "command": "imports.import"
+  },
+
+  // completions
+  {
+    "key": "ctrl+o",
+    "command": "completions.next",
+    "args": {
+      "delimiter": "\\w"
+    }
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "completions.prev",
+    "args": {
+      "delimiter": "\\w"
+    }
+  },
+  {
+    "key": "alt+o",
+    "command": "completions.next",
+    "args": {
+      "delimiter": "[\\w\\.\\-\\/:]",
+      "prefix": "\\W(?=[\\w\\.\\-\\/:]+[\\.\\-\\/:][\\w]+)"
+    }
+  },
+  {
+    "key": "alt+shift+o",
+    "command": "completions.prev",
+    "args": {
+      "delimiter": "[\\w\\.\\-\\/:]",
+      "prefix": "\\W(?=[\\w\\.\\-\\/:]+[\\.\\-\\/:][\\w]+)"
+    }
+  },
+  {
+    "key": "ctrl+alt+o",
+    "command": "completions.next",
+    "args": {
+      "prefix": "",
+      "delimiter": ".",
+      "head": "\\w+"
+    }
+  },
+  {
+    "key": "ctrl+alt+shift+o",
+    "command": "completions.prev",
+    "args": {
+      "prefix": "",
+      "delimiter": ".",
+      "head": "\\w+"
+    }
+  },
+
+  // refactoring
+
+  {
+    "key": "ctrl+m ctrl+a",
+    "command": "cmstead.jsRefactor.markAsAsync",
+    "when": "editorLangId == javascript || editorLangId == javascriptreact || editorLangId == typescript || editorLangId == typescriptreact"
+  },
+  {
+    "key": "ctrl+m ctrl+m",
+    "command": "cmstead.jsRefactor.extractMethod",
+    "when": "editorLangId == javascript || editorLangId == javascriptreact || editorLangId == typescript || editorLangId == typescriptreact"
+  },
+  {
+    "key": "ctrl+m ctrl+v",
+    "command": "cmstead.jsRefactor.extractVariable",
+    "when": "editorLangId == javascript || editorLangId == javascriptreact || editorLangId == typescript || editorLangId == typescriptreact"
+  },
+  {
+    "key": "ctrl+m ctrl+r",
+    "command": "cmstead.jsRefactor.inlineVariable",
+    "when": "editorLangId == javascript || editorLangId == javascriptreact || editorLangId == typescript || editorLangId == typescriptreact"
+  },
+
+  // merging changes
+
+  {
+    "key": "ctrl+m ctrl+,",
+    "command": "merge-conflict.accept.current"
+  },
+  {
+    "key": "ctrl+m ,",
+    "command": "merge-conflict.previous"
+  },
+  {
+    "key": "ctrl+m ctrl+.",
+    "command": "merge-conflict.accept.incoming"
+  },
+  {
+    "key": "ctrl+m .",
+    "command": "merge-conflict.next"
+  },
+  {
+    "key": "ctrl+m ctrl+/",
+    "command": "merge-conflict.accept.both"
+  },
+
+  // git navigation
+
+  {
+    "key": "ctrl+m ctrl+j",
+    "command": "git.openChange"
+  },
+  {
+    "key": "ctrl+m j",
+    "command": "workbench.view.scm"
+  },
+  {
+    "key": "ctrl+m ctrl+k",
+    "command": "git.stage"
+  },
+  {
+    "key": "ctrl+m k",
+    "command": "git.stageSelectedRanges"
+  },
+  {
+    "key": "ctrl+m ctrl+l",
+    "command": "git.unstage"
+  },
+  {
+    "key": "ctrl+m l",
+    "command": "git.unstageSelectedRanges"
+  },
+
+  // problems
+
+  {
+    "key": "alt+q",
     "command": "editor.action.marker.next",
     "when": "editorTextFocus && !editorReadonly"
   },
+
   {
-    "key": "alt+shift+e",
+    "key": "alt+shift+q",
     "command": "editor.action.marker.prev",
     "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+alt+q",
+    "command": "editor.action.marker.nextInFiles",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+alt+shift+q",
+    "command": "editor.action.marker.prevInFiles",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+u ctrl+q",
+    "command": "workbench.actions.view.problems"
+  },
+  {
+    "key": "ctrl+u ctrl+a",
+    "command": "workbench.debug.action.focusRepl"
+  },
+  {
+    "key": "f12",
+    "command": "workbench.debug.action.focusRepl"
+  },
+  {
+    "key": "ctrl+u a",
+    "command": "workbench.debug.panel.action.clearReplAction"
   },
 
   // bookmarks
@@ -39,19 +2073,49 @@
     "command": "bookmarks.jumpToPrevious",
     "when": "editorTextFocus"
   },
-  // {
-  //   "key": "alt+shift+w",
-  //   "command": "bookmarks.list",
-  //   "when": "editorTextFocus"
-  // },
+  {
+    "key": "ctrl+u ctrl+w",
+    "command": "bookmarks.expandSelectionToNext",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+u w",
+    "command": "bookmarks.expandSelectionToPrevious",
+    "when": "editorTextFocus"
+  },
 
   // snippets
 
+
+  {
+    "key": "tab",
+    "command": "commands.run",
+    "args": {
+      "commands": [
+        {
+          "command": "snippets.expand",
+          "context": "selection.precedingText().match('\\S.*$') && selection().isEmpty"
+        },
+        {
+          "command": "editor.action.indentLines",
+          "context": "selection.precedingText().match('\\s*$') || !selection().isEmpty"
+        }
+      ]
+    },
+    "when": "editorTextFocus"
+  },
+
   {
     "key": "f14",
-    "command": "jumpToNextSnippetPlaceholder",
-    "when": "editorTextFocus && hasNextTabstop && inSnippetMode"
+    "command": "snippets.nextTab",
+    "when": "editorTextFocus"
   },
+
+  // {
+  //   "key": "f14",
+  //   "command": "jumpToNextSnippetPlaceholder",
+  //   "when": "editorTextFocus && hasNextTabstop && inSnippetMode"
+  // },
 
   // window
 
@@ -127,16 +2191,8 @@
     "command": "workbench.action.files.newUntitledFile"
   },
   {
-    "key": "ctrl+alt+shift+n",
+    "key": "ctrl+u ctrl+n",
     "command": "workbench.action.newWindow"
-  },
-  {
-    "key": "ctrl+u ctrl+r",
-    "command": "extension.multiCommand.execute",
-    "args": {
-      "command": "multiCommand.changeFileName"
-    },
-    "when": "editorFocus"
   },
 
   // git
@@ -172,16 +2228,6 @@
     "when": "textInputFocus"
   },
 
-  {
-    "key": "ctrl+-",
-    "command": "incrementor.decByOne",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "ctrl+=",
-    "command": "incrementor.incByOne",
-    "when": "textInputFocus"
-  },
   // {
   //   "key": "ctrl+v",
   //   "command": "pasteAndIndent.action",
@@ -191,12 +2237,12 @@
   // symbol navigation
 
   {
-    "key": "alt+m",
+    "key": "alt+shift+n",
     "command": "workbench.action.gotoSymbol",
     "when": "textInputFocus"
   },
   {
-    "key": "alt+shift+m",
+    "key": "alt+m",
     "command": "workbench.action.showAllSymbols",
     "when": "textInputFocus"
   },
@@ -211,7 +2257,7 @@
     "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
   },
   {
-    "key": "ctrl+m ctrl+e",
+    "key": "ctrl+alt+shift+e",
     "command": "editor.action.revealDefinitionAside",
     "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
   },
@@ -236,6 +2282,10 @@
 
   // tabs navigation
 
+  {
+    "key": "ctrl+alt+tab",
+    "command": "workbench.action.focusActiveEditorGroup"
+  },
   {
     "key": "ctrl+,",
     "command": "workbench.action.previousEditorInGroup"
@@ -296,29 +2346,6 @@
     "command": "workbench.action.files.saveAll"
   },
 
-  // problems
-
-  {
-    "key": "ctrl+m ctrl+.",
-    "command": "editor.action.marker.next",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+m ctrl+,",
-    "command": "editor.action.marker.prev",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+m .",
-    "command": "editor.action.marker.nextInFiles",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+m ,",
-    "command": "editor.action.marker.prevInFiles",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-
   // character navigation
 
   {
@@ -365,53 +2392,6 @@
     "when": "textInputFocus"
   },
 
-  // character editing
-
-  {
-    "key": "alt+/",
-    "command": "deleteRight",
-    "when": "textInputFocus && !editorReadonly"
-  },
-
-  // word navigation
-
-  {
-    "key": "ctrl+alt+j",
-    "command": "cursorWordStartLeft",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "ctrl+alt+l",
-    "command": "cursorWordEndRight",
-    "when": "textInputFocus"
-  },
-
-  // word selection
-
-  {
-    "key": "ctrl+alt+shift+j",
-    "command": "cursorWordStartLeftSelect",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "ctrl+alt+shift+l",
-    "command": "cursorWordEndRightSelect",
-    "when": "textInputFocus"
-  },
-
-  // word editing
-
-  {
-    "key": "alt+backspace",
-    "command": "deleteWordLeft",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+alt+/",
-    "command": "deleteWordRight",
-    "when": "textInputFocus && !editorReadonly"
-  },
-
   // word part navigation
 
   {
@@ -438,45 +2418,6 @@
     "when": "textInputFocus"
   },
 
-  // word part editing
-
-  {
-    "key": "ctrl+backspace",
-    "command": "deleteWordPartLeft",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+/",
-    "command": "deleteWordPartRight",
-    "when": "textInputFocus && !editorReadonly"
-  },
-
-  // line navigation
-
-  {
-    "key": "alt+;",
-    "command": "cursorHome",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "alt+'",
-    "command": "cursorEnd",
-    "when": "textInputFocus"
-  },
-
-  // line selection
-
-  {
-    "key": "alt+shift+;",
-    "command": "cursorHomeSelect",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "alt+shift+'",
-    "command": "cursorEndSelect",
-    "when": "textInputFocus"
-  },
-
   // line deletion
 
   {
@@ -494,25 +2435,25 @@
 
   {
     "key": "ctrl+i",
-    "command": "blocks.go",
+    "command": "locations.go",
     "args": {
-      "to": ["spacing-bob", "bof"],
+      "to": ["spacing-before", "bof"],
       "direction": "backward"
     },
     "when": "textInputFocus"
   },
   {
     "key": "ctrl+k",
-    "command": "blocks.go",
+    "command": "locations.go",
     "args": {
-      "to": ["spacing-bob", "eof"],
+      "to": ["spacing-after", "eof"],
       "direction": "forward"
     },
     "when": "textInputFocus"
   },
   {
     "key": "ctrl+shift+i",
-    "command": "blocks.select",
+    "command": "locations.select",
     "args": {
       "expand": ["spacing-bob", "bof"],
       "shrink": ["spacing-eob", "bof"],
@@ -522,7 +2463,7 @@
   },
   {
     "key": "ctrl+shift+k",
-    "command": "blocks.select",
+    "command": "locations.select",
     "args": {
       "expand": ["spacing-eob", "eof"],
       "shrink": ["spacing-bob", "eof"],
@@ -535,7 +2476,7 @@
 
   {
     "key": "ctrl+y",
-    "command": "blocks.go",
+    "command": "locations.go",
     "args": {
       "to": ["hill-eob-before"],
       "direction": "backward"
@@ -544,7 +2485,7 @@
   },
   {
     "key": "alt+y",
-    "command": "blocks.go",
+    "command": "locations.go",
     "args": {
       "to": ["plato-before"],
       "direction": "backward"
@@ -552,8 +2493,8 @@
     "when": "textInputFocus"
   },
   {
-    "key": "ctrl+alt+y",
-    "command": "blocks.go",
+    "key": "ctrl+shift+y",
+    "command": "locations.go",
     "args": {
       "to": ["hill-bob"],
       "direction": "backward"
@@ -565,7 +2506,7 @@
 
   {
     "key": "ctrl+h",
-    "command": "blocks.go",
+    "command": "locations.go",
     "args": {
       "to": ["hill-bob-after"],
       "direction": "forward"
@@ -574,7 +2515,7 @@
   },
   {
     "key": "alt+h",
-    "command": "blocks.go",
+    "command": "locations.go",
     "args": {
       "to": ["plato-after"],
       "direction": "forward"
@@ -582,10 +2523,10 @@
     "when": "textInputFocus"
   },
   {
-    "key": "ctrl+alt+h",
-    "command": "blocks.go",
+    "key": "ctrl+shift+h",
+    "command": "locations.go",
     "args": {
-      "to": ["hill-bob"],
+      "to": ["hill-eob"],
       "direction": "forward"
     },
     "when": "textInputFocus"
@@ -595,7 +2536,7 @@
 
   {
     "key": "alt+shift+y",
-    "command": "blocks.select",
+    "command": "locations.select",
     "args": {
       "expand": ["plato-bob"],
       "direction": "backward"
@@ -604,7 +2545,7 @@
   },
   {
     "key": "ctrl+alt+shift+y",
-    "command": "blocks.select",
+    "command": "locations.select",
     "args": {
       "expand": ["hill-bob"],
       "shrink": ["hill-eob"],
@@ -617,7 +2558,7 @@
 
   {
     "key": "alt+shift+h",
-    "command": "blocks.select",
+    "command": "locations.select",
     "args": {
       "expand": ["plato-eob"],
       "direction": "forward"
@@ -626,7 +2567,7 @@
   },
   {
     "key": "ctrl+alt+shift+h",
-    "command": "blocks.select",
+    "command": "locations.select",
     "args": {
       "expand": ["hill-eob"],
       "shrink": ["hill-bob"],
@@ -638,40 +2579,226 @@
   // block movement backward
 
   {
-    "key": "ctrl+shift+y",
-    "command": "blocks.move",
+    "key": "ctrl+alt+y",
+    "command": "commands.run",
     "args": {
-      "to": ["spacing-bob", "plato-bob", "hill-eob-bol", "bof"],
-      "direction": "backward"
+      "forEachSelection": true,
+      "commands": [
+        {
+          "command": "locations.move",
+          "args": {
+            "to": ["spacing-eob", "plato-bob", "hill-eob-bol", "bof"],
+            "direction": "backward"
+          },
+          "context": "!selection().isEmpty"
+        },
+        {
+          "command": "locations.move",
+          "args": {
+            "subject": { "start": ["hill-bob"], "end": ["hill-eob"] },
+            "to": ["spacing-eob", "plato-bob", "hill-eob-bol", "bof"],
+            "direction": "backward"
+          },
+          "context": [
+            "locations.checkLine(selection().anchor.line, 'hill-bob') ||",
+            "locations.checkLine(selection().anchor.line, 'hill-eob')"
+          ]
+        },
+        {
+          "command": "locations.move",
+          "args": {
+            "subject": { "start": ["bol"], "end": ["eol"] },
+            "to": ["spacing-eob", "plato-bob", "hill-eob-bol", "bof"],
+            "direction": "backward"
+          }
+        }
+      ]
     },
-    "when": "textInputFocus"
+    "when": "textInputFocus && !editorReadonly"
   },
+
   {
     "key": "ctrl+alt+shift+n",
-    "command": "blocks.move",
+    "command": "commands.run",
     "args": {
-      "to": ["hill-bob"],
-      "direction": "backward"
-    }
+      "forEachSelection": true,
+      "commands": [
+        {
+          "command": "locations.move",
+          "args": {
+            "to": ["hill-bob"],
+            "direction": "backward"
+          },
+          "context": "!selection().isEmpty"
+        },
+        {
+          "command": "locations.move",
+          "args": {
+            "subject": { "start": ["hill-bob"], "end": ["hill-eob"] },
+            "to": ["hill-bob"],
+            "direction": "backward"
+          },
+          "context": [
+            "locations.checkLine(selection().anchor.line, 'hill-bob') ||",
+            "locations.checkLine(selection().anchor.line, 'hill-eob')"
+          ]
+        },
+        {
+          "command": "locations.move",
+          "args": {
+            "subject": { "start": ["bol"], "end": ["eol"] },
+            "to": ["hill-bob"],
+            "direction": "backward"
+          }
+        }
+      ]
+    },
+    "when": "textInputFocus && !editorReadonly"
   },
 
   // block movement forward
 
   {
-    "key": "ctrl+shift+h",
-    "command": "blocks.move",
+    "key": "ctrl+alt+h",
+    "command": "commands.run",
     "args": {
-      "to": ["spacing-eob", "plato-eob", "hill-bob-after", "eof"],
-      "direction": "forward"
+      "forEachSelection": true,
+      "commands": [
+        {
+          "command": "locations.move",
+          "args": {
+            "to": ["spacing-eob", "plato-eob", "hill-bob-after", "eof"],
+            "direction": "forward"
+          },
+          "context": "!selection().isEmpty"
+        },
+        {
+          "command": "locations.move",
+          "args": {
+            "subject": { "start": ["hill-bob"], "end": ["hill-eob"] },
+            "to": ["spacing-eob", "plato-eob", "hill-bob-after", "eof"],
+            "direction": "forward"
+          },
+          "context": [
+            "locations.checkLine(selection().anchor.line, 'hill-bob') ||",
+            "locations.checkLine(selection().anchor.line, 'hill-eob')"
+          ]
+        },
+        {
+          "command": "locations.move",
+          "args": {
+            "subject": { "start": ["bol"], "end": ["eol"] },
+            "to": ["spacing-eob", "plato-eob", "hill-bob-after", "eof"],
+            "direction": "forward"
+          }
+        }
+      ]
     },
-    "when": "textInputFocus"
+    "when": "textInputFocus && !editorReadonly"
   },
+
   {
     "key": "ctrl+alt+n",
-    "command": "blocks.move",
+    "command": "commands.run",
     "args": {
-      "to": ["hill-eob"],
-      "direction": "forward"
+      "forEachSelection": true,
+      "commands": [
+        {
+          "command": "locations.move",
+          "args": {
+            "to": ["hill-eob"],
+            "direction": "forward"
+          },
+          "context": "!selection().isEmpty"
+        },
+        {
+          "command": "locations.move",
+          "args": {
+            "subject": { "start": ["hill-bob"], "end": ["hill-eob"] },
+            "to": ["hill-eob"],
+            "direction": "forward"
+          },
+          "context": [
+            "locations.checkLine(selection().anchor.line, 'hill-bob') ||",
+            "locations.checkLine(selection().anchor.line, 'hill-eob')"
+          ]
+        },
+        {
+          "command": "locations.move",
+          "args": {
+            "subject": { "start": ["bol"], "end": ["eol"] },
+            "to": ["hill-eob"],
+            "direction": "forward"
+          }
+        }
+      ]
+    },
+    "when": "textInputFocus && !editorReadonly"
+  },
+
+  // block expansion
+
+  {
+    "key": "ctrl+alt+shift+u",
+    "command": "commands.run",
+    "args": {
+      "forEachSelection": true,
+      "commands": [
+        // select plato before if plato is seleted
+
+        {
+          "command": "locations.expand",
+          "args": {
+            "backward": ["plato-before"],
+            "forward": ["plato-after-eol"]
+          },
+          "context": [
+            "(locations.checkLine(selection().anchor.line, 'plato-bob') &&",
+            "locations.checkLine(selection().active.line, 'plato-eob'))"
+          ]
+        },
+
+        // select hill if selection is empty and location is hill start or end
+
+        {
+          "command": "locations.expand",
+          "args": {
+            "backward": ["hill-bob"],
+            "forward": ["hill-eob"]
+          },
+          "context": [
+            "selection().isEmpty &&",
+            "(locations.checkLine(selection().anchor.line, 'hill-bob') || ",
+            "locations.checkLine(selection().active.line, 'hill-eob'))"
+          ]
+        },
+
+        // select plane if spacing bob or eob selected
+
+        {
+          "command": "locations.expand",
+          "args": {
+            "backward": ["plato-bob"],
+            "forward": ["plato-eob"]
+          },
+          "context": [
+            "(locations.checkLine(selection().anchor.line, 'spacing-bob') || ",
+            "locations.checkLine(selection().active.line, 'spacing-eob')) &&",
+            "(locations.checkLine(selection().anchor.line, 'spacing-bob', 'plato-eob') || ",
+            "locations.checkLine(selection().active.line, 'spacing-eob', 'plato-eob'))"
+          ]
+        },
+
+        // expand to spacing or plato
+
+        {
+          "command": "locations.expand",
+          "args": {
+            "backward": ["spacing-bob", "plato-bob"],
+            "forward": ["spacing-eob", "plato-eob"]
+          }
+        }
+      ]
     }
   },
 
@@ -703,11 +2830,11 @@
 
   // smart selection
 
-  {
-    "key": "ctrl+alt+shift+enter",
-    "command": "editor.action.smartSelect.expand",
-    "when": "editorTextFocus"
-  },
+  // {
+  //   "key": "ctrl+alt+shift+enter",
+  //   "command": "editor.action.smartSelect.expand",
+  //   "when": "editorTextFocus"
+  // },
 
   // scroll
 
@@ -841,16 +2968,16 @@
     "command": "list.focusDown",
     "when": "listFocus && !inputFocus"
   },
-  {
-    "key": "alt+;",
-    "command": "list.focusFirst",
-    "when": "listFocus && !inputFocus"
-  },
-  {
-    "key": "alt+'",
-    "command": "list.focusLast",
-    "when": "listFocus && !inputFocus"
-  },
+  // {
+  //   "key": "alt+;",
+  //   "command": "list.focusFirst",
+  //   "when": "listFocus && !inputFocus"
+  // },
+  // {
+  //   "key": "alt+'",
+  //   "command": "list.focusLast",
+  //   "when": "listFocus && !inputFocus"
+  // },
   {
     "key": "alt+i",
     "command": "list.focusUp",

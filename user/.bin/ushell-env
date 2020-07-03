@@ -63,8 +63,8 @@ alias ag='alias | grep -A 2 -B 2'
 alias cds='cd ~/src/'
 
 alias o='overmind'
-alias or='overmind restart'
-alias oa='overmind start -p 3000'
+alias oe='overmind restart'
+alias oa='[ -e ./.overmind.sock ] && rm ./.overmind.sock; overmind start -p 3000'
 alias oaa='overmind start'
 alias oo='overmind stop'
 alias re='source ~/.bin/ushell-env && rehash' # reload env
@@ -92,7 +92,7 @@ alias rt='sudo rm -rf ~/.tmp/ssh/*'
 alias ks="kill \$(ps -xa | grep 'spring server' | grep -v 'grep' | awk '{print \$2}')"
 alias kp="kill -9 \$(ps -xa | grep 'puma' | grep -v 'grep' | awk '{print \$2}')"
 alias kk='() { kill -9 $(ps -xa | grep "$@" | grep -v "grep" | awk "{print \$2}") }' # observe
-alias el='code ~/projects/personal/log.txt'
+alias el='code ~"/projects/personal/log/$(date +%F_%H:%M).txt"'
 
 alias pm='sudo pacman'
 alias pms='sudo pacman --noconfirm -S'
@@ -347,8 +347,8 @@ alias gac='git update-index --no-assume-unchanged'
 alias gmm='git fetch && git merge origin/master'
 alias gj='echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib' # copy last commit hash
 alias gcoo='git checkout origin/master -- '
-alias gdn='git diff --name-only origin/master'
-alias gdo='git diff origin/master -- '
+alias gdd='git diff $(git merge-base origin/master $(git rev-parse --abbrev-ref HEAD))'
+alias gdn='git diff --name-only $(git merge-base origin/master $(git rev-parse --abbrev-ref HEAD))'
 
 alias gbn='() {
   git fetch && \

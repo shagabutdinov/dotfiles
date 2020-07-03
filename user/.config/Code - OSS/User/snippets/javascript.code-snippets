@@ -29,9 +29,16 @@
 	// comments
 
 	"pr todo": {
-		"prefix": ["xp"],
+		"prefix": ["pt"],
 		"body": ["// @prtodo $0"],
 		"description": "pr todo",
+		"scope": "javascript,typescript,javascriptreact,typescriptreact"
+	},
+
+	"pr todo tests": {
+		"prefix": ["ptt"],
+		"body": ["// @prtodo add tests"],
+		"description": "pr todo tests",
 		"scope": "javascript,typescript,javascriptreact,typescriptreact"
 	},
 
@@ -158,23 +165,13 @@
 		"prefix": ["dh"],
 		"body": [
 			"import React from 'react';",
-			"import { render } from '@testing-library/react';",
+			"import { renderHook, act } from '@testing-library/react-hooks';",
 			"",
 			"import $1 from './$1';",
 			"",
 			"describe('$1', () => {",
-				"\tfunction Component() {",
-					"\t\tconst $2 = $1();",
-					"",
-					"\t\treturn (",
-						"\t\t\t<>",
-							"\t\t\t\t$3",
-						"\t\t\t</>",
-					"\t\t);",
-				"\t}",
-				"",
-				"\tit('$4', () => {",
-					"\t\tconst { container } = render(<Component />);$0",
+				"\tit('$2', () => {",
+					"\t\tconst { result } = renderHook(() => $1($3));$0",
 				"\t});",
 			"});",
 		],
