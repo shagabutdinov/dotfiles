@@ -205,6 +205,7 @@ bindsym $mod+g exec thunar
 bindsym $mod+backslash exec code
 bindsym $mod+o exec firefox
 bindsym $mod+shift+o exec chromium
+bindsym $mod+ctrl+shift+o exec chromium --user-data-dir=/home/leo/.local/chromium-debug --remote-debugging-port=9222
 bindsym $mod+h exec translator
 bindsym $mod+shift+h exec translator "$(xsel -op)"
 bindsym $mod+p exec file-roller ~/projects/keys/passwords.zip

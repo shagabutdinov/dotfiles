@@ -92,7 +92,7 @@ alias rt='sudo rm -rf ~/.tmp/ssh/*'
 alias ks="kill \$(ps -xa | grep 'spring server' | grep -v 'grep' | awk '{print \$2}')"
 alias kp="kill -9 \$(ps -xa | grep 'puma' | grep -v 'grep' | awk '{print \$2}')"
 alias kk='() { kill -9 $(ps -xa | grep "$@" | grep -v "grep" | awk "{print \$2}") }' # observe
-alias el='code ~"/projects/personal/log/$(date +%F_%H:%M).txt"'
+alias el='touch ~"/projects/personal/log/$(date +%F_%H:%M).md"; code ~"/projects/personal/log/$(date +%F_%H:%M).md"'
 
 alias pm='sudo pacman'
 alias pms='sudo pacman --noconfirm -S'
@@ -300,6 +300,7 @@ alias cu='docker-compose -f $(docker-compose-file) up'
 alias cl='docker-compose -f $(docker-compose-file) logs'
 alias cx='docker-compose -f $(docker-compose-file) exec'
 alias cs='docker-compose -f $(docker-compose-file) stop'
+alias css='docker-compose -f $(docker-compose-file) ps'
 
 alias cr='\
   docker-compose -f $(docker-compose-file) stop

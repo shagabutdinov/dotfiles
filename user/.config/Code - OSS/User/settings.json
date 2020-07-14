@@ -1,5 +1,5 @@
 {
-  "workbench.activityBar.visible": false,
+  "workbench.activityBar.visible": true,
   "editor.fontSize": 18,
   "window.enableMenuBarMnemonics": false,
   "window.menuBarVisibility": "hidden",
@@ -104,6 +104,7 @@
   "cSpell.userWords": [
     "devtools",
     "formik",
+    "prtodo",
     "reindent",
     "shagabutdinov",
     "subheadlines",
@@ -111,6 +112,11 @@
   ],
   "[typescriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  }
-  // "snippets.path": "/home/leo/.config/Code - OSS/User/snippets",
+  },
+  "workbench.colorTheme": "One Dark Pro",
+  "rest-client.previewResponseInUntitledDocument": true,
+  "rest-client.enableTelemetry": false,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "devtools.snippets.exclude": ["typescript", "typescript.snippets.definitions"]
 }

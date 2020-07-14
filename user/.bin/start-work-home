@@ -35,13 +35,13 @@ sleep 3
 
 # slack
 
-i3-msg 'workspace 11, move workspace to output eDP-1-1'
-uslack &
-sleep 0.5
-
 utodoist &
 sleep 0.5
 i3-msg 'resize set 616px'
+
+i3-msg 'workspace 11, move workspace to output eDP-1-1'
+uslack &
+sleep 0.5
 
 # browsers
 

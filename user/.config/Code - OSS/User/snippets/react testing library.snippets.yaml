@@ -1,0 +1,14 @@
+typescript:
+  context: |
+    document().languageId.match("^(type|java)script(react)?$") &&
+      document().uri.toString().match("test.[tj]sx?$") &&
+      document().getText().includes('@testing-library/react')
+  snippets:
+    debugDOM:
+      trigger: dd
+      snippet: debugDOM($0{container})
+      onExpand:
+        command: imports.add
+        args:
+          value: debugDOM
+          from: '@testing-library/react'

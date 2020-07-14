@@ -1,0 +1,11 @@
+log:
+  context: |
+    document().languageId == 'markdown' &&
+      document().uri.fsPath.startsWith('/home/leo/projects/personal/log/')
+  snippets:
+    constructor:
+      trigger: c
+      snippet: "@constructor "
+    api:
+      trigger: a
+      snippet: "@api "

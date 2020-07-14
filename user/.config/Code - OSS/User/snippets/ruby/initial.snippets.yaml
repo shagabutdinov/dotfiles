@@ -1,4 +1,0 @@
-prtodo:
-  trigger: xp
-  snippet: |-
-    # @prtodo $0

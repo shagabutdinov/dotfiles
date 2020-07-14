@@ -40,6 +40,12 @@
     "when": "editorTextFocus"
   },
 
+  {
+    "key": "ctrl+u ctrl+enter",
+    "command": "rest-client.request",
+    "when": "editorTextFocus"
+  },
+
   // case convertion
 
   {
@@ -2270,21 +2276,44 @@
   // tabs groups
 
   {
-    "key": "alt+.",
+    "key": "ctrl+n ctrl+j",
     "command": "workbench.action.focusLeftGroup",
-    "when": "textInputFocus"
+    // "when": "textInputFocus"
   },
   {
-    "key": "alt+,",
+    "key": "ctrl+n ctrl+l",
     "command": "workbench.action.focusRightGroup",
-    "when": "textInputFocus"
+    // "when": "textInputFocus"
+  },
+
+  {
+    "key": "ctrl+n j",
+    "command": "workbench.action.moveEditorToLeftGroup",
+    // "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+n l",
+    "command": "workbench.action.moveEditorToRightGroup",
+    // "when": "textInputFocus"
+  },
+
+  {
+    "key": "ctrl+n ctrl+o",
+    "command": "workbench.action.splitEditor",
+    // "when": "textInputFocus"
   },
 
   // tabs navigation
 
   {
     "key": "ctrl+alt+tab",
-    "command": "workbench.action.focusActiveEditorGroup"
+    "command": "commands.execute",
+    "args": {
+      "commands": [
+        {"command": "workbench.action.focusFirstEditorGroup"},
+        {"command": "workbench.action.focusActiveEditorGroup"},
+      ]
+    }
   },
   {
     "key": "ctrl+,",
