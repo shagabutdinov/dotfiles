@@ -210,8 +210,8 @@ bindsym $mod+h exec translator
 bindsym $mod+shift+h exec translator "$(xsel -op)"
 bindsym $mod+p exec file-roller ~/projects/keys/passwords.zip
 
-bindsym $mod+comma exec ~/.local/deadfiles/bin/volume down 4
-bindsym $mod+period exec ~/.local/deadfiles/bin/volume up 4
+bindsym $mod+comma exec /home/leo/.bin/uvolume -4%
+bindsym $mod+period exec /home/leo/.bin/uvolume +4%
 bindsym $mod+slash exec volume-toggle
 bindsym $mod+ctrl+slash exec mic-toggle
 bindsym $mod+shift+slash exec ~/.local/seletskiy/bin/sound-switch

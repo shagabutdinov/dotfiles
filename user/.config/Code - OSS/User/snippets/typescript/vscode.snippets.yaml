@@ -1,0 +1,64 @@
+vscode:
+  context: |
+    document().languageId.match("^(type|java)script(react)?$") &&
+      document().uri.fsPath.startsWith('/home/leo/src/vscode-')
+  snippets:
+    position:
+      trigger: pp
+      snippet: lst.Position
+      onExpand:
+        command: imports.add
+        args:
+          value: "*"
+          alias: lst
+          from: vscode-languageserver-types
+
+    create position:
+      trigger: pc
+      snippet: lst.Position.create($1)
+      onExpand:
+        command: imports.add
+        args:
+          value: "*"
+          alias: lst
+          from: vscode-languageserver-types
+
+    range:
+      trigger: rr
+      snippet: lst.Range
+      onExpand:
+        command: imports.add
+        args:
+          value: "*"
+          alias: lst
+          from: vscode-languageserver-types
+
+    create range:
+      trigger: rc
+      snippet: lst.Range.create($1)
+      onExpand:
+        command: imports.add
+        args:
+          value: "*"
+          alias: lst
+          from: vscode-languageserver-types
+
+    text edit:
+      trigger: te
+      snippet: lst.TextEdit
+      onExpand:
+        command: imports.add
+        args:
+          value: "*"
+          alias: lst
+          from: vscode-languageserver-types
+
+    create text edit:
+      trigger: tc
+      snippet: lst.TextEdit.replace($1)
+      onExpand:
+        command: imports.add
+        args:
+          value: "*"
+          alias: lst
+          from: vscode-languageserver-types

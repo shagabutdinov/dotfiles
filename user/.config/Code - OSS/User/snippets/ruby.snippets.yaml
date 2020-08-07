@@ -138,6 +138,10 @@ ruby:
                   require('path').basename(document.uri.fsPath) + ':' +
                   editor.selection.anchor.line
 
+        sleep:
+          trigger: sl
+          snippet: sleep($1{16})
+
         binding.pry:
           trigger: bp
           snippet: binding.pry
@@ -150,12 +154,12 @@ ruby:
           trigger: xp
           snippet: '# @prtodo $0'
 
-rails:
-  snippets:
-    application config:
-      trigger: rc
-      snippet: Rails.application.config
+    rails:
+      snippets:
+        application config:
+          trigger: rc
+          snippet: Rails.application.config
 
-    application config dot:
-      trigger: ~(?<=Rails\.application\.config)$
-      snippet: .
+        application config dot:
+          trigger: ~(?<=Rails\.application\.config)$
+          snippet: .

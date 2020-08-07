@@ -5,7 +5,24 @@ log:
   snippets:
     constructor:
       trigger: c
-      snippet: "@constructor "
+      snippet: '@constructor '
+
     api:
       trigger: a
-      snippet: "@api "
+      snippet: '@api '
+
+    standup:
+      trigger: s
+      snippet: '@standup '
+
+    allhands:
+      trigger: al
+      snippet: '@allhands '
+
+    tools:
+      trigger: t
+      snippet: '@tools '
+
+    devtools:
+      trigger: d
+      snippet: '@devtools '

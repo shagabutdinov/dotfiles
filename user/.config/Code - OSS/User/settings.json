@@ -106,6 +106,7 @@
     "formik",
     "prtodo",
     "reindent",
+    "rerender",
     "shagabutdinov",
     "subheadlines",
     "typeof"
@@ -113,10 +114,20 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "workbench.colorTheme": "One Dark Pro",
   "rest-client.previewResponseInUntitledDocument": true,
   "rest-client.enableTelemetry": false,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "devtools.snippets.exclude": ["typescript", "typescript.snippets.definitions"]
+  "devtools.snippets.exclude": [
+    "typescript",
+    "typescript.snippets.definitions"
+  ],
+  "editor.quickSuggestionsDelay": 1,
+  "editor.snippetSuggestions": "none",
+  "editor.suggest.filterGraceful": false,
+  "editor.suggest.insertMode": "replace",
+  "editor.suggest.showSnippets": false,
+  "editor.suggest.maxVisibleSuggestions": 15,
+  "python.languageServer": "Microsoft",
+  "workbench.colorTheme": "Dracula Soft"
 }

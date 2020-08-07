@@ -12,3 +12,7 @@ typescript:
         args:
           value: debugDOM
           from: '@testing-library/react'
+
+    debug:
+      trigger: de
+      snippet: debug($1)

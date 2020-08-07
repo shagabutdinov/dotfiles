@@ -1,0 +1,178 @@
+constructor typescript:
+  context: |
+    document().languageId.match("^(type|java)script(react)?$") &&
+      document().uri.fsPath.startsWith('/home/leo/src/constructor/website')
+  snippets:
+    sentences:
+      context: cursor.precedingText().match('\n[ ]*\w+$')
+      snippets:
+        # hooks
+
+        useLoad:
+          trigger: ulo
+          snippet: |-
+            const [$1{value}, $1Status] = useLoad($2, $3[$4])
+          onExpand:
+            command: imports.add
+            args:
+              value: useLoad
+              from: hooks/useExecute
+
+        useCurrentIndex:
+          trigger: uci
+          snippet: |-
+            const index = useCurrentIndex()
+          onExpand:
+            command: imports.add
+            args:
+              value: default
+              alias: useCurrentIndex
+              from: hooks/useCurrentIndex
+
+        useFeatureToggle:
+          trigger: uft
+          snippet: |-
+            const $1 = useFeatureToggle(FEATURE_FLAGS.$2);
+          onExpand:
+            commands:
+              - command: imports.add
+                args:
+                  value: default
+                  alias: FEATURE_FLAGS
+                  from: utils/featureFlags
+              - command: imports.add
+                args:
+                  value: default
+                  alias: useFeatureToggle
+                  from: hooks/useFeatureToggle
+
+        requireCurrentUser:
+          trigger: ru
+          snippet: |-
+            const user = requireCurrentUser();
+          onExpand:
+            commands:
+              - command: imports.add
+                args:
+                  value: require
+                  alias: requireCurrentUser
+                  from: modules/currentUser/actions
+
+        tests:
+          context: document().uri.toString().match('.test.[tj]sx?$')
+          snippets:
+            with router:
+              trigger: wr
+              snippet: const [Subject$1{, { history }}] = withRouter($2:component{Component})
+              onExpand:
+                command: imports.add
+                args:
+                  value: default
+                  alias: withRouter
+                  from: utils/tests/withRouter
+              placeholders:
+                component:
+                  onBeforeExpand: |
+                    ({ document }) => (
+                      document.uri.toString().match('/([^/]+).test.tsx$') || []
+                    )[1]
+
+            with context:
+              trigger: wc
+              snippet: |-
+                const Subject = withContext($1{Context}, $2{context})($3:component{Component})
+              onExpand:
+                command: imports.add
+                args:
+                  value: default
+                  alias: withContext
+                  from: utils/withContext
+              placeholders:
+                component:
+                  onBeforeExpand: |
+                    ({ document }) => (
+                      document.uri.toString().match('/([^/]+).test.tsx$') || []
+                    )[1]
+
+            mock use current index:
+              trigger: mi
+              snippet: |-
+                jest.mock("hooks/useCurrentIndex", () => () =>
+                  require("factories").default.index.build({})
+                );
+
+            mock current user:
+              trigger: mu
+              snippet: |-
+                jest.mock("modules/currentUser/actions", () => ({
+                  require: () => require("factories").default.currentUser.build(),
+                }));
+
+    expressions:
+      context: cursor.precedingText().match('([,(\[][\s\n]*|\S[ ]+|[^\s\w])\w+$')
+      snippets:
+        # hooks
+        withCache:
+          trigger: wc
+          snippet: |-
+            withCache($1, $2{Cache}.use($2{Cache}.$3))
+          onExpand:
+            command: imports.add
+            args:
+              value: default
+              alias: withCache
+              from: utils/withCache
+
+        useLoad:
+          trigger: ulo
+          snippet: |-
+            useLoad($1, $2[$3]);
+          onExpand:
+            command: imports.add
+            args:
+              value: useLoad
+              from: hooks/useExecute
+
+        search status:
+          trigger: ss
+          snippet: '{ fetching, error }'
+
+        request box:
+          trigger: rb
+          snippet: |-
+            <RequestBox
+              spinnerContainerProps={{ minHeight: 256 }}
+              fetching={$1{fetching}}
+              error={$2{error}}
+            >
+              $0
+            </RequestBox>
+          onExpand:
+            command: imports.add
+            args:
+              value: default
+              alias: RequestBox
+              from: components/Modules/RequestBox
+
+        tests:
+          context: document().uri.toString().match('.test.[tj]sx?$')
+          snippets:
+            with router tail:
+              trigger: wr
+              snippet: withRouter($1)
+              onExpand:
+                command: imports.add
+                args:
+                  value: default
+                  alias: withRouter
+                  from: utils/tests/withRouter
+
+            factories:
+              trigger: fa
+              snippet: factories.$1.build($2)
+              onExpand:
+                command: imports.add
+                args:
+                  value: default
+                  alias: factories
+                  from: factories

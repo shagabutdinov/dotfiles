@@ -2100,11 +2100,10 @@
       "commands": [
         {
           "command": "snippets.expand",
-          "context": "selection.precedingText().match('\\S.*$') && selection().isEmpty"
+          "context": "cursor.startPrecedingText().match('(\n|^).*\\S.*$')"
         },
         {
           "command": "editor.action.indentLines",
-          "context": "selection.precedingText().match('\\s*$') || !selection().isEmpty"
         }
       ]
     },
@@ -2146,7 +2145,7 @@
   },
   {
     "key": "ctrl+u ctrl+p",
-    "command": "vscodeWorkspaceSwitcher.switchWorkspace"
+    "command": "vscodeWorkspaceSwitcher.openWorkspace"
   },
   {
     "key": "alt+shift+u",

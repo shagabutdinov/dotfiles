@@ -1,0 +1,30 @@
+react router:
+  context: |
+    document().languageId.match("^(type|java)script(react)?$") &&
+      document().uri.toString().match("[tj]sx?$")
+
+  snippets:
+    root:
+      context: cursor.precedingText().match('\n(export\s+)?([ ]*)\w+$')
+      snippets:
+        useHistory:
+          trigger: uh
+          snippet: const history = useHistory();
+          onExpand:
+            command: imports.add
+            args:
+              value: useHistory
+              from: react-router-dom
+
+        useLocation:
+          trigger: ul
+          snippet: const location = useLocation();
+          onExpand:
+            command: imports.add
+            args:
+              value: useLocation
+              from: react-router-dom
+
+        new uri:
+          trigger: cu
+          snippet: const url = new URLSearchParams($1{location.search});

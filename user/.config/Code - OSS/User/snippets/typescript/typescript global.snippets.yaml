@@ -1,0 +1,13 @@
+# constructor typescript:
+#   context: |
+#     document().languageId.match("^(type|java)script(react)?$")
+#   snippets:
+#     factories:
+#       trigger: fa
+#       snippet: factories.$1.build({ $2 })
+#       onExpand:
+#         command: imports.add
+#         args:
+#           value: default
+#           alias: factories
+#           from: factories

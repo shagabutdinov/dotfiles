@@ -1,3 +1,5 @@
+BACKGROUND=dark
+
 autoload -U add-zsh-hook
 source ~/.bin/_zsh-hijack
 
@@ -85,14 +87,15 @@ alias nl='npm install && git checkout package-lock.json'
 alias -g X='| xsel -ib'
 alias ob='() { watch -x zsh -i -c "$@" }' # observe
 alias w='inotifyrun -r -e MODIFY' # watch
-alias l='ls --color -hl --group-directories-first'
-alias ls='ls --color -h --group-directories-first'
+alias l='exa -lHg'
+alias ls='exa -lHga'
 alias rr='sudo rm -rf'
 alias rt='sudo rm -rf ~/.tmp/ssh/*'
 alias ks="kill \$(ps -xa | grep 'spring server' | grep -v 'grep' | awk '{print \$2}')"
 alias kp="kill -9 \$(ps -xa | grep 'puma' | grep -v 'grep' | awk '{print \$2}')"
 alias kk='() { kill -9 $(ps -xa | grep "$@" | grep -v "grep" | awk "{print \$2}") }' # observe
 alias el='touch ~"/projects/personal/log/$(date +%F_%H:%M).md"; code ~"/projects/personal/log/$(date +%F_%H:%M).md"'
+alias pr='hub pull-request'
 
 alias pm='sudo pacman'
 alias pms='sudo pacman --noconfirm -S'
@@ -321,7 +324,7 @@ alias crr='\
 alias co='sudo chown -R leo: '
 alias cc='sudo chown -R leo: .'
 
-alias g='() { grep $1 -R . }'
+alias gg='() { grep $1 -R . }'
 alias gs='git show --color'
 alias gsp='git commit -v -a && git push'
 alias gsa='git commit -v -a --amend && git push --force'
@@ -334,7 +337,6 @@ alias gec='git rebase --continue'
 alias gea='git rebase --abort'
 alias gpu='git push -u origin $(current_branch)'
 alias gpuf='git push -u origin $(current_branch) --force'
-alias gdd='git diff --color | diff-so-fancy | less'
 alias gdc='git diff --cached'
 alias gh='git stash'
 alias ghp='git stash pop'
@@ -348,7 +350,7 @@ alias gac='git update-index --no-assume-unchanged'
 alias gmm='git fetch && git merge origin/master'
 alias gj='echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib' # copy last commit hash
 alias gcoo='git checkout origin/master -- '
-alias gdd='git diff $(git merge-base origin/master $(git rev-parse --abbrev-ref HEAD))'
+alias gdm='git diff $(git merge-base origin/master $(git rev-parse --abbrev-ref HEAD))'
 alias gdn='git diff --name-only $(git merge-base origin/master $(git rev-parse --abbrev-ref HEAD))'
 
 alias gbn='() {
@@ -664,3 +666,5 @@ hijack:transform '^g[zxk]?[n]?!?\\ ' \
   'sed -r s"/^(g[zxk]?[n]?)(!?)\\\ /\\1\\2 /g"'
 
 QUOTA=50
+
+eval $(dircolors ~/.dircolors.$BACKGROUND)

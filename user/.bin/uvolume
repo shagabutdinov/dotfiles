@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+NOTIFICATION_ID_FILE = '/tmp/volume.notification.id'
+
+if ARGV[0].nil?
+  puts('Enter volume: [+-]X (e.g. +10)')
+  exit(1)
+end
+
+sinks = `pactl list sinks`.split(/(^|\n)Sink #/)
+
+volume = nil
+sinks.each do |sink|
+  if volume.nil?
+    volume_match = sink.match(/Volume:.*?(\d+)%/)
+    next if volume_match.nil?
+
+    volume = volume_match[1].to_i + ARGV[0].to_i
+  end
+
+  name_match = sink.match(/Name:\s*(.*?)(\n|$)/)
+  next if name_match.nil?
+
+  name = name_match[1]
+  system('pactl', 'set-sink-volume', name, "#{volume}%") unless name.nil?
+end
+
+last_id =
+  if File.exist?(NOTIFICATION_ID_FILE)
+    File.read(NOTIFICATION_ID_FILE).strip.to_i
+  else
+    0
+  end
+
+id = `notify-desktop -r "#{last_id}" "" "<b>VOLM</b> » #{volume}%"`.strip.to_i
+
+File.write(NOTIFICATION_ID_FILE, id)

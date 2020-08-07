@@ -1,0 +1,190 @@
+typescript:
+  context: |
+    document().languageId.match("^(type|java)script(react)?$") &&
+      document().uri.toString().match("[tj]sx?$")
+  snippets:
+    definitions:
+      context: document().getText().match('^\s*\w+\s*$')
+      snippets:
+        component:
+          trigger: d
+          context: document().uri.toString().match('(?<!\.test)\.tsx$')
+          snippet: |-
+            import React from "react";
+
+            // @prtodo tests
+            export default function $1:name{Component}($args{{ $2:list }: Props}) {
+              return (
+                $0
+              );
+            }
+            $props{
+            type Props = {
+              $keys$3
+            }}
+          placeholders:
+            name:
+              onExpand: |
+                ({ document }) => (
+                  document.uri.toString().match('/([^/]+).tsx$') || []
+                )[1]
+            list:
+              onLeave: |
+                ({ debug, placeholders: { args, props, keys } }) => {
+                  if (args.value === "{  }: Props") {
+                    args.value = "";
+                    props.value = "";
+                  } else {
+                    keys.value =
+                      args
+                        .value
+                        .match(/\{\s*(.*)\s*\}/)[1]
+                        .split(",")
+                        .map((value) => `${value.trim()}: unknown;`)
+                        .join("\n")
+                  }
+                }
+
+        hook:
+          trigger: d
+          context: document().uri.toString().match('/use.*?(?<!\.test)\.ts$')
+          order: 1
+          snippet: |-
+            // @prtodo tests
+            export default function $1:name($2): $3 {
+              $0
+            }
+          placeholders:
+            name:
+              onExpand: |
+                ({ document }) => (
+                  document.uri.toString().match('/([^/]+).tsx?$') || []
+                )[1]
+
+    sentences:
+      context: cursor.precedingText().match('\n[ ]*\w+$')
+      snippets:
+        # hooks
+
+        useState:
+          trigger: us
+          snippet: const [$1:name{value}, $setter{setValue}] = useState$container{<$2:type>}($3)
+          onExpand:
+            command: imports.add
+            args:
+              value: useState
+              from: react
+          placeholders:
+            name:
+              onLeave: |
+                ({ placeholders: { name, setter } }) => {
+                  setter.value =
+                    'set' +
+                      name.value.substring(0, 1).toUpperCase() +
+                      name.value.substring(1)
+                }
+            type:
+              onLeave: |
+                ({ debug, placeholders: { container } }) => {
+                  if (container.value === '<>') {
+                    container.value = '';
+                  }
+                }
+
+        useEffect:
+          trigger: ue
+          snippet: |-
+            useEffect(() => {
+              $0
+            }, [$1])
+          onExpand:
+            command: imports.add
+            args:
+              value: useEffect
+              from: react
+
+        useRef:
+          trigger: ur
+          snippet: const $1 = useRef$container{<$2:type>}($3)
+          onExpand:
+            command: imports.add
+            args:
+              value: useRef
+              from: react
+          placeholders:
+            type:
+              onLeave: |
+                ({ debug, placeholders: { container } }) => {
+                  if (container.value === '<>') {
+                    container.value = '';
+                  }
+                }
+
+        useContext:
+          trigger: uc
+          snippet: const $1 = useContext($2{Context})
+          onExpand:
+            command: imports.add
+            args:
+              value: useContext
+              from: react
+
+        useMemo:
+          trigger: um
+          snippet: const $1 = useMemo(() => $2, [$3])
+          onExpand:
+            command: imports.add
+            args:
+              value: useMemo
+              from: 'react'
+
+    expressions:
+      context: cursor.precedingText().match('\S[ ]+\w+$')
+
+      snippets:
+        useState:
+          trigger: us
+          snippet: useState$container{<$2:type>}($3)
+          onExpand:
+            command: imports.add
+            args:
+              value: useState
+              from: react
+          placeholders:
+            type:
+              onLeave: |
+                ({ debug, placeholders: { container } }) => {
+                  if (container.value === '<>') {
+                    container.value = '';
+                  }
+                }
+
+        useRef:
+          trigger: ur
+          snippet: useRef$container{<$2:type>}($3)
+          onExpand:
+            command: imports.add
+            args:
+              value: useRef
+              from: react
+          placeholders:
+            type:
+              onLeave: |
+                ({ debug, placeholders: { container } }) => {
+                  if (container.value === '<>') {
+                    container.value = '';
+                  }
+                }
+
+        useMemo:
+          trigger: um
+          snippet: useMemo(() => $2, [$3])
+          onExpand:
+            command: imports.add
+            args:
+              value: useMemo
+              from: react
+
+        className:
+          trigger: cn
+          snippet: className
