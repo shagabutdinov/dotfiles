@@ -63,10 +63,12 @@ alias pwgen='pwgen 12'
 alias nc='sudo netctl'
 alias ag='alias | grep -A 2 -B 2'
 alias cds='cd ~/src/'
+alias cw='cd ~/src/constructor/website'
 
 alias o='overmind'
+alias oc='overmind connect'
 alias oe='overmind restart'
-alias oa='[ -e ./.overmind.sock ] && rm ./.overmind.sock; overmind start -p 3000'
+alias oa='[ -e ./.overmind.sock ] && rm ./.overmind.sock; overmind start --procfile .dev/Procfile -D -p 3000'
 alias oaa='overmind start'
 alias oo='overmind stop'
 alias re='source ~/.bin/ushell-env && rehash' # reload env
@@ -87,7 +89,7 @@ alias nl='npm install && git checkout package-lock.json'
 alias -g X='| xsel -ib'
 alias ob='() { watch -x zsh -i -c "$@" }' # observe
 alias w='inotifyrun -r -e MODIFY' # watch
-alias l='exa -lHg'
+alias l='exa -lHg --group-directories-first'
 alias ls='exa -lHga'
 alias rr='sudo rm -rf'
 alias rt='sudo rm -rf ~/.tmp/ssh/*'
@@ -351,7 +353,8 @@ alias gmm='git fetch && git merge origin/master'
 alias gj='echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib' # copy last commit hash
 alias gcoo='git checkout origin/master -- '
 alias gdm='git diff $(git merge-base origin/master $(git rev-parse --abbrev-ref HEAD))'
-alias gdn='git diff --name-only $(git merge-base origin/master $(git rev-parse --abbrev-ref HEAD))'
+alias gdf='git diff --name-only $(git merge-base origin/master $(git rev-parse --abbrev-ref HEAD))'
+alias gbc='current_branch'
 
 alias gbn='() {
   git fetch && \
@@ -361,36 +364,44 @@ alias gbn='() {
 
 alias gz='() {
   git add . &&
-  git commit -m "$1" &&
-  echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
+    git commit -m "$(git-commit-prefix)$1" &&
+    echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
 }'
 
 alias gzn='() {
   git add . &&
-  git commit -m "$1" --no-verify &&
+  git commit -m "$(git-commit-prefix)$1" --no-verify &&
   echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
 }'
 
 alias gzz='() {
   git add . &&
-  git commit -m "$1" --amend &&
+  git commit -m "$(git-commit-prefix)$1" --amend &&
   echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
 }'
 
-alias gk='() { git commit -m "$1" }'
-alias gkn='() { git commit -m "$1" --no-verify }'
+alias gk='() { git commit -m "$(git-commit-prefix)$1" }'
+alias gkn='() { git commit -m "$(git-commit-prefix)$1" --no-verify }'
 alias gkk='() { git commit --amend }'
+
+function git-commit-prefix() {
+  message="$(git rev-parse --abbrev-ref HEAD | grep -Eo 'ch([0-9]+)')"
+
+  if [ ! -z "$message" ]; then
+    echo -n "[$message] "
+  fi
+}
 
 alias gx='() {
   git add . && \
-    git commit -m "$1" && \
+    git commit -m "$(git-commit-prefix)$1" && \
     git push -u origin $(current_branch) &&
     echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
 }'
 
 alias gxn='() {
   git add . && \
-    git commit -m "$1" --no-verify && \
+    git commit -m "$(git-commit-prefix)$1" --no-verify && \
     git push -u origin $(current_branch) &&
     echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
 }'

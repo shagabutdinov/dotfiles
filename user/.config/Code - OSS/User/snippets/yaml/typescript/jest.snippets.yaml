@@ -1,0 +1,380 @@
+jest:
+  context: |
+    document().languageId.match("^(type|java)script(react)?$") &&
+    document().uri.toString().match('\.test\.[tj]sx?$')
+  snippets:
+    definitions:
+      context: cursor.precedingText().match('(^|\n)\w+$')
+      snippets:
+        define function:
+          trigger: d
+          context: |
+            document().uri.toString().match('(?<!/use[^/]*)\.test\.ts$') &&
+              document().getText().match('^\s*\w+\s*$')
+          snippet: |-
+            import $1:importing{object} from "./$filename";
+
+            describe($object{object}, () => {
+              it("$2", () => {
+                $0
+              });
+            });
+          placeholders:
+            filename:
+              onBeforeExpand: |
+                ({ document, placeholders: { importing } }) => {
+                  const objectName = (
+                    document.uri.toString().match('/([^/]+).test.ts$') ||
+                    []
+                  )[1];
+
+                  importing.value = objectName;
+
+                  return objectName;
+                }
+            importing:
+              onBeforeLeave: |
+                ({ placeholders: { object } }, placeholder) => {
+                  object.value = placeholder.value.replace(
+                    /{(.*?)}/,
+                    (_, value) => value.trim()
+                  );
+                }
+
+        define component:
+          trigger: d
+          context: |
+            document().uri.toString().match('(?<!/use[^/]*)\.test\.tsx$') &&
+              document().getText().match('^\s*\w+\s*$')
+          snippet: |-
+            import React from "react";
+            import { render } from "@testing-library/react";
+
+            import $1:component{Component} from "./$1:component{Component}";
+
+            describe($1:component{Component}, () => {
+              const props: React.ComponentProps<typeof $1:component{Component}> = {
+                $2
+              };
+
+              it("renders", async () => {
+                const { container } = render(<$1:component{Component} {...props} />);
+                expect(container).toMatchSnapshot();
+              });
+            });
+          placeholders:
+            component:
+              onBeforeExpand: |
+                ({ document }) => (
+                  document.uri.toString().match('/([^/]+).test.tsx$') || []
+                )[1]
+
+        define hook:
+          trigger: d
+          context: |
+            document().uri.toString().match('(?<=/use[^/]*)\.test\.tsx?$') &&
+              document().getText().match('^\s*\w+\s*$')
+          snippet: |-
+            import React from "react";
+            import { renderHook } from "@testing-library/react-hooks";
+
+            import $1:hook{hook}$2{, { $3{Args} }} from "./$1:hook{hook}";
+
+            describe($1:hook{hook}, () => {
+              const args: $3{Args} = {
+                $4
+              };
+
+              it("renders", async () => {
+                const { result } = renderHook(() => $1:hook{hook}(args));
+                $0expect(result.current).toEqual({});
+              });
+            });
+          placeholders:
+            hook:
+              onBeforeExpand: |
+                ({ document }) => (
+                  document.uri.toString().match('/([^/]+).test.tsx?$') || []
+                )[1]
+
+    sentences:
+      context: |
+        cursor.precedingText().match('(^|\n)\s+\w+$') &&
+          cursor.followingText().match('^\s*($|\n)')
+      snippets:
+        describe:
+          trigger: d
+          snippet: |-
+            describe("$1", () => {
+              $0
+            });
+
+        it: # @todo trigger "it" => "i"
+          trigger: it
+          snippet: |-
+            it("$1", async () => {
+              $0
+            });
+
+        before each:
+          trigger: be
+          snippet: |-
+            beforeEach(() => {
+              $0
+            });
+
+        fireEvent:
+          trigger: fe
+          snippet: fireEvent.
+          onExpand:
+            command: imports.add
+            args:
+              value: fireEvent
+              from: '@testing-library/react'
+
+        render:
+          trigger: re
+          snippet: const { $1{container} } = render(<$component {...props} $2 />)
+          placeholders:
+            component:
+              onBeforeExpand: |
+                ({ document }) => (
+                  document.uri.toString().match('/([^/]+).test.[tj]sx?$') || []
+                )[1]
+
+        mock fetch:
+          trigger: mf
+          snippet: fetchMock.$1{get}('path:$2', $3)
+          onExpand:
+            command: imports.add
+            args:
+              value: default
+              alias: fetchMock
+              from: fetch-mock
+
+        fetch mock reset:
+          trigger: fmr
+          snippet: fetchMock.reset()
+          onExpand:
+            command: imports.add
+            args:
+              value: default
+              alias: fetchMock
+              from: fetch-mock
+
+        await act:
+          trigger: aa
+          snippet: |-
+            await act(async () => {
+              $1
+            })
+          onExpand:
+            command: imports.add
+            args:
+              value: act
+              from: '@testing-library/react'
+
+        act:
+          trigger: ac
+          snippet: |-
+            act(() => {
+              $1
+            })
+          onExpand:
+            command: imports.add
+            args:
+              value: act
+              from: '@testing-library/react'
+
+        await act waitForNextUpdate:
+          trigger: wu
+          snippet: await act(() => waitForNextUpdate())
+          onBeforeExpand: |
+            ({ document, cursor, extensions: { user } }) => ({
+              changes: user.addJestRenderImport(document, cursor, "waitForNextUpdate")
+            })
+          onExpand:
+            command: imports.add
+            args:
+              value: act
+              from: '@testing-library/react-hooks'
+
+
+    element getters:
+      context: |
+        !cursor.precedingText().match('(?<=(,|{)\s*)\w+$')
+      snippets:
+        getByRole:
+          trigger: gr
+          snippet: 'getByRole("$1{button}", { name: $2{/$3/} })'
+          onBeforeExpand: |
+            ({ document, cursor, extensions: { user } }) => ({
+              changes: user.addJestRenderImport(document, cursor, "getByRole")
+            })
+
+        findByRole:
+          trigger: fr
+          snippet: 'await findByRole("$1{button}", { name: $2{/$3/} })'
+          onBeforeExpand: |
+            ({ document, cursor, extensions: { user } }) => ({
+              changes: user.addJestRenderImport(document, cursor, "findByRole")
+            })
+
+        getByText:
+          trigger: gt
+          snippet: getByText("$1")
+          onBeforeExpand: |
+            ({ document, cursor, extensions: { user } }) => ({
+              changes: user.addJestRenderImport(document, cursor, "getByText")
+            })
+
+        findByText:
+          trigger: ft
+          snippet: await findByText("$1")
+          onBeforeExpand: |
+            ({ document, cursor, extensions: { user } }) => ({
+              changes: user.addJestRenderImport(document, cursor, "findByText")
+            })
+
+        getByTitle:
+          trigger: gti
+          snippet: getByTitle("$1")
+          onBeforeExpand: |
+            ({ document, cursor, extensions: { user } }) => ({
+              changes: user.addJestRenderImport(document, cursor, "getByTitle")
+            })
+
+        findByTitle:
+          trigger: fti
+          snippet: await findByTitle("$1")
+          onBeforeExpand: |
+            ({ document, cursor, extensions: { user } }) => ({
+              changes: user.addJestRenderImport(document, cursor, "findByTitle")
+            })
+
+        getByPlaceholderText:
+          trigger: gp
+          snippet: getByPlaceholderText("$1")
+          onBeforeExpand: |
+            ({ document, cursor, extensions: { user } }) => ({
+              changes: user.addJestRenderImport(document, cursor, "getByPlaceholderText")
+            })
+
+        findByPlaceholderText:
+          trigger: fp
+          snippet: await findByPlaceholderText("$1")
+          onBeforeExpand: |
+            ({ document, cursor, extensions: { user } }) => ({
+              changes: user.addJestRenderImport(document, cursor, "findByPlaceholderText")
+            })
+
+        debugDOM:
+          trigger: dd
+          snippet: debugDOM($0{container})
+          onExpand:
+            command: imports.add
+            args:
+              value: debugDOM
+              from: '@testing-library/react'
+
+        debug:
+          trigger: de
+          snippet: debug($1)
+          onBeforeExpand: |
+            ({ document, cursor, extensions: { user } }) => ({
+              changes: user.addJestRenderImport(document, cursor, "debug")
+            })
+
+    element getters names:
+      context: cursor.precedingText().match('(?<=(,|{)\s*)\w+$')
+      snippets:
+        getByRole:
+          trigger: gr
+          snippet: getByRole
+
+        findByRole:
+          trigger: fr
+          snippet: findByRole
+
+        getByText:
+          trigger: gt
+          snippet: getByText
+
+        findByText:
+          trigger: ft
+          snippet: findByText
+
+        getByTitle:
+          trigger: gti
+          snippet: getByTitle
+
+        findByTitle:
+          trigger: fti
+          snippet: findByTitle
+
+        getByPlaceholderText:
+          trigger: gp
+          snippet: getByPlaceholderText
+
+        findByPlaceholderText:
+          trigger: fp
+          snippet: findByPlaceholderText
+
+    functions:
+      context: cursor.precedingText().match('\.\w+$')
+      snippets:
+        expect toEqual:
+          trigger: to
+          snippet: toEqual($1)
+
+        expect toHaveBeenCalledWith:
+          trigger: toc
+          snippet: toHaveBeenCalledWith($1)
+
+        fire event change:
+          trigger: ~(?<=fireEvent\.)c$
+          snippet: |-
+            change($1, { target: { value: $2 } })
+
+        fire event keydown:
+          trigger: ~(?<=fireEvent\.)k$
+          snippet: |-
+            keyDown($1, { key: "$2{Enter}" })
+
+    fireEvent click:
+      trigger: ~fireEvent\.$
+      snippet: fireEvent.click($1)
+
+    helpers:
+      snippets:
+        add only to test:
+          context: cursor.followingText().match('^\(')
+          trigger: it
+          snippet: it.only
+
+        remove only from test:
+          context: cursor.followingText().match('^\(')
+          trigger: ~it\.only$
+          snippet: it
+
+    values:
+      snippets:
+        expect:
+          trigger: e
+          snippet: expect($1).to
+
+        expect anything:
+          trigger: ea
+          snippet: expect.anything()
+
+        expect objectContaining:
+          trigger: eo
+          snippet: expect.objectContaining($0)
+
+        jest fn:
+          trigger: jf
+          snippet: jest.fn()
+
+        jest mock:
+          trigger: jm
+          snippet: jest.mock($0)

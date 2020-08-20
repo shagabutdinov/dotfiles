@@ -1,0 +1,164 @@
+constructor typescript:
+  context: |
+    document().languageId.match("^(type|java)script(react)?$") &&
+      document().uri.fsPath.startsWith('/home/leo/src/constructor/website')
+  snippets:
+    --primary-green:
+      trigger: '~#4ABB8B$'
+      snippet: var(--primary-green)
+      order: 1
+
+    --primary-darkgreen:
+      trigger: '~#2B8F65$'
+      snippet: var(--primary-darkgreen)
+      order: 1
+
+    --primary-disabled:
+      trigger: '~#C8CDD5$'
+      snippet: var(--primary-disabled)
+      order: 1
+
+    --neutral-black:
+      trigger: '~#181C25$'
+      snippet: var(--neutral-black)
+      order: 1
+
+    --neutral-greenishgrey:
+      trigger: '~#E4EBEF$'
+      snippet: var(--neutral-greenishgrey)
+      order: 1
+
+    --neutral-greenishligthgrey:
+      trigger: ~rgba\(228, 235, 239, 0.64\)$
+      snippet: var(--neutral-greenishligthgrey)
+      order: 1
+
+    --neutral-disabledgrey:
+      trigger: ~rgba\(80, 92, 117, 0.28\)$
+      snippet: var(--neutral-disabledgrey)
+      order: 1
+
+    --neutral-lightgrey:
+      trigger: ~rgba\(80, 92, 117, 0.64\)$
+      snippet: var(--neutral-lightgrey)
+      order: 1
+
+    --neutral-grey:
+      trigger: '~#505C75$'
+      snippet: var(--neutral-grey)
+      order: 1
+
+    --neutral-blueishgrey:
+      trigger: '~#E1E5F1$'
+      snippet: var(--neutral-blueishgrey)
+      order: 1
+
+    --neutral-greyedition:
+      trigger: '~#414A5B$'
+      snippet: var(--neutral-greyedition)
+      order: 1
+
+    --accent-danger:
+      trigger: '~#E0182D$'
+      snippet: var(--accent-danger)
+      order: 1
+
+    --secondary-bluebrand:
+      trigger: '~#1F89FB$'
+      snippet: var(--secondary-bluebrand)
+      order: 1
+
+    --secondary-bluedark:
+      trigger: '~#196EC9$'
+      snippet: var(--secondary-bluedark)
+      order: 1
+
+    --secondary-turquoiselight:
+      trigger: '~#79E2F2$'
+      snippet: var(--secondary-turquoiselight)
+      order: 1
+
+    --secondary-purplelight:
+      trigger: '~#998DD9$'
+      snippet: var(--secondary-purplelight)
+      order: 1
+
+    --secondary-yellowlight:
+      trigger: '~#FFC44D$'
+      snippet: var(--secondary-yellowlight)
+      order: 1
+
+    --secondary-magentalight:
+      trigger: '~#F55F89$'
+      snippet: var(--secondary-magentalight)
+      order: 1
+
+    --secondary-yellowregular:
+      trigger: '~#FFAB00$'
+      snippet: var(--secondary-yellowregular)
+      order: 1
+
+    --secondary-turquoiseregular:
+      trigger: '~#00B8D9$'
+      snippet: var(--secondary-turquoiseregular)
+      order: 1
+
+    --secondary-magentadark:
+      trigger: '~#C22C56$'
+      snippet: var(--secondary-magentadark)
+      order: 1
+
+    --secondary-purpleregular:
+      trigger: '~#6554C0$'
+      snippet: var(--secondary-purpleregular)
+      order: 1
+
+    --secondary-magentaregular:
+      trigger: '~#F3376B$'
+      snippet: var(--secondary-magentaregular)
+      order: 1
+
+    --secondary-yellowdark:
+      trigger: '~#E69A00$'
+      snippet: var(--secondary-yellowdark)
+      order: 1
+
+    --secondary-turquoisedark:
+      trigger: '~#008DA6$'
+      snippet: var(--secondary-turquoisedark)
+      order: 1
+
+    --pale-grey:
+      trigger: '~#F7F9FA$'
+      snippet: var(--pale-grey)
+      order: 1
+
+    --black:
+      trigger: '~#000D1C$'
+      snippet: var(--black)
+      order: 1
+
+    --background-grey:
+      trigger: '~#EFF4F6$'
+      snippet: var(--background-grey)
+      order: 1
+
+    --font-header:
+      trigger: ~Work Sans$
+      snippet: var(--font-header)
+      order: 1
+
+    --font-text:
+      trigger: Lato
+      snippet: var(--font-text)
+      order: 1
+
+    --font-code:
+      trigger: ~Source Code Pro$
+      snippet: var(--font-code)
+      order: 1
+
+    --light-shadow:
+      trigger: ~(0 4px 16px 0 rgba\(0, 93, 186, 0.04\)|0px 4px 16px rgba\(0, 93, 186, 0.04\))$
+      snippet: var(--light-shadow)
+      order: 1

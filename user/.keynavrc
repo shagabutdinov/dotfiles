@@ -29,6 +29,10 @@ o cell-select 7
 l cell-select 8
 period cell-select 9
 
+p cell-select 10
+semicolon cell-select 11
+slash cell-select 12
+
 h warp, click 4, click 4, click 4
 ctrl+h warp, click 4
 n warp, click 5, click 5, click 5
@@ -39,11 +43,7 @@ ctrl+bracketleft warp, click 6
 bracketright warp, click 7, click 7, click 7
 ctrl+bracketright warp, click 7
 
-p cell-select 10
-semicolon cell-select 11
-slash cell-select 12
-
-w warp
+# w warp
 space warp, click 1
 alt+space warp, click 2
 ctrl+space warp, click 3
@@ -51,11 +51,12 @@ ctrl+space warp, click 3
 shift+space warp, drag 1
 shift+ctrl+space warp, drag 3
 
+grave cursorzoom 256 256,grid 4x3,warp
+Tab grid 1x1,cursorzoom 12 12,warp
+
 w windowzoom,grid 4x3,warp
 q history-back,warp
-c cursorzoom 256 256,grid 4x3,warp
 
-Tab grid 1x1,cursorzoom 12 12,warp
 
 Escape end
 Return end

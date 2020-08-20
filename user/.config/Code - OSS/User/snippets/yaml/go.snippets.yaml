@@ -1,0 +1,83 @@
+typescript:
+  context: document().languageId.match("^go$")
+  snippets:
+    struct:
+      trigger: ts
+      snippet: |
+        type $1 struct {
+          $0
+        }
+
+    func:
+      trigger: fn
+      snippet: |
+        func $1:name($2) $3 {
+          $0
+        }
+
+    return:
+      trigger: r
+      snippet: return $0
+
+    return nil:
+      trigger: rn
+      snippet: return nil
+
+    return false:
+      trigger: rf
+      snippet: return false
+
+    return true:
+      trigger: rt
+      snippet: return true
+
+    func struct:
+      trigger: fs
+      snippet: |
+        func ($1{$struct{struct}}) $2:name{name}($3) $4 {
+          $0
+        }
+      placeholders:
+        struct:
+          onBeforeExpand: |
+            ({ document, debug }) => {
+              const name = document.getText().match(/type\s+(\w+)\s+struct/);
+              debug(document.getText());
+
+              if (!name) {
+                return ;
+              }
+
+              return `${name[1].toLowerCase()} *${name[1]}`;
+            }
+
+    if err not nil return err:
+      trigger: ie
+      snippet: |
+        if err != nil {
+          return err
+        }
+
+    if err not nil panic:
+      trigger: ip
+      snippet: |
+        if err != nil {
+          panic(err)
+        }
+
+    if:
+      trigger: i
+      snippet: |
+        if $1 {
+          $0
+        }
+
+    fmt.Println:
+      trigger: l
+      snippet: fmt.Println("XXXX $id ", $1)
+      placeholders:
+        id:
+          onBeforeExpand: |
+            ({ cursor, document }) =>
+              require('path').basename(document.uri.fsPath) + ':' +
+              cursor.anchor.line

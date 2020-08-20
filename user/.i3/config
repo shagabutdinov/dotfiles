@@ -40,6 +40,7 @@ bindsym $mod+t exec i3-sensible-terminal
 bindsym Mod1+F4 kill
 
 # start dmenu (a program launcher)
+bindsym F1 exec rofi -show run -matching fuzzy
 bindsym Mod1+space exec rofi -show run -matching fuzzy
 bindsym $mod+space exec carcosa-ui '~/.secrets' --mode login-password
 
@@ -245,3 +246,4 @@ bindsym $mod+Escape exec uxinit
 
 bindsym $mod+minus move workspace to output left
 bindsym $mod+equal move workspace to output right
+

@@ -25,5 +25,10 @@ source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
 
 export GTK_IM_MODULE=xim
 export QT_IM_MODULE=xim
+export PATH=./bin:$HOME/.bin:$HOME/.local/deadfiles/bin:/home/leo/src/go/bin:$PATH
+export LC_ALL="en_US.UTF-8"
+autorandr --change
 
+ulock &
 exec i3
+

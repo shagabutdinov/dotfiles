@@ -16,9 +16,10 @@
 127.0.0.1 e
 127.0.0.1       localbox
 127.0.0.1 elasticsearch
-127.0.0.1 browser.sentry-cdn.com
 
-# 0.0.0.0 devac.cnstrc.com
+0.0.0.0 browser.sentry-cdn.com
+0.0.0.0 cdn.amplitude.com
+0.0.0.0 www.googletagmanager.com
 0.0.0.0 reports-api.sqreen.io
 0.0.0.0 api.wb.local
 0.0.0.0 auth.wb.local
@@ -29,6 +30,7 @@
 0.0.0.0 adnxs.com
 0.0.0.0 connectad.io
 0.0.0.0 doubleclick.net
+0.0.0.0 stats.g.doubleclick.net
 0.0.0.0 lijit.com
 0.0.0.0 rubiconproject.com
 0.0.0.0 adsrvr.org
