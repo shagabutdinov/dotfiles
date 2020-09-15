@@ -2,7 +2,7 @@ URxvt*termName: rxvt-unicode
 URxvt.scrollBar: false
 
 URxvt*modifier: mod1
-URxvt.perl-ext-common:      default,url-select,keyboard-select,matcher,clipboard,autocomplete-ALL-the-things,tabbedex
+URxvt.perl-ext-common:      default,matcher,clipboard
 
 URxvt.url-select.launcher:  chromium
 URxvt.url-select.underline: true
@@ -16,8 +16,6 @@ URxvt.matcher.button:   1
 
 URxvt.intensityStyles: false
 
-URxvt.keysym.M-w: autocomplete-ALL-the-things:WORD-complete
-URxvt.keysym.M-W: autocomplete-ALL-the-things:skeleton-complete
 Xcursor.size: 16
 
 URxvt.keysym.M-v:   perl:clipboard:paste
@@ -46,5 +44,5 @@ URxvt.keysym.Control-comma: perl:tabbedex:prev_tab
 *.color14:    #9AEDFE
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6
-urxvt*font:        -xos4-terminus-medium-*-*-*-20-*-*-*-*-*-*-*
+urxvt*font:        -xos4-ubuntu-mono-medium-*-*-*-20-*-*-*-*-*-*-*
 urxvt*boldFont:    -xos4-terminus-bold-*-*-*-20-*-*-*-*-*-*-*

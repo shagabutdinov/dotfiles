@@ -8,6 +8,14 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const lst = __importStar(require("vscode-languageserver-types"));
+function getText(document, match, options = {}) {
+    const range = getRange(document, match, options);
+    if (!range) {
+        return null;
+    }
+    return document.getText(range);
+}
+exports.getText = getText;
 function getRange(document, match, options = {}) {
     const result = getRanges(document, match, options);
     if (!result) {
@@ -78,7 +86,7 @@ function getMatches(document, match, options = {}) {
             return [match];
         })()).map((value) => ({
         index: value.index,
-        text: value[0],
+        text: value[options.matchIndex || 0],
     }));
     return {
         range,
@@ -106,8 +114,8 @@ function textToPosition(text) {
     const lines = text.split("\n");
     return { line: lines.length - 1, character: lines[lines.length - 1].length };
 }
-function findRange(document, { from, to, range }) {
-    if ((from || to) && range) {
+function findRange(document, { after, before, range }) {
+    if ((after || before) && range) {
         throw new Error("from or to, and range can not be specified ");
     }
     if (range) {
@@ -116,21 +124,22 @@ function findRange(document, { from, to, range }) {
         }
         return getRange(document, range);
     }
-    const start = from
-        ? lst.Position.is(from)
-            ? from
-            : getPosition(document, from)
+    const start = after
+        ? lst.Position.is(after)
+            ? after
+            : getPosition(document, after)
         : { line: 0, character: 0 };
-    const end = to
-        ? lst.Position.is(to)
-            ? to
-            : getPosition(document, to)
+    const end = before
+        ? lst.Position.is(before)
+            ? before
+            : getPosition(document, before)
         : textToPosition(document.getText());
     if (!start || !end) {
         return null;
     }
     return { start, end };
 }
+exports.findRange = findRange;
 function getIndex(array, { index }) {
     if (array.length === 0) {
         return null;

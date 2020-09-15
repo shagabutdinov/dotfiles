@@ -34,3 +34,7 @@ log:
     query:
       trigger: q
       snippet: '@query '
+
+    onetoone:
+      trigger: o
+      snippet: '@onetoone '

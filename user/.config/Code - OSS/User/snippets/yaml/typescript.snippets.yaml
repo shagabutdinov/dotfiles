@@ -318,9 +318,9 @@ typescript:
           placeholders:
             id:
               onBeforeExpand: |
-                ({ editor, document }) =>
+                ({ cursor, document }) =>
                   require('path').basename(document.uri.fsPath) + ':' +
-                  editor.selection.anchor.line
+                  cursor.anchor.line
 
     sentences:
       context: cursor.precedingText().match('(^|\n)\s+\w+$')
@@ -382,21 +382,25 @@ typescript:
 
     calls:
       snippets:
-        Object.keys:
+        object keys:
           trigger: ok
           snippet: Object.keys($1)
 
-        Object.values:
+        object values:
           trigger: ov
           snippet: Object.values($1)
 
-        Object.entries:
+        object entries:
           trigger: oe
           snippet: Object.entries($1)
 
-        JSON.stringify:
+        json stringify:
           trigger: js
           snippet: JSON.stringify($1)
+
+        json parse:
+          trigger: js
+          snippet: JSON.parse($1)
 
     values:
       context: cursor.precedingText().match('([:=(,|&[]|={|=>|=\{|return)\s*\w*$')
@@ -430,7 +434,7 @@ typescript:
           snippet: new Error($1)
 
     types:
-      context: cursor.precedingText().match('([:<,[]|=>|(?<!\|\s*)\||(?<!&\s*)&)\s*\w+$')
+      context: cursor.precedingText().match('([:<,[]|=>|(?<!\|\s*)\||(?<!&\s*)&|<(?!=\s))\s*\w+$')
       snippets:
         unknown:
           trigger: un
@@ -448,6 +452,11 @@ typescript:
           trigger: s
           snippet: string
 
+        "null":
+          trigger: "n"
+          snippet: "null"
+          order: 1
+
         number:
           trigger: nu
           snippet: number
@@ -460,11 +469,15 @@ typescript:
           trigger: v
           snippet: void
 
-        Record:
+        void callback:
+          trigger: void
+          snippet: () => void
+
+        record:
           trigger: R
           snippet: Record<string, $0>
 
-        Promise:
+        promise:
           trigger: P
           snippet: Promise<$0>
 
@@ -481,6 +494,10 @@ typescript:
         prtodo:
           trigger: xp
           snippet: // @prtodo $0
+
+        prtodo tests:
+          trigger: xpp
+          snippet: // @prtodo tests
 
         sentences:
           context: cursor.precedingText().match('(^|\n|{)\s*\w+$')

@@ -7,3 +7,4 @@ setxkbmap -layout us,ru -option grp:caps_toggle,grp_led:caps
 xmodmap -e "keycode 105 = F14"
 
 xrdb -merge /home/leo/.Xresources
+

@@ -50,7 +50,7 @@
   "editor.acceptSuggestionOnEnter": "off",
   "editor.suggest.localityBonus": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "editor.fontFamily": "Ubuntu Mono, Consolas, 'JetBrains Mono for Powerline', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.fontFamily": "'Ubuntu Mono', Consolas, 'JetBrains Mono for Powerline', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "githubPullRequests.showInSCM": true,
   "vscodeWorkspaceSwitcher.paths": ["/home/leo/projects/vscode"],
   "editor.renderIndentGuides": false,
@@ -103,20 +103,24 @@
   },
   "[markdown]": {
     "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 80
+    "editor.wordWrapColumn": 80,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "cSpell.userWords": [
     "devtools",
+    "disabledgrey",
     "formik",
+    "postgres",
     "prtodo",
     "reindent",
     "rerender",
     "shagabutdinov",
+    "snakeize",
     "subheadlines",
     "typeof"
   ],
   "[typescriptreact]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "rest-client.previewResponseInUntitledDocument": true,
   "rest-client.enableTelemetry": false,
@@ -133,5 +137,13 @@
   "editor.suggest.showSnippets": false,
   "editor.suggest.maxVisibleSuggestions": 15,
   "python.languageServer": "Microsoft",
-  "workbench.colorTheme": "Dracula Soft"
+  "workbench.colorTheme": "Dracula Soft",
+  "cSpell.language": "en,ru2",
+  "markdown.extension.tableFormatter.normalizeIndentation": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

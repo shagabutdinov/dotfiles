@@ -12,12 +12,7 @@ if ARGV.include?('--active-window')
       .strip()[40..-1]
 end
 
-display = `ps -aux | grep Xorg`.match(/tcp :(\d+)/)
-if display.nil?
-  raise 'active display not found'
-end
-
-`import -window #{active_window_id} -display :#{display[1]}.0 -screen "#{file}"`
+`import -window #{active_window_id} -screen "#{file}"`
 
 if ARGV.include?('--edit')
   `kolourpaint "#{file}"`

@@ -138,8 +138,22 @@ typescript:
               value: useMemo
               from: 'react'
 
+    variable assignment:
+      trigger: ~(?<=\w+=)$
+      snippet: "{$0{$variable}}"
+      order: 2
+      placeholders:
+        variable:
+          onBeforeExpand: |
+            ({ document, debug, cursor, extensions: { user } }) =>
+              user.getText(
+                document,
+                /(\w+)=$/,
+                { before: cursor.start, matchIndex: 1 }
+              );
+
     expressions:
-      context: cursor.precedingText().match('\S[ ]+\w+$')
+      context: cursor.precedingText().match('([:=(,|&[]|={|=>|=\{|return)\s*\w*$')
 
       snippets:
         useState:
@@ -188,3 +202,30 @@ typescript:
         className:
           trigger: cn
           snippet: className
+
+        assignment:
+          trigger: ~(?<=\s\w+)$
+          snippet: ={$0}
+          order: -1
+
+    tags:
+      context: cursor.precedingText().match('([?:(>}]|return)\s*<$')
+      trigger: ~<$
+      auto: true
+      snippet: <$1:tag{tag}>$0$container{</$close{tag}>}
+      placeholders:
+        tag:
+          onPlaceholderChange: |
+            ({ env, placeholders: { tag, container, close } }) => {
+              if (tag.value === '>') {
+                tag.value = '';
+                close.value = '';
+                setTimeout(() => env.commands.executeCommand('snippets.nextTab'), 64);
+              } else if (tag.value.endsWith("/")) {
+                container.value = '';
+              } else {
+                close.value = tag.value.replace(/(?<=\w+)\s+.*/, '');
+              }
+            }
+
+

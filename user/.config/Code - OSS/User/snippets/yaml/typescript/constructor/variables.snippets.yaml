@@ -162,3 +162,143 @@ constructor typescript:
       trigger: ~(0 4px 16px 0 rgba\(0, 93, 186, 0.04\)|0px 4px 16px rgba\(0, 93, 186, 0.04\))$
       snippet: var(--light-shadow)
       order: 1
+
+    --primary-green-lower:
+      trigger: '~#4abb8b$'
+      snippet: var(--primary-green)
+      order: 1
+
+    --primary-darkgreen-lower:
+      trigger: '~#2b8f65$'
+      snippet: var(--primary-darkgreen)
+      order: 1
+
+    --primary-disabled-lower:
+      trigger: '~#c8cdd5$'
+      snippet: var(--primary-disabled)
+      order: 1
+
+    --neutral-black-lower:
+      trigger: '~#181c25$'
+      snippet: var(--neutral-black)
+      order: 1
+
+    --neutral-greenishgrey-lower:
+      trigger: '~#e4ebef$'
+      snippet: var(--neutral-greenishgrey)
+      order: 1
+
+    --neutral-grey-lower:
+      trigger: '~#505c75$'
+      snippet: var(--neutral-grey)
+      order: 1
+
+    --neutral-blueishgrey-lower:
+      trigger: '~#e1e5f1$'
+      snippet: var(--neutral-blueishgrey)
+      order: 1
+
+    --neutral-greyedition-lower:
+      trigger: '~#414a5b$'
+      snippet: var(--neutral-greyedition)
+      order: 1
+
+    --accent-danger-lower:
+      trigger: '~#e0182d$'
+      snippet: var(--accent-danger)
+      order: 1
+
+    --secondary-bluebrand-lower:
+      trigger: '~#1f89fb$'
+      snippet: var(--secondary-bluebrand)
+      order: 1
+
+    --secondary-bluedark-lower:
+      trigger: '~#196ec9$'
+      snippet: var(--secondary-bluedark)
+      order: 1
+
+    --secondary-turquoiselight-lower:
+      trigger: '~#79e2f2$'
+      snippet: var(--secondary-turquoiselight)
+      order: 1
+
+    --secondary-purplelight-lower:
+      trigger: '~#998dd9$'
+      snippet: var(--secondary-purplelight)
+      order: 1
+
+    --secondary-yellowlight-lower:
+      trigger: '~#ffc44d$'
+      snippet: var(--secondary-yellowlight)
+      order: 1
+
+    --secondary-magentalight-lower:
+      trigger: '~#f55f89$'
+      snippet: var(--secondary-magentalight)
+      order: 1
+
+    --secondary-yellowregular-lower:
+      trigger: '~#ffab00$'
+      snippet: var(--secondary-yellowregular)
+      order: 1
+
+    --secondary-turquoiseregular-lower:
+      trigger: '~#00b8d9$'
+      snippet: var(--secondary-turquoiseregular)
+      order: 1
+
+    --secondary-magentadark-lower:
+      trigger: '~#c22c56$'
+      snippet: var(--secondary-magentadark)
+      order: 1
+
+    --secondary-purpleregular-lower:
+      trigger: '~#6554c0$'
+      snippet: var(--secondary-purpleregular)
+      order: 1
+
+    --secondary-magentaregular-lower:
+      trigger: '~#f3376b$'
+      snippet: var(--secondary-magentaregular)
+      order: 1
+
+    --secondary-yellowdark-lower:
+      trigger: '~#e69a00$'
+      snippet: var(--secondary-yellowdark)
+      order: 1
+
+    --secondary-turquoisedark-lower:
+      trigger: '~#008da6$'
+      snippet: var(--secondary-turquoisedark)
+      order: 1
+
+    --pale-grey-lower:
+      trigger: '~#f7f9fa$'
+      snippet: var(--pale-grey)
+      order: 1
+
+    --black-lower:
+      trigger: '~#000d1c$'
+      snippet: var(--black)
+      order: 1
+
+    --background-grey-lower:
+      trigger: '~#eff4f6$'
+      snippet: var(--background-grey)
+      order: 1
+
+    --font-header-lower:
+      trigger: ~work sans$
+      snippet: var(--font-header)
+      order: 1
+
+    --font-text-lower:
+      trigger: lato
+      snippet: var(--font-text)
+      order: 1
+
+    --font-code-lower:
+      trigger: ~source code pro$
+      snippet: var(--font-code)
+      order: 1

@@ -1,19 +1,86 @@
 typescript:
   context: document().languageId.match("^go$")
   snippets:
+    type:
+      trigger: ~^t$
+      order: 1
+      snippet: type $1
+
+    type struct:
+      trigger: ~(?<=type\s+\w+\s+)s$
+      auto: true
+      snippet: |-
+        struct {
+          $0
+        }
+
+    type interface:
+      trigger: ~(?<=type\s+\w+\s+)i$
+      auto: true
+      snippet: |-
+        interface {
+          $0
+        }
+
     struct:
-      trigger: ts
-      snippet: |
+      trigger: ~^s$
+      order: 1
+      snippet: |-
         type $1 struct {
           $0
         }
 
     func:
       trigger: fn
-      snippet: |
+      snippet: |-
         func $1:name($2) $3 {
           $0
         }
+
+    for:
+      trigger: ~(?<=^\s*)f$
+      order: 1
+      snippet: |-
+        for $1 {
+          $0
+        }
+
+    break:
+      trigger: b
+      snippet: break
+
+    continue:
+      trigger: c
+      snippet: continue
+
+    "nil":
+      trigger: n
+      snippet: "nil"
+
+    "false":
+      trigger: f
+      snippet: "false"
+
+    "true":
+      trigger: t
+      snippet: "true"
+
+    float64:
+      trigger: ff
+      snippet: float64
+
+    float64 continuation:
+      trigger: "false"
+      snippet: float64
+
+    float64 type:
+      trigger: ~(?<=\w\s+)(?<!return\s+)f$
+      snippet: float64
+      order: 1
+
+    string:
+      trigger: ~(?<=\w\s+)s$
+      snippet: string
 
     return:
       trigger: r
@@ -31,9 +98,34 @@ typescript:
       trigger: rt
       snippet: return true
 
+    return result:
+      trigger: rr
+      snippet: return result
+
+    define variable:
+      trigger: ~;$
+      auto: true
+      snippet: ":= "
+
+    semicolon:
+      trigger: ~:=$
+      snippet: ";"
+
+    range:
+      trigger: ~(?<=for\s+\w+(,\s+\w+)?\s*:?=)\s*$
+      snippet: " range "
+
+    equal range:
+      trigger: ~(?<=for\s+\w+(,\s+\w+)?\s*)\s*$
+      snippet: " := range "
+
+    for underscore:
+      trigger: ~(?<=for\s+)$
+      snippet: "_, $1 := range "
+
     func struct:
-      trigger: fs
-      snippet: |
+      trigger: d
+      snippet: |-
         func ($1{$struct{struct}}) $2:name{name}($3) $4 {
           $0
         }
@@ -53,26 +145,33 @@ typescript:
 
     if err not nil return err:
       trigger: ie
-      snippet: |
+      snippet: |-
         if err != nil {
-          return err
+          return $1err
         }
 
     if err not nil panic:
       trigger: ip
-      snippet: |
+      snippet: |-
         if err != nil {
           panic(err)
         }
 
     if:
       trigger: i
-      snippet: |
+      snippet: |-
         if $1 {
           $0
         }
 
-    fmt.Println:
+    if not:
+      trigger: in
+      snippet: |-
+        if !$1 {
+          $0
+        }
+
+    log:
       trigger: l
       snippet: fmt.Println("XXXX $id ", $1)
       placeholders:
@@ -81,3 +180,55 @@ typescript:
             ({ cursor, document }) =>
               require('path').basename(document.uri.fsPath) + ':' +
               cursor.anchor.line
+
+    log structure:
+      trigger: lv
+      snippet: fmt.Printf("XXXX $id %+v\n", $1)
+      placeholders:
+        id:
+          onBeforeExpand: |
+            ({ cursor, document }) =>
+              require('path').basename(document.uri.fsPath) + ':' +
+              cursor.anchor.line
+
+    assert equal values:
+      trigger: ae
+      snippet: assert.EqualValues(test, $1{expected}, $2{actual})
+
+    errors new:
+      trigger: en
+      snippet: errors.New("$1")
+
+    append:
+      trigger: ~(?<==\s*)a$
+      snippet: append($1:list, $2:value)
+      placeholders:
+        list:
+          onBeforeExpand: |-
+            ({ document, cursor, extensions: { user } }) =>
+              user.getText(
+                document,
+                /\S+(?=\s*=\s*a$)/,
+                { before: cursor.anchor },
+              );
+
+    package:
+      trigger: ~^p$
+      snippet: package $0:package
+      placeholders:
+        package:
+          onBeforeExpand: |-
+            ({ document }) =>
+              document.uri.fsPath.match(/\/([^/]*?)\/[^/]*$/)[1]
+
+    karma describe:
+      trigger: kd
+      snippet: karma.Describe("$1", $2)
+
+    karma describe continuation:
+      trigger: ~(?<=\.)d$
+      snippet: Describe("$1", $2)
+
+    karma reason:
+      trigger: ~(?<=\.)r$
+      snippet: Reason("$1")

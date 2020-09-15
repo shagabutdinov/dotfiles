@@ -7,7 +7,7 @@ export function addJestRenderImport(
   importing: string
 ): lst.TextEdit[] | undefined {
   const range = utils.getRange(document, /const\s+\{.*?\}\s+=\s+render/g, {
-    to: cursor.start,
+    before: cursor.start,
     index: "last",
   });
 

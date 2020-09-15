@@ -3,11 +3,11 @@ BACKGROUND=dark
 autoload -U add-zsh-hook
 source ~/.bin/_zsh-hijack
 
-export APPLICATION_ENV=development
 export LC_ALL="en_US.UTF-8"
+export TERM='xterm-256color'
+export COLORTERM='rxvt-unicode-256color'
 
-export PROMPT="%{$bg[blue]%}%{$fg[white]%}%2~ 冬%{$reset_color%} "
-export GOPATH=~/src/go
+export PROMPT="%{$bg[blue]%}%{$fg[white]%}%2~ $%{$reset_color%} "
 export QUOTA=20
 
 HISTSIZE=999999999
@@ -22,9 +22,6 @@ HIST_IGNORE_ALL_DUPS=no
 HIST_EXPIRE_DUPS_FIRST=no
 HIST_SAVE_NO_DUPS=no
 HIST_FIND_NO_DUPS=no
-
-export TERM='rxvt-unicode'
-export COLORTERM='rxvt-unicode-256color'
 
 autoload -U select-word-style
 select-word-style bash
@@ -48,47 +45,41 @@ function prepend_sudo() {
         CURSOR=$(($CURSOR+5))
 }
 
-function r() {
+function R() {
   nohup xdg-open "$@" > /dev/null 2> /dev/null &
   disown
 }
 
-bindkey "^T" prepend-sudo
-alias -g G="| grep"
+# fzf-history-widget
+bindkey '^R' fzf-history-widget
+eval "$(sed -r -e 's/\+s//' -e '/bindkey/d' /usr/share/fzf/key-bindings.zsh)"
 
-alias yaourt='yaourt --noconfirm --m-arg --skipchecksums --m-arg --skippgpcheck'
+# fzf.vim passes --color argument overriding any custom colorscheme
+args=()
+while [[ "$1" ]]; do
+    case "$1" in
+        --color) shift 2;;
+        *)       args+=("$1"); shift;;
+    esac
+done
+
+bindkey "^U" prepend-sudo
+
+# global
+alias -g G="| grep"
+alias -g X='| xsel -ib'
+
+# utils
+alias re='source ~/.bin/ushell-env && rehash' # reload env
+alias f='find . -name'
+alias ee='() { vim ~/.bin/ushell-env; source ~/.bin/ushell-env; rehash }'
+alias cw='cd ~/src/constructor/website'
 alias yay='yay --removemake --nodiffmenu --nocleanmenu --noupgrademenu --cleanafter'
 alias mv=/bin/mv
 alias pwgen='pwgen 12'
-alias nc='sudo netctl'
-alias ag='alias | grep -A 2 -B 2'
-alias cds='cd ~/src/'
-alias cw='cd ~/src/constructor/website'
-
-alias o='overmind'
-alias oc='overmind connect'
-alias oe='overmind restart'
-alias oa='[ -e ./.overmind.sock ] && rm ./.overmind.sock; overmind start --procfile .dev/Procfile -D -p 3000'
-alias oaa='overmind start'
-alias oo='overmind stop'
-alias re='source ~/.bin/ushell-env && rehash' # reload env
-alias f='find . -name'
-alias pa='cd ~/.secrets; carcosa -Ac'
-alias pr='cd ~/.secrets; carcosa -Rc'
-alias e='code'
-alias en='code -n'
-alias ee='code ~/.bin/ushell-env'
 alias h='ssh'
-alias b='bundle exec'
-alias bs='bundle exec ./bin/spring'
-alias bi='bundle install'
-alias bii='bundle install --path vendor/bundle --jobs 32'
-alias bu='bundle update'
-alias ni='npm install'
-alias nl='npm install && git checkout package-lock.json'
-alias -g X='| xsel -ib'
-alias ob='() { watch -x zsh -i -c "$@" }' # observe
 alias w='inotifyrun -r -e MODIFY' # watch
+alias ob='() { watch -x zsh -i -c "$@" }' # observe
 alias l='exa -lHg --group-directories-first'
 alias ls='exa -lHga'
 alias rr='sudo rm -rf'
@@ -96,21 +87,58 @@ alias rt='sudo rm -rf ~/.tmp/ssh/*'
 alias ks="kill \$(ps -xa | grep 'spring server' | grep -v 'grep' | awk '{print \$2}')"
 alias kp="kill -9 \$(ps -xa | grep 'puma' | grep -v 'grep' | awk '{print \$2}')"
 alias kk='() { kill -9 $(ps -xa | grep "$@" | grep -v "grep" | awk "{print \$2}") }' # observe
-alias el='touch ~"/projects/personal/log/$(date +%F_%H:%M).md"; code ~"/projects/personal/log/$(date +%F_%H:%M).md"'
-alias pr='hub pull-request'
+alias grep='grep --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn --color=auto'
+alias tree='tree --dirsfirst'
+alias ps='ps -xau'
+alias cal='cal -m $(date +%Y)'
+alias co='sudo chown -R leo: '
+alias cc='sudo chown -R leo: .'
 
+# overmind
+alias o='overmind'
+alias oc='overmind connect'
+alias oe='overmind restart'
+alias oa='[ -e ./.overmind.sock ] && rm ./.overmind.sock; overmind start -F /dev/null --procfile .dev/Procfile -D -p 3000'
+alias oaa='overmind start'
+alias oo='overmind stop'
+
+# secrets
+alias pa='cd ~/.secrets; carcosa -Ac'
+alias pg='cd ~/.secrets; carcosa -Gc'
+alias pr='cd ~/.secrets; carcosa -Rc'
+
+# code
+alias e='code'
+alias en='code -n'
+
+# bundle
+alias b='bundle exec'
+alias bs='bundle exec ./bin/spring'
+alias bi='bundle install'
+alias bii='bundle install --path vendor/bundle --jobs 32'
+alias bu='bundle update'
+
+# npm
+alias ni='npm install'
+alias nl='npm install && git checkout package-lock.json'
+alias el='touch ~"/projects/personal/log/$(date +%F_%H:%M).md"; code ~"/projects/personal/log/$(date +%F_%H:%M).md"'
+
+# pacman
 alias pm='sudo pacman'
-alias pms='sudo pacman --noconfirm -S'
+alias pmi='sudo pacman --noconfirm -S'
 alias pmr='sudo pacman -R'
 alias pmro='sudo pacman -Rns $(pacman -Qtdq)'
 alias pmq='pacman -Ql'
+alias pf='pkgfile'
 
+# systemctl
 alias s='sudo systemctl'
 alias sa='sudo systemctl start'
 alias se='sudo systemctl restart'
 alias so='sudo systemctl stop'
 alias ss='sudo systemctl status'
 
+# dotfiles
 alias dfp='balmora dotfiles-submit'
 alias dfu='balmora dotfiles-update'
 
@@ -118,12 +146,7 @@ export GREP_OPTIONS=''
 export NODE_PATH="~/.node:/usr/lib/node_modules"
 export WINEARCH='win32'
 
-alias grep='grep --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn --color=auto'
-alias tree='tree --dirsfirst'
-alias ps='ps -xau'
-alias cal='cal -m $(date +%Y)'
-alias uwhatsapp='chromium --app=https://web.whatsapp.com'
-
+# nmcli
 alias wr='nmcli -p dev wifi rescan'
 alias wd='nmcli -p dev wifi list'
 alias wc='nmcli -p dev wifi connect'
@@ -131,6 +154,11 @@ alias wl='nmcli -p con show'
 alias ws='nmcli -p con show --active'
 alias wu='nmcli -p con up id'
 
+# go
+alias gr=gorun
+alias gg=go get
+
+# docker
 alias d='docker'
 alias dx='docker exec -i -t'
 alias di='docker inspect'
@@ -146,7 +174,175 @@ alias dl='docker logs --tail 200'
 alias dlf='docker logs --follow'
 alias da='docker attach --no-stdin'
 
-alias rs='/bin/rm -rf ~/.tmp/ssh/*'
+# constructor
+
+alias oj="overmind connect jest"
+alias ot="overmind connect tsc"
+
+# git
+alias gg='() { grep $1 -R . }'
+alias gs='git show --color'
+alias gsf='git show --color --name-only'
+alias gsp='git commit -v -a && git push'
+alias gsa='git commit -v -a --amend && git push --force'
+alias gsn='git commit -v -a --amend --no-verify && git push --force'
+alias gcn='git commit --no-verify'
+alias gpf='git push --force'
+alias ge='git rebase'
+alias gei='git rebase --interactive'
+alias gec='git rebase --continue'
+alias gea='git rebase --abort'
+alias gpu='git push -u origin $(current_branch)'
+alias gpuf='git push -u origin $(current_branch) --force'
+alias gdc='git diff --cached'
+alias gh='git stash'
+alias ghp='git stash pop'
+alias ghs='git stash -- $(git diff --staged --name-only)'
+alias gfp='git fetch --prune'
+alias gcm='git checkout master'
+alias gt='git reset'
+alias gth='git reset --hard'
+alias glr='git pull --rebase'
+alias gau='git update-index --assume-unchanged'
+alias gac='git update-index --no-assume-unchanged'
+alias gmm='git fetch && git merge origin/master'
+alias gj='echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib' # copy last commit hash
+alias gcoo='git checkout origin/master -- '
+alias gdm='git diff $(git merge-base origin/master $(git rev-parse --abbrev-ref HEAD))'
+alias gdl='git diff --name-only $(git merge-base origin/master $(git rev-parse --abbrev-ref HEAD)) | cat'
+alias gbc='current_branch'
+
+alias gbn='() {
+  git fetch && \
+    git checkout origin/master && \
+    git checkout -b "$1"
+}'
+
+alias gz='() {
+  git add . &&
+    git commit -m "$(git-commit-prefix)$1" &&
+    echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
+}'
+
+alias gzn='() {
+  git add . &&
+  git commit -m "$(git-commit-prefix)$1" --no-verify &&
+  echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
+}'
+
+alias gzz='() {
+  git add . &&
+  git commit -m "$(git-commit-prefix)$1" --amend &&
+  echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
+}'
+
+alias gk='() { git commit -m "$(git-commit-prefix)$1" }'
+alias gkn='() { git commit -m "$(git-commit-prefix)$1" --no-verify }'
+alias gkk='() { git commit --amend }'
+
+function git-commit-prefix() {
+  branch=$(git rev-parse --abbrev-ref HEAD)
+  message="$(echo -n $branch | grep -Eo 'ch([0-9]+)')"
+
+  if [ ! -z "$message" ]; then
+    echo -n "[$message] "
+  else
+    echo -n "[$branch] " 
+  fi
+}
+
+alias gx='() {
+  git add . && \
+    git commit -m "$(git-commit-prefix)$1" && \
+    git push -u origin $(current_branch) &&
+    echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
+}'
+
+alias gxn='() {
+  git add . && \
+    git commit -m "$(git-commit-prefix)$1" --no-verify && \
+    git push -u origin $(current_branch) &&
+    echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
+}'
+
+alias gxx='() {
+  git add .
+  git commit -m "$(git log -1 --pretty=%s)" --amend
+  git push -u origin $(current_branch) --force &&
+  echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
+}'
+
+function rebase-current-branch-on-master() {
+  git fetch
+  git rebase origin/master
+}
+
+alias geo=rebase-current-branch-on-master
+
+function create-pull-request() {
+  repo=$(
+    git remote -v |
+      grep push |
+      sed -r "s/.*@(.*):(.*)\.git\s.*/http:\/\/\1\/\2/g"
+  )
+
+  chromium "$repo/compare/$(current_branch)?expand=1"
+}
+
+alias gq=create-pull-request
+
+alias gqm=merge-current-branch-to-staging
+alias gqe=complete-merge-current-branch-to-staging
+
+# kubernetes
+
+alias k=':kubectl'
+alias ka='k apply'
+alias kaf='k apply -f'
+alias kl='k logs'
+alias klf='k logs -f'
+alias kd='k describe'
+alias kdp='k describe pods'
+alias kds='k describe services'
+alias kdd='k describe deployment'
+alias kc='k create'
+alias kcf='k create -f'
+alias kr='k delete'
+alias krf='k delete -f'
+alias krp='k delete pod'
+alias krs='k delete service'
+alias krd='k delete deployment'
+alias kg='k get'
+alias kgp='k get pods'
+alias kga='k get pods --all-namespaces -o wide'
+alias kgs='k get services'
+alias kgd='k get deployments'
+alias kx='() { k exec -it $1 -- "${@:2}"}'
+alias kxb='() { k exec -it $1 bash }'
+alias kxc='() { k exec -it $1 rails c }'
+alias kxx='k run -i --tty busybox --image=busybox --restart=Never -- sh'
+alias kei='k exec'
+alias kgn='kubectl config current-context'
+alias ksc='kubectl config use-context '
+
+alias ksn=' \
+  kubectl config set-context $(kubectl config current-context) --namespace \
+'
+
+alias ksp='() {
+  project=$(kubectl config get-contexts | grep -Po "(?<=@)$1\w*(?=\s)" | head -n 1)
+  namespace=$(kubectl config current-context | grep -Po "\w+(?=@)")
+  if [ ! "$namespace" ]; then
+    namespace=$project
+  fi
+
+  kubectl config use-context $namespace@$project
+}'
+
+alias kxd='
+  open-kubernetes-database-console \
+    $(production-pod postgres)
+'
 
 :kubectl() {
     local arg
@@ -198,54 +394,6 @@ alias rs='/bin/rm -rf ~/.tmp/ssh/*'
     kubectl --context=$context ${(q)args[@]}
 }
 
-alias k=':kubectl'
-alias ka='k apply'
-alias kaf='k apply -f'
-alias kl='k logs'
-alias klf='k logs -f'
-alias kd='k describe'
-alias kdp='k describe pods'
-alias kds='k describe services'
-alias kdd='k describe deployment'
-alias kc='k create'
-alias kcf='k create -f'
-alias kr='k delete'
-alias krf='k delete -f'
-alias krp='k delete pod'
-alias krs='k delete service'
-alias krd='k delete deployment'
-alias kg='k get'
-alias kgp='k get pods'
-alias kga='k get pods --all-namespaces -o wide'
-alias kgs='k get services'
-alias kgd='k get deployments'
-alias kx='() { k exec -it $1 -- "${@:2}"}'
-alias kxb='() { k exec -it $1 bash }'
-alias kxc='() { k exec -it $1 rails c }'
-alias kxx='k run -i --tty busybox --image=busybox --restart=Never -- sh'
-alias kei='k exec'
-alias kgn='kubectl config current-context'
-alias ksc='kubectl config use-context '
-
-alias ksn=' \
-  kubectl config set-context $(kubectl config current-context) --namespace \
-'
-
-alias ksp='() {
-  project=$(kubectl config get-contexts | grep -Po "(?<=@)$1\w*(?=\s)" | head -n 1)
-  namespace=$(kubectl config current-context | grep -Po "\w+(?=@)")
-  if [ ! "$namespace" ]; then
-    namespace=$project
-  fi
-
-  kubectl config use-context $namespace@$project
-}'
-
-alias kxd='
-  open-kubernetes-database-console \
-    $(production-pod postgres)
-'
-
 function open-kubernetes-database-console() {
   export DB=$(
     kubectl exec \
@@ -267,38 +415,7 @@ function open-kubernetes-database-console() {
     $DB
 }
 
-function staging-pod() {
-  kubectl get pods --all-namespaces -o wide | \
-    grep staging | \
-    grep -Eo " $1-[a-z0-9]+-[a-Z0-9]+" | \
-    head -n 1
-}
-
-function production-pod() {
-  kubectl get pods --all-namespaces -o wide | \
-    grep -v staging | \
-    grep -Eo " $1-[a-z0-9]+-[a-Z0-9]+" | \
-    head -n 1
-}
-
-function production-namespace() {
-  kubectl get pods --all-namespaces -o wide | \
-    grep -v staging | \
-    grep -E " $1-[a-z0-9]+-[a-Z0-9]+" | \
-    grep -Eo "^\w+" | \
-    head -n 1
-}
-
-function docker-compose-file() {
-  if [ -e config/*local/docker-compose.yml ]; then
-    echo -n config/*local/docker-compose.yml
-  fi
-
-  if [ -e ./docker-compose.yml ]; then
-    echo -n ./docker-compose.yml
-  fi
-}
-
+# docker compose
 alias dc='docker-compose'
 alias c='docker-compose -f $(docker-compose-file)'
 alias cu='docker-compose -f $(docker-compose-file) up'
@@ -323,120 +440,17 @@ alias crr='\
   docker-compose -f $(docker-compose-file) up \
 '
 
-alias co='sudo chown -R leo: '
-alias cc='sudo chown -R leo: .'
+function docker-compose-file() {
+  if [ -e config/*local/docker-compose.yml ]; then
+    echo -n config/*local/docker-compose.yml
+  fi
 
-alias gg='() { grep $1 -R . }'
-alias gs='git show --color'
-alias gsp='git commit -v -a && git push'
-alias gsa='git commit -v -a --amend && git push --force'
-alias gsn='git commit -v -a --amend --no-verify && git push --force'
-alias gcn='git commit --no-verify'
-alias gpf='git push --force'
-alias ge='git rebase'
-alias gei='git rebase --interactive'
-alias gec='git rebase --continue'
-alias gea='git rebase --abort'
-alias gpu='git push -u origin $(current_branch)'
-alias gpuf='git push -u origin $(current_branch) --force'
-alias gdc='git diff --cached'
-alias gh='git stash'
-alias ghp='git stash pop'
-alias gfp='git fetch --prune'
-alias gcm='git checkout master'
-alias gt='git reset'
-alias gth='git reset --hard'
-alias glr='git pull --rebase'
-alias gau='git update-index --assume-unchanged'
-alias gac='git update-index --no-assume-unchanged'
-alias gmm='git fetch && git merge origin/master'
-alias gj='echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib' # copy last commit hash
-alias gcoo='git checkout origin/master -- '
-alias gdm='git diff $(git merge-base origin/master $(git rev-parse --abbrev-ref HEAD))'
-alias gdf='git diff --name-only $(git merge-base origin/master $(git rev-parse --abbrev-ref HEAD))'
-alias gbc='current_branch'
-
-alias gbn='() {
-  git fetch && \
-    git checkout origin/master && \
-    git checkout -b "$1"
-}'
-
-alias gz='() {
-  git add . &&
-    git commit -m "$(git-commit-prefix)$1" &&
-    echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
-}'
-
-alias gzn='() {
-  git add . &&
-  git commit -m "$(git-commit-prefix)$1" --no-verify &&
-  echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
-}'
-
-alias gzz='() {
-  git add . &&
-  git commit -m "$(git-commit-prefix)$1" --amend &&
-  echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
-}'
-
-alias gk='() { git commit -m "$(git-commit-prefix)$1" }'
-alias gkn='() { git commit -m "$(git-commit-prefix)$1" --no-verify }'
-alias gkk='() { git commit --amend }'
-
-function git-commit-prefix() {
-  message="$(git rev-parse --abbrev-ref HEAD | grep -Eo 'ch([0-9]+)')"
-
-  if [ ! -z "$message" ]; then
-    echo -n "[$message] "
+  if [ -e ./docker-compose.yml ]; then
+    echo -n ./docker-compose.yml
   fi
 }
 
-alias gx='() {
-  git add . && \
-    git commit -m "$(git-commit-prefix)$1" && \
-    git push -u origin $(current_branch) &&
-    echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
-}'
-
-alias gxn='() {
-  git add . && \
-    git commit -m "$(git-commit-prefix)$1" --no-verify && \
-    git push -u origin $(current_branch) &&
-    echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
-}'
-
-alias gxx='() {
-  git add .
-  git commit -m "$(git log -1 --pretty=%s)" --amend
-  git push -u origin $(current_branch) --force &&
-  echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
-}'
-
-function rebase-current-branch-on-master() {
-  git fetch
-  git rebase origin/master
-}
-
-alias geo=rebase-current-branch-on-master
-
-alias json='python -m "json.tool"'
-
-function application-container() {
-  echo $(docker-container "(backend|app|rails|\swebsite)\." -v admin)
-}
-
-function docker-container() {
-  echo $(
-    docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}" |
-    grep -E $1 |
-    grep $2 $3 |
-    sort -k 2 |
-    head -n 1 |
-    awk "{ print \$1 }"
-  )
-}
-
+# docker
 alias dbe='docker exec -i -t $(application-container)'
 alias dbea='docker exec -i -t $(docker-container "(backend|app|rails)\." admin)'
 alias dte='docker exec -i -t $(docker-container "test.(backend|app|rails)" backend)'
@@ -454,210 +468,22 @@ alias xdd='docker exec -i -t $(application-container) rake db:migrate:redo'
 alias xdt='docker exec -i -t $(application-container) rake db:migrate:status'
 alias xds='docker exec -i -t $(application-container) rake db:seed'
 
-alias m='make'
-alias mx='make exec'
-
-alias xdi='
-  docker exec -i -t $(application-container) \
-    rake db:create db:structure:load db:seed
-'
-
-alias xbi='
-  docker exec -i -t $(application-container) \
-    bundle install --jobs 8 --path vendor/bundle --full-index \
-'
-
-function open-project-database-console() {
-  CONTAINER=$(docker-container postgres -v admin)
-  if [ -n "$CONTAINER" ]; then
-    docker exec -i -t $CONTAINER psql -P pager -U postgres database
-  fi
-
-  CONTAINER=$(docker-container mysql -v admin)
-  echo $CONTAINER
-  if [ -n "$CONTAINER" ]; then
-    docker exec -i -t $CONTAINER mysql -u user -ppassword database
-  fi
-
-  echo "NO DATABASE CONTAINER FOUND"
+function application-container() {
+  echo $(docker-container "(backend|app|rails|\swebsite)\." -v admin)
 }
 
-alias xd='open-project-database-console'
-
-alias xy='
-  bundle exec cap staging deploy deploy:migrate api:restart \
-    sidekiq:stop sidekiq:start
-'
-
-alias xyp='
-  bundle exec cap production deploy deploy:migrate api:restart \
-    sidekiq:stop sidekiq:start
-'
-
-function backend-path() {
-  RESULT=$(
-    docker inspect $(application-container) |
-      grep -o '/.*:/app:rw' | sed -E "s/:.*//"
+function docker-container() {
+  echo $(
+    docker ps --format "table{{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}" |
+    grep -E $1 |
+    grep $2 $3 |
+    sort -k 2 |
+    head -n 1 |
+    awk "{ print \$1 }"
   )
-
-  echo $RESULT
 }
 
-function project-path() {
-  echo $(backend-path)/..
-}
-
-function xgm {
-  MIGRATION=$(
-    docker exec -i -t $(application-container) rails generate migration $@ |
-      grep -o 'db/.*.rb' |
-      head -n 1
-  )
-
-  docker exec -i -t $(application-container) chown 1000:1000 $MIGRATION
-  code $(backend-path)/$MIGRATION
-}
-
-alias xp='cd $(project-path)/app'
-
-umask 002
-
-eval "$(ssh-agent -s)" > /dev/null 2>&1
-ssh-add > /dev/null 2>&1
-
-function deploy-filmservice-to-staging {
-  docker exec -i -t $(docker-container "test.(backend|app|rails)" -v admin) rspec
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mBUILD FAILED\033[0m"
-    return 1
-  fi
-
-  git push
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mPUSH FAILED\033[0m"
-    return 1
-  fi
-
-  bundle exec cap staging deploy deploy:migrate sidekiq:restart
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mDEPLOY FAILED\033[0m"
-    return 1
-  fi
-
-  return 0
-}
-
-function kubernetes-pod {
-  kubectl --context $1 get pods | grep -Po $2 | head -n 1
-}
-
-function generate-rails-object() {
-  RESULT=$(
-    docker exec -i -t $(application-container) \
-      rails generate $@ | tee /dev/tty \
-  )
-
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mGENERATE FAILED\033[0m"
-    return 1
-  fi
-
-  FILES=$(
-    echo $RESULT |
-      grep -E '(create|identical|skip)' | # filter for created files
-      sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g" | # remove colors
-      sed -E "s/*(create|identical|skip)[\t ]*//" # remove garbage
-  )
-
-  PROJECT_PATH=$(project-path)
-  for FILE in $(echo $FILES); do
-    FILE=$(echo $FILE | sed -E 's/\r//')
-    FILE_PATH='() { $(backend-path)/$FILE }'
-    if ! test -e $FILE_PATH; then
-      FILE_PATH="$(backend-path)/app/$FILE"
-    fi
-
-    sudo chown leo: $FILE_PATH
-    code $FILE_PATH
-  done
-}
-
-alias xg=generate-rails-object
-
-function create-pull-request() {
-  repo=$(
-    git remote -v |
-      grep push |
-      sed -r "s/.*@(.*):(.*)\.git\s.*/http:\/\/\1\/\2/g"
-  )
-
-  chromium "$repo/compare/$(current_branch)?expand=1"
-}
-
-alias gq=create-pull-request
-
-function merge-current-branch-to-staging() {
-  branch=$(current_branch)
-
-  if $(echo $branch | grep -e '-STAGING-TMP$'); then
-    echo "\033[0;31mAlready on staging branch\033[0m"
-  fi
-
-  git fetch
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mFetch failed\033[0m"
-    return 1
-  fi
-
-  git checkout origin/staging
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mFailed to checkout\033[0m"
-    return 1
-  fi
-
-  git checkout -b "$branch-STAGING-TMP"
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mFailed to checkout new branch\033[0m"
-    return 1
-  fi
-
-  git merge --no-edit "$branch"
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mAutomatica merge failed\033[0m"
-    return 1
-  fi
-
-  complete-merge-current-branch-to-staging
-}
-
-function complete-merge-current-branch-to-staging() {
-  git add .
-  git commit -m "$(git log -1 --pretty=%B --oneline)"
-  git merge
-
-  branch=$(current_branch | sed -e 's/-STAGING-TMP$//g')
-
-  git push origin "$branch-STAGING-TMP:staging"
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mPush failed\033[0m"
-    return 1
-  fi
-
-  git checkout "$branch"
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mCheckout back failed\033[0m"
-    return 1
-  fi
-
-  git branch -D "$branch-STAGING-TMP"
-  if [ $? -ne 0 ]; then
-    echo "\033[0;31mFailed to delete temporary branch\033[0m"
-    return 1
-  fi
-}
-
-alias gqm=merge-current-branch-to-staging
-alias gqe=complete-merge-current-branch-to-staging
+# hijacks
 
 hijack:reset
 
@@ -679,3 +505,8 @@ hijack:transform '^g[zxk]?[n]?!?\\ ' \
 QUOTA=50
 
 eval $(dircolors ~/.dircolors.$BACKGROUND)
+
+if [[ ! "$TMUX" ]]; then
+#  exec tmux new
+fi
+

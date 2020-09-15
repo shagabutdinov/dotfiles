@@ -2044,12 +2044,18 @@
     "command": "workbench.debug.action.focusRepl"
   },
   {
-    "key": "f12",
-    "command": "workbench.debug.action.focusRepl"
-  },
-  {
     "key": "ctrl+u a",
     "command": "workbench.debug.panel.action.clearReplAction"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "workbench.panel.output.focus",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "workbench.action.closePanel",
+    "when": "!editorTextFocus || editorReadonly"
   },
 
   // bookmarks
@@ -3056,5 +3062,17 @@
     "key": "alt+k",
     "command": "workbench.action.quickOpenSelectNext",
     "when": "inQuickOpen"
+  },
+
+  // undo
+  {
+    "key": "ctrl+z",
+    "command": "commands.execute",
+    "args": {
+      "commands": [
+        { "command": "snippets.preventNextAutoExpansion" },
+        { "command": "undo" },
+      ]
+    }
   }
 ]

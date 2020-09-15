@@ -10,7 +10,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const utils = __importStar(require("./lib/utils"));
 function addJestRenderImport(document, cursor, importing) {
     const range = utils.getRange(document, /const\s+\{.*?\}\s+=\s+render/g, {
-        to: cursor.start,
+        before: cursor.start,
         index: "last",
     });
     if (!range) {
