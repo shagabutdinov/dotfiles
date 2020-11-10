@@ -16,6 +16,7 @@
 127.0.0.1 e
 127.0.0.1       localbox
 127.0.0.1 elasticsearch
+172.18.0.6 shell.autocomplete.constructor.local
 
 0.0.0.0 browser.sentry-cdn.com
 0.0.0.0 cdn.amplitude.com

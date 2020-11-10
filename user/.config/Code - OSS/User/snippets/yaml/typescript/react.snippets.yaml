@@ -136,21 +136,7 @@ typescript:
             command: imports.add
             args:
               value: useMemo
-              from: 'react'
-
-    variable assignment:
-      trigger: ~(?<=\w+=)$
-      snippet: "{$0{$variable}}"
-      order: 2
-      placeholders:
-        variable:
-          onBeforeExpand: |
-            ({ document, debug, cursor, extensions: { user } }) =>
-              user.getText(
-                document,
-                /(\w+)=$/,
-                { before: cursor.start, matchIndex: 1 }
-              );
+              from: "react"
 
     expressions:
       context: cursor.precedingText().match('([:=(,|&[]|={|=>|=\{|return)\s*\w*$')
@@ -203,14 +189,24 @@ typescript:
           trigger: cn
           snippet: className
 
-        assignment:
-          trigger: ~(?<=\s\w+)$
-          snippet: ={$0}
-          order: -1
+    assignment:
+      context: cursor.precedingText().match('([}")]|<\w+)\s+\w+=?$')
+      trigger: ~(?<=\s\w+)=?$
+      snippet: ={$1:variable}
+      order: -1
+      placeholders:
+        variable:
+          onBeforeExpand: |
+            ({ document, debug, cursor, extensions: { user } }) =>
+              user.getText(
+                document,
+                /(\w+)(?==?)$/,
+                { before: cursor.start }
+              );
 
     tags:
       context: cursor.precedingText().match('([?:(>}]|return)\s*<$')
-      trigger: ~<$
+      trigger: ~(?<=^\s+)<$
       auto: true
       snippet: <$1:tag{tag}>$0$container{</$close{tag}>}
       placeholders:
@@ -227,5 +223,3 @@ typescript:
                 close.value = tag.value.replace(/(?<=\w+)\s+.*/, '');
               }
             }
-
-

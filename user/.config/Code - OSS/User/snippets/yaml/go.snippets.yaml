@@ -45,6 +45,44 @@ typescript:
           $0
         }
 
+    for index:
+      trigger: ~(?<=^\s*)fi$
+      snippet: |-
+        for $1{index}, $3:value{value} := range $2:values{values} {
+          $0
+        }
+      placeholders:
+        value:
+          onBeforeFocus: |
+            ({ placeholders: { values }, extensions: { user } }) => {
+              return user.pluralize.singular(values.value);
+            }
+
+    for index helper:
+      trigger: ~for i$
+      snippet: |-
+        for $1{index}, $3:value{value} := range $2:values{values}
+      placeholders:
+        value:
+          onBeforeFocus: |
+            ({ placeholders: { values }, extensions: { user } }) => {
+              return user.pluralize.singular(values.value);
+            }
+      order: 3
+
+    for range:
+      trigger: ~(?<=^\s*)fr$
+      snippet: |-
+        for _, $2:value{value} := range $1:values{values} {
+          $0
+        }
+      placeholders:
+        value:
+          onBeforeFocus: |
+            ({ placeholders: { values }, extensions: { user } }) => {
+              return user.pluralize.singular(values.value);
+            }
+
     break:
       trigger: b
       snippet: break
@@ -78,9 +116,24 @@ typescript:
       snippet: float64
       order: 1
 
+    int type:
+      trigger: ~(?<=\S.*\s+)i$
+      snippet: int
+      order: 1
+
+    bool type:
+      trigger: ~(?<=\S.*\s+)b$
+      snippet: bool
+      order: 1
+
     string:
       trigger: ~(?<=\w\s+)s$
       snippet: string
+
+    error type:
+      trigger: ~(?<=\S.*\s+)e$
+      snippet: error
+      order: 1
 
     return:
       trigger: r
@@ -126,21 +179,41 @@ typescript:
     func struct:
       trigger: d
       snippet: |-
-        func ($1{$struct{struct}}) $2:name{name}($3) $4 {
+        // $2{name} TBD
+        func ($struct{struct}) $2{name}($3) $4 {
           $0
         }
       placeholders:
         struct:
           onBeforeExpand: |
-            ({ document, debug }) => {
-              const name = document.getText().match(/type\s+(\w+)\s+struct/);
-              debug(document.getText());
+            ({ document, cursor, extensions: { user } }) => {
+              const expr = /(?<=func \()(.*?)(?=\) \w+\()/;
 
-              if (!name) {
-                return ;
+              const backwardDefinition = user.getText(document, expr, {
+                before: cursor.anchor,
+              });
+
+              if (backwardDefinition) {
+                return backwardDefinition;
               }
 
-              return `${name[1].toLowerCase()} *${name[1]}`;
+              const globalDefinition = user.getText(document, expr);
+
+              if (globalDefinition) {
+                return globalDefinition;
+              }
+
+              const name = user.getText(
+                document,
+                /(?<=type\s+)(\w+)(?=\s+struct)/,
+                { before: cursor.anchor },
+              );
+
+              if (name) {
+                return `${user.camelcase(name)} *${name}`;
+              }
+
+              return ;
             }
 
     if err not nil return err:
@@ -171,6 +244,22 @@ typescript:
           $0
         }
 
+    else:
+      auto: true
+      trigger: ~(?<=}\s*)e$
+      snippet: |-
+        else {
+          $0
+        }
+
+    else if:
+      auto: true
+      trigger: ~(?<=}\s*)i$
+      snippet: |-
+        else if $1 {
+          $0
+        }
+
     log:
       trigger: l
       snippet: fmt.Println("XXXX $id ", $1)
@@ -180,6 +269,11 @@ typescript:
             ({ cursor, document }) =>
               require('path').basename(document.uri.fsPath) + ':' +
               cursor.anchor.line
+
+    len:
+      trigger: ~(?<=\S.*)l$
+      snippet: len($1)
+      order: 1
 
     log structure:
       trigger: lv
@@ -199,6 +293,8 @@ typescript:
       trigger: en
       snippet: errors.New("$1")
 
+    # language
+
     append:
       trigger: ~(?<==\s*)a$
       snippet: append($1:list, $2:value)
@@ -212,9 +308,30 @@ typescript:
                 { before: cursor.anchor },
               );
 
+    map:
+      trigger: m
+      snippet: map[$1:key]$2:value
+
+    make:
+      context: cursor.precedingText().match('=\s*m$')
+      trigger: m
+      snippet: make([]$1{type}, $2{len})
+      order: 1
+
+    exit:
+      trigger: q
+      snippet: panic(":(")
+
+    panic:
+      trigger: p
+      snippet: panic("$1")
+
     package:
       trigger: ~^p$
-      snippet: package $0:package
+      snippet: |
+        package $package
+      order: 1
+
       placeholders:
         package:
           onBeforeExpand: |-
@@ -226,9 +343,52 @@ typescript:
       snippet: karma.Describe("$1", $2)
 
     karma describe continuation:
-      trigger: ~(?<=\.)d$
+      context: cursor.precedingText().match('\.\s*d$')
+      trigger: d
       snippet: Describe("$1", $2)
+      order: 1
 
     karma reason:
-      trigger: ~(?<=\.)r$
+      context: cursor.precedingText().match('\.\s*r$')
+      trigger: r
       snippet: Reason("$1")
+      order: 1
+
+    comment:
+      trigger: c
+      context: |
+        cursor.followingText().match('^\s*(func|type)')
+      snippet: // $name{name} $1{TBD}
+      order: 1
+      placeholders:
+        name:
+          onBeforeExpand: |
+            ({ document, cursor, extensions: { user } }) => {
+              const definition = user.getText(
+                document,
+                /((?<=func ((.*?) )?)\w+(?=\()|(?<=type )\w+)/,
+                { after: cursor.anchor },
+              );
+
+              if (definition) {
+                return definition;
+              }
+
+              const globalDefinition = user.getText(document, expr);
+
+              if (globalDefinition) {
+                return globalDefinition;
+              }
+
+              const name = user.getText(
+                document,
+                /(?<=type\s+)(\w+)(?=\s+struct)/,
+                { before: cursor.anchor },
+              );
+
+              if (name) {
+                return `${user.camelcase(name)} *${name}`;
+              }
+
+              return ;
+            }

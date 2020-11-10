@@ -73,9 +73,17 @@ constructor typescript:
               placeholders:
                 component:
                   onBeforeExpand: |
-                    ({ document }) => (
-                      document.uri.toString().match('/([^/]+).test.tsx$') || []
+                    ({ document, debug }) => (
+                      document.uri.toString().match('/([^/]+).test.[jt]sx?$') || []
                     )[1]
+                  onLeave: |
+                    ({ document, placeholders: { component }, extensions: { user } }) => ({
+                      changes: user.replace(
+                        document,
+                        new RegExp(`render\\(<${component.value}`, "g"),
+                        'render(<Subject',
+                      ),
+                    })
 
             with context:
               trigger: wc
@@ -109,7 +117,7 @@ constructor typescript:
                 }));
 
     expressions:
-      context: cursor.precedingText().match('([,(\[][\s\n]*|\S[ ]+|[^\s\w])\w+$')
+      context: cursor.precedingText().match('([,(\[>][\s\n]*|\S[ ]+|[^\s\w])\w+$')
       snippets:
         # hooks
         withCache:
@@ -176,3 +184,15 @@ constructor typescript:
                   value: default
                   alias: factories
                   from: factories
+
+            display name:
+              trigger: ~(?<=[\W_])D$
+              snippet: DISPLAY_NAME
+
+            name:
+              trigger: ~(?<=[\W_])N$
+              snippet: NAME
+
+            value:
+              trigger: ~(?<=[\W_])V$
+              snippet: VALUE

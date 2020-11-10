@@ -46,20 +46,20 @@ jest:
           context: |
             document().uri.toString().match('(?<!/use[^/]*)\.test\.tsx$') &&
               document().getText().match('^\s*\w+\s*$')
-          snippet: |-
+          snippet: |
             import React from "react";
             import { render } from "@testing-library/react";
 
             import $1:component{Component} from "./$1:component{Component}";
 
             describe($1:component{Component}, () => {
-              const props: React.ComponentProps<typeof $1:component{Component}> = {
-                $2
-              };
+              $propsWrapper{const props: React.ComponentProps<typeof $1:component{Component}> = $propsContainer{{
+                $2:props
+              }};
 
-              it("renders", async () => {
-                const { container } = render(<$1:component{Component} {...props} />);
-                expect(container).toMatchSnapshot();
+              }it("renders", async () => {
+                const { container } = render(<$1:component{Component} $propsValue{{...props} }/>);
+                expect(container).toMatchSnapshot();$0
               });
             });
           placeholders:
@@ -68,6 +68,14 @@ jest:
                 ({ document }) => (
                   document.uri.toString().match('/([^/]+).test.tsx$') || []
                 )[1]
+            props:
+              onLeave: |
+                ({ placeholders: { propsWrapper, propsContainer, propsValue } }) => {
+                  if (propsContainer.value.match(/\{\s*\}/)) {
+                    propsWrapper.value = '';
+                    propsValue.value = '';
+                  }
+                }
 
         define hook:
           trigger: d
@@ -150,17 +158,7 @@ jest:
             args:
               value: default
               alias: fetchMock
-              from: fetch-mock
-
-        fetch mock reset:
-          trigger: fmr
-          snippet: fetchMock.reset()
-          onExpand:
-            command: imports.add
-            args:
-              value: default
-              alias: fetchMock
-              from: fetch-mock
+              from: utils/tests/fetchMock
 
         await act:
           trigger: aa
@@ -198,7 +196,6 @@ jest:
             args:
               value: act
               from: '@testing-library/react-hooks'
-
 
     element getters:
       context: |

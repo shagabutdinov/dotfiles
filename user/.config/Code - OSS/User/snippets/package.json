@@ -1,9 +1,17 @@
 {
   "dependencies": {
     "@types/pluralize": "0.0.29",
+    "camelcase": "^6.0.0",
     "jest": "^26.4.0",
     "pluralize": "^8.0.0",
     "ts-jest": "^26.2.0",
     "vscode-languageserver-types": "^3.15.1"
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "lint": "eslint src --ext ts",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "test": "jest"
   }
 }

@@ -1,6 +1,33 @@
 // Place your key bindings in this file to override the defaults
 [
   {
+    "key": "ctrl+alt+t",
+    "command": "commands.run",
+    "args": {
+      "commands": [
+        {
+          "command": "refactoring.typescript.openTestFile",
+          "context": [
+            "document().uri.toString().match('(?<!\\.test)\\.tsx?$')",
+          ]
+        },
+        {
+          "command": "refactoring.ruby.openTestFile",
+          "context": [
+            "document().uri.toString().match('(?<!\\_spec)\\.rb$')",
+          ]
+        },
+        {
+          "command": "refactoring.ruby.openCodeFile",
+          "context": [
+            "document().uri.toString().match('\\_spec\\.rb$')",
+          ]
+        }
+      ]
+    }
+  },
+
+  {
     "key": "ctrl+u ctrl+r",
     "command": "workbench.action.reloadWindow"
   },
@@ -2233,11 +2260,11 @@
     "command": "editor.action.triggerParameterHints",
     "when": "editorHasSignatureHelpProvider && editorTextFocus"
   },
-  {
-    "key": "ctrl+n ctrl+i",
-    "command": "changeEditorIndentation",
-    "when": "textInputFocus"
-  },
+  // {
+  //   "key": "ctrl+n ctrl+i",
+  //   "command": "changeEditorIndentation",
+  //   "when": "textInputFocus"
+  // },
 
   // {
   //   "key": "ctrl+v",
@@ -2299,6 +2326,28 @@
   {
     "key": "ctrl+n l",
     "command": "workbench.action.moveEditorToRightGroup",
+    // "when": "textInputFocus"
+  },
+
+  {
+    "key": "ctrl+n ctrl+i",
+    "command": "workbench.action.focusAboveGroup",
+    // "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+n ctrl+k",
+    "command": "workbench.action.focusBelowGroup",
+    // "when": "textInputFocus"
+  },
+
+  {
+    "key": "ctrl+n i",
+    "command": "workbench.action.moveEditorToAboveGroup",
+    // "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+n k",
+    "command": "workbench.action.moveEditorToBelowGroup",
     // "when": "textInputFocus"
   },
 

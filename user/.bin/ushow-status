@@ -3,3 +3,8 @@ notify-replace status "" "
   $(date +%d.%m.%Y)
   $(acpi | sed -E 's/\n//g' | sed -E 's/.+: //g' | sed -E 's/.*Unknown.*//g' | sed -E 's/Discharging, //g')
 "
+
+notify-replace ip "" "
+  $(curl ifconfig.me)
+"
+

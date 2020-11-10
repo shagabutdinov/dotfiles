@@ -1,0 +1,42 @@
+ruby:
+  context: document().languageId == 'python'
+  snippets:
+    # language
+
+    return:
+      trigger: r
+      snippet: return
+
+    # values
+
+    "True":
+      trigger: t
+      snippet: "True"
+
+    "False":
+      trigger: f
+      snippet: "False"
+
+    "None":
+      trigger: "n"
+      snippet: "None"
+
+    print:
+      trigger: p
+      snippet: print("XXXX $id {}".format($1))
+      placeholders:
+        id:
+          onBeforeExpand: |
+            ({ cursor, document }) =>
+              require('path').basename(document.uri.fsPath) + ':' +
+              cursor.anchor.line
+
+    raise:
+      trigger: q
+      snippet: raise("XXXX $id")
+      placeholders:
+        id:
+          onBeforeExpand: |
+            ({ cursor, document }) =>
+              require('path').basename(document.uri.fsPath) + ':' +
+              cursor.anchor.line

@@ -45,7 +45,7 @@ function prepend_sudo() {
         CURSOR=$(($CURSOR+5))
 }
 
-function R() {
+function x() {
   nohup xdg-open "$@" > /dev/null 2> /dev/null &
   disown
 }
@@ -74,6 +74,7 @@ alias re='source ~/.bin/ushell-env && rehash' # reload env
 alias f='find . -name'
 alias ee='() { vim ~/.bin/ushell-env; source ~/.bin/ushell-env; rehash }'
 alias cw='cd ~/src/constructor/website'
+alias cm='cd ~/src/go/src/github.com/seletskiy/trading'
 alias yay='yay --removemake --nodiffmenu --nocleanmenu --noupgrademenu --cleanafter'
 alias mv=/bin/mv
 alias pwgen='pwgen 12'
@@ -92,7 +93,8 @@ alias tree='tree --dirsfirst'
 alias ps='ps -xau'
 alias cal='cal -m $(date +%Y)'
 alias co='sudo chown -R leo: '
-alias cc='sudo chown -R leo: .'
+# alias cc='sudo chown -R leo: .'
+alias g='() { grep $1 -R . }'
 
 # overmind
 alias o='overmind'
@@ -104,7 +106,8 @@ alias oo='overmind stop'
 
 # secrets
 alias pa='cd ~/.secrets; carcosa -Ac'
-alias pg='cd ~/.secrets; carcosa -Gc'
+alias pe='cd ~/.secrets; carcosa -Gc'
+
 alias pr='cd ~/.secrets; carcosa -Rc'
 
 # code
@@ -155,8 +158,8 @@ alias ws='nmcli -p con show --active'
 alias wu='nmcli -p con up id'
 
 # go
-alias gr=gorun
-alias gg=go get
+alias gor=gorun
+alias gog=go get
 
 # docker
 alias d='docker'
@@ -180,7 +183,6 @@ alias oj="overmind connect jest"
 alias ot="overmind connect tsc"
 
 # git
-alias gg='() { grep $1 -R . }'
 alias gs='git show --color'
 alias gsf='git show --color --name-only'
 alias gsp='git commit -v -a && git push'
@@ -441,12 +443,19 @@ alias crr='\
 '
 
 function docker-compose-file() {
-  if [ -e config/*local/docker-compose.yml ]; then
-    echo -n config/*local/docker-compose.yml
-  fi
-
   if [ -e ./docker-compose.yml ]; then
     echo -n ./docker-compose.yml
+    return
+  fi
+
+  if [ -e ./.dev/docker-compose.yml ]; then
+    echo -n ./.dev/docker-compose.yml
+    return 
+  fi
+
+  if [ -e config/*local/docker-compose.yml ]; then
+    echo -n config/*local/docker-compose.yml
+    return 
   fi
 }
 
@@ -457,7 +466,6 @@ alias dte='docker exec -i -t $(docker-container "test.(backend|app|rails)" backe
 alias dfe='docker exec -i -t $(docker-container frontend -v admin)'
 alias dfea='docker exec -i -t $(docker-container frontend admin)'
 
-alias x='docker exec -i -t $(application-container)'
 alias xx='docker exec -i -t $(application-container)'
 alias xb='docker exec -i -t $(application-container) bash'
 alias xc='docker exec -i -t $(application-container) rails console'

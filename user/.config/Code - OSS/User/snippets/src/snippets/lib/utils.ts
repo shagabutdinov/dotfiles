@@ -3,10 +3,9 @@ import * as lst from "vscode-languageserver-types";
 export function getText(
   document: lst.TextDocument,
   match: Match | null,
-  options: Span & Index & MatchIndex = {}
+  options: Span & Index = {}
 ): string | null {
   const range = getRange(document, match, options);
-
   if (!range) {
     return null;
   }
@@ -17,7 +16,7 @@ export function getText(
 export function getRange(
   document: lst.TextDocument,
   match: Match | null,
-  options: Span & Index & MatchIndex = {}
+  options: Span & Index = {}
 ): lst.Range | null {
   const result = getRanges(document, match, options);
   if (!result) {
@@ -30,7 +29,7 @@ export function getRange(
 export function getRanges(
   document: lst.TextDocument,
   match: Match | null,
-  options: Span & Index & MatchIndex = {}
+  options: Span & Index = {}
 ): lst.Range[] | null {
   const { range, text, matches } = getMatches(document, match, options);
   if (!text || !range) {
@@ -52,7 +51,7 @@ export function getRanges(
 export function getPosition(
   document: lst.TextDocument,
   match: Match | null,
-  options: Span & Index & MatchIndex = {}
+  options: Span & Index = {}
 ): lst.Position | null {
   const result = getPositions(document, match, options);
   if (!result) {
@@ -65,7 +64,7 @@ export function getPosition(
 export function getPositions(
   document: lst.TextDocument,
   match: Match | null,
-  options: Span & Index & MatchIndex = {}
+  options: Span & Index = {}
 ): lst.Position[] | null {
   const { range, text, matches } = getMatches(document, match, options);
   if (!text || !range) {
@@ -80,7 +79,7 @@ export function getPositions(
 export function contains(
   document: lst.TextDocument,
   match: Match,
-  options: Span & Index & MatchIndex = {}
+  options: Span & Index = {}
 ): boolean {
   const { matches } = getMatches(document, match, options);
   return matches.length !== 0;
@@ -101,7 +100,7 @@ export function replace(
 function getMatches(
   document: lst.TextDocument,
   match: Match | null,
-  options: Span & Index & MatchIndex & MatchIndex = {}
+  options: Span & Index = {}
 ): {
   range: lst.Range | null;
   text: string | null;
@@ -139,7 +138,7 @@ function getMatches(
       })()
   ).map((value) => ({
     index: value.index!,
-    text: value[options.matchIndex || 0],
+    text: value[0],
   }));
 
   return {
@@ -240,6 +239,6 @@ type Index = {
   index?: number | "first" | "last" | null;
 };
 
-type MatchIndex = {
-  matchIndex?: number | null;
-};
+// type MatchIndex = {
+//   matchIndex?: number | null;
+// };

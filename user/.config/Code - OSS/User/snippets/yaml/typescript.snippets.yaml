@@ -78,7 +78,7 @@ typescript:
         import expansion:
           auto: true
           trigger: ~(?<=import\s+\w+\s*,)\s*$
-          snippet: ' { $1 }'
+          snippet: " { $1 }"
 
         quick double arrow callback:
           trigger: ~(?<=([:=(,|&[]|={|=\{|return)\s*)$
@@ -104,7 +104,7 @@ typescript:
 
         quick double arrow for callback:
           trigger: ~(?<=[)]\s*)$
-          snippet: ' => $0'
+          snippet: " => $0"
 
         quick braces for double arrow callback:
           trigger: ~(?<=\)\s*=>\s*)$
@@ -366,7 +366,7 @@ typescript:
 
         filter:
           trigger: fi
-          snippet: forEach($0)
+          snippet: filter($0)
 
         reduce:
           trigger: r
@@ -399,7 +399,7 @@ typescript:
           snippet: JSON.stringify($1)
 
         json parse:
-          trigger: js
+          trigger: jp
           snippet: JSON.parse($1)
 
     values:
@@ -409,17 +409,17 @@ typescript:
           trigger: u
           snippet: undefined
 
-        'null':
+        "null":
           trigger: n
-          snippet: 'null'
+          snippet: "null"
 
-        'true':
+        "true":
           trigger: t
-          snippet: 'true'
+          snippet: "true"
 
-        'false':
+        "false":
           trigger: f
-          snippet: 'false'
+          snippet: "false"
 
         object:
           trigger: ~(?<=type\s*\w+\s*=\s*)$
@@ -462,7 +462,7 @@ typescript:
           snippet: number
 
         null to number:
-          trigger: 'null'
+          trigger: "null"
           snippet: number
 
         void:

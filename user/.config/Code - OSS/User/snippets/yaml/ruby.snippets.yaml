@@ -9,6 +9,9 @@ ruby:
       context: selection.precedingText().match('^\s*\w+$')
       snippets:
         def:
+          context: |
+            !document().uri.fsPath.match('_spec.rb') &&
+              selection.precedingText().match('^\s+\w+$')
           trigger: d
           snippet: |-
             def $container{$1{}($2:args)}
@@ -20,6 +23,38 @@ ruby:
                 ({ placeholders: { container } }) => {
                   container.value = container.value.replace(/\(\)$/, '');
                 };
+
+        test case:
+          context: |
+            document().uri.fsPath.match('_spec.rb') &&
+              selection.precedingText().match('^\w+$')
+          trigger: d
+          snippet: |-
+            describe $1:subject{Subject} do
+              $0
+            end
+
+          placeholders:
+            subject:
+              onBeforeExpand: |
+                ({ document, env, extensions: { user: { camelcase } } }) =>
+                  document.uri.fsPath
+                    .replace(env.workspace.rootPath + '/spec/', '')
+                    .replace(/\w+\//, '')
+                    .replace('_spec.rb', '')
+                    .split('/')
+                    .map((part) => camelcase(part, { pascalCase: true }))
+                    .join('::')
+
+        test:
+          context: |
+            document().uri.fsPath.match('_spec.rb') &&
+              selection.precedingText().match('^\s+\w+$')
+          trigger: d
+          snippet: |-
+            it '$1' do
+              $0
+            end
 
         if:
           trigger: i
@@ -42,9 +77,15 @@ ruby:
           context: selection.precedingText().match('\S\s*\w+$')
           trigger: d
           snippet: |-
-            do |$1|
+            do$container{ |$1:args|}
               $0
             end
+          placeholders:
+            args:
+              onBeforeLeave: |-
+                ({ placeholders: { container } }) => {
+                  container.value = container.value.replace(/\s*\|\|$/, '');
+                };
 
         raise:
           trigger: ra
@@ -116,6 +157,10 @@ ruby:
           trigger: ~(?<=(receive|with)\(.*?\)\s*)\.ar$
           snippet: '.and_return($1)'
 
+        expect and raise:
+          trigger: ~(?<=(receive|with)\(.*?\)\s*)\.ara$
+          snippet: '.and_raise($1)'
+
         expect anything:
           trigger: ea
           snippet: anything
@@ -163,6 +208,16 @@ ruby:
         puts:
           trigger: p
           snippet: 'puts("XXXX $id #{$1}")'
+          placeholders:
+            id:
+              onBeforeExpand: |
+                ({ cursor, document }) =>
+                  require('path').basename(document.uri.fsPath) + ':' +
+                  cursor.anchor.line
+
+        puts test:
+          trigger: pt
+          snippet: 'puts("XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX $id")'
           placeholders:
             id:
               onBeforeExpand: |
@@ -219,3 +274,13 @@ ruby:
         vcr:
           trigger: '~:focus, :watch, vcr: \{ record: :all \}$'
           snippet: ':vcr'
+
+    stdlib:
+      snippets:
+        file write:
+          trigger: fw
+          snippet: File.write($1, $2)
+
+        file read:
+          trigger: fr
+          snippet: File.read($1)

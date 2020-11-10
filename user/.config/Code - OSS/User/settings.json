@@ -15,10 +15,9 @@
   "editor.tabSize": 2,
   "workbench.editor.enablePreview": false,
   "files.trimTrailingWhitespace": true,
-  "editor.formatOnSave": true,
   "editor.formatOnType": false,
   "editor.formatOnPaste": false,
-  "editor.formatOnSaveTimeout": 5000, // use rubocop for formatting
+  "editor.formatOnSaveTimeout": 5000, // use rubocop for zing
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -44,6 +43,12 @@
   "ruby.codeCompletion": "rcodetools",
   "[ruby]": {
     "editor.defaultFormatter": "rebornix.ruby"
+  },
+  "[plaintext]": {
+    "editor.formatOnSave": false
+  },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
   },
   "emmet.triggerExpansionOnTab": true,
   "emmet.showExpandedAbbreviation": "never",
@@ -110,6 +115,7 @@
     "devtools",
     "disabledgrey",
     "formik",
+    "mdash",
     "postgres",
     "prtodo",
     "reindent",
@@ -137,7 +143,6 @@
   "editor.suggest.showSnippets": false,
   "editor.suggest.maxVisibleSuggestions": 15,
   "python.languageServer": "Microsoft",
-  "workbench.colorTheme": "Dracula Soft",
   "cSpell.language": "en,ru2",
   "markdown.extension.tableFormatter.normalizeIndentation": true,
   "[html]": {
@@ -145,5 +150,11 @@
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "python.showStartPage": false,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "editor.formatOnSave": true,
+  "workbench.colorTheme": "Dracula Soft"
 }
