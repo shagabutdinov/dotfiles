@@ -45,6 +45,14 @@ typescript:
           $0
         }
 
+    for classic:
+      trigger: ~(?<=^\s*)fo$
+      order: 1
+      snippet: |-
+        for $1:name{index} := $2{0}; $1:name{index} < $3; $1:name{index} ++ {
+          $0
+        }
+
     for index:
       trigger: ~(?<=^\s*)fi$
       snippet: |-
@@ -55,7 +63,7 @@ typescript:
         value:
           onBeforeFocus: |
             ({ placeholders: { values }, extensions: { user } }) => {
-              return user.pluralize.singular(values.value);
+              return user.pluralize.singular(values.value) || values.value;
             }
 
     for index helper:
@@ -66,7 +74,7 @@ typescript:
         value:
           onBeforeFocus: |
             ({ placeholders: { values }, extensions: { user } }) => {
-              return user.pluralize.singular(values.value);
+              return user.pluralize.singular(values.value) || values.value;
             }
       order: 3
 
@@ -112,7 +120,7 @@ typescript:
       snippet: float64
 
     float64 type:
-      trigger: ~(?<=\w\s+)(?<!return\s+)f$
+      trigger: ~(?<=(\w\s|\))\s*)(?<!return\s+)f$
       snippet: float64
       order: 1
 
@@ -127,7 +135,7 @@ typescript:
       order: 1
 
     string:
-      trigger: ~(?<=\w\s+)s$
+      trigger: ~(?<=(\w\s|\)|\W)\s*)s$
       snippet: string
 
     error type:

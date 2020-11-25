@@ -46,6 +46,20 @@ constructor typescript:
                   alias: useFeatureToggle
                   from: hooks/useFeatureToggle
 
+        error handling:
+          trigger: ie
+          snippet: |-
+            if (error) {
+              return <Alert type="danger">{error}</Alert>;
+            }
+          onExpand:
+            commands:
+              - command: imports.add
+                args:
+                  value: default
+                  alias: Alert
+                  from: components/Modules/Alert
+
         requireCurrentUser:
           trigger: ru
           snippet: |-

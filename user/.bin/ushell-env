@@ -97,9 +97,9 @@ alias co='sudo chown -R leo: '
 alias g='() { grep $1 -R . }'
 
 # overmind
-alias o='overmind'
-alias oc='overmind connect'
-alias oe='overmind restart'
+alias o='TMUX= overmind'
+alias oc='TMUX= overmind connect'
+alias oe='TMUX= overmind restart'
 alias oa='[ -e ./.overmind.sock ] && rm ./.overmind.sock; overmind start -F /dev/null --procfile .dev/Procfile -D -p 3000'
 alias oaa='overmind start'
 alias oo='overmind stop'
@@ -179,8 +179,8 @@ alias da='docker attach --no-stdin'
 
 # constructor
 
-alias oj="overmind connect jest"
-alias ot="overmind connect tsc"
+alias oj="TMUX= overmind connect jest"
+alias ot="TMUX= overmind connect tsc"
 
 # git
 alias gs='git show --color'
@@ -288,7 +288,7 @@ function create-pull-request() {
       sed -r "s/.*@(.*):(.*)\.git\s.*/http:\/\/\1\/\2/g"
   )
 
-  chromium "$repo/compare/$(current_branch)?expand=1"
+  xdg-open "$repo/compare/$(current_branch)?expand=1"
 }
 
 alias gq=create-pull-request
@@ -515,6 +515,6 @@ QUOTA=50
 eval $(dircolors ~/.dircolors.$BACKGROUND)
 
 if [[ ! "$TMUX" ]]; then
-#  exec tmux new
+  exec tmux new
 fi
 

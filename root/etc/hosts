@@ -18,7 +18,13 @@
 127.0.0.1 elasticsearch
 172.18.0.6 shell.autocomplete.constructor.local
 
-# 5.102.147.66 lostfilm.tv
+0.0.0.0 pagead2.googlesyndication.com
+0.0.0.0 matchid.adfox.yandex.ru
+0.0.0.0 ads.betweendigital.com
+0.0.0.0 securepubads.g.doubleclick.net
+0.0.0.0 an.yandex.ru
+0.0.0.0 mc.yandex.ru
+0.0.0.0 w3schools.com
 0.0.0.0 browser.sentry-cdn.com
 0.0.0.0 cdn.amplitude.com
 0.0.0.0 www.googletagmanager.com

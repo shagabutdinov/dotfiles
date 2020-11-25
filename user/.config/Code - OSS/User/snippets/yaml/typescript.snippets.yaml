@@ -1,18 +1,6 @@
 typescript:
   context: document().languageId.match("^(type|java)script(react)?$")
   snippets:
-    # tmp:
-    #   trigger: tmp
-    #   snippet: |-
-    #     NAME: $1:name{name}
-    #     VALUE: $value{value}
-    #   placeholders:
-    #     name:
-    #       onPlaceholderChange: |
-    #         ({ placeholders: { name, value } }) => {
-    #           value.value = name.value.toUpperCase()
-    #         }
-
     definitions:
       context: document().getText().match('^\s*\w+\s*$')
       snippets:
@@ -26,7 +14,6 @@ typescript:
                 $0
               );
             }
-
     keywords:
       snippets:
         async:
@@ -480,6 +467,14 @@ typescript:
         promise:
           trigger: P
           snippet: Promise<$0>
+
+    stdlib:
+      snippets:
+        setTimeout:
+          snippets:
+            function:
+              trigger: sto
+              snippet: window.setTimeout($1, $2{100})
 
     debug:
       snippets:

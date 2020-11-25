@@ -1,0 +1,5 @@
+notify-replace headphones "" "<b>HEADPHONES</b> » CONNECTING"
+bluetoothctl power on
+bluetoothctl agent on
+notify-replace headphones "$(bluetoothctl connect 38:18:4C:BF:1B:46)"
+

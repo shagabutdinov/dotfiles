@@ -1,0 +1,3 @@
+notify-replace headphones "" "<b>HEADPHONES</b> » DISCONNECTING"
+notify-replace headphones "" "$(bluetoothctl disconnect 38:18:4C:BF:1B:46)"
+

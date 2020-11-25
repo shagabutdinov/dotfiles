@@ -6,7 +6,7 @@ i3-msg 'workspace 6, move workspace to output DP-0'
 code &
 sleep 3
 
-urxvt &
+alacritty &
 sleep 3
 
 # start app http
@@ -37,7 +37,7 @@ i3-msg 'workspace 10, move workspace to output HDMI-0'
 utodoist &
 sleep 3
 
-chromium &
+firefox &
 sleep 3
 i3-msg 'resize set 1896px'
 
@@ -59,12 +59,11 @@ chromium
 sleep 0.5
 
 i3-msg 'workspace 2, move workspace to output DP-4'
-chromium
+firefox
 sleep 0.5
 
 i3-msg 'workspace 3, move workspace to output DP-4'
-i3-msg 'workspace 3'
-chromium
+firefox
 sleep 0.5
 
 # workspaces
@@ -79,3 +78,4 @@ i3-msg 'workspace 8, move workspace to output HDMI-0'
 i3-msg 'workspace 1'
 i3-msg 'workspace 11'
 i3-msg 'workspace 6'
+
