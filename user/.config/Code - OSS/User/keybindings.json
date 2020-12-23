@@ -2251,6 +2251,11 @@
   // editor
 
   {
+    "key": "ctrl+alt+r",
+    "command": "editor.action.refactor",
+    "when": "editorTextFocus"
+  },
+  {
     "key": "ctrl+alt+e",
     "command": "editor.action.showHover",
     "when": "editorHasSignatureHelpProvider && editorTextFocus"

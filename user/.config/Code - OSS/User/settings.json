@@ -11,7 +11,6 @@
   "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 80,
   "keyboard.dispatch": "keyCode",
-  "window.zoomLevel": 0,
   "editor.tabSize": 2,
   "workbench.editor.enablePreview": false,
   "files.trimTrailingWhitespace": true,
@@ -156,5 +155,9 @@
     "editor.defaultFormatter": "ms-python.python"
   },
   "editor.formatOnSave": true,
-  "workbench.colorTheme": "Dracula Soft"
+  "workbench.colorTheme": "Dracula Soft",
+  "window.zoomLevel": 0,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

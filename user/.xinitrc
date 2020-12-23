@@ -11,6 +11,7 @@ synclient TapButton3=0
 
 thunar --daemon &
 sudo systemctl restart keynav
+bash -c "sleep 5; systemctl --user start xfce4-notifyd.service" &
 redshift -t 6500:2500 -l $(curl -s ipinfo.io | jq -j .loc | tr ',' ':') &
 dunst &
 volumectl -D &
@@ -38,6 +39,7 @@ export PATH=./bin:$HOME/.bin:$HOME/.local/deadfiles/bin:/home/leo/src/go/bin:$PA
 export PATH=/home/leo/.local/bin:$PATH
 export PATH=/home/leo/.rvm/rubies/ruby-2.6.2/bin:$PATH
 export PATH=/home/leo/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/bin:$PATH
+export PATH=/home/leo/.rvm/rubies/ruby-2.6.2/bin:$PATH
 export GEM_PATH=/home/leo/.rvm/gems/ruby-2.6.2
 export GEM_HOME=/home/leo/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0
 

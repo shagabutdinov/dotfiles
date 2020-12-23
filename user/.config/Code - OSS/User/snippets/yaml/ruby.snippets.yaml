@@ -91,6 +91,42 @@ ruby:
           trigger: ra
           snippet: 'raise StandardError.new("$0")'
 
+    stdlib:
+      snippets:
+        args:
+          trigger: ~(?<=\{\s+)$
+          snippet: "|$1|"
+
+        inline cycle:
+          trigger: ~(?<=\.\w+\s+)$
+          snippet: |-
+            do$container{ |$1:args|}
+              $0
+            end
+          placeholders:
+            args:
+              onBeforeLeave: |-
+                ({ placeholders: { container } }) => {
+                  container.value = container.value.replace(/\s*\|\|$/, '');
+                };
+
+        each:
+          trigger: ~(?<=\.)e$
+          snippet: each $0
+
+        map:
+          trigger: ~(?<=\.)m$
+          snippet: map $0
+
+        file write:
+          trigger: fw
+          snippet: File.write($1, $2)
+
+        file read:
+          trigger: fr
+          snippet: File.read($1)
+
+
     values:
       snippets:
         'true':
@@ -274,13 +310,3 @@ ruby:
         vcr:
           trigger: '~:focus, :watch, vcr: \{ record: :all \}$'
           snippet: ':vcr'
-
-    stdlib:
-      snippets:
-        file write:
-          trigger: fw
-          snippet: File.write($1, $2)
-
-        file read:
-          trigger: fr
-          snippet: File.read($1)

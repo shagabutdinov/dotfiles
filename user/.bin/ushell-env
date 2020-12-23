@@ -70,6 +70,7 @@ alias -g G="| grep"
 alias -g X='| xsel -ib'
 
 # utils
+alias pp='readlink -f'
 alias re='source ~/.bin/ushell-env && rehash' # reload env
 alias f='find . -name'
 alias ee='() { vim ~/.bin/ushell-env; source ~/.bin/ushell-env; rehash }'
@@ -150,12 +151,12 @@ export NODE_PATH="~/.node:/usr/lib/node_modules"
 export WINEARCH='win32'
 
 # nmcli
-alias wr='nmcli -p dev wifi rescan'
-alias wd='nmcli -p dev wifi list'
-alias wc='nmcli -p dev wifi connect'
-alias wl='nmcli -p con show'
-alias ws='nmcli -p con show --active'
-alias wu='nmcli -p con up id'
+# alias wr='nmcli -p dev wifi rescan'
+# alias wd='nmcli -p dev wifi list'
+# alias wc='nmcli -p dev wifi connect'
+# alias wl='nmcli -p con show'
+# alias ws='nmcli -p con show --active'
+# alias wu='nmcli -p con up id'
 
 # go
 alias gor=gorun
