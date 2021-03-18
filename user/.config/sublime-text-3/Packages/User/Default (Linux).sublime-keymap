@@ -139,13 +139,13 @@
     ],
   },
 
-  {
-      "keys": ["ctrl+alt+q"],
-      "command": "insert_import",
-      "context": [
-          { "key": "selector", "operator": "equal", "operand": "source.ts, source.tsx, source.js, source.jsx" }
-      ]
-  },
+  // {
+  //     "keys": ["ctrl+alt+q"],
+  //     "command": "insert_import",
+  //     "context": [
+  //         { "key": "selector", "operator": "equal", "operand": "source.ts, source.tsx, source.js, source.jsx" }
+  //     ]
+  // },
   {
     "keys": ["delete"],
     "command": "next_field",
@@ -619,4 +619,16 @@
   { "keys": ["9"], "command": "tab_nine", "args": {"num": 9 }, "context": [ { "key": "tab_nine_choice_available", "operator": "equal", "operand": 9 }] },
 
   { "keys": ["ctrl+u", "ctrl+0"], "command": "DO_NOTHING"},
+
+  { "keys": ["ctrl+alt+q"], "command": "toggle_bookmark" },
+  {
+    "keys": ["alt+q"],
+    "command": "next_bookmark",
+    "context": [
+      {"key": "is_search_panel_enhanced_visible", "operator" : "equal", "operand": false}
+    ]
+  },
+  { "keys": ["alt+shift+q"], "command": "prev_bookmark" },
+  { "keys": ["ctrl+shift+f2"], "command": "clear_bookmarks" },
+  { "keys": ["alt+f2"], "command": "select_all_bookmarks" },
 ]

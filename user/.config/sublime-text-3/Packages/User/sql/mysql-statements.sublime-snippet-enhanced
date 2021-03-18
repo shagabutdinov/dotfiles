@@ -32,6 +32,20 @@ DELETE FROM $1
 
 	<snippet>
 		<content><![CDATA[
+TRUNCATE TABLE $1
+]]></content>
+		<tabTrigger>tt</tabTrigger>
+		<scope>source.sql(?!.*(string|entity))</scope>
+		<context>
+			[
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*tt$"},
+			]
+		</context>
+		<description>truncate table</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
 SET FOREIGN_KEY_CHECKS = 0;
 ]]></content>
 		<tabTrigger>sf</tabTrigger>
@@ -155,22 +169,6 @@ ALTER TABLE $1
 		</context>
 		<description>alter table</description>
 	</snippet>
-
-	<snippet>
-		<content><![CDATA[
-DROP TABLE ${1:$selection__or__last_assigned_variable};
-]]></content>
-		<tabTrigger>dt</tabTrigger>
-		<scope>source.sql(?!.*(string|entity))</scope>
-		<context><![CDATA[
-			[
-				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "^\\s*dt$"},
-				{"key": "mysql_query_preceding", "operator": "regex_contains", "operand": "^\\s*\\w{1,3}\\s*$"},
-			]
-		]]></context>
-		<description>drop table</description>
-	</snippet>
-
 
 	<snippet>
 		<content><![CDATA[

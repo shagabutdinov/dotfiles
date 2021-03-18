@@ -381,6 +381,10 @@ typescript:
           trigger: oe
           snippet: Object.entries($1)
 
+        object has own property:
+          trigger: ho
+          snippet: Object.prototype.hasOwnProperty.call($1, $2)
+
         json stringify:
           trigger: js
           snippet: JSON.stringify($1)
@@ -419,6 +423,10 @@ typescript:
         new error:
           trigger: ne
           snippet: new Error($1)
+
+    parameters auto:
+      trigger: ~const args$
+      snippet: "const args: Parameters<typeof $1>[0]"
 
     types:
       context: cursor.precedingText().match('([:<,[]|=>|(?<!\|\s*)\||(?<!&\s*)&|<(?!=\s))\s*\w+$')
@@ -466,7 +474,11 @@ typescript:
 
         promise:
           trigger: P
-          snippet: Promise<$0>
+          snippet: Promise<$1>
+
+        parameters:
+          trigger: Pa
+          snippet: Parameters<typeof $1>
 
     stdlib:
       snippets:

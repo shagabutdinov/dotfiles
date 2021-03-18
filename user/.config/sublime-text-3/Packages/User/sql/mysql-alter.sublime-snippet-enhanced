@@ -252,4 +252,31 @@ SET NULL
 		<description>set null</description>
 	</snippet>
 
+	<snippet>
+		<content><![CDATA[
+CREATE TABLE $0
+]]></content>
+		<tabTrigger>ct</tabTrigger>
+		<scope>source.sql(?!.*(string|meta))</scope>
+		<description>create table</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+ALTER TABLE $0
+]]></content>
+		<tabTrigger>at</tabTrigger>
+		<scope>source.sql(?!.*(string|meta))</scope>
+		<description>alter table</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+DROP TABLE $0
+]]></content>
+		<tabTrigger>dt</tabTrigger>
+		<scope>source.sql(?!.*(string|meta))</scope>
+		<description>drop table</description>
+	</snippet>
+
 </snippets>

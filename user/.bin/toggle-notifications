@@ -1,0 +1,9 @@
+if (ps -xa | grep -v grep | grep xfce4-notifyd); then
+  notify-replace notifications "NOTIFICATIONS » DISABLED"
+  sleep 1
+  pkill xfce4-notifyd
+else
+  /usr/lib/xfce4/notifyd/xfce4-notifyd &
+  sleep 1
+  notify-replace notifications "NOTIFICATIONS » ENABLED"
+fi;

@@ -1,0 +1,5 @@
+ID_STYLUS=`xinput | grep "Pen stylus" | cut -f 2 | cut -c 4-5`
+MONITOR="DP-0"
+
+xinput map-to-output $ID_STYLUS $MONITOR
+

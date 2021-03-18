@@ -1,20 +1,13 @@
 #!/bin/bash
 
-xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --auto
+# xrandr --setprovideroutputsource modesetting NVIDIA-0
+# xrandr --auto
 
 /home/leo/.bin/uxinit
 
 synclient TapButton1=0
 synclient TapButton2=0
 synclient TapButton3=0
-
-thunar --daemon &
-sudo systemctl restart keynav
-bash -c "sleep 5; systemctl --user start xfce4-notifyd.service" &
-redshift -t 6500:2500 -l $(curl -s ipinfo.io | jq -j .loc | tr ',' ':') &
-dunst &
-volumectl -D &
 
 sudo sysctl -w vm.max_map_count=262144
 
@@ -29,7 +22,7 @@ ssh-add > /dev/null 2>&1
 # gnome keyring
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
-source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+# source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
 
 export GTK_IM_MODULE=xim
 export QT_IM_MODULE=xim
@@ -47,8 +40,16 @@ export GEM_HOME=/home/leo/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0
 export GOPATH=~/src/go
 
 # node
+export PATH=/home/leo/.nvm/versions/node/v12.18.1/bin/:$PATH
 export PATH=./node_modules/.bin:$PATH
 
-ulock &
+thunar --daemon &
+sudo systemctl restart keynav
+/usr/lib/xfce4/notifyd/xfce4-notifyd &
+redshift -t 6500:2500 -l $(curl -s ipinfo.io | jq -j .loc | tr ',' ':') &
+dunst &
+volumectl -D &
+
+# ulock &
 exec i3
 

@@ -119,6 +119,7 @@
     "prtodo",
     "reindent",
     "rerender",
+    "searchandizing",
     "shagabutdinov",
     "snakeize",
     "subheadlines",
@@ -156,8 +157,12 @@
   },
   "editor.formatOnSave": true,
   "workbench.colorTheme": "Dracula Soft",
-  "window.zoomLevel": 0,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "local-history.path": "/home/leo/.local/history",
+  "local-history.saveDelay": 5,
+  "local-history.treeLocation": "localHistory",
+  "vscodeWorkspaceSwitcher.showTreeView": true,
+  "go.toolsManagement.autoUpdate": true
 }

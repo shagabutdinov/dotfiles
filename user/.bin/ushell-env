@@ -75,7 +75,7 @@ alias re='source ~/.bin/ushell-env && rehash' # reload env
 alias f='find . -name'
 alias ee='() { vim ~/.bin/ushell-env; source ~/.bin/ushell-env; rehash }'
 alias cw='cd ~/src/constructor/website'
-alias cm='cd ~/src/go/src/github.com/seletskiy/trading'
+alias cm='cd ~/src/go/src/gitlab.com/bigprofit/trading'
 alias yay='yay --removemake --nodiffmenu --nocleanmenu --noupgrademenu --cleanafter'
 alias mv=/bin/mv
 alias pwgen='pwgen 12'
@@ -95,7 +95,8 @@ alias ps='ps -xau'
 alias cal='cal -m $(date +%Y)'
 alias co='sudo chown -R leo: '
 # alias cc='sudo chown -R leo: .'
-alias g='() { grep $1 -R . }'
+alias xg='() { grep $1 -R . }'
+alias rf="readlink -f"
 
 # overmind
 alias o='TMUX= overmind'
@@ -159,8 +160,11 @@ export WINEARCH='win32'
 # alias wu='nmcli -p con up id'
 
 # go
-alias gor=gorun
+alias gx=gorun
 alias gog=go get
+
+# python
+alias pi='docker exec test.autocomplete.constructor.local isort'
 
 # docker
 alias d='docker'
@@ -180,8 +184,10 @@ alias da='docker attach --no-stdin'
 
 # constructor
 
-alias oj="TMUX= overmind connect jest"
-alias ot="TMUX= overmind connect tsc"
+alias ocj="TMUX= overmind connect jest"
+alias oct="TMUX= overmind connect tsc"
+alias ocw='TMUX= overmind connect webpack'
+alias oca='TMUX= overmind connect app'
 
 # git
 alias gs='git show --color'
@@ -245,8 +251,15 @@ alias gkk='() { git commit --amend }'
 
 function git-commit-prefix() {
   branch=$(git rev-parse --abbrev-ref HEAD)
-  message="$(echo -n $branch | grep -Eo 'ch([0-9]+)')"
 
+  message="$(echo -n $branch | grep -oP 'tools-\d+')"
+  if [ ! -z "$message" ]; then
+    echo -n "[$message] "
+    return
+  fi
+  
+
+  message="$(echo -n $branch | ruby -e 'puts(STDIN.read.split(%{/})[0])')"
   if [ ! -z "$message" ]; then
     echo -n "[$message] "
   else
@@ -515,7 +528,7 @@ QUOTA=50
 
 eval $(dircolors ~/.dircolors.$BACKGROUND)
 
-if [[ ! "$TMUX" ]]; then
+if [[ ! "$TMUX" && -f "/tmp/.X11-unix/X0" ]]; then
   exec tmux new
 fi
 

@@ -16,7 +16,10 @@
 127.0.0.1 e
 127.0.0.1       localbox
 127.0.0.1 elasticsearch
-172.18.0.6 shell.autocomplete.constructor.local
+# 172.18.0.5 shell.autocomplete.constructor.local
+# 172.18.0.5 ingestion.autocomplete.constructor.local
+172.18.0.6 ingestion.autocomplete.constructor.local
+# 172.18.0.7 ingestion.autocomplete.constructor.local
 
 0.0.0.0 pagead2.googlesyndication.com
 0.0.0.0 matchid.adfox.yandex.ru

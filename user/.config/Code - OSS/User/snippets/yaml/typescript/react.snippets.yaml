@@ -61,6 +61,21 @@ typescript:
                   document.uri.toString().match('/([^/]+).tsx?$') || []
                 )[1]
 
+    react component props auto:
+      trigger: ~const props$
+      snippet: "const props: React.ComponentProps<typeof $0>"
+
+    react node:
+      trigger: rn
+      snippet: React.ReactNode
+
+    types:
+      context: cursor.precedingText().match(':\s*\w+$')
+      snippets:
+        react component props:
+          trigger: rcp
+          snippet: React.ComponentProps<typeof $0>
+
     sentences:
       context: cursor.precedingText().match('\n[ ]*\w+$')
       snippets:

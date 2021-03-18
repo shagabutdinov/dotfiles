@@ -1,7 +1,7 @@
 /home/leo/.bin/vpnup &
 sudo systemctl start nginx &
 
-i3-msg 'workspace 6, move workspace to output DP-0'
+i3-msg 'workspace 6'
 
 code &
 sleep 3
@@ -23,27 +23,24 @@ xdotool key --clearmodifiers ctrl+t
 
 # telegram
 
-i3-msg 'workspace 9, move workspace to output HDMI-0'
+i3-msg 'workspace 9'
 telegram-desktop &
 sleep 10
 
-uslackd &
-sleep 3
-
 # info
 
-i3-msg 'workspace 10, move workspace to output HDMI-0'
+i3-msg 'workspace 10'
 
-utodoist &
+utodoist
 sleep 3
 
-firefox &
-sleep 3
+firefox
+sleep 10
 i3-msg 'resize set 1896px'
 
 # slack
 
-i3-msg 'workspace 11, move workspace to output HDMI-0'
+i3-msg 'workspace 11'
 
 utodoist &
 sleep 3
@@ -54,24 +51,16 @@ i3-msg 'resize set 1896px'
 
 # browsers
 
-i3-msg 'workspace 1, move workspace to output DP-4'
+i3-msg 'workspace 1'
 chromium
-sleep 0.5
-
-i3-msg 'workspace 2, move workspace to output DP-4'
-firefox
-sleep 0.5
-
-i3-msg 'workspace 3, move workspace to output DP-4'
-firefox
 sleep 0.5
 
 # workspaces
 
-i3-msg 'workspace 4, move workspace to output DP-4'
-i3-msg 'workspace 5, move workspace to output DP-4'
-i3-msg 'workspace 7, move workspace to output HDMI-0'
-i3-msg 'workspace 8, move workspace to output HDMI-0'
+i3-msg 'workspace 4'
+i3-msg 'workspace 5'
+i3-msg 'workspace 7'
+i3-msg 'workspace 8'
 
 # activate main workspaces
 

@@ -32,3 +32,4 @@ File.write(MESSAGE_ID_FILE, id)
 
 system('sudo systemctl restart keynav')
 system('~/.bin/uxinit')
+

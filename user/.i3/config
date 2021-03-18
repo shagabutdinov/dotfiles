@@ -33,7 +33,7 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 bindsym $mod+t exec marvex -b alacritty --terminal '@path --title "@title" -e @command' -r 3
 
 # kill focused window
@@ -140,7 +140,7 @@ bindsym $mod+ctrl+9 move container to workspace 10
 bindsym $mod+ctrl+0 move container to workspace 11
 
 # reload the configuration file
-# bindsym $mod+shift+c reload
+bindsym $mod+shift+F4 reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 # bindsym $mod+shift+r restart
 # exit i3 (logs you out of your X session)
@@ -222,6 +222,7 @@ bindsym $mod+ctrl+u exec uidle
 bindsym $mod+shift+u exec upwork-suspend
 bindsym $mod+m exec ushow-status
 bindsym $mod+ctrl+shift+Tab exec ~/.bin/switch-display
+bindsym $mod+F11 exec ~/.bin/toggle-notifications
 bindsym $mod+F12 exec ~/.bin/vpnup
 bindsym $mod+shift+F12 exec ~/.bin/vpndown
 bindsym $mod+ctrl+F12 exec ~/.bin/toggle-touchpad

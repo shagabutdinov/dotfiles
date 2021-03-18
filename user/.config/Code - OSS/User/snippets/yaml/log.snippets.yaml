@@ -38,3 +38,7 @@ log:
     onetoone:
       trigger: o
       snippet: '@onetoone '
+
+    market:
+      trigger: m
+      snippet: '@market '

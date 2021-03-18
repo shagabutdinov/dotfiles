@@ -8,7 +8,7 @@
         {
           "command": "refactoring.typescript.openTestFile",
           "context": [
-            "document().uri.toString().match('(?<!\\.test)\\.tsx?$')",
+            "document().uri.toString().match('(?<!\\.test)\\.[tj]sx?$')",
           ]
         },
         {
@@ -23,58 +23,88 @@
             "document().uri.toString().match('\\_spec\\.rb$')",
           ]
         }
+        {
+          "command": "refactoring.go.openTestFile",
+          "context": [
+            "document().uri.toString().match('/(?<!test_)[^/]+\\.go$')",
+          ]
+        },
+        {
+          "command": "refactoring.go.openCodeFile",
+          "context": [
+            "document().uri.toString().match('/test_[^/]+\\.go$')",
+          ]
+        }
       ]
     }
   },
-
+  {
+    "key": "alt+r",
+    "command": "commands.run",
+    "args": {
+      "commands": [
+        {
+          "command": "refactoring.typescript.openPath",
+          "context": [
+            "document().uri.toString().match('\\.[tj]sx?$')",
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "key": "alt+shift+r",
+    "command": "commands.run",
+    "args": {
+      "commands": [
+        {
+          "command": "refactoring.typescript.openParent",
+          "context": [
+            "document().uri.toString().match('.[tj]sx?$')",
+          ]
+        }
+      ]
+    }
+  },
   {
     "key": "ctrl+u ctrl+r",
     "command": "workbench.action.reloadWindow"
   },
-
   {
     "key": "ctrl+alt+shift+f12",
     "command": "scope.print"
   },
-
   {
     "key": "shift+f3",
     "command": "snippets.nextTab",
     "when": "editorTextFocus"
   },
-
   {
     "key": "ctrl+u ctrl+j",
     "command": "workbench.action.editor.changeLanguageMode",
     "when": "editorTextFocus"
   },
-
   {
     "key": "ctrl+u ctrl+y",
     "command": "editor.action.formatDocument",
     "when": "editorTextFocus"
   },
-
   {
     "key": "ctrl+u y",
     "command": "editor.action.formatSelection",
     "when": "editorTextFocus"
   },
-
   {
     "key": "ctrl+m ctrl+n",
     "command": "editor.action.defineKeybinding",
     "when": "editorTextFocus"
   },
-
   {
     "key": "ctrl+u ctrl+enter",
     "command": "rest-client.request",
     "when": "editorTextFocus"
   },
-
   // case convertion
-
   {
     "key": "ctrl+=",
     "command": "commands.run",
@@ -132,7 +162,6 @@
     },
     "when": "textInputFocus"
   },
-
   {
     "key": "ctrl+-",
     "command": "commands.run",
@@ -151,8 +180,12 @@
             },
             {
               "commands": [
-                { "command": "extension.changeCase.lower" },
-                { "command": "extension.changeCase.upperFirst" },
+                {
+                  "command": "extension.changeCase.lower"
+                },
+                {
+                  "command": "extension.changeCase.upperFirst"
+                },
               ], // shit!
               "context": [
                 "selection.precedingText().match('(\\W|^)[A-Z]*$') || (",
@@ -181,8 +214,12 @@
             },
             {
               "commands": [
-                { "command": "extension.changeCase.lower" },
-                { "command": "extension.changeCase.upperFirst" },
+                {
+                  "command": "extension.changeCase.lower"
+                },
+                {
+                  "command": "extension.changeCase.upperFirst"
+                },
               ], // shit!
               "context": "selection.text().match('^[A-Z].*$')",
             },
@@ -196,7 +233,6 @@
     },
     "when": "textInputFocus"
   },
-
   {
     "key": "ctrl+shift+=",
     "command": "commands.run",
@@ -242,7 +278,6 @@
     },
     "when": "textInputFocus"
   },
-
   {
     "key": "ctrl+shift+-",
     "command": "commands.run",
@@ -288,27 +323,21 @@
     },
     "when": "textInputFocus"
   },
-
   // {
   //   "key": "ctrl+=",
   //   "command": "editor.emmet.action.incrementNumberByOne",
   //   "when": "textInputFocus"
   // },
-
   // {
   //   "key": "ctrl+-",
   //   "command": "incrementor.decByOne",
   //   "when": "textInputFocus"
   // },
-
-
   // {
   //   "key": "ctrl+=",
   //   "command": "extension.changeCase.upper"
   // },
-
   // splitting
-
   {
     "key": "enter",
     "command": "commands.run",
@@ -329,7 +358,9 @@
         },
         {
           "command": "editor.action.insertSnippet",
-          "args": { "snippet": "\n  " },
+          "args": {
+            "snippet": "\n  "
+          },
           "context": [
             "selection.precedingText().match('[\\{\\(\\[\\<]') &&",
             "selection.followingText().match('[\\}\\)\\]\\>]') &&",
@@ -341,15 +372,15 @@
         },
         {
           "command": "editor.action.insertSnippet",
-          "args": { "snippet": "\n" }
+          "args": {
+            "snippet": "\n"
+          }
         }
       ]
     },
     "when": "editorTextFocus"
   },
-
   // character editing
-
   {
     "key": "alt+/",
     "command": "commands.run",
@@ -365,14 +396,14 @@
             "selection().active.isEqual(nesting.current().start)"
           ]
         },
-        { "command": "deleteRight" }
+        {
+          "command": "deleteRight"
+        }
       ]
     },
     "when": "textInputFocus && !editorReadonly"
   },
-
   // word editing
-
   {
     "key": "alt+backspace",
     "command": "commands.run",
@@ -387,12 +418,13 @@
             "selection().active.isEqual(nesting.outerLeft().outerEnd)"
           ]
         },
-        { "command": "deleteWordLeft" }
+        {
+          "command": "deleteWordLeft"
+        }
       ]
     },
     "when": "textInputFocus && !editorReadonly"
   },
-
   {
     "key": "ctrl+alt+/",
     "command": "commands.run",
@@ -407,14 +439,14 @@
             "selection().active.isEqual(nesting.outerRight().outerStart)"
           ]
         },
-        { "command": "deleteWordRight" }
+        {
+          "command": "deleteWordRight"
+        }
       ]
     },
     "when": "textInputFocus && !editorReadonly"
   },
-
   // word part editing
-
   {
     "key": "ctrl+backspace",
     "command": "commands.run",
@@ -429,12 +461,13 @@
             "selection().active.isEqual(nesting.outerLeft().outerEnd)"
           ]
         },
-        { "command": "deleteWordPartLeft" }
+        {
+          "command": "deleteWordPartLeft"
+        }
       ]
     },
     "when": "textInputFocus && !editorReadonly"
   },
-
   {
     "key": "ctrl+/",
     "command": "commands.run",
@@ -464,16 +497,15 @@
             "selection().active.isEqual(nesting.outerRight().outerStart)"
           ]
         },
-        { "command": "deleteWordPartRight" }
+        {
+          "command": "deleteWordPartRight"
+        }
       ]
     },
     "when": "textInputFocus && !editorReadonly"
   },
-
   // TMP
-
   // word editing
-
   // {
   //   "key": "alt+backspace",
   //   "command": "deleteWordLeft",
@@ -484,9 +516,7 @@
   //   "command": "deleteWordRight",
   //   "when": "textInputFocus && !editorReadonly"
   // },
-
   // word part editing
-
   // {
   //   "key": "ctrl+backspace",
   //   "command": "deleteWordPartLeft",
@@ -497,9 +527,7 @@
   //   "command": "deleteWordPartRight",
   //   "when": "textInputFocus && !editorReadonly"
   // },
-
   // nesting change: (
-
   {
     "key": "shift+9",
     "command": "commands.run",
@@ -511,7 +539,10 @@
             {
               "command": "nesting.swapSelection",
               "args": {
-                "into": ["(", ")"]
+                "into": [
+                  "(",
+                  ")"
+                ]
               },
               "context": [
                 "selection.text().match('^[\\{\\[\\<](.|\n)*[\\}\\]\\>]$') &&",
@@ -536,7 +567,12 @@
         },
         {
           "command": "nesting.wrapRight",
-          "args": { "into": ["(", ")"] },
+          "args": {
+            "into": [
+              "(",
+              ")"
+            ]
+          },
           "context": [
             "!selection.scope().match('(comment\\.|string.*(?<!\\spunctuation\\S*(start|begin)\\S*)$)') && ",
             "selection.followingText().match(",
@@ -546,7 +582,9 @@
         },
         {
           "command": "editor.action.insertSnippet",
-          "args": { "snippet": "($0)" },
+          "args": {
+            "snippet": "($0)"
+          },
           "context": [
             "!selection.scope().match('(comment\\.|string)') && ",
             "selection.followingText().match('^(\\W|$)') &&",
@@ -555,13 +593,14 @@
         },
         {
           "command": "editor.action.insertSnippet",
-          "args": { "snippet": "(" }
+          "args": {
+            "snippet": "("
+          }
         }
       ]
     },
     "when": "editorTextFocus"
   },
-
   {
     "key": "shift+0",
     "command": "commands.run",
@@ -596,7 +635,10 @@
         {
           "command": "nesting.stealRight",
           "args": {
-            "from": ["(", ")"]
+            "from": [
+              "(",
+              ")"
+            ]
           },
           "context": [
             "selection.followingText().match('^[\\w\\.\\-\\/\\?!&\\(\\{\\[\\<\"\\'`]') &&",
@@ -607,15 +649,15 @@
         },
         {
           "command": "editor.action.insertSnippet",
-          "args": { "snippet": ")" }
+          "args": {
+            "snippet": ")"
+          }
         }
       ]
     },
     "when": "editorTextFocus"
   },
-
   // nesting change: {
-
   {
     "key": "shift+[",
     "command": "commands.run",
@@ -627,7 +669,10 @@
             {
               "command": "nesting.swapSelection",
               "args": {
-                "into": ["{", "}"]
+                "into": [
+                  "{",
+                  "}"
+                ]
               },
               "context": [
                 "selection.text().match('^[\\(\\[\\<](.|\n)*[\\)\\]\\>]$') &&",
@@ -652,7 +697,12 @@
         },
         {
           "command": "nesting.wrapRight",
-          "args": { "into": ["{", "}"] },
+          "args": {
+            "into": [
+              "{",
+              "}"
+            ]
+          },
           "context": [
             "!selection.scope().match('(comment\\.|string.*(?<!\\spunctuation\\S*(start|begin)\\S*)$)') && ",
             "selection.followingText().match(",
@@ -662,7 +712,9 @@
         },
         {
           "command": "editor.action.insertSnippet",
-          "args": { "snippet": "{$0}" },
+          "args": {
+            "snippet": "{$0}"
+          },
           "context": [
             "!selection.scope().match('(comment\\.|string)') && ",
             "selection.followingText().match('^(\\W|$)') &&",
@@ -671,13 +723,14 @@
         },
         {
           "command": "editor.action.insertSnippet",
-          "args": { "snippet": "{" }
+          "args": {
+            "snippet": "{"
+          }
         }
       ]
     },
     "when": "editorTextFocus"
   },
-
   {
     "key": "shift+]",
     "command": "commands.run",
@@ -712,7 +765,10 @@
         {
           "command": "nesting.stealRight",
           "args": {
-            "from": ["{", "}"]
+            "from": [
+              "{",
+              "}"
+            ]
           },
           "context": [
             "selection.followingText().match('^[\\w\\.\\-\\/\\?!&\\(\\{\\[\\<\"\\'`]') &&",
@@ -723,15 +779,15 @@
         },
         {
           "command": "editor.action.insertSnippet",
-          "args": { "snippet": "}" }
+          "args": {
+            "snippet": "}"
+          }
         }
       ]
     },
     "when": "editorTextFocus"
   },
-
   // nesting change: [
-
   {
     "key": "[",
     "command": "commands.run",
@@ -743,7 +799,10 @@
             {
               "command": "nesting.swapSelection",
               "args": {
-                "into": ["[", "]"]
+                "into": [
+                  "[",
+                  "]"
+                ]
               },
               "context": [
                 "selection.text().match('^[\\(\\{\\<](.|\n)*[\\)\\}\\>]$') &&",
@@ -768,7 +827,12 @@
         },
         {
           "command": "nesting.wrapRight",
-          "args": { "into": ["[", "]"] },
+          "args": {
+            "into": [
+              "[",
+              "]"
+            ]
+          },
           "context": [
             "!selection.scope().match('(comment\\.|string.*(?<!\\spunctuation\\S*(start|begin)\\S*)$)') && ",
             "selection.followingText().match(",
@@ -778,7 +842,9 @@
         },
         {
           "command": "editor.action.insertSnippet",
-          "args": { "snippet": "[$0]" },
+          "args": {
+            "snippet": "[$0]"
+          },
           "context": [
             "!selection.scope().match('(comment\\.|string)') && ",
             "selection.followingText().match('^(\\W|$)') &&",
@@ -787,13 +853,14 @@
         },
         {
           "command": "editor.action.insertSnippet",
-          "args": { "snippet": "[" }
+          "args": {
+            "snippet": "["
+          }
         }
       ]
     },
     "when": "editorTextFocus"
   },
-
   {
     "key": "]",
     "command": "commands.run",
@@ -828,7 +895,10 @@
         {
           "command": "nesting.stealRight",
           "args": {
-            "from": ["[", "]"]
+            "from": [
+              "[",
+              "]"
+            ]
           },
           "context": [
             "selection.followingText().match('^[\\w\\.\\-\\/\\?!&\\(\\{\\[\\<\"\\'`]') &&",
@@ -839,15 +909,15 @@
         },
         {
           "command": "editor.action.insertSnippet",
-          "args": { "snippet": "]" }
+          "args": {
+            "snippet": "]"
+          }
         }
       ]
     },
     "when": "editorTextFocus"
   },
-
   // nesting change: <
-
   {
     "key": "shift+,",
     "command": "commands.run",
@@ -859,7 +929,10 @@
             {
               "command": "nesting.swapSelection",
               "args": {
-                "into": ["<", ">"]
+                "into": [
+                  "<",
+                  ">"
+                ]
               },
               "context": [
                 "selection.text().match('^[\\(\\{\\[](.|\n)*[\\)\\}\\]]$') &&",
@@ -884,7 +957,12 @@
         },
         {
           "command": "nesting.wrapRight",
-          "args": { "into": ["<", ">"] },
+          "args": {
+            "into": [
+              "<",
+              ">"
+            ]
+          },
           "context": [
             "!selection.scope().endsWith('punctuation.definition.tag.begin.tsx)') && ",
             "!selection.scope().match('(comment\\.|string.*(?<!\\spunctuation\\S*(start|begin)\\S*)$)') && ",
@@ -904,13 +982,14 @@
         // },
         {
           "command": "editor.action.insertSnippet",
-          "args": { "snippet": "<" }
+          "args": {
+            "snippet": "<"
+          }
         }
       ]
     },
     "when": "editorTextFocus"
   },
-
   {
     "key": "shift+.",
     "command": "commands.run",
@@ -945,7 +1024,10 @@
         {
           "command": "nesting.stealRight",
           "args": {
-            "from": ["<", ">"]
+            "from": [
+              "<",
+              ">"
+            ]
           },
           "context": [
             "selection.followingText().match('^[\\w\\.\\-\\/\\?!&\\(\\{\\[\\<\"\\'`]') &&",
@@ -957,15 +1039,15 @@
         },
         {
           "command": "editor.action.insertSnippet",
-          "args": { "snippet": ">" }
+          "args": {
+            "snippet": ">"
+          }
         }
       ]
     },
     "when": "editorTextFocus"
   },
-
   // nesting change: "
-
   {
     "key": "shift+'",
     "command": "commands.run",
@@ -977,7 +1059,10 @@
             {
               "command": "nesting.swapSelection",
               "args": {
-                "into": ["\"", "\""]
+                "into": [
+                  "\"",
+                  "\""
+                ]
               },
               "context": [
                 "selection.text().match('^[\\'`](.|\n)*[\\'`]$') &&",
@@ -1002,20 +1087,24 @@
         },
         {
           "command": "editor.action.insertSnippet",
-          "args": { "snippet": "\"$0\"" },
-          "context": ["selection.followingText().match('^(\\W|$)')"]
+          "args": {
+            "snippet": "\"$0\""
+          },
+          "context": [
+            "selection.followingText().match('^(\\W|$)')"
+          ]
         },
         {
           "command": "editor.action.insertSnippet",
-          "args": { "snippet": "\"" }
+          "args": {
+            "snippet": "\""
+          }
         }
       ]
     },
     "when": "editorTextFocus"
   },
-
   // nesting change: '
-
   {
     "key": "'",
     "command": "commands.run",
@@ -1027,7 +1116,10 @@
             {
               "command": "nesting.swapSelection",
               "args": {
-                "into": ["'", "'"]
+                "into": [
+                  "'",
+                  "'"
+                ]
               },
               "context": [
                 "selection.text().match('^[\"`](.|\n)*[\"`]$') &&",
@@ -1052,20 +1144,24 @@
         },
         {
           "command": "editor.action.insertSnippet",
-          "args": { "snippet": "'$0'" },
-          "context": ["selection.followingText().match('^(\\W|$)')"]
+          "args": {
+            "snippet": "'$0'"
+          },
+          "context": [
+            "selection.followingText().match('^(\\W|$)')"
+          ]
         },
         {
           "command": "editor.action.insertSnippet",
-          "args": { "snippet": "'" }
+          "args": {
+            "snippet": "'"
+          }
         }
       ]
     },
     "when": "editorTextFocus"
   },
-
   // nesting change: `
-
   {
     "key": "`",
     "command": "commands.run",
@@ -1077,7 +1173,10 @@
             {
               "command": "nesting.swapSelection",
               "args": {
-                "into": ["`", "`"]
+                "into": [
+                  "`",
+                  "`"
+                ]
               },
               "context": [
                 "selection.text().match('^[\"\\'](.|\n)*[\"\\']$') &&",
@@ -1102,20 +1201,24 @@
         },
         {
           "command": "editor.action.insertSnippet",
-          "args": { "snippet": "`$0`" },
-          "context": ["selection.followingText().match('^(\\W|$)')"]
+          "args": {
+            "snippet": "`$0`"
+          },
+          "context": [
+            "selection.followingText().match('^(\\W|$)')"
+          ]
         },
         {
           "command": "editor.action.insertSnippet",
-          "args": { "snippet": "`" }
+          "args": {
+            "snippet": "`"
+          }
         }
       ]
     },
     "when": "editorTextFocus"
   },
-
   // goto into nesting backward
-
   {
     "key": "ctrl+'",
     "command": "locations.go",
@@ -1131,9 +1234,7 @@
     },
     "when": "editorTextFocus"
   },
-
   // goto out nesting backward
-
   {
     "key": "ctrl+shift+'",
     "command": "locations.go",
@@ -1147,9 +1248,7 @@
     },
     "when": "editorTextFocus"
   },
-
   // goto over nesting backward
-
   {
     "key": "ctrl+shift+;",
     "command": "locations.go",
@@ -1162,9 +1261,7 @@
     },
     "when": "editorTextFocus"
   },
-
   // goto into nesting forward
-
   {
     "key": "alt+enter",
     "command": "locations.go",
@@ -1173,16 +1270,19 @@
       "to": {
         "location": "nesting",
         "kind": "start",
-        "levels": [1],
+        "levels": [
+          1
+        ],
         "after": true,
-        "ignore": ["strings", "outer-nesting"]
+        "ignore": [
+          "strings",
+          "outer-nesting"
+        ]
       }
     },
     "when": "editorTextFocus"
   },
-
   // goto over or out nesting forward
-
   {
     "key": "alt+shift+enter",
     "command": "locations.go",
@@ -1191,16 +1291,18 @@
       "to": {
         "location": "nesting",
         "kind": "end",
-        "levels": [0],
+        "levels": [
+          0
+        ],
         "after": true,
-        "ignore": ["strings"]
+        "ignore": [
+          "strings"
+        ]
       }
     },
     "when": "editorTextFocus"
   },
-
   // goto over nesting forward
-
   {
     "key": "ctrl+shift+enter",
     "command": "locations.go",
@@ -1209,16 +1311,19 @@
       "to": {
         "location": "nesting",
         "kind": "end",
-        "levels": [1],
+        "levels": [
+          1
+        ],
         "after": true,
-        "ignore": ["strings", "outer-nesting"]
+        "ignore": [
+          "strings",
+          "outer-nesting"
+        ]
       }
     },
     "when": "editorTextFocus"
   },
-
   // nesting selection
-
   {
     "key": "ctrl+alt+shift+enter",
     "command": "commands.run",
@@ -1231,13 +1336,17 @@
             "backward": {
               "location": "nesting",
               "kind": "start",
-              "levels": [-2],
+              "levels": [
+                -2
+              ],
               "after": true
             },
             "forward": {
               "location": "nesting",
               "kind": "end",
-              "levels": [-2],
+              "levels": [
+                -2
+              ],
               "after": false
             }
           },
@@ -1252,13 +1361,17 @@
             "backward": {
               "location": "nesting",
               "kind": "start",
-              "levels": [0],
+              "levels": [
+                0
+              ],
               "after": true
             },
             "forward": {
               "location": "nesting",
               "kind": "end",
-              "levels": [0],
+              "levels": [
+                0
+              ],
               "after": false
             }
           }
@@ -1267,9 +1380,7 @@
     },
     "when": "editorTextFocus"
   },
-
   // word navigation
-
   {
     "key": "ctrl+alt+j",
     "command": "commands.run",
@@ -1283,7 +1394,9 @@
             "to": {
               "location": "nesting",
               "kind": "start",
-              "levels": [1]
+              "levels": [
+                1
+              ]
             }
           },
           "context": [
@@ -1313,7 +1426,6 @@
     },
     "when": "textInputFocus"
   },
-
   {
     "key": "ctrl+alt+shift+j",
     "command": "commands.run",
@@ -1327,7 +1439,9 @@
             "expand": {
               "location": "nesting",
               "kind": "start",
-              "levels": [1]
+              "levels": [
+                1
+              ]
             }
           },
           "context": [
@@ -1357,7 +1471,6 @@
     },
     "when": "textInputFocus"
   },
-
   {
     "key": "ctrl+alt+l",
     "command": "commands.run",
@@ -1372,7 +1485,9 @@
               "location": "nesting",
               "kind": "end",
               "after": true,
-              "levels": [1]
+              "levels": [
+                1
+              ]
             }
           },
           "context": [
@@ -1402,7 +1517,6 @@
     },
     "when": "textInputFocus"
   },
-
   {
     "key": "ctrl+alt+shift+l",
     "command": "commands.run",
@@ -1417,7 +1531,9 @@
               "location": "nesting",
               "kind": "end",
               "after": true,
-              "levels": [1]
+              "levels": [
+                1
+              ]
             }
           },
           "context": [
@@ -1447,7 +1563,6 @@
     },
     "when": "textInputFocus"
   },
-
   // {
   //   "key": "ctrl+alt+j",
   //   "command": "commands.run",
@@ -1459,7 +1574,6 @@
   //   },
   //   "when": "textInputFocus"
   // },
-
   // {
   //   "key": "ctrl+alt+shift+j",
   //   "command": "commands.run",
@@ -1471,7 +1585,6 @@
   //   },
   //   "when": "textInputFocus"
   // },
-
   // {
   //   "key": "ctrl+alt+l",
   //   "command": "commands.run",
@@ -1483,7 +1596,6 @@
   //   },
   //   "when": "textInputFocus"
   // },
-
   // {
   //   "key": "ctrl+alt+shift+l",
   //   "command": "commands.run",
@@ -1495,9 +1607,7 @@
   //   },
   //   "when": "textInputFocus"
   // },
-
   // line navigation
-
   {
     "key": "alt+;",
     "command": "commands.run",
@@ -1518,7 +1628,9 @@
               "location": "nesting",
               "kind": "start",
               "after": true,
-              "levels": [-2]
+              "levels": [
+                -2
+              ]
             }
           },
           "context": [
@@ -1539,7 +1651,9 @@
               "location": "nesting",
               "kind": "start",
               "after": true,
-              "levels": [0]
+              "levels": [
+                0
+              ]
             }
           },
           "context": [
@@ -1553,12 +1667,13 @@
             ")"
           ]
         },
-        { "command": "cursorHome" }
+        {
+          "command": "cursorHome"
+        }
       ]
     },
     "when": "textInputFocus"
   },
-
   {
     "key": "alt+shift+;",
     "command": "commands.run",
@@ -1579,7 +1694,9 @@
               "location": "nesting",
               "kind": "start",
               "after": true,
-              "levels": [-2]
+              "levels": [
+                -2
+              ]
             }
           },
           "context": [
@@ -1600,7 +1717,9 @@
               "location": "nesting",
               "kind": "start",
               "after": true,
-              "levels": [0]
+              "levels": [
+                0
+              ]
             }
           },
           "context": [
@@ -1614,12 +1733,13 @@
             ")"
           ]
         },
-        { "command": "cursorHomeSelect" }
+        {
+          "command": "cursorHomeSelect"
+        }
       ]
     },
     "when": "textInputFocus"
   },
-
   {
     "key": "alt+'",
     "command": "commands.run",
@@ -1640,7 +1760,9 @@
               "location": "nesting",
               "kind": "end",
               "after": false,
-              "levels": [-2]
+              "levels": [
+                -2
+              ]
             }
           },
           "context": [
@@ -1661,7 +1783,9 @@
               "location": "nesting",
               "kind": "end",
               "after": false,
-              "levels": [0]
+              "levels": [
+                0
+              ]
             }
           },
           "context": [
@@ -1675,12 +1799,13 @@
             ")"
           ]
         },
-        { "command": "cursorEnd" }
+        {
+          "command": "cursorEnd"
+        }
       ]
     },
     "when": "textInputFocus"
   },
-
   {
     "key": "alt+shift+'",
     "command": "commands.run",
@@ -1701,7 +1826,9 @@
               "location": "nesting",
               "kind": "end",
               "after": false,
-              "levels": [-2]
+              "levels": [
+                -2
+              ]
             }
           },
           "context": [
@@ -1722,7 +1849,9 @@
               "location": "nesting",
               "kind": "end",
               "after": false,
-              "levels": [0]
+              "levels": [
+                0
+              ]
             }
           },
           "context": [
@@ -1736,12 +1865,13 @@
             ")"
           ]
         },
-        { "command": "cursorEndSelect" }
+        {
+          "command": "cursorEndSelect"
+        }
       ]
     },
     "when": "textInputFocus"
   },
-
   // {
   //   "key": "alt+'",
   //   "command": "commands.run",
@@ -1798,7 +1928,6 @@
   //   },
   //   "when": "textInputFocus"
   // },
-
   // {
   //   "key": "alt+shift+'",
   //   "command": "commands.run",
@@ -1855,9 +1984,7 @@
   //   },
   //   "when": "textInputFocus"
   // },
-
   // tmp
-
   // {
   //   "key": "alt+;",
   //   "command": "cursorHome",
@@ -1868,7 +1995,6 @@
   //   "command": "cursorHomeSelect",
   //   "when": "textInputFocus"
   // },
-
   // {
   //   "key": "alt+'",
   //   "command": "cursorEnd",
@@ -1879,7 +2005,6 @@
   //   "command": "cursorEndSelect",
   //   "when": "textInputFocus"
   // },
-
   {
     "key": "space",
     "command": "commands.execute",
@@ -1887,14 +2012,17 @@
       "commands": [
         {
           "command": "editor.action.insertSnippet",
-          "args": { "snippet": " " }
+          "args": {
+            "snippet": " "
+          }
         },
-        { "command": "hideSuggestWidget" }
+        {
+          "command": "hideSuggestWidget"
+        }
       ]
     },
     "when": "editorTextFocus"
   },
-
   {
     "key": ".",
     "command": "commands.execute",
@@ -1902,20 +2030,22 @@
       "commands": [
         {
           "command": "editor.action.insertSnippet",
-          "args": { "snippet": "." }
+          "args": {
+            "snippet": "."
+          }
         },
-        { "command": "hideSuggestWidget" }
+        {
+          "command": "hideSuggestWidget"
+        }
       ]
     },
     "when": "editorTextFocus"
   },
-
   // imports
   {
     "key": "ctrl+u ctrl+i",
     "command": "imports.import"
   },
-
   // completions
   {
     "key": "ctrl+o",
@@ -1965,9 +2095,7 @@
       "head": "\\w+"
     }
   },
-
   // refactoring
-
   {
     "key": "ctrl+m ctrl+a",
     "command": "cmstead.jsRefactor.markAsAsync",
@@ -1988,9 +2116,7 @@
     "command": "cmstead.jsRefactor.inlineVariable",
     "when": "editorLangId == javascript || editorLangId == javascriptreact || editorLangId == typescript || editorLangId == typescriptreact"
   },
-
   // merging changes
-
   {
     "key": "ctrl+m ctrl+,",
     "command": "merge-conflict.accept.current"
@@ -2011,9 +2137,7 @@
     "key": "ctrl+m ctrl+/",
     "command": "merge-conflict.accept.both"
   },
-
   // git navigation
-
   {
     "key": "ctrl+m ctrl+j",
     "command": "git.openChange"
@@ -2038,15 +2162,12 @@
     "key": "ctrl+m l",
     "command": "git.unstageSelectedRanges"
   },
-
   // problems
-
   {
     "key": "alt+q",
     "command": "editor.action.marker.next",
     "when": "editorTextFocus && !editorReadonly"
   },
-
   {
     "key": "alt+shift+q",
     "command": "editor.action.marker.prev",
@@ -2084,9 +2205,7 @@
     "command": "workbench.action.closePanel",
     "when": "!editorTextFocus || editorReadonly"
   },
-
   // bookmarks
-
   {
     "key": "ctrl+w",
     "command": "bookmarks.toggle",
@@ -2122,10 +2241,7 @@
     "command": "bookmarks.expandSelectionToPrevious",
     "when": "editorTextFocus"
   },
-
   // snippets
-
-
   {
     "key": "tab",
     "command": "commands.run",
@@ -2142,28 +2258,22 @@
     },
     "when": "editorTextFocus"
   },
-
   {
     "key": "f14",
     "command": "snippets.nextTab",
     "when": "editorTextFocus"
   },
-
   // {
   //   "key": "f14",
   //   "command": "jumpToNextSnippetPlaceholder",
   //   "when": "editorTextFocus && hasNextTabstop && inSnippetMode"
   // },
-
   // window
-
   {
     "key": "alt+\\",
     "command": "workbench.action.showCommands"
   },
-
   // configuration
-
   {
     "key": "ctrl+u ctrl+u",
     "command": "workbench.action.openGlobalKeybindingsFile"
@@ -2184,9 +2294,7 @@
     "key": "alt+shift+u",
     "command": "editor.action.toggleWordWrap"
   },
-
   // appearance
-
   {
     "key": "ctrl+u ctrl+t",
     "command": "workbench.action.selectTheme"
@@ -2199,9 +2307,7 @@
     "key": "ctrl+tab",
     "command": "workbench.action.toggleSidebarVisibility"
   },
-
   // files navigation
-
   {
     "key": "alt+n",
     "command": "workbench.action.quickOpen"
@@ -2214,16 +2320,12 @@
     "key": "ctrl+u ctrl+o",
     "command": "workbench.files.action.showActiveFileInExplorer"
   },
-
   // files interaction
-
   {
     "key": "ctrl+u ctrl+c",
     "command": "copyRelativePath"
   },
-
   // files management
-
   {
     "key": "ctrl+shift+n",
     "command": "workbench.action.files.newUntitledFile"
@@ -2232,24 +2334,18 @@
     "key": "ctrl+u ctrl+n",
     "command": "workbench.action.newWindow"
   },
-
   // git
-
   {
     "key": "ctrl+u ctrl+e",
     "command": "git.checkout"
   },
-
   // snippets
-
   {
     "key": "\\",
     "command": "acceptSelectedSuggestion",
     "when": "suggestWidgetVisible && textInputFocus"
   },
-
   // editor
-
   {
     "key": "ctrl+alt+r",
     "command": "editor.action.refactor",
@@ -2270,22 +2366,19 @@
   //   "command": "changeEditorIndentation",
   //   "when": "textInputFocus"
   // },
-
   // {
   //   "key": "ctrl+v",
   //   "command": "pasteAndIndent.action",
   //   "when": "textInputFocus && !editorReadonly"
   // },
-
   // symbol navigation
-
   {
     "key": "alt+shift+n",
     "command": "workbench.action.gotoSymbol",
     "when": "textInputFocus"
   },
   {
-    "key": "alt+m",
+    "key": "ctrl+alt+n",
     "command": "workbench.action.showAllSymbols",
     "when": "textInputFocus"
   },
@@ -2309,9 +2402,7 @@
     "command": "editor.action.rename",
     "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
   },
-
   // tabs groups
-
   {
     "key": "ctrl+n ctrl+j",
     "command": "workbench.action.focusLeftGroup",
@@ -2322,7 +2413,6 @@
     "command": "workbench.action.focusRightGroup",
     // "when": "textInputFocus"
   },
-
   {
     "key": "ctrl+n j",
     "command": "workbench.action.moveEditorToLeftGroup",
@@ -2333,7 +2423,6 @@
     "command": "workbench.action.moveEditorToRightGroup",
     // "when": "textInputFocus"
   },
-
   {
     "key": "ctrl+n ctrl+i",
     "command": "workbench.action.focusAboveGroup",
@@ -2344,7 +2433,6 @@
     "command": "workbench.action.focusBelowGroup",
     // "when": "textInputFocus"
   },
-
   {
     "key": "ctrl+n i",
     "command": "workbench.action.moveEditorToAboveGroup",
@@ -2355,22 +2443,23 @@
     "command": "workbench.action.moveEditorToBelowGroup",
     // "when": "textInputFocus"
   },
-
   {
     "key": "ctrl+n ctrl+o",
     "command": "workbench.action.splitEditor",
     // "when": "textInputFocus"
   },
-
   // tabs navigation
-
   {
     "key": "ctrl+alt+tab",
     "command": "commands.execute",
     "args": {
       "commands": [
-        {"command": "workbench.action.focusFirstEditorGroup"},
-        {"command": "workbench.action.focusActiveEditorGroup"},
+        {
+          "command": "workbench.action.focusFirstEditorGroup"
+        },
+        {
+          "command": "workbench.action.focusActiveEditorGroup"
+        },
       ]
     }
   },
@@ -2402,9 +2491,7 @@
     "key": "ctrl+5",
     "command": "workbench.action.openEditorAtIndex5"
   },
-
   // tabs control
-
   {
     "key": "ctrl+shift+,",
     "command": "workbench.action.moveEditorLeftInGroup"
@@ -2433,9 +2520,7 @@
     "key": "ctrl+alt+s",
     "command": "workbench.action.files.saveAll"
   },
-
   // character navigation
-
   {
     "key": "alt+i",
     "command": "cursorUp",
@@ -2456,9 +2541,7 @@
     "command": "cursorRight",
     "when": "textInputFocus"
   },
-
   // character selection
-
   {
     "key": "alt+shift+i",
     "command": "cursorUpSelect",
@@ -2479,9 +2562,7 @@
     "command": "cursorRightSelect",
     "when": "textInputFocus"
   },
-
   // word part navigation
-
   {
     "key": "ctrl+j",
     "command": "cursorWordPartLeft",
@@ -2492,9 +2573,7 @@
     "command": "cursorWordPartRight",
     "when": "textInputFocus"
   },
-
   // word part selection
-
   {
     "key": "ctrl+shift+j",
     "command": "cursorWordPartLeftSelect",
@@ -2505,9 +2584,7 @@
     "command": "cursorWordPartRightSelect",
     "when": "textInputFocus"
   },
-
   // line deletion
-
   {
     "key": "ctrl+shift+backspace",
     "command": "deleteAllLeft",
@@ -2518,14 +2595,15 @@
     "command": "deleteAllRight",
     "when": "textInputFocus && !editorReadonly"
   },
-
   // blocklet navigation & selection
-
   {
     "key": "ctrl+i",
     "command": "locations.go",
     "args": {
-      "to": ["spacing-before", "bof"],
+      "to": [
+        "spacing-before",
+        "bof"
+      ],
       "direction": "backward"
     },
     "when": "textInputFocus"
@@ -2534,7 +2612,10 @@
     "key": "ctrl+k",
     "command": "locations.go",
     "args": {
-      "to": ["spacing-after", "eof"],
+      "to": [
+        "spacing-after",
+        "eof"
+      ],
       "direction": "forward"
     },
     "when": "textInputFocus"
@@ -2543,8 +2624,14 @@
     "key": "ctrl+shift+i",
     "command": "locations.select",
     "args": {
-      "expand": ["spacing-bob", "bof"],
-      "shrink": ["spacing-eob", "bof"],
+      "expand": [
+        "spacing-bob",
+        "bof"
+      ],
+      "shrink": [
+        "spacing-eob",
+        "bof"
+      ],
       "direction": "backward"
     },
     "when": "textInputFocus"
@@ -2553,20 +2640,26 @@
     "key": "ctrl+shift+k",
     "command": "locations.select",
     "args": {
-      "expand": ["spacing-eob", "eof"],
-      "shrink": ["spacing-bob", "eof"],
+      "expand": [
+        "spacing-eob",
+        "eof"
+      ],
+      "shrink": [
+        "spacing-bob",
+        "eof"
+      ],
       "direction": "forward"
     },
     "when": "textInputFocus"
   },
-
   // block navigation backward
-
   {
     "key": "ctrl+y",
     "command": "locations.go",
     "args": {
-      "to": ["hill-eob-before"],
+      "to": [
+        "hill-eob-before"
+      ],
       "direction": "backward"
     },
     "when": "textInputFocus"
@@ -2575,7 +2668,9 @@
     "key": "alt+y",
     "command": "locations.go",
     "args": {
-      "to": ["plato-before"],
+      "to": [
+        "plato-before"
+      ],
       "direction": "backward"
     },
     "when": "textInputFocus"
@@ -2584,19 +2679,21 @@
     "key": "ctrl+shift+y",
     "command": "locations.go",
     "args": {
-      "to": ["hill-bob"],
+      "to": [
+        "hill-bob"
+      ],
       "direction": "backward"
     },
     "when": "textInputFocus"
   },
-
   // block navigation forward
-
   {
     "key": "ctrl+h",
     "command": "locations.go",
     "args": {
-      "to": ["hill-bob-after"],
+      "to": [
+        "hill-bob-after"
+      ],
       "direction": "forward"
     },
     "when": "textInputFocus"
@@ -2605,7 +2702,9 @@
     "key": "alt+h",
     "command": "locations.go",
     "args": {
-      "to": ["plato-after"],
+      "to": [
+        "plato-after"
+      ],
       "direction": "forward"
     },
     "when": "textInputFocus"
@@ -2614,19 +2713,21 @@
     "key": "ctrl+shift+h",
     "command": "locations.go",
     "args": {
-      "to": ["hill-eob"],
+      "to": [
+        "hill-eob"
+      ],
       "direction": "forward"
     },
     "when": "textInputFocus"
   },
-
   // block selection backward
-
   {
     "key": "alt+shift+y",
     "command": "locations.select",
     "args": {
-      "expand": ["plato-bob"],
+      "expand": [
+        "plato-bob"
+      ],
       "direction": "backward"
     },
     "when": "textInputFocus"
@@ -2635,20 +2736,24 @@
     "key": "ctrl+alt+shift+y",
     "command": "locations.select",
     "args": {
-      "expand": ["hill-bob"],
-      "shrink": ["hill-eob"],
+      "expand": [
+        "hill-bob"
+      ],
+      "shrink": [
+        "hill-eob"
+      ],
       "direction": "backward"
     },
     "when": "textInputFocus"
   },
-
   // block selection forward
-
   {
     "key": "alt+shift+h",
     "command": "locations.select",
     "args": {
-      "expand": ["plato-eob"],
+      "expand": [
+        "plato-eob"
+      ],
       "direction": "forward"
     },
     "when": "textInputFocus"
@@ -2657,175 +2762,269 @@
     "key": "ctrl+alt+shift+h",
     "command": "locations.select",
     "args": {
-      "expand": ["hill-eob"],
-      "shrink": ["hill-bob"],
+      "expand": [
+        "hill-eob"
+      ],
+      "shrink": [
+        "hill-bob"
+      ],
       "direction": "forward"
     },
     "when": "textInputFocus"
   },
-
   // block movement backward
-
-  {
-    "key": "ctrl+alt+y",
-    "command": "commands.run",
-    "args": {
-      "forEachSelection": true,
-      "commands": [
-        {
-          "command": "locations.move",
-          "args": {
-            "to": ["spacing-eob", "plato-bob", "hill-eob-bol", "bof"],
-            "direction": "backward"
-          },
-          "context": "!selection().isEmpty"
-        },
-        {
-          "command": "locations.move",
-          "args": {
-            "subject": { "start": ["hill-bob"], "end": ["hill-eob"] },
-            "to": ["spacing-eob", "plato-bob", "hill-eob-bol", "bof"],
-            "direction": "backward"
-          },
-          "context": [
-            "locations.checkLine(selection().anchor.line, 'hill-bob') ||",
-            "locations.checkLine(selection().anchor.line, 'hill-eob')"
-          ]
-        },
-        {
-          "command": "locations.move",
-          "args": {
-            "subject": { "start": ["bol"], "end": ["eol"] },
-            "to": ["spacing-eob", "plato-bob", "hill-eob-bol", "bof"],
-            "direction": "backward"
-          }
-        }
-      ]
-    },
-    "when": "textInputFocus && !editorReadonly"
-  },
-
-  {
-    "key": "ctrl+alt+shift+n",
-    "command": "commands.run",
-    "args": {
-      "forEachSelection": true,
-      "commands": [
-        {
-          "command": "locations.move",
-          "args": {
-            "to": ["hill-bob"],
-            "direction": "backward"
-          },
-          "context": "!selection().isEmpty"
-        },
-        {
-          "command": "locations.move",
-          "args": {
-            "subject": { "start": ["hill-bob"], "end": ["hill-eob"] },
-            "to": ["hill-bob"],
-            "direction": "backward"
-          },
-          "context": [
-            "locations.checkLine(selection().anchor.line, 'hill-bob') ||",
-            "locations.checkLine(selection().anchor.line, 'hill-eob')"
-          ]
-        },
-        {
-          "command": "locations.move",
-          "args": {
-            "subject": { "start": ["bol"], "end": ["eol"] },
-            "to": ["hill-bob"],
-            "direction": "backward"
-          }
-        }
-      ]
-    },
-    "when": "textInputFocus && !editorReadonly"
-  },
-
+  // {
+  //   "key": "ctrl+alt+y",
+  //   "command": "commands.run",
+  //   "args": {
+  //     "forEachSelection": true,
+  //     "commands": [
+  //       {
+  //         "command": "locations.move",
+  //         "args": {
+  //           "to": [
+  //             "spacing-eob",
+  //             "plato-bob",
+  //             "hill-eob-bol",
+  //             "bof"
+  //           ],
+  //           "direction": "backward"
+  //         },
+  //         "context": "!selection().isEmpty"
+  //       },
+  //       {
+  //         "command": "locations.move",
+  //         "args": {
+  //           "subject": {
+  //             "start": [
+  //               "hill-bob"
+  //             ],
+  //             "end": [
+  //               "hill-eob"
+  //             ]
+  //           },
+  //           "to": [
+  //             "spacing-eob",
+  //             "plato-bob",
+  //             "hill-eob-bol",
+  //             "bof"
+  //           ],
+  //           "direction": "backward"
+  //         },
+  //         "context": [
+  //           "locations.checkLine(selection().anchor.line, 'hill-bob') ||",
+  //           "locations.checkLine(selection().anchor.line, 'hill-eob')"
+  //         ]
+  //       },
+  //       {
+  //         "command": "locations.move",
+  //         "args": {
+  //           "subject": {
+  //             "start": [
+  //               "bol"
+  //             ],
+  //             "end": [
+  //               "eol"
+  //             ]
+  //           },
+  //           "to": [
+  //             "spacing-eob",
+  //             "plato-bob",
+  //             "hill-eob-bol",
+  //             "bof"
+  //           ],
+  //           "direction": "backward"
+  //         }
+  //       }
+  //     ]
+  //   },
+  //   "when": "textInputFocus && !editorReadonly"
+  // },
+  // {
+  //   "key": "ctrl+alt+shift+n",
+  //   "command": "commands.run",
+  //   "args": {
+  //     "forEachSelection": true,
+  //     "commands": [
+  //       {
+  //         "command": "locations.move",
+  //         "args": {
+  //           "to": [
+  //             "hill-bob"
+  //           ],
+  //           "direction": "backward"
+  //         },
+  //         "context": "!selection().isEmpty"
+  //       },
+  //       {
+  //         "command": "locations.move",
+  //         "args": {
+  //           "subject": {
+  //             "start": [
+  //               "hill-bob"
+  //             ],
+  //             "end": [
+  //               "hill-eob"
+  //             ]
+  //           },
+  //           "to": [
+  //             "hill-bob"
+  //           ],
+  //           "direction": "backward"
+  //         },
+  //         "context": [
+  //           "locations.checkLine(selection().anchor.line, 'hill-bob') ||",
+  //           "locations.checkLine(selection().anchor.line, 'hill-eob')"
+  //         ]
+  //       },
+  //       {
+  //         "command": "locations.move",
+  //         "args": {
+  //           "subject": {
+  //             "start": [
+  //               "bol"
+  //             ],
+  //             "end": [
+  //               "eol"
+  //             ]
+  //           },
+  //           "to": [
+  //             "hill-bob"
+  //           ],
+  //           "direction": "backward"
+  //         }
+  //       }
+  //     ]
+  //   },
+  //   "when": "textInputFocus && !editorReadonly"
+  // },
   // block movement forward
-
-  {
-    "key": "ctrl+alt+h",
-    "command": "commands.run",
-    "args": {
-      "forEachSelection": true,
-      "commands": [
-        {
-          "command": "locations.move",
-          "args": {
-            "to": ["spacing-eob", "plato-eob", "hill-bob-after", "eof"],
-            "direction": "forward"
-          },
-          "context": "!selection().isEmpty"
-        },
-        {
-          "command": "locations.move",
-          "args": {
-            "subject": { "start": ["hill-bob"], "end": ["hill-eob"] },
-            "to": ["spacing-eob", "plato-eob", "hill-bob-after", "eof"],
-            "direction": "forward"
-          },
-          "context": [
-            "locations.checkLine(selection().anchor.line, 'hill-bob') ||",
-            "locations.checkLine(selection().anchor.line, 'hill-eob')"
-          ]
-        },
-        {
-          "command": "locations.move",
-          "args": {
-            "subject": { "start": ["bol"], "end": ["eol"] },
-            "to": ["spacing-eob", "plato-eob", "hill-bob-after", "eof"],
-            "direction": "forward"
-          }
-        }
-      ]
-    },
-    "when": "textInputFocus && !editorReadonly"
-  },
-
-  {
-    "key": "ctrl+alt+n",
-    "command": "commands.run",
-    "args": {
-      "forEachSelection": true,
-      "commands": [
-        {
-          "command": "locations.move",
-          "args": {
-            "to": ["hill-eob"],
-            "direction": "forward"
-          },
-          "context": "!selection().isEmpty"
-        },
-        {
-          "command": "locations.move",
-          "args": {
-            "subject": { "start": ["hill-bob"], "end": ["hill-eob"] },
-            "to": ["hill-eob"],
-            "direction": "forward"
-          },
-          "context": [
-            "locations.checkLine(selection().anchor.line, 'hill-bob') ||",
-            "locations.checkLine(selection().anchor.line, 'hill-eob')"
-          ]
-        },
-        {
-          "command": "locations.move",
-          "args": {
-            "subject": { "start": ["bol"], "end": ["eol"] },
-            "to": ["hill-eob"],
-            "direction": "forward"
-          }
-        }
-      ]
-    },
-    "when": "textInputFocus && !editorReadonly"
-  },
-
+  // {
+  //   "key": "ctrl+alt+h",
+  //   "command": "commands.run",
+  //   "args": {
+  //     "forEachSelection": true,
+  //     "commands": [
+  //       {
+  //         "command": "locations.move",
+  //         "args": {
+  //           "to": [
+  //             "spacing-eob",
+  //             "plato-eob",
+  //             "hill-bob-after",
+  //             "eof"
+  //           ],
+  //           "direction": "forward"
+  //         },
+  //         "context": "!selection().isEmpty"
+  //       },
+  //       {
+  //         "command": "locations.move",
+  //         "args": {
+  //           "subject": {
+  //             "start": [
+  //               "hill-bob"
+  //             ],
+  //             "end": [
+  //               "hill-eob"
+  //             ]
+  //           },
+  //           "to": [
+  //             "spacing-eob",
+  //             "plato-eob",
+  //             "hill-bob-after",
+  //             "eof"
+  //           ],
+  //           "direction": "forward"
+  //         },
+  //         "context": [
+  //           "locations.checkLine(selection().anchor.line, 'hill-bob') ||",
+  //           "locations.checkLine(selection().anchor.line, 'hill-eob')"
+  //         ]
+  //       },
+  //       {
+  //         "command": "locations.move",
+  //         "args": {
+  //           "subject": {
+  //             "start": [
+  //               "bol"
+  //             ],
+  //             "end": [
+  //               "eol"
+  //             ]
+  //           },
+  //           "to": [
+  //             "spacing-eob",
+  //             "plato-eob",
+  //             "hill-bob-after",
+  //             "eof"
+  //           ],
+  //           "direction": "forward"
+  //         }
+  //       }
+  //     ]
+  //   },
+  //   "when": "textInputFocus && !editorReadonly"
+  // },
+  // {
+  //   "key": "ctrl+alt+n",
+  //   "command": "commands.run",
+  //   "args": {
+  //     "forEachSelection": true,
+  //     "commands": [
+  //       {
+  //         "command": "locations.move",
+  //         "args": {
+  //           "to": [
+  //             "hill-eob"
+  //           ],
+  //           "direction": "forward"
+  //         },
+  //         "context": "!selection().isEmpty"
+  //       },
+  //       {
+  //         "command": "locations.move",
+  //         "args": {
+  //           "subject": {
+  //             "start": [
+  //               "hill-bob"
+  //             ],
+  //             "end": [
+  //               "hill-eob"
+  //             ]
+  //           },
+  //           "to": [
+  //             "hill-eob"
+  //           ],
+  //           "direction": "forward"
+  //         },
+  //         "context": [
+  //           "locations.checkLine(selection().anchor.line, 'hill-bob') ||",
+  //           "locations.checkLine(selection().anchor.line, 'hill-eob')"
+  //         ]
+  //       },
+  //       {
+  //         "command": "locations.move",
+  //         "args": {
+  //           "subject": {
+  //             "start": [
+  //               "bol"
+  //             ],
+  //             "end": [
+  //               "eol"
+  //             ]
+  //           },
+  //           "to": [
+  //             "hill-eob"
+  //           ],
+  //           "direction": "forward"
+  //         }
+  //       }
+  //     ]
+  //   },
+  //   "when": "textInputFocus && !editorReadonly"
+  // },
   // block expansion
-
   {
     "key": "ctrl+alt+shift+u",
     "command": "commands.run",
@@ -2833,26 +3032,31 @@
       "forEachSelection": true,
       "commands": [
         // select plato before if plato is seleted
-
         {
           "command": "locations.expand",
           "args": {
-            "backward": ["plato-before"],
-            "forward": ["plato-after-eol"]
+            "backward": [
+              "plato-before"
+            ],
+            "forward": [
+              "plato-after-eol"
+            ]
           },
           "context": [
             "(locations.checkLine(selection().anchor.line, 'plato-bob') &&",
             "locations.checkLine(selection().active.line, 'plato-eob'))"
           ]
         },
-
         // select hill if selection is empty and location is hill start or end
-
         {
           "command": "locations.expand",
           "args": {
-            "backward": ["hill-bob"],
-            "forward": ["hill-eob"]
+            "backward": [
+              "hill-bob"
+            ],
+            "forward": [
+              "hill-eob"
+            ]
           },
           "context": [
             "selection().isEmpty &&",
@@ -2860,14 +3064,16 @@
             "locations.checkLine(selection().active.line, 'hill-eob'))"
           ]
         },
-
         // select plane if spacing bob or eob selected
-
         {
           "command": "locations.expand",
           "args": {
-            "backward": ["plato-bob"],
-            "forward": ["plato-eob"]
+            "backward": [
+              "plato-bob"
+            ],
+            "forward": [
+              "plato-eob"
+            ]
           },
           "context": [
             "(locations.checkLine(selection().anchor.line, 'spacing-bob') || ",
@@ -2876,22 +3082,24 @@
             "locations.checkLine(selection().active.line, 'spacing-eob', 'plato-eob'))"
           ]
         },
-
         // expand to spacing or plato
-
         {
           "command": "locations.expand",
           "args": {
-            "backward": ["spacing-bob", "plato-bob"],
-            "forward": ["spacing-eob", "plato-eob"]
+            "backward": [
+              "spacing-bob",
+              "plato-bob"
+            ],
+            "forward": [
+              "spacing-eob",
+              "plato-eob"
+            ]
           }
         }
       ]
     }
   },
-
   // file navigation
-
   {
     "key": "ctrl+alt+;",
     "command": "cursorTop",
@@ -2902,9 +3110,7 @@
     "command": "cursorBottom",
     "when": "textInputFocus"
   },
-
   // file selection
-
   {
     "key": "ctrl+alt+shift+;",
     "command": "cursorTopSelect",
@@ -2915,17 +3121,13 @@
     "command": "cursorBottomSelect",
     "when": "textInputFocus"
   },
-
   // smart selection
-
   // {
   //   "key": "ctrl+alt+shift+enter",
   //   "command": "editor.action.smartSelect.expand",
   //   "when": "editorTextFocus"
   // },
-
   // scroll
-
   {
     "key": "ctrl+alt+i",
     "command": "editorScroll",
@@ -2948,9 +3150,7 @@
     },
     "when": "textInputFocus"
   },
-
   // line editing
-
   {
     "key": "ctrl+d",
     "command": "editor.action.copyLinesDownAction",
@@ -2976,9 +3176,7 @@
     "command": "editor.action.deleteLines",
     "when": "textInputFocus && !editorReadonly"
   },
-
   // edit history
-
   {
     "key": "ctrl+shift+z",
     "command": "redo",
@@ -2994,9 +3192,7 @@
   //   "key": "alt+shift+z",
   //   "when": "editorTextFocus"
   // },
-
   // editing
-
   {
     "key": "shift+enter",
     "command": "editor.action.insertLineBefore",
@@ -3012,9 +3208,7 @@
     "command": "editor.action.blockComment",
     "when": "textInputFocus && !editorReadonly"
   },
-
   // cursors
-
   {
     "key": "alt+u",
     "command": "editor.action.selectHighlights",
@@ -3035,9 +3229,7 @@
     "command": "editor.action.insertCursorAtEndOfEachLineSelected",
     "when": "editorTextFocus"
   },
-
   // search
-
   {
     "key": "alt+f",
     "command": "editor.action.nextSelectionMatchFindAction",
@@ -3048,9 +3240,7 @@
     "command": "editor.action.previousSelectionMatchFindAction",
     "when": "editorFocus"
   },
-
   // list navigation
-
   {
     "key": "alt+k",
     "command": "list.focusDown",
@@ -3091,9 +3281,7 @@
     "command": "list.expand",
     "when": "listFocus && !inputFocus"
   },
-
   // suggestions
-
   {
     "key": "alt+i",
     "command": "selectPrevSuggestion",
@@ -3104,9 +3292,7 @@
     "command": "selectNextSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
-
   // quick open
-
   {
     "key": "alt+i",
     "command": "workbench.action.quickOpenSelectPrevious",
@@ -3117,15 +3303,18 @@
     "command": "workbench.action.quickOpenSelectNext",
     "when": "inQuickOpen"
   },
-
   // undo
   {
     "key": "ctrl+z",
     "command": "commands.execute",
     "args": {
       "commands": [
-        { "command": "snippets.preventNextAutoExpansion" },
-        { "command": "undo" },
+        {
+          "command": "snippets.preventNextAutoExpansion"
+        },
+        {
+          "command": "undo"
+        },
       ]
     }
   }

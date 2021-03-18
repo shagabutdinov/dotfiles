@@ -1,42 +1,56 @@
-ruby:
+python:
   context: document().languageId == 'python'
   snippets:
-    # language
 
-    return:
-      trigger: r
-      snippet: return
-
-    # values
-
-    "True":
-      trigger: t
-      snippet: "True"
-
-    "False":
-      trigger: f
-      snippet: "False"
-
-    "None":
-      trigger: "n"
-      snippet: "None"
+    define method:
+      trigger: d
+      snippet: |
+        def $1$container{(self, $2:args)}:
+            $0
+      placeholders:
+        args:
+          onBeforeLeave: |-
+            ({ placeholders: { container }, debug }) => {
+              container.value = container.value.replace(
+                /(?<=\w+)\(self,\s*\)$/,
+                '(self)'
+              );
+            };
 
     print:
       trigger: p
-      snippet: print("XXXX $id {}".format($1))
+      snippet: print("XXXX $id", $1)
       placeholders:
         id:
           onBeforeExpand: |
             ({ cursor, document }) =>
               require('path').basename(document.uri.fsPath) + ':' +
-              cursor.anchor.line
+                cursor.anchor.line
 
-    raise:
-      trigger: q
-      snippet: raise("XXXX $id")
-      placeholders:
-        id:
-          onBeforeExpand: |
-            ({ cursor, document }) =>
-              require('path').basename(document.uri.fsPath) + ':' +
-              cursor.anchor.line
+    return:
+      trigger: r
+      snippet: return $0
+
+    if:
+      trigger: i
+      snippet: |
+        if $1:
+            $0
+
+    if not:
+      trigger: in
+      snippet: |
+        if not $1:
+            $0
+
+    none:
+      trigger: n
+      snippet: None
+
+    len:
+      trigger: l
+      snippet: len($1)
+
+    self:
+      trigger: s
+      snippet: self.

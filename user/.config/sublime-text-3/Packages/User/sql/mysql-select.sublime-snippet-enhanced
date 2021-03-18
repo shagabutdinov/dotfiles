@@ -7,11 +7,6 @@ ${1:LEFT} JOIN $2 ON
 ]]></content>
 		<tabTrigger>j</tabTrigger>
 		<scope>source.sql</scope>
-		<context><![CDATA[
-			[
-				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
-			]
-		]]></context>
 		<description>left join</description>
 	</snippet>
 
@@ -22,11 +17,6 @@ LEFT JOIN $2 ON
 ]]></content>
 		<tabTrigger>lj</tabTrigger>
 		<scope>source.sql</scope>
-		<context><![CDATA[
-			[
-				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
-			]
-		]]></context>
 		<description>left join</description>
 	</snippet>
 
@@ -37,11 +27,6 @@ WHERE
 ]]></content>
 		<tabTrigger>w</tabTrigger>
 		<scope>source.sql</scope>
-		<context><![CDATA[
-			[
-				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
-			]
-		]]></context>
 		<description>where</description>
 	</snippet>
 
@@ -51,11 +36,6 @@ LIMIT $0
 ]]></content>
 		<tabTrigger>l</tabTrigger>
 		<scope>source.sql</scope>
-		<context><![CDATA[
-			[
-				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
-			]
-		]]></context>
 		<description>limit</description>
 	</snippet>
 
@@ -66,11 +46,6 @@ ORDER BY
 ]]></content>
 		<tabTrigger>ob</tabTrigger>
 		<scope>source.sql</scope>
-		<context><![CDATA[
-			[
-				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
-			]
-		]]></context>
 		<description>order by</description>
 	</snippet>
 
@@ -81,11 +56,6 @@ GROUP BY
 ]]></content>
 		<tabTrigger>gb</tabTrigger>
 		<scope>source.sql</scope>
-		<context><![CDATA[
-			[
-				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
-			]
-		]]></context>
 		<description>order by</description>
 	</snippet>
 
@@ -110,11 +80,6 @@ $0
 ]]></content>
 		<tabTrigger>a</tabTrigger>
 		<scope>source.sql</scope>
-		<context><![CDATA[
-			[
-				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
-			]
-		]]></context>
 		<description>and</description>
 		<order>1</order>
 	</snippet>
@@ -126,11 +91,6 @@ $0
 ]]></content>
 		<tabTrigger>o</tabTrigger>
 		<scope>source.sql</scope>
-		<context><![CDATA[
-			[
-				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
-			]
-		]]></context>
 		<description>and</description>
 		<order>1</order>
 	</snippet>
@@ -141,11 +101,6 @@ IS NULL
 ]]></content>
 		<tabTrigger>in</tabTrigger>
 		<scope>source.sql</scope>
-		<context><![CDATA[
-			[
-				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
-			]
-		]]></context>
 		<description>IS NULL</description>
 	</snippet>
 
@@ -155,11 +110,6 @@ IN ($0)
 ]]></content>
 		<tabTrigger>i</tabTrigger>
 		<scope>source.sql</scope>
-		<context><![CDATA[
-			[
-				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
-			]
-		]]></context>
 		<description>IN</description>
 	</snippet>
 
@@ -169,11 +119,6 @@ NOT IN ($0)
 ]]></content>
 		<tabTrigger>ni</tabTrigger>
 		<scope>source.sql</scope>
-		<context><![CDATA[
-			[
-				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
-			]
-		]]></context>
 		<description>NOT IN</description>
 	</snippet>
 
@@ -183,11 +128,6 @@ IS NOT NULL
 ]]></content>
 		<tabTrigger>inn</tabTrigger>
 		<scope>source.sql</scope>
-		<context><![CDATA[
-			[
-				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
-			]
-		]]></context>
 		<description>IS NULL</description>
 	</snippet>
 
@@ -197,11 +137,6 @@ BETWEEN $1 AND $2
 ]]></content>
 		<tabTrigger>b</tabTrigger>
 		<scope>source.sql</scope>
-		<context><![CDATA[
-			[
-				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
-			]
-		]]></context>
 		<description>BETWEEN</description>
 	</snippet>
 
@@ -243,9 +178,20 @@ DISTINCT
 ]]></content>
 		<tabTrigger>d</tabTrigger>
 		<scope>source.sql</scope>
+		<order>1</order>
+		<description>DISTINCT</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+LIKE '$1%'
+]]></content>
+		<tabTrigger>l</tabTrigger>
+		<scope>source.sql</scope>
 		<context><![CDATA[
 			[
 				{"key": "mysql_query", "operator": "regex_contains", "operand": "^\\s*(SELECT|UPDATE|DELETE)"},
+				{"key": "preceding_text_begin", "operator": "regex_contains", "operand": "[a-zA-Z\"`]\\s*l$"},
 			]
 		]]></context>
 		<order>1</order>
@@ -256,7 +202,7 @@ DISTINCT
 		<content><![CDATA[
 ILIKE '%$1%'
 ]]></content>
-		<tabTrigger>l</tabTrigger>
+		<tabTrigger>il</tabTrigger>
 		<scope>source.sql</scope>
 		<context><![CDATA[
 			[
@@ -283,6 +229,20 @@ COUNT(${1:*})
 COPY(${1:$selection}) TO STDOUT WITH CSV DELIMITER ',' HEADER
 ]]></content>
 		<tabTrigger>C</tabTrigger>
+		<scope>source.sql</scope>
+		<order>1</order>
+		<description>COPY</description>
+	</snippet>
+
+	<snippet>
+		<content><![CDATA[
+CASE
+	WHEN $1 THEN $2
+	$3
+	ELSE $4
+END
+]]></content>
+		<tabTrigger>cw</tabTrigger>
 		<scope>source.sql</scope>
 		<order>1</order>
 		<description>COPY</description>

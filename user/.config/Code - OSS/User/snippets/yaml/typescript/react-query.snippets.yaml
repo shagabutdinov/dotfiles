@@ -1,0 +1,20 @@
+react query:
+  context: |
+    document().languageId.match("^(type|java)script(react)?$") &&
+      document().uri.toString().match("[tj]sx?$")
+
+  snippets:
+    root:
+      context: cursor.precedingText().match('\n([ ]*)\w+$')
+      snippets:
+        useQuery:
+          trigger: uq
+          snippet: |-
+            const { data: $1, isFetching, error } = useQuery(["$2", $3], () =>
+              $4
+            );
+          onExpand:
+            command: imports.add
+            args:
+              value: useQuery
+              from: react-query

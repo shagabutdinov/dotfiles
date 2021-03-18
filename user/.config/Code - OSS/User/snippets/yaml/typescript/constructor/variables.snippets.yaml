@@ -158,6 +158,11 @@ constructor typescript:
       snippet: var(--font-code)
       order: 1
 
+    --frame-shadow:
+      trigger: ~0px 2px 1px rgba\(80, 92, 117, 0.05\)$
+      snippet: var(--frame-shadow)
+      order: 1
+
     --light-shadow:
       trigger: ~(0 4px 16px 0 rgba\(0, 93, 186, 0.04\)|0px 4px 16px rgba\(0, 93, 186, 0.04\))$
       snippet: var(--light-shadow)

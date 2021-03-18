@@ -11,3 +11,5 @@ spec/support/backtrace_silencers.local!.rb
 Procfile.tests
 config/puma.rb
 .dev/
+*.json
+

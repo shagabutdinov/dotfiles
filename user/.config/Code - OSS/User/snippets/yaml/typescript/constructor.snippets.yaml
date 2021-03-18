@@ -127,6 +127,7 @@ constructor typescript:
               trigger: mu
               snippet: |-
                 jest.mock("modules/currentUser/actions", () => ({
+                  ...(jest.requireActual("modules/currentUser/actions") as object),
                   require: () => require("factories").default.currentUser.build(),
                 }));
 

@@ -86,10 +86,10 @@ jest:
             import React from "react";
             import { renderHook } from "@testing-library/react-hooks";
 
-            import $1:hook{hook}$2{, { $3{Args} }} from "./$1:hook{hook}";
+            import $1:hook{hook} from "./$1:hook{hook}";
 
             describe($1:hook{hook}, () => {
-              const args: $3{Args} = {
+              const args: Parameters<typeof $1:hook{hook}>[0] = {
                 $4
               };
 
@@ -375,3 +375,29 @@ jest:
         jest mock:
           trigger: jm
           snippet: jest.mock($0)
+
+        jest mock chart:
+          trigger: jmc
+          snippet: jest.mock("components/Modules/Chart")
+
+        jest return:
+          trigger: jr
+          snippet: ($1 as jest.Mock).mock
+
+        jest mock return value return:
+          trigger: mock
+          snippet: mockReturnValue($1)
+
+        jest mock resolved value return:
+          trigger: mockr
+          snippet: mockResolvedValue($1)
+
+        jest mock with defaults:
+          trigger: jmm
+          snippet: |
+            import * as $2 from "$1";
+
+            jest.mock("$1", () => ({
+              ...(jest.requireActual("$1") as object),
+              $3: jest.fn(),
+            }));
