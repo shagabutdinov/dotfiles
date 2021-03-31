@@ -325,7 +325,7 @@ jest:
           snippet: toEqual($1)
 
         expect toHaveBeenCalledWith:
-          trigger: toc
+          trigger: toh
           snippet: toHaveBeenCalledWith($1)
 
         fire event change:

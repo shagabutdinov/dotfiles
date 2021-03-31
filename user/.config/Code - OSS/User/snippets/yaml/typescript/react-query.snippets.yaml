@@ -4,17 +4,66 @@ react query:
       document().uri.toString().match("[tj]sx?$")
 
   snippets:
-    root:
-      context: cursor.precedingText().match('\n([ ]*)\w+$')
-      snippets:
-        useQuery:
-          trigger: uq
-          snippet: |-
-            const { data: $1, isFetching, error } = useQuery(["$2", $3], () =>
-              $4
-            );
-          onExpand:
-            command: imports.add
-            args:
-              value: useQuery
-              from: react-query
+    useQuery:
+      trigger: uq
+      snippet: |-
+        const { data: $1, isFetching, error } = useQuery([$2, $3], () =>
+          $4
+        );
+      onExpand:
+        command: imports.add
+        args:
+          value: useQuery
+          from: react-query
+
+    useQuery args:
+      trigger: uqa
+      snippet: |-
+        const $1{args}: Parameters<typeof $2>[0] = {
+          $3
+        }
+
+        const { data: $4{name}, isFetching, error } = useQuery([$5, $1{args}], () =>
+          $2($1{args})
+        );
+      onExpand:
+        command: imports.add
+        args:
+          value: useQuery
+          from: react-query
+
+    useQueryParam:
+      trigger: uqp
+      snippet: const [$1:name{value}, $setter{setValue}] = useQueryParam("$2{$1{name}}", $3)
+      placeholders:
+        name:
+          onLeave: |
+            ({ placeholders: { name, setter } }) => {
+              setter.value =
+                'set' +
+                  name.value.substring(0, 1).toUpperCase() +
+                  name.value.substring(1)
+            }
+      onExpand:
+        command: imports.add
+        args:
+          value: useQueryParam
+          from: use-query-params
+
+    useQueryParam StringParam:
+      trigger: ~(?<=useQueryParam\(".*?",\s*)sp$
+      snippet: StringParam
+      onExpand:
+        command: imports.add
+        args:
+          value: StringParam
+          from: use-query-params
+
+    useQueryParam BooleanParam:
+      trigger: ~(?<=useQueryParam\(".*?",\s*)bp$
+      snippet: BooleanParam
+      onExpand:
+        command: imports.add
+        args:
+          value: BooleanParam
+          from: use-query-params

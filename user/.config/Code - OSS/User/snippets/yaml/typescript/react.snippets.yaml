@@ -62,12 +62,24 @@ typescript:
                 )[1]
 
     react component props auto:
-      trigger: ~const props$
+      trigger: ~const props:?\s*$
       snippet: "const props: React.ComponentProps<typeof $0>"
+      order: 2
 
     react node:
-      trigger: rn
+      trigger: "~(?<=:\\s*|\\|\\s*)rn$"
       snippet: React.ReactNode
+      order: 1
+
+    a target blank:
+      trigger: tb
+      snippet: target="_blank" rel="noreferrer"
+      order: 1
+
+    a blank:
+      trigger: ab
+      snippet: <a href="$1" target="_blank" rel="noreferrer">$2</a>
+      order: 1
 
     types:
       context: cursor.precedingText().match(':\s*\w+$')
@@ -231,10 +243,75 @@ typescript:
               if (tag.value === '>') {
                 tag.value = '';
                 close.value = '';
-                setTimeout(() => env.commands.executeCommand('snippets.nextTab'), 64);
+                setTimeout(() => env.commands.executeCommand('snippets.nextTab'), 68);
               } else if (tag.value.endsWith("/")) {
                 container.value = '';
               } else {
                 close.value = tag.value.replace(/(?<=\w+)\s+.*/, '');
               }
             }
+
+    css:
+      context: cursor.precedingText().match('(;|`)\s*\w+$')
+      snippets:
+
+        margin-top:
+          trigger: mt
+          snippet: "margin-top: $1{8}px;"
+
+        margin-right:
+          trigger: mr
+          snippet: "margin-right: $1{8}px;"
+
+        display flex:
+          trigger: df
+          snippet: "display: flex;"
+
+        align items center:
+          trigger: ai
+          snippet: "align-items: $1{center};"
+
+        justify content space between:
+          trigger: jc
+          snippet: "justify-content: $1{space-between};"
+
+        gap:
+          trigger: g
+          snippet: "gap: $1{4}px;"
+
+        font-weight:
+          trigger: fw
+          snippet: "font-weight: $1{bold};"
+
+        box-shadow:
+          trigger: bs
+          snippet: "box-shadow: $1;"
+
+    css values:
+      context: cursor.precedingText().match('[\w+-]:\s*\w+$')
+      snippets:
+
+        var:
+          trigger: v
+          snippet: var($1)
+          order: 1
+
+        roll 2:
+          trigger: "2"
+          snippet: "4"
+
+        roll 4:
+          trigger: "4"
+          snippet: "8"
+
+        roll 8:
+          trigger: "8"
+          snippet: "16"
+
+        roll 16:
+          trigger: "16"
+          snippet: "32"
+
+        roll 32:
+          trigger: "32"
+          snippet: "64"

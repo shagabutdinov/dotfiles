@@ -3,8 +3,8 @@ notify-replace headphones "" "<b>HEADPHONES</b> » CONNECTING"
 bluetoothctl power on
 sleep 1
 
-# bluetoothctl agent on
-# sleep 1
+bluetoothctl agent on
+sleep 3
 
 bluetoothctl pair 38:18:4C:BF:1B:46
 sleep 3

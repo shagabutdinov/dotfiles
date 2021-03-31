@@ -285,11 +285,7 @@ ruby:
 
         prtodo:
           trigger: xp
-          snippet: '# @prtodo $0'
-
-        prtodo tests:
-          trigger: xpp
-          snippet: '# @prtodo tests'
+          snippet: '# @prtodo $0{tests}'
 
     rails:
       snippets:
@@ -310,3 +306,17 @@ ruby:
         vcr:
           trigger: '~:focus, :watch, vcr: \{ record: :all \}$'
           snippet: ':vcr'
+
+    other:
+      snippets:
+        JSON.parse:
+          trigger: jp
+          snippet: JSON.parse($1)
+
+        JSON.parse symbolize_names:
+          trigger: jpp
+          snippet: "JSON.parse($1, symbolize_names: true)"
+
+        to_json:
+          trigger: tj
+          snippet: to_json

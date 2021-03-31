@@ -3,6 +3,13 @@ constructor typescript:
     document().languageId.match("^(type|java)script(react)?$") &&
       document().uri.fsPath.startsWith('/home/leo/src/constructor/website')
   snippets:
+    index.indexKey:
+      trigger: ik
+      snippet: index.indexKey
+    index.indexKey index continuation:
+      trigger: ~index.indexKey$
+      snippet: "indexKey: index.indexKey"
+
     --primary-green:
       trigger: '~#4ABB8B$'
       snippet: var(--primary-green)

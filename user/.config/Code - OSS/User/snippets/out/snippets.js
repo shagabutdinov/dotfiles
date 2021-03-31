@@ -13,11 +13,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.camelcase = exports.pluralize = void 0;
+exports.snakeCase = exports.camelCase = exports.pluralize = void 0;
 const pluralize_1 = __importDefault(require("pluralize"));
 exports.pluralize = pluralize_1.default;
 const camelcase_1 = __importDefault(require("camelcase"));
-exports.camelcase = camelcase_1.default;
+exports.camelCase = camelcase_1.default;
+const snake_case_1 = require("snake-case");
+Object.defineProperty(exports, "snakeCase", { enumerable: true, get: function () { return snake_case_1.snakeCase; } });
 __exportStar(require("./snippets/utils"), exports);
 __exportStar(require("./snippets/jest"), exports);
 //# sourceMappingURL=snippets.js.map

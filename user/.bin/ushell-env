@@ -75,6 +75,7 @@ alias re='source ~/.bin/ushell-env && rehash' # reload env
 alias f='find . -name'
 alias ee='() { vim ~/.bin/ushell-env; source ~/.bin/ushell-env; rehash }'
 alias cw='cd ~/src/constructor/website'
+alias ca='cd ~/src/constructor/autocomplete'
 alias cm='cd ~/src/go/src/gitlab.com/bigprofit/trading'
 alias yay='yay --removemake --nodiffmenu --nocleanmenu --noupgrademenu --cleanafter'
 alias mv=/bin/mv
@@ -83,6 +84,7 @@ alias h='ssh'
 alias w='inotifyrun -r -e MODIFY' # watch
 alias ob='() { watch -x zsh -i -c "$@" }' # observe
 alias l='exa -lHg --group-directories-first'
+alias ln='exa -lHg --group-directories-first -snew'
 alias ls='exa -lHga'
 alias rr='sudo rm -rf'
 alias rt='sudo rm -rf ~/.tmp/ssh/*'
@@ -163,9 +165,6 @@ export WINEARCH='win32'
 alias gx=gorun
 alias gog=go get
 
-# python
-alias pi='docker exec test.autocomplete.constructor.local isort'
-
 # docker
 alias d='docker'
 alias dx='docker exec -i -t'
@@ -188,6 +187,11 @@ alias ocj="TMUX= overmind connect jest"
 alias oct="TMUX= overmind connect tsc"
 alias ocw='TMUX= overmind connect webpack'
 alias oca='TMUX= overmind connect app'
+
+# constructor autocomplete
+alias asi='docker exec -it test.autocomplete.constructor.local isort'
+alias at='docker exec -it test.autocomplete.constructor.local pytest --log-cli-level=WARNING'
+
 
 # git
 alias gs='git show --color'

@@ -31,10 +31,10 @@ sleep 10
 
 i3-msg 'workspace 10'
 
-utodoist
+utodoist &
 sleep 3
 
-firefox
+firefox &
 sleep 10
 i3-msg 'resize set 1896px'
 
@@ -52,7 +52,7 @@ i3-msg 'resize set 1896px'
 # browsers
 
 i3-msg 'workspace 1'
-chromium
+chromium &
 sleep 0.5
 
 # workspaces

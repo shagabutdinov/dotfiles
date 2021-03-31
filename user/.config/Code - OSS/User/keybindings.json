@@ -12,6 +12,12 @@
           ]
         },
         {
+          "command": "refactoring.typescript.openCodeFile",
+          "context": [
+            "document().uri.toString().match('(?<=\\.test)\\.[tj]sx?$')",
+          ]
+        },
+        {
           "command": "refactoring.ruby.openTestFile",
           "context": [
             "document().uri.toString().match('(?<!\\_spec)\\.rb$')",
@@ -26,13 +32,13 @@
         {
           "command": "refactoring.go.openTestFile",
           "context": [
-            "document().uri.toString().match('/(?<!test_)[^/]+\\.go$')",
+            "document().uri.toString().match('(?<!\\_test)\\.go$')",
           ]
         },
         {
           "command": "refactoring.go.openCodeFile",
           "context": [
-            "document().uri.toString().match('/test_[^/]+\\.go$')",
+            "document().uri.toString().match('\\_test\\.go$')",
           ]
         }
       ]
@@ -2379,8 +2385,7 @@
   },
   {
     "key": "ctrl+alt+n",
-    "command": "workbench.action.showAllSymbols",
-    "when": "textInputFocus"
+    "command": "workbench.action.showAllSymbols"
   },
   {
     "key": "ctrl+e",

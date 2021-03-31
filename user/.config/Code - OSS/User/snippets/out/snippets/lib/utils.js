@@ -99,7 +99,7 @@ function getMatches(document, match, options = {}) {
             return [match];
         })()).map((value) => ({
         index: value.index,
-        text: value[options.matchIndex || 0],
+        text: value[0],
     }));
     return {
         range,
@@ -165,4 +165,7 @@ function getIndex(array, { index }) {
     }
     return array[index];
 }
+// type MatchIndex = {
+//   matchIndex?: number | null;
+// };
 //# sourceMappingURL=utils.js.map

@@ -163,6 +163,13 @@ typescript:
           trigger: et
           snippet: export type $1 = $0
 
+        type props:
+          trigger: tp
+          snippet: |-
+            type Props = {
+              $0
+            }
+
         export default type:
           trigger: edt
           snippet: export default type $1 = $0
@@ -293,6 +300,10 @@ typescript:
 
         throw error:
           trigger: te
+          snippet: throw $1{error};
+
+        throw new error:
+          trigger: tn
           snippet: throw new Error("$1");
 
         throw:
@@ -500,11 +511,7 @@ typescript:
 
         prtodo:
           trigger: xp
-          snippet: // @prtodo $0
-
-        prtodo tests:
-          trigger: xpp
-          snippet: // @prtodo tests
+          snippet: // @prtodo $0{tests}
 
         sentences:
           context: cursor.precedingText().match('(^|\n|{)\s*\w+$')
@@ -518,3 +525,36 @@ typescript:
                     ({ cursor, document }) =>
                       require('path').basename(document.uri.fsPath) + ':' +
                       cursor.anchor.line
+
+    other:
+      snippets:
+        type expansion:
+          trigger: ~(?<=type\s+\w+\s*)$
+          snippet: " = {\n  $0\n}"
+
+        parameters:
+          trigger: ~Promise<$
+          snippet: Parameters<typeof $0
+
+        partial:
+          trigger: ~Parameters<typeof\s$
+          snippet: Partial<$0
+
+        object continuation:
+          # context: |
+          #   cursor.precedingText().match('({|,)\s*\w$') &&
+          #   cursor.followingText().match('^\s*(\w+:|})')
+          context: |
+            cursor.precedingText().match('({|,)\s*\w$') &&
+            cursor.followingText().match('^\s*(\w+:|})')
+          trigger: ~(?<=\s*\w)$
+          snippet: "$1$container{: $2:value},"
+          auto: true
+          placeholders:
+            value:
+              onLeave: |
+                ({ placeholders: { container, value } }) => {
+                  if (value.value === "") {
+                    container.value = container.value.replace(/:\s*$/, "");
+                  }
+                }

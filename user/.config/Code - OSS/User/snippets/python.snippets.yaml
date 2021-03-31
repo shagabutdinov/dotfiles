@@ -43,6 +43,18 @@ python:
         if not $1:
             $0
 
+    for:
+      trigger: f
+      snippet: |
+        for $1:
+            $0
+
+    for in:
+      trigger: fi
+      snippet: |
+        for $1 in $2:
+            $0
+
     none:
       trigger: n
       snippet: None
