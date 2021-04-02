@@ -185,6 +185,11 @@ ruby:
           trigger: ~(?<=\).to)\s+r$
           snippet: ' receive($1)'
 
+        expect to equal:
+          trigger: ~(?<=\).to)\s+$
+          snippet: ' eq($1)'
+          order: 1
+
         expect receive with:
           trigger: ~(?<=receive\(.*?\)\s*)\.w$
           snippet: '.with($1)'

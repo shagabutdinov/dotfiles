@@ -540,21 +540,23 @@ typescript:
           trigger: ~Parameters<typeof\s$
           snippet: Partial<$0
 
-        object continuation:
-          # context: |
-          #   cursor.precedingText().match('({|,)\s*\w$') &&
-          #   cursor.followingText().match('^\s*(\w+:|})')
-          context: |
-            cursor.precedingText().match('({|,)\s*\w$') &&
-            cursor.followingText().match('^\s*(\w+:|})')
-          trigger: ~(?<=\s*\w)$
-          snippet: "$1$container{: $2:value},"
-          auto: true
-          placeholders:
-            value:
-              onLeave: |
-                ({ placeholders: { container, value } }) => {
-                  if (value.value === "") {
-                    container.value = container.value.replace(/:\s*$/, "");
-                  }
-                }
+        # object continuation:
+        #   # context: |
+        #   #   cursor.precedingText().match('({|,)\s*\w$') &&
+        #   #   cursor.followingText().match('^\s*(\w+:|})')
+        #   context: |
+        #     !cursor.precedingText().match('=>\s*{\s*\w$') &&
+        #     cursor.precedingText().match('({|,)\s*\w$') &&
+        #     cursor.followingText().match('^\s*(\w+:|})')
+        #   trigger: ~(?<=\s*\w)$
+        #   snippet: "$1$container{: $2:value},"
+        #   auto: true
+        #   order: -1
+        #   placeholders:
+        #     value:
+        #       onLeave: |
+        #         ({ placeholders: { container, value } }) => {
+        #           if (value.value === "") {
+        #             container.value = container.value.replace(/:\s*$/, "");
+        #           }
+        #         }

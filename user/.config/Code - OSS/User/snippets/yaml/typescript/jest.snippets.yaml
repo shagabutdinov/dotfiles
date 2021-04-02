@@ -384,6 +384,11 @@ jest:
           trigger: jr
           snippet: ($1 as jest.Mock).mock
 
+        jest spy on:
+          trigger: ~(?<=\s*)js$
+          snippet: jest.spyOn($1, "$2").mock$0
+          order: 1
+
         jest mock return value return:
           trigger: mock
           snippet: mockReturnValue($1)

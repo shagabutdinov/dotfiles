@@ -283,9 +283,21 @@ typescript:
           trigger: fw
           snippet: "font-weight: $1{bold};"
 
+        font-family:
+          trigger: ff
+          snippet: "font-family: $1;"
+
         box-shadow:
           trigger: bs
           snippet: "box-shadow: $1;"
+
+        background-color:
+          trigger: bc
+          snippet: "background-color: $1;"
+
+        padding:
+          trigger: pa
+          snippet: "padding: $1;"
 
     css values:
       context: cursor.precedingText().match('[\w+-]:\s*\w+$')

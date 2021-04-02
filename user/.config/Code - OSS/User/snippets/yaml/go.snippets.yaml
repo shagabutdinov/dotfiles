@@ -481,13 +481,25 @@ go:
 
     log:
       trigger: l
-      snippet: fmt.Println("XXXX $id ", $1)
+      snippet: fmt.Println("XXXX $id $key{value} =", $1:value{value})
       placeholders:
         id:
           onBeforeExpand: |
             ({ cursor, document }) =>
               require('path').basename(document.uri.fsPath) + ':' +
                 cursor.anchor.line
+        value:
+          onDocumentChange: |
+            ({ cursor, document, placeholders: { key, value }}) =>
+              key.value = value.value
+
+    log debug:
+      trigger: ld
+      snippet: log.Debug("$1")
+
+    log trace:
+      trigger: lt
+      snippet: log.Trace("$1")
 
     log info:
       trigger: li

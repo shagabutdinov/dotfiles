@@ -68,6 +68,7 @@ bindkey "^U" prepend-sudo
 # global
 alias -g G="| grep"
 alias -g X='| xsel -ib'
+alias -g A='|& up'
 
 # utils
 alias pp='readlink -f'
