@@ -16,40 +16,45 @@ export TERM='xterm-256color'
 export LC_ALL="en_US.UTF-8"
 
 # ssh-agent
-eval "$(ssh-agent -s)" > /dev/null 2>&1
-ssh-add > /dev/null 2>&1
+# eval "$(ssh-agent -s)" > /dev/null 2>&1
+# ssh-add > /dev/null 2>&1
 
-# gnome keyring
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
+## gnome keyring
+# source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+# eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+# export SSH_AUTH_SOCK
 # source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
 
-export GTK_IM_MODULE=xim
-export QT_IM_MODULE=xim
+#export GTK_IM_MODULE=xim
+#export QT_IM_MODULE=xim
 export PATH=./bin:$HOME/.bin:$HOME/.local/deadfiles/bin:/home/leo/src/go/bin:$PATH
+export PATH=/home/leo/.local/bin:$PATH
 
 # ruby
-export PATH=/home/leo/.local/bin:$PATH
-export PATH=/home/leo/.rvm/rubies/ruby-2.6.2/bin:$PATH
-export PATH=/home/leo/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/bin:$PATH
-export PATH=/home/leo/.rvm/rubies/ruby-2.6.2/bin:$PATH
-export GEM_PATH=/home/leo/.rvm/gems/ruby-2.6.2
-export GEM_HOME=/home/leo/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0
+# export PATH=/home/leo/.rvm/rubies/ruby-2.6.2/bin:$PATH
+# export PATH=/home/leo/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0/bin:$PATH
+# export GEM_PATH=/home/leo/.rvm/gems/ruby-2.6.2
+# export GEM_HOME=/home/leo/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0
+
+export PATH=/home/leo/.rvm/rubies/ruby-2.7.2/bin:$PATH
+export PATH=/home/leo/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/bin:$PATH
+export GEM_PATH=/home/leo/.rvm/gems/ruby-2.7.2
+export GEM_HOME=/home/leo/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0
 
 # go
 export GOPATH=~/src/go
 
 # node
-export PATH=/home/leo/.nvm/versions/node/v12.18.1/bin/:$PATH
+export PATH=/home/leo/.nvm/versions/node/v12.16.1/bin/:$PATH
 export PATH=./node_modules/.bin:$PATH
 
 thunar --daemon &
-sudo systemctl restart keynav
-/usr/lib/xfce4/notifyd/xfce4-notifyd &
+sleep 10 && /usr/lib/xfce4/notifyd/xfce4-notifyd &
 redshift -t 6500:2500 -l $(curl -s ipinfo.io | jq -j .loc | tr ',' ':') &
 dunst &
 volumectl -D &
+keynav &
 
 # ulock &
-exec i3
+i3 > ~/.i3.log 2>&1
 

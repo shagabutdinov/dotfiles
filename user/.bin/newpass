@@ -1,0 +1,50 @@
+#!/usr/bin/env ruby
+
+require 'docopt'
+
+DESCRIPTION = <<TEXT
+  Create new secret in carcosa.
+
+  Usage:
+    newpass <name>
+    newpass [options]
+    newpass -h | --help
+    newpass --version
+
+  Options:
+
+    --modal       Use modal window to input secret name.
+    --clipboard   Get secret name from the clipboard.
+TEXT
+  .freeze
+
+options =
+  begin
+    Docopt.docopt(DESCRIPTION, version: '1.0.0', argv: ARGV)
+  rescue Docopt::Exit => e
+    STDERR.puts(e.message)
+    exit(2)
+  end
+
+name =
+  if options['--modal']
+    `modal -input /dev/null -no-fixed-num-lines -sync <&-`.strip
+  elsif options['--clipboard']
+    `echo $(xsel -op)`.strip
+  else
+    options['<name>']
+  end
+
+if name.empty?
+  exit(0)
+end
+
+password = `pwgen 12`.strip.split(/\s+/).sample
+system("echo -n \"#{password}\" | xclip -selection clipboard -i")
+system("notify-replace password \"\" \"<b>PASSWORD</b> » OK (#{name})\"")
+
+if system("echo -n \"#{password}\" | carcosa -Ac #{name}")
+  system("notify-replace password \"\" \"<b>PASSWORD</b> » SYNCED (#{name})\"")
+else
+  system("notify-replace password \"\" \"<b>PASSWORD</b> » FAILED (#{name})\"")
+end

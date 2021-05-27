@@ -37,7 +37,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+t exec marvex -b alacritty --terminal '@path --title "@title" -e @command' -r 3
 
 # kill focused window
-bindsym Mod1+F4 kill
+bindsym $mod+c kill
 
 # start dmenu (a program launcher)
 bindsym F1 exec rofi -show run -matching fuzzy
@@ -203,13 +203,12 @@ for_window [class="^.*"] border pixel 1
 for_window [class="kolourpaint"] fullscreen enable
 
 bindsym $mod+g exec thunar
-bindsym $mod+backslash exec code
+# bindsym $mod+backslash exec code
 bindsym $mod+o exec firefox
-bindsym $mod+shift+o exec chromium
-bindsym $mod+ctrl+shift+o exec chromium --user-data-dir=/home/leo/.local/chromium-debug --remote-debugging-port=9222
+bindsym $mod+shift+o exec google-chrome
+bindsym $mod+ctrl+shift+o exec google-chrome --user-data-dir=/home/leo/.local/chromium-debug --remote-debugging-port=9222
 bindsym $mod+h exec translator
 bindsym $mod+shift+h exec translator "$(xsel -op)"
-bindsym $mod+p exec file-roller ~/projects/keys/passwords.zip
 
 bindsym $mod+comma exec /home/leo/.bin/uvolume -4%
 bindsym $mod+period exec /home/leo/.bin/uvolume +4%
@@ -222,13 +221,16 @@ bindsym $mod+ctrl+u exec uidle
 bindsym $mod+shift+u exec upwork-suspend
 bindsym $mod+m exec ushow-status
 bindsym $mod+ctrl+shift+Tab exec ~/.bin/switch-display
-bindsym $mod+F11 exec ~/.bin/toggle-notifications
-bindsym $mod+F12 exec ~/.bin/vpnup
-bindsym $mod+shift+F12 exec ~/.bin/vpndown
-bindsym $mod+ctrl+F12 exec ~/.bin/toggle-touchpad
+# bindsym $mod+F11 exec ~/.bin/toggle-notifications
+bindsym $mod+backslash exec deepin-screenshot
+bindsym $mod+shift+backslash exec ~/.bin/vpnup
+bindsym $mod+ctrl+backslash exec ~/.bin/vpndown
+# bindsym $mod+ctrl+F12 exec ~/.bin/toggle-touchpad
 bindsym $mod+shift+comma exec ~/.bin/backlight -d 5
 bindsym $mod+shift+period exec ~/.bin/backlight -i 5
-bindsym $mod+ctrl+p exec ucreate-secret "$(xsel -op)"
+
+bindsym $mod+shift+p exec newpass --modal
+bindsym $mod+ctrl+p exec newpass --clipboard
 
 bindsym $mod+F9 exec uscreenshot --active-window
 bindsym $mod+shift+F9 exec uscreenshot
@@ -240,13 +242,14 @@ bindsym $mod+shift+Home exec uscreencast --active-window
 bindsym $mod+ctrl+n exec enter-text "Leonid Shagabutdinov"
 bindsym $mod+shift+n exec enter-text "leonid@shagabutdinov.com"
 bindsym $mod+ctrl+shift+l exec enter-text "Definition of done:\n\n*\n\nComments:\n\n* "
-bindsym $mod+ctrl+shift+p exec enter-text "Requested changes are implemented."
+bindsym $mod+v exec enter-current-date
 bindsym $mod+BackSpace exec createtodo --date today
 bindsym $mod+shift+BackSpace exec createtodo-popup --date today
-bindsym $mod+Escape exec uxinit
 
 bindsym $mod+minus move workspace to output left
 bindsym $mod+equal move workspace to output right
 bindsym $mod+F8 exec ~/.bin/connect-headphones
 bindsym $mod+shift+F8 exec ~/.bin/disconnect-headphones
 
+no_focus [instance="Firefox"]
+no_focus [instance="Chrome"]

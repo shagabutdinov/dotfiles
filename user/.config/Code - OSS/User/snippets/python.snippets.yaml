@@ -31,6 +31,10 @@ python:
       trigger: r
       snippet: return $0
 
+    return result:
+      trigger: rr
+      snippet: return result
+
     if:
       trigger: i
       snippet: |

@@ -16,8 +16,7 @@
   "files.trimTrailingWhitespace": true,
   "editor.formatOnType": false,
   "editor.formatOnPaste": false,
-  "editor.formatOnSaveTimeout": 5000, // use rubocop for zing
-  "explorer.confirmDelete": false,
+  "editor.formatOnSaveTimeout": 5000,
   "explorer.confirmDragAndDrop": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "ruby.useBundler": false, //run non-lint commands with bundle exec
@@ -164,5 +163,19 @@
   "local-history.saveDelay": 5,
   "local-history.treeLocation": "localHistory",
   "vscodeWorkspaceSwitcher.showTreeView": true,
-  "go.toolsManagement.autoUpdate": true
+  "go.toolsManagement.autoUpdate": true,
+  "explorer.confirmDelete": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "shagabutdinov.format"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "redhat.telemetry.enabled": false,
+  "workbench.editor.focusRecentEditorAfterClose": false,
+  "python.autoComplete.addBrackets": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.pinnedTabSizing": "compact",
+  "workbench.editor.tabCloseButton": "off",
+  "workbench.editor.tabSizing": "shrink"
 }

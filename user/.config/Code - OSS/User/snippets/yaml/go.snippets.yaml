@@ -1,10 +1,72 @@
 go:
   context: document().languageId.match("^go$")
   snippets:
-    type:
-      trigger: ~^t$
-      order: 1
-      snippet: type $1
+    empty prefix and postfix:
+      context:
+        cursor.precedingText().match('\n\s*\w+$') &&
+          cursor.followingText().match('^\s*\n')
+      snippets:
+        type:
+          trigger: ~^\s*t$
+          order: 1
+          snippet: type $1
+
+        for:
+          context: cursor.followingText().match('^\s*\n')
+          trigger: ~(?<=^\s*)f$
+          order: 1
+          snippet: |-
+            for $1 {
+              $0
+            }
+
+        for classic:
+          trigger: ~(?<=^\s*)fo$
+          order: 1
+          snippet: |-
+            for $1:name{index} := $2{0}; $1:name{index} < $3; $1:name{index} ++ {
+              $0
+            }
+
+        for copy:
+          trigger: ~(?<=^\s*)fc$
+          snippet: |-
+            $1 := make([]$2, len($3))
+            for $4{index}, $5{value} := range $3 {
+              $1[$4{index}] = $5{value}$6
+            }
+
+        for map:
+          trigger: ~(?<=^\s*)fm$
+          snippet: |-
+            $1 := make([]$2, len($3))
+            for $4{index}, $5{value} := range $3 {
+              $1[$4{index}] = $6
+            }
+
+        for keys:
+          trigger: ~(?<=^\s*)fk$
+          snippet: |-
+            $1 := make([]$2, len($3))
+            $4{index} := 0
+            for $5{key} := range $3 {
+              $1[$4{index}] = $5{key}
+              $4{index} ++
+            }
+
+        for index:
+          trigger: ~(?<=^\s*)fi$
+          snippet: |-
+            for $1{index}, $3:value{value} := range $2:values{values} {
+              $0
+            }
+          order: 1
+          placeholders:
+            value:
+              onBeforeFocus: |
+                ({ placeholders: { values }, extensions: { user } }) => {
+                  return user.pluralize.singular(values.value) || values.value;
+                }
 
     type struct:
       trigger: ~(?<=type\s+\w+\s+)s$
@@ -28,62 +90,6 @@ go:
         func $1:name($2) $3 {
           $0
         }
-
-    for:
-      context: cursor.followingText().match('^\s*\n')
-      trigger: ~(?<=^\s*)f$
-      order: 1
-      snippet: |-
-        for $1 {
-          $0
-        }
-
-    for classic:
-      trigger: ~(?<=^\s*)fo$
-      order: 1
-      snippet: |-
-        for $1:name{index} := $2{0}; $1:name{index} < $3; $1:name{index} ++ {
-          $0
-        }
-
-    for copy:
-      trigger: ~(?<=^\s*)fc$
-      snippet: |-
-        $1 := make([]$2, len($3))
-        for $4{index}, $5{value} := range $3 {
-          $1[$4{index}] = $5{value}$6
-        }
-
-    for map:
-      trigger: ~(?<=^\s*)fm$
-      snippet: |-
-        $1 := make([]$2, len($3))
-        for $4{index}, $5{value} := range $3 {
-          $1[$4{index}] = $6
-        }
-
-    for keys:
-      trigger: ~(?<=^\s*)fk$
-      snippet: |-
-        $1 := make([]$2, len($3))
-        $4{index} := 0
-        for $5{key} := range $3 {
-          $1[$4{index}] = $5{key}
-          $4{index} ++
-        }
-
-    for index:
-      trigger: ~(?<=^\s*)fi$
-      snippet: |-
-        for $1{index}, $3:value{value} := range $2:values{values} {
-          $0
-        }
-      placeholders:
-        value:
-          onBeforeFocus: |
-            ({ placeholders: { values }, extensions: { user } }) => {
-              return user.pluralize.singular(values.value) || values.value;
-            }
 
     for index helper:
       trigger: ~for i$
@@ -119,8 +125,14 @@ go:
       snippet: continue
 
     "nil":
-      trigger: n
+      trigger: "n"
       snippet: "nil"
+
+    nil comma:
+      context: cursor.followingText().match('^\s*[\w\(]')
+      trigger: "n"
+      snippet: "nil, "
+      order: 1
 
     "false":
       trigger: f
@@ -218,6 +230,10 @@ go:
       trigger: ~(?<=for\s+)$
       snippet: "_, $1 := range "
 
+    define error assignment:
+      trigger: ~,\s*$
+      snippet: ", err := "
+
     struct:
       trigger: ~^ds$
       snippet: |-
@@ -228,9 +244,10 @@ go:
       placeholders:
         name:
           onBeforeExpand: |-
-            ({ document }) => {
+            ({ document, extensions: { user } }) => {
               const fileName = document.uri.fsPath.match(/\/([^/\.]*)[^/]*$/)[1];
-              return fileName[0].toLocaleUpperCase() + fileName.substring(1)
+              const name = user.camelCase(fileName);
+              return name[0].toLocaleUpperCase() + name.substring(1)
             }
 
     interface:
@@ -269,10 +286,18 @@ go:
         !cursor.bofToStartText().match('\n\s*type ')
       trigger: ~^d$
       snippet: |
-        // $1 TBD
-        type $1 struct {
+        // $1:name TBD
+        type $1:name struct {
           $0
         }
+      placeholders:
+        name:
+          onBeforeExpand: |-
+            ({ document, extensions: { user } }) => {
+              const fileName = document.uri.fsPath.match(/\/([^/\.]*)[^/]*$/)[1];
+              const name = user.camelCase(fileName);
+              return name[0].toLocaleUpperCase() + name.substring(1)
+            }
 
     define func struct:
       context: |
@@ -419,6 +444,25 @@ go:
                 )
               );
 
+    this:
+      trigger: ~(?<!=\w)\.$
+      snippet: $this
+      placeholders:
+        this:
+          onBeforeExpand: |
+            ({ document, cursor, debug, extensions: { user } }) => {
+              const expr = /(?<=func \()(\w+)(?=\s+\*?\w+\) \w+\()/;
+              const backwardDefinition = user.getText(document, expr, {
+                before: cursor.anchor,
+              });
+
+              if (backwardDefinition) {
+                return backwardDefinition;
+              }
+
+              return "";
+            }
+
     define test:
       context: document().uri.toString().match("_test.go$")
       trigger: d
@@ -429,7 +473,7 @@ go:
       order: 1
 
     if err not nil return err:
-      trigger: ie
+      trigger: ir
       snippet: |-
         if err != nil {
           return $1err
@@ -456,6 +500,20 @@ go:
           $0
         }
 
+    if empty:
+      trigger: ie
+      snippet: |-
+        if len($1) == 0 {
+          $0
+        }
+
+    if not empty:
+      trigger: ine
+      snippet: |-
+        if len($1) != 0 {
+          $0
+        }
+
     if not:
       trigger: in
       snippet: |-
@@ -464,20 +522,31 @@ go:
         }
 
     else:
+      context: |
+        !cursor.followingText().match('^\s*\n')
       auto: true
-      trigger: ~(?<=}\s*)e$
-      snippet: |-
-        else {
-          $0
-        }
+      trigger: ~(?<=})\s*e$
+      snippet: " else"
+
+    else with brackets:
+      context: cursor.followingText().match('^\s*\n')
+      auto: true
+      trigger: ~(?<=})\s*e$
+      snippet: " else {\n  $0\n}"
 
     else if:
+      context: |
+        !cursor.followingText().match('^\s*\n')
       auto: true
-      trigger: ~(?<=}\s*)i$
-      snippet: |-
-        else if $1 {
-          $0
-        }
+      trigger: ~(?<=})\s*i$
+      snippet: " else if"
+
+
+    else if with brackets:
+      context: cursor.followingText().match('^\s*\n')
+      auto: true
+      trigger: ~(?<=})\s*i$
+      snippet: " else if $1 {\n  $0}"
 
     log:
       trigger: l
@@ -510,7 +579,7 @@ go:
       snippet: log.Fatal($1)
 
     len:
-      trigger: ~(?<=\S.*)l$
+      trigger: ~(?<=([^\w\s]|if)\s*)l$
       snippet: len($1)
       order: 1
 
@@ -531,6 +600,12 @@ go:
     errors new:
       trigger: en
       snippet: errors.New("$1")
+
+    err:
+      context: cursor.followingText().match('^\s*:?=')
+      trigger: ~(?<=,\s*)e$
+      snippet: err
+      order: 2
 
     # language
 
@@ -666,5 +741,13 @@ go:
       snippet: time.Hour
 
     strconv itoa:
-      trigger: ita
+      trigger: fi
       snippet: strconv.Itoa($1)
+
+    strconv format float:
+      trigger: fl
+      snippet: strconv.FormatFloat($1, 'f', $2{2}, 64)
+
+    strings has prefix:
+      trigger: shp
+      snippet: strings.HasPrefix($1, $2)

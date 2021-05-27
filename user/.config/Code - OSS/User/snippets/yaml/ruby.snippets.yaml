@@ -24,6 +24,22 @@ ruby:
                   container.value = container.value.replace(/\(\)$/, '');
                 };
 
+        def initialize:
+          context: |
+            !document().uri.fsPath.match('_spec.rb') &&
+              selection.precedingText().match('^\s+\w+$')
+          trigger: di
+          snippet: |-
+            def initialize$container{($1:args)}
+              $0
+            end
+          placeholders:
+            args:
+              onBeforeLeave: |
+                ({ placeholders: { container } }) => {
+                  container.value = container.value.replace(/\(\)$/, '');
+                };
+
         test case:
           context: |
             document().uri.fsPath.match('_spec.rb') &&
@@ -37,13 +53,13 @@ ruby:
           placeholders:
             subject:
               onBeforeExpand: |
-                ({ document, env, extensions: { user: { camelcase } } }) =>
+                ({ document, env, extensions: { user: { camelCase } } }) =>
                   document.uri.fsPath
                     .replace(env.workspace.rootPath + '/spec/', '')
                     .replace(/\w+\//, '')
                     .replace('_spec.rb', '')
                     .split('/')
-                    .map((part) => camelcase(part, { pascalCase: true }))
+                    .map((part) => camelCase(part, { pascalCase: true }))
                     .join('::')
 
         test:
@@ -63,9 +79,47 @@ ruby:
               $0
             end
 
+        if not:
+          trigger: in
+          snippet: |-
+            if !$1
+              $0
+            end
+
+        if nil:
+          trigger: ii
+          snippet: |-
+            if $1.nil?
+              $0
+            end
+
+        if not nil:
+          trigger: ini
+          snippet: |-
+            if !$1.nil?
+              $0
+            end
+
+        if empty:
+          trigger: ie
+          snippet: |-
+            if $1.empty?
+              $0
+            end
+
+        else if:
+          trigger: ei
+          snippet: |-
+            elsif $1
+              $0
+
         return:
           trigger: r
           snippet: return
+
+        return nil:
+          trigger: rn
+          snippet: return nil
 
     keywords:
       snippets:
@@ -125,6 +179,14 @@ ruby:
         file read:
           trigger: fr
           snippet: File.read($1)
+
+        file join:
+          trigger: fj
+          snippet: File.join($1)
+
+        file basename:
+          trigger: fb
+          snippet: File.basename($1)
 
 
     values:
@@ -244,6 +306,54 @@ ruby:
           trigger: dc
           snippet: described_class
 
+        time zone parse:
+          trigger: tt
+          snippet: Time.zone.parse('2021-01-01')
+
+        time zone parse continuation:
+          trigger: ~Time.zone.parse\('2021-01-01'\)$
+          snippet: Time.zone.parse('2021-01-07')
+
+        thousand:
+          trigger: "1"
+          snippet: "1_000"
+
+        complete hash key:
+          context: cursor.followingText().match('^\s*,')
+          trigger: "~(?<=\\w+:)\\s*$"
+          snippet: " '$value'"
+          placeholders:
+            value:
+              onBeforeExpand: |
+                ({ cursor, document, extensions: { user } }) =>
+                  user
+                    .snakeCase(
+                      user.getText(
+                        document,
+                        /(\w+)(?=:\s*$)/,
+                        { before: cursor.anchor }
+                      )
+                    )
+                    .toUpperCase()
+
+        complete hash key with comma:
+          context: cursor.followingText().match('^\s*\n')
+          trigger: "~(?<=\\w+:)\\s*$"
+          snippet: " '$value',"
+          placeholders:
+            value:
+              onBeforeExpand: |
+                ({ cursor, document, extensions: { user } }) =>
+                  user
+                    .snakeCase(
+                      user.getText(
+                        document,
+                        /(\w+)(?=:\s*$)/,
+                        { before: cursor.anchor }
+                      )
+                    )
+                    .toUpperCase()
+
     debug:
       snippets:
         puts:
@@ -302,6 +412,28 @@ ruby:
           trigger: ~(?<=Rails\.application\.config)$
           snippet: .
 
+    logger:
+      snippets:
+        logger debug:
+          trigger: ld
+          snippet: logger.debug($1)
+
+        logger info:
+          trigger: li
+          snippet: logger.info($1)
+
+        logger warn:
+          trigger: lw
+          snippet: logger.warn($1)
+
+        logger error:
+          trigger: le
+          snippet: logger.error($1)
+
+        logger fatal:
+          trigger: lf
+          snippet: logger.fatal($1)
+
     vcr:
       snippets:
         vcr record all:
@@ -325,3 +457,22 @@ ruby:
         to_json:
           trigger: tj
           snippet: to_json
+
+        to_sym:
+          trigger: "y"
+          snippet: to_sym
+
+        heredoc:
+          trigger: T
+          snippet: |-
+            <<~$1{TEXT}
+              $0
+            $1{TEXT}
+
+        is nil:
+          trigger: ~\.\?$
+          snippet: .nil?
+
+        empty?:
+          trigger: ~\.em$
+          snippet: .empty?

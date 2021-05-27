@@ -1,5 +1,6 @@
 /home/leo/.bin/vpnup &
 sudo systemctl start nginx &
+bluetoothctl power on
 
 i3-msg 'workspace 6'
 
@@ -15,11 +16,11 @@ enter-text "cd ./src/constructor/website"
 xdotool key --clearmodifiers Return
 enter-text "oa"
 xdotool key --clearmodifiers Return
-sleep 0.5
+sleep 1
 
-xdotool key --clearmodifiers ctrl+t
-xdotool key --clearmodifiers ctrl+t
-xdotool key --clearmodifiers ctrl+t
+enter-text "exit"
+xdotool key --clearmodifiers Return
+sleep 1
 
 # telegram
 
@@ -35,7 +36,7 @@ utodoist &
 sleep 3
 
 firefox &
-sleep 10
+sleep 20
 i3-msg 'resize set 1896px'
 
 # slack
@@ -52,15 +53,8 @@ i3-msg 'resize set 1896px'
 # browsers
 
 i3-msg 'workspace 1'
-chromium &
-sleep 0.5
-
-# workspaces
-
-i3-msg 'workspace 4'
-i3-msg 'workspace 5'
-i3-msg 'workspace 7'
-i3-msg 'workspace 8'
+google-chrome &
+sleep 5
 
 # activate main workspaces
 

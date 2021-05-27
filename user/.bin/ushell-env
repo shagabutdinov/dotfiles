@@ -1,5 +1,6 @@
 BACKGROUND=dark
 
+unsetopt interactive_comments
 autoload -U add-zsh-hook
 source ~/.bin/_zsh-hijack
 
@@ -66,9 +67,39 @@ done
 bindkey "^U" prepend-sudo
 
 # global
-alias -g G="| grep"
-alias -g X='| xsel -ib'
-alias -g A='|& up'
+alias -g --    '#'='| hash-aliases:less-or-grep'
+alias -g --    '##'='|& hash-aliases:less-or-grep'
+alias -g --    '#-'='| grep -v'
+alias -g -- '#csv'='| column -s, -t'
+alias -g --   '#x'='| xsel -ib'
+alias -g --   '#u'='|& up'
+alias -g --   '#i'='| xclip -selection clipboard -i'
+alias -g --   '#j'='| () { [ -t 1 ] && local flag="-C"; jq $flag "${@:-.}" # }'
+alias -g --   '#!'='# -v'
+alias -g --   '#+'='| paste -sd+ | bc'
+alias -g --   '#l'='| wc -l'
+alias -g --   '#s'='| sort'
+
+
+function hash-aliases:less-or-grep() {
+    if [ -t 0 ]; then
+        if [ $# -eq 1 ]; then
+            less -RSFXw "${@}"
+        else
+            grep --color=auto "$2" "$1" "${@:3}"
+        fi
+    else
+        if [ $# -eq 0 ]; then
+            if [ -t 1 ]; then
+                less -RSFXw
+            else
+                cat
+            fi
+        else
+            grep --color=auto -iP "${@}"
+        fi
+    fi
+}
 
 # utils
 alias pp='readlink -f'
@@ -84,9 +115,9 @@ alias pwgen='pwgen 12'
 alias h='ssh'
 alias w='inotifyrun -r -e MODIFY' # watch
 alias ob='() { watch -x zsh -i -c "$@" }' # observe
-alias l='exa -lHg --group-directories-first'
-alias ln='exa -lHg --group-directories-first -snew'
+alias l='exa -lHg -s new --group-directories-first'
 alias ls='exa -lHga'
+alias lsn='exa -lHg --group-directories-first -snew'
 alias rr='sudo rm -rf'
 alias rt='sudo rm -rf ~/.tmp/ssh/*'
 alias ks="kill \$(ps -xa | grep 'spring server' | grep -v 'grep' | awk '{print \$2}')"
@@ -95,11 +126,15 @@ alias kk='() { kill -9 $(ps -xa | grep "$@" | grep -v "grep" | awk "{print \$2}"
 alias grep='grep --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn --color=auto'
 alias tree='tree --dirsfirst'
 alias ps='ps -xau'
-alias cal='cal -m $(date +%Y)'
+alias cln='cal -m $(date +%Y)'
 alias co='sudo chown -R leo: '
 # alias cc='sudo chown -R leo: .'
 alias xg='() { grep $1 -R . }'
 alias rf="readlink -f"
+alias p="ps -xa | grep"
+alias chx="chmod oug+x"
+alias el='touch ~"/projects/personal/log/$(date +%F_%H:%M).md"; code ~"/projects/personal/log/$(date +%F_%H:%M).md"'
+alias cdl='cd ~/log'
 
 # overmind
 alias o='TMUX= overmind'
@@ -129,7 +164,6 @@ alias bu='bundle update'
 # npm
 alias ni='npm install'
 alias nl='npm install && git checkout package-lock.json'
-alias el='touch ~"/projects/personal/log/$(date +%F_%H:%M).md"; code ~"/projects/personal/log/$(date +%F_%H:%M).md"'
 
 # pacman
 alias pm='sudo pacman'
@@ -142,7 +176,9 @@ alias pf='pkgfile'
 # systemctl
 alias s='sudo systemctl'
 alias sa='sudo systemctl start'
-alias se='sudo systemctl restart'
+alias sr='sudo systemctl restart'
+alias se='sudo systemctl enable'
+alias sd='sudo systemctl disable'
 alias so='sudo systemctl stop'
 alias ss='sudo systemctl status'
 
@@ -191,7 +227,7 @@ alias oca='TMUX= overmind connect app'
 
 # constructor autocomplete
 alias asi='docker exec -it test.autocomplete.constructor.local isort'
-alias at='docker exec -it test.autocomplete.constructor.local pytest --log-cli-level=WARNING'
+alias at='docker exec -it test.autocomplete.constructor.local pytest --log-level=WARNING --log-cli-level=WARNING --capture no'
 
 
 # git
@@ -304,6 +340,7 @@ function create-pull-request() {
   repo=$(
     git remote -v |
       grep push |
+      grep origin |
       sed -r "s/.*@(.*):(.*)\.git\s.*/http:\/\/\1\/\2/g"
   )
 
@@ -520,14 +557,14 @@ hijack:transform '^(\w+)( .*)!$' \
 hijack:transform ' +$' \
   'sed -re "s/ +$//"'
 
-hijack:transform '^g[zxk]?[n]?!? ' \
-  'sed -r s"/([\\$<>{}&\\\"([!?)''#^ ])/\\\\\1/g"'
+hijack:transform '^g[zxk]?[n]?!? |^xg ' \
+  'sed -r s"/([\\$<>{}&\\\"([!?)''#^ ])/\\\\\1/g" | sed -re s"/^(\w+)\\\\ /\\1 /g"'
 
-hijack:transform '^g[zxk]?[n]?\\!' \
-  'sed -re "s/^(g[zxk]?[n]?)\\\\!/\\1!/"'
+# hijack:transform '^g[zxk]?[n]?\\!' \
+#  'sed -re "s/^(g[zxk]?[n]?)\\\\!/\\1!/"'
 
-hijack:transform '^g[zxk]?[n]?!?\\ ' \
-  'sed -r s"/^(g[zxk]?[n]?)(!?)\\\ /\\1\\2 /g"'
+# hijack:transform '^g[zxk]?[n]?!?\\ ' \
+#  'sed -r s"/^(g[zxk]?[n]?)(!?)\\\ /\\1\\2 /g"'
 
 QUOTA=50
 

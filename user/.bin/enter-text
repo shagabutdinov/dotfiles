@@ -1,20 +1,6 @@
-#!/usr/bin/env ruby
+#!/bin/bash
 
-require 'open3'
-
-# based on carcosa-ui
-sleep 0.2
-
-puts("XXXX enter-text:7 #{ARGV[0].gsub('\n', "\n")}")
-Open3.capture2('xsel', '-i', '-b', stdin_data: ARGV[0].gsub('\n', "\n"))
-system('xdotool', 'key', '--clearmodifiers', 'ctrl+v')
-Open3.capture2('xsel', '-i', '-b', stdin_data: '')
-
-# *lines, last_line = ARGV[0].split('\n')
-
-# lines.each { |line|
-#   system('xdotool', 'type', '--delay', '2', line)
-#   system('xdotool', 'key', 'Return')
-# }
-
-# system('xdotool', 'type', '--delay', '2', last_line)
+echo -ne "$1" | xsel -i -b
+sleep 0.25
+xdotool key --clearmodifiers ctrl+v
+echo "" | xsel -i -b

@@ -1,6 +1,6 @@
 clear
 
-super+grave start,grid 4x3
+super+Escape start,grid 4x3
 
 Alt_L+j move-left, warp
 Alt_L+i move-up, warp

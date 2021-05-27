@@ -283,7 +283,7 @@ typescript:
             }
 
         while:
-          trigger: w
+          trigger: wh
           snippet: |-
             while ($1) {
               $0
@@ -539,6 +539,18 @@ typescript:
         partial:
           trigger: ~Parameters<typeof\s$
           snippet: Partial<$0
+
+        preventDefault:
+          trigger: ~\.pd$
+          snippet: .preventDefault()
+
+        stopPropagation:
+          trigger: ~\.sp$
+          snippet: .stopPropagation()
+
+        className:
+          trigger: cn
+          snippet: className
 
         # object continuation:
         #   # context: |

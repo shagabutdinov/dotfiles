@@ -160,6 +160,16 @@ jest:
               alias: fetchMock
               from: utils/tests/fetchMock
 
+        waitFor:
+          trigger: wf
+          snippet: |-
+            await waitFor($1);
+          onExpand:
+            command: imports.add
+            args:
+              value: waitFor
+              from: '@testing-library/react'
+
         await act:
           trigger: aa
           snippet: |-

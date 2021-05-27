@@ -1,8 +1,8 @@
-/build/
-/dist/
-/examples/__build__
-/node_modules/
-/coverage/
+build
+dist
+examples/__build__
+node_modules
+coverage
 config/initializers/backtrace_silencers.local!.rb
 spec/support/backtrace_silencers.local!.rb
 .python-version
@@ -12,4 +12,4 @@ Procfile.tests
 config/puma.rb
 .dev/
 *.json
-
+node_modules.bak

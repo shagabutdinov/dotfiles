@@ -50,6 +50,15 @@ react query:
           value: useQueryParam
           from: use-query-params
 
+    usePage:
+      trigger: up
+      snippet: const [page, setPage] = usePage();
+      onExpand:
+        command: imports.add
+        args:
+          value: usePage
+          from: hooks/usePage
+
     useQueryParam StringParam:
       trigger: ~(?<=useQueryParam\(".*?",\s*)sp$
       snippet: StringParam

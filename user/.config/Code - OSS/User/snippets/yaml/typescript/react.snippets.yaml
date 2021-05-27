@@ -6,7 +6,7 @@ typescript:
     definitions:
       context: document().getText().match('^\s*\w+\s*$')
       snippets:
-        component:
+        define component:
           trigger: d
           context: document().uri.toString().match('(?<!\.test)\.tsx$')
           snippet: |-
@@ -15,7 +15,7 @@ typescript:
             // @prtodo tests
             export default function $1:name{Component}($args{{ $2:list }: Props}) {
               return (
-                $0
+                $0{<>TBD</>}
               );
             }
             $props{
@@ -212,10 +212,6 @@ typescript:
               value: useMemo
               from: react
 
-        className:
-          trigger: cn
-          snippet: className
-
     assignment:
       context: cursor.precedingText().match('([}")]|<\w+)\s+\w+=?$')
       trigger: ~(?<=\s\w+)=?$
@@ -252,20 +248,38 @@ typescript:
             }
 
     css:
-      context: cursor.precedingText().match('(;|`)\s*\w+$')
+      context: |
+        cursor.precedingText().match('(;|`|:\w+\s*\{)\s*\w+$') &&
+        cursor.followingText().match('^\s*([\w-]*:|`|\})')
       snippets:
 
-        margin-top:
-          trigger: mt
-          snippet: "margin-top: $1{8}px;"
+        text-transform:
+          trigger: tt
+          snippet: "text-transform: $1{uppercase};"
 
-        margin-right:
-          trigger: mr
-          snippet: "margin-right: $1{8}px;"
+        cursor pointer:
+          trigger: cp
+          snippet: "cursor: pointer;"
+
+        cursor default:
+          trigger: cd
+          snippet: "cursor: default;"
 
         display flex:
           trigger: df
           snippet: "display: flex;"
+
+        display block:
+          trigger: db
+          snippet: "display: block;"
+
+        flex direction:
+          trigger: fd
+          snippet: "flex-direction: $1{column};"
+
+        align items:
+          trigger: aa
+          snippet: "align-items: $1{center};"
 
         align items center:
           trigger: ai
@@ -283,6 +297,14 @@ typescript:
           trigger: fw
           snippet: "font-weight: $1{bold};"
 
+        font-size:
+          trigger: fs
+          snippet: "font-size: $1{10}px;"
+
+        text-overflow:
+          trigger: to
+          snippet: "text-overflow: $1{ellipsis};"
+
         font-family:
           trigger: ff
           snippet: "font-family: $1;"
@@ -296,17 +318,108 @@ typescript:
           snippet: "background-color: $1;"
 
         padding:
-          trigger: pa
-          snippet: "padding: $1;"
+          trigger: p
+          snippet: "padding: 2$1px;"
+
+        padding-bottom:
+          trigger: pb
+          snippet: "padding-bottom: 2$1px;"
+
+        padding-top:
+          trigger: pt
+          snippet: "padding-top: 2$1px;"
+
+        padding-left:
+          trigger: pl
+          snippet: "padding-left: 2$1px;"
+
+        position-relative:
+          trigger: pr
+          snippet: "position: relative;"
+
+        margin:
+          trigger: m
+          snippet: "margin: 2$1px;"
+
+        margin-bottom:
+          trigger: mb
+          snippet: "margin-bottom: 2$1px;"
+
+        margin-top:
+          trigger: mt
+          snippet: "margin-top: 2$1px;"
+
+        margin-left:
+          trigger: ml
+          snippet: "margin-left: 2$1px;"
+
+        margin-right:
+          trigger: mr
+          snippet: "margin-right: 2$1px;"
+
+        border:
+          trigger: b
+          snippet: "border: 2$1px;"
+
+        border-bottom:
+          trigger: bb
+          snippet: "border-bottom: 2$1px solid $2{black};"
+
+        border-top:
+          trigger: bt
+          snippet: "border-top: 2$1px solid $2{black};"
+
+        border-left:
+          trigger: bl
+          snippet: "border-left: 2$1px solid $2{black};"
+
+        border-right:
+          trigger: br
+          snippet: "border-right: 2$1px solid $2{black};"
+
+        width:
+          trigger: w
+          snippet: "width: 2$1px;"
+
+        max width:
+          trigger: mw
+          snippet: "max-width: 2$1px;"
+
+        height:
+          trigger: h
+          snippet: "height: 2$1px;"
+
+        max height:
+          trigger: mh
+          snippet: "max-height: 2$1px;"
+
+        min height:
+          trigger: mh
+          snippet: "min-height: 16$1px;"
+
+        text-align:
+          trigger: ta
+          snippet: "text-align: $1{right};"
+
+    css helpers:
+      snippets:
+        padding-right:
+          trigger: "~position\\: relative;$"
+          snippet: "padding-right: 2$1px;"
 
     css values:
-      context: cursor.precedingText().match('[\w+-]:\s*\w+$')
+      context: cursor.precedingText().match('\s[a-z-]+:\s*\w+$')
       snippets:
 
         var:
           trigger: v
           snippet: var($1)
           order: 1
+
+        none:
+          trigger: no
+          snippet: none
+          order: 2
 
         roll 2:
           trigger: "2"
@@ -327,3 +440,11 @@ typescript:
         roll 32:
           trigger: "32"
           snippet: "64"
+
+        roll 64:
+          trigger: "64"
+          snippet: "128"
+
+        roll 128:
+          trigger: "128"
+          snippet: "256"

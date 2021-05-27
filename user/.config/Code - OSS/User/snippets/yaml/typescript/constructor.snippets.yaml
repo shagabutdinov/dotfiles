@@ -199,7 +199,7 @@ constructor typescript:
           snippet: |-
             <RequestBox
               spinnerContainerProps={{ minHeight: 256 }}
-              fetching={$1{fetching}}
+              fetching={$1{isFetching}}
               error={$2{error}}
             >
               $0
