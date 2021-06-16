@@ -1,1 +1,2 @@
-chromium --app=https://todoist.com
+google-chrome --app=https://todoist.com
+

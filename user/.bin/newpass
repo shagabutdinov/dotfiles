@@ -30,7 +30,7 @@ name =
   if options['--modal']
     `modal -input /dev/null -no-fixed-num-lines -sync <&-`.strip
   elsif options['--clipboard']
-    `echo $(xsel -op)`.strip
+    `echo "$(xsel -op)"`.strip
   else
     options['<name>']
   end
@@ -43,7 +43,7 @@ password = `pwgen 12`.strip.split(/\s+/).sample
 system("echo -n \"#{password}\" | xclip -selection clipboard -i")
 system("notify-replace password \"\" \"<b>PASSWORD</b> » OK (#{name})\"")
 
-if system("echo -n \"#{password}\" | carcosa -Ac #{name}")
+if system("echo -n \"#{password}\" | carcosa -Ac \"#{name}\"")
   system("notify-replace password \"\" \"<b>PASSWORD</b> » SYNCED (#{name})\"")
 else
   system("notify-replace password \"\" \"<b>PASSWORD</b> » FAILED (#{name})\"")

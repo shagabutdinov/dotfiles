@@ -101,6 +101,11 @@ function hash-aliases:less-or-grep() {
     fi
 }
 
+# logs
+alias cl='cd ~/log'
+alias ll='exa -lHg -s new --group-directories-first ~/log'
+export l='/home/leo/log'
+
 # utils
 alias pp='readlink -f'
 alias re='source ~/.bin/ushell-env && rehash' # reload env
@@ -129,12 +134,11 @@ alias ps='ps -xau'
 alias cln='cal -m $(date +%Y)'
 alias co='sudo chown -R leo: '
 # alias cc='sudo chown -R leo: .'
-alias xg='() { grep $1 -R . }'
+alias xg='() { grep -i $1 -R . }'
 alias rf="readlink -f"
 alias p="ps -xa | grep"
 alias chx="chmod oug+x"
 alias el='touch ~"/projects/personal/log/$(date +%F_%H:%M).md"; code ~"/projects/personal/log/$(date +%F_%H:%M).md"'
-alias cdl='cd ~/log'
 
 # overmind
 alias o='TMUX= overmind'
@@ -475,12 +479,12 @@ function open-kubernetes-database-console() {
 
 # docker compose
 alias dc='docker-compose'
-alias c='docker-compose -f $(docker-compose-file)'
-alias cu='docker-compose -f $(docker-compose-file) up'
-alias cl='docker-compose -f $(docker-compose-file) logs'
-alias cx='docker-compose -f $(docker-compose-file) exec'
-alias cs='docker-compose -f $(docker-compose-file) stop'
-alias css='docker-compose -f $(docker-compose-file) ps'
+alias dc='docker-compose -f $(docker-compose-file)'
+alias dcu='docker-compose -f $(docker-compose-file) up'
+alias dcl='docker-compose -f $(docker-compose-file) logs'
+alias dcx='docker-compose -f $(docker-compose-file) exec'
+alias dcs='docker-compose -f $(docker-compose-file) stop'
+alias dcp='docker-compose -f $(docker-compose-file) ps'
 
 alias cr='\
   docker-compose -f $(docker-compose-file) stop

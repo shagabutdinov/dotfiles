@@ -307,6 +307,10 @@ ruby:
           snippet: described_class
 
         time zone parse:
+          trigger: tp
+          snippet: Time.zone.parse($1)
+
+        time zone parse now:
           trigger: tt
           snippet: Time.zone.parse('2021-01-01')
 
@@ -470,6 +474,7 @@ ruby:
             $1{TEXT}
 
         is nil:
+          auto: true
           trigger: ~\.\?$
           snippet: .nil?
 
