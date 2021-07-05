@@ -139,6 +139,7 @@ alias rf="readlink -f"
 alias p="ps -xa | grep"
 alias chx="chmod oug+x"
 alias el='touch ~"/projects/personal/log/$(date +%F_%H:%M).md"; code ~"/projects/personal/log/$(date +%F_%H:%M).md"'
+alias xp='() { readlink -f $1 | sed -z "s/[ \\n]*$//g" | xclip -selection clipboard }'
 
 # overmind
 alias o='TMUX= overmind'
@@ -219,7 +220,7 @@ alias ds='docker stop'
 alias dsa='docker stop $(docker ps -q)'
 alias de='docker restart'
 alias dl='docker logs --tail 200'
-alias dlf='docker logs --follow'
+alias dlf='docker logs --follow --tail 100'
 alias da='docker attach --no-stdin'
 
 # constructor

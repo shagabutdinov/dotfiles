@@ -382,7 +382,7 @@ ruby:
 
         quit:
           trigger: q
-          snippet: 'throw StandardError.new("XXXX $id :(")'
+          snippet: 'raise StandardError.new("XXXX $id :(")'
           placeholders:
             id:
               onBeforeExpand: |

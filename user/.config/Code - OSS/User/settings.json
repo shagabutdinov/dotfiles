@@ -114,6 +114,8 @@
     "disabledgrey",
     "formik",
     "mdash",
+    "numpy",
+    "ohlcv",
     "postgres",
     "prtodo",
     "reindent",
@@ -177,5 +179,8 @@
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.pinnedTabSizing": "compact",
   "workbench.editor.tabCloseButton": "off",
-  "workbench.editor.tabSizing": "shrink"
+  "workbench.editor.tabSizing": "shrink",
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
