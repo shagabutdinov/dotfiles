@@ -115,7 +115,7 @@ ruby:
 
         return:
           trigger: r
-          snippet: return
+          snippet: 'return '
 
         return nil:
           trigger: rn

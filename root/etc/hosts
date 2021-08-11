@@ -19,7 +19,12 @@
 # 172.18.0.5 shell.autocomplete.constructor.local
 # 172.18.0.5 ingestion.autocomplete.constructor.local
 # 172.18.0.6 ingestion.autocomplete.constructor.local
-172.18.0.4 ingestion.autocomplete.constructor.local
+172.18.0.8 ingestion.autocomplete.constructor.local
+
+# 0.0.0.0 edge.fullstory.com
+# 0.0.0.0 rs.fullstory.com
+35.201.112.186 edge.fullstory.com
+35.186.194.58 rs.fullstory.com
 
 0.0.0.0 pagead2.googlesyndication.com
 0.0.0.0 matchid.adfox.yandex.ru
@@ -35,8 +40,6 @@
 0.0.0.0 api.wb.local
 0.0.0.0 auth.wb.local
 0.0.0.0 assets.adobedtm.com
-0.0.0.0 rs.fullstory.com
-0.0.0.0 edge.fullstory.com
 0.0.0.0 pubmatic.com
 0.0.0.0 gumgum.com
 0.0.0.0 adnxs.com
@@ -6722,7 +6725,7 @@
 0.0.0.0 4.afs.googleadservices.com
 0.0.0.0 pagead2.googleadservices.com
 0.0.0.0 partner.googleadservices.com
-0.0.0.0 www.googleadservices.com
+# 0.0.0.0 www.googleadservices.com
 0.0.0.0 domains.googlesyndication.com #[Parking Service]
 0.0.0.0 pagead2.googlesyndication.com #[Google AdWords]
 0.0.0.0 www.googletagservices.com #[pagead46.l.doubleclick.net]
