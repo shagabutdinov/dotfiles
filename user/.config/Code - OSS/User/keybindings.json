@@ -2269,6 +2269,11 @@
     "command": "snippets.nextTab",
     "when": "editorTextFocus"
   },
+  {
+    "key": "f4",
+    "command": "snippets.nextTab",
+    "when": "editorTextFocus"
+  },
   // {
   //   "key": "f14",
   //   "command": "jumpToNextSnippetPlaceholder",
@@ -2349,7 +2354,7 @@
   {
     "key": "\\",
     "command": "acceptSelectedSuggestion",
-    "when": "suggestWidgetVisible && textInputFocus"
+    "when": "suggestWidgetVisible"
   },
   // editor
   {
@@ -3206,7 +3211,7 @@
   {
     "key": "ctrl+q",
     "command": "editor.action.commentLine",
-    "when": "textInputFocus && !editorReadonly"
+    // "when": "textInputFocus && !editorReadonly"
   },
   {
     "key": "ctrl+shift+q",

@@ -27,41 +27,101 @@ python:
               require('path').basename(document.uri.fsPath) + ':' +
                 cursor.anchor.line
 
-    return:
-      trigger: r
-      snippet: return $0
+    typings:
+      snippets:
+        typing optional:
+          trigger: to
+          snippet: typing.Optional[$1]
 
-    return result:
-      trigger: rr
-      snippet: return result
+        typing float:
+          trigger: tf
+          snippet: float
 
-    if:
-      trigger: i
-      snippet: |
-        if $1:
-            $0
+        typing int:
+          trigger: ti
+          snippet: int
 
-    if not:
-      trigger: in
-      snippet: |
-        if not $1:
-            $0
+        typing str:
+          trigger: ts
+          snippet: str
 
-    for:
-      trigger: f
-      snippet: |
-        for $1:
-            $0
+        typing bool:
+          trigger: tb
+          snippet: bool
 
-    for in:
-      trigger: fi
-      snippet: |
-        for $1 in $2:
-            $0
+    controls sequences:
+      snippets:
+        return:
+          trigger: r
+          snippet: return $0
 
-    none:
-      trigger: n
-      snippet: None
+        return none:
+          trigger: rn
+          snippet: return None
+
+        return false:
+          trigger: rf
+          snippet: return False
+
+        return true:
+          trigger: rt
+          snippet: return True
+
+        return result:
+          trigger: rr
+          snippet: return result
+
+        on blank line:
+          context: |
+            cursor.precedingText().match('\n\s*\w+$') &&
+              cursor.followingText().match('^\s*\n')
+          snippets:
+            if:
+              trigger: i
+              snippet: |
+                if $1:
+                    $0
+
+            if not:
+              trigger: in
+              snippet: |
+                if not $1:
+                    $0
+
+            for:
+              trigger: "~(?<=^\\s*)f$"
+              order: 1
+              snippet: |
+                for $1:
+                    $0
+
+            for in:
+              trigger: fi
+              snippet: |
+                for $1 in $2:
+                    $0
+
+    values:
+      snippets:
+        none:
+          trigger: n
+          snippet: None
+        "false":
+          trigger: f
+          snippet: "False"
+        "true":
+          trigger: t
+          snippet: "True"
+
+    operators:
+      snippets:
+        is none:
+          trigger: in
+          snippet: is None
+          context: cursor.precedingText().match('\w\s+\w+$')
+        is not none:
+          trigger: inn
+          snippet: is not None
 
     len:
       trigger: l
@@ -70,3 +130,11 @@ python:
     self:
       trigger: s
       snippet: self.
+
+    quit:
+      trigger: q
+      snippet: raise Exception($1{":("})
+
+    raise error:
+      trigger: re
+      snippet: raise Exception("$1")

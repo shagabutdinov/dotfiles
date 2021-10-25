@@ -10,7 +10,6 @@
   "editor.wrappingIndent": "same",
   "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 80,
-  "keyboard.dispatch": "keyCode",
   "editor.tabSize": 2,
   "workbench.editor.enablePreview": false,
   "files.trimTrailingWhitespace": true,
@@ -44,6 +43,9 @@
   },
   "[plaintext]": {
     "editor.formatOnSave": false
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[go]": {
     "editor.defaultFormatter": "golang.go"
@@ -112,19 +114,24 @@
   "cSpell.userWords": [
     "devtools",
     "disabledgrey",
+    "displayability",
     "formik",
+    "iterrows",
     "mdash",
     "numpy",
     "ohlcv",
     "postgres",
     "prtodo",
+    "quantile",
     "reindent",
     "rerender",
     "searchandizing",
     "shagabutdinov",
+    "sklearn",
     "snakeize",
     "subheadlines",
-    "typeof"
+    "typeof",
+    "xgboost"
   ],
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -158,9 +165,6 @@
   },
   "editor.formatOnSave": true,
   "workbench.colorTheme": "Dracula Soft",
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "local-history.path": "/home/leo/.local/history",
   "local-history.saveDelay": 5,
   "local-history.treeLocation": "localHistory",
@@ -182,5 +186,21 @@
   "workbench.editor.tabSizing": "shrink",
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "keyboard.dispatch": "keyCode",
+  "security.workspace.trust.untrustedFiles": "open",
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "eslint.format.enable": true,
+  "eslint.enable": true,
 }

@@ -16,8 +16,8 @@ export TERM='xterm-256color'
 export LC_ALL="en_US.UTF-8"
 
 # ssh-agent
-# eval "$(ssh-agent -s)" > /dev/null 2>&1
-# ssh-add > /dev/null 2>&1
+eval "$(ssh-agent -s)" > /dev/null 2>&1
+ssh-add > /dev/null 2>&1
 
 ## gnome keyring
 source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
@@ -45,7 +45,7 @@ export GEM_HOME=/home/leo/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0
 export GOPATH=~/src/go
 
 # node
-export PATH=/home/leo/.nvm/versions/node/v12.21.0/bin/:$PATH
+export PATH=/home/leo/.nvm/versions/node/v14.17.6/bin:$PATH
 export PATH=./node_modules/.bin:$PATH
 
 thunar --daemon &

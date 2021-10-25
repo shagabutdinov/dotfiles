@@ -3,6 +3,28 @@ jest:
     document().languageId.match("^(type|java)script(react)?$") &&
     document().uri.toString().match('\.test\.[tj]sx?$')
   snippets:
+    complete object key:
+      trigger: "~(?<=\\w+:)\\s*$"
+      snippet: " '$value'"
+      order: 10
+      placeholders:
+        value:
+          onBeforeExpand: |
+            ({ cursor, document, extensions: { user } }) =>
+              user
+                .snakeCase(
+                  user.getText(
+                    document,
+                    /(\w+)(?=:\s*$)/,
+                    { before: cursor.anchor }
+                  )
+                )
+                .toUpperCase()
+
+    complete object key continuation:
+      trigger: "~(?<=\\w+:)\\s*'\\w+'$"
+      snippet: " ($1) => $2"
+
     definitions:
       context: cursor.precedingText().match('(^|\n)\w+$')
       snippets:

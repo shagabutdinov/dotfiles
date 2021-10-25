@@ -1,43 +1,29 @@
+/home/leo/.bin/assign-workspaces-to-displays
 /home/leo/.bin/vpnup &
 sudo systemctl start nginx &
 bluetoothctl power on
+overmind start -F /dev/null --procfile /home/leo/src/constructor/website/.dev/Procfile -D -p 3000
+
+# main
 
 i3-msg 'workspace 6'
-
 code &
 sleep 3
 
-alacritty &
+# info
+
+i3-msg 'workspace 10'
+utodoist &
 sleep 3
-
-# start app http
-
-enter-text "cd ./src/constructor/website"
-xdotool key --clearmodifiers Return
-enter-text "oa"
-xdotool key --clearmodifiers Return
-sleep 1
-
-enter-text "exit"
-xdotool key --clearmodifiers Return
-sleep 1
+firefox &
+sleep 5
+i3-msg 'resize set 1896px'
 
 # telegram
 
 i3-msg 'workspace 9'
 telegram-desktop &
-sleep 10
-
-# info
-
-i3-msg 'workspace 10'
-
-utodoist &
-sleep 3
-
-firefox &
-sleep 20
-i3-msg 'resize set 1896px'
+sleep 5
 
 # slack
 
@@ -45,16 +31,15 @@ i3-msg 'workspace 11'
 
 utodoist &
 sleep 3
-
 uslack &
 sleep 1
 i3-msg 'resize set 1896px'
 
 # browsers
 
-i3-msg 'workspace 1'
-google-chrome &
-sleep 5
+# i3-msg 'workspace 1'
+# google-chrome &
+# sleep 5
 
 # activate main workspaces
 

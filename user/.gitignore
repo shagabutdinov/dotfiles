@@ -13,3 +13,6 @@ config/puma.rb
 .dev/
 *.json
 node_modules.bak
+*.tar.gz
+*.tgz
+

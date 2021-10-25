@@ -458,6 +458,14 @@ ruby:
           trigger: jpp
           snippet: "JSON.parse($1, symbolize_names: true)"
 
+        JSON.generate:
+          trigger: jg
+          snippet: "JSON.generate($1)"
+
+        JSON.pretty_generate:
+          trigger: jgg
+          snippet: "JSON.pretty_generate($1)"
+
         to_json:
           trigger: tj
           snippet: to_json
@@ -481,3 +489,7 @@ ruby:
         empty?:
           trigger: ~\.em$
           snippet: .empty?
+
+        require_relative:
+          trigger: rr
+          snippet: require_relative '$1'

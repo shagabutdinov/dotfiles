@@ -14,6 +14,7 @@ constructor typescript:
     index.indexKey index continuation:
       trigger: ~index.indexKey$
       snippet: "indexKey: index.indexKey"
+      order: 1
 
     --primary-green:
       trigger: '~#4ABB8B$'
