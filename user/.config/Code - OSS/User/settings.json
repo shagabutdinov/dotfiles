@@ -203,4 +203,5 @@
   },
   "eslint.format.enable": true,
   "eslint.enable": true,
+  "terminal.integrated.tabs.enabled": true
 }

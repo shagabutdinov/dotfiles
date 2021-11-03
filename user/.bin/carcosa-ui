@@ -94,6 +94,7 @@ source /usr/share/bash/opts/opts.bash
             | modal-template --template "$template" \
             | perl -p -e 'chomp if eof'
     )
+    echo $token
 
     if [[ ! "$token" ]]; then
         return 1

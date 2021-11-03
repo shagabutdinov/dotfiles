@@ -45,7 +45,7 @@ export GEM_HOME=/home/leo/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0
 export GOPATH=~/src/go
 
 # node
-export PATH=/home/leo/.nvm/versions/node/v14.17.6/bin:$PATH
+export PATH=/home/leo/.nvm/versions/node/v14.18.1/bin:$PATH
 export PATH=./node_modules/.bin:$PATH
 
 thunar --daemon &

@@ -49,7 +49,7 @@ react styled components:
         command: imports.add
         args:
           value: css
-          from: '@emotion/core'
+          from: '@emotion/react'
 
     expansion:
       trigger: '~\$$'
