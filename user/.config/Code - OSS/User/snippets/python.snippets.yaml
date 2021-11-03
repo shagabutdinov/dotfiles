@@ -51,6 +51,15 @@ python:
 
     controls sequences:
       snippets:
+        lambda:
+          trigger: la
+          snippet: "lambda $1: $0"
+
+        lambda (alias ll):
+          trigger: ll
+          snippet: "lambda $1: $0"
+          auto: true
+
         return:
           trigger: r
           snippet: return $0
