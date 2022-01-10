@@ -1,6 +1,7 @@
 [user]
 	email = leonid@shagabutdinov.com
 	name = Leonid Shagabutdinov
+	signingkey = 0B5B862A6D750076
 [push]
 	default = simple
 [core]
@@ -9,3 +10,5 @@
 	excludesfile = /home/leo/.gitignore
 [pull]
 	ff = only
+[commit]
+	gpgsign = true

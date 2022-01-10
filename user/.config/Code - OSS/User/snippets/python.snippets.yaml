@@ -127,7 +127,7 @@ python:
         is none:
           trigger: in
           snippet: is None
-          context: cursor.precedingText().match('\w\s+\w+$')
+          # context: cursor.precedingText().match('\w\s+\w+$')
         is not none:
           trigger: inn
           snippet: is not None

@@ -39,7 +39,8 @@
   },
   "ruby.codeCompletion": "rcodetools",
   "[ruby]": {
-    "editor.defaultFormatter": "rebornix.ruby"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
   "[plaintext]": {
     "editor.formatOnSave": false
@@ -203,5 +204,7 @@
   },
   "eslint.format.enable": true,
   "eslint.enable": true,
-  "terminal.integrated.tabs.enabled": true
+  "terminal.integrated.tabs.enabled": true,
+  "editor.renderWhitespace": "all",
+  "window.zoomLevel": 1
 }

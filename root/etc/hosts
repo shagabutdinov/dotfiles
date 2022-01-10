@@ -14,6 +14,7 @@
 127.0.0.1 cdc # constructor devac cached
 127.0.0.1 x
 127.0.0.1 e
+127.0.0.1 es
 127.0.0.1       localbox
 127.0.0.1 elasticsearch
 # 172.18.0.5 shell.autocomplete.constructor.local
