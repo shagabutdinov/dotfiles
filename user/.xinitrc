@@ -54,6 +54,7 @@ redshift -t 6500:2500 -l $(curl -s ipinfo.io | jq -j .loc | tr ',' ':') &
 dunst &
 volumectl -D &
 keynav &
+balmora dotfiles-submit &
 
 # ulock &
 i3 > ~/.i3.log 2>&1

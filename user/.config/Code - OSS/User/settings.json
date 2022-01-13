@@ -206,5 +206,5 @@
   "eslint.enable": true,
   "terminal.integrated.tabs.enabled": true,
   "editor.renderWhitespace": "all",
-  "window.zoomLevel": 1
+  "window.zoomLevel": 2
 }

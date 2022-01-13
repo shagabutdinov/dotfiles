@@ -34,7 +34,7 @@
 0.0.0.0 an.yandex.ru
 0.0.0.0 mc.yandex.ru
 0.0.0.0 w3schools.com
-0.0.0.0 browser.sentry-cdn.com
+# 0.0.0.0 browser.sentry-cdn.com
 0.0.0.0 cdn.amplitude.com
 0.0.0.0 www.googletagmanager.com
 0.0.0.0 reports-api.sqreen.io

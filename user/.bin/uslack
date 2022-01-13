@@ -1,1 +1,2 @@
-google-chrome --app=https://constructor.slack.com
+google-chrome --app=https://constructor.slack.com --check-for-update-interval=604800
+
