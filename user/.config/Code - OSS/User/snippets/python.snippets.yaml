@@ -17,6 +17,37 @@ python:
               );
             };
 
+    define class method:
+      trigger: dc
+      snippet: |
+        @classmethod
+        def $1$container{(cls, $2:args)}:
+            $0
+      placeholders:
+        args:
+          onBeforeLeave: |-
+            ({ placeholders: { container }, debug }) => {
+              container.value = container.value.replace(
+                /(?<=\w+)\(self,\s*\)$/,
+                '(self)'
+              );
+            };
+
+    define init method:
+      trigger: di
+      snippet: |
+        def __init__(self, $1:args):
+            $0
+
+    define cls:
+      trigger: c
+      snippet: |
+        class $1:
+            $0
+      context: |
+        cursor.precedingText().match('(\n|^)\w+$') &&
+          cursor.followingText().match('^.*(\n|$)')
+
     print:
       trigger: p
       snippet: print("XXXX $id", $1)
@@ -29,25 +60,60 @@ python:
 
     typings:
       snippets:
+        return type:
+          trigger: ~\)\s*$
+          snippet: ") -> "
+
         typing optional:
           trigger: to
           snippet: typing.Optional[$1]
 
+        typing union:
+          trigger: tu
+          snippet: typing.Union[$1]
+
+        typing tuple:
+          trigger: tt
+          snippet: typing.Tuple[$1]
+
+        typing any:
+          trigger: ta
+          snippet: typing.Any
+
         typing float:
-          trigger: tf
+          trigger: "False"
           snippet: float
 
-        typing int:
-          trigger: ti
-          snippet: int
-
         typing str:
-          trigger: ts
+          trigger: "~self\\.$"
           snippet: str
 
-        typing bool:
-          trigger: tb
-          snippet: bool
+        typing ignore:
+          trigger: ti
+          snippet: "# type: ignore"
+
+        definitions:
+          context: cursor.precedingText().match('(\w+:|->)[\t ]*\w+$')
+          snippets:
+            typing float:
+              trigger: f
+              snippet: float
+              order: 1
+
+            typing int:
+              trigger: i
+              snippet: int
+              order: 1
+
+            typing str:
+              trigger: s
+              snippet: str
+              order: 1
+
+            typing bool:
+              trigger: b
+              snippet: bool
+              order: 1
 
     controls sequences:
       snippets:
@@ -80,6 +146,14 @@ python:
           trigger: rr
           snippet: return result
 
+        try catch:
+          trigger: tr
+          snippet: |
+            try:
+                $0
+            except $1{Exception} as error:
+                $2
+
         on blank line:
           context: |
             cursor.precedingText().match('\n\s*\w+$') &&
@@ -110,6 +184,10 @@ python:
                 for $1 in $2:
                     $0
 
+            continue:
+              trigger: co
+              snippet: continue
+
     values:
       snippets:
         none:
@@ -127,7 +205,7 @@ python:
         is none:
           trigger: in
           snippet: is None
-          # context: cursor.precedingText().match('\w\s+\w+$')
+          context: cursor.precedingText().match('\w[ \t]+\w+$')
         is not none:
           trigger: inn
           snippet: is not None
@@ -144,6 +222,32 @@ python:
       trigger: q
       snippet: raise Exception($1{":("})
 
-    raise error:
+    raise exception:
       trigger: re
       snippet: raise Exception("$1")
+
+    raise custom error:
+      trigger: ra
+      snippet: raise $1("$2")
+
+    logger debug:
+      trigger: ld
+      snippet: self.logger.debug(f"$0")
+
+    logger info:
+      trigger: li
+      snippet: self.logger.info(f"$0")
+
+    logger warning:
+      trigger: lw
+      snippet: self.logger.warning(f"$0")
+
+    logger error:
+      trigger: le
+      snippet: self.logger.error(f"$0")
+
+    logger fatal:
+      trigger: lf
+      snippet: self.logger.fatal(f"$0")
+
+

@@ -2270,6 +2270,11 @@
     "when": "editorTextFocus"
   },
   {
+    "key": "f7",
+    "command": "snippets.nextTab",
+    "when": "editorTextFocus"
+  },
+  {
     "key": "f4",
     "command": "snippets.nextTab",
     "when": "editorTextFocus"

@@ -1,0 +1,9 @@
+[Unit]
+Description=xfce4 notification daemon
+
+[Service]
+ExecStart=/usr/lib/xfce4/notifyd/xfce4-notifyd
+Restart=always
+
+[Install]
+WantedBy=basic.target

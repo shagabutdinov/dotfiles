@@ -61,6 +61,8 @@
   "vscodeWorkspaceSwitcher.paths": ["/home/leo/projects/vscode"],
   "editor.renderIndentGuides": false,
   "workbench.sideBar.location": "right",
+  "workbench.preferredLightColorTheme": "Night Owl Light",
+  "workbench.preferredDarkColorTheme": "Dracula Soft",
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.views.repositories.location": "gitlens",
@@ -162,10 +164,11 @@
   },
   "python.showStartPage": false,
   "[python]": {
-    "editor.defaultFormatter": "ms-python.python"
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.tabSize": 4,
+    "editor.wordWrapColumn": 120,
   },
   "editor.formatOnSave": true,
-  "workbench.colorTheme": "Dracula Soft",
   "local-history.path": "/home/leo/.local/history",
   "local-history.saveDelay": 5,
   "local-history.treeLocation": "localHistory",
@@ -188,7 +191,6 @@
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "keyboard.dispatch": "keyCode",
   "security.workspace.trust.untrustedFiles": "open",
   "[typescript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
@@ -205,5 +207,12 @@
   "eslint.format.enable": true,
   "eslint.enable": true,
   "terminal.integrated.tabs.enabled": true,
-  "editor.renderWhitespace": "all"
+  "editor.renderWhitespace": "all",
+  "python.formatting.provider": "black",
+  "workbench.colorTheme": "Night Owl Light",
+  "sundial.sunset": "",
+  "sundial.latitude": "55.683686",
+  "sundial.longitude": "37.560422",
+  "sundial.sunrise": "",
+  "keyboard.dispatch": "keyCode"
 }

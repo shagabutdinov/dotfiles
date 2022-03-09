@@ -1,0 +1,10 @@
+[Unit]
+Description=Change theme
+
+[Service]
+Type=simple
+Restart=never
+ExecStart=/home/leo/.bin/change-terminal-theme
+
+[Install]
+WantedBy=multi-user.target

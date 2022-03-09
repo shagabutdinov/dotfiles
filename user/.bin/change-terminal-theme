@@ -1,0 +1,39 @@
+#!/usr/bin/env ruby
+
+require "docopt"
+
+doc = <<DOCOPT
+  Theme switcher.
+
+  Usage:
+    #{__FILE__} [options]
+    #{__FILE__} -h | --help
+    #{__FILE__} --version
+
+  Options:
+    -h --help        Show this screen.
+    --version        Show version.
+    --theme=<theme>  Theme [default: auto].
+DOCOPT
+
+begin
+  args = Docopt::docopt(doc)
+
+  theme =
+    if args['--theme'] == 'auto'
+      if 5 <= Time.new.hour && Time.new.hour <= 17
+        'light'
+      else
+        'dark'
+      end
+    end
+
+  system("
+    cat \
+      /home/leo/.config/.alacritty.base \
+      /home/leo/.config/.alacritty.theme-#{theme} > \
+      /home/leo/.alacritty.yml
+  ")
+rescue Docopt::Exit => e
+  puts e.message
+end

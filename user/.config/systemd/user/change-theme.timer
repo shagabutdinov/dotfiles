@@ -1,0 +1,14 @@
+[Unit]
+Description=Change theme
+
+[Service]
+Type=simple
+Restart=never
+ExecStart=/home/leo/.bin/change-terminal-theme
+
+[Timer]
+OnBootSec=15min
+OnUnitActiveSec=10min
+
+[Install]
+WantedBy=timers.target

@@ -1,8 +1,10 @@
+! Base settings
+
 URxvt*termName: rxvt-unicode
 URxvt.scrollBar: false
 
 URxvt*modifier: mod1
-URxvt.perl-ext-common:      default,url-select,keyboard-select,matcher,clipboard,autocomplete-ALL-the-things,tabbedex
+
 
 URxvt.url-select.launcher:  chromium
 URxvt.url-select.underline: true
