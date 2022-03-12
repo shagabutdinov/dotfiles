@@ -76,6 +76,10 @@ python:
           trigger: tt
           snippet: typing.Tuple[$1]
 
+        typing callable:
+          trigger: tc
+          snippet: typing.Callable[[$1], $2]
+
         typing any:
           trigger: ta
           snippet: typing.Any
@@ -209,6 +213,10 @@ python:
         is not none:
           trigger: inn
           snippet: is not None
+
+        not in:
+          trigger: ni
+          snippet: not in $0
 
     len:
       trigger: l
