@@ -39,7 +39,7 @@
   },
   "ruby.codeCompletion": "rcodetools",
   "[ruby]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "rebornix.ruby",
     "editor.formatOnSave": true
   },
   "[plaintext]": {

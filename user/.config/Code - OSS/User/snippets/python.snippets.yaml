@@ -48,6 +48,15 @@ python:
         cursor.precedingText().match('(\n|^)\w+$') &&
           cursor.followingText().match('^.*(\n|$)')
 
+    define error class:
+      trigger: ce
+      snippet: |
+        class $1{Error}(Exception):
+            pass
+      context: |
+        cursor.precedingText().match('(\n|^)[ \t]*\w+$') &&
+          cursor.followingText().match('^.*(\n|$)')
+
     print:
       trigger: p
       snippet: print("XXXX $id", $1)
