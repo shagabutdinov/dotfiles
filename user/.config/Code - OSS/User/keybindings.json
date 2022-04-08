@@ -2248,22 +2248,22 @@
     "when": "editorTextFocus"
   },
   // snippets
-  // {
-  //   "key": "tab",
-  //   "command": "commands.run",
-  //   "args": {
-  //     "commands": [
-  //       {
-  //         "command": "snippets.expand",
-  //         "context": "cursor.startPrecedingText().match('(\n|^).*\\S.*$')"
-  //       },
-  //       {
-  //         "command": "editor.action.indentLines",
-  //       }
-  //     ]
-  //   },
-  //   "when": "editorTextFocus"
-  // },
+  {
+    "key": "tab",
+    "command": "commands.run",
+    "args": {
+      "commands": [
+        {
+          "command": "snippets.expand",
+          "context": "cursor.startPrecedingText().match('(\n|^).*\\S.*$')"
+        },
+        {
+          "command": "editor.action.indentLines",
+        }
+      ]
+    },
+    "when": "editorTextFocus"
+  },
   // {
   //   "key": "f14",
   //   "command": "snippets.nextTab",
