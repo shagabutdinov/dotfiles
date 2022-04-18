@@ -219,6 +219,7 @@ python:
           trigger: in
           snippet: is None
           context: cursor.precedingText().match('\w[ \t]+\w+$')
+
         is not none:
           trigger: inn
           snippet: is not None
@@ -230,6 +231,10 @@ python:
     len:
       trigger: l
       snippet: len($1)
+
+    isinstance:
+      trigger: ii
+      snippet: isinstance($1)
 
     self:
       trigger: s

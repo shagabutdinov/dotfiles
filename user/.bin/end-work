@@ -3,4 +3,5 @@
 vpndown
 ulock
 bluetoothctl power off
+volume-toggle mute
 

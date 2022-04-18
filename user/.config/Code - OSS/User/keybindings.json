@@ -28,7 +28,7 @@
           "context": [
             "document().uri.toString().match('\\_spec\\.rb$')",
           ]
-        }
+        },
         {
           "command": "refactoring.go.openTestFile",
           "context": [
@@ -1757,7 +1757,7 @@
           "context": [
             "selection.followingText().match('^[\\)\\}\\]\\>\"\\'`,;\\s]+(?<=\\S.*)$')"
           ]
-        }
+        },
         {
           "command": "locations.go",
           "args": {
@@ -1780,7 +1780,7 @@
             "  nesting.at(nesting.current().outerEnd).end",
             ")"
           ]
-        }
+        },
         {
           "command": "locations.go",
           "args": {
@@ -2264,11 +2264,11 @@
     },
     "when": "editorTextFocus"
   },
-  // {
-  //   "key": "f14",
-  //   "command": "snippets.nextTab",
-  //   "when": "editorTextFocus"
-  // },
+  {
+    "key": "f14",
+    "command": "snippets.nextTab",
+    "when": "editorTextFocus"
+  },
   // {
   //   "key": "f7",
   //   "command": "snippets.nextTab",
@@ -3246,13 +3246,23 @@
   },
   // search
   {
-    "key": "alt+f",
+    "key": "ctrl+alt+f",
     "command": "editor.action.nextSelectionMatchFindAction",
     "when": "editorFocus"
   },
   {
-    "key": "alt+shift+f",
+    "key": "ctrl+alt+shift+f",
     "command": "editor.action.previousSelectionMatchFindAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+f",
+    "command": "editor.action.nextMatchFindAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+shift+f",
+    "command": "editor.action.previousMatchFindAction",
     "when": "editorFocus"
   },
   // list navigation

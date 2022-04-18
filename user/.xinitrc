@@ -9,6 +9,9 @@ synclient TapButton1=0
 synclient TapButton2=0
 synclient TapButton3=0
 
+synclient VertTwoFingerScroll=1
+synclient HorizTwoFingerScroll=1
+
 sudo sysctl -w vm.max_map_count=262144
 
 # env
@@ -36,10 +39,15 @@ export PATH=/home/leo/.local/bin:$PATH
 # export GEM_PATH=/home/leo/.rvm/gems/ruby-2.6.2
 # export GEM_HOME=/home/leo/.rvm/rubies/ruby-2.6.2/lib/ruby/gems/2.6.0
 
-export PATH=/home/leo/.rvm/rubies/ruby-2.7.2/bin:$PATH
-export PATH=/home/leo/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/bin:$PATH
-export GEM_PATH=/home/leo/.rvm/gems/ruby-2.7.2
-export GEM_HOME=/home/leo/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0
+# export PATH=/home/leo/.rvm/rubies/ruby-2.7.2/bin:$PATH
+# export PATH=/home/leo/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0/bin:$PATH
+# export GEM_PATH=/home/leo/.rvm/gems/ruby-2.7.2
+# export GEM_HOME=/home/leo/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0
+
+export PATH=/home/leo/.rvm/rubies/ruby-2.7.5/bin:$PATH
+export PATH=/home/leo/.rvm/rubies/ruby-2.7.5/lib/ruby/gems/2.7.0/bin:$PATH
+export GEM_PATH=/home/leo/.rvm/gems/ruby-2.7.5
+export GEM_HOME=/home/leo/.rvm/rubies/ruby-2.7.5/lib/ruby/gems/2.7.0
 
 # go
 export GOPATH=~/src/go

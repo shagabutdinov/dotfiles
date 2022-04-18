@@ -3,7 +3,7 @@
 ID_FILE = '/tmp/volume.notification.id'.freeze
 
 pactl_output = `pactl list sinks`
-muted = pactl_output.include?('Mute: yes')
+muted = ARGV[0] != 'mute' && pactl_output.include?('Mute: yes')
 
 sinks =
   pactl_output
