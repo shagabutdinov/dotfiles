@@ -8,7 +8,7 @@ export LC_ALL="en_US.UTF-8"
 export TERM='xterm-256color'
 export COLORTERM='rxvt-unicode-256color'
 
-export PROMPT="%{$bg[blue]%}%{$fg[white]%}%2~ $%{$reset_color%} "
+export PROMPT="%{$bg[black]%}%{$fg[green]%}%2~ $%{$reset_color%} "
 export QUOTA=20
 
 HISTSIZE=999999999

@@ -3247,22 +3247,22 @@
   // search
   {
     "key": "ctrl+alt+f",
-    "command": "editor.action.nextSelectionMatchFindAction",
-    "when": "editorFocus"
-  },
-  {
-    "key": "ctrl+alt+shift+f",
-    "command": "editor.action.previousSelectionMatchFindAction",
-    "when": "editorFocus"
-  },
-  {
-    "key": "alt+f",
     "command": "editor.action.nextMatchFindAction",
     "when": "editorFocus"
   },
   {
-    "key": "alt+shift+f",
+    "key": "ctrl+alt+shift+f",
     "command": "editor.action.previousMatchFindAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+f",
+    "command": "editor.action.nextSelectionMatchFindAction",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+shift+f",
+    "command": "editor.action.previousSelectionMatchFindAction",
     "when": "editorFocus"
   },
   // list navigation
