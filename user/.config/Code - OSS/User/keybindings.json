@@ -81,11 +81,6 @@
     "command": "scope.print"
   },
   {
-    "key": "shift+f3",
-    "command": "snippets.nextTab",
-    "when": "editorTextFocus"
-  },
-  {
     "key": "ctrl+u ctrl+j",
     "command": "workbench.action.editor.changeLanguageMode",
     "when": "editorTextFocus"
@@ -2266,6 +2261,11 @@
   },
   {
     "key": "f14",
+    "command": "snippets.nextTab",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "f4",
     "command": "snippets.nextTab",
     "when": "editorTextFocus"
   },
