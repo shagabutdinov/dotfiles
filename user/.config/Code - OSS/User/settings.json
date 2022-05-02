@@ -197,7 +197,7 @@
   "terminal.integrated.tabs.enabled": true,
   "editor.renderWhitespace": "all",
   "python.formatting.provider": "black",
-  "workbench.colorTheme": "Dracula Soft",
+  "workbench.colorTheme": "Atom One Light",
   "sundial.sunset": "17:00",
   "sundial.sunrise": "5:00",
   "keyboard.dispatch": "keyCode",
