@@ -21,7 +21,7 @@ begin
 
   theme =
     if args['--theme'] == 'auto'
-      if 5 <= Time.new.hour && Time.new.hour <= 17
+      if 5 <= Time.new.hour && Time.new.hour <= 19
         'light'
       else
         'dark'
