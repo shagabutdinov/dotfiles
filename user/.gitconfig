@@ -9,6 +9,7 @@
   commentchar = `
 	excludesfile = /home/leo/.gitignore
 [pull]
-# 	ff = only
+ 	ff = only
 [commit]
 	gpgsign = true
+
