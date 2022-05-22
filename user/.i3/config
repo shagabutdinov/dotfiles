@@ -242,6 +242,11 @@ bindsym $mod+shift+Home exec uscreencast --active-window
 bindsym $mod+ctrl+n exec enter-text "Leonid Shagabutdinov"
 bindsym $mod+shift+n exec enter-text "leonid@shagabutdinov.com"
 bindsym $mod+ctrl+shift+l exec enter-text "Definition of done:\n\n*\n\nComments:\n\n* "
+bindsym $mod+ctrl+shift+q exec enter-text "**question**: "
+bindsym $mod+ctrl+shift+i exec enter-text "**issue**: "
+bindsym $mod+ctrl+shift+n exec enter-text "**nitpick**: "
+bindsym $mod+ctrl+shift+c exec enter-text "**chore**: "
+bindsym $mod+ctrl+shift+s exec enter-text "**suggestion**: "
 bindsym $mod+v exec enter-current-date
 bindsym $mod+BackSpace exec createtodo --date today
 bindsym $mod+shift+BackSpace exec createtodo-popup --date today
