@@ -3352,5 +3352,14 @@
     "key": "ctrl+enter",
     "command": "editor.action.insertLineAfter",
     "when": "editorTextFocus && !editorReadonly"
-  }
+  },
+  // {
+  //   "key": "f3",
+  //   "command": "jupyter.runcurrentcell",
+  //   // "when": "editorTextFocus && isWorkspaceTrusted && jupyter.hascodecells && !editorHasSelection && !jupyter.havenativecells && !jupyter.webExtension && !notebookEditorFocused"
+  // },
+  // {
+  //   "key": "f4",
+  //   "command": "jupyter.runcell"
+  // }
 ]
