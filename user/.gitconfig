@@ -10,6 +10,6 @@
 	excludesfile = /home/leo/.gitignore
 [pull]
  	ff = only
-[commit]
-	gpgsign = true
+# [commit]
+# 	gpgsign = true
 
