@@ -208,5 +208,6 @@
     "plaintext": false,
     "markdown": true
   },
-  "editor.guides.indentation": false
+  "editor.guides.indentation": false,
+  "window.zoomLevel": -1
 }
