@@ -48,6 +48,7 @@ export PATH=/home/leo/.local/bin:$PATH
 # export PATH=/home/leo/.rvm/rubies/ruby-2.7.5/lib/ruby/gems/2.7.0/bin:$PATH
 # export GEM_PATH=/home/leo/.rvm/gems/ruby-2.7.5
 # export GEM_HOME=/home/leo/.rvm/rubies/ruby-2.7.5/lib/ruby/gems/2.7.0
+
 export PATH=/root/.local/share/gem/ruby/3.0.0/bin:$PATH
 
 # go
@@ -64,6 +65,8 @@ dunst &
 volumectl -D &
 keynav &
 balmora dotfiles-submit &
+xinput set-prop 'USB OPTICAL MOUSE ' 'libinput Accel Speed' -0.9
+emote & # emotions app
 
 # ulock &
 i3 > ~/.i3.log 2>&1

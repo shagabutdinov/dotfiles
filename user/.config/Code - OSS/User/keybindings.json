@@ -1,6 +1,13 @@
 // Place your key bindings in this file to override the defaults
 [
   {
+    "key": "ctrl+u ctrl+tab",
+    "command": "editor.action.insertSnippet",
+    "args": {
+      "snippet": "\t"
+    }
+  },
+  {
     "key": "ctrl+alt+t",
     "command": "commands.run",
     "args": {

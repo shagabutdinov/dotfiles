@@ -1,3 +1,15 @@
+markdown:
+  context: document().languageId == 'markdown'
+  snippets:
+    date:
+      trigger: d
+      snippet: "# $date"
+      placeholders:
+        date:
+          onBeforeExpand: |
+            ({ cursor, document }) =>
+              (new Date().toISOString().split('.')[0].replace('T', ' '))
+
 python:
   context: document().languageId == 'python'
   snippets:

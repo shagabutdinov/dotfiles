@@ -11,8 +11,8 @@ export COLORTERM='rxvt-unicode-256color'
 export PROMPT="%{$bg[black]%}%{$fg[green]%}%2~ $%{$reset_color%} "
 export QUOTA=20
 
-HISTSIZE=999999999
-SAVEHIST=999999999
+HISTSIZE=10000
+SAVEHIST=10000
 
 APPEND_HISTORY=yes
 INC_APPEND_HISTORY=yes
@@ -114,6 +114,7 @@ alias ee='() { vim ~/.bin/ushell-env; source ~/.bin/ushell-env; rehash }'
 alias cw='cd ~/src/constructor/website'
 alias ca='cd ~/src/constructor/autocomplete'
 alias cm='cd ~/src/rebelsfund/ml-features-research'
+alias ct='cd /home/leo/src/go/src/gitlab.com/bigprofit/crypto-speculative-trader'
 alias yay='yay --removemake --nodiffmenu --nocleanmenu --noupgrademenu --cleanafter'
 alias mv=/bin/mv
 alias pwgen='pwgen 12'
@@ -266,6 +267,7 @@ alias gcoo='git checkout origin/master -- '
 alias gdm='git diff $(git merge-base origin/master $(git rev-parse --abbrev-ref HEAD))'
 alias gdl='git diff --name-only $(git merge-base origin/master $(git rev-parse --abbrev-ref HEAD)) | cat'
 alias gbc='current_branch'
+alias gap='git add --patch'
 
 alias gbn='() {
   git fetch && \

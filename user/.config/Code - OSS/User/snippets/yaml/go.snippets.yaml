@@ -4,7 +4,7 @@ go:
     empty prefix and postfix:
       context:
         cursor.precedingText().match('\n\s*\w+$') &&
-          cursor.followingText().match('^\s*\n')
+          cursor.followingText().match('^\s*(\n|$)')
       snippets:
         type:
           trigger: ~^\s*t$
@@ -128,6 +128,10 @@ go:
       trigger: "n"
       snippet: "nil"
 
+    "not nil":
+      trigger: "nn"
+      snippet: "!= nil"
+
     nil comma:
       context: cursor.followingText().match('^\s*[\w\(]')
       trigger: "n"
@@ -237,7 +241,6 @@ go:
     struct:
       trigger: ~^ds$
       snippet: |-
-        // $1:name TBD
         type $1:name struct {
           $0
         }
@@ -253,7 +256,6 @@ go:
     interface:
       trigger: ~^di$
       snippet: |-
-        // $1:name TBD
         type $1:name interface {
           $0
         }
@@ -286,7 +288,6 @@ go:
         !cursor.bofToStartText().match('\n\s*type ')
       trigger: ~^d$
       snippet: |
-        // $1:name TBD
         type $1:name struct {
           $0
         }
@@ -306,7 +307,6 @@ go:
       order: 1
       trigger: ~^d$
       snippet: |-
-        // $2{name} TBD
         func ($struct{struct}) $2{name}($3) $4 {
           $0
         }
@@ -472,18 +472,48 @@ go:
         }
       order: 1
 
-    if err not nil return err:
+    define test initial:
+      context: document().uri.toString().match("_test.go$")
+      trigger: ~^d$
+      snippet: |
+        package $package
+
+        import (
+          "os"
+          "testing"
+
+          "github.com/stretchr/testify/assert"
+        )
+
+        func TestMyFunc(t *testing.T) {
+          assert.Equal(t, true, false)
+        }
+      order: 3
+      placeholders:
+        package:
+          onBeforeExpand: |-
+            ({ document }) =>
+              document.uri.fsPath.match(/\/([^/]*?)\/[^/]*$/)[1]
+
+    # if err not nil return err:
+    #   trigger: ir
+    #   snippet: |-
+    #     if err != nil {
+    #       return $1err
+    #     }
+
+    if err not nil return karma:
+      trigger: ie
+      snippet: |-
+        if err != nil {
+          return $1karma.$3Format(err, "failed to $2")
+        }
+
+    if err not nil return karma (alias):
       trigger: ir
       snippet: |-
         if err != nil {
-          return $1err
-        }
-
-    if err not nil return karma:
-      trigger: ik
-      snippet: |-
-        if err != nil {
-          return $1karma.Format(err, "failed to $2")
+          return $1karma.$3Format(err, "failed to $2")
         }
 
     if err not nil panic:
@@ -501,7 +531,7 @@ go:
         }
 
     if empty:
-      trigger: ie
+      trigger: iem
       snippet: |-
         if len($1) == 0 {
           $0
@@ -520,6 +550,11 @@ go:
         if !$1 {
           $0
         }
+
+    is nil:
+      trigger: ~(?<=(\w|\))\s*)in$
+      snippet: "== nil"
+      order: 1
 
     else:
       context: |
@@ -564,19 +599,27 @@ go:
 
     log debug:
       trigger: ld
-      snippet: log.Debug("$1")
+      snippet: lorg.Debug("$1")
 
     log trace:
       trigger: lt
-      snippet: log.Trace("$1")
+      snippet: lorg.Trace("$1")
 
     log info:
       trigger: li
-      snippet: log.Info("$1")
+      snippet: lorg.Info("$1")
+
+    log warning:
+      trigger: lw
+      snippet: lorg.Warning("$1")
+
+    log error:
+      trigger: le
+      snippet: lorg.Error("$1")
 
     log fatal:
       trigger: lf
-      snippet: log.Fatal($1)
+      snippet: lorg.Fatal($1)
 
     len:
       trigger: ~(?<=([^\w\s]|if)\s*)l$
@@ -593,9 +636,9 @@ go:
               require('path').basename(document.uri.fsPath) + ':' +
               cursor.anchor.line
 
-    assert equal values:
+    assert equal:
       trigger: ae
-      snippet: assert.EqualValues(test, $1{expected}, $2{actual})
+      snippet: assert.Equal(t, $1{expected}, $2{actual})
 
     errors new:
       trigger: en
@@ -661,13 +704,22 @@ go:
             ({ document }) =>
               document.uri.fsPath.match(/\/([^/]*?)\/[^/]*$/)[1]
 
-    karma error:
-      trigger: ke
-      snippet: karma.Format(err, "$1")
+    package main:
+      trigger: ~^pm$
+      snippet: |
+        package main
+      order: 1
+
+    karma format:
+      trigger: kf
+      snippet: karma.$2Format(err, "$1")
 
     karma describe:
       trigger: kd
-      snippet: karma.Describe("$1{value}", $2{$1{value}}).Reason($3)
+      snippet: |
+        karma.
+          Describe("$1{value}", $2{$1{value}}).
+          Reason($3)
 
     karma describe continuation:
       context: cursor.precedingText().match('\.\s*d$')

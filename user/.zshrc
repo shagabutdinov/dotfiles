@@ -53,6 +53,8 @@ HIST_STAMPS="dd.mm.yyyy"
 # plugins=(git archlinux django sublime themes python pip node npm history-substring-search zsh-syntax-highlighting rails)
 plugins=(git archlinux history-substring-search pip python)
 
+export HISTSIZE
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -83,6 +85,8 @@ export QUOTA=50
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 eval "$(rbenv init - zsh)"
 
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
