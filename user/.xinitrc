@@ -44,10 +44,11 @@ export PATH=/home/leo/.local/bin:$PATH
 # export GEM_PATH=/home/leo/.rvm/gems/ruby-2.7.2
 # export GEM_HOME=/home/leo/.rvm/rubies/ruby-2.7.2/lib/ruby/gems/2.7.0
 
-export PATH=/home/leo/.rvm/rubies/ruby-2.7.5/bin:$PATH
-export PATH=/home/leo/.rvm/rubies/ruby-2.7.5/lib/ruby/gems/2.7.0/bin:$PATH
-export GEM_PATH=/home/leo/.rvm/gems/ruby-2.7.5
-export GEM_HOME=/home/leo/.rvm/rubies/ruby-2.7.5/lib/ruby/gems/2.7.0
+# export PATH=/home/leo/.rvm/rubies/ruby-2.7.5/bin:$PATH
+# export PATH=/home/leo/.rvm/rubies/ruby-2.7.5/lib/ruby/gems/2.7.0/bin:$PATH
+# export GEM_PATH=/home/leo/.rvm/gems/ruby-2.7.5
+# export GEM_HOME=/home/leo/.rvm/rubies/ruby-2.7.5/lib/ruby/gems/2.7.0
+export PATH=/root/.local/share/gem/ruby/3.0.0/bin:$PATH
 
 # go
 export GOPATH=~/src/go

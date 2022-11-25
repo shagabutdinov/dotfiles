@@ -1,30 +1,59 @@
-# Colors (Night Owlish Light)
+# Colors (Solarized Light)
 colors:
-  bright:
-    black: '#7a8181'
-    blue: '#5ca7e4'
-    cyan: '#00c990'
-    green: '#49d0c5'
-    magenta: '#697098'
-    red: '#f76e6e'
-    white: '#989fb1'
-    yellow: '#dac26b'
-  cursor:
-    cursor: '#403f53'
-    text: '#fbfbfb'
-  normal:
-    black: '#011627'
-    blue: '#4876d6'
-    cyan: '#08916a'
-    green: '#2aa298'
-    magenta: '#403f53'
-    red: '#d3423e'
-    white: '#7a8181'
-    yellow: '#daaa01'
+  # Default colors
   primary:
-    background: '#ffffff'
-    foreground: '#403f53'
-  selection:
-    background: '#f2f2f2'
-    text: '#403f53'
+    background: '0xfdf6e3'
+    foreground: '0x586e75'
+
+  # Normal colors
+  normal:
+    black:   '0x073642'
+    red:     '0xdc322f'
+    green:   '0x859900'
+    yellow:  '0xb58900'
+    blue:    '0x268bd2'
+    magenta: '0xd33682'
+    cyan:    '0x2aa198'
+    white:   '0xeee8d5'
+
+  # Bright colors
+  bright:
+    black:   '0x002b36'
+    red:     '0xcb4b16'
+    green:   '0x586e75'
+    yellow:  '0x657b83'
+    blue:    '0x839496'
+    magenta: '0x6c71c4'
+    cyan:    '0x93a1a1'
+    white:   '0xfdf6e3'
+
+# # Colors (Night Owlish Light)
+# colors:
+#   bright:
+#     black: '#7a8181'
+#     blue: '#5ca7e4'
+#     cyan: '#00c990'
+#     green: '#49d0c5'
+#     magenta: '#697098'
+#     red: '#f76e6e'
+#     white: '#989fb1'
+#     yellow: '#dac26b'
+#   cursor:
+#     cursor: '#403f53'
+#     text: '#fbfbfb'
+#   normal:
+#     black: '#011627'
+#     blue: '#4876d6'
+#     cyan: '#08916a'
+#     green: '#2aa298'
+#     magenta: '#403f53'
+#     red: '#d3423e'
+#     white: '#7a8181'
+#     yellow: '#daaa01'
+#   primary:
+#     background: '#ffffff'
+#     foreground: '#403f53'
+#   selection:
+#     background: '#f2f2f2'
+#     text: '#403f53'
 

@@ -292,7 +292,20 @@ alias gzz='() {
 }'
 
 alias gk='() { git commit -m "$(git-commit-prefix)$1" }'
-alias gkn='() { git commit -m "$(git-commit-prefix)$1" --no-verify }'
+
+alias gkn='() { 
+  if [ "$(current_branch)" = "master" ]; then
+    echo "BRANCH CAN NOT BE MASTER"
+    return
+  fi
+
+  git commit -m "$(git-commit-prefix)$1" --no-verify 
+}'
+
+alias gkn!='() {
+  git commit -m "$(git-commit-prefix)$1" --no-verify
+}'
+
 alias gkk='() { git commit --amend }'
 
 function git-commit-prefix() {
@@ -321,18 +334,44 @@ alias gx='() {
 }'
 
 alias gxn='() {
+  if [ "$(current_branch)" = "master" ]; then
+    echo "BRANCH CAN NOT BE MASTER"
+    return
+  fi
+
   git add . && \
     git commit -m "$(git-commit-prefix)$1" --no-verify && \
     git push -u origin $(current_branch) &&
     echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
 }'
 
+alias gxn!='() {
+  git add . && \
+    git commit -m "$(git-commit-prefix)$1" --no-verify && \
+    git push -u origin $(current_branch) &&
+    echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
+}'
+
+
 alias gxx='() {
+  if [ "$(current_branch)" = "master" ]; then
+    echo "BRANCH CAN NOT BE MASTER"
+    return
+  fi
+
   git add .
   git commit -m "$(git log -1 --pretty=%s)" --amend
   git push -u origin $(current_branch) --force &&
   echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
 }'
+
+alias gxx!='() {
+  git add .
+  git commit -m "$(git log -1 --pretty=%s)" --amend
+  git push -u origin $(current_branch) --force &&
+  echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
+}'
+
 
 function rebase-current-branch-on-master() {
   git fetch
