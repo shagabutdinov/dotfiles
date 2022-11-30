@@ -213,7 +213,8 @@
     "markdown": true
   },
   "editor.guides.indentation": false,
-  "window.zoomLevel": -1,
   "notebook.output.textLineLimit": 5000,
   "playwright.reuseBrowser": true,
+  "jupyter.askForKernelRestart": false,
+  "window.zoomLevel": -1,
 }

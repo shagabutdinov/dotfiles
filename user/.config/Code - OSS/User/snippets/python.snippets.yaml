@@ -284,4 +284,8 @@ python:
       trigger: lf
       snippet: self.logger.fatal(f"$0")
 
+    pandas.DataFrame:
+      trigger: pd
+      snippet: pandas.DataFrame({$0})
+
 
