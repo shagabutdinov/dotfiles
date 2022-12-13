@@ -232,7 +232,7 @@ constructor typescript:
                 args:
                   value: default
                   alias: factories
-                  from: factories
+                  from: __tests__/factories
 
             display name:
               trigger: ~(?<=[\W_])D$
