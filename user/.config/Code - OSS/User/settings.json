@@ -216,5 +216,6 @@
   "notebook.output.textLineLimit": 5000,
   "playwright.reuseBrowser": true,
   "jupyter.askForKernelRestart": false,
+  "workbench.startupEditor": "none",
   "window.zoomLevel": -1,
 }

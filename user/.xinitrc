@@ -13,6 +13,7 @@ synclient VertTwoFingerScroll=1
 synclient HorizTwoFingerScroll=1
 
 sudo sysctl -w vm.max_map_count=262144
+# xset s off -dpms
 
 # env
 export TERM='xterm-256color'

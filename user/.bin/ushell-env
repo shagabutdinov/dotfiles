@@ -239,9 +239,9 @@ alias at='docker exec -it test.autocomplete.constructor.local pytest --log-level
 # git
 alias gs='git show --color'
 alias gsf='git show --color --name-only'
-alias gsp='git commit -v -a && git push'
-alias gsa='git commit -v -a --amend && git push --force'
-alias gsn='git commit -v -a --amend --no-verify && git push --force'
+# alias gsp='git commit -v -a && git push'
+# alias gsa='git commit -v -a --amend && git push --force'
+# alias gsn='git commit -v -a --amend --no-verify && git push --force'
 alias gcn='git commit --no-verify'
 alias gpf='git push --force'
 alias ge='git rebase'
@@ -304,7 +304,7 @@ alias gkn='() {
   git commit -m "$(git-commit-prefix)$1" --no-verify 
 }'
 
-alias gkn!='() {
+alias gknf='() {
   git commit -m "$(git-commit-prefix)$1" --no-verify
 }'
 

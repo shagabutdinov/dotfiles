@@ -14,6 +14,10 @@ python:
   context: document().languageId == 'python'
   snippets:
 
+    import:
+      trigger: im
+      snippet: import $0
+
     define method:
       trigger: d
       snippet: |
@@ -284,8 +288,12 @@ python:
       trigger: lf
       snippet: self.logger.fatal(f"$0")
 
-    pandas.DataFrame:
+    pandas.DataFrame type:
       trigger: pd
+      snippet: pandas.DataFrame
+
+    pandas.DataFrame value:
+      trigger: df
       snippet: pandas.DataFrame({$0})
 
 
