@@ -115,6 +115,7 @@ alias cw='cd ~/src/constructor/website'
 alias ca='cd ~/src/constructor/autocomplete'
 alias cm='cd ~/src/rebelsfund/ml-features-research'
 alias ct='cd /home/leo/src/go/src/gitlab.com/bigprofit/crypto-speculative-trader'
+alias cb='cd /home/leo/src/go/src/gitlab.com/bigprofit/trading'
 alias yay='yay --removemake --nodiffmenu --nocleanmenu --noupgrademenu --cleanafter'
 alias mv=/bin/mv
 alias pwgen='pwgen 12'

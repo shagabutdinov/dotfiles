@@ -217,5 +217,5 @@
   "playwright.reuseBrowser": true,
   "jupyter.askForKernelRestart": false,
   "workbench.startupEditor": "none",
-  "window.zoomLevel": 1,
+  "window.zoomLevel": -1,
 }
