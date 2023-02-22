@@ -134,6 +134,7 @@ alias grep='grep --exclude-dir=.cvs --exclude-dir=.git --exclude-dir=.hg --exclu
 alias tree='tree --dirsfirst'
 alias ps='ps -xau'
 alias cln='cal -m $(date +%Y)'
+alias cal='cal -m'
 alias co='sudo chown -R leo: '
 # alias cc='sudo chown -R leo: .'
 alias xg='() { grep -i $1 -R . }'
