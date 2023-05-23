@@ -2183,14 +2183,14 @@
   },
   {
     "key": "ctrl+alt+q",
-    "command": "editor.action.marker.nextInFiles",
+    "command": "editor.action.quickFix",
     "when": "editorTextFocus && !editorReadonly"
   },
-  {
-    "key": "ctrl+alt+shift+q",
-    "command": "editor.action.marker.prevInFiles",
-    "when": "editorTextFocus && !editorReadonly"
-  },
+  // {
+  //   "key": "ctrl+alt+shift+q",
+  //   "command": "editor.action.marker.prevInFiles",
+  //   "when": "editorTextFocus && !editorReadonly"
+  // },
   {
     "key": "ctrl+u ctrl+q",
     "command": "workbench.actions.view.problems"
@@ -3358,6 +3358,11 @@
   {
     "key": "ctrl+enter",
     "command": "editor.action.insertLineAfter",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+u ctrl+s",
+    "command": "workbench.action.files.saveWithoutFormatting",
     "when": "editorTextFocus && !editorReadonly"
   },
   // {

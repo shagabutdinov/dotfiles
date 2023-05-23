@@ -121,6 +121,15 @@ ruby:
           trigger: rn
           snippet: return nil
 
+        begin rescue:
+          trigger: br
+          snippet: |-
+            begin
+              $0
+            rescue $1{StandardError} => error
+              $2
+            end
+
     keywords:
       snippets:
         initialize:

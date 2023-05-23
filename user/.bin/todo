@@ -1,0 +1,315 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+
+CONFIG = YAML.load_file(File.join(Dir.home, '/.config/todo.yaml'))
+
+CALENDAR_ME = CONFIG['CALENDAR_ME']
+CALENDAR_EXCLUDE = CONFIG['CALENDAR_EXCLUDE'].map { |v| Regexp.new(v) }
+
+GITHUB_ACCESS_TOKEN = CONFIG['GITHUB_ACCESS_TOKEN']
+GITHUB_REPO = CONFIG['GITHUB_REPO']
+GITHUB_ME = CONFIG['GITHUB_ME']
+
+LINEAR_USER_ID = CONFIG['LINEAR_USER_ID']
+LINEAR_API_KEY = CONFIG['LINEAR_API_KEY']
+
+SENTRY_API_KEY = CONFIG['SENTRY_API_KEY']
+SENTRY_ORG_NAME = CONFIG['SENTRY_ORG_NAME']
+SENTRY_PROJECT_NAME = CONFIG['SENTRY_PROJECT_NAME']
+SENTRY_YOUR_EMAIL = CONFIG['SENTRY_YOUR_EMAIL']
+
+# main
+
+def main
+  review_prs = fetch_review_prs
+  unless review_prs.empty?
+    puts "\nReviews:"
+    review_prs.each do |pr|
+      puts "  * #{pr}"
+    end
+  end
+
+  todo_prs = fetch_todo_prs
+  tickets = fetch_tickets
+  sentry_issues = fetch_sentry_issues
+
+  if !todo_prs.empty? || !tickets.empty? || !sentry_issues.empty?
+    puts "\nTodo:"
+    todo_prs.each do |pr|
+      puts "  * #{pr}"
+    end
+
+    tickets.each do |ticket|
+      puts "  * #{ticket}"
+    end
+
+    sentry_issues.each do |issue|
+      puts " * #{issue}"
+    end
+  end
+
+  meetings = fetch_meetings
+
+  return if meetings.empty?
+
+  puts "\nMeetings:"
+  meetings.each do |meeting|
+    puts "  * #{meeting}"
+  end
+end
+
+# google calendar
+
+require 'active_support/all'
+require 'google/apis/calendar_v3'
+require 'googleauth'
+require 'googleauth/stores/file_token_store'
+require 'fileutils'
+require 'webrick'
+
+OOB_URI = 'http://localhost:3000/callback'
+CLIENT_SECRETS_PATH = File.join(Dir.home, '.credentials',
+                                'client_secret_147581367286-5j8rbevt1sl7j942me2b0t7j6tuidosm.apps.googleusercontent.com.json')
+CREDENTIALS_PATH = File.join(Dir.home, '.credentials', 'calendar-ruby-fetch_events.yaml')
+SCOPE = Google::Apis::CalendarV3::AUTH_CALENDAR_READONLY
+
+# class A < Google::Apis::CalendarV3::CalendarService
+#   def execute_or_queue_command(*params, &block)
+#     result = super
+#     puts("XXXX todo:53 #{result}")
+#     return result
+#   end
+# end
+
+def authorize
+  FileUtils.mkdir_p(File.dirname(CREDENTIALS_PATH))
+  client_id = Google::Auth::ClientId.from_file(CLIENT_SECRETS_PATH)
+  token_store = Google::Auth::Stores::FileTokenStore.new(file: CREDENTIALS_PATH)
+  authorizer = Google::Auth::UserAuthorizer.new(client_id, SCOPE, token_store)
+  credentials = authorizer.get_credentials('default')
+  if credentials.nil?
+    url = authorizer.get_authorization_url(base_url: OOB_URI)
+
+    server = WEBrick::HTTPServer.new(Port: 3000)
+    server.mount_proc('/oauth2callback') do |req, res|
+      code = req.query['code']
+      credentials = authorizer.get_and_store_credentials_from_code(user_id: 'default', code: code, base_url: OOB_URI)
+      res.body = 'Authorization successful. You can close this window and return to the terminal.'
+      server.shutdown
+    end
+
+    warn('Open the following URL in your browser and authorize the app:')
+    warn(url)
+    server.start
+  end
+  credentials
+end
+
+def fetch_meetings
+  service = Google::Apis::CalendarV3::CalendarService.new
+  service.client_options.application_name = 'Fetch Events'
+  service.authorization = authorize
+
+  calendar_id = 'primary'
+  time_min = Time.now.beginning_of_day.iso8601
+  time_max = Time.now.end_of_day.iso8601
+
+  response = service.list_events(
+    calendar_id,
+    time_min: time_min,
+    time_max: time_max,
+    single_events: true,
+    order_by: 'startTime'
+  )
+
+  one2ones = []
+  events = []
+
+  response.items.each do |event|
+    next if CALENDAR_EXCLUDE.any? { |exclude| event.summary.match(exclude) }
+
+    next if event.attendees&.find { |attendee| attendee.email == CALENDAR_ME }&.response_status == 'declined'
+
+    if event.summary.match?(%r{^\w+ (/|<>|<=>) \w+$}) && event.attendees.map(&:email).size == 2
+      one2ones.push(event)
+      next
+    end
+
+    events.push(event)
+  end
+
+  result = []
+
+  unless one2ones.empty?
+    folks = one2ones.map do |event|
+      (event.attendees.map(&:email) - [CALENDAR_ME])
+        .first
+        .split(/[\\.@]/)
+        .first
+        .capitalize
+    end
+
+    result.push("1:1 with #{folks.join(', ')}")
+  end
+
+  events.each do |event|
+    result.push("#{event.summary}")
+  end
+
+  result
+rescue Signet::AuthorizationError
+  File.unlink(CREDENTIALS_PATH)
+  retry
+end
+
+# GitHub
+
+require 'net/http'
+require 'json'
+
+def fetch_prs(token, repo)
+  url = URI("https://api.github.com/repos/#{repo}/pulls")
+  http = Net::HTTP.new(url.host, url.port)
+  http.use_ssl = true
+  request = Net::HTTP::Get.new(url)
+  request['Authorization'] = "Bearer #{token}"
+  request['Accept'] = 'application/vnd.github+json'
+  response = http.request(request)
+
+  raise "GitHub HTTP request failed: #{response.inspect} #{response.body}" if response.is_a?(Net::HTTPClientError)
+
+  JSON.parse(response.body)
+end
+
+def prs_needing_review(prs, username)
+  prs.select { |pr| (pr['requested_reviewers'] || []).any? { |reviewer| reviewer['login'] == username } }
+end
+
+def prs_authored_by(prs, username)
+  prs.select { |pr| pr['user']['login'] == username }
+end
+
+def fetch_review_prs
+  prs = fetch_prs(GITHUB_ACCESS_TOKEN, GITHUB_REPO)
+  prs_needing_review(prs, GITHUB_ME).map do |pr|
+    "[#{pr['title']}](#{pr['html_url']})"
+  end
+end
+
+def fetch_todo_prs
+  prs = fetch_prs(GITHUB_ACCESS_TOKEN, GITHUB_REPO)
+  prs_authored_by(prs, GITHUB_ME).map do |pr|
+    "[#{pr['title']}](#{pr['html_url']})"
+  end
+end
+
+# linear
+
+require 'httparty'
+require 'json'
+
+class LinearAPI
+  include HTTParty
+  base_uri 'https://api.linear.app/graphql'
+
+  def initialize(api_key)
+    @options = {
+      headers: {
+        'Content-Type' => 'application/json',
+        'Authorization' => "Bearer #{api_key}"
+      }
+    }
+  end
+
+  def fetch_assigned_tickets(user_id)
+    query = <<-GRAPHQL
+      {
+        user(id: "#{user_id}") {
+          assignedIssues(
+            filter:{
+              and: [
+                {state: {type: {neq: "completed"}}},
+                {state: {type: {neq: "canceled"}}}
+              ]
+            }
+          ) {
+            nodes {
+              identifier
+              title
+              state {
+                type
+                name
+              }
+              url
+              updatedAt
+            }
+          }
+        }
+      }
+    GRAPHQL
+
+    response = self.class.post('/', @options.merge(body: { query: query }.to_json))
+    # puts("XXXX todo:196 #{response}")
+    JSON.parse(response.body)
+  end
+
+  def fetch_user_details(_username)
+    query = <<-GRAPHQL
+      {
+        users(filter:{displayName:{contains: "leo"}}) {
+          nodes {
+            id
+            name
+          }
+        }
+      }
+    GRAPHQL
+
+    response = self.class.post('/', @options.merge(body: { query: query }.to_json))
+    JSON.parse(response.body)
+  end
+end
+
+def fetch_tickets
+  linear_api = LinearAPI.new(LINEAR_API_KEY)
+  # puts("XXXX todo:203 #{linear_api.fetch_user_details(LINEAR_USER_ID)}")
+  response = linear_api.fetch_assigned_tickets(LINEAR_USER_ID)
+
+  # puts("XXXX todo:186 #{response}")
+  response['data']['user']['assignedIssues']['nodes'].map do |ticket|
+    # puts("XXXX todo:208 #{ticket}")
+    "[[#{ticket['identifier']}] #{ticket['title']}](#{ticket['url']})"
+  end
+end
+
+# sentry
+
+require 'httparty'
+
+class SentryAPI
+  include HTTParty
+  base_uri 'https://sentry.io/api/0'
+
+  def initialize(api_key)
+    @options = { headers: { 'Authorization' => "Bearer #{api_key}" } }
+  end
+
+  def assigned_issues
+    self.class.get(
+      "/projects/#{SENTRY_ORG_NAME}/#{SENTRY_PROJECT_NAME}/issues/?query=assigned:#{SENTRY_YOUR_EMAIL}%20is:unresolved",
+      @options
+    )
+  end
+end
+
+def fetch_sentry_issues
+  api = SentryAPI.new(SENTRY_API_KEY)
+  issues = api.assigned_issues
+
+  issues.map do |issue|
+    "[[#{issue['shortId']}](#{issue['permalink']})] #{issue['title']}"
+  end
+end
+
+main

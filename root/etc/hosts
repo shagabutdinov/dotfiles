@@ -8,6 +8,7 @@
 127.0.0.1 p
 127.0.0.1 c
 127.0.0.1 cc # constructor cached
+127.0.0.1 cc.local # constructor cached
 127.0.0.1 test.cc # constructor cached
 127.0.0.1 cs # constructor storybook
 127.0.0.1 test.cc # constructor cached

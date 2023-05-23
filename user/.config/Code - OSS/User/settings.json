@@ -6,7 +6,7 @@
   "editor.smoothScrolling": true,
   "editor.minimap.enabled": false,
   "breadcrumbs.enabled": false,
-  "editor.rulers": [ 80, 120],
+  "editor.rulers": [80, 120],
   "editor.wrappingIndent": "same",
   "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 80,
@@ -55,20 +55,16 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "editor.fontFamily": "'Ubuntu Mono', Consolas, 'JetBrains Mono for Powerline', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "githubPullRequests.showInSCM": true,
-  "vscodeWorkspaceSwitcher.paths": [
-    "/home/leo/projects/vscode"
-  ],
+  "vscodeWorkspaceSwitcher.paths": ["/home/leo/projects/vscode"],
   "workbench.sideBar.location": "right",
   "workbench.preferredLightColorTheme": "Atom One Light",
   "workbench.preferredDarkColorTheme": "Dracula Soft",
-  "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.views.repositories.location": "gitlens",
   "gitlens.views.fileHistory.location": "gitlens",
   "gitlens.views.lineHistory.location": "gitlens",
   "gitlens.views.compare.location": "gitlens",
   "gitlens.views.search.location": "gitlens",
-  "gitlens.codeLens.enabled": false,
   "gitlens.hovers.currentLine.enabled": false,
   "gitlens.hovers.annotations.enabled": false,
   "gitlens.hovers.enabled": false,
@@ -159,7 +155,7 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.python",
     "editor.tabSize": 4,
-    "editor.wordWrapColumn": 120,
+    "editor.wordWrapColumn": 120
   },
   "editor.formatOnSave": true,
   "local-history.path": "/home/leo/.local/history",
@@ -217,5 +213,7 @@
   "playwright.reuseBrowser": true,
   "jupyter.askForKernelRestart": false,
   "workbench.startupEditor": "none",
-  "window.zoomLevel": -1,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "window.zoomLevel": -1
 }

@@ -114,6 +114,7 @@ alias ee='() { vim ~/.bin/ushell-env; source ~/.bin/ushell-env; rehash }'
 alias cw='cd ~/src/constructor/website'
 alias ca='cd ~/src/constructor/autocomplete'
 alias cm='cd ~/src/rebelsfund/ml-features-research'
+alias cmc='cd ~/src/rebelsfund/ml-features-research/research/crypto_speculative'
 alias ct='cd /home/leo/src/go/src/gitlab.com/bigprofit/crypto-speculative-trader'
 alias cb='cd /home/leo/src/go/src/gitlab.com/bigprofit/trading'
 alias yay='yay --removemake --nodiffmenu --nocleanmenu --noupgrademenu --cleanafter'
@@ -245,7 +246,6 @@ alias gsf='git show --color --name-only'
 # alias gsa='git commit -v -a --amend && git push --force'
 # alias gsn='git commit -v -a --amend --no-verify && git push --force'
 alias gcn='git commit --no-verify'
-alias gpf='git push --force'
 alias ge='git rebase'
 alias gei='git rebase --interactive'
 alias gec='git rebase --continue'
@@ -311,6 +311,15 @@ alias gknf='() {
 }'
 
 alias gkk='() { git commit --amend }'
+
+alias gpf='() { 
+  if [ "$(current_branch)" = "master" ]; then
+    echo "BRANCH CAN NOT BE MASTER"
+    return
+  fi
+
+  git push --force
+}'
 
 function git-commit-prefix() {
   branch=$(git rev-parse --abbrev-ref HEAD)

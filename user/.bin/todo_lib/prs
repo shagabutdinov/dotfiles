@@ -1,0 +1,30 @@
+require 'net/http'
+require 'json'
+
+GITHUB_ACCESS_TOKEN = File.read('~/.credentials/github-access-token').strip
+GITHUB_REPO = 'Constructor-io/website'
+GITHUB_ME = 'shagabutdinov'
+
+
+def fetch_prs(token, repo)
+  url = URI("https://api.github.com/repos/#{repo}/pulls")
+  http = Net::HTTP.new(url.host, url.port)
+  http.use_ssl = true
+  request = Net::HTTP::Get.new(url)
+  request['Authorization'] = "Bearer #{token}"
+  request['Accept'] = 'application/vnd.github+json'
+  response = http.request(request)
+  JSON.parse(response.body)
+end
+
+def prs_needing_review(prs, username)
+  prs.select { |pr| pr['requested_reviewers'].any? { |reviewer| reviewer['login'] == username } }
+end
+
+def prs
+  prs = fetch_prs(GITHUB_ACCESS_TOKEN, GITHUB_REPO)
+  prs_to_review = prs_needing_review(prs, GITHUB_ME)
+
+  puts "PRs requiring your review:"
+  prs_to_review.each { |pr| puts "##{pr['number']} - #{pr['title']} - #{pr['html_url']}" }
+end

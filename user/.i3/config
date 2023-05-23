@@ -247,14 +247,21 @@ bindsym $mod+ctrl+shift+i exec enter-text "**issue**: "
 bindsym $mod+ctrl+shift+n exec enter-text "**nitpick**: "
 bindsym $mod+ctrl+shift+c exec enter-text "**chore**: "
 bindsym $mod+ctrl+shift+s exec enter-text "**suggestion**: "
-bindsym $mod+v exec enter-current-date
+bindsym $mod+ctrl+shift+t exec enter-text "**thought**: "
+bindsym $mod+ctrl+shift+w exec enter-text "Welcome!! 👏👏"
+bindsym $mod+ctrl+shift+f exec enter-text "Welcome to the full-time!"
+bindsym $mod+ctrl+shift+h exec enter-text "Happy birthday!! 🎂🎂"
 bindsym $mod+BackSpace exec createtodo --date today
 bindsym $mod+shift+BackSpace exec createtodo-popup --date today
+bindsym $mod+shift+equal exec grayscalectl disable
+bindsym $mod+ctrl+equal exec grayscalectl enable
 
 bindsym $mod+minus move workspace to output left
 bindsym $mod+equal move workspace to output right
-bindsym $mod+F8 exec ~/.bin/connect-headphones
+bindsym $mod+v exec ~/.bin/connect-headphones
 bindsym $mod+shift+F8 exec ~/.bin/disconnect-headphones
 
 no_focus [instance="Firefox"]
 no_focus [instance="Chrome"]
+no_focus [class="Xfce4-notifyd"]
+

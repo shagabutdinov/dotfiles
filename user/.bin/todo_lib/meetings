@@ -1,0 +1,93 @@
+CALENDAR_ME = 'leonid@constructor.io'
+CALENDAR_EXCLUDE = [/Lunch/, /Engr Sync rotation: \w+/]
+
+require 'active_support/all'
+require 'google/apis/calendar_v3'
+require 'googleauth'
+require 'googleauth/stores/file_token_store'
+require 'fileutils'
+require 'webrick'
+
+OOB_URI = 'http://localhost:3000/callback'
+CLIENT_SECRETS_PATH = File.join(Dir.home, '.credentials', 'client_secret_147581367286-5j8rbevt1sl7j942me2b0t7j6tuidosm.apps.googleusercontent.com.json')
+CREDENTIALS_PATH = File.join(Dir.home, '.credentials', 'calendar-ruby-fetch_events.yaml')
+SCOPE = Google::Apis::CalendarV3::AUTH_CALENDAR_READONLY
+
+def authorize
+  FileUtils.mkdir_p(File.dirname(CREDENTIALS_PATH))
+  client_id = Google::Auth::ClientId.from_file(CLIENT_SECRETS_PATH)
+  token_store = Google::Auth::Stores::FileTokenStore.new(file: CREDENTIALS_PATH)
+  authorizer = Google::Auth::UserAuthorizer.new(client_id, SCOPE, token_store)
+  credentials = authorizer.get_credentials('default')
+  if credentials.nil?
+    url = authorizer.get_authorization_url(base_url: OOB_URI)
+
+    server = WEBrick::HTTPServer.new(Port: 3000)
+    server.mount_proc('/oauth2callback') do |req, res|
+      code = req.query['code']
+      credentials = authorizer.get_and_store_credentials_from_code(user_id: 'default', code: code, base_url: OOB_URI)
+      res.body = "Authorization successful. You can close this window and return to the terminal."
+      server.shutdown
+    end
+
+    puts "Open the following URL in your browser and authorize the app:"
+    puts url
+    server.start
+  end
+  credentials
+end
+
+def fetch_meetings
+  service = Google::Apis::CalendarV3::CalendarService.new
+  service.client_options.application_name = 'Fetch Events'
+  service.authorization = authorize
+
+  calendar_id = 'primary'
+  time_min = Time.now.beginning_of_day.iso8601
+  time_max = Time.now.end_of_day.iso8601
+  response = service.list_events(calendar_id, time_min: time_min, time_max: time_max, single_events: true, order_by: 'startTime')
+
+  one2ones = []
+  events = []
+
+
+  response.items.each do |event|
+    if CALENDAR_EXCLUDE.any?{ |exclude| event.summary.match(exclude) }
+      next
+    end
+
+    if event.attendees.find { |attendee| attendee.email == CALENDAR_ME }&.response_status == 'declined'
+      next
+    end
+
+    if event.summary.match?(/\w+ (\/|<>|<=>) \w+/) && event.attendees.map(&:email).size == 2
+      one2ones.push(event)
+      next
+    end
+
+    events.push(event)
+    # puts "- #{event.summary}"
+    # puts("XXXX todo:49 #{event.to_h}")
+  end
+
+  result = []
+  # puts 'Meetings:'
+
+  unless one2ones.empty?
+    folks = one2ones.map do |event|
+      (event.attendees.map(&:email) - [CALENDAR_ME])
+        .first
+        .split(/[\\.@]/)
+        .first
+        .capitalize
+    end
+
+    result.push("1:1 with #{folks.join(' ')}")
+  end
+
+  events.each do |event|
+    result.push("#{event.summary}")
+  end
+
+  result
+end

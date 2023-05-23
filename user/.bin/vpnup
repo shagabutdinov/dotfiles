@@ -2,7 +2,7 @@ sudo pkill openvpn
 
 sudo openvpn \
   --verb 6 \
-  --config projects/constructor.io/constructor.ovpn \
+  --config projects/constructor.io/constructor.ovpn.new \
   --auth-user-pass projects/constructor.io/constructor.ovpn.auth &
 
 disown
