@@ -341,25 +341,28 @@ def next_oncall_shift(user_id, api_token)
 
   if response.code == '200'
     data = JSON.parse(response.body)
+    puts("XXXX todo:343 #{JSON.generate(data)}")
     oncalls = data['oncalls']
 
     next_oncall = oncalls.find { |oncall| !oncall['end'].nil? && Time.parse(oncall['end']) > Time.now }
+    if !next_oncall.nil?
       start, finish  = Time.parse(next_oncall['start']), Time.parse(next_oncall['end'])
 
-      if next_oncall
-        if start < Time.now
-          return "now (ends in #{((finish - Time.now) / 3600.0).round} hours)"
-        end
-
-        diff = ((Time.now - start) / 3600.0).round
-
-        return "#{diff} hours"
-      else
-        return "not found"
+      if start < Time.now
+        return "now (ends in #{((finish - Time.now) / 3600.0).round} hours)"
       end
+
+      diff = ((Time.now - start) / 3600.0).round
+
+      return "#{diff} hours"
+    else
+      return "not found"
+    end
   else
     raise StandardError.new("Error fetching on-call shifts: #{response.code} #{response.message}")
   end
 end
 
-main
+puts("XXXX todo:365 #{JSON.generate(next_oncall_shift(PAGERDUTY_USER_ID, PAGERDUTY_API_KEY))}")
+
+# main
