@@ -85,7 +85,6 @@ SCOPE = Google::Apis::CalendarV3::AUTH_CALENDAR_READONLY
 # class A < Google::Apis::CalendarV3::CalendarService
 #   def execute_or_queue_command(*params, &block)
 #     result = super
-#     puts("XXXX todo:53 #{result}")
 #     return result
 #   end
 # end
@@ -258,7 +257,6 @@ class LinearAPI
     GRAPHQL
 
     response = self.class.post('/', @options.merge(body: { query: query }.to_json))
-    # puts("XXXX todo:196 #{response}")
     JSON.parse(response.body)
   end
 
@@ -281,12 +279,9 @@ end
 
 def fetch_tickets
   linear_api = LinearAPI.new(LINEAR_API_KEY)
-  # puts("XXXX todo:203 #{linear_api.fetch_user_details(LINEAR_USER_ID)}")
   response = linear_api.fetch_assigned_tickets(LINEAR_USER_ID)
 
-  # puts("XXXX todo:186 #{response}")
   response['data']['user']['assignedIssues']['nodes'].map do |ticket|
-    # puts("XXXX todo:208 #{ticket}")
     "[[#{ticket['identifier']}] #{ticket['title']}](#{ticket['url']})"
   end
 end
@@ -341,7 +336,6 @@ def next_oncall_shift(user_id, api_token)
 
   if response.code == '200'
     data = JSON.parse(response.body)
-    puts("XXXX todo:343 #{JSON.generate(data)}")
     oncalls = data['oncalls']
 
     next_oncall = oncalls.find { |oncall| !oncall['end'].nil? && Time.parse(oncall['end']) > Time.now }
@@ -363,6 +357,4 @@ def next_oncall_shift(user_id, api_token)
   end
 end
 
-puts("XXXX todo:365 #{JSON.generate(next_oncall_shift(PAGERDUTY_USER_ID, PAGERDUTY_API_KEY))}")
-
-# main
+main
