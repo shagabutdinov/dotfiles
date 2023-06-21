@@ -41,6 +41,7 @@ export GOPATH=~/src/go
 # node
 export PATH=/home/leo/.nvm/versions/node/v14.18.1/bin:$PATH
 export PATH=./node_modules/.bin:$PATH
+export NODE_OPTIONS=--openssl-legacy-provider
 
 thunar --daemon &
 sleep 10 && /usr/lib/xfce4/notifyd/xfce4-notifyd &
