@@ -1,8 +1,10 @@
 if [ $1 == "enable" ]; then
   nvidia-settings -a '[DPY:DP-4]/DigitalVibrance=-1024'
   nvidia-settings -a '[DPY:HDMI-0]/DigitalVibrance=-1024'
+  nvidia-settings -a '[DPY:eDP-1-1]/DigitalVibrance=-1024'
 elif [ $1 == "disable" ]; then
   nvidia-settings -a '[DPY:DP-4]/DigitalVibrance=0'
   nvidia-settings -a '[DPY:HDMI-0]/DigitalVibrance=0'
+  nvidia-settings -a '[DPY:eDP-1-1]/DigitalVibrance=0'
 fi
 
