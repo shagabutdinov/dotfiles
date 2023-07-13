@@ -248,10 +248,7 @@ bindsym $mod+ctrl+shift+n exec enter-text "**nitpick**: "
 bindsym $mod+ctrl+shift+c exec enter-text "**chore**: "
 bindsym $mod+ctrl+shift+s exec enter-text "**suggestion**: "
 bindsym $mod+ctrl+shift+t exec enter-text "**thought**: "
-bindsym $mod+ctrl+shift+w exec enter-text "Welcome!! 👏👏"
-bindsym $mod+ctrl+shift+f exec enter-text "Welcome to the full-time!"
-bindsym $mod+ctrl+shift+h exec enter-text "Happy birthday!! 🎂🎂"
-bindsym $mod+BackSpace exec createtodo --date today
+bindsym $mod+BackSpace exec utodoist
 bindsym $mod+shift+BackSpace exec createtodo-popup --date today
 bindsym $mod+shift+equal exec grayscalectl disable
 bindsym $mod+ctrl+equal exec grayscalectl enable
