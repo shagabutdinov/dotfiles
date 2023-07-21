@@ -1,6 +1,8 @@
 #!/bin/bash
 
 echo -ne "$1" | xsel -i -b
-sleep 0.25
+sleep 0.5
 xdotool key --clearmodifiers ctrl+v
+sleep 0.5
 echo "" | xsel -i -b
+
