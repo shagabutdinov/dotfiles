@@ -54,7 +54,37 @@ const getUnsentEmails = async () => {
       },
     });
 
-    console.log(response.data);
+    const reported = [];
+
+    return response.data.messages.flatMap(message => {
+      if (message.status === 'delivered') {
+        return [];
+      }
+
+      if (reported.includes(message.subject)) {
+        return [];
+      }
+
+      reported.push(message.subject);
+
+      return [
+        '  * ' +
+          '[' +
+          message.last_event_time +
+          '] ' +
+          message.from_email +
+          ' -> ' +
+          message.to_email +
+          ': ' +
+          message.subject +
+          ' (' +
+          message.status +
+          ')' +
+          ' x ' +
+          response.data.messages.filter(m => m.subject == message.subject)
+            .length,
+      ];
+    });
   } catch (error) {
     reportError(error);
   }
