@@ -48,7 +48,7 @@ const getUnsentEmails = async () => {
   try {
     const response = await axios({
       method: 'get',
-      url: 'https://api.sendgrid.com/v3/messages?limit=100&query=status%3D%22not_delivered%22',
+      url: 'https://api.sendgrid.com/v3/messages?limit=1000&query=status%3D%22not_delivered%22',
       headers: {
         Authorization: 'Bearer ' + process.env.SENDGRID_API_KEY,
       },
