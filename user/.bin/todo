@@ -322,7 +322,7 @@ end
 # require 'json'
 
 def next_oncall_shift(user_id, api_token)
-  url = "https://api.pagerduty.com/oncalls?user_ids[]=#{user_id}"
+  url = "https://api.pagerduty.com/oncalls?user_ids[]=#{user_id}&since=#{Time.now.utc.iso8601}&until=#{(Time.now + 86400 * 7).utc.iso8601}"
   uri = URI.parse(url)
 
   request = Net::HTTP::Get.new(uri)
@@ -346,7 +346,7 @@ def next_oncall_shift(user_id, api_token)
         return "now (ends in #{((finish - Time.now) / 3600.0).round} hours)"
       end
 
-      diff = ((Time.now - start) / 3600.0).round
+      diff = ((start - Time.now) / 3600.0).round
 
       return "#{diff} hours"
     else
