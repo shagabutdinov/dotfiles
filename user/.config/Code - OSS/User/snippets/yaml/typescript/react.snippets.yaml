@@ -3,6 +3,10 @@ typescript:
     document().languageId.match("^(type|java)script(react)?$") &&
       document().uri.toString().match("[tj]sx?$")
   snippets:
+    test snippet:
+      auto: true
+      snippet: lala
+      trigger: ttt
     definitions:
       context: document().getText().match('^\s*\w+\s*$')
       snippets:
@@ -252,7 +256,6 @@ typescript:
         cursor.precedingText().match('(;|`|:\w+\s*\{)\s*\w+$') &&
         cursor.followingText().match('^\s*([\w-]*:|`|\})')
       snippets:
-
         text-transform:
           trigger: tt
           snippet: "text-transform: $1{uppercase};"
@@ -410,7 +413,6 @@ typescript:
     css values:
       context: cursor.precedingText().match('\s[a-z-]+:\s*\w+$')
       snippets:
-
         var:
           trigger: v
           snippet: var($1)

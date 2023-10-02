@@ -27,11 +27,13 @@ STDOUT.sync = true
 # main
 
 def main
+  puts "# Todo for #{Time.now.strftime('%d.%m.%Y')}\n"
+
   review_prs = fetch_review_prs
   unless review_prs.empty?
-    puts "\nReviews:"
+    puts "\n* Reviews:"
     review_prs.each do |pr|
-      puts "  * #{pr}"
+      puts "    * #{pr}"
     end
   end
 
@@ -40,17 +42,17 @@ def main
   sentry_issues = fetch_sentry_issues
 
   if !todo_prs.empty? || !tickets.empty? || !sentry_issues.empty?
-    puts "\nTodo:"
+    puts "\n* Todo:"
     todo_prs.each do |pr|
-      puts "  * #{pr}"
+      puts "    * #{pr}"
     end
 
     tickets.each do |ticket|
-      puts "  * #{ticket}"
+      puts "    * #{ticket}"
     end
 
     sentry_issues.each do |issue|
-      puts " * #{issue}"
+      puts "   * #{issue}"
     end
   end
 
@@ -58,9 +60,9 @@ def main
 
   return if meetings.empty?
 
-  puts "\nMeetings:"
+  puts "\n*  Meetings:"
   meetings.each do |meeting|
-    puts "  * #{meeting}"
+    puts "    * #{meeting}"
   end
 
   print "\nNext on-call: "
@@ -76,7 +78,7 @@ require 'googleauth/stores/file_token_store'
 require 'fileutils'
 require 'webrick'
 
-OOB_URI = 'http://localhost:3000/callback'
+OOB_URI = 'http://localhost:3003/callback'
 CLIENT_SECRETS_PATH = File.join(Dir.home, '.credentials',
                                 'client_secret_147581367286-5j8rbevt1sl7j942me2b0t7j6tuidosm.apps.googleusercontent.com.json')
 CREDENTIALS_PATH = File.join(Dir.home, '.credentials', 'calendar-ruby-fetch_events.yaml')
@@ -98,7 +100,7 @@ def authorize
   if credentials.nil?
     url = authorizer.get_authorization_url(base_url: OOB_URI)
 
-    server = WEBrick::HTTPServer.new(Port: 3000)
+    server = WEBrick::HTTPServer.new(Port: 3003)
     server.mount_proc('/oauth2callback') do |req, res|
       code = req.query['code']
       credentials = authorizer.get_and_store_credentials_from_code(user_id: 'default', code: code, base_url: OOB_URI)
@@ -224,7 +226,7 @@ class LinearAPI
     @options = {
       headers: {
         'Content-Type' => 'application/json',
-        'Authorization' => "Bearer #{api_key}"
+        'Authorization' => "#{api_key}"
       }
     }
   end
@@ -260,7 +262,7 @@ class LinearAPI
     JSON.parse(response.body)
   end
 
-  def fetch_user_details(_username)
+  def fetch_user_details()
     query = <<-GRAPHQL
       {
         users(filter:{displayName:{contains: "leo"}}) {
@@ -348,7 +350,7 @@ def next_oncall_shift(user_id, api_token)
 
       diff = ((start - Time.now) / 3600.0).round
 
-      return "#{diff} hours"
+      return "#{diff} hours (#{start.strftime('%d.%m.%Y, %A')})"
     else
       return "not found"
     end

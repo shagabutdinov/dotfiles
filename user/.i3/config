@@ -200,7 +200,6 @@ bindsym $mod+r mode "resize"
 # hide_edge_borders both
 new_window 1pixel
 for_window [class="^.*"] border pixel 1
-for_window [class="kolourpaint"] fullscreen enable
 
 bindsym $mod+g exec thunar
 # bindsym $mod+backslash exec code
@@ -248,6 +247,7 @@ bindsym $mod+ctrl+shift+n exec enter-text "**nitpick**: "
 bindsym $mod+ctrl+shift+c exec enter-text "**chore**: "
 bindsym $mod+ctrl+shift+s exec enter-text "**suggestion**: "
 bindsym $mod+ctrl+shift+t exec enter-text "**thought**: "
+bindsym $mod+ctrl+shift+w exec enter-text "Welcome to the team!! 👏👏"
 bindsym $mod+BackSpace exec utodoist
 bindsym $mod+shift+BackSpace exec createtodo-popup --date today
 bindsym $mod+shift+equal exec grayscalectl disable
@@ -261,4 +261,3 @@ bindsym $mod+shift+F8 exec ~/.bin/disconnect-headphones
 no_focus [instance="Firefox"]
 no_focus [instance="Chrome"]
 no_focus [class="Xfce4-notifyd"]
-

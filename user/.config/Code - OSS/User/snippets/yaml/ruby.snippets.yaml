@@ -158,7 +158,7 @@ ruby:
       snippets:
         args:
           trigger: ~(?<=\{\s+)$
-          snippet: "|$1|"
+          snippet: '|$1|'
 
         inline cycle:
           trigger: ~(?<=\.\w+\s+)$
@@ -181,6 +181,10 @@ ruby:
           trigger: ~(?<=\.)m$
           snippet: map $0
 
+        file exist:
+          trigger: fe
+          snippet: File.exist?($1)
+
         file write:
           trigger: fw
           snippet: File.write($1, $2)
@@ -196,7 +200,6 @@ ruby:
         file basename:
           trigger: fb
           snippet: File.basename($1)
-
 
     values:
       snippets:
@@ -328,8 +331,8 @@ ruby:
           snippet: Time.zone.parse('2021-01-07')
 
         thousand:
-          trigger: "1"
-          snippet: "1_000"
+          trigger: '1'
+          snippet: '1_000'
 
         complete hash key:
           context: cursor.followingText().match('^\s*,')
@@ -465,22 +468,22 @@ ruby:
 
         JSON.parse symbolize_names:
           trigger: jpp
-          snippet: "JSON.parse($1, symbolize_names: true)"
+          snippet: 'JSON.parse($1, symbolize_names: true)'
 
         JSON.generate:
           trigger: jg
-          snippet: "JSON.generate($1)"
+          snippet: 'JSON.generate($1)'
 
         JSON.pretty_generate:
           trigger: jgg
-          snippet: "JSON.pretty_generate($1)"
+          snippet: 'JSON.pretty_generate($1)'
 
         to_json:
           trigger: tj
           snippet: to_json
 
         to_sym:
-          trigger: "y"
+          trigger: 'y'
           snippet: to_sym
 
         heredoc:

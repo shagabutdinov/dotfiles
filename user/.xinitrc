@@ -14,10 +14,6 @@ synclient HorizTwoFingerScroll=1
 
 sudo sysctl -w vm.max_map_count=262144
 
-# mouse sensitivity
-mouse_id="$(xinput list | ruby -ne 'puts STDIN.read.match(/COMPANY  USB Device\s+id=([0-9]+)/)[1]')"
-xinput set-prop $mouse_id 'libinput Accel Speed' -0.9
-
 # env
 export TERM='xterm-256color'
 export LC_ALL="en_US.UTF-8"

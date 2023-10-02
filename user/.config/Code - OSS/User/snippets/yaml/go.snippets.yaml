@@ -2,9 +2,8 @@ go:
   context: document().languageId.match("^go$")
   snippets:
     empty prefix and postfix:
-      context:
-        cursor.precedingText().match('\n\s*\w+$') &&
-          cursor.followingText().match('^\s*(\n|$)')
+      context: cursor.precedingText().match('\n\s*\w+$') &&
+        cursor.followingText().match('^\s*(\n|$)')
       snippets:
         type:
           trigger: ~^\s*t$
@@ -217,10 +216,6 @@ go:
     var error:
       trigger: ve
       snippet: var err error
-
-    semicolon:
-      trigger: ~:=$
-      snippet: ";"
 
     range:
       trigger: ~(?<=for\s+\w+(,\s+\w+)?\s*:?=)\s*$
@@ -576,7 +571,6 @@ go:
       trigger: ~(?<=})\s*i$
       snippet: " else if"
 
-
     else if with brackets:
       context: cursor.followingText().match('^\s*\n')
       auto: true
@@ -669,10 +663,20 @@ go:
       trigger: m
       snippet: map[$1:key]$2:value
 
+    map string:
+      trigger: ms
+      snippet: map[string]$1:value
+
     map value:
       context: cursor.precedingText().match('(=|\()\s*m$')
       trigger: m
       snippet: map[$1:key]$2:value\{\}
+      order: 1
+
+    map string value:
+      context: cursor.precedingText().match('(=|\()\s*ms$')
+      trigger: ms
+      snippet: map[string]$1:value\{\}
       order: 1
 
     make:
@@ -793,8 +797,16 @@ go:
       snippet: time.Hour
 
     strconv itoa:
-      trigger: fi
+      trigger: ia
       snippet: strconv.Itoa($1)
+
+    strconv atoi:
+      trigger: ai
+      snippet: strconv.Atoi($1)
+
+    strconv parse float:
+      trigger: pf
+      snippet: strconv.ParseFloat($1, 64)
 
     strconv format float:
       trigger: fl
@@ -803,3 +815,47 @@ go:
     strings has prefix:
       trigger: shp
       snippet: strings.HasPrefix($1, $2)
+
+    strings split:
+      trigger: sp
+      snippet: strings.Split($1, $2)
+
+    strings replace:
+      trigger: sr
+      snippet: strings.Replace($1, $2, $3, $4{-1})
+
+    strings upper:
+      trigger: su
+      snippet: strings.ToUpper($1)
+
+    strings lower:
+      trigger: sl
+      snippet: strings.ToLower($1)
+
+    os read file:
+      trigger: or
+      snippet: os.ReadFile($1)
+
+    os open:
+      trigger: oo
+      snippet: os.Open($1)
+
+    read csv:
+      trigger: rc
+      snippet: |
+        file, err := os.Open($1)
+        if err != nil {
+          return nil, karma.Format(err, "failed to open file")
+        }
+
+        defer file.Close()
+
+        csvReader := csv.NewReader(file)
+        data, err := csvReader.ReadAll()
+        if err != nil {
+          return nil, karma.Format(err, "failed to read csv data")
+        }
+
+    regexp must compile:
+      trigger: rmc
+      snippet: regexp.MustCompile($1)

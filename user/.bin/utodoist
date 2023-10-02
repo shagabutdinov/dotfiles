@@ -1,2 +1,2 @@
-google-chrome --app=https://todoist.com --check-for-update-interval=604800
+google-chrome --app=https://todoist.com/app/project/2311980470 --check-for-update-interval=60480000
 

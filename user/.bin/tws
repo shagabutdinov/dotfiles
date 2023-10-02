@@ -1,2 +1,2 @@
-INSTALL4J_ADD_VM_PARAMS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true" ~/.local/jts/tws
+INSTALL4J_ADD_VM_PARAMS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true" ~/.local/Jts/tws
 

@@ -112,7 +112,7 @@
     "command": "rest-client.request",
     "when": "editorTextFocus"
   },
-  // case convertion
+  // case conversion
   {
     "key": "ctrl+=",
     "command": "commands.run",
@@ -331,20 +331,6 @@
     },
     "when": "textInputFocus"
   },
-  // {
-  //   "key": "ctrl+=",
-  //   "command": "editor.emmet.action.incrementNumberByOne",
-  //   "when": "textInputFocus"
-  // },
-  // {
-  //   "key": "ctrl+-",
-  //   "command": "incrementor.decByOne",
-  //   "when": "textInputFocus"
-  // },
-  // {
-  //   "key": "ctrl+=",
-  //   "command": "extension.changeCase.upper"
-  // },
   // splitting
   {
     "key": "enter",
@@ -388,6 +374,14 @@
     },
     "when": "editorTextFocus"
   },
+  // {
+  //   "key": "enter",
+  //   "command": "editor.action.insertSnippet",
+  //   "args": {
+  //     "snippet": "\n"
+  //   },
+  //   "when": "editorTextFocus"
+  // },
   // character editing
   {
     "key": "alt+/",
@@ -3364,6 +3358,10 @@
     "key": "ctrl+u ctrl+s",
     "command": "workbench.action.files.saveWithoutFormatting",
     "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+meta+enter",
+    "command": "notebook.cell.executeCellAndBelow"
   },
   // {
   //   "key": "f3",
