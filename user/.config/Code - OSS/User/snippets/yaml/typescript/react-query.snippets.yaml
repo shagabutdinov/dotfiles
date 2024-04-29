@@ -56,8 +56,9 @@ react query:
       onExpand:
         command: imports.add
         args:
-          value: usePage
-          from: hooks/usePage
+          value: default
+          alias: usePage
+          from: app/hooks/usePage
 
     useQueryParam StringParam:
       trigger: ~(?<=useQueryParam\(".*?",\s*)sp$

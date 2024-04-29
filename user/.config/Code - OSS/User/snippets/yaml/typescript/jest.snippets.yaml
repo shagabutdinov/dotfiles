@@ -106,7 +106,7 @@ jest:
               document().getText().match('^\s*\w+\s*$')
           snippet: |-
             import React from "react";
-            import { renderHook } from "@testing-library/react-hooks";
+            import { renderHook } from "@testing-library/react";
 
             import $1:hook{hook} from "./$1:hook{hook}";
 
@@ -227,7 +227,7 @@ jest:
             command: imports.add
             args:
               value: act
-              from: '@testing-library/react-hooks'
+              from: '@testing-library/react'
 
     element getters:
       context: |

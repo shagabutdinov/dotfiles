@@ -1,22 +1,12 @@
 constructor typescript:
   context: |
     document().languageId.match("^(type|java)script(react)?$") &&
-      document().uri.fsPath.startsWith('/home/leo/src/constructor/website')
+      document().uri.fsPath.includes('constructor/website')
   snippets:
     sentences:
       context: cursor.precedingText().match('\n[ ]*\w+$')
       snippets:
         # hooks
-
-        useLoad:
-          trigger: ulo
-          snippet: |-
-            const [$1{value}, $1Status] = useLoad($2, $3[$4])
-          onExpand:
-            command: imports.add
-            args:
-              value: useLoad
-              from: hooks/useExecute
 
         useCurrentIndex:
           trigger: uci
@@ -27,7 +17,7 @@ constructor typescript:
             args:
               value: default
               alias: useCurrentIndex
-              from: hooks/useCurrentIndex
+              from: app/hooks/useCurrentIndex
 
         useFeatureToggle:
           trigger: uft
@@ -83,7 +73,7 @@ constructor typescript:
                 args:
                   value: default
                   alias: withRouter
-                  from: utils/tests/withRouter
+                  from: __tests__/utils/withRouter
               placeholders:
                 component:
                   onBeforeExpand: |
@@ -143,8 +133,8 @@ constructor typescript:
             mock use current index:
               trigger: mi
               snippet: |-
-                jest.mock("hooks/useCurrentIndex", () => () =>
-                  require("factories").default.index.build({})
+                jest.mock("app/hooks/useCurrentIndex", () => () =>
+                  require("__tests__/factories").default.index.build({})
                 );
 
             mock current user:
@@ -222,7 +212,7 @@ constructor typescript:
                 args:
                   value: default
                   alias: withRouter
-                  from: utils/tests/withRouter
+                  from: __tests__/utils/withRouter
 
             factories:
               trigger: fa

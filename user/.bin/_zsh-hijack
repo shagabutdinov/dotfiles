@@ -55,6 +55,7 @@ hijack:reset() {
 
             buffer=$condition_result
         else
+	    # echo $buffer
             if new_buffer=$(builtin eval $transformation <<< $buffer); then
                 result=0
 

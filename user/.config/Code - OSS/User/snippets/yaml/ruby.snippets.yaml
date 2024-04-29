@@ -10,8 +10,7 @@ ruby:
       snippets:
         def:
           context: |
-            !document().uri.fsPath.match('_spec.rb') &&
-              selection.precedingText().match('^\s+\w+$')
+            !document().uri.fsPath.match('_spec.rb')
           trigger: d
           snippet: |-
             def $container{$1{}($2:args)}

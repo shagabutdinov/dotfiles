@@ -1,7 +1,7 @@
 log:
   context: |
     document().languageId == 'markdown' &&
-      document().uri.fsPath.startsWith('/home/leo/projects/personal/log/')
+      document().uri.fsPath.includes('/projects/personal/log/')
   snippets:
     constructor:
       trigger: c

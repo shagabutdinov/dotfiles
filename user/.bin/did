@@ -1,0 +1,357 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+require "docopt"
+require 'active_support/all'
+
+doc = <<DOCOPT
+done
+
+Usage:
+  #{__FILE__} ship new <name>...
+  #{__FILE__} [--from=<kn>] [--to=<kn>] [--by=<name>]
+  #{__FILE__} -h | --help
+  #{__FILE__} --version
+
+Options:
+  -h --help     Show this screen.
+  --version     Show version.
+  --from=<kn>   Date from.
+  --to=<kn>     Date to.
+  --by=<kn>     Author.
+DOCOPT
+
+CONFIG = YAML.load_file(File.join(Dir.home, '/.config/did.yaml'))
+
+def main(options)
+  Dir.chdir(CONFIG.fetch('REPO_PATH')) { system("git fetch") }
+  prs = get_all_prs
+  date_from, date_to = get_dates(options)
+  all_branches = get_all_branches
+
+  puts("# #{date_from} - #{date_to}")
+
+  CONFIG.fetch('FOLKS').each do |key, folk|
+    puts("## #{key}\n\n")
+
+    reviewed_prs = get_engineer_reviewed_prs(
+      prs,
+      folk,
+      date_from: date_from,
+      date_to: date_to,
+    )
+
+    if !reviewed_prs.empty?
+      puts("Reviewed:")
+
+      reviewed_prs.each do |reviewed_pr|
+        puts("  * [#{reviewed_pr.fetch('title')}](#{reviewed_pr.fetch('url')})")
+      end
+
+      puts("")
+    end
+
+    committed_branches = get_engineer_committed_branches(
+      folk,
+      all_branches: all_branches,
+      date_from: date_from,
+      date_to: date_to,
+    )
+
+    prs_by_branches = Hash[prs.map { |pr| [pr['headRefName'], pr] }]
+
+    if !committed_branches.empty?
+      puts("Progress:")
+
+      committed_branches.each do |branch, count|
+        pr = prs_by_branches.fetch(branch, nil)
+        if pr.nil?
+          puts("  * #{branch} (#{count})")
+        else
+          puts("  * [#{pr.fetch('title')}](#{pr.fetch('url')}) (#{count})")
+        end
+      end
+
+      puts("")
+    end
+
+    tickets =
+      LinearAPI
+      .new(CONFIG['LINEAR_API_KEY'])
+      .fetch_assigned_tickets(
+        folk.fetch('LINEAR_ID'),
+        date_from: date_from,
+        date_to: date_to,
+      )
+      .dig('data', 'user', 'assignedIssues', 'nodes')
+
+    if !tickets.empty?
+      puts("Tickets:")
+
+      tickets.map do |ticket|
+        if ['Triage', 'Backlog'].include?(ticket.dig('state', 'name'))
+          next
+        end
+
+        puts [
+          "  * [[#{ticket.fetch('identifier')}]",
+          "#{ticket.fetch('title')}](#{ticket.fetch('url')})",
+          "(#{ticket.dig('state', 'name')})"
+        ].join(' ')
+      end
+
+      puts("")
+    end
+  end
+end
+
+def get_all_prs
+  github = GitHubAPI.new(api_key: CONFIG.fetch('GITHUB_ACCESS_TOKEN'))
+  prs = CONFIG.fetch('GITHUB_REPOS').flat_map do |owner_repo|
+    owner, repo = owner_repo.split('/')
+    github.fetch_pull_requests(owner: owner, repo: repo)
+  end
+
+  return prs
+end
+
+def get_dates(options)
+  date_from =
+    if options["--from"].nil?
+      (Time.now - 86400 * (Date.today.wday == 1 ? 3 : 1)).beginning_of_day
+    else
+      Time.parse(options["--from"])
+    end
+
+  date_to =
+    if options["--to"].nil?
+      date_from.end_of_day
+    else
+      Time.parse(options["--to"])
+    end
+
+  return date_from, date_to
+end
+
+def get_all_branches
+  all_branches =
+    Dir.chdir(CONFIG.fetch('REPO_PATH')) do
+      last_master_commit =
+        execute(["git log --all --branches=\"remotes/origin/master\""])
+        .match(/commit (\w+)/)[1].to_s
+
+
+      execute(["git branch --all --contains #{last_master_commit}"])
+      .lines
+      .map { |line| line.gsub(/^\s*\*/, '').strip }
+    end
+
+  return all_branches
+end
+
+def get_engineer_reviewed_prs(prs, folk, date_from:, date_to:)
+  prs.select do |pr|
+    pr.dig("reviews", "nodes").any? do |review|
+      pr_date = Time.parse(review.fetch('createdAt'))
+
+      pr_date >= date_from &&
+        pr_date <= date_to &&
+        review.dig("author", "login") == folk.fetch("GITHUB_ACCOUNT")
+    end
+  end
+end
+
+def get_engineer_committed_branches(folk, all_branches:, date_from:, date_to:)
+  commits = Dir.chdir(CONFIG.fetch('REPO_PATH')) do
+    commits_string = execute([
+      "git log --all",
+      "--branches=\"*\"",
+      "--since \"#{date_from.strftime('%Y-%m-%d')} 00:00:00\"",
+      "--until \"#{date_to.strftime('%Y-%m-%d')} 23:59:59\"",
+      "--author=\"#{folk.fetch('GIT_EMAIL')}\""
+    ])
+
+    commits_string
+      .split(/(?=commit \w{40})/)
+      .flat_map { |commit|
+        match = commit.match(
+          /^commit (\w{40}).*?Author: (.*?)\nDate:\s+(.*?)\n\s*(.*?)\s*$/m
+        ).to_a[1..-1]
+
+        branches =
+          execute(["git branch --all --contains #{match[0]}"])
+          .lines
+          .map { |line|
+            line
+              .strip
+              .gsub(/^\*\s*/, '')
+              .gsub(/HEAD -> /, '')
+              .gsub(/^remotes\/origin\//, "")
+          }
+          .uniq
+
+        # ignore master merges
+        if branches.include?('origin/master')
+          next []
+        end
+
+        [{
+          hash: match[0],
+          author: match[1],
+          date: Time.parse(match[2]),
+          message: match[3],
+          branches: branches - all_branches,
+        }]
+      }
+  end
+
+  branches = {}
+
+  commits.each do |commit|
+    commit[:branches].each do |branch|
+      branches[branch] ||= 0
+      branches[branch] += 1
+    end
+  end
+
+  return branches
+end
+
+def execute(command)
+  return `#{command.join(' ')}`
+end
+
+# github
+
+require 'rest-client'
+require 'json'
+
+class GitHubAPI
+  def initialize(api_key:)
+    @base_uri = 'https://api.github.com/graphql'
+
+    @options = {
+      'Content-Type' => 'application/json',
+      'Authorization' => "bearer #{api_key}"
+    }
+  end
+
+  def fetch_pull_requests(owner:, repo:)
+    query = <<-GRAPHQL
+    query($owner: String!, $repo: String!) {
+      repository(owner: $owner, name: $repo) {
+        pullRequests(first: 100, orderBy: { field: CREATED_AT, direction: DESC }) {
+          nodes {
+            number
+            createdAt
+            title
+            url
+            headRefName
+            reviews(first: 100) {
+              nodes {
+                createdAt
+                author {
+                  login
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    GRAPHQL
+
+    response = RestClient.post(
+      @base_uri,
+      {
+        query: query,
+        variables: {
+          owner: "Constructor-io",
+          repo: "website"
+        }
+      }.to_json,
+      @options,
+    )
+
+    JSON.parse(response.body).dig('data', 'repository', 'pullRequests', 'nodes')
+  end
+end
+
+require 'httparty'
+
+class LinearAPI
+  include HTTParty
+  base_uri 'https://api.linear.app/graphql'
+
+  def initialize(api_key)
+    @options = {
+      headers: {
+        'Content-Type' => 'application/json',
+        'Authorization' => "#{api_key}"
+      }
+    }
+  end
+
+  def fetch_assigned_tickets(user_id, date_from:, date_to:)
+    query = <<-GRAPHQL
+      {
+        user(id: "#{user_id}") {
+          assignedIssues(
+            filter:{
+              and: [
+                {updatedAt: {gt: "#{date_from}"}},
+                {updatedAt: {lt: "#{date_to}"}}
+              ]
+            }
+          ) {
+            nodes {
+              identifier
+              title
+              state {
+                type
+                name
+              }
+              url
+              updatedAt
+            }
+          }
+        }
+      }
+    GRAPHQL
+
+    response = self.class.post('/', @options.merge(body: { query: query }.to_json))
+
+    if !response.body["errors"].nil?
+      raise response.body["errors"].to_s
+    end
+
+    JSON.parse(response.body)
+  end
+
+  def fetch_user_details(query)
+    query = <<-GRAPHQL
+      {
+        users(filter:{displayName:{contains: "#{query}"}}) {
+          nodes {
+            id
+            name
+          }
+        }
+      }
+    GRAPHQL
+
+    response = self.class.post(
+      '/',
+      @options.merge(body: { query: query }.to_json),
+    )
+
+    JSON.parse(response.body)
+  end
+end
+
+begin
+  options = Docopt::docopt(doc)
+  main(options)
+rescue Docopt::Exit => e
+  puts e.message
+end
