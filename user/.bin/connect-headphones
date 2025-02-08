@@ -1,8 +1,15 @@
 notify-replace headphones "" "<b>HEADPHONES</b> » CONNECTING"
 
-bluetoothctl power on 
-sleep 1 
+bluetoothctl power on
+bluetoothctl remove 38:18:4C:BF:1B:46
 timeout 4 bluetoothctl scan on
+sleep 10
+
+notify-replace headphones "$(bluetoothctl pair 38:18:4C:BF:1B:46)"
+sleep 2
 
 notify-replace headphones "$(bluetoothctl connect 38:18:4C:BF:1B:46)"
+sleep 1
+
+bluetoothctl scan off
 

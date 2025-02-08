@@ -8,14 +8,23 @@ typescript:
           trigger: d
           context: document().uri.toString().match('(?<!\.test)\.ts$')
           snippet: |-
-            // @prtodo tests
-            export $1default function $2:name($3): $4 {
+            export $1default function $2:name($3) {
               return (
                 $0
               );
             }
+          placeholders:
+            name:
+              onExpand: |
+                ({ document }) => (
+                  document.uri.toString().match('/([^/]+).ts$') || []
+                )[1]
     keywords:
       snippets:
+        this:
+          trigger: ~\.$
+          snippet: this.
+
         async:
           trigger: as
           snippet: async $0
@@ -34,17 +43,21 @@ typescript:
               !cursor.precedingText().match('(export\s+(default\s+)?)\w+$')
           snippet: await $0
 
+        await to async:
+          trigger: "~await\\s*$"
+          snippet: async $0
+
+        await promise:
+          trigger: ap
+          snippet: await new Promise((resolve) => $1)
+
         typeof:
-          trigger: ~(?<!\.\s*)(?<=[(<\[\s=])to$
+          trigger: ~(?<!\.\s*)(?<=[(<\[\s={])to$
           snippet: typeof $0
 
         instanceof:
-          trigger: io
+          trigger: ~(?<!\.\s*)(?<=[(<\[\s=])io$
           snippet: instanceof $0
-
-        # import braces:
-        #   trigger: ~import\s*$
-        #   snippet: import { $0 }
 
         import star:
           auto: true
@@ -66,6 +79,36 @@ typescript:
           auto: true
           trigger: ~(?<=import\s+\w+\s*,)\s*$
           snippet: " { $1 }"
+
+        define and call double arrow async callback:
+          trigger: ca
+          snippet: (async () => {$0})()
+
+        define and call double arrow callback:
+          trigger: cc
+          snippet: (() => {$0})()
+
+        quick double arrow callback with body:
+          trigger: ~(?<=([:=(,|&[]|={|=\{|return)\s*)\/$
+          snippet: ($1:element) => {$0}
+          placeholders:
+            element:
+              onBeforeExpand: |
+                ({ document, cursor, extensions: { user } }) => {
+                  const text =
+                    document
+                      .lineAt(cursor.start.line)
+                      .text
+                      .substring(0, cursor.start.character);
+
+                  const match = text.match(/(\w+)\.\w+\($/)
+
+                  if (!match) {
+                    return ;
+                  }
+
+                  return user.pluralize.singular(match[1]);
+                }
 
         quick double arrow callback:
           trigger: ~(?<=([:=(,|&[]|={|=\{|return)\s*)$
@@ -106,7 +149,7 @@ typescript:
           snippet: const $0
 
     root:
-      context: cursor.precedingText().match('\s*\w+$')
+      context: cursor.precedingText().match('(^|;)\s*\w+$')
       snippets:
         import:
           trigger: im
@@ -132,7 +175,6 @@ typescript:
               onBeforeExpand: |
                 ({ document, debug }) =>
                   document.uri.toString().match('/([^/]+)\\.\\w+$')[1]
-
             value:
               onLeave: |
                 ({ debug, placeholders: { value, file } }) => {
@@ -178,6 +220,26 @@ typescript:
           trigger: ed
           snippet: export default $0
 
+        reexport default:
+          trigger: ee
+          snippet: export { default } from "./lib/$2:file"
+          placeholders:
+            file:
+              onExpand: |
+                ({ document }) => (
+                  document.uri.toString().match('/([^/]+).tsx?$') || []
+                )[1]
+
+        reexport all:
+          trigger: ea
+          snippet: export * from "./lib/$2:file"
+          placeholders:
+            file:
+              onExpand: |
+                ({ document }) => (
+                  document.uri.toString().match('/([^/]+).tsx?$') || []
+                )[1]
+
         export default shortcut:
           trigger: d
           snippet: default $0
@@ -192,9 +254,34 @@ typescript:
       context: cursor.precedingText().match('(^|\n)(export\s+)?(default\s+)?(async\s+)?\s*\w+$')
       trigger: fn
       snippet: |-
-        function $1($2): $3 {
+        function $1($2)$typeContainer{: $3:typeValue} {
           $0
         }
+      placeholders:
+        typeValue:
+          onLeave: |
+            ({ debug, placeholders: { typeContainer, typeValue } }) => {
+              debug(typeContainer.value);
+              if (typeContainer.value === ': ') {
+                typeContainer.value = '';
+              }
+            }
+
+    function constant:
+      trigger: cf
+      snippet: |-
+        const $1 = ($2)$typeContainer{: $3:typeValue} => {
+          $0
+        }
+      placeholders:
+        typeValue:
+          onLeave: |
+            ({ debug, placeholders: { typeContainer, typeValue } }) => {
+              debug(typeContainer.value);
+              if (typeContainer.value === ': ') {
+                typeContainer.value = '';
+              }
+            }
 
     root exportable sentences:
       context: cursor.precedingText().match('(^|\n)(export\s+)?(default\s+)?\s*\w+$')
@@ -281,7 +368,36 @@ typescript:
             for ($1) {
               $0
             }
-
+        for classic:
+          trigger: ff
+          snippet: |-
+            for (let $1{index} = 0; $1{index} < $2; $1{index} ++) {
+              $0
+            }
+        for of:
+          trigger: fo
+          snippet: |-
+            for (const $2:element of $1:elements{elements}) {
+              $0
+            }
+          placeholders:
+            element:
+              onBeforeFocus: |
+                ({ placeholders: { elements }, extensions: { user } }) => {
+                  return user.pluralize.singular(elements.value);
+                }
+        for in:
+          trigger: fi
+          snippet: |-
+            for (const $2:element in $1:elements{elements}) {
+              $0
+            }
+          placeholders:
+            element:
+              onBeforeFocus: |
+                ({ placeholders: { elements }, extensions: { user } }) => {
+                  return user.pluralize.singular(elements.value);
+                }
         while:
           trigger: wh
           snippet: |-
@@ -321,7 +437,7 @@ typescript:
                   cursor.anchor.line
 
     sentences:
-      context: cursor.precedingText().match('(^|\n)\s+\w+$')
+      context: cursor.precedingText().match('(^|[;\)\]\{\}])\s+\w+$')
       snippets:
         return value:
           trigger: r
@@ -342,6 +458,10 @@ typescript:
         return result:
           trigger: rr
           snippet: return result
+
+        return promise:
+          trigger: rp
+          snippet: return await new Promise((resolve) => $1);
 
         continue:
           trigger: co
@@ -368,11 +488,43 @@ typescript:
 
         reduce:
           trigger: r
-          snippet: reduce($0)
+          snippet: reduce((result, $2) => $0, $1{initial})
+
+        includes:
+          trigger: i
+          snippet: includes($1)
+
+        includes 2:
+          trigger: iu
+          snippet: includes($1)
+
+        indexOf:
+          trigger: io
+          snippet: indexOf($1)
+
+        reduce array:
+          trigger: ra
+          snippet: reduce((result, $1) => ([...result, $0]), [])
+
+        reduce object:
+          trigger: ro
+          snippet: reduce((result, $1) => ({...result, $0}), {})
+
+        reduce object value:
+          trigger: rr
+          snippet: "reduce((result, [key, value]) => ({...result, [key]: value}), {})"
 
         length:
           trigger: l
           snippet: length
+
+        startWith:
+          trigger: sw
+          snippet: startsWith($1)
+
+        endWith:
+          trigger: ew
+          snippet: endsWith($1)
 
         toString:
           trigger: ts
@@ -404,8 +556,71 @@ typescript:
           trigger: jp
           snippet: JSON.parse($1)
 
+    comparisons:
+      context: cursor.precedingText().match('(\w\s|\]|\)) *\w*$')
+      snippets:
+        is:
+          trigger: i
+          snippet: === $0
+
+        is not:
+          trigger: ii
+          snippet: "!== $0"
+
+        is not 2:
+          trigger: n
+          snippet: "!== $0"
+
+        is null:
+          trigger: in
+          snippet: === null
+
+        is not null:
+          trigger: inn
+          snippet: "!== null"
+
+        is true:
+          trigger: it
+          snippet: "=== true"
+
+        is not true:
+          trigger: int
+          snippet: "!== true"
+
+        is false:
+          trigger: if
+          snippet: "=== false"
+
+        is not false:
+          trigger: inf
+          snippet: "!== false"
+
+        is undefined:
+          trigger: iu
+          snippet: "=== undefined"
+
+        is not undefined:
+          trigger: inu
+          snippet: "!== undefined"
+
+        is zero:
+          trigger: iz
+          snippet: "=== 0"
+
+        is not zero:
+          trigger: inz
+          snippet: "!== 0"
+
+        is string:
+          trigger: is
+          snippet: '=== "$0"'
+
+        is not string:
+          trigger: ins
+          snippet: '!== "$0"'
+
     values:
-      context: cursor.precedingText().match('([:=(,|&[]|={|=>|=\{|return)\s*\w*$')
+      context: cursor.precedingText().match('([:=(,|&[?]|={|=>|=\{|return|await)\s*\w*$')
       snippets:
         undefined:
           trigger: u
@@ -414,6 +629,10 @@ typescript:
         "null":
           trigger: n
           snippet: "null"
+
+        await import:
+          trigger: ai
+          snippet: await import("$1")
 
         "true":
           trigger: t
@@ -434,6 +653,32 @@ typescript:
         new error:
           trigger: ne
           snippet: new Error($1)
+
+        new promise:
+          trigger: np
+          snippet: new Promise((resolve) => $1)
+
+        promise all:
+          trigger: pa
+          snippet: Promise.all($1)
+
+    breaking strings:
+      snippets:
+        single quote:
+          context: cursor.precedingText().match('\n\s*\'.*?$')
+          trigger: "~ $"
+          snippet: " ' +\n'"
+          order: 1
+        double quote:
+          context: cursor.precedingText().match('\n\s*\".*?$')
+          trigger: "~ $"
+          snippet: " \" +\n\""
+          order: 1
+        back quote:
+          context: cursor.precedingText().match('\n\s*\`.*?$')
+          trigger: "~ $"
+          snippet: " ` +\n`"
+          order: 1
 
     parameters auto:
       trigger: ~const args$
@@ -496,8 +741,8 @@ typescript:
         setTimeout:
           snippets:
             function:
-              trigger: sto
-              snippet: window.setTimeout($1, $2{100})
+              trigger: so
+              snippet: setTimeout($1, $2{100})
 
     debug:
       snippets:
@@ -529,7 +774,7 @@ typescript:
     other:
       snippets:
         type expansion:
-          trigger: ~(?<=type\s+\w+\s*)$
+          trigger: ~(?<=(^|\s)type\s+\w+\s*)$
           snippet: " = {\n  $0\n}"
 
         parameters:
@@ -539,6 +784,11 @@ typescript:
         partial:
           trigger: ~Parameters<typeof\s$
           snippet: Partial<$0
+
+        return type:
+          trigger: ~Record<string,\s$
+          snippet: ReturnType<$0
+          order: 1
 
         preventDefault:
           trigger: ~\.pd$

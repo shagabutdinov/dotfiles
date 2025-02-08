@@ -28,3 +28,12 @@ react router:
         new uri:
           trigger: cu
           snippet: const url = new URLSearchParams($1{location.search});
+
+        useParams:
+          trigger: up
+          snippet: const { $1 } = useParams();
+          onExpand:
+            command: imports.add
+            args:
+              value: useParams
+              from: react-router-dom

@@ -47,6 +47,7 @@ volumectl -D &
 keynav &
 balmora dotfiles-submit &
 emote & # emotions app
+# imwheel --debug -kill
 
 # ulock &
 i3 > ~/.i3.log 2>&1

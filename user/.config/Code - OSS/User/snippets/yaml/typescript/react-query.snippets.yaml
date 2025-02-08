@@ -7,73 +7,47 @@ react query:
     useQuery:
       trigger: uq
       snippet: |-
-        const { data: $1, isFetching, error } = useQuery([$2, $3], () =>
-          $4
-        );
+        const { data: $1, isFetching, error } = useQuery({
+          queryKey: [$2],
+          queryFn: () => $3($4)
+        });
       onExpand:
         command: imports.add
         args:
           value: useQuery
-          from: react-query
+          from: "@tanstack/react-query"
 
     useQuery args:
       trigger: uqa
       snippet: |-
-        const $1{args}: Parameters<typeof $2>[0] = {
-          $3
-        }
-
-        const { data: $4{name}, isFetching, error } = useQuery([$5, $1{args}], () =>
-          $2($1{args})
-        );
+        const { data: $1, isFetching, error } = useQuery({
+          queryKey: [$2, $4] as const,
+          queryFn: async ({ queryKey: [, args] }) => $3(args),
+        });
       onExpand:
         command: imports.add
         args:
           value: useQuery
-          from: react-query
+          from: "@tanstack/react-query"
 
-    useQueryParam:
-      trigger: uqp
-      snippet: const [$1:name{value}, $setter{setValue}] = useQueryParam("$2{$1{name}}", $3)
-      placeholders:
-        name:
-          onLeave: |
-            ({ placeholders: { name, setter } }) => {
-              setter.value =
-                'set' +
-                  name.value.substring(0, 1).toUpperCase() +
-                  name.value.substring(1)
-            }
+    useMutation:
+      trigger: umu
+      snippet: |-
+        const { mutate: $1, isPending, error } = useMutation({
+          mutationKey: [$2],
+          mutationFn: $3
+        });
       onExpand:
         command: imports.add
         args:
-          value: useQueryParam
-          from: use-query-params
+          value: useMutation
+          from: "@tanstack/react-query"
 
-    usePage:
-      trigger: up
-      snippet: const [page, setPage] = usePage();
+    useQueryClient:
+      trigger: uqc
+      snippet: const queryClient = useQueryClient();
       onExpand:
         command: imports.add
         args:
-          value: default
-          alias: usePage
-          from: app/hooks/usePage
-
-    useQueryParam StringParam:
-      trigger: ~(?<=useQueryParam\(".*?",\s*)sp$
-      snippet: StringParam
-      onExpand:
-        command: imports.add
-        args:
-          value: StringParam
-          from: use-query-params
-
-    useQueryParam BooleanParam:
-      trigger: ~(?<=useQueryParam\(".*?",\s*)bp$
-      snippet: BooleanParam
-      onExpand:
-        command: imports.add
-        args:
-          value: BooleanParam
-          from: use-query-params
+          value: useQueryClient
+          from: "@tanstack/react-query"

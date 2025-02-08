@@ -1,0 +1,156 @@
+typescript:
+  context: |
+    document().languageId.match("^(type|java)script(react)?$") &&
+      document().uri.toString().match("[tj]sx?$")
+
+  snippets:
+    sentences:
+      context: cursor.precedingText().match('\n[ ]*\w+$')
+      snippets:
+        # hooks
+
+        useState:
+          trigger: us
+          snippet: const [$1:name{value}, $setter{setValue}] = useState$container{<$2:type>}($3)
+          onExpand:
+            command: imports.add
+            args:
+              value: useState
+              from: react
+          placeholders:
+            name:
+              onLeave: |
+                ({ placeholders: { name, setter } }) => {
+                  setter.value =
+                    'set' +
+                      name.value.substring(0, 1).toUpperCase() +
+                      name.value.substring(1)
+                }
+            type:
+              onLeave: |
+                ({ debug, placeholders: { container } }) => {
+                  if (container.value === '<>') {
+                    container.value = '';
+                  }
+                }
+
+        useEffect:
+          trigger: ue
+          snippet: |-
+            useEffect(() => {
+              $0
+            }, [$1])
+          onExpand:
+            command: imports.add
+            args:
+              value: useEffect
+              from: react
+
+        useRef:
+          trigger: ur
+          snippet: const $1 = useRef$container{<$2:type>}($3)
+          onExpand:
+            command: imports.add
+            args:
+              value: useRef
+              from: react
+          placeholders:
+            type:
+              onLeave: |
+                ({ debug, placeholders: { container } }) => {
+                  if (container.value === '<>') {
+                    container.value = '';
+                  }
+                }
+
+        useMemo:
+          trigger: um
+          snippet: const $1 = useMemo(() => $2, [$3])
+          onExpand:
+            command: imports.add
+            args:
+              value: useMemo
+              from: "react"
+
+        useContext:
+          trigger: uco
+          snippet: const $1 = useContext($2{Context})
+          onExpand:
+            command: imports.add
+            args:
+              value: useContext
+              from: react
+
+        useCallback:
+          trigger: uca
+          snippet: const $1 = useCallback($2, [$3])
+          onExpand:
+            command: imports.add
+            args:
+              value: useCallback
+              from: react
+
+    expressions:
+      context: cursor.precedingText().match('([:=(,|&[]|={|=>|=\{|return)\s*\w*$')
+
+      snippets:
+        useState:
+          trigger: us
+          snippet: useState$container{<$2:type>}($3)
+          onExpand:
+            command: imports.add
+            args:
+              value: useState
+              from: react
+          placeholders:
+            type:
+              onLeave: |
+                ({ debug, placeholders: { container } }) => {
+                  if (container.value === '<>') {
+                    container.value = '';
+                  }
+                }
+
+        useRef:
+          trigger: ur
+          snippet: useRef$container{<$2:type>}($3)
+          onExpand:
+            command: imports.add
+            args:
+              value: useRef
+              from: react
+          placeholders:
+            type:
+              onLeave: |
+                ({ debug, placeholders: { container } }) => {
+                  if (container.value === '<>') {
+                    container.value = '';
+                  }
+                }
+
+        useMemo:
+          trigger: um
+          snippet: useMemo(() => $2, [$3])
+          onExpand:
+            command: imports.add
+            args:
+              value: useMemo
+              from: react
+
+        useCallback:
+          trigger: uca
+          snippet: useCallback($2, [$3])
+          onExpand:
+            command: imports.add
+            args:
+              value: useCallback
+              from: react
+
+        useContext:
+          trigger: uco
+          snippet: useContext($2{Context})
+          onExpand:
+            command: imports.add
+            args:
+              value: useContext
+              from: react

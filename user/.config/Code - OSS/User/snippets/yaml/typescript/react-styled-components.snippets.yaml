@@ -18,7 +18,7 @@ react styled components:
             args:
               value: default
               alias: styled
-              from: '@emotion/styled'
+              from: "@emotion/styled"
 
     expressions:
       context: cursor.precedingText().match('\n(export\s+)([ ]*)\w+$')
@@ -35,10 +35,12 @@ react styled components:
             args:
               value: default
               alias: styled
-              from: '@emotion/styled'
+              from: "@emotion/styled"
 
     css:
-      context: cursor.precedingText().match('([\w\'"]|\S})[\n\s]+\w+$')
+      context: |
+        cursor.precedingText().match('([\w\'"]|\S})[\n\s]+\w+$') &&
+        !cursor.precedingText().match('export\s+\w+$')
       trigger: c
       snippet: |-
         css={css`
@@ -49,7 +51,7 @@ react styled components:
         command: imports.add
         args:
           value: css
-          from: '@emotion/react'
+          from: "@emotion/react"
 
     expansion:
       trigger: '~\$$'
@@ -60,4 +62,4 @@ react styled components:
         command: imports.add
         args:
           value: css
-          from: '@emotion/core'
+          from: "@emotion/core"

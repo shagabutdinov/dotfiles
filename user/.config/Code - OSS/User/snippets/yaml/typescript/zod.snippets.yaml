@@ -1,0 +1,59 @@
+zod:
+  snippets:
+    zod object:
+      trigger: zo
+      snippet: z.object({$0})
+      onExpand:
+        command: imports.add
+        args:
+          value: z
+          from: zod
+    zod array:
+      trigger: za
+      snippet: z.array($1)
+    zod string:
+      trigger: zs
+      snippet: z.string()
+    zod number:
+      trigger: zn
+      snippet: z.number()
+    zod boolean:
+      trigger: zb
+      snippet: z.boolean()
+    zod union:
+      trigger: zu
+      snippet: z.union($0)
+    zod literal:
+      trigger: zl
+      snippet: z.literal($0)
+    zod record:
+      trigger: zr
+      snippet: z.record($0)
+    zod string datetime:
+      trigger: ~string\(\)\.date\(\)$
+      snippet: datetime()
+      order: 2
+
+zod expansion:
+  context: |
+    cursor.precedingText().match('\)\.\w+$') &&
+    cursor.precedingText().match('\Wz\.')
+  snippets:
+    zod string date:
+      trigger: dt
+      snippet: date()
+    zod string time:
+      trigger: t
+      snippet: time()
+    zod int:
+      trigger: i
+      snippet: int()
+    zod optional:
+      trigger: o
+      snippet: optional()
+    zod describe:
+      trigger: d
+      snippet: describe("$1")
+    zod nullable:
+      trigger: n
+      snippet: nullable()

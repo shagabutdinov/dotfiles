@@ -13,7 +13,6 @@ markdown:
 python:
   context: document().languageId == 'python'
   snippets:
-
     import:
       trigger: im
       snippet: import $0
@@ -270,23 +269,23 @@ python:
 
     logger debug:
       trigger: ld
-      snippet: self.logger.debug(f"$0")
+      snippet: logging.debug(f"$0")
 
     logger info:
       trigger: li
-      snippet: self.logger.info(f"$0")
+      snippet: logging.info(f"$0")
 
     logger warning:
       trigger: lw
-      snippet: self.logger.warning(f"$0")
+      snippet: logging.warning(f"$0")
 
     logger error:
       trigger: le
-      snippet: self.logger.error(f"$0")
+      snippet: logging.error(f"$0")
 
     logger fatal:
       trigger: lf
-      snippet: self.logger.fatal(f"$0")
+      snippet: logging.fatal(f"$0")
 
     pandas.DataFrame type:
       trigger: pd
@@ -295,5 +294,3 @@ python:
     pandas.DataFrame value:
       trigger: df
       snippet: pandas.DataFrame({$0})
-
-

@@ -4,25 +4,7 @@
 
 # 81.63.186.235 node1.dalco.diagonal.com node1 dalco.diagonal.com transfer1.celluloidheaven.net
 
-127.0.0.1 f
-127.0.0.1 p
-127.0.0.1 c
-127.0.0.1 cc # constructor cached
-127.0.0.1 cc.local # constructor cached
-127.0.0.1 test.cc # constructor cached
-127.0.0.1 cs # constructor storybook
-127.0.0.1 test.cc # constructor cached
-127.0.0.1 cec # constructor elastic cached
-127.0.0.1 cdc # constructor devac cached
-127.0.0.1 x
-127.0.0.1 e
-127.0.0.1 es
 127.0.0.1       localbox
-127.0.0.1 elasticsearch
-# 172.18.0.5 shell.autocomplete.constructor.local
-# 172.18.0.5 ingestion.autocomplete.constructor.local
-# 172.18.0.6 ingestion.autocomplete.constructor.local
-172.18.0.8 ingestion.autocomplete.constructor.local
 
 # 0.0.0.0 edge.fullstory.com
 # 0.0.0.0 rs.fullstory.com
@@ -57,7 +39,7 @@
 0.0.0.0 adswizz.com
 0.0.0.0 casalemedia.com
 0.0.0.0 openx.net
-0.0.0.0 services.taxamo.com
+# 0.0.0.0 services.taxamo.com
 0.0.0.0 data.pendo.io
 
 # 18.185.118.130 admin-eimo1Ujahyah.ecra.pro
@@ -3138,7 +3120,7 @@
 # [Akamai][AS21342][193.108.88.0 - 193.108.95.255]
 # [Akamai][AS3257][2.16.88.0 - 2.18.191.255]
 0.0.0.0 www.everestjs.net
-0.0.0.0 cdn.optimizely.com #[affects sigfig.com]
+# 0.0.0.0 cdn.optimizely.com #[affects sigfig.com]
 0.0.0.0 video.unrulymedia.com
 0.0.0.0 cdn.static.zdbb.net
 # [Akamai][AS20940][204.245.128.0 - 204.245.191.255]

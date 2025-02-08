@@ -10,7 +10,8 @@ ruby:
       snippets:
         def:
           context: |
-            !document().uri.fsPath.match('_spec.rb')
+            !document().uri.fsPath.match('_spec.rb') &&
+              selection.precedingText().match('^\s*\w+$')
           trigger: d
           snippet: |-
             def $container{$1{}($2:args)}
@@ -114,7 +115,7 @@ ruby:
 
         return:
           trigger: r
-          snippet: 'return '
+          snippet: "return "
 
         return nil:
           trigger: rn
@@ -157,7 +158,7 @@ ruby:
       snippets:
         args:
           trigger: ~(?<=\{\s+)$
-          snippet: '|$1|'
+          snippet: "|$1|"
 
         inline cycle:
           trigger: ~(?<=\.\w+\s+)$
@@ -202,13 +203,13 @@ ruby:
 
     values:
       snippets:
-        'true':
+        "true":
           trigger: t
-          snippet: 'true'
+          snippet: "true"
 
-        'false':
+        "false":
           trigger: f
-          snippet: 'false'
+          snippet: "false"
 
         nil:
           trigger: n
@@ -256,24 +257,24 @@ ruby:
 
         expect to receive:
           trigger: ~(?<=\).to)\s+r$
-          snippet: ' receive($1)'
+          snippet: " receive($1)"
 
         expect to equal:
           trigger: ~(?<=\).to)\s+$
-          snippet: ' eq($1)'
+          snippet: " eq($1)"
           order: 1
 
         expect receive with:
           trigger: ~(?<=receive\(.*?\)\s*)\.w$
-          snippet: '.with($1)'
+          snippet: ".with($1)"
 
         expect and return:
           trigger: ~(?<=(receive|with)\(.*?\)\s*)\.ar$
-          snippet: '.and_return($1)'
+          snippet: ".and_return($1)"
 
         expect and raise:
           trigger: ~(?<=(receive|with)\(.*?\)\s*)\.ara$
-          snippet: '.and_raise($1)'
+          snippet: ".and_raise($1)"
 
         expect anything:
           trigger: ea
@@ -281,36 +282,36 @@ ruby:
 
         focus:
           trigger: "~(?<=(it|describe) '.*?')$"
-          snippet: ', :focus'
+          snippet: ", :focus"
 
         remove focus:
-          trigger: '~, :focus$'
-          snippet: ''
+          trigger: "~, :focus$"
+          snippet: ""
 
         focus for do:
           trigger: "~(?<=(it|describe) '.*?') do$"
-          snippet: ', :focus do'
+          snippet: ", :focus do"
 
         remove focus for do:
           trigger: "~(?<=(it|describe) '.*?'), :focus do$"
-          snippet: ' do'
+          snippet: " do"
 
         watch:
           trigger: "~(?<=(it|describe) '.*?',.*:js)$"
-          snippet: ', :focus, :watch'
+          snippet: ", :focus, :watch"
 
         remove watch:
-          trigger: '~, :focus, :watch$'
-          snippet: ''
+          trigger: "~, :focus, :watch$"
+          snippet: ""
           order: 1
 
         watch for do:
           trigger: "~(?<=(it|describe) '.*?', :js) do$"
-          snippet: ', :focus, :watch do'
+          snippet: ", :focus, :watch do"
 
         remove watch for do:
-          trigger: '~, :focus, :watch do$'
-          snippet: ' do'
+          trigger: "~, :focus, :watch do$"
+          snippet: " do"
           order: 1
 
         described class:
@@ -330,8 +331,8 @@ ruby:
           snippet: Time.zone.parse('2021-01-07')
 
         thousand:
-          trigger: '1'
-          snippet: '1_000'
+          trigger: "1"
+          snippet: "1_000"
 
         complete hash key:
           context: cursor.followingText().match('^\s*,')
@@ -411,11 +412,11 @@ ruby:
 
         todo:
           trigger: xt
-          snippet: '# @todo $0'
+          snippet: "# @todo $0"
 
         prtodo:
           trigger: xp
-          snippet: '# @prtodo $0{tests}'
+          snippet: "# @prtodo $0{tests}"
 
     rails:
       snippets:
@@ -452,12 +453,12 @@ ruby:
     vcr:
       snippets:
         vcr record all:
-          trigger: '~:vcr$'
-          snippet: ':focus, :watch, vcr: { record: :all }'
+          trigger: "~:vcr$"
+          snippet: ":focus, :watch, vcr: { record: :all }"
 
         vcr:
           trigger: '~:focus, :watch, vcr: \{ record: :all \}$'
-          snippet: ':vcr'
+          snippet: ":vcr"
 
     other:
       snippets:
@@ -467,22 +468,22 @@ ruby:
 
         JSON.parse symbolize_names:
           trigger: jpp
-          snippet: 'JSON.parse($1, symbolize_names: true)'
+          snippet: "JSON.parse($1, symbolize_names: true)"
 
         JSON.generate:
           trigger: jg
-          snippet: 'JSON.generate($1)'
+          snippet: "JSON.generate($1)"
 
         JSON.pretty_generate:
           trigger: jgg
-          snippet: 'JSON.pretty_generate($1)'
+          snippet: "JSON.pretty_generate($1)"
 
         to_json:
           trigger: tj
           snippet: to_json
 
         to_sym:
-          trigger: 'y'
+          trigger: "y"
           snippet: to_sym
 
         heredoc:

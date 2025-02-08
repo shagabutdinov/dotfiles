@@ -1,12 +1,8 @@
-typescript:
+react:
   context: |
     document().languageId.match("^(type|java)script(react)?$") &&
-      document().uri.toString().match("[tj]sx?$")
+      document().uri.toString().match("[tj]sx$")
   snippets:
-    test snippet:
-      auto: true
-      snippet: lala
-      trigger: ttt
     definitions:
       context: document().getText().match('^\s*\w+\s*$')
       snippets:
@@ -14,18 +10,15 @@ typescript:
           trigger: d
           context: document().uri.toString().match('(?<!\.test)\.tsx$')
           snippet: |-
-            import React from "react";
-
-            // @prtodo tests
+            $props{type Props = {
+              $keys$3
+            }
+            }
             export default function $1:name{Component}($args{{ $2:list }: Props}) {
               return (
                 $0{<>TBD</>}
               );
             }
-            $props{
-            type Props = {
-              $keys$3
-            }}
           placeholders:
             name:
               onExpand: |
@@ -48,22 +41,6 @@ typescript:
                         .join("\n")
                   }
                 }
-
-        hook:
-          trigger: d
-          context: document().uri.toString().match('/use.*?(?<!\.test)\.ts$')
-          order: 1
-          snippet: |-
-            // @prtodo tests
-            export default function $1:name($2): $3 {
-              $0
-            }
-          placeholders:
-            name:
-              onExpand: |
-                ({ document }) => (
-                  document.uri.toString().match('/([^/]+).tsx?$') || []
-                )[1]
 
     react component props auto:
       trigger: ~const props:?\s*$
@@ -92,130 +69,6 @@ typescript:
           trigger: rcp
           snippet: React.ComponentProps<typeof $0>
 
-    sentences:
-      context: cursor.precedingText().match('\n[ ]*\w+$')
-      snippets:
-        # hooks
-
-        useState:
-          trigger: us
-          snippet: const [$1:name{value}, $setter{setValue}] = useState$container{<$2:type>}($3)
-          onExpand:
-            command: imports.add
-            args:
-              value: useState
-              from: react
-          placeholders:
-            name:
-              onLeave: |
-                ({ placeholders: { name, setter } }) => {
-                  setter.value =
-                    'set' +
-                      name.value.substring(0, 1).toUpperCase() +
-                      name.value.substring(1)
-                }
-            type:
-              onLeave: |
-                ({ debug, placeholders: { container } }) => {
-                  if (container.value === '<>') {
-                    container.value = '';
-                  }
-                }
-
-        useEffect:
-          trigger: ue
-          snippet: |-
-            useEffect(() => {
-              $0
-            }, [$1])
-          onExpand:
-            command: imports.add
-            args:
-              value: useEffect
-              from: react
-
-        useRef:
-          trigger: ur
-          snippet: const $1 = useRef$container{<$2:type>}($3)
-          onExpand:
-            command: imports.add
-            args:
-              value: useRef
-              from: react
-          placeholders:
-            type:
-              onLeave: |
-                ({ debug, placeholders: { container } }) => {
-                  if (container.value === '<>') {
-                    container.value = '';
-                  }
-                }
-
-        useContext:
-          trigger: uc
-          snippet: const $1 = useContext($2{Context})
-          onExpand:
-            command: imports.add
-            args:
-              value: useContext
-              from: react
-
-        useMemo:
-          trigger: um
-          snippet: const $1 = useMemo(() => $2, [$3])
-          onExpand:
-            command: imports.add
-            args:
-              value: useMemo
-              from: "react"
-
-    expressions:
-      context: cursor.precedingText().match('([:=(,|&[]|={|=>|=\{|return)\s*\w*$')
-
-      snippets:
-        useState:
-          trigger: us
-          snippet: useState$container{<$2:type>}($3)
-          onExpand:
-            command: imports.add
-            args:
-              value: useState
-              from: react
-          placeholders:
-            type:
-              onLeave: |
-                ({ debug, placeholders: { container } }) => {
-                  if (container.value === '<>') {
-                    container.value = '';
-                  }
-                }
-
-        useRef:
-          trigger: ur
-          snippet: useRef$container{<$2:type>}($3)
-          onExpand:
-            command: imports.add
-            args:
-              value: useRef
-              from: react
-          placeholders:
-            type:
-              onLeave: |
-                ({ debug, placeholders: { container } }) => {
-                  if (container.value === '<>') {
-                    container.value = '';
-                  }
-                }
-
-        useMemo:
-          trigger: um
-          snippet: useMemo(() => $2, [$3])
-          onExpand:
-            command: imports.add
-            args:
-              value: useMemo
-              from: react
-
     assignment:
       context: cursor.precedingText().match('([}")]|<\w+)\s+\w+=?$')
       trigger: ~(?<=\s\w+)=?$
@@ -231,25 +84,142 @@ typescript:
                 { before: cursor.start }
               );
 
-    tags:
-      context: cursor.precedingText().match('([?:(>}]|return)\s*<$')
-      trigger: ~(?<=^\s+)<$
-      auto: true
-      snippet: <$1:tag{tag}>$0$container{</$close{tag}>}
-      placeholders:
-        tag:
-          onPlaceholderChange: |
-            ({ env, placeholders: { tag, container, close } }) => {
-              if (tag.value === '>') {
-                tag.value = '';
-                close.value = '';
-                setTimeout(() => env.commands.executeCommand('snippets.nextTab'), 68);
-              } else if (tag.value.endsWith("/")) {
-                container.value = '';
-              } else {
-                close.value = tag.value.replace(/(?<=\w+)\s+.*/, '');
-              }
-            }
+    # tags:
+    #   context: cursor.precedingText().match('([?:(>}]|return)\s*<$')
+    #   trigger: ~(?<=^\s+)<$
+    #   auto: true
+    #   snippet: <$1:tag{tag}>$0$container{</$close{tag}>}
+    #   placeholders:
+    #     tag:
+    #       onPlaceholderChange: |
+    #         ({ env, placeholders: { tag, container, close } }) => {
+    #           if (tag.value === '>') {
+    #             tag.value = '';
+    #             close.value = '';
+    #             setTimeout(() => env.commands.executeCommand('snippets.nextTab'), 68);
+    #           } else if (tag.value.endsWith("/")) {
+    #             container.value = '';
+    #           } else {
+    #             close.value = tag.value.replace(/(?<=\w+)\s+.*/, '');
+    #           }
+    #         }
+
+    events:
+      context: cursor.precedingText().match('([\n}"]|<\w+)\s*\w+$')
+      snippets:
+        onClick:
+          trigger: ol
+          snippet: onClick={$0}
+        onChange:
+          trigger: oc
+          snippet: onChange={$0}
+        onKeyDown:
+          trigger: okd
+          snippet: onKeyDown={$0}
+        onKeyUp:
+          trigger: oku
+          snippet: onKeyUp={$0}
+        onKeyPress:
+          trigger: okp
+          snippet: onKeyPress={$0}
+        style:
+          trigger: st
+          snippet: style={{$0}}
+
+    chakra tags:
+      context: cursor.bofToStartText().match('(\(|\{|[\w]+\s*/?>|[\}"\']\s*>)\s*\w+$')
+      snippets:
+        stack:
+          trigger: s
+          snippet: |
+            <Stack$1>
+              $0
+            </Stack>
+          onExpand:
+            command: imports.add
+            args:
+              value: Stack
+              from: "@chakra-ui/react"
+
+        group:
+          trigger: g
+          snippet: |
+            <Group$1>
+              $0
+            </Group>
+          onExpand:
+            command: imports.add
+            args:
+              value: Group
+              from: "@chakra-ui/react"
+
+        box:
+          trigger: b
+          snippet: |
+            <Box$1>
+              $0
+            </Box>
+          onExpand:
+            command: imports.add
+            args:
+              value: Box
+              from: "@chakra-ui/react"
+
+        button:
+          trigger: bu
+          snippet: |
+            <Button $1>
+              $0
+            </Button>
+          onExpand:
+            command: imports.add
+            args:
+              value: Button
+              from: "@chakra-ui/react"
+
+        heading:
+          trigger: h
+          snippet: |
+            <Heading$1>
+              $0
+            </Heading>
+          onExpand:
+            command: imports.add
+            args:
+              value: Heading
+              from: "@chakra-ui/react"
+
+    chakra properties:
+      context: cursor.precedingText().match('([\n}"]|<\w+)\s*\w+$')
+      snippets:
+        variant:
+          trigger: v
+          snippet: variant="$1"
+        colorPalette:
+          trigger: cp
+          snippet: colorPalette="$1"
+        display:
+          trigger: d
+          snippet: display="$1"
+        maxWidth:
+          trigger: mw
+          snippet: maxWidth="$1"
+        width:
+          trigger: w
+          snippet: width="$1"
+
+    chakra property values:
+      context: cursor.precedingText().match('([\n}"]|<\w+)\s*\w+$')
+      snippets:
+        colorPalette red:
+          trigger: ~(?<=colorPalette=")r
+          snippet: red
+        colorPalette green:
+          trigger: ~(?<=colorPalette=")g
+          snippet: green
+        variant ghost:
+          trigger: ~(?<=variant=")g
+          snippet: ghost
 
     css:
       context: |

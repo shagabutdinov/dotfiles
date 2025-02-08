@@ -4,7 +4,10 @@ xset r rate 150 75
 xsetwacom set $(xsetwacom list devices | grep STYLUS | grep -Po 'id: \d+' | awk '{print $2}') MapToOutput 2560x1440+2560+0 # HEAD-0
 
 # mouse sensitivity
-mouse_id="$(xinput list | ruby -ne 'puts STDIN.read.match(/COMPANY  USB Device\s+id=([0-9]+)/)[1]')"
+mouse_id="$(xinput list | ruby -ne 'puts STDIN.read.match(/Corsair CORSAIR SLIPSTREAM WIRELESS USB Receiver\s+id=([0-9]+)/)[1]')"
+xinput set-prop $mouse_id 'libinput Accel Speed' -0.95
+
+mouse_id="$(xinput list | ruby -ne 'puts STDIN.read.match(/DARK CORE RGB PRO SE Mouse\s+id=([0-9]+)/)[1]')"
 xinput set-prop $mouse_id 'libinput Accel Speed' -0.95
 
 setxkbmap -layout us,ru -option grp:caps_toggle,grp_led:caps

@@ -113,19 +113,20 @@ alias f='find . -name'
 alias ee='() { vim ~/.bin/ushell-env; source ~/.bin/ushell-env; rehash }'
 alias cw='cd ~/src/constructor/website'
 alias ca='cd ~/src/constructor/autocomplete'
+alias ch='cd ~/src/plugins/harmony'
 alias cm='cd ~/src/rebelsfund/ml-features-research'
 alias cmc='cd ~/src/rebelsfund/ml-features-research/research/crypto_speculative'
 alias ct='cd /home/leo/src/go/src/gitlab.com/bigprofit/crypto-speculative-trader'
 alias cb='cd /home/leo/src/go/src/gitlab.com/bigprofit/trading'
-alias yay='yay --removemake --nodiffmenu --nocleanmenu --noupgrademenu --cleanafter'
+alias yay='yay --removemake --cleanafter'
 alias mv=/bin/mv
 alias pwgen='pwgen 12'
 alias h='ssh'
 alias w='inotifyrun -r -e MODIFY' # watch
 alias ob='() { watch -x zsh -i -c "$@" }' # observe
-alias l='exa -lHg -s new --group-directories-first'
-alias ls='exa -lHga'
-alias lsn='exa -lHg --group-directories-first -snew'
+alias l='eza -lHg -s new --group-directories-first'
+alias ls='eza -lHga'
+alias lsn='eza -lHg --group-directories-first -snew'
 alias rr='sudo rm -rf'
 alias rt='sudo rm -rf ~/.tmp/ssh/*'
 alias ks="kill \$(ps -xa | grep 'spring server' | grep -v 'grep' | awk '{print \$2}')"
@@ -152,12 +153,6 @@ alias oe='TMUX= overmind restart'
 alias oa='[ -e ./.overmind.sock ] && rm ./.overmind.sock; overmind start -F /dev/null --procfile .dev/Procfile -D -p 3000'
 alias oaa='overmind start'
 alias oo='overmind stop'
-
-# secrets
-alias pa='cd ~/.secrets; carcosa -Ac'
-alias pe='cd ~/.secrets; carcosa -Gc'
-
-alias pr='cd ~/.secrets; carcosa -Rc'
 
 # code
 alias e='code'
@@ -297,13 +292,13 @@ alias gzz='() {
 
 alias gk='() { git commit -m "$(git-commit-prefix)$1" }'
 
-alias gkn='() { 
+alias gkn='() {
   if [ "$(current_branch)" = "master" ]; then
     echo "BRANCH CAN NOT BE MASTER"
     return
   fi
 
-  git commit -m "$(git-commit-prefix)$1" --no-verify 
+  git commit -m "$(git-commit-prefix)$1" --no-verify
 }'
 
 alias gknf='() {
@@ -312,7 +307,7 @@ alias gknf='() {
 
 alias gkk='() { git commit --amend }'
 
-alias gpf='() { 
+alias gpf='() {
   if [ "$(current_branch)" = "master" ]; then
     echo "BRANCH CAN NOT BE MASTER"
     return
@@ -329,13 +324,13 @@ function git-commit-prefix() {
     echo -n "[$message] "
     return
   fi
-  
+
 
   message="$(echo -n $branch | ruby -e 'puts(STDIN.read.split(%{/})[0])')"
   if [ ! -z "$message" ]; then
     echo -n "[$message] "
   else
-    echo -n "[$branch] " 
+    echo -n "[$branch] "
   fi
 }
 
@@ -563,12 +558,12 @@ function docker-compose-file() {
 
   if [ -e ./.dev/docker-compose.yml ]; then
     echo -n ./.dev/docker-compose.yml
-    return 
+    return
   fi
 
   if [ -e config/*local/docker-compose.yml ]; then
     echo -n config/*local/docker-compose.yml
-    return 
+    return
   fi
 }
 
@@ -617,6 +612,16 @@ hijack:transform ' +$' \
 hijack:transform '^g[zxk]?[n]?!? |^xg ' \
   'sed -r s"/([\\$<>{}&\\\"([!?)''#^ ])/\\\\\1/g" | sed -re s"/^(\w+)\\\\ /\\1 /g"'
 
+setopt RC_QUOTES
+alias -- 'g'='gpt'
+hijack:transform '^g ' \
+    'sed -r "s/([\\$<>{}&\\\"\`([!?)''#^*;|])/\\\\\1/g"'
+
+alias -- '?'='gpt'
+hijack:transform '^\?' \
+    'sed -r "s/([\\$<>{}&\\\"\`([!?)''#^*;|])/\\\\\1/g" \
+        | sed -r ''s/^\\\?/?/'''
+
 # hijack:transform '^g[zxk]?[n]?\\!' \
 #  'sed -re "s/^(g[zxk]?[n]?)\\\\!/\\1!/"'
 
@@ -627,7 +632,8 @@ QUOTA=50
 
 eval $(dircolors ~/.dircolors.$BACKGROUND)
 
-if [[ ! "$TMUX" && -f "/tmp/.X11-unix/X0" ]]; then
+if [[ ! "$TMUX" && -e "/tmp/.X11-unix/X0" ]]; then
   exec tmux new
+  # exec tmux new \; source-file ~/.tmux.default.conf
 fi
 
