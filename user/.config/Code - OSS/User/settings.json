@@ -1,8 +1,6 @@
 {
-  "workbench.activityBar.visible": false,
   "editor.fontSize": 18,
   "window.enableMenuBarMnemonics": false,
-  "window.menuBarVisibility": "hidden",
   "editor.smoothScrolling": true,
   "editor.minimap.enabled": false,
   "breadcrumbs.enabled": false,
@@ -30,12 +28,9 @@
   },
   "ruby.format": "rubocop",
   "editor.codeActionsOnSave": {
-    // For ESLint
-    "source.fixAll.eslint": false,
-    // For TSLint
-    "source.fixAll.tslint": false,
-    // For Stylelint
-    "source.fixAll.stylelint": false
+    "source.fixAll.eslint": "never",
+    "source.fixAll.tslint": "never",
+    "source.fixAll.stylelint": "never"
   },
   "ruby.codeCompletion": "rcodetools",
   "[ruby]": {
@@ -106,10 +101,12 @@
   "cSpell.userWords": [
     "backtest",
     "backtests",
+    "datetime",
     "devtools",
     "disabledgrey",
     "displayability",
     "downloaders",
+    "Fastify",
     "formik",
     "iterrows",
     "mdash",
@@ -121,6 +118,7 @@
     "quantile",
     "reindent",
     "rerender",
+    "retryable",
     "searchandizing",
     "shagabutdinov",
     "sklearn",
@@ -152,7 +150,7 @@
   },
   "python.showStartPage": false,
   "[python]": {
-    "editor.defaultFormatter": "ms-python.python",
+    "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.tabSize": 4,
     "editor.wordWrapColumn": 120
   },
@@ -197,7 +195,6 @@
   "terminal.integrated.tabs.enabled": true,
   "editor.renderWhitespace": "all",
   "python.formatting.provider": "black",
-  "workbench.colorTheme": "Dracula",
   "sundial.sunrise": "5:00",
   "keyboard.dispatch": "keyCode",
   "editor.inlineSuggest.enabled": true,
@@ -214,5 +211,10 @@
   "workbench.startupEditor": "none",
   "gitlens.codeLens.enabled": false,
   "gitlens.currentLine.enabled": false,
-  "window.zoomLevel": -1
+  // "window.menuBarVisibility": "hidden",
+  "window.titleBarStyle": "native",
+  "window.customMenuBarAltFocus": false,
+  "window.zoomLevel": -1,
+  "workbench.editor.tabActionCloseVisibility": false,
+  // "typescript.preferences.importModuleSpecifier": "non-relative"
 }

@@ -80,7 +80,7 @@
     }
   },
   {
-    "key": "ctrl+u ctrl+r",
+    "key": "ctrl+u r",
     "command": "workbench.action.reloadWindow"
   },
   {
@@ -2266,6 +2266,11 @@
     "when": "editorTextFocus"
   },
   {
+    "key": "alt+d",
+    "command": "snippets.nextTab",
+    "when": "editorTextFocus"
+  },
+  {
     "key": "f4",
     "command": "snippets.nextTab",
     "when": "editorTextFocus"
@@ -2317,11 +2322,11 @@
     "command": "workbench.action.selectTheme"
   },
   {
-    "key": "ctrl+u ctrl+m",
+    "key": "ctrl+alt+shift+q",
     "command": "workbench.action.toggleMenuBar"
   },
   {
-    "key": "ctrl+tab",
+    "key": "alt+e",
     "command": "workbench.action.toggleSidebarVisibility"
   },
   // files navigation
@@ -2359,6 +2364,11 @@
   // snippets
   {
     "key": "\\",
+    "command": "acceptSelectedSuggestion",
+    "when": "suggestWidgetVisible"
+  },
+  {
+    "key": "alt+s",
     "command": "acceptSelectedSuggestion",
     "when": "suggestWidgetVisible"
   },
@@ -3362,6 +3372,41 @@
   {
     "key": "ctrl+meta+enter",
     "command": "notebook.cell.executeCellAndBelow"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "renameFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "f2",
+    "command": "-renameFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "alt+f",
+    "command": "search.action.focusSearchList",
+    "when": "searchViewletFocus"
+  },
+  {
+    "key": "ctrl+u ctrl+r",
+    "command": "workbench.action.replaceInFiles"
+  },
+  {
+    "key": "ctrl+shift+h",
+    "command": "-workbench.action.replaceInFiles"
+  },
+  {
+    "key": "ctrl+u ctrl+t",
+    "command": "typescript.restartTsServer"
+  },
+  {
+    "key": "ctrl+alt+[",
+    "command": "scrollLeft"
+  },
+  {
+    "key": "ctrl+alt+]",
+    "command": "scrollRight"
   },
   // {
   //   "key": "f3",

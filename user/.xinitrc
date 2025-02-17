@@ -47,6 +47,7 @@ volumectl -D &
 keynav &
 balmora dotfiles-submit &
 emote & # emotions app
+xsettingsd &
 # imwheel --debug -kill
 
 # ulock &

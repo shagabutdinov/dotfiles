@@ -224,6 +224,7 @@ bindsym $mod+ctrl+Escape exec i3lock -c 000000
 # bindsym $mod+shift+u exec upwork-suspend
 bindsym $mod+m exec ushow-status
 bindsym $mod+ctrl+shift+Tab exec ~/.bin/switch-display
+bindsym $mod+ctrl+shift+backslash exec ~/.bin/toggle-theme
 # bindsym $mod+F11 exec ~/.bin/toggle-notifications
 bindsym $mod+backslash exec deepin-screenshot
 bindsym $mod+shift+backslash exec ~/.bin/vpnup
@@ -259,7 +260,7 @@ bindsym $mod+ctrl+equal exec grayscalectl enable
 
 bindsym $mod+minus move workspace to output left
 bindsym $mod+equal move workspace to output right
-bindsym $mod+v exec ~/.bin/connect-headphones
+bindsym $mod+v exec ~/.bin/connect-bluetooth-devices
 bindsym $mod+shift+F8 exec ~/.bin/disconnect-headphones
 
 no_focus [instance="Firefox"]

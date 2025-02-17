@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+
+require 'fileutils'
+
+gnome_current_theme_path = File.join(Dir.home, '.xsettingsd')
+gnome_dark_theme_path = File.join(Dir.home, '.xsettingsd.dark')
+gnome_light_theme_path = File.join(Dir.home, '.xsettingsd.light')
+
+if File.read(File.join(Dir.home, '.theme')) == 'light'
+  File.write(File.join(Dir.home, '.theme'), 'dark')
+
+  FileUtils.cp(gnome_dark_theme_path, gnome_current_theme_path)
+
+  File.write(
+    File.join(Dir.home, '.alacritty.toml'),
+    [
+      File.read(File.join(Dir.home, '.config/.alacritty.base')),
+      File.read(File.join(Dir.home, '.config/.alacritty.theme-dark')),
+    ].join("\n")
+  )
+
+  puts 'switched to dark'
+else
+  File.write(File.join(Dir.home, '.theme'), 'light')
+
+  FileUtils.cp(gnome_light_theme_path, gnome_current_theme_path)
+
+  File.write(
+    File.join(Dir.home, '.alacritty.toml'),
+    [
+      File.read(File.join(Dir.home, '.config/.alacritty.base')),
+      File.read(File.join(Dir.home, '.config/.alacritty.theme-light')),
+    ].join("\n")
+  )
+
+  puts 'switched to light'
+end
+
+`kill -HUP $(pgrep xsettingsd)`
+

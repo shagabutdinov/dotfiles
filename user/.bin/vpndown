@@ -1,3 +1,5 @@
-sudo pkill openvpn
+# sudo pkill openvpn
+
+wg-quick down mars
 
 notify-replace vpn "" "<b>VPN</b> » DOWN"

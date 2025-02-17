@@ -52,6 +52,7 @@ function x() {
 }
 
 # fzf-history-widget
+bindkey '^E' fzf-file-widget
 bindkey '^R' fzf-history-widget
 eval "$(sed -r -e 's/\+s//' -e '/bindkey/d' /usr/share/fzf/key-bindings.zsh)"
 
