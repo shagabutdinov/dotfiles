@@ -8,25 +8,28 @@ Open3.popen3('bluetoothctl') { |stdin, stdout, stderr, wait_thr|
 
 
   # headphones
-  sleep(1)
+  sleep(0.1)
   `notify-replace bluetooth "" "<b>HEADPHONES</b> » CONNECTING"`
-  stdin.puts('bluetoothctl pair 38:18:4C:BF:1B:46')
-  sleep(1)
-  stdin.puts('bluetoothctl connect 38:18:4C:BF:1B:46')
+  stdin.puts('pair 38:18:4C:BF:1B:46')
+  sleep(0.1)
+  stdin.puts('connect 38:18:4C:BF:1B:46')
 
   # keyboard
-  sleep(1)
+  sleep(0.1)
   `notify-replace bluetooth "" "<b>Keyboard</b> » CONNECTING"`
-  stdin.puts('bluetoothctl connect 6C:93:08:63:73:25')
+  stdin.puts('connect 6C:93:08:63:73:25')
 
 
   # mouse
-  sleep(1)
+  sleep(0.1)
   `notify-replace bluetooth "" "<b>Mouse</b> » CONNECTING"`
-  stdin.puts('bluetoothctl connect FC:A8:4E:61:58:9E')
+  stdin.puts('connect FC:A8:4E:61:58:9E')
 
+  sleep(5)
   # exit
   stdin.puts('scan off')
-  sleep(1)
+  sleep(0.1)
   stdin.puts('exit')
+
+  puts stdout.read()
 }
