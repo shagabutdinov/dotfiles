@@ -51,6 +51,10 @@ typescript:
           trigger: ap
           snippet: await new Promise((resolve) => $1)
 
+        new promise:
+          trigger: np
+          snippet: new Promise((resolve) => $1)
+
         typeof:
           trigger: ~(?<!\.\s*)(?<=[(<\[\s={])to$
           snippet: typeof $0
