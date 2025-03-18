@@ -548,6 +548,10 @@ typescript:
           trigger: oe
           snippet: Object.entries($1)
 
+        object fromEntries:
+          trigger: of
+          snippet: Object.fromEntries($1)
+
         object has own property:
           trigger: ho
           snippet: Object.prototype.hasOwnProperty.call($1, $2)
