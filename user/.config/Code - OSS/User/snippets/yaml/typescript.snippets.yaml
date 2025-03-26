@@ -769,7 +769,7 @@ typescript:
         sentences:
           context: cursor.precedingText().match('(^|\n|{)\s*\w+$')
           snippets:
-            console.log:
+            log:
               trigger: l
               snippet: console.log("XXXX $id ", $1)
               placeholders:
@@ -778,6 +778,18 @@ typescript:
                     ({ cursor, document }) =>
                       require('path').basename(document.uri.fsPath) + ':' +
                       cursor.anchor.line
+
+            console.log:
+              trigger: cl
+              snippet: console.log($1)
+
+            console.warn:
+              trigger: cw
+              snippet: console.warn($1)
+
+            console.error:
+              trigger: ce
+              snippet: console.error($1)
 
     other:
       snippets:
