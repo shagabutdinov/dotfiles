@@ -1,0 +1,99 @@
+react:
+  context: |
+    document().languageId.match("^(type|java)script(react)?$") &&
+      document().uri.toString().match("[tj]sx$")
+  snippets:
+    chakra tags:
+      context: cursor.bofToStartText().match('(\(|\{|[\w]+\s*/?>\s*[)}]*|[\}"\']\s*/?>\s*[)}]*)\s*\w+$')
+      snippets:
+        stack:
+          trigger: s
+          snippet: |
+            <Stack$1>
+              $0
+            </Stack>
+          onExpand:
+            command: imports.add
+            args:
+              value: Stack
+              from: "@chakra-ui/react"
+
+        group:
+          trigger: g
+          snippet: |
+            <Group$1>
+              $0
+            </Group>
+          onExpand:
+            command: imports.add
+            args:
+              value: Group
+              from: "@chakra-ui/react"
+
+        box:
+          trigger: b
+          snippet: |
+            <Box$1>
+              $0
+            </Box>
+          onExpand:
+            command: imports.add
+            args:
+              value: Box
+              from: "@chakra-ui/react"
+
+        button:
+          trigger: bu
+          snippet: |
+            <Button $1>
+              $0
+            </Button>
+          onExpand:
+            command: imports.add
+            args:
+              value: Button
+              from: "@chakra-ui/react"
+
+        heading:
+          trigger: h
+          snippet: |
+            <Heading$1>
+              $0
+            </Heading>
+          onExpand:
+            command: imports.add
+            args:
+              value: Heading
+              from: "@chakra-ui/react"
+
+    chakra properties:
+      context: cursor.precedingText().match('([\n}"]|<\w+)\s*\w+$')
+      snippets:
+        variant:
+          trigger: v
+          snippet: variant="$1"
+        colorPalette:
+          trigger: cp
+          snippet: colorPalette="$1"
+        display:
+          trigger: d
+          snippet: display="$1"
+        maxWidth:
+          trigger: mw
+          snippet: maxWidth="$1"
+        width:
+          trigger: w
+          snippet: width="$1"
+
+    chakra property values:
+      context: cursor.precedingText().match('([\n}"]|<\w+)\s*\w+$')
+      snippets:
+        colorPalette red:
+          trigger: ~(?<=colorPalette=")r
+          snippet: red
+        colorPalette green:
+          trigger: ~(?<=colorPalette=")g
+          snippet: green
+        variant ghost:
+          trigger: ~(?<=variant=")g
+          snippet: ghost

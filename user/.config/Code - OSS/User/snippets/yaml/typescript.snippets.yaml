@@ -565,17 +565,19 @@ typescript:
           snippet: JSON.parse($1)
 
     comparisons:
-      context: cursor.precedingText().match('(\w\s|\]|\)) *\w*$')
+      context: |
+        cursor.precedingText().match('(\w\s|\]|\)) *\w*$') &&
+          !cursor.precedingText().match('return\s+\w*$')
       snippets:
         is:
           trigger: i
           snippet: === $0
 
-        is not:
+        is not 2:
           trigger: ii
           snippet: "!== $0"
 
-        is not 2:
+        is not:
           trigger: n
           snippet: "!== $0"
 
