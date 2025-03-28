@@ -695,8 +695,13 @@ typescript:
       snippet: "const args: Parameters<typeof $1>[0]"
 
     types:
-      context: cursor.precedingText().match('([:<,[]|=>|(?<!\|\s*)\||(?<!&\s*)&|<(?!=\s))\s*\w+$')
+      context: cursor.precedingText().match('([:<,[]|as|=>|(?<!\|\s*)\||(?<!&\s*)&|<(?!=\s))\s*\w+$')
       snippets:
+        undefined:
+          trigger: u
+          snippet: undefined
+          order: -1
+
         unknown:
           trigger: un
           snippet: unknown
@@ -745,6 +750,10 @@ typescript:
         parameters:
           trigger: Pa
           snippet: Parameters<typeof $1>
+
+        react dispatch:
+          trigger: rd
+          snippet: React.Dispatch<React.SetStateAction<$1>>
 
     stdlib:
       snippets:
