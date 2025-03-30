@@ -482,6 +482,10 @@ typescript:
           trigger: m
           snippet: map($0)
 
+        flat map:
+          trigger: fm
+          snippet: flatMap($0)
+
         forEach:
           trigger: f
           snippet: forEach($0)

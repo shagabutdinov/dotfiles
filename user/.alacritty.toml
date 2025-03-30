@@ -43,8 +43,8 @@ save_to_clipboard = true
 
 # Default colors
 [colors.primary]
-background = '#002b36'
-foreground = '#839496'
+background = '#fdf6e3'
+foreground = '#586e75'
 
 # Normal colors
 [colors.normal]
