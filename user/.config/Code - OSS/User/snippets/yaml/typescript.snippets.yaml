@@ -187,6 +187,18 @@ typescript:
                   }
                 }
 
+        import lib:
+          trigger: ii
+          snippet: 'import $1:value{value} from "./lib/$2:file";'
+          placeholders:
+            value:
+              onLeave: |
+                ({ debug, placeholders: { value, file } }) => {
+                  if (!value.value.includes('{')) {
+                    file.value = value.value.trim();
+                  }
+                }
+
     root exports:
       context: |
         cursor.precedingText().match(
