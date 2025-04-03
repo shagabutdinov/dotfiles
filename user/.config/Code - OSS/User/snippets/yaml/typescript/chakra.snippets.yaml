@@ -84,6 +84,15 @@ react:
         width:
           trigger: w
           snippet: width="$1"
+        direction row:
+          trigger: dr
+          snippet: direction="row"
+        gap:
+          trigger: g
+          snippet: gap="$1"
+        variant outline:
+          trigger: vo
+          snippet: variant="outline"
 
     chakra property values:
       context: cursor.precedingText().match('([\n}"]|<\w+)\s*\w+$')
