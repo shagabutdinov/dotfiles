@@ -8,7 +8,7 @@ react:
       snippets:
         stack:
           trigger: s
-          snippet: |
+          snippet: |-
             <Stack$1>
               $0
             </Stack>
@@ -20,7 +20,7 @@ react:
 
         group:
           trigger: g
-          snippet: |
+          snippet: |-
             <Group$1>
               $0
             </Group>
@@ -32,10 +32,7 @@ react:
 
         box:
           trigger: b
-          snippet: |
-            <Box$1>
-              $0
-            </Box>
+          snippet: <Box$1>$0</Box>
           onExpand:
             command: imports.add
             args:
@@ -44,7 +41,7 @@ react:
 
         button:
           trigger: bu
-          snippet: |
+          snippet: |-
             <Button $1>
               $0
             </Button>
@@ -56,7 +53,7 @@ react:
 
         heading:
           trigger: h
-          snippet: |
+          snippet: |-
             <Heading$1>
               $0
             </Heading>
