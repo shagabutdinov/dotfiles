@@ -18,6 +18,18 @@ react:
               value: Stack
               from: "@chakra-ui/react"
 
+        stack row:
+          trigger: sr
+          snippet: |-
+            <Stack direction="row" alignItems="center" $1>
+              $0
+            </Stack>
+          onExpand:
+            command: imports.add
+            args:
+              value: Stack
+              from: "@chakra-ui/react"
+
         group:
           trigger: g
           snippet: |-
@@ -84,6 +96,9 @@ react:
         direction row:
           trigger: dr
           snippet: direction="row"
+        alignItems:
+          trigger: ai
+          snippet: alignItems="$1{center}"
         gap:
           trigger: g
           snippet: gap="$1"
