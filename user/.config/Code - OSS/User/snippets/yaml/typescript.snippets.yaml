@@ -172,7 +172,7 @@ typescript:
           snippet: 'import * as $1{value} from "$2";'
 
         import local:
-          trigger: il
+          trigger: ii
           snippet: 'import $1:value{value} from "./$folder/$2:file";'
           placeholders:
             folder:
@@ -188,7 +188,7 @@ typescript:
                 }
 
         import lib:
-          trigger: ii
+          trigger: il
           snippet: 'import $1:value{value} from "./lib/$2:file";'
           placeholders:
             value:
@@ -805,6 +805,10 @@ typescript:
                     ({ cursor, document }) =>
                       require('path').basename(document.uri.fsPath) + ':' +
                       cursor.anchor.line
+
+            console.debug:
+              trigger: cd
+              snippet: console.debug($1)
 
             console.log:
               trigger: cl

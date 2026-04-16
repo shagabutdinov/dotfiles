@@ -103,7 +103,9 @@ function hash-aliases:less-or-grep() {
 }
 
 # logs
-alias cl='cd ~/log'
+alias gtl='cd ~/log'
+alias cl='carcosa -Lc | grep '
+alias cg='() { carcosa -Gc "$(carcosa -Lc | grep "$@" | head -n 1)" }'
 alias ll='exa -lHg -s new --group-directories-first ~/log'
 export l='/home/leo/log'
 
@@ -114,7 +116,7 @@ alias f='find . -name'
 alias ee='() { vim ~/.bin/ushell-env; source ~/.bin/ushell-env; rehash }'
 alias cw='cd ~/src/constructor/website'
 alias ca='cd ~/src/constructor/autocomplete'
-alias ch='cd ~/src/plugins/harmony'
+alias cs='cd ~/src/plugins/steamery'
 alias cm='cd ~/src/rebelsfund/ml-features-research'
 alias cmc='cd ~/src/rebelsfund/ml-features-research/research/crypto_speculative'
 alias ct='cd /home/leo/src/go/src/gitlab.com/bigprofit/crypto-speculative-trader'
@@ -176,14 +178,15 @@ alias pmi='sudo pacman --noconfirm -S'
 alias pmr='sudo pacman -R'
 alias pmro='sudo pacman -Rns $(pacman -Qtdq)'
 alias pmq='pacman -Ql'
+alias pmf='pacman -Qo'
 alias pf='pkgfile'
 
 # systemctl
 alias s='sudo systemctl'
 alias sa='sudo systemctl start'
 alias sr='sudo systemctl restart'
-alias se='sudo systemctl enable'
-alias sd='sudo systemctl disable'
+alias se='sudo systemctl enable --now'
+alias sd='sudo systemctl disable --now'
 alias so='sudo systemctl stop'
 alias ss='sudo systemctl status'
 
@@ -249,13 +252,14 @@ alias gea='git rebase --abort'
 alias gpu='git push -u origin $(current_branch)'
 alias gpuf='git push -u origin $(current_branch) --force'
 alias gdc='git diff --cached'
-alias gh='git stash'
+alias ghh='git stash'
 alias ghp='git stash pop'
 alias ghs='git stash -- $(git diff --staged --name-only)'
 alias gfp='git fetch --prune'
 alias gcm='git checkout master'
 alias gt='git reset'
 alias gth='git reset --hard'
+alias gl='git pull'
 alias glr='git pull --rebase'
 alias gau='git update-index --assume-unchanged'
 alias gac='git update-index --no-assume-unchanged'
@@ -381,6 +385,110 @@ alias gxx!='() {
   echo -n "$(git rev-parse HEAD | tr -d '\n')" | xsel -ib
 }'
 
+
+function devcontainer-compose-project() {
+  local container_id
+  container_id=$(docker ps -a --filter "label=devcontainer.local_folder=$PWD" -q | head -n 1)
+
+  if [ -z "$container_id" ]; then
+    echo "No devcontainer found for $PWD" >&2
+    return 1
+  fi
+
+  local compose_project
+  compose_project=$(docker inspect --format '{{index .Config.Labels "com.docker.compose.project"}}' "$container_id")
+
+  if [ -z "$compose_project" ]; then
+    echo "No compose project found for devcontainer" >&2
+    return 1
+  fi
+
+  echo "$compose_project"
+}
+
+function devcontainer-app-container() {
+  local compose_project
+  compose_project=$(devcontainer-compose-project) || return 1
+
+  local app_container
+  app_container=$(docker ps \
+    --filter "label=com.docker.compose.project=$compose_project" \
+    --filter "label=com.docker.compose.service=app" \
+    -q | head -n 1)
+
+  if [ -z "$app_container" ]; then
+    echo "No app container found for $PWD" >&2
+    return 1
+  fi
+
+  echo "$app_container"
+}
+
+function ex() {
+  local app_container
+  app_container=$(devcontainer-app-container) || return 1
+  docker exec -it "$app_container" "${@}"
+}
+
+function ec() {
+  ex claude --dangerously-skip-permissions
+}
+
+function er() {
+  echo "cleaning: $(pwd)"
+
+  local compose_project
+  compose_project=$(devcontainer-compose-project) || return 1
+
+  local -a containers
+  containers=(${(f)"$(docker ps -a --filter "label=com.docker.compose.project=$compose_project" -q)"})
+  echo "stopping containers: ${containers[@]}"
+  docker stop "${containers[@]}"
+
+  echo "removing containers: ${containers[@]}"
+  docker rm "${containers[@]}"
+}
+
+
+function eR() {
+  local current_dir="$PWD"
+  local main_repo="$(dirname "$current_dir")/$(basename "$current_dir" | sed 's/\.[^.]*$//')"
+
+  er &&
+    cd "$main_repo" &&
+    rm -rf "$current_dir"
+}
+
+function eib() {
+  local source_branch="$1"
+  local target_branch="$2"
+  local prefix="${target_branch%%/*}"
+  local repo_name="$(basename "$PWD")"
+  local target_dir="$(dirname "$PWD")/${repo_name}.${prefix}"
+
+  git clone . "$target_dir" --local --branch "$source_branch" &&
+    git -C "$target_dir" checkout -b "$target_branch" &&
+    devcontainer up --workspace-folder "$target_dir" &&
+    cd "$target_dir"
+}
+
+function ei() {
+  local branch="$1"
+  local prefix="${branch%%/*}"
+  local repo_name="$(basename "$PWD")"
+  local target_dir="$(dirname "$PWD")/${repo_name}.${prefix}"
+
+  git fetch origin &&
+    eib origin/main "$branch"
+}
+
+function ci() {
+  if [ -z "$1" ]; then
+    cd ~/src/writerate/writerate
+  else
+    cd ~/src/writerate/writerate.$1
+  fi
+}
 
 function rebase-current-branch-on-master() {
   git fetch

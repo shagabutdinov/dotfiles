@@ -227,7 +227,7 @@ bindsym $mod+m exec ushow-status
 bindsym $mod+ctrl+shift+Tab exec ~/.bin/switch-display
 bindsym $mod+ctrl+shift+backslash exec ~/.bin/toggle-theme
 # bindsym $mod+F11 exec ~/.bin/toggle-notifications
-bindsym $mod+backslash exec deepin-screenshot
+bindsym $mod+backslash exec flameshot gui
 bindsym $mod+shift+backslash exec ~/.bin/vpnup
 bindsym $mod+ctrl+backslash exec ~/.bin/vpndown
 # bindsym $mod+ctrl+F12 exec ~/.bin/toggle-touchpad

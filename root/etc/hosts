@@ -5,6 +5,7 @@
 # 81.63.186.235 node1.dalco.diagonal.com node1 dalco.diagonal.com transfer1.celluloidheaven.net
 
 127.0.0.1       localbox
+127.0.0.1       filmservice.local
 
 # 0.0.0.0 edge.fullstory.com
 # 0.0.0.0 rs.fullstory.com
@@ -3532,7 +3533,7 @@
 0.0.0.0 pixelservice.apphb.com
 0.0.0.0 tracker.leadenhancer.com
 0.0.0.0 t13.intelliad.de
-0.0.0.0 t23.intelliad.de
+# 0.0.0.0 t23.intelliad.de
 0.0.0.0 morehitserver.com
 0.0.0.0 ads.p161.net
 0.0.0.0 track.popmog.com
@@ -13556,7 +13557,7 @@
 0.0.0.0 www.awltovhc.com #[WebBug]
 0.0.0.0 www.commission-junction.com #[Tracking.Cookie]
 0.0.0.0 www.dpbolvw.net
-0.0.0.0 www.emjcd.com
+# 0.0.0.0 www.emjcd.com
 0.0.0.0 www.ftjcfx.com #[WebBug]
 0.0.0.0 www.jdoqocy.com
 0.0.0.0 www.kqzyfj.com
@@ -13564,7 +13565,7 @@
 0.0.0.0 qksrv.com
 0.0.0.0 www.qksrv.net #[Tracking.Cookie]
 0.0.0.0 www.qksz.net
-0.0.0.0 www.tkqlhce.com
+# 0.0.0.0 www.tkqlhce.com
 0.0.0.0 www.tqlkg.com #[WebBug]
 # [ValueClick / FastClick]
 0.0.0.0 fastclick.com
@@ -13581,7 +13582,7 @@
 0.0.0.0 t.mplxtms.com
 0.0.0.0 krs.ymxpb.com
 # [Valueclick / Conversant][AS25751][8.18.45.0 - 8.18.45.255]
-0.0.0.0 cj.dotomi.com
+# 0.0.0.0 cj.dotomi.com
 # [Vanoppen.biz / Accretive Technology][AS11404][216.243.0.0 - 216.243.63.255]
 0.0.0.0 imgserv.adbutler.com #[Tracking.Cookie]
 0.0.0.0 servedbyadbutler.com

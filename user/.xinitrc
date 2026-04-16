@@ -17,6 +17,7 @@ sudo sysctl -w vm.max_map_count=262144
 # env
 export TERM='xterm-256color'
 export LC_ALL="en_US.UTF-8"
+export QT_QPA_PLATFORMTHEME=gtk2 # force qt using gtk2 themes
 
 # ssh-agent
 eval "$(ssh-agent -s)" > /dev/null 2>&1
