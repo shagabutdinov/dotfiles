@@ -386,6 +386,8 @@ alias gxx!='() {
 }'
 
 
+alias eu='devcontainer up --workspace-folder .'
+
 function devcontainer-compose-project() {
   local container_id
   container_id=$(docker ps -a --filter "label=devcontainer.local_folder=$PWD" -q | head -n 1)
