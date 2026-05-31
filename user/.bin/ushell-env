@@ -150,7 +150,7 @@ alias el='touch ~"/projects/personal/log/$(date +%F_%H:%M).md"; code ~"/projects
 alias xp='() { readlink -f $1 | sed -z "s/[ \\n]*$//g" | xclip -selection clipboard }'
 
 # overmind
-alias o='TMUX= overmind'
+alias ov='TMUX= overmind'
 alias oc='TMUX= overmind connect'
 alias oe='TMUX= overmind restart'
 alias oa='[ -e ./.overmind.sock ] && rm ./.overmind.sock; overmind start -F /dev/null --procfile .dev/Procfile -D -p 3000'
@@ -179,7 +179,7 @@ alias pmr='sudo pacman -R'
 alias pmro='sudo pacman -Rns $(pacman -Qtdq)'
 alias pmq='pacman -Ql'
 alias pmf='pacman -Qo'
-alias pf='pkgfile'
+alias pf='sudo pkgfile'
 
 # systemctl
 alias s='sudo systemctl'
@@ -386,7 +386,21 @@ alias gxx!='() {
 }'
 
 
-alias eu='devcontainer up --workspace-folder .'
+function eu() {
+  devcontainer up --workspace-folder . 
+}
+
+function euc() {
+  devcontainer up --workspace-folder .
+  ec "${@}"
+}
+
+function euo() {
+  devcontainer up --workspace-folder .
+  ex "${@}"
+}
+
+alias ez='ex zsh'
 
 function devcontainer-compose-project() {
   local container_id
@@ -433,7 +447,44 @@ function ex() {
 }
 
 function ec() {
-  ex claude --dangerously-skip-permissions
+  ex claude --dangerously-skip-permissions "${@}"
+}
+
+function eo() {
+  ex codex --dangerously-bypass-approvals-and-sandbox "${@}"
+}
+
+function ea() {
+  local app_container
+  app_container=$(devcontainer-app-container) || return 1
+
+  local output
+  output=$(ex npm run auth 2>&1 | tr -d '\r')
+
+  local url
+  url=$(echo "$output" | grep -oE 'https?://[^[:space:]]+' | tail -n 1)
+
+  if [ -z "$url" ]; then
+    echo "No auth URL found in output:" >&2
+    echo "$output" >&2
+    return 1
+  fi
+
+  local internal_port
+  internal_port=$(echo "$url" | grep -oP '(?<=:)\d+(?=/|$)')
+
+  if [ -n "$internal_port" ]; then
+    local external_port
+    external_port=$(docker port "$app_container" "$internal_port" 2>/dev/null \
+      | grep -oP '(?<=:)\d+' | head -n 1)
+
+    if [ -n "$external_port" ] && [ "$external_port" != "$internal_port" ]; then
+      url=$(echo "$url" | sed "s/:$internal_port/:$external_port/")
+    fi
+  fi
+
+  echo "Opening: $url"
+  xdg-open "$url"
 }
 
 function er() {
@@ -461,27 +512,49 @@ function eR() {
     rm -rf "$current_dir"
 }
 
-function eib() {
-  local source_branch="$1"
-  local target_branch="$2"
+function ei() {
+  local target_branch="$1"
+  local source_branch="${2:-main}"
+  local start_point="origin/$source_branch"
+
+  if [[ "$target_branch" =~ ^https?://github\.com/.+/issues/[0-9]+/?$ ]]; then
+    local issue_number="${target_branch##*/}"
+    issue_number="${issue_number%/}"
+
+    local issue_title
+    issue_title=$(gh issue view "$target_branch" --json title -q .title) || return 1
+
+    local issue_slug
+    issue_slug=$(echo "$issue_title" |
+      tr '[:upper:]' '[:lower:]' |
+      sed -E 's/[^a-z0-9]+/-/g; s/^-+//; s/-+$//; s/-+/-/g')
+
+    if [ -n "$issue_slug" ]; then
+      target_branch="i${issue_number}/${issue_slug}"
+    else
+      target_branch="i${issue_number}"
+    fi
+
+    git fetch origin
+    start_point="$(git rev-parse "$start_point")"
+  fi
+
   local prefix="${target_branch%%/*}"
   local repo_name="$(basename "$PWD")"
   local target_dir="$(dirname "$PWD")/${repo_name}.${prefix}"
 
-  git clone . "$target_dir" --local --branch "$source_branch" &&
-    git -C "$target_dir" checkout -b "$target_branch" &&
+  local origin_url
+  origin_url=$(git remote get-url origin)
+
+  git clone . "$target_dir" --local --no-checkout &&
+    git -C "$target_dir" remote set-url origin "$origin_url" &&
+    git -C "$target_dir" checkout -b "$target_branch" "$start_point" &&
     devcontainer up --workspace-folder "$target_dir" &&
     cd "$target_dir"
 }
 
-function ei() {
-  local branch="$1"
-  local prefix="${branch%%/*}"
-  local repo_name="$(basename "$PWD")"
-  local target_dir="$(dirname "$PWD")/${repo_name}.${prefix}"
-
-  git fetch origin &&
-    eib origin/main "$branch"
+function eii() {
+  ei "$1"
 }
 
 function ci() {
@@ -491,6 +564,15 @@ function ci() {
     cd ~/src/writerate/writerate.$1
   fi
 }
+
+function cr() {
+  if [ -z "$1" ]; then
+    cd ~/src/restocker/restocker
+  else
+    cd ~/src/restocker/restocker.$1
+  fi
+}
+
 
 function rebase-current-branch-on-master() {
   git fetch
@@ -545,6 +627,7 @@ alias kxx='k run -i --tty busybox --image=busybox --restart=Never -- sh'
 alias kei='k exec'
 alias kgn='kubectl config current-context'
 alias ksc='kubectl config use-context '
+alias o='xdg-open'
 
 alias ksn=' \
   kubectl config set-context $(kubectl config current-context) --namespace \
@@ -612,6 +695,28 @@ alias kxd='
     done
 
 
+
+    for arg in "$@"; do
+        if [[ "$arg" =~ %.* ]]; then
+            entity=${arg%/*}
+
+            if [[ "$entity" == "$arg" ]]; then
+                entity=pod
+            fi
+
+            args+=($(
+                kubectl --context=$context get "$entity" --no-headers \
+                        -o name \
+                    | cut -f2- -d/ \
+                    | grep -P "^${${arg:1}#*/}" \
+                    | head -n 1
+            ))
+        else
+            args+=("$arg")
+        fi
+    done
+
+
     kubectl --context=$context ${(q)args[@]}
 }
 
@@ -645,17 +750,17 @@ alias dcx='docker-compose -f $(docker-compose-file) exec'
 alias dcs='docker-compose -f $(docker-compose-file) stop'
 alias dcp='docker-compose -f $(docker-compose-file) ps'
 
-alias cr='\
+alias dcr='\
   docker-compose -f $(docker-compose-file) stop
   docker-compose -f $(docker-compose-file) up
 '
 
-alias crm='\
+alias dcrm='\
   docker-compose -f $(docker-compose-file) stop;
   docker-compose -f $(docker-compose-file) rm -f
 '
 
-alias crr='\
+alias dcrr='\
   docker-compose -f $(docker-compose-file) stop
   docker-compose -f $(docker-compose-file) rm -f
   docker-compose -f $(docker-compose-file) up \
@@ -719,32 +824,9 @@ hijack:transform '^(\w+)( .*)!$' \
 
 hijack:transform ' +$' \
   'sed -re "s/ +$//"'
-
-hijack:transform '^g[zxk]?[n]?!? |^xg ' \
-  'sed -r s"/([\\$<>{}&\\\"([!?)''#^ ])/\\\\\1/g" | sed -re s"/^(\w+)\\\\ /\\1 /g"'
-
-setopt RC_QUOTES
-alias -- 'g'='gpt'
-hijack:transform '^g ' \
-    'sed -r "s/([\\$<>{}&\\\"\`([!?)''#^*;|])/\\\\\1/g"'
-
-alias -- '?'='gpt'
-hijack:transform '^\?' \
-    'sed -r "s/([\\$<>{}&\\\"\`([!?)''#^*;|])/\\\\\1/g" \
-        | sed -r ''s/^\\\?/?/'''
-
-# hijack:transform '^g[zxk]?[n]?\\!' \
-#  'sed -re "s/^(g[zxk]?[n]?)\\\\!/\\1!/"'
-
-# hijack:transform '^g[zxk]?[n]?!?\\ ' \
-#  'sed -r s"/^(g[zxk]?[n]?)(!?)\\\ /\\1\\2 /g"'
-
-QUOTA=50
-
 eval $(dircolors ~/.dircolors.$BACKGROUND)
 
 if [[ ! "$TMUX" && -e "/tmp/.X11-unix/X0" ]]; then
   exec tmux new
   # exec tmux new \; source-file ~/.tmux.default.conf
 fi
-
